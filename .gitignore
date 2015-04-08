@@ -125,3 +125,6 @@ sympy-plots-for-*.tex/
 *.bak
 *.sav
 
+# Temporary files
+*.swp
+*~
