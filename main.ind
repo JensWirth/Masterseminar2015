@@ -1,0 +1,33 @@
+\begin{theindex}
+
+  \item Differentialoperator
+    \subitem Cauchyraum, \hyperpage{10}
+    \subitem gleich stark, \hyperpage{10}
+    \subitem maximaler Operator, \hyperpage{9}
+    \subitem minimaler Operator, \hyperpage{9}
+    \subitem schw\IeC {\"a}cher, \hyperpage{10}
+    \subitem st\IeC {\"a}rker, \hyperpage{10}
+    \subitem Symbol, \hyperpage{11}
+
+  \indexspace
+
+  \item Operator, \hyperpage{7}
+    \subitem abgeschlossen, \hyperpage{7}
+    \subitem abschlie\IeC {\ss }bar, \hyperpage{7}
+    \subitem adjungiert, \hyperpage{8}
+    \subitem beschr\"ankt, \hyperpage{7}
+    \subitem beschr\IeC {\"a}nkt invertierbar, \hyperpage{7}
+    \subitem Graph, \hyperpage{7}
+    \subitem Wertebereich, \hyperpage{7}
+
+  \indexspace
+
+  \item Pseudodifferentialoperator, \hyperpage{24}
+
+  \indexspace
+
+  \item Randwertproblem, \hyperpage{11}
+    \subitem korrekt gestellt, \hyperpage{11}
+    \subitem Randbedingung, \hyperpage{11}
+
+\end{theindex}

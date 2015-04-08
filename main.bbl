@@ -1,0 +1,59 @@
+\begin{thebibliography}{H{\"o}r60b}
+
+\bibitem[G{\aa}r53]{Garding:1953}
+Lars G{\aa}rding.
+\newblock Dirichlet's problem for linear elliptic partial differential
+  equations.
+\newblock {\em Math. Scand.}, 1:55--72, 1953.
+
+\bibitem[H{\"o}r55]{Hormander:1955}
+Lars H{\"o}rmander.
+\newblock On the theory of general partial differential operators.
+\newblock {\em Acta Math.}, 94:161--248, 1955.
+
+\bibitem[H{\"o}r60a]{Hormander:1960b}
+Lars H{\"o}rmander.
+\newblock Differential equations without solutions.
+\newblock {\em Math. Ann.}, 140:169--173, 1960.
+
+\bibitem[H{\"o}r60b]{Hormander:1960a}
+Lars H{\"o}rmander.
+\newblock Differential operators of principal type.
+\newblock {\em Math. Ann.}, 140:124--146, 1960.
+
+\bibitem[H{\"o}r65]{Hormander:1965}
+Lars H{\"o}rmander.
+\newblock Pseudo-differential operators.
+\newblock {\em Comm. Pure Appl. Math.}, 18:501--517, 1965.
+
+\bibitem[H{\"o}r66]{Hormander:1966}
+Lars H{\"o}rmander.
+\newblock Pseudo-differential operators and non-elliptic boundary problems.
+\newblock {\em Ann. of Math. (2)}, 83:129--209, 1966.
+
+\bibitem[H{\"o}r85]{Hormander:1985}
+Lars H{\"o}rmander.
+\newblock {\em The analysis of linear partial differential operators. {III}},
+  volume 274 of {\em Grundlehren der Mathematischen Wissenschaften [Fundamental
+  Principles of Mathematical Sciences]}.
+\newblock Springer-Verlag, Berlin, 1985.
+\newblock Pseudodifferential operators.
+
+\bibitem[Lew57]{Lewy:1957}
+Hans Lewy.
+\newblock An example of a smooth linear partial differential equation without
+  solution.
+\newblock {\em Ann. of Math. (2)}, 66:155--158, 1957.
+
+\bibitem[LN66]{Lax:1966}
+Peter~D. Lax and Louis Nirenberg.
+\newblock On stability for difference schemes: {A} sharp form of
+  {G}{\aa}rding's inequality.
+\newblock {\em Comm. Pure Appl. Math.}, 19:473--492, 1966.
+
+\bibitem[Mel71]{Melin:1971}
+Anders Melin.
+\newblock Lower bounds for pseudo-differential operators.
+\newblock {\em Ark. Mat.}, 9:117--140, 1971.
+
+\end{thebibliography}

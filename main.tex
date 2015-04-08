@@ -1,0 +1,76 @@
+\documentclass[11pt,bibtotoc]{scrbook}
+\usepackage{german}
+\usepackage[utf8]{inputenc}
+%
+\usepackage{hyperref}
+%
+\usepackage{amsfonts,amssymb,amsthm,amsmath,CJK,mathrsfs}
+\usepackage[a4paper, scale=0.76]{geometry}
+%
+\usepackage{ifthen}
+\usepackage{makeidx}
+\makeindex
+\newcommand{\eIndex}[2][]{%
+\emph{#2}%
+\ifthenelse{\equal{#1}{}}{\index{#2}}{\index{#1!#2}}%	
+}%
+\def\spro#1#2{\pmb(#1,#2\pmb)}
+%
+\newtheorem{thm}{Satz}[chapter]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Korollar}
+\renewcommand{\proofname}{Beweis}
+\theoremstyle{definition}
+\newtheorem{df}{Definition}[chapter]
+%
+%
+% DEFINITIONEN
+\def\R{\mathbb R}    % Koerper R
+\def\C{\mathbb C}    % Koerper C
+\def\e{\mathrm e}     % Eulersche Zahl e
+\def\i{\mathrm i}       % imaginäre Einheit i
+\def\D{\mathrm D}    % Differentialoperator D
+\def\d{\,\mathrm d}   % Differential d für Integrale
+\def\rmC{\mathrm C}% Raum C
+\def\rmL{\mathrm L} % Raum L
+\def\rmH{\mathrm H}% Raum H
+%
+\DeclareMathOperator{\supp}{supp}
+%
+\begin{document}
+\titlehead{Priv.-Doz. Dr. Jens Wirth\\Institut f\"ur Analysis, Dynamik und Modellierung\\Universit\"at Stuttgart}
+\lowertitleback{\copyright 2015. Texte geschrieben von den Teilnehmern des Seminars.  Einzelne Beiträge sind nicht namentlich gekennzeichnet. Ausarbeitungen basieren auf Originalliteratur. }
+\title{Mikrolokale Analysis}
+\subtitle{Masterseminar}
+\author{---}
+\date{Sommersemester 2015}
+\maketitle
+\tableofcontents
+%
+\part{Analysis von Differentialoperatoren}
+%
+\include{einleitung1} % Einleitung, Teil 1
+\include{minimal} % Minimale Operatoren :: Tilmann Kleiner, Andreas Bitter
+\include{maximal} % Maximale Operatoren :: Thomas Hamm
+\include{variabel} % Operatoren von reellem Haupttyp :: Julian Mauersberger
+\include{unloesbar} % Ein unloesbarer Operator :: Robin Lang
+%
+%
+\part{Untere Schranken an Pseudodifferentialoperatoren}
+%
+\include{einleitung2} % Einleitung, Teil 2
+\include{garding}  % Gardingsche Ungleichung :: Simon Barth
+\include{melin} % Ungleichung von Melin :: Jonas Brinker
+
+%
+%
+
+\chapter{Die Ungleichung von Feffermann und Phong}
+
+
+% Literaturverzeichnis
+\bibliographystyle{alpha}
+\bibliography{seminar}
+% Index
+\printindex
+\end{document}

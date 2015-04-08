@@ -1,0 +1,274 @@
+% !TEX root = main.tex
+\chapter{Einleitung}
+Die folgenden Abschnitte basieren im wesentlichen auf Hörmanders Arbeit \cite{Hormander:1955}. In dieser Einleitung sollen die verwendete Notation festgelegt und die wichtigsten operatortheoretischen Konzepte zusammengefaßt werden.
+
+\section{Funktionalanalytische Grundlagen}
+
+Seien $V$ und $W$ Banachräume und $\mathcal D_T\subseteq V$ ein linearer Teilraum. Ein (im allgemeinen unbeschr\"ankter) \eIndex{Operator} $T$ mit Definitionsbereich $\mathcal D_T$ ist eine lineare Abbildung $T:V\supset\mathcal D_T \to W$. Er heißt \eIndex[Operator]{beschr\"ankt}, falls es eine Konstante $C>0$ mit 
+\begin{equation}
+\forall v\in\mathcal D_T \quad:\quad \|Tv \|_W \le C \|v\|_V
+\end{equation}
+gibt. Weiter heißt
+\begin{equation}
+\mathcal R_T = \{ Tv : v\in \mathcal D_T \} \subseteq W
+\end{equation}
+der \eIndex[Operator]{Wertebereich} und 
+\begin{equation}
+\mathcal G_T = \{ (v,Tv) : v \in \mathcal D_T \} \subseteq V\times W 
+\end{equation}
+der \eIndex[Operator]{Graph} von $T$. Eine Teilmenge $\mathcal G\subseteq V\times W$ ist genau dann Graph eines Operators, wenn $\mathcal G$ linear ist und aus
+$(0,w)\in\mathcal G$ stets $w=0$ folgt. Wir versehen $V\times W$ mit der Norm $\|(v,w)\|_{V\times W}^2 = \|v\|_V^2 + \|w\|_W^2$.
+
+
+Der Operator $T$ wird als \eIndex[Operator]{abgeschlossen} bezeichnet, falls der Graph $\mathcal G_T$ ein abgeschlossener Teilraum des Produktraumes $V\times W$ ist. Weiter heißt $T$ \eIndex[Operator]{abschließbar}, falls der Abschluß von $\mathcal G_T$ in $V\times W$ Graph eines Operators ist. Dieser wird als Abschluß von $T$ bezeichnet.
+
+\begin{thm}\label{thm:1:1.1}
+Sei $T_1$ abgeschlossen und $T_2$ abschließbar und gelte $\mathcal D_{T_1}\subseteq \mathcal D_{T_2}$. Dann existiert eine Konstante $C$ mit  
+\begin{equation}
+   \| T_2 u\|_W^2 \le C ( \|T_1 u\|_W^2 + \|u\|_V^2 ). 
+\end{equation}
+\end{thm}
+\begin{proof}
+Wir betrachten die Abbildung $\mathcal G_{T_1} \ni (u,T_1u) \mapsto T_2 u \in W$. Diese ist linear und überall definiert. Wir zeigen, daß sie auch abgeschlossen ist. Angenommen, $u_n\to u$ und $T_1 u_n\to T_1 u$ und $T_2 u_n$ sei konvergent. Da $T_2$ abschließbar ist, konvergiert $T_2 u_n \to T_2 u$. Also ist die Abbildung abgeschlossen, nach dem Satz vom abgeschlossenen Graphen stetig und somit beschr\"ankt.
+\end{proof}
+
+Ist $T$ injektiv, so bestimmt $\mathcal G_{T^{-1}} = \{ (w,v) : (v,w)\in\mathcal G_T\}$ einen Graphen. Der zugehörige Operator wird als $T^{-1}$ bezeichnet. Dieser ist genau dann abgeschlossen, wenn $T$ abgeschlossen ist. Ist $T^{-1}$ beschränkt, gilt also
+\begin{equation}\label{eq:1:1.6} 
+   \forall u\in\mathcal D_T \quad:\quad \|u\|_W\le C \|Tu\|_V
+\end{equation}
+mit einer von $u$ unabhängigen Konstanten $C$, so sagen wir $T$ ist \eIndex[Operator]{beschränkt invertierbar}.
+
+Im folgenden sei $V=W=H$ ein Hilbertraum. Zur Vereinfachung der Notation verwenden wir immer $\|\cdot\|$ f\"ur die Norm in $H$. Weiter sei das Innenprodukt in $H$ durch $\spro{u}{v}$ bezeichnet und $H\times H$ mit dem entsprechenden Innenprodukt $\spro{(u_0,u_1)}{v_0,v_1)} = \spro{u_0}{v_0} + \spro{u_1}{v_1}$ versehen. Auf $H\times H$ sei der Operator $J$ mit $J(v,w) = (-w,v)$ definiert. Dann ist zu jedem dicht definierten Operator $T$ mit Graphen $\mathcal G_T$ durch $\mathcal G_{T^*}=(J\mathcal G_T)^\perp$ ein Graph gegeben. Der zugeh\"orige Operator $T^*$ wird als zu $T$ \eIndex[Operator]{adjungiert} bezeichnet. Er ist immer abgeschlossen und es gilt
+\begin{equation}
+   \spro{Tu}{v} = \spro{u}{T^*v}
+\end{equation}
+f\"ur $u\in\mathcal D_T$ und $v\in\mathcal D_{T^*}$.
+
+\begin{thm}\label{thm:1:1.2}
+Sei $T$ ein dicht definierter Operator. Dann gilt $\mathcal R_T=H$ genau dann, wenn 
+$T^*$ beschränkt invertierbar ist.
+\end{thm}
+\begin{proof}
+Sei $\mathcal R_T=H$. Dann existiert zu jedem $u\in H$ ein $w\in H$ mit $Tw=u$. Damit folgt
+\begin{equation}
+   \spro{u}{v} = \spro{Tw}{v} = \spro{w}{T^*v}, \qquad |\spro{u}{v}| \le C_u \|T^*v\|
+\end{equation}
+f\"ur alle $u\in H$ und $v\in\mathcal D_{T^*}$ und mit dem Satz über die gleichmäßige Beschränktheit die Behauptung.
+
+Angenommen, $T^*$ erf\"ullt die Ungleichung \eqref{eq:1:1.6}. Dann ist der selbstadjungierte Operator $TT^*$ wegen
+\begin{equation}
+  \spro{TT^*v}{v} = \spro{T^*v}{T^*v} \ge C^{-2} \spro{v}{v}
+\end{equation}
+strikt positiv und stetig invertierbar. Dann ist aber $TT^* (TT^*)^{-1}  = I$ und somit $\mathcal R_T = H$.
+\end{proof}
+
+\begin{cor}\label{cor:1:1.3}
+Ein dicht definierter Operator $T$ besitzt eine Rechtsinverse $S$ genau dann, wenn $T^*$ beschränkt invertierbar ist.
+\end{cor}
+\begin{proof}
+Wenn $T$ eine Rechtsinverse $S$ besitzt, impliziert $RS=I$ schon $\mathcal R_T=I$ und mit obigem Satz folgt die beschränkte Invertierbarkeit von $T^*$. Gilt umgekehrt \eqref{eq:1:1.6}, so ist $S=T^*(TT^*)^{-1}$ das gesuchte. Da $T^*(TT^*)^{-1/2}$ eine Isometrie ist, ist $S$ stetig.
+\end{proof}
+
+\section{Differentialoperatoren} 
+Wir nutzen im folgenden Multiindexschreibweise. Für Multiindices $\alpha,\beta\in\mathbb N_0^n$ sei
+\begin{equation}
+|\alpha|=\sum_{j=1}^n \alpha_j,\qquad \alpha! = \prod_{j=1}^n \alpha_j!,\qquad (\alpha+\beta)_j=\alpha_j+\beta_j.
+\end{equation} 
+Weiter sei zu $\zeta\in\C^n$ durch
+\begin{equation}
+   \zeta^\alpha = \prod_{j=1}^n \zeta_j^{\alpha_j}
+\end{equation}
+das Monom, sowie durch
+\begin{equation}
+   \D^\alpha = \prod_{j=1}^n \left(- \i \frac{\partial}{\partial x_j}\right)^{\alpha_j}
+\end{equation}
+ein formaler Differentialoperator definiert. Sei nun $\Omega\subseteq\R^n$ ein Gebiet. Ein Differentialoperator der Ordnung $m$ ist ein formaler Ausdruck der Form
+\begin{equation}
+   \mathcal P = \sum_{|\alpha|\le m} a_\alpha(x) \D^\alpha
+\end{equation}
+mit Koeffizientenfunktionen $a_\alpha\in \rmC^\infty(\Omega)$. Er agiert in nat\"urlicher Weise auf $u\in\rmC^\infty_0(\Omega)$ (oder auf $u\in\mathscr D'(\Omega)$ in distributionellem Sinne).
+
+Versieht man $\rmC_0^\infty(\Omega)$ durch
+\begin{equation}
+    \spro{u}{v} = \int_{\Omega} u(x) \overline{v(x)} \d x
+\end{equation}
+mit einem $\rmL^2$-Innenprodukt, so kann man zu $\mathcal P$ den formal adjungierten Operator $\overline{\mathcal P}$ betrachten. Dieser erf\"ullt
+\begin{equation}
+   \forall u,v\in\rmC_0^\infty(\Omega)\quad:\quad \spro{\mathcal Pu}{v}=\spro{u}{\mathcal{\overline P}v}
+\end{equation}
+und ist durch
+\begin{equation}
+  \overline{ \mathcal P}v(x) = \sum_{|\alpha|\le m}  \D^\alpha\big(\overline{a_\alpha(x)}v(x)\big)
+\end{equation}
+gegeben.
+
+\begin{lem}
+Der Differentialoperator $\mathcal P$ versehen mit Definitionsbereich
+\begin{equation}
+  \mathcal D= \{ u\in\rmC^\infty(\Omega) \cap \rmL^2(\Omega) :  \mathcal Pu\in\rmL^2(\Omega) \}
+\end{equation}
+ist $\rmL^2$-$\rmL^2$-abschließbar.
+\end{lem}
+\begin{proof}
+Sei $u_n\in\mathcal D$ eine Folge mit $u_n\to 0$ in $\rmL^2(\Omega)$ und $\mathcal Pu_n \to w\in\rmL^2(\Omega)$. Dann gilt f\"ur jedes 
+$v\in\rmC^\infty_0(\Omega)$
+\begin{equation}
+ \spro{w}{v}=\lim_{n\to\infty}   \spro{\mathcal Pu_n}{v} = \lim_{n\to\infty} \spro{u_n}{\overline{\mathcal P}w} = 0
+\end{equation}
+somit $w=0$.
+\end{proof}
+
+Die Aussage gilt allgemeiner, es ergibt sich $\rmL^p$-$\rmL^q$-, $\rmC$-$\rmC$ sowie $\rmL^p$-$\rmC$-Abschließbarkeit bei entsprechend gewähltem $\mathcal D$. Insbesondere ist $\mathcal P$ mit Definitionsbereich $\rmC^\infty_0(\Omega)$ abschließbar als Operator auf $\rmL^2(\Omega)$. 
+
+\begin{df} 
+Sei $\mathcal P$ ein Differentialausdruck und $\Omega$ ein Gebiet. Dann wird der $\rmL^2$-$\rmL^2$-Abschluß des durch $\mathcal P$ auf $\rmC_0^\infty(\Omega)$ definierten Operators mit $P_0$ und als \eIndex[Differentialoperator]{minimaler Operator} zum Differentialausdruck $\mathcal P$ und Gebiet $\Omega$ bezeichnet. 
+Weiterhin heißt $P := (\overline P_0)^*$ \eIndex[Differentialoperator]{maximaler Operator} zu $\mathcal P$ und $\Omega$.
+\end{df}
+
+Der so definierte maximale Operator besitzt den Definitionsbereich
+\begin{equation}
+   \mathcal D_P = \{ u\in\rmL^2(\Omega) : \mathcal Pu \in\rmL^2(\Omega)\},
+\end{equation}
+wobei die Anwendung von $\mathcal P$ im distributionellen Sinne zu verstehen ist. Wir betrachten ein einfaches Beispiel. Dazu sei $\Omega=(a,b)\subseteq\R$ ein Intervall und $\mathcal P = \D^2 = - \partial^2$ die Zuordnung der zweiten Ableitung. Dann ist besitzt der minimale Operator den Definitionsbereich
+\begin{equation}
+    \{ u\in\rmH^2(\Omega) :  u(a)=\partial u(a)=u(b)=\partial u(b) = 0\} = \rmH^2_0(\Omega),
+\end{equation}
+also den Sobolevraum $\rmH^2_0(\Omega)$ der am Rand verschwindenden Funktionen, und der maximale Operator gerade den gesamten Sobolevraum $\rmH^2(\Omega)$ als Definitionsbereich. Im Falle h\"oherer Raumdimensionen wird der Definitionsbereich des maximalen Operators in der Regel echt größer als der Sobolevraum passender Ordnung sein.
+Der Unterschied zwischen minimalen und maximalen Operatoren besteht in der Wahl von Randbedingungen. 
+
+\begin{thm}
+Die Gleichung $Pu=f$ hat genau dann für jedes $f\in\rmL^2(\Omega)$ eine L\"osung $u\in\mathcal D_{P}$, wenn $\overline P_0$ beschränkt invertierbar ist, also wenn f\"ur den formal adjungierten Differentialausdruck
+\begin{equation}
+  \forall u\in\rmC^\infty_0(\Omega)\quad:\quad   \|u\| \le C \| \overline{\mathcal P} u \|
+\end{equation}
+gilt.
+\end{thm}
+\begin{proof}
+Folgt aus Satz~\ref{thm:1:1.2} in Verbindung mit der Definition des maximalen Operators $P$.
+\end{proof}
+
+Solche und allgemeinere Ungleichungen stehen im Zusammenhang mit Enthaltentseinsbeziehungen zwischen Definitionsbereichen minimaler Operatoren. Dazu definieren wir zuerst: 
+\begin{df}
+Seien $\mathcal P$ und $\mathcal Q$ Differentialausdrücke und $\Omega$ ein Gebiet. Gilt dann $\mathcal D_{P_0}\subseteq \mathcal D_{Q_0}$, so heiße $\mathcal P$ \eIndex[Differentialoperator]{stärker} als $\mathcal Q$ bzw. $\mathcal Q$ \eIndex[Differentialoperator]{schwächer} als $\mathcal P$. Gilt $\mathcal D_{P_0}=\mathcal D_{Q_0}$, so heißen beide \eIndex[Differentialoperator]{gleich stark}.
+\end{df}
+Die  Definition hängt im Falle konstanter Koeffizienten nicht von der Wahl des Gebietes ab. Im Falle variabler Koeffizienten (siehe später) sind die Gebiete hinreichend klein zu wählen um eine sinnvolle Definition erhalten.
+
+\begin{lem}
+Seien $\mathcal P$ und $\mathcal Q$ Differentialausdr\"ucke auf einem Gebiet $\Omega$. 
+\begin{enumerate}
+\item[(1)]
+$\mathcal Q$ ist genau dann schwächer als $\mathcal P$, wenn
+\begin{equation}
+    \forall u\in\rmC^\infty_0(\Omega)\quad:\quad \|\mathcal Qu\|^2 \le C \big( \|\mathcal Pu\|^2 + \|u\|^2 \big)
+\end{equation}
+gilt.
+\item[(2)] $Q_0 u$ besitzt für jedes $u\in\mathcal D_{P_0}$ genau dann einen stetigen Repräsentanten, wenn
+\begin{equation}
+    \forall u\in\rmC^\infty_0(\Omega)\quad:\quad  \sup_{x\in\Omega} |\mathcal Qu(x) |^2 \le C \big( \|\mathcal Pu\|^2 + \|u\|^2 \big)
+\end{equation}
+gilt.
+\end{enumerate}
+\end{lem}
+\begin{proof}
+(1)\quad Die Hinrichtung folgt direkt aus Satz~\ref{thm:1:1.1}. Für die Rückrichtung nehmen wir an, die Ungleichung gilt. Dann existiert zu $u\in\mathcal D_{P_0}$ eine Folge $u_n\in\rmC_0^\infty(\Omega)$ mit $u_n\to u$ und $\mathcal P u_n\to P_0 u$ in $\rmL^2(\Omega)$. Dann ist aber $\mathcal Q(u_n-u_m)$ Cauchy und da $Q_0$ abgeschlossen ist folgt $u\in\mathcal D_{Q_0}$. $\bullet$\qquad
+(2)\quad Für die Hinrichtung betrachtet man $\mathcal Q$ als Operator $\mathcal G_{P_0}\to\rmL^\infty(\Omega)$ und wendet Satz~\ref{thm:1:1.1} an. Für die Rückrichtung sei $u\in\mathcal D_{P_0}$ beliebig und $u_n\in\rmC_0^\infty(\Omega)$ eine Folge mit $u_n\to u$ und $\mathcal Pu_n\to P_0u$ in $\rmL^2(\Omega)$.
+Dann konvergiert $\mathcal Qu_n$ gleichmäßig und Behauptung folgt.
+\end{proof}
+
+\section{Randwertprobleme}
+Sei im folgenden $\mathcal P$ und $\Omega$ fixiert. Dann sind  $\mathcal G_P$ und $\mathcal G_{P_0}$ abgeschlossene Teilräume von $\rmL^2\times\rmL^2$. Da
+$\mathcal G_P\subseteq \mathcal G_{P_0}$ gilt, kann man den Quotientenraum
+\begin{equation}
+   \mathcal C = \mathcal G_P / \mathcal G_{P_0}
+\end{equation}
+betrachten. Dieser wird als \eIndex[Differentialoperator]{Cauchyraum} des Differentialausdrucks $\mathcal P$ auf dem Gebiet $\Omega$ bezeichnet. Für $u\in\mathcal D_P$ sei
+\begin{equation}
+     \Gamma u := [ (u,Pu) ]_{\mathcal G_{P_0}} \in \mathcal C
+\end{equation}
+das zugeordnete Cauchydatum. Man kann sich $\Gamma u$ als eine Charakterisierung der Randwerte von $u$ auf $\Omega$ vorstellen, unterscheiden sich zwei Funktionen $u$ und $v$ nur in einer kompakten Teilmenge $\Omega' \Subset \Omega$, so gilt $\Gamma u=\Gamma v$.
+Sei nun $B\subseteq\mathcal C$ ein linearer Unterraum. Dann heißt 
+\begin{equation}
+    Pu = f,\qquad \Gamma u\in B,
+\end{equation}
+f\"ur gegebenes $f\in\rmL^2(\Omega)$ das zugeordnete \eIndex{Randwertproblem} mit homogener \eIndex[Randwertproblem]{Randbedingung} $\Gamma u\in B$. Die Randbedingung 
+$B$ bestimmt damit eine Einschr\"ankung $\widehat P$ des Operators $P$ auf den Definitionsbereich
+\begin{equation}
+    \mathcal D_{\widehat P} = \{ u \in \mathcal D_P : \Gamma u\in B \}.
+\end{equation}
+Das Randwertproblem heißt \eIndex[Randwertproblem]{korrekt gestellt}, falls $\widehat P$ stetig invertierbar ist.
+
+\begin{thm}
+Zu einem Differentialausdruck $\mathcal P$ existieren auf einem Gebiet $\Omega$ genau dann korrekt gestellte Randwertprobleme, wenn $P_0$ und $\overline P_0$
+beschr\"ankt invertierbar sind.
+\end{thm} 
+\begin{proof} 
+Angenommen, es existiert ein korrekt gestelltes homogenes Randwertproblem $\widehat P$. Da $P_0\subseteq \widehat P$ gilt, muß dann $P_0^{-1}$ beschränkt sein. Weiterhin ist $\widehat P^{-1}$ rechtsinvers zu $P$, damit muß $\overline P_0^{-1}$ nach Korollar~\ref{cor:1:1.3} beschränkt sein.
+
+Seien nun $P_0$ und $\overline P_0$ beschränkt invertierbar. Da $P_0^{-1}$ beschr\"ankt ist, ist $\mathcal R_{P_0}\subseteq \rmL^2(\Omega)$ abgeschlossen.  Bezeichne nun $\pi$ den Orthogonalprojektor auf $\mathcal R_{P_0}$. Ist nun $S$ eine Rechtsinverse zu $P$ (die nach  Korollar~\ref{cor:1:1.3} existiert), so gilt für
+den durch  
+\begin{equation}
+  Tf = P_0^{-1} \pi f + S(I-\pi) f,\qquad f\in\rmL^2(\Omega) 
+\end{equation}
+definierten Operator $T$ nach Konstruktion $PT f = \pi f + (I-\pi) f = f$ und $T$ besitzt eine Inverse $\widehat P \subseteq P$. Weiter ist $T\supset P_0^{-1}$ und $\widehat P\supset P_0$ , so daß $P_0\subseteq \widehat P\subseteq P$. Da $\widehat P^{-1}$ beschränkt und auf ganz $\rmL^2(\Omega)$ definiert ist, ist der Satz bewiesen.
+\end{proof}
+
+\section{Differentialoperatoren mit konstanten Koeffizienten}
+Im folgenden sollen vorerst nur Operatoren mit konstanten Koeffizienten betrachtet werden. Diese gehörden zu Differentialausdrücken der Form
+\begin{equation}
+     P(\D) = \sum_{|\alpha|\le m} a_\alpha \D^\alpha
+\end{equation}
+mit $a_\alpha\in\C$. Für diese gilt 
+\begin{equation}
+     P(\D) \e^{\i x\cdot\zeta}  =  P(\zeta) \e^{\i x\cdot\zeta}
+\end{equation}
+für alle $\zeta\in\C^n$ und mit $x\cdot\zeta = \sum_{j=1}^n x_j\zeta_j$. Das Polynom $ P(\zeta)$ heißt das \eIndex[Differentialoperator]{Symbol} des Differentialausdrucks $\mathcal P(\D)$. Ist nun $\Omega\subseteq\R^n$ beschränkt und $u\in\rmC_0^\infty(\Omega)$, so ist die Fourier--Laplace-transformierte von $u$
+\begin{equation}
+    \widehat u (\zeta) = (2\pi)^{-n/2} \int_\Omega \e^{-\i x\cdot\zeta } u(x) \d x,\qquad \zeta\in\C^n
+\end{equation}
+eine ganze Funktion auf $\C^n$. Die Anwendung des Operators $ P(\D)$ entspricht im Fourierbild der Multiplikation mit $ P(\zeta)$. 
+
+Eine erste Anwendung ist folgender Satz. Ein Beweis ergibt sich später nochmals in allgemeinerer Form.
+
+\begin{thm}\label{thm:1:1.8}
+Der Operator $P_0$ ist beschränkt invertierbar, es existiert also eine Konstante $C$ mit
+\begin{equation}
+   \forall u\in\rmC_0^\infty(\Omega)\quad:\quad \|u\|\le C\| P(\D) u\|.
+\end{equation}
+\end{thm}
+
+Der Beweis basiert auf folgendem Lemma der Funktionentheorie. 
+\begin{lem}
+Sei $g\in\mathfrak A(\overline{\mathbb D})$ analytisch in einer Umgebung der Kreisscheibe $|z|\le 1$  und $r$ ein Polynom mit höchstem Koeffizienten $A$. Dann gilt
+\begin{equation}
+   |Ag(0)|^2 \le (2\pi)^{-1} \int_0^{2\pi} |g(\e^{\i\theta}) r(\e^{\i\theta})|^2 \d\theta.
+\end{equation}
+\end{lem}
+\begin{proof}
+Seien $z_j$ die Nullstellen von $r$ innerhalb der Kreisscheibe $|z|<1$ und
+\begin{equation}
+    r(z) = q(z) \prod_{j} \frac{z_j-z}{\overline{z_j}z-1}.
+\end{equation} 
+Dann gilt auf der Kreislinie $|r(z)|=|q(z)|$ und $q(z)$ ist analytisch in $\mathbb D$. Also folgt
+\begin{equation}
+  (2\pi)^{-1} \int  |g(\e^{\i\theta}) r(\e^{\i\theta})|^2 \d\theta = (2\pi)^{-1} \int  |g(\e^{\i\theta}) q(\e^{\i\theta})|^2 \d\theta \ge |g(0)q(0)|^2.
+\end{equation}
+Nun ist aber $q(0)/A$ gerade das Produkt der Nullstellen von $r(z)$ außerhalb des Einheitskreises und damit $|q(0)|\ge |A|$ und das Lemma folgt.
+\end{proof}
+
+\begin{proof}[Beweis zu Satz~\ref{thm:1:1.8}]
+Bezeichne $p(\zeta)$ den homogenen Hauptteil von $P(\zeta)$. Sei weiter $\xi_0\in\R^n$ mit $p(\xi_0)\ne0$. Wendet man nun obiges Lemma auf die Funktion
+$\widehat u(\zeta+ t\xi_0)$ und das Polynom $P(\zeta+t\xi_0)$ (verstanden als Funktionen von $t$) an, so erhält man
+\begin{equation}
+   |\widehat u(\zeta) p(\xi_0)|^2 \le (2\pi)^{-1} \int |\widehat u(\zeta+\e^{\i\theta} \xi_0) P(\zeta+\e^{\i\theta}\xi_0)|^2 \d\theta.
+\end{equation}
+Speziell mit $\zeta=\xi\in\R^n$ und Integration bezüglich $\xi$ ergibt sich
+\begin{align}
+   |p(\xi_0)|^2 \int |\widehat u(\xi)|^2 \d\xi &\le (2\pi)^{-1} \iint |\widehat u(\xi+\e^{\i\theta}\xi_0) P(\xi+\e^{\i\theta}\xi_0)|^2 \d\xi\d\theta \notag\\
+   &= (2\pi)^{-1} \iint |\widehat u(\xi+\i\xi_0\sin\theta) P(\xi+\i\xi_0\sin\theta)|^2 \d\xi\d\theta
+\end{align} 
+und unter Ausnutzung der Parseval-Identität
+\begin{equation}
+   |p(\xi_0)|^2 \int |u(x)|^2\d x \le (2\pi)^{-1} \iint |P(D) u(x)|^2 \e^{2x\cdot\xi_0 \sin\theta} \d x\d\theta
+\end{equation}
+und mit $C=\sup_{x\in\Omega} \e^{|x\cdot\xi_0|} /|p(\xi_0)|$ folgt die Behauptung.
+\end{proof}
