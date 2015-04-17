@@ -38,7 +38,7 @@ Ist $T$ injektiv, so bestimmt $\mathcal G_{T^{-1}} = \{ (w,v) : (v,w)\in\mathcal
 \end{equation}
 mit einer von $u$ unabhängigen Konstanten $C$, so sagen wir $T$ ist \eIndex[Operator]{beschränkt invertierbar}.
 
-Im folgenden sei $V=W=H$ ein Hilbertraum. Zur Vereinfachung der Notation verwenden wir immer $\|\cdot\|$ f\"ur die Norm in $H$. Weiter sei das Innenprodukt in $H$ durch $\spro{u}{v}$ bezeichnet und $H\times H$ mit dem entsprechenden Innenprodukt $\spro{(u_0,u_1)}{v_0,v_1)} = \spro{u_0}{v_0} + \spro{u_1}{v_1}$ versehen. Auf $H\times H$ sei der Operator $J$ mit $J(v,w) = (-w,v)$ definiert. Dann ist zu jedem dicht definierten Operator $T$ mit Graphen $\mathcal G_T$ durch $\mathcal G_{T^*}=(J\mathcal G_T)^\perp$ ein Graph gegeben. Der zugeh\"orige Operator $T^*$ wird als zu $T$ \eIndex[Operator]{adjungiert} bezeichnet. Er ist immer abgeschlossen und es gilt
+Im folgenden sei $V=W=H$ ein Hilbertraum. Zur Vereinfachung der Notation verwenden wir immer $\|\cdot\|$ f\"ur die Norm in $H$. Weiter sei das Innenprodukt in $H$ durch $\spro{u}{v}$ bezeichnet und $H\times H$ mit dem entsprechenden Innenprodukt $\spro{(u_0,u_1)}{(v_0,v_1)} = \spro{u_0}{v_0} + \spro{u_1}{v_1}$ versehen. Auf $H\times H$ sei der Operator $J$ mit $J(v,w) = (-w,v)$ definiert. Dann ist zu jedem dicht definierten Operator $T$ mit Graphen $\mathcal G_T$ durch $\mathcal G_{T^*}=(J\mathcal G_T)^\perp$ ein Graph gegeben. Der zugeh\"orige Operator $T^*$ wird als zu $T$ \eIndex[Operator]{adjungiert} bezeichnet. Er ist immer abgeschlossen und es gilt
 \begin{equation}
    \spro{Tu}{v} = \spro{u}{T^*v}
 \end{equation}
@@ -66,7 +66,7 @@ strikt positiv und stetig invertierbar. Dann ist aber $TT^* (TT^*)^{-1}  = I$ un
 Ein dicht definierter Operator $T$ besitzt eine Rechtsinverse $S$ genau dann, wenn $T^*$ beschränkt invertierbar ist.
 \end{cor}
 \begin{proof}
-Wenn $T$ eine Rechtsinverse $S$ besitzt, impliziert $RS=I$ schon $\mathcal R_T=I$ und mit obigem Satz folgt die beschränkte Invertierbarkeit von $T^*$. Gilt umgekehrt \eqref{eq:1:1.6}, so ist $S=T^*(TT^*)^{-1}$ das gesuchte. Da $T^*(TT^*)^{-1/2}$ eine Isometrie ist, ist $S$ stetig.
+Wenn $T$ eine Rechtsinverse $S$ besitzt, impliziert $RS=I$ schon $\mathcal R_T=H$ und mit obigem Satz folgt die beschränkte Invertierbarkeit von $T^*$. Gilt umgekehrt \eqref{eq:1:1.6}, so ist $S=T^*(TT^*)^{-1}$ das gesuchte. Da $T^*(TT^*)^{-1/2}$ eine Isometrie ist, ist $S$ stetig.
 \end{proof}
 
 \section{Differentialoperatoren} 
@@ -113,7 +113,7 @@ ist $\rmL^2$-$\rmL^2$-abschließbar.
 Sei $u_n\in\mathcal D$ eine Folge mit $u_n\to 0$ in $\rmL^2(\Omega)$ und $\mathcal Pu_n \to w\in\rmL^2(\Omega)$. Dann gilt f\"ur jedes 
 $v\in\rmC^\infty_0(\Omega)$
 \begin{equation}
- \spro{w}{v}=\lim_{n\to\infty}   \spro{\mathcal Pu_n}{v} = \lim_{n\to\infty} \spro{u_n}{\overline{\mathcal P}w} = 0
+ \spro{w}{v}=\lim_{n\to\infty}   \spro{\mathcal Pu_n}{v} = \lim_{n\to\infty} \spro{u_n}{\overline{\mathcal P}v} = 0
 \end{equation}
 somit $w=0$.
 \end{proof}
@@ -148,7 +148,7 @@ Folgt aus Satz~\ref{thm:1:1.2} in Verbindung mit der Definition des maximalen Op
 \end{proof}
 
 Solche und allgemeinere Ungleichungen stehen im Zusammenhang mit Enthaltentseinsbeziehungen zwischen Definitionsbereichen minimaler Operatoren. Dazu definieren wir zuerst: 
-\begin{df}
+\begin{df}\label{df:1:1.2}
 Seien $\mathcal P$ und $\mathcal Q$ Differentialausdrücke und $\Omega$ ein Gebiet. Gilt dann $\mathcal D_{P_0}\subseteq \mathcal D_{Q_0}$, so heiße $\mathcal P$ \eIndex[Differentialoperator]{stärker} als $\mathcal Q$ bzw. $\mathcal Q$ \eIndex[Differentialoperator]{schwächer} als $\mathcal P$. Gilt $\mathcal D_{P_0}=\mathcal D_{Q_0}$, so heißen beide \eIndex[Differentialoperator]{gleich stark}.
 \end{df}
 Die  Definition hängt im Falle konstanter Koeffizienten nicht von der Wahl des Gebietes ab. Im Falle variabler Koeffizienten (siehe später) sind die Gebiete hinreichend klein zu wählen um eine sinnvolle Definition erhalten.
@@ -177,7 +177,7 @@ Dann konvergiert $\mathcal Qu_n$ gleichmäßig und Behauptung folgt.
 
 \section{Randwertprobleme}
 Sei im folgenden $\mathcal P$ und $\Omega$ fixiert. Dann sind  $\mathcal G_P$ und $\mathcal G_{P_0}$ abgeschlossene Teilräume von $\rmL^2\times\rmL^2$. Da
-$\mathcal G_P\subseteq \mathcal G_{P_0}$ gilt, kann man den Quotientenraum
+$\mathcal G_{P_0}\subseteq \mathcal G_P$ gilt, kann man den Quotientenraum
 \begin{equation}
    \mathcal C = \mathcal G_P / \mathcal G_{P_0}
 \end{equation}
@@ -213,7 +213,7 @@ definierten Operator $T$ nach Konstruktion $PT f = \pi f + (I-\pi) f = f$ und $T
 \end{proof}
 
 \section{Differentialoperatoren mit konstanten Koeffizienten}
-Im folgenden sollen vorerst nur Operatoren mit konstanten Koeffizienten betrachtet werden. Diese gehörden zu Differentialausdrücken der Form
+Im folgenden sollen vorerst nur Operatoren mit konstanten Koeffizienten betrachtet werden. Diese gehören zu Differentialausdrücken der Form
 \begin{equation}
      P(\D) = \sum_{|\alpha|\le m} a_\alpha \D^\alpha
 \end{equation}
@@ -272,3 +272,8 @@ und unter Ausnutzung der Parseval-Identität
 \end{equation}
 und mit $C=\sup_{x\in\Omega} \e^{|x\cdot\xi_0|} /|p(\xi_0)|$ folgt die Behauptung.
 \end{proof}
+
+\begin{cor}\label{cor:1:1.10}
+Zu den Differentialoperatoren mit konstanten Koeffizienten existieren
+für beliebige Gebiete korrekt gestellte Randwertprobleme.
+\end{cor}
