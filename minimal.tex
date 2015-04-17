@@ -5,7 +5,7 @@ Als erste Etappe in diesem Abschnitt führen wir den Vergleich der Stärke (Defi
 zweier Differentialperatoren mit konstanten Koeffizienten,
 auf einen Vergleich der Symbole zurück.
 
-\section{Die Stärke von Ableitungspolynomen}
+\section{Die Stärke von Differentialausdrücken}
 
 Es seien in diesem Abschnitt stets $\mcP=P(D)$, $\mcQ=Q(D)$ und $\Om$ ein beschränktes Gebiet.
 Ziel ist die Charaktierisierung der Aussage ``$\mathcal Q$ ist schächer als $\mcP$''
@@ -124,7 +124,7 @@ F(D,\bar{D})u\bar{u}:=\sum_{\al,\be}a_{\al\be}(D^\al u)(\cc{D^\be u}),
 mit $a_{\al\be}\in\C$, genauer zu betrachten.
 Uns interessieren die Terme
 \begin{equation}\label{eq:2:qf}
-\int F(D,\bar{D})u(x)\bar{u}(x)\df x=\int F(\x,\x)\abs{\hat{u}(\x)}^2\df \x,
+\int F(D,\bar{D})u(x)\bar{u}(x)\d x=\int F(\x,\x)\abs{\hat{u}(\x)}^2\d \x,
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
 die quadratische Formen \eqref{eq:2:qf} definieren.
@@ -140,7 +140,7 @@ die gleiche Form \eqref{eq:2:qf} definieren.
 Sei $\Om$ ein beliebiges Gebiet.
 Die Gleichung
 \begin{equation}\label{eq:lem:2:qfsym}
-\int F(D,\bar{D})u\bar{u}\df x=0,
+\int F(D,\bar{D})u\bar{u}\d x=0,
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
 gilt genau dann, wenn $F(\x,\x)=0$, f.a.~$\x\in\R^n$.
@@ -150,7 +150,7 @@ Es gelte \eqref{eq:lem:2:qfsym}.
 Sei $u_\y(x):=u(x)\e^{\ska{x}{\y}}$ für ein festes $u\in C^\infi_0(\Om)$, $u\neq0$.
 Dann ist
 \begin{equation}
-\int F(D,\bar{D})u_\y\bar{u_\y}\df x=\int F(\x,\x)\abs{\hat{u}(\x-\y)}^2\df \y=\int F(\x+\y,\x+\y)\abs{\hat{u}(\x)}^2\df\x=:q(\y),
+\int F(D,\bar{D})u_\y\bar{u_\y}\d x=\int F(\x,\x)\abs{\hat{u}(\x-\y)}^2\d \y=\int F(\x+\y,\x+\y)\abs{\hat{u}(\x)}^2\d \x=:q(\y),
 \end{equation}
 für alle $\y\in\R^n$.
 Auf der rechten Seite steht wieder ein Polynom $q(\y)$ in $\y\in\R^n$
@@ -170,13 +170,13 @@ Unser Ziel ist es, Ableitungen von Ableitungspolynomen zu kontrollieren.
 Dazu betrachten wir Ableitungen quadratischer Differentialformen.
 Wir beginnen mit dem Ausdruck
 \begin{equation}
-\frac{\d}{\d x_k}\left[F(D,\bar{D})u\bar{u}\right]=\i\left[(D_k-\bar{D}_k)F(D,\bar{D})\right]u\bar{u}.
+\frac{\d}{\partial x_k}\left[F(D,\bar{D})u\bar{u}\right]=\i\left[(D_k-\bar{D}_k)F(D,\bar{D})\right]u\bar{u}.
 \end{equation}
 Für einen Vektor $\ul{G}=(G_k)_{k=1,\dots,n}$, bestehend aus quadratischen Differentialformen $G_k$,
 erhält man für die Divergenz die Formel
 \begin{subequations}
 \begin{equation}\label{eq:2.15a}
-\div(\ul{G}(D,\bar{D})u\bar{u})=\sum_{k=1}^n\frac{\d}{\d x_k}\left[G_k(D,\bar{D})u\bar{u}\right]=F(D,\bar{D})u\bar{u},
+\div(\ul{G}(D,\bar{D})u\bar{u})=\sum_{k=1}^n\frac{\d}{\partial x_k}\left[G_k(D,\bar{D})u\bar{u}\right]=F(D,\bar{D})u\bar{u},
 \end{equation}
 wobei
 \begin{equation}\label{eq:2.15b}
@@ -191,7 +191,7 @@ wenn $F(\x,\x)=0$ für alle $\x=0$.
 
 In diesem Fall gilt
 \begin{equation}\label{eq:2.16}
-G_k(\x,\x)=-\tfrac12\left.\frac{\d F(\x+\i\y,\x-\i\y)}{\d \y_k}\right\rvert_{\y=0}.
+G_k(\x,\x)=-\tfrac12\left.\frac{\partial F(\x+\i\y,\x-\i\y)}{\partial \y_k}\right\rvert_{\y=0}.
 \end{equation}
 \end{lem}
 \begin{proof}
@@ -225,7 +225,7 @@ Diese erfüllt offensichtlich $F(\x,\x)=0$, f.a.~$\x\in\R^n$.
 Nach Lemma \ref{lem:2:2.2} und der Formel \eqref{eq:2.16}
 erhalten wir, nach dem wir mit $-\i x_k$ multipliziert haben
 \begin{equation}\label{eq:2:2.22}
--\i x_kF(D,\bar{D})u\bar{u}=-\i x_k\sum_{k=1}^n\frac{\d}{\d x_k}\left[G_k(D,\bar{D})u\bar{u}\right],
+-\i x_kF(D,\bar{D})u\bar{u}=-\i x_k\sum_{k=1}^n\frac{\d}{\partial x_k}\left[G_k(D,\bar{D})u\bar{u}\right],
 \end{equation}
 mit
 \begin{equation}
@@ -236,13 +236,13 @@ G_k(\x,\x)=-\i\left(P^{(k)}(\x)Q(\x)-Q^{(k)}(\x)P(\x)\right),
 Integrieren wir die Gleichung \eqref{eq:2:2.22},
 so liefert eine partielle Integration auf rechten Seite den Term
 \begin{align}
-\i\int G_k(D,\bar{D})u\bar{u}\df x&=\int\left(P^{(k)}(D)Q(\bar{D})-P(D)Q^{(k)}(D)\right)u\bar{u}\df x\\
+\i\int G_k(D,\bar{D})u\bar{u}\d x&=\int\left(P^{(k)}(D)Q(\bar{D})-P(D)Q^{(k)}(D)\right)u\bar{u}\d x\\
 &=\spro{P^{(k)}(D)u}{\bar{Q}(D)u}-\spro{P(D)u}{\bar{Q}^{(k)}(D)u}.
 \end{align}
 Damit erhalten wir insgesamt
 \begin{equation}
 \spro{P^{(k)}(D)u}{\bar{Q}(D)u}
-=\spro{P(D)u}{\bar{Q}^{(k)}(D)u}-i\int x_k\left(P(D)u\cc{\bar{Q}(D)u}-Q(D)\cc{\bar{P}(D)u}\right)\df x.
+=\spro{P(D)u}{\bar{Q}^{(k)}(D)u}-i\int x_k\left(P(D)u\cc{\bar{Q}(D)u}-Q(D)\cc{\bar{P}(D)u}\right)\d x.
 \end{equation}
 Ohne Beschränkung der Allgemeinheit können wir das Gebiet $\Om$ so legen,
 dass $\abs{x_k}\leq B_k/2$ für alle $x_k\in\Om$.
@@ -332,7 +332,7 @@ hängt alles vom Term $\abs{\x^\tr A\x}^2$ ab.
 \begin{exa}\label{exa:schroe}
 Der Schrödingergleichung für ein freies Teilchen
 \begin{equation}
-\i\frac{\d}{\d t}\psi(x,t)=-\Lap\psi(x,t),\end{equation}
+\i\frac{\d}{\partial t}\psi(x,t)=-\Lap\psi(x,t),\end{equation}
 lässt sich das Symbol $P(\x)=\x^2_1+\dots+\x^2_{n-1}-\x_n$ zuordnen.
 
 Wir bestimmen alle Operatoren gleicher stärke.
@@ -365,7 +365,7 @@ wenn $a_n\neq0$.
 \begin{exa}\label{exa:heat}
 Der Wärmeleitungsgleichung
 \begin{equation}
-\Lap T(x,t)=\frac{\d}{\d t}T(x,t),
+\Lap T(x,t)=\frac{\d}{\partial t}T(x,t),
 \end{equation}
 entspricht das Symbol $P(\x)=\x^2_1+\dots+\x^2_{n-1}+\i\x_n$.
 
@@ -465,15 +465,15 @@ Nach Voraussetzung lässt sich zu jedem $\ep>0$ eine kompakte Menge $K$ wählen,
 so dass $\abs{Q(\x)}/\til{P}(\x)<\ep$ für $\x$ im Komplement $K^{\mathrm c}$ von $K$.
 Nun ist
 \begin{align}
-\int_{K^{\mathrm c}}\abs{Q(\x)}^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\df\x,
-&\leq\ep^2\int\til{P}(\x)^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\df\x\\
+\int_{K^{\mathrm c}}\abs{Q(\x)}^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\d \x,
+&\leq\ep^2\int\til{P}(\x)^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\d \x\\
 &=\ep^2\sum_{\al\in\N^n_0}\norm{P^{(\al)}(D)(u_{n^\pr}-u_{m^\pr})}^2,\label{eq:2:Kcsum}
 \end{align}
 und die Summe in \eqref{eq:2:Kcsum} ist nach Korollar \ref{cor:2:2.6}
 und \eqref{eq:2:PDb} beschränkt.
 Weiter gilt
 \begin{equation}
-\int_K\abs{Q(\x)}^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\df\x\to0,
+\int_K\abs{Q(\x)}^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\d \x\to0,
 \quad\text{falls}~n^\pr~\text{und}~m^\pr\to\infi,
 \end{equation}
 aufgrund der lokal-gleichmäßigen Konvergenz.
@@ -506,7 +506,7 @@ Wir zerlegen nun
 wobei
 \begin{equation}
 \de_{nm}=2\Re\left\{\sum_{\al,\be}\frac{Q^{(\al)}(\x_n)}{\til{P}(\x_n)}\frac{\cc{Q^{(\be)}(\x_n)}}{\til{P}(\x_n)}
-\frac1{\al!\be!}\int D^\al u\cc{D^\be u}\e^{\i\ska{x}{\x_n-\x_m}}\df x\right\}.
+\frac1{\al!\be!}\int D^\al u\cc{D^\be u}\e^{\i\ska{x}{\x_n-\x_m}}\d x\right\}.
 \end{equation}
 Um $\de_{nm}\to0$ zu erreichen wählen wir die Folge $\x_n$ (z.B.~durch Übergang zu einer Teilfolge) so,
 dass $\x_n-\x_m\to\infi$, für $n,m\to\infi$, $n\neq m$.
