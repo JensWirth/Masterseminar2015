@@ -1,2 +1,557 @@
 % !TEX root = main.tex
 \chapter{Minimale Operatoren}
+
+\def\N{\mathbb N}
+\def\R{\mathbb R}
+\def\C{\mathbb C}
+\def\mcP{\mathcal P}
+\def\mcQ{\mathcal Q}
+\def\mcR{\mathcal R}
+\def\pr{\prime}
+\def\tr{\mathrm{T}}
+\def\al{\alpha}
+\def\be{\beta}
+\def\de{\delta}
+\def\ep{\epsilon}
+\def\ga{\gamma}
+\def\x{\xi}
+\def\y{\eta}
+\def\z{\zeta}
+\def\Om{\Omega}
+\def\infi{\infty}
+\def\d{\partial}
+\def\df{\mathrm{d}}
+\def\til#1{\widetilde{#1}}
+\def\mto{\mapsto}
+\def\ti{\times}
+\def\abs#1{\lvert#1\rvert}
+\def\norm#1{\lVert#1\rVert}
+\def\Lap{\Delta}
+\def\cc#1{\overline{#1}}
+\def\ul#1{\underline{#1}}
+\def\ska#1#2{\langle#1,#2\rangle}
+\def\Ska#1#2{\left\langle#1,#2\right\rangle}
+\def\div{\operatorname{div}}
+\def\diam{\operatorname{diam}}
+
+Als erste Etappe in diesem Abschnitt führen wir den Vergleich der Stärke (Definition \ref{df:1:1.2})
+zweier Differentialperatoren mit konstanten Koeffizienten,
+auf einen Vergleich der Symbole zurück.
+
+\section{Die Stärke von Ableitungspolynomen}
+
+Es seien in diesem Abschnitt stets $\mcP=P(D)$, $\mcQ=Q(D)$ und $\Om$ ein beschränktes Gebiet.
+Ziel ist die Charaktierisierung der Aussage ``$\mathcal Q$ ist schächer als $\mcP$''
+durch eine Ungleichung der Form
+\begin{equation}\label{eq:2:1}
+\sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi,
+\end{equation}
+wobei $\til{P}$ und $\til{Q}$ geeignete Regularisierungen von $P$ und $Q$ sind.
+Beachte, dass die reellen Nullstellen von $P$ Probleme machen würden.
+
+Im eindimensionalen Fall ist bekannt, dass $Q(D)$ genau dann schwächer wie $P(D)$ ist,
+wenn $P(\z)$ höheren oder gleichen Grad wie $Q(\z)$ hat.
+%Zum Beweis genügt die mehrfache Anwendung des Theorems \ref{thm:1:1.8}
+%auf den Operator $D$ und der Dreiecksungleichung.
+Als Regularisierungen könnte man $\til{P}(\z)=\sqrt{1+\abs{P(\z)}^2}$
+und $\til{Q}(\z)=\sqrt{1+\abs{Q(\z)}^2}$ verwenden.
+Daß dies schon im zweidimensionalen nicht mehr Funktioniert
+hängt damit zusammen, dass $\abs{P^{(\al)}(\z)}/\sqrt{1+\abs{P(\z)}^2}$
+nun im allgemeinen nicht mehr beschränkt ist.
+Man betrachte zum Beispiel $P(\z)=\z_1\z_2$ und $P^{(1)}(\z)=\z_2$.
+
+Es zeigt sich, dass die Regularisierungen
+\begin{equation}\label{eq:2:2}
+\til{P}(\z):=\sqrt{\sum_\al\abs{P^{(\al)}(\z)}^2},
+\quad\text{f.a.}~\z\in\C^n,
+\end{equation}
+eine natürliche Wahl sind.
+Also der Absolutbetrag des Vektors $(P^{(\al)}(\z))_\al\in\C^M$.
+Beachte, dass für $\x\in\R^n$ der Ausdruck
+$\til{P}(\x)^2$ ein reelles Polynom ohne Nullstellen ist.
+
+\begin{thm}\label{thm:2:2.1}
+Der Differentialoperator $\mcQ$ ist genau dann schwächer wie $\mcP$,
+wenn
+\begin{equation}\label{eq:thm:2:2.1}
+\sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi
+\end{equation}
+erfüllt ist.
+\end{thm}
+
+Wir zeigen zunächst, wie in beiden Richtungen abgeschätzt wird.
+Die Hinrichtung ist straight forward,
+für die Rückrichtung benötigen wir ein Lemma,
+dass wir später beweisen.
+
+\begin{proof}
+{\em Hinrichtung}:
+Sei $\mcQ$ schwächer wie $\mcP$.
+Dann gilt für ein $C\in(0,\infi)$ die Ungleichung
+\begin{equation}\label{eq:2:4}
+\norm{\mcQ u}\leq C(\norm{\mcP u}^2+\norm{u}^2),\quad\text{f.a.}~u\in C^\infi_0(\Om).
+\end{equation}
+Für jedes $\x\in\R^n$ und ein festes $\psi\in C^\infi_0(\Om)$, $\psi\neq0$,
+definieren wir $\psi_\x(x):=\psi(x)\e^{\ska{x}{\x}}$, f.a.~$x\in\R^n$.
+Dies bringt durch die Formel von Leibniz die Ableitungen von $P(\x)$ ins Spiel
+\begin{equation}\label{eq:2.5}
+P(D)\psi_\x(x)=\e^{\ska{x}{\x}}\sum_\al P^{(\al)}(\x)\frac{D_\al\psi(x)}{\al!}.
+\end{equation}
+Schreiben wir kurz
+\begin{equation}\label{eq:2.6}
+\Psi_{\al\be}:=\frac1{\al!\be!}\spro{D_\al\psi}{D_\be\psi},
+\end{equation}
+so liest sich die Ungleichung \eqref{eq:2:4} mit $u=\psi_\x$ als
+\begin{equation}\label{eq:2.7}
+\sum_{\al,\be}Q^{(\al)}(\x)\bar{Q}^{(\be)}(\x)\Psi_{\al\be}
+\leq C\left(\sum_{\al,\be}P^{(\al)}(\x)\bar{P}^{(\be)}(\x)\Psi_{\al\be}+\Psi_{00}\right).
+\end{equation}
+Da $\psi_\x\in C^\infi_0$, $\psi_\x\neq0$ gilt, sind $\norm{\mcP\psi_\x}$ und $\norm{\mcQ\psi_\x}$ stets positiv.
+Somit ist $\left(\Psi_{\al\be}\right)_{\al,\be}$ auch die gram'sche Matrix
+eines Skalarproduktes auf einem $\C^M$.
+Es gibt also $\Psi_-,\Psi_+\in(0,\infi)$, so dass
+\begin{equation}\label{eq:2.8}
+\abs{\z}^2\Psi_-\leq\sum_{\al,\be}\z_\al\z_\be\Psi_{\al\be}\leq\abs{\z}^2\Psi_+,
+\quad\text{f.a.}~\z\in\C^M.
+\end{equation}
+Die Ungleichungen \eqref{eq:2.7} und \eqref{eq:2.8} kombinieren sich zu
+\begin{equation}\label{eq:2.9}
+\til{Q}(\x)^2\Psi_-C\leq\Psi_+\til{P}(\x)^2,
+\quad\text{f.a.}~\x\in\R^n,
+\end{equation}
+und dies ist gerade die Ungleichung \eqref{eq:thm:2:2.1}.
+
+{\em Rückrichtung}:
+Sei die Ungleichung \eqref{eq:thm:2:2.1} erfüllt, d.h.
+\begin{equation}\label{eq:2.10}
+\til{Q}(\x)\leq C\til{P}(\x),
+\quad\text{f.a.}~\x\in\R^M,
+\end{equation}
+mit $C\in(0,\infi)$.
+Wir schätzen wie folgt ab
+\begin{equation}\label{eq:2.11}
+\norm{Q(D)u}^2=\norm{Q\cdot\hat{u}}^2\leq C\norm{\til{P}\cdot\hat{u}}^2
+\leq C\sum_{\al}\norm{P^{(\al)}\cdot\hat{u}}^2=C\sum_\al\norm{P^{(\al)}(D)u}^2.
+\end{equation}
+Um den Beweis abzuschließen fehlte also nur noch eine Ungleichung
+\begin{equation}
+\norm{P^{(\al)}(D)u}\leq C_{\al,\mcP}\norm{P(D)u},
+\quad\text{f.a.}~u\in C^\infi_0(\Om),
+\end{equation}
+mit $C>0$.
+Diese werden wir mit der Methode der Energieintegrale herleiten (Korollar \ref{cor:2:2.5}).
+\end{proof}
+
+Der Beweis zeigt,
+dass in Formel \eqref{eq:thm:2:2.1} $\til{Q}$ durch $Q$ ersetzt werden kann.
+
+\section{Energieintegrale}
+
+Da wir eine Methode brauchen um Skalarprodukte
+mit verschiedenen Differentialoperatoren abzuschätzen,
+macht es Sinn, quadratische Differentialformen $F$, definiert durch
+\begin{equation}
+F(D,\bar{D})u\bar{u}:=\sum_{\al,\be}a_{\al\be}(D^\al u)(\cc{D^\be u}),
+\quad\text{f.a.}~u\in C^\infi_0(\Om),
+\end{equation}
+mit $a_{\al\be}\in\C$, genauer zu betrachten.
+Uns interessieren die Terme
+\begin{equation}\label{eq:2:qf}
+\int F(D,\bar{D})u(x)\bar{u}(x)\df x=\int F(\x,\x)\abs{\hat{u}(\x)}^2\df \x,
+\quad\text{f.a.}~u\in C^\infi_0(\Om),
+\end{equation}
+die quadratische Formen \eqref{eq:2:qf} definieren.
+Die Formen sind, wie die Gleichung zeigt,
+durch das Symbol $F(\z,\cc{\z})$, $\z\in\C^n$ bestimmt.
+Umgekehrt sind die reellen Werte des Symbols
+durch die Form \eqref{eq:2:qf} bestimmt,
+wie folgendes Lemma zeigt.
+Im allgemeinen können verschiedene Symbole
+die gleiche Form \eqref{eq:2:qf} definieren.
+
+\begin{lem}\label{lem:2:qfsym}
+Sei $\Om$ ein beliebiges Gebiet.
+Die Gleichung
+\begin{equation}\label{eq:lem:2:qfsym}
+\int F(D,\bar{D})u\bar{u}\df x=0,
+\quad\text{f.a.}~u\in C^\infi_0(\Om),
+\end{equation}
+gilt genau dann, wenn $F(\x,\x)=0$, f.a.~$\x\in\R^n$.
+\end{lem}
+\begin{proof}
+Es gelte \eqref{eq:lem:2:qfsym}.
+Sei $u_\y(x):=u(x)\e^{\ska{x}{\y}}$ für ein festes $u\in C^\infi_0(\Om)$, $u\neq0$.
+Dann ist
+\begin{equation}
+\int F(D,\bar{D})u_\y\bar{u_\y}\df x=\int F(\x,\x)\abs{\hat{u}(\x-\y)}^2\df \y=\int F(\x+\y,\x+\y)\abs{\hat{u}(\x)}^2\df\x=:q(\y),
+\end{equation}
+für alle $\y\in\R^n$.
+Auf der rechten Seite steht wieder ein Polynom $q(\y)$ in $\y\in\R^n$
+und nach Voraussetzung müssen dessen Koeffizienten verschwinden.
+Beachten wir, dass
+\begin{equation}
+(\x+\y)^\al=\sum_{\be+\ga=\al}\begin{pmatrix}\al\\\be,\ga\end{pmatrix}\x^\be\y^\ga=\y^\al+\dots
+\end{equation}
+so sehen wir, dass die führenden Terme von $q(\y)$
+bis auf den Faktor $\norm{u}^2\neq0$ den führenden Termen von $F(\x,\x)$ entsprechen.
+Wäre also $F(\x,\x)\neq0$, so hätten wir einen Widerspruch.
+
+Die Rückrichtung sahen wir bereits, siehe Gleichung \eqref{eq:2:qf}.
+\end{proof}
+
+Unser Ziel ist es, Ableitungen von Ableitungspolynomen zu kontrollieren.
+Dazu betrachten wir Ableitungen quadratischer Differentialformen.
+Wir beginnen mit dem Ausdruck
+\begin{equation}
+\frac{\d}{\d x_k}\left[F(D,\bar{D})u\bar{u}\right]=\i\left[(D_k-\bar{D}_k)F(D,\bar{D})\right]u\bar{u}.
+\end{equation}
+Für einen Vektor $\ul{G}=(G_k)_{k=1,\dots,n}$, bestehend aus quadratischen Differentialformen $G_k$,
+erhält man für die Divergenz die Formel
+\begin{subequations}
+\begin{equation}\label{eq:2.15a}
+\div(\ul{G}(D,\bar{D})u\bar{u})=\sum_{k=1}^n\frac{\d}{\d x_k}\left[G_k(D,\bar{D})u\bar{u}\right]=F(D,\bar{D})u\bar{u},
+\end{equation}
+wobei
+\begin{equation}\label{eq:2.15b}
+F(\z,\bar{\z})=\i\sum_{k=1}^n(\z_k-\bar{\z}_k)G_k(\z,\bar{\z})=-2\sum_{k=1}^n\y_kG_k(\z,\bar{\z}),
+\end{equation}
+\end{subequations}
+wenn wir $\z=\x+\i\y$ schreiben.
+\begin{lem}\label{lem:2:2.2}
+Ein Polynom $F(\z,\bar{\z})$ in $\z=\x+\i\y$ und $\bar{\z}=\x-\i\y$
+kann genau dann in der Form \eqref{eq:2.15b} dargestellt werden,
+wenn $F(\x,\x)=0$ für alle $\x=0$.
+
+In diesem Fall gilt
+\begin{equation}\label{eq:2.16}
+G_k(\x,\x)=-\tfrac12\left.\frac{\d F(\x+\i\y,\x-\i\y)}{\d \y_k}\right\rvert_{\y=0}.
+\end{equation}
+\end{lem}
+\begin{proof}
+Die Hinrichtung ist offensichtlich.
+Die Rückrichtung folgt aus der (reellen) Taylorentwicklung von $F(\x+\i\y,\x-\i\y)$ in $(\x,\y)\in\R^{2n}$.
+Der Satz von Taylor angewendet auf variables $\y\in\R^n$ und festes $\x\in\R^n$ liefert schließlich \eqref{eq:2.16}.
+\end{proof}
+
+Die Polynome $G_k(\z,\bar{\z})$, $\z\in\C^n$, sind als ganzes sind nicht eindeutig festgelegt.
+Doch aufgrund von Lemma \ref{lem:2:qfsym} stört das nicht.
+
+Mit Hilfe einer speziellen quadratischen Differentialformen und obiger Formel
+gewinnen wir folgende Ungleichung,
+mit der wir die Ableitungen der Differentialoperatoren kontrollieren können.
+
+\begin{lem}
+Sei $B_k:=\sup_{x_k,y_k\in\Om}\abs{x_k-y_k}<\infi$.
+Für Ableitungspolynome $P(D)$, $Q(D)$ gilt die Ungleichung
+\begin{equation}\label{eq:lem:2:2.4}
+\abs{\spro{P^{(k)}(D)u}{\bar{Q}(D)u}}\leq\norm{P(D)u}\left(\norm{\bar{Q}^{(k)}(D)u}+B_k\norm{\bar{Q}(D)u}\right),
+\quad\text{f.a.}~u\in C^\infi_0(\Om).
+\end{equation}
+\end{lem}
+
+\begin{proof}
+Wir betrachten die quadratische Differentialform mit dem Symbol
+\begin{equation}
+F(\z,\bar{\z}):=P(\z)Q(\bar{\z})-Q(\z)P(\bar{\z}).
+\end{equation}
+Diese erfüllt offensichtlich $F(\x,\x)=0$, f.a.~$\x\in\R^n$.
+Nach Lemma \ref{lem:2:2.2} und der Formel \eqref{eq:2.16}
+erhalten wir, nach dem wir mit $-\i x_k$ multipliziert haben
+\begin{equation}\label{eq:2:2.22}
+-\i x_kF(D,\bar{D})u\bar{u}=-\i x_k\sum_{k=1}^n\frac{\d}{\d x_k}\left[G_k(D,\bar{D})u\bar{u}\right],
+\end{equation}
+mit
+\begin{equation}
+G_k(\x,\x)=-\i\left(P^{(k)}(\x)Q(\x)-Q^{(k)}(\x)P(\x)\right),
+\quad\text{f.a.}~\x\in\R^n.
+\end{equation}
+
+Integrieren wir die Gleichung \eqref{eq:2:2.22},
+so liefert eine partielle Integration auf rechten Seite den Term
+\begin{align}
+\i\int G_k(D,\bar{D})u\bar{u}\df x&=\int\left(P^{(k)}(D)Q(\bar{D})-P(D)Q^{(k)}(D)\right)u\bar{u}\df x\\
+&=\spro{P^{(k)}(D)u}{\bar{Q}(D)u}-\spro{P(D)u}{\bar{Q}^{(k)}(D)u}.
+\end{align}
+Damit erhalten wir insgesamt
+\begin{equation}
+\spro{P^{(k)}(D)u}{\bar{Q}(D)u}
+=\spro{P(D)u}{\bar{Q}^{(k)}(D)u}-i\int x_k\left(P(D)u\cc{\bar{Q}(D)u}-Q(D)\cc{\bar{P}(D)u}\right)\df x.
+\end{equation}
+Ohne Beschränkung der Allgemeinheit können wir das Gebiet $\Om$ so legen,
+dass $\abs{x_k}\leq B_k/2$ für alle $x_k\in\Om$.
+Man beachte dass Ableitungspolynome mit Translationsoperatoren vertauschen.
+Schließlich erhalten wir mit Cauchy-Schwarz
+und der Dreiecksungleichung die Ungleichung \eqref{eq:lem:2:2.4}.
+\end{proof}
+
+\begin{cor}\label{cor:2:2.5}
+Ist $P(\x)$ vom Grad $m$ in $\x_k$, so gilt
+\begin{equation}\label{eq:cor:2:2.5}
+\norm{P^{(k)}(D)u}\leq mB_k\norm{P(D)u},
+\quad\text{f.a.}~u\in C^\infi_0(\Om).
+\end{equation}
+\end{cor}
+\begin{proof}
+Setzen wir $\bar{Q}(\x)=P^{(k)}(\x)$, so erhalten wir aus \eqref{eq:lem:2:2.4} die Ungleichung
+\begin{equation}\label{eq:2.28}
+\norm{P^{(k)}(D)u}^2\leq\norm{P(D)u}\left(\norm{P^{(kk)}(D)u}+B_k\norm{P^{(k)}(D)u}\right),
+\quad\text{f.a.}~u\in C^\infi_0(\Om).
+\end{equation}
+Wir gehen nun Induktiv in $m$ vor.
+Für $m=1$ ist $P^{(kk)}=0$, $P^{(k)}\neq0$ und somit entspricht die Gleichung \eqref{eq:cor:2:2.5}
+gerade der Gleichung \eqref{eq:lem:2:2.4} nach kürzen eines Faktors.
+Angenommen das Korollar ist für $m-1$ erfüllt,
+dann erhalten durch Kombination von \eqref{eq:2.28} und \eqref{eq:cor:2:2.5}
+\begin{equation}
+\norm{P^{(k)}(D)u}^2\leq\norm{P(D)u}\left((m-1)B_k\norm{P^{(k)}(D)u}+B_k\norm{P^{(k)}(D)u}\right),
+\end{equation}
+also ist auch der Induktionsschritt gezeigt.
+\end{proof}
+
+\begin{cor}\label{cor:2:2.6}
+Für festes beschränktes Gebiet $\Om$ und beliebiges $\al\in\N^n_0$ gilt
+\begin{equation}
+\norm{P^{(\al)}(D)u}\leq C_\al\norm{P(D)u},
+\quad\text{f.a.}~u\in C^\infi_0(\Om),
+\end{equation}
+mit $C_\al=m(m-1)\cdots(m-\abs{\al})B^\al$, wobei $B^\al=\prod_{l=1}^n B^{\al_l}_l$.
+Die Konstante $C_\al$ hängt also nur vom Grad $m$ von $P(\x)$,
+der Ableitungsordnung $\abs{\al}$ und der Ausdehnung des Gebiets $\Om$ ab.
+\end{cor}
+
+\begin{proof}
+Mehrfache Anwendung von Korollar \ref{cor:2:2.5}.
+\end{proof}
+
+\section{Beispiele und spezielle Symbole}
+
+Wir betrachten drei instruktive klassische Differentialoperatoren zweiter Ordnung.
+
+\begin{exa}\label{exa:lap}
+Wir betrachten das zum Laplace-Operator $\Lap$
+korrespondierende Symbol $P(\x)=\x_1^2+\dots+\x_n^2$.
+Das regularisierte Symbol ist gegeben durch
+\begin{equation}
+\abs{\til{P}(\x)}^2=(\x^2_1+\dots+\x^2_n)^2+4(\x_1^2+\dots+\x_n^2)+4n.
+\end{equation}
+Beachten wir, dass stets $(a+b)^2\leq2(a^2+b^2)$ für $a,b\in\R$,
+so sehen wir, dass
+\begin{equation}
+\abs{\til{P}(\x)}^2\asymp(\x^2_1+\dots+\x^2_n)^2+1.
+\end{equation}
+Also ist der Laplaceoperator stärker wie alle Differentialoperatoren
+mit Symbolen von gleichem oder kleinerem Grad.
+Diese sind alle von der Form
+\begin{equation}
+Q(\x)=\x^\tr A\x+\ska{b}{\x}+c,
+\end{equation}
+mit einer Matrix $A\in\C^{n\ti n}$, $b\in\C^n$ und $c\in\C$,
+wobei wir $A^\tr=A$ annehmen können.
+Wir untersuchen, welche davon gleich stark wie der Laplaceoperator sind.
+Es ist
+\begin{align}
+\abs{\til{Q}(\x)}^2&=\abs{\x^\tr A\x+\ska{b}{\x}+c}^2+\sum_{k=1}^n\abs{2e^\tr_kA\x+b_k}^2
++4\sum_{1\leq k\leq l\leq n}\abs{a_{kk}}^2,\\
+&\asymp\abs{\x^\tr A\x}^2+\abs{\ska{b}{\x}}^2+\sum_{k=1}^n\abs{e^\tr_kA\x}^2+1.
+\end{align}
+Wegen
+\begin{equation}
+\frac{\abs{\ska{b}{\x}}^2+\sum_{k=1}^n\abs{e^\tr_kA\x}^2+1}{(\x^2_1+\dots+\x^2_n)^2+1}\to0,
+\quad\text{falls}~\x\to0
+\end{equation}
+hängt alles vom Term $\abs{\x^\tr A\x}^2$ ab.
+\end{exa}
+
+\begin{exa}\label{exa:schroe}
+Der Schrödingergleichung für ein freies Teilchen
+\begin{equation}
+\i\frac{\d}{\d t}\psi(x,t)=-\Lap\psi(x,t),\end{equation}
+lässt sich das Symbol $P(\x)=\x^2_1+\dots+\x^2_{n-1}-\x_n$ zuordnen.
+
+Wir bestimmen alle Operatoren gleicher stärke.
+Das Symbol $Q(\x)$ ist genau dann schwächer wie $P(\x)$,
+wenn
+\begin{equation}\label{eq:2:subschroe}
+\abs{Q(\x)}^2\apprle(\x^2_1+\dots+\x^2_{n-1}-\x_n)^2+\x^2_1+\dots+\x^2_{n-1}+1.
+\end{equation}
+Also hat $Q(\x)$ maximalen Grad 2 in $\x_1,\dots,\x_{n-1}$,
+Grad 1 in $\x_n$ und somit von der Form
+\begin{equation}
+Q(\x)=a_0+\sum^n_{k=1}a_k\x_k+\sum^n_{k,l=1}a_{kl}\x_k\x_l,
+\end{equation}
+mit $a_{nn}=0$.
+Wir betrachten die Gleichung \eqref{eq:2:subschroe}
+für spezielle Vektoren:
+\begin{equation}\label{eq:2:subschroespec}
+\abs{Q(\x)}^2\apprle(\x^2_1+\dots+\x^2_{n-1}+1),
+\quad\text{für alle}~\x\in\R^n~\text{mit}~\x_n=\x^2_1+\dots+\x^2_{n-1}.
+\end{equation}
+Da wir $\x_1,\dots,\x_{n-1}$ in \eqref{eq:2:subschroespec} frei wählen können folgt, dass
+\begin{equation}
+Q(\x)=a_0+\sum_{k=1}^{n-1}a_k\x_k+a_n(\x_n-\x^2_1-\dots-\x^2_{n-1}),
+\end{equation}
+mit beliebigen $a_0,a_1,\dots,a_n\in\C$.
+Es ist $Q(\x)$ genau dann gleich Stark wie $P(\x)$,
+wenn $a_n\neq0$.
+\end{exa}
+
+\begin{exa}\label{exa:heat}
+Der Wärmeleitungsgleichung
+\begin{equation}
+\Lap T(x,t)=\frac{\d}{\d t}T(x,t),
+\end{equation}
+entspricht das Symbol $P(\x)=\x^2_1+\dots+\x^2_{n-1}+\i\x_n$.
+
+Ein Symbol $Q(\x)$ ist genau dann stärker wie $P(\x)$, wenn
+\begin{equation}
+\abs{Q(\x)}^2\apprle(\x^2_1+\dots+\x^2_{n-1})^2+\x^2_1+\dots+\x^2_{n-1}+\x^2_n+1.
+\end{equation}
+Diese Ungleichung ist genau dann erfüllt, wenn
+\begin{equation}
+Q(\x)=a_0+\sum_{k=1}^na_k\x_k+\sum_{k,l=1}^{n-1}a_{kl}\x_k\x_l,
+\end{equation}
+mit beliebigen $a_{kl}\in\C$, $k,l=1,\dots,n-1$.
+Das Symbol $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
+wenn $a_n\neq0$ und die Matrix $(a_{kl})_{k,l=1,\dots,n-1}$ positiv ist
+(diese wird ohne Beschränkung der Allgemeinheit symmetrisch gewählt).
+\end{exa}
+
+\begin{exa}\label{exa:hyper}
+Als letztes Beispiel betrachten wir die Gleichung
+\begin{equation}
+\Lap_1u=\Lap_2u,
+\end{equation}
+mit $\Lap_1:=\d_1^2+\dots+\d_m^2$, $\Lap_2:=\d^2_{m+1}+\dots+\d^2_m$.
+Das korrespondierende Symbol ist $P(\x)=\x^2_1+\dots+\x^2_m-\x^2_{m+1}-\dots-\x^2_n$.
+
+Ein Symbol $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
+wenn
+\begin{equation}
+\abs{Q(\x)}^2\apprle(\x^2_1+\dots+\x^2_m-\x^2_{m+1}+\dots+\x^2_n)^2+\x^2_1+\dots+\x^2_n+1.
+\end{equation}
+Setzen wir wie in Beispiel \ref{exa:schroe} $\x^2_1+\dots+\x^2_m=\x^2_{m+1}+\dots+\x^2_n$,
+so erhalten wir für diese $\x$:
+\begin{equation}
+\abs{Q(\x)}^2\apprle\x^2_1+\dots+\x^2_n+1.
+\end{equation}
+Es folgt, dass $Q(\x)$ von der Form
+\begin{equation}
+Q(\x)=a_0+\sum_{k=1}^na_k\x^k+b(\x_1^2+\dots+\x^2_m-\x^2_{m+1}+\dots+\x^2_n),
+\end{equation}
+mit beliebigen $a_0,a_1,\dots,a_n,b\in\C$ sein muss
+und $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
+wenn $b\neq0$.
+\end{exa}
+
+\section{Weitere Vergleichsresultate}
+
+Sehr analog zu Satz \ref{thm:2:2.1} lassen sich die regularisierten
+Symbole $\til{P}$, $\til{Q}$ heranziehen
+um die Kompaktheit der Abbildung
+\begin{equation}\label{eq:2:map}
+\mcR_{P_0}\to\mcR_{Q_0},\quad P(D)u\mto Q(D)u,
+\end{equation}
+zu charakterisieren (falls sie existiert).
+Existiert die Abbildung \eqref{eq:2:map} und ist kompakt,
+so nennen wir $Q(D)$ relativ kompakt zu $P(D)$.
+Oben hatten wir charakterisiert,
+wann die Abbildung \eqref{eq:2:map} existiert und stetig ist.
+
+\begin{thm}
+Der Operator $Q(D)$ ist genau dann relativ kompakt zu $P(D)$,
+wenn
+\begin{equation}\label{eq:2:tozero}
+\frac{\til{Q}(\x)}{\til{P}(\x)}\to0,\quad\text{für}\quad\x\to\infi.
+\end{equation}
+\end{thm}
+\begin{proof}
+Sei die Gleichung \eqref{eq:2:tozero} erfüllt.
+Wir wählen eine beliebige Folge $u_n\in C^\infi_0(\Om)$,
+so dass 
+\begin{equation}\label{eq:2:PDb}
+\norm{P(D)u_n}\leq1.
+\end{equation}
+Wir zeigen, dass es eine Teilfolge $u_{n^\pr}$ gibt,
+so dass $Q(D)u_{n^\pr}$ konvergiert.
+Zunächst stellen wir fest, dass der Ausdruck $\til{Q}(\x)/\til{P}(\x)$
+stets lokal-beschränkt ist.
+Somit impliziert \eqref{eq:2:tozero} bereits \eqref{eq:thm:2:2.1}
+und nach Satz \ref{thm:2:2.1} ist damit
+\begin{equation}
+\norm{Q(D)u_n}\leq C,
+\quad\text{f.a.}~n\in\N,
+\end{equation}
+für ein $C\in(0,\infi)$.
+Nach Hölder und der Stetigkeit der Fouriertransformation
+von $L^1$ nach $L^\infi$ impliziert dies
+\begin{equation}
+\sqrt{2\pi}\norm{D^\al(Q(\x)u_n)}_\infi\leq\norm{x^\al Q(D)u_n}_1\leq\norm{Q(D)u_n}\norm{x^\al1_\Om}
+\leq\norm{Q(D)u_n}\sqrt{\abs{\Om}}\tfrac{B^\al}{2^{\abs{\al}}}.
+\end{equation}
+In Kombination mit dem Riemann-Lebesgue-Lemma folgt,
+dass alle Ableitungen von $Q(\x)\hat{u}_n(\x)$
+gleichmäßig beschränkt sind und im unendlichen abfallend.
+Insbesondere lässt sich eine lokal-gleichmäßig konvergente Teilfolge $Q(\x)\hat{u}_{n^\pr}(\x)$ auswählen.
+
+Wir zeigen, dass dies unser Kandidat ist.
+Nach Voraussetzung lässt sich zu jedem $\ep>0$ eine kompakte Menge $K$ wählen,
+so dass $\abs{Q(\x)}/\til{P}(\x)<\ep$ für $\x$ im Komplement $K^{\mathrm c}$ von $K$.
+Nun ist
+\begin{align}
+\int_{K^{\mathrm c}}\abs{Q(\x)}^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\df\x,
+&\leq\ep^2\int\til{P}(\x)^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\df\x\\
+&=\ep^2\sum_{\al\in\N^n_0}\norm{P^{(\al)}(D)(u_{n^\pr}-u_{m^\pr})}^2,\label{eq:2:Kcsum}
+\end{align}
+und die Summe in \eqref{eq:2:Kcsum} ist nach Korollar \ref{cor:2:2.6}
+und \eqref{eq:2:PDb} beschränkt.
+Weiter gilt
+\begin{equation}
+\int_K\abs{Q(\x)}^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\df\x\to0,
+\quad\text{falls}~n^\pr~\text{und}~m^\pr\to\infi,
+\end{equation}
+aufgrund der lokal-gleichmäßigen Konvergenz.
+Da $\ep>0$ beliebig gewählt werden konnte,
+impliziert dies die Konvergenz von $Q(D)u_{n^\pr}$ in $L^2$.
+
+Nehmen wir nun an $Q(D)$ ist kompakt relativ zu $P(D)$.
+Dazu weisen wir nach, dass aus $\x_n\to\infi$ die Konvergenz $\til{Q}(\x_n)/\til{P}(\x_n)\to0$ folgt.
+Wähle dazu $u\in C^\infi_0(\Om)$, $u\neq0$ fest und setze
+\begin{equation}
+u_n(x):=u(x)\frac{\e^{\i\ska{x}{\x_n}}}{\til{P}(\x_n)},\quad\text{f.a.}~u\in\R^n,
+\end{equation}
+für jedes $n\in\N$.
+Wendet man die Leibnizsche Formel auf $u_n(x)$ an,
+so erhält man
+\begin{equation}
+P(D)u_n(x)=\e^{\i\ska{x}{\x_n}}\sum_\al\frac{P^{(\al)}(\x_n)}{\til{P}(\x_n)}\frac{D^\al u(x)}{\al!}.
+\end{equation}
+Beachtet man, dass die Ausdrücke $P^{(\al)}/\til{P}$ stets beschränkt sind
+und wendet wieder einmal Korollar \ref{cor:2:2.6} an,
+so erhält man, dass
+\begin{equation}\label{eq:2:PDunb}
+\norm{P(D)u_n}\leq C,
+\end{equation}
+für ein $C\in(0,\infi)$.
+Wir zerlegen nun
+\begin{equation}\label{eq:2:kz}
+\norm{Q(D)u_n-Q(D)u_m}^2=\norm{Q(D)u_n}^2+\norm{Q(D)u_m}^2-\de_{nm},
+\end{equation}
+wobei
+\begin{equation}
+\de_{nm}=2\Re\left\{\sum_{\al,\be}\frac{Q^{(\al)}(\x_n)}{\til{P}(\x_n)}\frac{\cc{Q^{(\be)}(\x_n)}}{\til{P}(\x_n)}
+\frac1{\al!\be!}\int D^\al u\cc{D^\be u}\e^{\i\ska{x}{\x_n-\x_m}}\df x\right\}.
+\end{equation}
+Um $\de_{nm}\to0$ zu erreichen wählen wir die Folge $\x_n$ (z.B.~durch Übergang zu einer Teilfolge) so,
+dass $\x_n-\x_m\to\infi$, für $n,m\to\infi$, $n\neq m$.
+Der Faktor $D^\al u\cc{D^\be u}$ im Integral ist integrierbar.
+Da auch die Faktoren vor dem Integral nach Voraussetzung beschränkt sind,
+folgt $\de_{nm}\to0$ mit dem Riemann-Lebesgue-Lemma.
+
+Aufgrund von \eqref{eq:2:PDunb} können wir zu einer Teilfolge übergehen,
+so dass $Q(D)u_{n^\pr}$ konvergiert.
+Dann gilt wegen \eqref{eq:2:kz} auch
+\begin{equation}
+\norm{Q(D)u_{n^\pr}}^2=\sum_{\al,\be}\frac{\abs{Q(\x_{n^\pr})}^2}{\til{P}(\x_{n^\pr})^2}\Psi_{\al\be}\to0.
+\end{equation}
+Daraus folgt auch $\til{Q}(\x_{n^\pr})^2/\til{P}(\x_{n^\pr})^2\to0$.
+\end{proof}
