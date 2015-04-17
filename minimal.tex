@@ -62,11 +62,11 @@ Für jedes $\x\in\R^n$ und ein festes $\psi\in C^\infi_0(\Om)$, $\psi\neq0$,
 definieren wir $\psi_\x(x):=\psi(x)\e^{\ska{x}{\x}}$, f.a.~$x\in\R^n$.
 Dies bringt durch die Formel von Leibniz die Ableitungen von $P(\x)$ ins Spiel
 \begin{equation}\label{eq:2.5}
-P(\D)\psi_\x(x)=\e^{\ska{x}{\x}}\sum_\al P^{(\al)}(\x)\frac{D_\al\psi(x)}{\al!}.
+P(\D)\psi_\x(x)=\e^{\ska{x}{\x}}\sum_\al P^{(\al)}(\x)\frac{\D^\alpha\psi(x)}{\al!}.
 \end{equation}
 Schreiben wir kurz
 \begin{equation}\label{eq:2.6}
-\Psi_{\al\be}:=\frac1{\al!\be!}\spro{D_\al\psi}{D_\be\psi},
+\Psi_{\al\be}:=\frac1{\al!\be!}\spro{\D^\alpha\psi}{\D^\beta\psi},
 \end{equation}
 so liest sich die Ungleichung \eqref{eq:2:4} mit $u=\psi_\x$ als
 \begin{equation}\label{eq:2.7}
@@ -118,13 +118,13 @@ Da wir eine Methode brauchen um Skalarprodukte
 mit verschiedenen Differentialoperatoren abzuschätzen,
 macht es Sinn, quadratische Differentialformen $F$, definiert durch
 \begin{equation}
-F(D,\bar{D})u\bar{u}:=\sum_{\al,\be}a_{\al\be}(D^\al u)(\cc{D^\be u}),
+F(\D,\overline{\D})u\bar{u}:=\sum_{\al,\be}a_{\al\be}(\D^\alpha u)(\cc{\D^\beta u}),
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
 mit $a_{\al\be}\in\C$, genauer zu betrachten.
 Uns interessieren die Terme
 \begin{equation}\label{eq:2:qf}
-\int F(D,\bar{D})u(x)\bar{u}(x)\d x=\int F(\x,\x)\abs{\hat{u}(\x)}^2\d \x,
+\int F(\D,\overline{\D})u(x)\bar{u}(x)\d x=\int F(\x,\x)\abs{\hat{u}(\x)}^2\d \x,
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
 die quadratische Formen \eqref{eq:2:qf} definieren.
@@ -140,7 +140,7 @@ die gleiche Form \eqref{eq:2:qf} definieren.
 Sei $\Om$ ein beliebiges Gebiet.
 Die Gleichung
 \begin{equation}\label{eq:lem:2:qfsym}
-\int F(D,\bar{D})u\bar{u}\d x=0,
+\int F(\D,\overline{\D})u\bar{u}\d x=0,
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
 gilt genau dann, wenn $F(\x,\x)=0$, f.a.~$\x\in\R^n$.
@@ -150,7 +150,7 @@ Es gelte \eqref{eq:lem:2:qfsym}.
 Sei $u_\y(x):=u(x)\e^{\ska{x}{\y}}$ für ein festes $u\in C^\infi_0(\Om)$, $u\neq0$.
 Dann ist
 \begin{equation}
-\int F(D,\bar{D})u_\y\bar{u_\y}\d x=\int F(\x,\x)\abs{\hat{u}(\x-\y)}^2\d \y=\int F(\x+\y,\x+\y)\abs{\hat{u}(\x)}^2\d \x=:q(\y),
+\int F(\D,\overline{\D})u_\y\bar{u_\y}\d x=\int F(\x,\x)\abs{\hat{u}(\x-\y)}^2\d \y=\int F(\x+\y,\x+\y)\abs{\hat{u}(\x)}^2\d \x=:q(\y),
 \end{equation}
 für alle $\y\in\R^n$.
 Auf der rechten Seite steht wieder ein Polynom $q(\y)$ in $\y\in\R^n$
@@ -170,13 +170,13 @@ Unser Ziel ist es, Ableitungen von Ableitungspolynomen zu kontrollieren.
 Dazu betrachten wir Ableitungen quadratischer Differentialformen.
 Wir beginnen mit dem Ausdruck
 \begin{equation}
-\frac{\pd}{\partial x_k}\left[F(D,\bar{D})u\bar{u}\right]=\i\left[(D_k-\bar{D}_k)F(D,\bar{D})\right]u\bar{u}.
+\frac{\pd}{\partial x_k}\left[F(\D,\overline{\D})u\bar{u}\right]=\i\left[(\D_k-\overline{\D}_k)F(\D,\overline{\D})\right]u\bar{u}.
 \end{equation}
 Für einen Vektor $\ul{G}=(G_k)_{k=1,\dots,n}$, bestehend aus quadratischen Differentialformen $G_k$,
 erhält man für die Divergenz die Formel
 \begin{subequations}
 \begin{equation}\label{eq:2.15a}
-\div(\ul{G}(D,\bar{D})u\bar{u})=\sum_{k=1}^n\frac{\pd}{\partial x_k}\left[G_k(D,\bar{D})u\bar{u}\right]=F(D,\bar{D})u\bar{u},
+\div(\ul{G}(\D,\overline{\D})u\bar{u})=\sum_{k=1}^n\frac{\pd}{\partial x_k}\left[G_k(\D,\overline{\D})u\bar{u}\right]=F(\D,\overline{\D})u\bar{u},
 \end{equation}
 wobei
 \begin{equation}\label{eq:2.15b}
@@ -225,7 +225,7 @@ Diese erfüllt offensichtlich $F(\x,\x)=0$, f.a.~$\x\in\R^n$.
 Nach Lemma \ref{lem:2:2.2} und der Formel \eqref{eq:2.16}
 erhalten wir, nach dem wir mit $-\i x_k$ multipliziert haben
 \begin{equation}\label{eq:2:2.22}
--\i x_kF(D,\bar{D})u\bar{u}=-\i x_k\sum_{k=1}^n\frac{\pd}{\partial x_k}\left[G_k(D,\bar{D})u\bar{u}\right],
+-\i x_kF(\D,\overline{\D})u\bar{u}=-\i x_k\sum_{k=1}^n\frac{\pd}{\partial x_k}\left[G_k(\D,\overline{\D})u\bar{u}\right],
 \end{equation}
 mit
 \begin{equation}
@@ -236,7 +236,7 @@ G_k(\x,\x)=-\i\left(P^{(k)}(\x)Q(\x)-Q^{(k)}(\x)P(\x)\right),
 Integrieren wir die Gleichung \eqref{eq:2:2.22},
 so liefert eine partielle Integration auf rechten Seite den Term
 \begin{align}
-\i\int G_k(D,\bar{D})u\bar{u}\d x&=\int\left(P^{(k)}(\D)Q(\bar{D})-P(\D)Q^{(k)}(\D)\right)u\bar{u}\d x\\
+\i\int G_k(\D,\overline{\D})u\bar{u}\d x&=\int\left(P^{(k)}(\D)Q(\bar{D})-P(\D)Q^{(k)}(\D)\right)u\bar{u}\d x\\
 &=\spro{P^{(k)}(\D)u}{\bar{Q}(\D)u}-\spro{P(\D)u}{\bar{Q}^{(k)}(\D)u}.
 \end{align}
 Damit erhalten wir insgesamt
@@ -513,7 +513,7 @@ für ein $C\in(0,\infi)$.
 Nach Hölder und der Stetigkeit der Fouriertransformation
 von $L^1$ nach $L^\infi$ impliziert dies
 \begin{equation}
-\sqrt{2\pi}\norm{D^\al(Q(\x)u_n)}_\infi\leq\norm{x^\al Q(\D)u_n}_1\leq\norm{Q(\D)u_n}\norm{x^\al1_\Om}
+\sqrt{2\pi}\norm{\D^\alpha(Q(\x)u_n)}_\infi\leq\norm{x^\al Q(\D)u_n}_1\leq\norm{Q(\D)u_n}\norm{x^\al1_\Om}
 \leq\norm{Q(\D)u_n}\sqrt{\abs{\Om}}\tfrac{B^\al}{2^{\abs{\al}}}.
 \end{equation}
 In Kombination mit dem Riemann-Lebesgue-Lemma folgt,
@@ -551,7 +551,7 @@ für jedes $n\in\N$.
 Wendet man die Leibnizsche Formel auf $u_n(x)$ an,
 so erhält man
 \begin{equation}
-P(\D)u_n(x)=\e^{\i\ska{x}{\x_n}}\sum_\al\frac{P^{(\al)}(\x_n)}{\til{P}(\x_n)}\frac{D^\al u(x)}{\al!}.
+P(\D)u_n(x)=\e^{\i\ska{x}{\x_n}}\sum_\al\frac{P^{(\al)}(\x_n)}{\til{P}(\x_n)}\frac{\D^\alpha u(x)}{\al!}.
 \end{equation}
 Beachtet man, dass die Ausdrücke $P^{(\al)}/\til{P}$ stets beschränkt sind
 und wendet wieder einmal Korollar \ref{cor:2:2.6} an,
@@ -567,11 +567,11 @@ Wir zerlegen nun
 wobei
 \begin{equation}
 \de_{nm}=2\Re\left\{\sum_{\al,\be}\frac{Q^{(\al)}(\x_n)}{\til{P}(\x_n)}\frac{\cc{Q^{(\be)}(\x_n)}}{\til{P}(\x_n)}
-\frac1{\al!\be!}\int D^\al u\cc{D^\be u}\e^{\i\ska{x}{\x_n-\x_m}}\d x\right\}.
+\frac1{\al!\be!}\int \D^\alpha u\cc{\D^\beta u}\e^{\i\ska{x}{\x_n-\x_m}}\d x\right\}.
 \end{equation}
 Um $\de_{nm}\to0$ zu erreichen wählen wir die Folge $\x_n$ (z.B.~durch Übergang zu einer Teilfolge) so,
 dass $\x_n-\x_m\to\infi$, für $n,m\to\infi$, $n\neq m$.
-Der Faktor $D^\al u\cc{D^\be u}$ im Integral ist integrierbar.
+Der Faktor $\D^\alpha u\cc{\D^\beta u}$ im Integral ist integrierbar.
 Da auch die Faktoren vor dem Integral nach Voraussetzung beschränkt sind,
 folgt $\de_{nm}\to0$ mit dem Riemann-Lebesgue-Lemma.
 
