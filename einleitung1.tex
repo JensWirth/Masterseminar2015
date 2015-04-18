@@ -195,9 +195,10 @@ $B$ bestimmt damit eine Einschr\"ankung $\widehat P$ des Operators $P$ auf den D
 \begin{equation}
     \mathcal D_{\widehat P} = \{ u \in \mathcal D_P : \Gamma u\in B \}.
 \end{equation}
+Der so definierte Operator ist abgeschlossen genau dann, wenn $B$ abgeschlossen ist. Die Menge der abgeschlossenen Operatoren $\widehat P$ mit $P_0\subseteq\widehat P\subseteq P$ steht in Bijektion zu den abgeschlossenen Teilräumen des Cauchyraumes $\mathcal C$.
 Das Randwertproblem heißt \eIndex[Randwertproblem]{korrekt gestellt}, falls $\widehat P$ stetig invertierbar ist.
 
-\begin{thm}
+\begin{thm}[Vi\v{s}ik]
 Zu einem Differentialausdruck $\mathcal P$ existieren auf einem Gebiet $\Omega$ genau dann korrekt gestellte Randwertprobleme, wenn $P_0$ und $\overline P_0$
 beschr\"ankt invertierbar sind.
 \end{thm} 
@@ -210,6 +211,29 @@ den durch
   Tf = P_0^{-1} \pi f + S(I-\pi) f,\qquad f\in\rmL^2(\Omega) 
 \end{equation}
 definierten Operator $T$ nach Konstruktion $PT f = \pi f + (I-\pi) f = f$ und $T$ besitzt eine Inverse $\widehat P \subseteq P$. Weiter ist $T\supset P_0^{-1}$ und $\widehat P\supset P_0$ , so daß $P_0\subseteq \widehat P\subseteq P$. Da $\widehat P^{-1}$ beschränkt und auf ganz $\rmL^2(\Omega)$ definiert ist, ist der Satz bewiesen.
+\end{proof}
+
+Seien nun $P_0$ und $\overline P_0$ beschränkt invertierbar und bezeichne 
+\begin{equation}
+  U=\ker P = \{u\in\rmL^2(\Omega) : Pu =0\}
+\end{equation}  
+den Kern des maximalen Operators. Dann ist $\Gamma U\subseteq \mathcal C$ abgeschlossen und die Einschränkung $\gamma:=\Gamma|_U$ wegen
+\begin{multline}
+  \|u\|^2\ge \|\Gamma u\|^2 = \inf_{w\in \mathcal D_{P_0}} (\|u-w\|^2 + \|Pu - Pw\|^2) \\   \ge \inf_{w\in \rmL^2} (\|u-w\|^2 + C^{-2} \|w\|^2) = \frac{C^{-2}}{1+C^{-2}}\|u\|^2
+\end{multline}
+ein Isomorphismus. 
+\begin{thm}
+Seien $P_0$ und $\overline P_0$ beschränkt invertierbar und sei $B\subseteq\mathcal C$ abgeschlossener Teilraum. Das zugehörige homogene Randwertproblem $\widehat P$ ist genau dann korrekt gestellt, wenn $\mathcal C = B \dotplus \Gamma U $ als direkte Summe\footnote{Direkt, nicht notwendig orthogonal.} gilt.
+\end{thm}
+\begin{proof}
+Angenommen, $\mathcal C = B \dotplus \Gamma U$. Dann ist der Lösungsoperator über eine Rechtsinverse $S$ zu $P$ und den Projektor $\pi\in\mathcal L(\mathcal C)$ auf  $\Gamma U$ entlang $B$ durch
+\begin{equation}
+     Tf = Sf-\gamma^{-1}\pi\Gamma Sf
+\end{equation}
+ausdrückbar, da für alle $f\in\rmL^2(\Omega)$ nach Konstruktion $PTf=f-P \gamma^{-1}\pi\Gamma S f=f-0=f$ sowie $\Gamma T f=\Gamma Sf - \Gamma\gamma^{-1}\pi \Gamma Sf=(I-\pi)\Gamma Sf\in B$ gilt und somit $T=\widehat P^{-1}$ stetig ist.  
+
+Ist umgekehrt $\widehat P^{-1}$ die stetige Inverse zu $\widehat P$, so induziert
+$\mathcal G_P\ni(v,Pv) \mapsto \Gamma(v-\widehat P^{-1}Pv)\in\Gamma U$ (was offenbar auf $\mathcal G_{P_0}$ verschwindet und auf $\Gamma U$ die Identität ist) einen Projektor $\pi\in\mathcal L(\mathcal C)$. Da weiterhin $v\in\mathcal D_{\widehat P}$ genau dann gilt, wenn $v=\widehat P^{-1}Pv$ erfüllt ist, folgt $B=\ker\pi$.
 \end{proof}
 
 \section{Differentialoperatoren mit konstanten Koeffizienten}
