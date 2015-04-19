@@ -1,41 +1,68 @@
 % !TEX root = main.tex
 \chapter{Minimale Operatoren}
 
-Als erste Etappe in diesem Abschnitt führen wir den Vergleich der Stärke (Definition \ref{df:1:1.2})
+Als erste Etappe in diesem Abschnitt,
+führen wir den Vergleich der Stärke (Definition \ref{df:1:1.2})
 zweier Differentialperatoren mit konstanten Koeffizienten,
 auf einen Vergleich der Symbole zurück.
 
 \section{Die Stärke von Differentialausdrücken}
 
-Es seien in diesem Abschnitt stets $\mcP=P(\D)$, $\mcQ=Q(\D)$ und $\Om$ ein beschränktes Gebiet.
+Es seien in diesem Abschnitt stets $\mcP=P(\D)$,
+$\mcQ=Q(\D)$ und $\Om$ ein beschränktes Gebiet.
 Ziel ist die Charaktierisierung der Aussage ``$\mathcal Q$ ist schächer als $\mcP$''
 durch eine Ungleichung der Form
 \begin{equation}\label{eq:2:1}
 \sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi,
 \end{equation}
 wobei $\til{P}$ und $\til{Q}$ geeignete Regularisierungen von $P$ und $Q$ sind.
-Beachte, dass die reellen Nullstellen von $P$ Probleme machen würden.
+Beachte, dass die reellen Nullstellen von $P$ Probleme machen würden,
+wenn man $\til{P}=P$ verwendete.
+
+In den folgenden Betrachtungen benötigt man häufig die Leibniz'sche Formel
+\begin{equation}\label{eq:2:leib}
+P(\D)(uv)=\sum_{\al}(P^{(\al)}(\D)v)\left(\frac{\D^\al u}{\al!}\right),
+\quad\text{f.a.}~u,v\in C^\infi,
+\end{equation}
+für Differentialausdrücke.
+Für den Differentialausdruck $P(\D)=\D^\al$
+ist dies die gewöhnliche Leibnizregel
+und somit folgt \eqref{eq:2:leib} aus Linearitätsgründen.
+Dabei ist $P^{(\al)}(\D)$ der Differentialausdruck,
+der zum Symbol
+\begin{equation}
+P^{(\al)}(\x)=\frac{\pd^{\abs{\al}}}{\pd\x_\al}P(\x),
+\end{equation}
+korrespondiert.
+Wir treffen folgende Konvention:
+Im Falle griechischer Indizes
+ist die Ableitung nach einem Multiindex $\al\in\N^n_0$ gemeint,
+im Fall latainischer Indizes oder Zahlen definieren wir
+\begin{equation}
+P^{(k_1,\dots,k_l)}(\x)=\frac{\pd}{\pd\x_{k_1}}\dots\frac{\pd}{\pd\x_{k_l}}P(\x).
+\end{equation}
 
 Im eindimensionalen Fall ist bekannt, dass $Q(\D)$ genau dann schwächer wie $P(\D)$ ist,
 wenn $P(\z)$ höheren oder gleichen Grad wie $Q(\z)$ hat.
+Die Resultate in diesem Abschnitt zeigen dies im Nachhinein.
 %Zum Beweis genügt die mehrfache Anwendung des Theorems \ref{thm:1:1.8}
 %auf den Operator $D$ und der Dreiecksungleichung.
-Als Regularisierungen könnte man $\til{P}(\z)=\sqrt{1+\abs{P(\z)}^2}$
-und $\til{Q}(\z)=\sqrt{1+\abs{Q(\z)}^2}$ verwenden.
-Daß dies schon im zweidimensionalen nicht mehr Funktioniert
-hängt damit zusammen, dass $\abs{P^{(\al)}(\z)}/\sqrt{1+\abs{P(\z)}^2}$
+Als Regularisierungen könnte man $\til{P}(\z)=1+\abs{P(\z)}^2$
+und $\til{Q}(\z)=1+\abs{Q(\z)}^2$ verwenden.
+Daß dies schon im Zweidimensionalen nicht mehr funktioniert,
+hängt damit zusammen, dass $\abs{P^{(\al)}(\z)}^2/(1+\abs{P(\z)}^2)$
 nun im allgemeinen nicht mehr beschränkt ist.
-Man betrachte zum Beispiel $P(\z)=\z_1\z_2$ und $P^{(1)}(\z)=\z_2$.
+Man betrachte zum Beispiel $P(\z)=\z_1\z_2$ mit $P^{(1)}(\z)=\z_2$.
 
 Es zeigt sich, dass die Regularisierungen
 \begin{equation}\label{eq:2:2}
-\til{P}(\z):=\sqrt{\sum_\al\abs{P^{(\al)}(\z)}^2},
+\til{P}(\z):=\sum_\al\abs{P^{(\al)}(\z)}^2,
 \quad\text{f.a.}~\z\in\C^n,
 \end{equation}
 eine natürliche Wahl sind.
-Also der Absolutbetrag des Vektors $(P^{(\al)}(\z))_\al\in\C^M$.
+Also das Betragsquadrat des Vektors $(P^{(\al)}(\z))_\al\in\C^M$.
 Beachte, dass für $\x\in\R^n$ der Ausdruck
-$\til{P}(\x)^2$ ein reelles Polynom ohne Nullstellen ist.
+$\til{P}(\x)$ ein reelles Polynom ohne Nullstellen ist.
 
 \begin{thm}\label{thm:2:2.1}
 Der Differentialoperator $\mcQ$ ist genau dann schwächer wie $\mcP$,
@@ -47,8 +74,7 @@ erfüllt ist.
 \end{thm}
 
 Wir zeigen zunächst, wie in beiden Richtungen abgeschätzt wird.
-Die Hinrichtung ist straight forward,
-für die Rückrichtung benötigen wir ein Lemma,
+Für die Rückrichtung benötigen wir ein Lemma,
 dass wir später beweisen.
 
 \begin{proof}
@@ -62,8 +88,9 @@ Für jedes $\x\in\R^n$ und ein festes $\psi\in C^\infi_0(\Om)$, $\psi\neq0$,
 definieren wir $\psi_\x(x):=\psi(x)\e^{\ska{x}{\x}}$, f.a.~$x\in\R^n$.
 Dies bringt durch die Formel von Leibniz die Ableitungen von $P(\x)$ ins Spiel
 \begin{equation}\label{eq:2.5}
-P(\D)\psi_\x(x)=\e^{\ska{x}{\x}}\sum_\al P^{(\al)}(\x)\frac{\D^\alpha\psi(x)}{\al!}.
+P(\D)\psi_\x(x)=\e^{\ska{x}{\x}}\sum_\al P^{(\al)}(\x)\frac{\D^\alpha\psi(x)}{\al!},
 \end{equation}
+analoges gilt für $Q(\D)$.
 Schreiben wir kurz
 \begin{equation}\label{eq:2.6}
 \Psi_{\al\be}:=\frac1{\al!\be!}\spro{\D^\alpha\psi}{\D^\beta\psi},
@@ -83,7 +110,7 @@ Es gibt also $\Psi_-,\Psi_+\in(0,\infi)$, so dass
 \end{equation}
 Die Ungleichungen \eqref{eq:2.7} und \eqref{eq:2.8} kombinieren sich zu
 \begin{equation}\label{eq:2.9}
-\til{Q}(\x)^2\Psi_-C\leq\Psi_+\til{P}(\x)^2,
+\til{Q}(\x)\Psi_-C\leq\Psi_+\til{P}(\x),
 \quad\text{f.a.}~\x\in\R^n,
 \end{equation}
 und dies ist gerade die Ungleichung \eqref{eq:thm:2:2.1}.
@@ -92,49 +119,62 @@ und dies ist gerade die Ungleichung \eqref{eq:thm:2:2.1}.
 Sei die Ungleichung \eqref{eq:thm:2:2.1} erfüllt, d.h.
 \begin{equation}\label{eq:2.10}
 \til{Q}(\x)\leq C\til{P}(\x),
-\quad\text{f.a.}~\x\in\R^M,
+\quad\text{f.a.}~\x\in\R^n,
 \end{equation}
 mit $C\in(0,\infi)$.
 Wir schätzen wie folgt ab
 \begin{equation}\label{eq:2.11}
-\norm{Q(\D)u}^2=\norm{Q\cdot\hat{u}}^2\leq C\norm{\til{P}\cdot\hat{u}}^2
+\norm{Q(\D)u}^2=\norm{Q\cdot\hat{u}}^2\leq C\norm{\sqrt{\til{P}}\cdot\hat{u}}^2
 \leq C\sum_{\al}\norm{P^{(\al)}\cdot\hat{u}}^2=C\sum_\al\norm{P^{(\al)}(\D)u}^2.
 \end{equation}
-Um den Beweis abzuschließen fehlte also nur noch eine Ungleichung
+Um den Beweis abzuschließen,
+fehlte also nur noch eine Ungleichung der Art
 \begin{equation}
-\norm{P^{(\al)}(\D)u}\leq C_{\al,\mcP}\norm{P(\D)u},
-\quad\text{f.a.}~u\in C^\infi_0(\Om),
+\norm{P^{(\al)}(\D)u}\leq C\norm{P(\D)u},
+\quad\text{f.a.}~u\in C^\infi_0(\Om),~\al\in\N^n_0,
 \end{equation}
-mit $C>0$.
+mit $C\in(0,\infi)$.
 Diese werden wir mit der Methode der Energieintegrale herleiten (Korollar \ref{cor:2:2.5}).
 \end{proof}
 
+\begin{rem}
 Der Beweis zeigt,
-dass in Formel \eqref{eq:thm:2:2.1} $\til{Q}$ durch $Q$ ersetzt werden kann.
+dass in Formel \eqref{eq:thm:2:2.1} $\til{Q}(\x)$
+durch $Q^2(\x)$ ersetzt werden kann.
+\end{rem}
 
 \section{Energieintegrale}
 
-Da wir eine Methode brauchen um Skalarprodukte
-mit verschiedenen Differentialoperatoren abzuschätzen,
-macht es Sinn, quadratische Differentialformen $F$, definiert durch
+Da wir eine Methode brauchen,
+um Skalarprodukte mit verschiedenen Differentialoperatoren abzuschätzen,
+macht es Sinn, quadratische Differentialausdrücke $F$, definiert durch
 \begin{equation}
-F(\D,\overline{\D})u\bar{u}:=\sum_{\al,\be}a_{\al\be}(\D^\alpha u)(\cc{\D^\beta u}),
+F(\D,\overline{\D})u\bar{u}
+:=\sum_{\al,\be}a_{\al\be}(\D^\alpha u)(\cc{\D^\beta u}),
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
 mit $a_{\al\be}\in\C$, genauer zu betrachten.
 Uns interessieren die Terme
 \begin{equation}\label{eq:2:qf}
-\int F(\D,\overline{\D})u(x)\bar{u}(x)\d x=\int F(\x,\x)\abs{\hat{u}(\x)}^2\d \x,
+\int F(\D,\overline{\D})u(x)\bar{u}(x)\d x
+=\int F(\x,\x)\abs{\hat{u}(\x)}^2\d \x,
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
-die quadratische Formen \eqref{eq:2:qf} definieren.
-Die Formen sind, wie die Gleichung zeigt,
-durch das Symbol $F(\z,\cc{\z})$, $\z\in\C^n$ bestimmt.
-Umgekehrt sind die reellen Werte des Symbols
-durch die Form \eqref{eq:2:qf} bestimmt,
-wie folgendes Lemma zeigt.
-Im allgemeinen können verschiedene Symbole
-die gleiche Form \eqref{eq:2:qf} definieren.
+die quadratische Formen auf $C^\infi_0(\Om)\ti C^\infi_0(\Om)\subs L^2(\R^n)\ti L^2(\R^n)$
+definieren.
+Es besteht eine eins-zu-eins korrespondenz
+zwischen den quadratischen Differentialausdrücken $F(\D,\cc{\D})$
+und den Symbolen $F(\x,\cc{\x})$, $\x\in\C^n$,
+analog zu den Symbolen von Differentialausdrücken.
+
+Die quadratischen Formen \eqref{eq:2:qf}
+sind aber nur von den reellen Werten $F(\x,\x)$, $\x\in\R^n$ abhängig.
+Verschiedene quadratische Differentialausdrücke bzw.~Symbole
+können also die gleiche quadratische Form definieren.
+Folgendes Lemma zeigt, dass es eine eins-zu-eins
+Korrespendenz zwischen denen auf reelle Werte eingeschränkten
+Symbole $F(\x,\x)$, $\x\in\R^n$,
+und den quadratischen Formen wie in \eqref{eq:2:qf} gibt.
 
 \begin{lem}\label{lem:2:qfsym}
 Sei $\Om$ ein beliebiges Gebiet.
@@ -150,14 +190,16 @@ Es gelte \eqref{eq:lem:2:qfsym}.
 Sei $u_\y(x):=u(x)\e^{\ska{x}{\y}}$ für ein festes $u\in C^\infi_0(\Om)$, $u\neq0$.
 Dann ist
 \begin{equation}
-\int F(\D,\overline{\D})u_\y\bar{u_\y}\d x=\int F(\x,\x)\abs{\hat{u}(\x-\y)}^2\d \y=\int F(\x+\y,\x+\y)\abs{\hat{u}(\x)}^2\d \x=:q(\y),
+\int F(\D,\overline{\D})u_\y\bar{u_\y}\d x
+=\int F(\x,\x)\abs{\hat{u}(\x-\y)}^2\d \y
+=\int F(\x+\y,\x+\y)\abs{\hat{u}(\x)}^2\d \x=:q(\y),
 \end{equation}
 für alle $\y\in\R^n$.
 Auf der rechten Seite steht wieder ein Polynom $q(\y)$ in $\y\in\R^n$
 und nach Voraussetzung müssen dessen Koeffizienten verschwinden.
 Beachten wir, dass
 \begin{equation}
-(\x+\y)^\al=\sum_{\be+\ga=\al}\begin{pmatrix}\al\\\be,\ga\end{pmatrix}\x^\be\y^\ga=\y^\al+\dots
+(\x+\y)^\al=\sum_{\be+\ga=\al}\begin{pmatrix}\al\\\be\end{pmatrix}\x^\be\y^\ga=\y^\al+\dots
 \end{equation}
 so sehen wir, dass die führenden Terme von $q(\y)$
 bis auf den Faktor $\norm{u}^2\neq0$ den führenden Termen von $F(\x,\x)$ entsprechen.
@@ -170,9 +212,12 @@ Unser Ziel ist es, Ableitungen von Ableitungspolynomen zu kontrollieren.
 Dazu betrachten wir Ableitungen quadratischer Differentialformen.
 Wir beginnen mit dem Ausdruck
 \begin{equation}
-\frac{\pd}{\partial x_k}\left[F(\D,\overline{\D})u\bar{u}\right]=\i\left[(\D_k-\overline{\D}_k)F(\D,\overline{\D})\right]u\bar{u}.
+\frac{\pd}{\partial x_k}
+\left[F(\D,\overline{\D})u\bar{u}\right]
+=\i\left[(\D_k-\overline{\D}_k)F(\D,\overline{\D})\right]u\bar{u}.
 \end{equation}
-Für einen Vektor $\ul{G}=(G_k)_{k=1,\dots,n}$, bestehend aus quadratischen Differentialformen $G_k$,
+Für einen Vektor $\ul{G}=(G_k)_{k=1,\dots,n}$,
+bestehend aus quadratischen Differentialformen $G_k$,
 erhält man für die Divergenz die Formel
 \begin{subequations}
 \begin{equation}\label{eq:2.15a}
@@ -222,8 +267,8 @@ Wir betrachten die quadratische Differentialform mit dem Symbol
 F(\z,\bar{\z}):=P(\z)Q(\bar{\z})-Q(\z)P(\bar{\z}).
 \end{equation}
 Diese erfüllt offensichtlich $F(\x,\x)=0$, f.a.~$\x\in\R^n$.
-Nach Lemma \ref{lem:2:2.2} und der Formel \eqref{eq:2.16}
-erhalten wir, nach dem wir mit $-\i x_k$ multipliziert haben
+Nach Lemma \ref{lem:2:2.2} (Formel \eqref{eq:2.16})
+erhalten wir, nachdem wir mit $-\i x_k$ multipliziert haben
 \begin{equation}\label{eq:2:2.22}
 -\i x_kF(\D,\overline{\D})u\bar{u}=-\i x_k\sum_{k=1}^n\frac{\pd}{\partial x_k}\left[G_k(\D,\overline{\D})u\bar{u}\right],
 \end{equation}
@@ -242,11 +287,11 @@ so liefert eine partielle Integration auf rechten Seite den Term
 Damit erhalten wir insgesamt
 \begin{equation}
 \spro{P^{(k)}(\D)u}{\bar{Q}(\D)u}
-=\spro{P(\D)u}{\bar{Q}^{(k)}(\D)u}-i\int x_k\left(P(\D)u\cc{\bar{Q}(\D)u}-Q(\D)\cc{\bar{P}(\D)u}\right)\d x.
+=\spro{P(\D)u}{\bar{Q}^{(k)}(\D)u}-i\int x_k\left(P(\D)u\cc{\bar{Q}(\D)u}-Q(\D)u\cc{\bar{P}(\D)u}\right)\d x.
 \end{equation}
 Ohne Beschränkung der Allgemeinheit können wir das Gebiet $\Om$ so legen,
 dass $\abs{x_k}\leq B_k/2$ für alle $x_k\in\Om$.
-Man beachte dass Ableitungspolynome mit Translationsoperatoren vertauschen.
+Man beachte, dass Differentialausdrücke mit Translationsoperatoren vertauschen.
 Schließlich erhalten wir mit Cauchy-Schwarz
 und der Dreiecksungleichung die Ungleichung \eqref{eq:lem:2:2.4}.
 \end{proof}
@@ -268,7 +313,7 @@ Wir gehen nun Induktiv in $m$ vor.
 Für $m=1$ ist $P^{(kk)}=0$, $P^{(k)}\neq0$ und somit entspricht die Gleichung \eqref{eq:cor:2:2.5}
 gerade der Gleichung \eqref{eq:lem:2:2.4} nach kürzen eines Faktors.
 Angenommen das Korollar ist für $m-1$ erfüllt,
-dann erhalten durch Kombination von \eqref{eq:2.28} und \eqref{eq:cor:2:2.5}
+dann erhalten wir durch Kombination von \eqref{eq:2.28} und \eqref{eq:cor:2:2.5}
 \begin{equation}
 \norm{P^{(k)}(\D)u}^2\leq\norm{P(\D)u}\left((m-1)B_k\norm{P^{(k)}(\D)u}+B_k\norm{P^{(k)}(\D)u}\right),
 \end{equation}
@@ -278,11 +323,11 @@ also ist auch der Induktionsschritt gezeigt.
 \begin{cor}\label{cor:2:2.6}
 Für festes beschränktes Gebiet $\Om$ und beliebiges $\al\in\N^n_0$ gilt
 \begin{equation}
-\norm{P^{(\al)}(\D)u}\leq C_\al\norm{P(\D)u},
+\norm{P^{(\al)}(\D)u}\leq C_{\al,\Om}\norm{P(\D)u},
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
-mit $C_\al=m(m-1)\cdots(m-\abs{\al})B^\al$, wobei $B^\al=\prod_{l=1}^n B^{\al_l}_l$.
-Die Konstante $C_\al$ hängt also nur vom Grad $m$ von $P(\x)$,
+mit $C_{\al,\Om}=m(m-1)\cdots(m-\abs{\al})B^\al$, wobei $B^\al=\prod_{l=1}^n B^{\al_l}_l$.
+Die Konstante $C_{\al,\Om}$ hängt also nur vom Grad $m$ von $P(\x)$,
 der Ableitungsordnung $\abs{\al}$ und der Ausdehnung des Gebiets $\Om$ ab.
 \end{cor}
 
@@ -290,17 +335,20 @@ der Ableitungsordnung $\abs{\al}$ und der Ausdehnung des Gebiets $\Om$ ab.
 Mehrfache Anwendung von Korollar \ref{cor:2:2.5}.
 \end{proof}
 
+Das letzte Korollar ist gerade der im Beweis von Satz \ref{thm:2:2.1}
+gebrauchte Baustein.
+
 \section{Beispiele und spezielle Symbole}
 
 Wir betrachten als instruktive Beispiele
-einige klassische Differentialoperatoren zweiter Ordnung.
+einige klassische Differentialausdrücke zweiter Ordnung.
 
 \begin{exa}\label{exa:2:lap}
 Wir betrachten das zum Laplace-Operator $\Lap$
 korrespondierende Symbol $P(\x)=\x_1^2+\dots+\x_n^2=\abs{\x}^2$.
 Das regularisierte Symbol ist gegeben durch
 \begin{equation}
-\til{P}(\x)^2=\abs{\x}^4+4\abs{\x}^2+4n.
+\til{P}(\x)=\abs{\x}^4+4\abs{\x}^2+4n.
 \end{equation}
 Beachten wir, dass stets
 \begin{equation}\label{eq:2:sqrest}
@@ -308,7 +356,7 @@ a^2+b^2\leq(a+b)^2\leq2(a^2+b^2),\quad\text{für}~a,b\geq0,
 \end{equation}
 so sehen wir, dass
 \begin{equation}
-\til{P}(\x)^2\asymp\abs{\x}^4+1\quad\text{oder gleichwertig}\quad\til{P}(\x)\asymp\abs{\x}^2+1.
+\til{P}(\x)\asymp1+\abs{\x}^4.
 \end{equation}
 Also ist der Laplaceoperator stärker wie alle Differentialoperatoren
 mit Symbolen von gleichem oder kleinerem Grad.
@@ -321,19 +369,19 @@ wobei wir $A^\tr=A$ annehmen können.
 Wir untersuchen, welche davon gleich stark wie der Laplaceoperator sind.
 Es ist
 \begin{equation}\label{eq:2:rpQLap1}
-\til{Q}(\x)^2=\abs{\x^\tr A\x+\ska{b}{\x}+c}^2+\sum_{k=1}^n\abs{2e^\tr_kA\x+b_k}^2
+\til{Q}(\x)=\abs{\x^\tr A\x+\ska{b}{\x}+c}^2+\sum_{k=1}^n\abs{2e^\tr_kA\x+b_k}^2
 +4\sum_{1\leq k\leq l\leq n}\abs{a_{kl}}^2.
 \end{equation}
-Da die Ausdrücke $\til{Q}(\x)^2$ und $1+\abs{\x^\tr A\x}^2$
+Da die Ausdrücke $\til{Q}(\x)$ und $1+\abs{\x^\tr A\x}^2$
 auf kompakten Mengen positiv und beschränkt sind (falls $\mcQ\neq0$) genügt es,
 diese für $\abs{\x}\geq R$ mit festem $R>0$ groß genug zu betrachten.
 Ist $\abs{\x^\tr A\x}\neq0$ falls $\x\neq0$,
 so gilt $\abs{\x^\tr A\x}\asymp\abs{\x}^2$.
-In diesem Fall kann man für $R$ groß genug die
-linearen Terme in \eqref{eq:2:rpQLap1} vernachlässigen
+In diesem Fall kann man, für $R$ groß genug,
+die linearen Terme in \eqref{eq:2:rpQLap1} vernachlässigen
 und erhält insgesamt
 \begin{equation}
-\til{Q}(\x)\asymp1+\abs{\x^\tr A\x}\asymp1+\abs{\x}^2\asymp\til{P}(\x).
+\til{Q}(\x)\asymp1+\abs{\x^\tr A\x}^2\asymp1+\abs{\x}^4\asymp\til{P}(\x).
 \end{equation}
 Im anderen Fall betrachtet man \eqref{eq:2:rpQLap1}
 für alle $\x\in\R^n$ mit $\x^\tr A\x=0$,
@@ -401,7 +449,8 @@ Q(\x)=a_0+\sum_{k=1}^na_k\x_k+\sum_{k,l=1}^{n-1}a_{kl}\x_k\x_l,
 \end{equation}
 mit beliebigen $a_0,a_k,a_{kl}\in\C$.
 Das Symbol $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
-wenn $a_n\neq0$ und $\sum_{k,l=1}^{n-1}a_{kl}\x_k\x_l\neq0$ falls $\x\neq0$.
+wenn $a_n\neq0$ und $\sum_{k,l=1}^{n-1}a_{kl}\x_k\x_l\neq0$ falls $\x\notin e_n\R$
+mit dem $n$-ten Standartbasisvektor $e_n$.
 \end{exa}
 
 \begin{exa}\label{exa:2:hyper}
@@ -527,7 +576,7 @@ so dass $\abs{Q(\x)}/\til{P}(\x)<\ep$ für $\x$ im Komplement $K^{\mathrm c}$ vo
 Nun ist
 \begin{align}
 \int_{K^{\mathrm c}}\abs{Q(\x)}^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\d \x,
-&\leq\ep^2\int\til{P}(\x)^2\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\d \x\\
+&\leq\ep^2\int\til{P}(\x)\abs{\hat{u}_{n^\pr}(\x)-\hat{u}_{m^\pr}(\x)}^2\d \x\\
 &=\ep^2\sum_{\al\in\N^n_0}\norm{P^{(\al)}(\D)(u_{n^\pr}-u_{m^\pr})}^2,\label{eq:2:Kcsum}
 \end{align}
 und die Summe in \eqref{eq:2:Kcsum} ist nach Korollar \ref{cor:2:2.6}
@@ -579,7 +628,7 @@ Aufgrund von \eqref{eq:2:PDunb} können wir zu einer Teilfolge übergehen,
 so dass $Q(\D)u_{n^\pr}$ konvergiert.
 Dann gilt wegen \eqref{eq:2:kz} auch
 \begin{equation}
-\norm{Q(\D)u_{n^\pr}}^2=\sum_{\al,\be}\frac{\abs{Q(\x_{n^\pr})}^2}{\til{P}(\x_{n^\pr})^2}\Psi_{\al\be}\to0.
+\norm{Q(\D)u_{n^\pr}}^2=\sum_{\al,\be}\frac{\abs{Q(\x_{n^\pr})}^2}{\til{P}(\x_{n^\pr})}\Psi_{\al\be}\to0.
 \end{equation}
-Daraus folgt auch $\til{Q}(\x_{n^\pr})^2/\til{P}(\x_{n^\pr})^2\to0$.
+Daraus folgt auch $\til{Q}(\x_{n^\pr})/\til{P}(\x_{n^\pr})\to0$.
 \end{proof}
