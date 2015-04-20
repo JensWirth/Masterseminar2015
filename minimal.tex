@@ -579,11 +579,88 @@ Mit der Dreiecksungleichung erhalten wir nun
 \begin{equation}
 \frac{\abs{Q(\x)^2}}{\til{P}(\x)}
 \leq\frac{\abs{P(\x)}^2}{\til{P}(\x)}+\frac{\abs{Q(\x)-P(\x)}^2}{\til{P}(\x)}
-\leq2\frac{\abs{Q(\x)-P(\x)}^2}{\pi(\x)}+1,
+\leq1+2\frac{\abs{Q(\x)-P(\x)}^2}{\pi(\x)},
 \end{equation}
 für $\abs{\x}$ groß genug.
 Insgesamt ist damit $\sup_{\x\in\R^n}\abs{Q(\x)}^2/\til{P}(\x)<\infi$,
 also $Q(\D)$ schwächer wie $P(\D)$.
+\end{proof}
+
+Der Satz und sein Beweis bestätigen also die Anmerkungen nach den Beispielen.
+Auch Elliptische Operatoren lassen sich klassifizieren.
+
+\begin{thm}
+Ein Differentialoperator $P(\D)$ ist genau dann elliptisch,
+wenn er stärker ist wie jeder andere gleichen Grades.
+\end{thm}
+
+Oder anders vermuliert sind die elliptischen Operatoren
+gerade die maximalen Elemente
+unter den Differentialoperatoren festen Grades.
+
+Zum Abschluss betrachten wir Produktoperatoren.
+Dies sind zum Beispiel Operatoren der Form
+\begin{equation}\label{eq:2:prodpol}
+P(\x)=P_a(\x_a)P_b(\x_b),
+\quad\text{f.a.}~\x\in\R^n,
+\end{equation}
+mit $\x_a=(\x_1,\dots,\x_m)$, $\x_b=(\x_{m+1},\dots,\x_n)$,
+wobei $0<m<n$ fest gewählt ist
+und $P_a(\x)$ ein Polynom in $\R^m$
+und $P_b(\x)$ ein Polynom in $\R^{n-m}$.
+Wir bezeichnen mit $W(\mcP)$ die Symbole der Differentialausdrücke,
+die schwächer sind wie $\mcP$.
+Dann erhalten wir:
+
+\begin{thm}
+Für Produktpolynome wie in \eqref{eq:2:prodpol}
+gilt die Gleichung
+\begin{equation}
+W(\mcP)=\Lin\left(W(\mcP_a)\cdot W(\mcP_b)\right).
+\end{equation}
+\end{thm}
+
+Oder anders gesagt:
+$W(\mcP)$ ist das Tensorprodukt von $W(\mcP_a)$ und $W(\mcP_b)$.
+
+\begin{proof}
+Wir betrachten zunächst den Term
+\begin{equation}
+P^{(\al)}(\x)
+=\frac{\pd^{\abs{\al}}}{\pd\x^\al}\left(P_a(\x_a)P_b(\x_b)\right)
+=P^{(\al_a)}_a(\x_a)P^{(\al_b)}_b(\x_b).
+\end{equation}
+Mit $\al_a=(\al_1,\dots,\al_m,0,\dots,0)$
+und $\al_b=(0,\dots,0,\al_{m+1},\dots,\al_n)$.
+Es folgt, dass
+\begin{equation}\label{eq:2:prodeq}
+\til{P}(\x)=\sum_\al\abs{P^{(\al)}(\x)}^2
+=\sum_{\al_a,\al_b}\abs{P^{(\al_a)}_a(\x_a)}^2\abs{P^{(\al_b)}_b(\x_b)}^2
+=\til{P}_a(\x_a)\til{P}_b(\x_b).
+\end{equation}
+Dies zeigt $\Lin\left(W(\mcP_a)\cdot W(\mcP_b)\right)\subs W(\mcP)$.
+
+Nehmen wir nun an, dass $Q(\x)\in W(\mcP)$.
+Betrachten wir $Q(\x_a,\x_{b,0})$ mit Variablem $\x_a$ und festen $\x_{b,0}$,
+so folgt aus Gleichung \eqref{eq:2:prodeq},
+dass $Q(\x_a,\x_{b,0})\in W(\mcP_a)$.
+Analoges gilt bei vertauschten Rollen von $a$ und $b$.
+Wir wählen eine Vektoraumbasis $p_1(\x_a),\dots,p_l(\x_a)$ von $W(\mcP_a)$.
+Es gilt
+\begin{equation}
+\sum_{k=1}^lp_k(\x_l)a_k(\x_b),
+\end{equation}
+mit Polynomen $a_k(\x_b)$.
+Wir zeigen $a_k(\x_b)\in W(\mcP_b)$ für alle $k=1,\dots,l$.
+Da die $p_1(\x_a),\dots,p_l(\x_a)$ linear unabhängig sind,
+gibt es $\x_{a,1},\dots,\x_{a,l}$,
+so dass $\left(p_k(\x_l)\right)_{k,l=1,\dots,l}$ invertierbar ist.
+Das Gleichungssystem
+\begin{equation}
+Q(\x_{a,l},\x_b)=\sum_{k=1}^lp_k(\x_{a,l})a_k(\x_b),
+\end{equation}
+kann also nach den $a_k(\x_b)$ aufgelöst werden kann.
+Dies impliziert nach obigem $a_k(\x_b)\in W(\mcP_b)$.
 
 \end{proof}
 
