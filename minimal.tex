@@ -520,6 +520,73 @@ und der Operator aus Beispiel \ref{exa:2:hyper} vom Haupttyp,
 die anderen beiden nicht.
 Der Laplaceoperator ist als einziger elliptisch.
 
+Wir geben nun Klassifikationen
+für diese Operatortypen.
+
+\begin{thm}\label{thm:2:2.9}
+Ein Symbol $P(\x)$ ist genau dann vom Haupttyp,
+wenn alle partiellen Ableitungen $\frac{\pd p(\x)}{\pd\x_i}$
+des Hauptteils $p(\x)$ für kein $\x\neq0$
+gleichzeitig null sind.
+\end{thm}
+
+\begin{proof}
+Ist $P(\x)$ vom Haupttyp und vom Grad $m>0$,
+dann gilt das gleiche für $p(\x)$.
+Dann ist $p(\x)$ auch stärker als $p(\x)+\x^\al$
+mit $\abs{\al}=m-1$.
+Nach Theorem \ref{thm:2:2.1} ist dann
+\begin{equation}\label{eq:2:homquot}
+\sup_{\x\in\R^n}\frac{(\x^2_1+\dots+\x^2_n)^{m-1}}{\sum\abs{p^{(\al)}(\x)}^2}<\infi.
+\end{equation}
+Angenommen es gibt ein $\x_0\in\R^n$,
+so dass $\pd p(\x_0)/\pd\x_i=0$ für alle $i=1,\dots,n$.
+Dann gilt auch $p(\x_0)=0$,
+nach Eulers Formel für homogene Polynome
+\begin{equation}
+mp(\x)=\pd p(\x)/\pd\x_i,\quad\text{f.a.}~\x\in\R^n,~i=1,\dots,n.
+\end{equation}
+Wir setzen $\x=t\x_0$, $t\in\R$, in Gleichung \ref{eq:2:homquot},
+und erhalten einen Quotienten aus Polynomen in der Variablen $t$.
+Aufgrund der Homogenität gilt
+\begin{equation}
+p(t\x_0)=t^mp(\x_0)=0,~p^{(1)}(t\x_0)=t^{m-1}p^{(1)}(\x_0)=0,
+\dots,~p^{(n)}(t\x_0)=t^{m-1}p^{(n)}(\x_0)=0,
+\end{equation}
+und somit hat das Polynom im Zähl echt kleineren Grad wie $2(m-1)$.
+Dies liefert einen Widerspruch für $t\to\infi$.
+
+Nehmen wir nun an $P(\x)$ erfüllt die Bedingung aus Theorem \ref{thm:2:2.9}
+und $Q(\x)$ hat den gleichen Hauptteil $p(\x)$ wie $P(\x)$.
+Durch weglassen von Term erhalten wir
+\begin{equation}
+\til{P}(\x)>\sum_{k=1}^n\Abs{\frac{\pd P(\x)}{\pd\x_k}}^2=\pi(\x)+r(\x).
+\end{equation}
+Dabei fassen wir die höchsten Terme des Ausdrucks
+$\sum_{k=1}^n\Abs{\frac{\pd P(\x)}{\pd\x_k}}^2$ zu $\pi(\x)$ zusammen.
+Diese sind dann gegeben durch
+\begin{equation}
+\pi(\x)=\sum_{k=1}^n\Abs{\frac{\pd p(\x)}{\pd\x_k}}^2,
+\end{equation}
+was aus direkt aus der binomischen Formel
+und der Additivität des Grads von Polynomen folgt.
+$r(\x)$ hat dann Grad echt kleiner wie $2m$.
+Nach Annahme ist $\pi(\x)\neq0$ falls $\x\neq0$
+and somit $\abs{r(\x)}/\pi(\x)\leq\tfrac12$,
+für $\abs{\x}$ groß genug.
+Für diese $\x$ ist dann auch $\til{P}(\x)>\pi(\x)/2$.
+Mit der Dreiecksungleichung erhalten wir nun
+\begin{equation}
+\frac{\abs{Q(\x)^2}}{\til{P}(\x)}
+\leq\frac{\abs{P(\x)}^2}{\til{P}(\x)}+\frac{\abs{Q(\x)-P(\x)}^2}{\til{P}(\x)}
+\leq2\frac{\abs{Q(\x)-P(\x)}^2}{\pi(\x)}+1,
+\end{equation}
+für $\abs{\x}$ groß genug.
+Insgesamt ist damit $\sup_{\x\in\R^n}\abs{Q(\x)}^2/\til{P}(\x)<\infi$,
+also $Q(\D)$ schwächer wie $P(\D)$.
+
+\end{proof}
+
 \section{Weitere Vergleichsresultate}
 
 Sehr analog zu Satz \ref{thm:2:2.1} lassen sich die regularisierten
