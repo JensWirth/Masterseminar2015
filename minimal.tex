@@ -1,22 +1,22 @@
 % !TEX root = main.tex
 \chapter{Minimale Operatoren}
 
-Als erste Etappe in diesem Abschnitt,
+Als erste Etappe in diesem Kapitel,
 führen wir den Vergleich der Stärke (Definition \ref{df:1:1.2})
-zweier Differentialperatoren mit konstanten Koeffizienten,
+zweier Differentialausdrücke mit konstanten koeffizienten
 auf einen Vergleich der Symbole zurück.
 
 \section{Die Stärke von Differentialausdrücken}
 
-Es seien in diesem Abschnitt stets $\mcP=P(\D)$,
-$\mcQ=Q(\D)$ und $\Om$ ein beschränktes Gebiet.
-Ziel ist die Charaktierisierung der Aussage ``$\mathcal Q$ ist schächer als $\mcP$''
+Ziel dieses Abschnitts ist die Charaktierisierung der Aussage
+``$\mathcal Q=Q(\D)$ ist schächer als $\mcP=P(\D)$'',
+im Fall beschränkter Gebiete $\Om$,
 durch eine Ungleichung der Form
 \begin{equation}\label{eq:2:1}
 \sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi,
 \end{equation}
 wobei $\til{P}$ und $\til{Q}$ geeignete Regularisierungen von $P$ und $Q$ sind.
-Beachte, dass die reellen Nullstellen von $P$ Probleme machen würden,
+Beachte, dass reelle Nullstellen von $P$ in \eqref{eq:2:1} Probleme machen würden,
 wenn man $\til{P}=P$ verwendete.
 
 In den folgenden Betrachtungen benötigt man häufig die Leibniz'sche Formel
@@ -31,7 +31,7 @@ und somit folgt \eqref{eq:2:leib} aus Linearitätsgründen.
 Dabei ist $P^{(\al)}(\D)$ der Differentialausdruck,
 der zum Symbol
 \begin{equation}
-P^{(\al)}(\x)=\frac{\pd^{\abs{\al}}}{\pd\x_\al}P(\x),
+P^{(\al)}(\x):=\frac{\pd^{\abs{\al}}}{\pd\x_\al}P(\x),
 \end{equation}
 korrespondiert.
 Wir treffen folgende Konvention:
@@ -39,7 +39,7 @@ Im Falle griechischer Indizes
 ist die Ableitung nach einem Multiindex $\al\in\N^n_0$ gemeint,
 im Fall latainischer Indizes oder Zahlen definieren wir
 \begin{equation}
-P^{(k_1,\dots,k_l)}(\x)=\frac{\pd}{\pd\x_{k_1}}\dots\frac{\pd}{\pd\x_{k_l}}P(\x).
+P^{(k_1,\dots,k_l)}(\x):=\frac{\pd}{\pd\x_{k_1}}\dots\frac{\pd}{\pd\x_{k_l}}P(\x).
 \end{equation}
 
 Im eindimensionalen Fall ist bekannt, dass $Q(\D)$ genau dann schwächer wie $P(\D)$ ist,
@@ -54,18 +54,21 @@ hängt damit zusammen, dass $\abs{P^{(\al)}(\z)}^2/(1+\abs{P(\z)}^2)$
 nun im allgemeinen nicht mehr beschränkt ist.
 Man betrachte zum Beispiel $P(\z)=\z_1\z_2$ mit $P^{(1)}(\z)=\z_2$.
 
-Es zeigt sich, dass die Regularisierungen
+Mit der Leibnizformel als Motivation,
+wählen wir als Ansatz für die Regularisierungen
 \begin{equation}\label{eq:2:2}
 \til{P}(\z):=\sum_\al\abs{P^{(\al)}(\z)}^2,
 \quad\text{f.a.}~\z\in\C^n,
 \end{equation}
-eine natürliche Wahl sind.
-Also das Betragsquadrat des Vektors $(P^{(\al)}(\z))_\al\in\C^M$.
+also das Betragsquadrat des Vektors $(P^{(\al)}(\z))_\al\in\C^M$.
 Beachte, dass für $\x\in\R^n$ der Ausdruck
-$\til{P}(\x)$ ein reelles Polynom ohne Nullstellen ist.
+$\til{P}(\x)$ ein reelles Polynom mit $\Grad\til{P}(\x)=2\Grad P(\x)$ ist,
+das keine reellen Nullstellen besitzt.
+Der Beweis des folgenden zentralen Satzes in diesem Kapitel zeigt, 
+dass \eqref{eq:2:2} in der Tat eine geeignete Regularisierung ist.
 
 \begin{thm}\label{thm:2:2.1}
-Der Differentialoperator $\mcQ$ ist genau dann schwächer wie $\mcP$,
+Der Differentialausdruck $\mcQ$ ist genau dann schwächer wie $\mcP$,
 wenn
 \begin{equation}\label{eq:thm:2:2.1}
 \sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi
@@ -123,30 +126,45 @@ Sei die Ungleichung \eqref{eq:thm:2:2.1} erfüllt, d.h.
 \end{equation}
 mit $C\in(0,\infi)$.
 Wir schätzen wie folgt ab
-\begin{equation}\label{eq:2.11}
-\norm{Q(\D)u}^2=\norm{Q\cdot\hat{u}}^2\leq C\norm{\sqrt{\til{P}}\cdot\hat{u}}^2
-\leq C\sum_{\al}\norm{P^{(\al)}\cdot\hat{u}}^2=C\sum_\al\norm{P^{(\al)}(\D)u}^2.
+\begin{equation}
+\norm{Q\cdot\hat{u}}^2\leq\norm{\til{Q}^{1/2}\cdot\hat{u}}^2
+\leq C\norm{\til{P}^{1/2}\cdot\hat{u}}^2\leq C\sum_\al\norm{P^{(\al)}\cdot\hat{u}}^2,
+\end{equation}
+oder gleichbedeutend
+\begin{equation}
+\norm{Q(\D)u}\leq C\sum_\al\norm{P^{(\al)}(\D)u}^2.\label{eq:2.11}
 \end{equation}
 Um den Beweis abzuschließen,
 fehlte also nur noch eine Ungleichung der Art
 \begin{equation}
-\norm{P^{(\al)}(\D)u}\leq C\norm{P(\D)u},
-\quad\text{f.a.}~u\in C^\infi_0(\Om),~\al\in\N^n_0,
+\norm{P^{(\al)}(\D)u}\leq C_{\mcP,\Om}\norm{P(\D)u},
+\quad\text{f.a.}~u\in C^\infi_0(\Om),~\al\in\N^n_0,\label{eq:2:wantedineq}
 \end{equation}
-mit $C\in(0,\infi)$.
+mit $C_{\mcP,\Om}\in(0,\infi)$.
 Diese werden wir mit der Methode der Energieintegrale herleiten (Korollar \ref{cor:2:2.5}).
 \end{proof}
 
 \begin{rem}
-Der Beweis zeigt,
-dass in Formel \eqref{eq:thm:2:2.1} $\til{Q}(\x)$
-durch $Q^2(\x)$ ersetzt werden kann.
+Der Beweis zeigt:
+\begin{enumerate}
+\item
+In Formel \eqref{eq:thm:2:2.1} $\til{Q}(\x)$ kann $\til{Q}(\x)$
+durch $Q^2(\x)$ ersetzt werden.
+\item
+Definieren wir
+\begin{equation}
+W(\mcP):=\{\mcQ=Q(\D):\mcQ~\text{ist schwächer wie}~\mcP\},
+\end{equation}
+so ist wegen $(Q_1(\x)+Q_2(\x))^2\leq2(Q_1(\x)^2+Q_2(\x)^2)$
+die Menge $W(\mcP)$ ein $\C$-Vektorraum.
+\end{enumerate}
+
 \end{rem}
 
 \section{Energieintegrale}
 
 Da wir eine Methode brauchen,
-um Skalarprodukte mit verschiedenen Differentialoperatoren abzuschätzen,
+um Skalarprodukte mit verschiedenen Differentialausdruck abzuschätzen,
 macht es Sinn, quadratische Differentialausdrücke $F$, definiert durch
 \begin{equation}
 F(\D,\overline{\D})u\bar{u}
@@ -160,15 +178,15 @@ Uns interessieren die Terme
 =\int F(\x,\x)\abs{\hat{u}(\x)}^2\d \x,
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
-die quadratische Formen auf $C^\infi_0(\Om)\ti C^\infi_0(\Om)\subs L^2(\R^n)\ti L^2(\R^n)$
+die quadratische Formen auf $C^\infi_0(\Om)\subs L^2(\Om)$
 definieren.
-Es besteht eine eins-zu-eins korrespondenz
+Es besteht eine eins-zu-eins Korrespondenz
 zwischen den quadratischen Differentialausdrücken $F(\D,\cc{\D})$
 und den Symbolen $F(\x,\cc{\x})$, $\x\in\C^n$,
 analog zu den Symbolen von Differentialausdrücken.
 
 Die quadratischen Formen \eqref{eq:2:qf}
-sind aber nur von den reellen Werten $F(\x,\x)$, $\x\in\R^n$ abhängig.
+sind nur von den reellen Werten $F(\x,\x)$, $\x\in\R^n$ abhängig.
 Verschiedene quadratische Differentialausdrücke bzw.~Symbole
 können also die gleiche quadratische Form definieren.
 Folgendes Lemma zeigt, dass es eine eins-zu-eins
@@ -208,8 +226,8 @@ Wäre also $F(\x,\x)\neq0$, so hätten wir einen Widerspruch.
 Die Rückrichtung sahen wir bereits, siehe Gleichung \eqref{eq:2:qf}.
 \end{proof}
 
-Unser Ziel ist es, Ableitungen von Ableitungspolynomen zu kontrollieren.
-Dazu betrachten wir Ableitungen quadratischer Differentialformen.
+Unser Ziel ist es, Ableitungen von Differentialpolynomen zu kontrollieren.
+Dazu betrachten wir Ableitungen quadratischer Differentialausdrücke.
 Wir beginnen mit dem Ausdruck
 \begin{equation}
 \frac{\pd}{\partial x_k}
@@ -217,7 +235,7 @@ Wir beginnen mit dem Ausdruck
 =\i\left[(\D_k-\overline{\D}_k)F(\D,\overline{\D})\right]u\bar{u}.
 \end{equation}
 Für einen Vektor $\ul{G}=(G_k)_{k=1,\dots,n}$,
-bestehend aus quadratischen Differentialformen $G_k$,
+bestehend aus quadratischen Differentialausdrücken $G_k$,
 erhält man für die Divergenz die Formel
 \begin{subequations}
 \begin{equation}\label{eq:2.15a}
@@ -228,7 +246,7 @@ wobei
 F(\z,\bar{\z})=\i\sum_{k=1}^n(\z_k-\bar{\z}_k)G_k(\z,\bar{\z})=-2\sum_{k=1}^n\y_kG_k(\z,\bar{\z}),
 \end{equation}
 \end{subequations}
-wenn wir $\z=\x+\i\y$ schreiben.
+wenn wir $\z=\x+\i\y$ mit $\x,\y\in\R^n$ schreiben.
 \begin{lem}\label{lem:2:2.2}
 Ein Polynom $F(\z,\bar{\z})$ in $\z=\x+\i\y$ und $\bar{\z}=\x-\i\y$
 kann genau dann in der Form \eqref{eq:2.15b} dargestellt werden,
@@ -241,8 +259,10 @@ G_k(\x,\x)=-\tfrac12\left.\frac{\partial F(\x+\i\y,\x-\i\y)}{\partial \y_k}\righ
 \end{lem}
 \begin{proof}
 Die Hinrichtung ist offensichtlich.
-Die Rückrichtung folgt aus der (reellen) Taylorentwicklung von $F(\x+\i\y,\x-\i\y)$ in $(\x,\y)\in\R^{2n}$.
-Der Satz von Taylor angewendet auf variables $\y\in\R^n$ und festes $\x\in\R^n$ liefert schließlich \eqref{eq:2.16}.
+Die Rückrichtung folgt aus der (reellen) Taylorformel von $F(\x+\i\y,\x-\i\y)$
+mit den Entwicklungspunkten $(\x,0)\in\R^{2n}$.
+Der Satz von Taylor angewendet auf variables $\y\in\R^n$
+und festes $\x\in\R^n$ liefert schließlich \eqref{eq:2.16}.
 \end{proof}
 
 Die Polynome $G_k(\z,\bar{\z})$, $\z\in\C^n$, sind als ganzes sind nicht eindeutig festgelegt.
@@ -250,11 +270,11 @@ Doch aufgrund von Lemma \ref{lem:2:qfsym} stört das nicht.
 
 Mit Hilfe einer speziellen quadratischen Differentialformen und obiger Formel
 gewinnen wir folgende Ungleichung,
-mit der wir die Ableitungen der Differentialoperatoren kontrollieren können.
+mit der wir die Ableitungen der Differentialdrücke kontrollieren können.
 
 \begin{lem}
-Sei $B_k:=\sup_{x_k,y_k\in\Om}\abs{x_k-y_k}<\infi$.
-Für Ableitungspolynome $P(\D)$, $Q(\D)$ gilt die Ungleichung
+Sei $\Om$ ein Gebiet, so dass $B_k:=\sup_{x_k,y_k\in\Om}\abs{x_k-y_k}<\infi$ für ein $k\in\{1,\dots,n\}$.
+Für Differentialausdrücke $P(\D)$, $Q(\D)$ gilt die Ungleichung
 \begin{equation}\label{eq:lem:2:2.4}
 \abs{\spro{P^{(k)}(\D)u}{\bar{Q}(\D)u}}\leq\norm{P(\D)u}\left(\norm{\bar{Q}^{(k)}(\D)u}+B_k\norm{\bar{Q}(\D)u}\right),
 \quad\text{f.a.}~u\in C^\infi_0(\Om).
@@ -262,11 +282,11 @@ Für Ableitungspolynome $P(\D)$, $Q(\D)$ gilt die Ungleichung
 \end{lem}
 
 \begin{proof}
-Wir betrachten die quadratische Differentialform mit dem Symbol
+Wir betrachten den quadratischen Differentialausdruck mit dem Symbol
 \begin{equation}
 F(\z,\bar{\z}):=P(\z)Q(\bar{\z})-Q(\z)P(\bar{\z}).
 \end{equation}
-Diese erfüllt offensichtlich $F(\x,\x)=0$, f.a.~$\x\in\R^n$.
+Dieses erfüllt offensichtlich $F(\x,\x)=0$, f.a.~$\x\in\R^n$.
 Nach Lemma \ref{lem:2:2.2} (Formel \eqref{eq:2.16})
 erhalten wir, nachdem wir mit $-\i x_k$ multipliziert haben
 \begin{equation}\label{eq:2:2.22}
@@ -274,24 +294,28 @@ erhalten wir, nachdem wir mit $-\i x_k$ multipliziert haben
 \end{equation}
 mit
 \begin{equation}
-G_k(\x,\x)=-\i\left(P^{(k)}(\x)Q(\x)-Q^{(k)}(\x)P(\x)\right),
+G_k(\x,\x)=-\i\left(P^{(k)}(\x)Q(\x)-Q^{(k)}(\x)P(\x)\right),\label{eq:2:Gk}
 \quad\text{f.a.}~\x\in\R^n.
 \end{equation}
+Beachte bei der Berechnung von \eqref{eq:2:Gk},
+dass $P(\z),Q(\z)$ holomorph
+und $P(\bar{\z}),Q(\bar{\z})$ anti-holomorph sind.
 
 Integrieren wir die Gleichung \eqref{eq:2:2.22},
 so liefert eine partielle Integration auf rechten Seite den Term
 \begin{align}
-\i\int G_k(\D,\overline{\D})u\bar{u}\d x&=\int\left(P^{(k)}(\D)Q(\bar{D})-P(\D)Q^{(k)}(\D)\right)u\bar{u}\d x\\
-&=\spro{P^{(k)}(\D)u}{\bar{Q}(\D)u}-\spro{P(\D)u}{\bar{Q}^{(k)}(\D)u}.
+\i\int G_k(\D,\overline{\D})u\bar{u}\d x
+&=\int\left(P^{(k)}(\D)Q(\bar{D})-Q^{(k)}(\D)P(\cc{\D})\right)u\bar{u}\d x\\
+&=\spro{P^{(k)}(\D)u}{\bar{Q}(\D)u}-\spro{Q^{(k)}(\D)u}{\bar{P}(\D)u}.
 \end{align}
 Damit erhalten wir insgesamt
 \begin{equation}
 \spro{P^{(k)}(\D)u}{\bar{Q}(\D)u}
-=\spro{P(\D)u}{\bar{Q}^{(k)}(\D)u}-i\int x_k\left(P(\D)u\cc{\bar{Q}(\D)u}-Q(\D)u\cc{\bar{P}(\D)u}\right)\d x.
+=\spro{Q^{(k)}(\D)u}{\bar{P}(\D)u}-i\int x_k\left(P(\D)u\cc{\bar{Q}(\D)u}-Q(\D)u\cc{\bar{P}(\D)u}\right)\d x.
 \end{equation}
 Ohne Beschränkung der Allgemeinheit können wir das Gebiet $\Om$ so legen,
 dass $\abs{x_k}\leq B_k/2$ für alle $x_k\in\Om$.
-Man beachte, dass Differentialausdrücke mit Translationsoperatoren vertauschen.
+Denn Differentialausdrücke sind schließlich translationsinvariant.
 Schließlich erhalten wir mit Cauchy-Schwarz
 und der Dreiecksungleichung die Ungleichung \eqref{eq:lem:2:2.4}.
 \end{proof}
@@ -323,10 +347,10 @@ also ist auch der Induktionsschritt gezeigt.
 \begin{cor}\label{cor:2:2.6}
 Für festes beschränktes Gebiet $\Om$ und beliebiges $\al\in\N^n_0$ gilt
 \begin{equation}
-\norm{P^{(\al)}(\D)u}\leq C_{\al,\Om}\norm{P(\D)u},
+\norm{P^{(\al)}(\D)u}\leq C_{m,\al,\Om}\norm{P(\D)u},
 \quad\text{f.a.}~u\in C^\infi_0(\Om),
 \end{equation}
-mit $C_{\al,\Om}=m(m-1)\cdots(m-\abs{\al})B^\al$, wobei $B^\al=\prod_{l=1}^n B^{\al_l}_l$.
+mit $C_{m,\al,\Om}=m(m-1)\cdots(m-\abs{\al})B^\al$, wobei $B^\al=\prod_{l=1}^n B^{\al_l}_l$.
 Die Konstante $C_{\al,\Om}$ hängt also nur vom Grad $m$ von $P(\x)$,
 der Ableitungsordnung $\abs{\al}$ und der Ausdehnung des Gebiets $\Om$ ab.
 \end{cor}
@@ -335,13 +359,20 @@ der Ableitungsordnung $\abs{\al}$ und der Ausdehnung des Gebiets $\Om$ ab.
 Mehrfache Anwendung von Korollar \ref{cor:2:2.5}.
 \end{proof}
 
-Das letzte Korollar ist gerade der im Beweis von Satz \ref{thm:2:2.1}
-gebrauchte Baustein.
+Das letzte Korollar ist gerade der im Beweis
+von Satz \ref{thm:2:2.1} gebrauchte Baustein.
+Dabei können wir $C_{\mcP,\Om}:=\max_\al C_{m,\al,\Om}$
+für die Konstante in \eqref{eq:2:wantedineq} wählen.
 
 \section{Beispiele und spezielle Symbole}
 
 Wir betrachten als instruktive Beispiele
 einige klassische Differentialausdrücke zweiter Ordnung.
+Zur vereinfachung der Notation schreiben wir
+\begin{align}
+f(\x)\asymp g(\x)\quad&\gdw\quad\exists_{c,C>0}~cg(\x)\leq f(\x)\leq Cg(\x),\quad\text{f.a.}~\x\in\R^n,\\
+f(\x)\apprle g(\x)\quad&\gdw\quad\exists_{C>0}~f(\x)\leq Cg(\x).
+\end{align}
 
 \begin{exa}\label{exa:2:lap}
 Wir betrachten das zum Laplace-Operator $\Lap$
@@ -356,9 +387,9 @@ a^2+b^2\leq(a+b)^2\leq2(a^2+b^2),\quad\text{für}~a,b\geq0,
 \end{equation}
 so sehen wir, dass
 \begin{equation}
-\til{P}(\x)\asymp1+\abs{\x}^4.
+\til{P}(\x)\asymp\abs{\x}^4+1.
 \end{equation}
-Also ist der Laplaceoperator stärker wie alle Differentialoperatoren
+Also ist der Laplaceoperator stärker wie alle Differentialausdrücken
 mit Symbolen von gleichem oder kleinerem Grad.
 Diese sind alle von der Form
 \begin{equation}
@@ -381,7 +412,7 @@ In diesem Fall kann man, für $R$ groß genug,
 die linearen Terme in \eqref{eq:2:rpQLap1} vernachlässigen
 und erhält insgesamt
 \begin{equation}
-\til{Q}(\x)\asymp1+\abs{\x^\tr A\x}^2\asymp1+\abs{\x}^4\asymp\til{P}(\x).
+\til{Q}(\x)\asymp\abs{\x^\tr A\x}^2+1\asymp\abs{\x}^4+1\asymp\til{P}(\x).
 \end{equation}
 Im anderen Fall betrachtet man \eqref{eq:2:rpQLap1}
 für alle $\x\in\R^n$ mit $\x^\tr A\x=0$,
@@ -508,7 +539,7 @@ wurden folgende Operatortypen eingeführt.
 \begin{enumerate}
 \item
 Ein Differentialausdruck $P(\D)$ heißt vom {\em Haupttyp},
-falls er gleich stark ist wie jeder Differentialoperator mit gleichem Hauptteil.
+falls er gleich stark ist wie jeder Differentialausdruck mit gleichem Hauptteil.
 \item
 Ein Differentialausdruck $P(\D)$ heißt {\em elliptisch},
 falls er stärker ist wie jeder Differentialausdruck von kleiner oder gleichem Grad.
@@ -525,7 +556,7 @@ für diese Operatortypen.
 
 \begin{thm}\label{thm:2:2.9}
 Ein Symbol $P(\x)$ ist genau dann vom Haupttyp,
-wenn alle partiellen Ableitungen $\frac{\pd p(\x)}{\pd\x_i}$
+wenn alle partiellen Ableitungen $p^{(k)}(\x)$, $k=1,\dots,n$,
 des Hauptteils $p(\x)$ für kein $\x\neq0$
 gleichzeitig null sind.
 \end{thm}
@@ -535,38 +566,39 @@ Ist $P(\x)$ vom Haupttyp und vom Grad $m>0$,
 dann gilt das gleiche für $p(\x)$.
 Dann ist $p(\x)$ auch stärker als $p(\x)+\x^\al$
 mit $\abs{\al}=m-1$.
-Nach Theorem \ref{thm:2:2.1} ist dann
+Nach Theorem \ref{thm:2:2.1} und der Linearität von $W(\mcP)$
+gilt dann
 \begin{equation}\label{eq:2:homquot}
 \sup_{\x\in\R^n}\frac{(\x^2_1+\dots+\x^2_n)^{m-1}}{\sum\abs{p^{(\al)}(\x)}^2}<\infi.
 \end{equation}
 Angenommen es gibt ein $\x_0\in\R^n$,
-so dass $\pd p(\x_0)/\pd\x_i=0$ für alle $i=1,\dots,n$.
+so dass $p^{(i)}(\x_0)=0$ für alle $i=1,\dots,n$.
 Dann gilt auch $p(\x_0)=0$,
 nach Eulers Formel für homogene Polynome
 \begin{equation}
-mp(\x)=\pd p(\x)/\pd\x_i,\quad\text{f.a.}~\x\in\R^n,~i=1,\dots,n.
+mp(\x)=\sum_{k=1}^n\x_kp^{(k)}(\x),\quad\text{f.a.}~\x\in\R^n.
 \end{equation}
-Wir setzen $\x=t\x_0$, $t\in\R$, in Gleichung \ref{eq:2:homquot},
+Wir setzen $\x=t\x_0$, $t\in\R$, in Gleichung \eqref{eq:2:homquot},
 und erhalten einen Quotienten aus Polynomen in der Variablen $t$.
 Aufgrund der Homogenität gilt
 \begin{equation}
 p(t\x_0)=t^mp(\x_0)=0,~p^{(1)}(t\x_0)=t^{m-1}p^{(1)}(\x_0)=0,
 \dots,~p^{(n)}(t\x_0)=t^{m-1}p^{(n)}(\x_0)=0,
 \end{equation}
-und somit hat das Polynom im Zähl echt kleineren Grad wie $2(m-1)$.
+und somit hat das Polynom im Zähler echt kleineren Grad wie $2(m-1)$.
 Dies liefert einen Widerspruch für $t\to\infi$.
 
 Nehmen wir nun an $P(\x)$ erfüllt die Bedingung aus Theorem \ref{thm:2:2.9}
 und $Q(\x)$ hat den gleichen Hauptteil $p(\x)$ wie $P(\x)$.
 Durch weglassen von Term erhalten wir
 \begin{equation}
-\til{P}(\x)>\sum_{k=1}^n\Abs{\frac{\pd P(\x)}{\pd\x_k}}^2=\pi(\x)+r(\x).
+\til{P}(\x)>\sum_{k=1}^n\abs{P^{(k)}(\x)}^2=\pi(\x)+r(\x).
 \end{equation}
 Dabei fassen wir die höchsten Terme des Ausdrucks
-$\sum_{k=1}^n\Abs{\frac{\pd P(\x)}{\pd\x_k}}^2$ zu $\pi(\x)$ zusammen.
+$\sum_{k=1}^n\abs{P^{(k)}(\x)}^2$ zu $\pi(\x)$ zusammen.
 Diese sind dann gegeben durch
 \begin{equation}
-\pi(\x)=\sum_{k=1}^n\Abs{\frac{\pd p(\x)}{\pd\x_k}}^2,
+\pi(\x)=\sum_{k=1}^n\abs{p^{(k)}(\x)}^2,
 \end{equation}
 was aus direkt aus der binomischen Formel
 und der Additivität des Grads von Polynomen folgt.
@@ -582,6 +614,7 @@ Mit der Dreiecksungleichung erhalten wir nun
 \leq1+2\frac{\abs{Q(\x)-P(\x)}^2}{\pi(\x)},
 \end{equation}
 für $\abs{\x}$ groß genug.
+Das Polynom im Zähler des zweiten Terms hat maximal den Grad $2(m-1)$.
 Insgesamt ist damit $\sup_{\x\in\R^n}\abs{Q(\x)}^2/\til{P}(\x)<\infi$,
 also $Q(\D)$ schwächer wie $P(\D)$.
 \end{proof}
@@ -590,13 +623,13 @@ Der Satz und sein Beweis bestätigen also die Anmerkungen nach den Beispielen.
 Auch Elliptische Operatoren lassen sich klassifizieren.
 
 \begin{thm}
-Ein Differentialoperator $P(\D)$ ist genau dann elliptisch,
+Ein Differentialausdruck $P(\D)$ ist genau dann elliptisch,
 wenn er stärker ist wie jeder andere gleichen Grades.
 \end{thm}
 
 Oder anders vermuliert sind die elliptischen Operatoren
 gerade die maximalen Elemente
-unter den Differentialoperatoren festen Grades.
+unter Differentialausdrücken gleichen Grades.
 
 Zum Abschluss betrachten wir Produktoperatoren.
 Dies sind zum Beispiel Operatoren der Form
@@ -608,9 +641,7 @@ mit $\x_a=(\x_1,\dots,\x_m)$, $\x_b=(\x_{m+1},\dots,\x_n)$,
 wobei $0<m<n$ fest gewählt ist
 und $P_a(\x)$ ein Polynom in $\R^m$
 und $P_b(\x)$ ein Polynom in $\R^{n-m}$.
-Wir bezeichnen mit $W(\mcP)$ die Symbole der Differentialausdrücke,
-die schwächer sind wie $\mcP$.
-Dann erhalten wir:
+Wir erhälten:
 
 \begin{thm}
 Für Produktpolynome wie in \eqref{eq:2:prodpol}
@@ -651,13 +682,13 @@ Es gilt
 \sum_{k=1}^lp_k(\x_l)a_k(\x_b),
 \end{equation}
 mit Polynomen $a_k(\x_b)$.
-Wir zeigen $a_k(\x_b)\in W(\mcP_b)$ für alle $k=1,\dots,l$.
-Da die $p_1(\x_a),\dots,p_l(\x_a)$ linear unabhängig sind,
-gibt es $\x_{a,1},\dots,\x_{a,l}$,
-so dass $\left(p_k(\x_l)\right)_{k,l=1,\dots,l}$ invertierbar ist.
+Wir zeigen $a_k(\x_b)\in W(\mcP_b)$ für alle $k=1,\dots,K$.
+Da die $p_1(\x_a),\dots,p_K(\x_a)$ linear unabhängig sind,
+gibt es $\x_{a,1},\dots,\x_{a,K}$,
+so dass $\left(p_k(a,\x_l)\right)_{k,l=1,\dots,K}$ invertierbar ist.
 Das Gleichungssystem
 \begin{equation}
-Q(\x_{a,l},\x_b)=\sum_{k=1}^lp_k(\x_{a,l})a_k(\x_b),
+Q(\x_{a,l},\x_b)=\sum_{k=1}^lp_k(\x_{a,l})a_k(\x_b),\quad\text{f.a.}~k=1,\dots,K,
 \end{equation}
 kann also nach den $a_k(\x_b)$ aufgelöst werden kann.
 Dies impliziert nach obigem $a_k(\x_b)\in W(\mcP_b)$.
