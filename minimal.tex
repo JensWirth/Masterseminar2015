@@ -4,7 +4,7 @@
 Ein erstes Ziel in dieses Kapitels ist es, den Vergleich der Stärke (Definition \ref{df:1:1.2})
 zweier Differentialausdrücke mit konstanten Koeffizienten auf einen Vergleich ihrer Symbole zurückzuführen.
 
-\section{Die Stärke von Differentialausdrücken}
+\section{Die Stärke von Differentialausdrücken mit konstanten Koeffizienten}
 
 Seien $\mcP=P(\D)$ und $\mcQ=Q(\D)$ zwei Differentialausdrücke mit konstanten Koeffizienten und zugehörigen Symbolen $P(\xi)$ und $Q(\xi)$. Wir nehmen zuerst an, es gibt eine Konstante $C>0$ mit $|Q(\xi)|\le C|P(\xi)|$ für alle $\xi\in\R^n$. Dann ist $\mcQ$ schwächer als $\mcP$, da mit der Formel von Plancherel 
 \begin{equation}
@@ -18,7 +18,7 @@ ersetzt werden, wobei $\til{P}$ dem Polynom $P$ durch
 \begin{equation}\label{eq:2:2}
 \til{P}(\z)^2:=\sum_\al\abs{P^{(\al)}(\z)}^2,\qquad \zeta=\xi+\i\eta \in\C^n
 \end{equation}
-zugeordnet ist und $\widetilde Q$ analog definiert sei. Dabei bezeichne 
+zugeordnet wird und $\widetilde Q$ analog definiert sei. Dabei bezeichne 
 \begin{equation}
 P^{(\al)}(\x):=\partial^\alpha P(\x)
 \end{equation}
@@ -26,18 +26,18 @@ die $\alpha$-te Ableitung von $P$. Es wird sich zeigen, daß die Bedingung \eqre
 
 In den folgenden Betrachtungen benötigt man häufig die Leibnizsche Formel
 \begin{equation}\label{eq:2:leib}
-P(\D)(uv)=\sum_{\al}(P^{(\al)}(\D)v)\left(\frac{\D^\al u}{\al!}\right),
-\quad\text{f.a.}~u,v\in C^\infi.
+\forall u,v\in C^\infi \quad:\quad P(\D)(uv)=\sum_{\al}(P^{(\al)}(\D)v)\left(\frac{\D^\al u}{\al!}\right).
 \end{equation} 
 Für $P(\D)=\D^\al$ ist dies die gewöhnliche Leibnizregel und somit folgt \eqref{eq:2:leib} aus Linearitätsgründen. Wir treffen weiter folgende Konvention:
 Im Falle griechischer Indizes
 ist die Ableitung nach einem Multiindex $\al\in\N^n_0$ gemeint,
 im Fall lateinischer Indizes oder Zahlen definieren wir
 \begin{equation}
-P^{(k_1,\dots,k_l)}(\x):=\frac{\pd}{\pd\x_{k_1}}\dots\frac{\pd}{\pd\x_{k_l}}P(\x).
+P^{(k_1,\dots,k_l)}(\x):=\pd_{k_1}\cdots\pd_{k_l}P(\x).
 \end{equation}
 
 \begin{thm}\label{thm:2:2.1}
+Sei $\Om$ ein beschränktes Gebiet.
 Der Differentialausdruck $\mcQ$ ist genau dann schwächer wie $\mcP$,
 wenn
 \begin{equation}\label{eq:thm:2:2.1}
@@ -48,12 +48,12 @@ erfüllt ist.
 
 Wir zeigen zunächst, wie in beiden Richtungen abgeschätzt wird.
 Für die Rückrichtung benötigen wir ein Lemma,
-dass wir später beweisen.
+das wir später beweisen.
 
 \begin{proof}
 {\em Hinrichtung.}
 Sei $\mcQ$ schwächer wie $\mcP$.
-Dann gilt für ein $C\in\R_+$ und alle $u\in\rmC_0^\infty(\Omega)$ die Ungleichung
+Dann gilt für ein $C>0$ und alle $u\in\rmC_0^\infty(\Omega)$ die Ungleichung
 \begin{equation}\label{eq:2:4}
 \norm{\mcQ u}^2\leq C(\norm{\mcP u}^2+\norm{u}^2).
 \end{equation}
@@ -79,7 +79,10 @@ eines Skalarproduktes auf einem $\C^M$, da für alle $t=(t_\alpha)_{|\alpha|\le 
   \sum_{\alpha,\beta} t_\alpha \overline{t_\beta} \Psi_{\alpha\beta} = \int_\Omega \left|\sum_\alpha \frac{t_\alpha \D^\alpha\psi (x)}{\alpha! }\right|^2 \d x 
   = \int \left|\sum_\alpha \frac{t_\alpha \xi^\alpha}{\alpha!} \right|^2 |\widehat\psi(\xi)|^2 \d\xi \ne0
 \end{equation}
-gilt. Es gibt also Konstanten $\Psi_-,\Psi_+\in\R_+$, so dass
+gilt.
+Dies ist gleichbedeutend damit,
+dass die Vektoren $D^\al\psi\in L^2$, $\abs{\al}\leq m$, linear unabhängig sind.
+Es gibt also Konstanten $\Psi_-,\Psi_+\in\R_+$, so dass
 \begin{equation}\label{eq:2.8}
 \abs{t}^2\Psi_-\leq\sum_{\al,\be}t_\al \overline{t_\be}\Psi_{\al\be}\leq\abs{t}^2\Psi_+.
 \end{equation}
@@ -95,11 +98,12 @@ Sei die Ungleichung \eqref{eq:thm:2:2.1} erfüllt, das heißt gelte
 \begin{equation}\label{eq:2.10}
 \til{Q}(\x)\leq C\til{P}(\x),
 \end{equation}
-für alle $\xi\in\R^n$ und mit einer Konstanten $C>0$.
-Sei weiter $u\in\rmC_0^\infty(\Omega)$. Dann gilt
+für alle $\xi\in\R^n$ und mit einer Konstanten $C>0$,
+also auch $\abs{Q(\x)}\leq C\til{P}(\x)$.
+Für $u\in\rmC_0^\infty(\Omega)$ gilt
 \begin{align}
-\|Q(\D) u\|^2 &= \int |Q(\xi) \widehat{u}(\xi)|^2 \d\xi \leq \int |\widetilde Q(\xi) \widehat{u}(\xi)|^2 \d\xi \leq
- C \int |\widetilde P(\xi) \widehat{u}(\xi)|^2 \d\xi \notag\\&  = C\sum_\al\int | P^{(\al)}(\xi)\widehat{u}(\xi)|^2\d\xi = C\sum_\al\norm{P^{(\al)}(\D)u}^2.\label{eq:2.11}
+\|Q(\D) u\|^2 &= \int |Q(\xi) \widehat{u}(\xi)|^2 \d\xi
+\leq C \int |\widetilde P(\xi) \widehat{u}(\xi)|^2 \d\xi \notag\\&  = C\sum_\al\int | P^{(\al)}(\xi)\widehat{u}(\xi)|^2\d\xi = C\sum_\al\norm{P^{(\al)}(\D)u}^2.\label{eq:2.11}
 \end{align}
 Um den Beweis abzuschließen,
 fehlt also nur noch eine Ungleichung der Form
@@ -129,24 +133,27 @@ F(\D,\overline{\D})u\bar{v}
 \end{equation}
 mit Koeffizienten $a_{\al\be}\in\C$. Uns interessieren insbesondere die Terme
 \begin{equation}\label{eq:2:qf}
-\int F(\D,\overline{\D})u(x)\bar{u}(x)\d x
+\Phi_F(u):=\int F(\D,\overline{\D})u(x)\bar{u}(x)\d x
 =\int F(\x,\x)\abs{\hat{u}(\x)}^2\d \x,
 \end{equation}
-welche quadratische Formen auf $\rmC^\infi_0(\Om)\subs \rmL^2(\Om)$
+welche quadratische Formen $\Phi_F$ auf $\rmC^\infi_0(\Om)\subs \rmL^2(\Om)$
 definieren.
 Es besteht eine eins-zu-eins Korrespondenz
 zwischen sesquilinearen Differentialausdrücken $F(\D,\cc{\D})$
-und Symbolen $F(\z,\cc{\z})$, $\z\in\C^n$,
+und den Symbolen
+\begin{equation}
+F(\z,\cc{\z}):=\sum_{\al,\be}a_{\al\be}\z^\al\cc{\z}^\be, \z\in\C^n,
+\end{equation}
 analog zu den Symbolen von Differentialausdrücken.
 
-Die quadratischen Formen \eqref{eq:2:qf}
-sind nur von den reellen Werten $F(\x,\x)$, $\x\in\R^n$ abhängig.
+Die quadratischen Formen $\Phi_F$
+sind schon durch die Werte $F(\x,\x)$, $\x\in\R^n$ bestimmt.
 Verschiedene quadratische Differentialausdrücke bzw.~Symbole
 können also die gleiche quadratische Form definieren.
 Folgendes Lemma zeigt, dass es eine eins-zu-eins
 Korrespondenz zwischen den auf reelle Werte eingeschränkten
 Symbolen $F(\x,\x)$, $\x\in\R^n$,
-und den quadratischen Formen wie in \eqref{eq:2:qf} gibt.
+und den quadratischen Formen $\Phi_F$ gibt.
 
 \begin{lem}\label{lem:2:qfsym}
 Sei $\Om$ ein beliebiges Gebiet.
@@ -168,13 +175,13 @@ Dann ist
 für alle $\y\in\R^n$.
 Auf der rechten Seite steht wieder ein Polynom $q(\y)$ in $\y\in\R^n$
 und nach Voraussetzung müssen dessen Koeffizienten verschwinden.
-Beachten wir, dass
+Wegen
 \begin{equation}
 (\x+\y)^\al=\sum_{\be+\ga=\al}\begin{pmatrix}\al\\\be\end{pmatrix}\x^\be\y^\ga=\y^\al+\dots
 \end{equation}
-so sehen wir, dass die führenden Terme von $q(\y)$
-bis auf den Faktor $\norm{u}^2\neq0$ den führenden Termen von $F(\x,\x)$ entsprechen.
-Wäre also $F(\x,\x)\neq0$, so hätten wir einen Widerspruch.
+gilt für die homogenen Hauptteile $\pi_q(\x)$ bzw.~$\pi_F(\x)$
+von $p(\x)$ bzw.~$F(\x,\x)$ die Gleichung $\pi_q(\x)=\norm{u}^2\pi_F(\x)$.
+Also würde $F(\x,\x)\neq0$ zu einem Widerspruch führen.
 \end{proof}
 
 Unser Ziel ist es, Ableitungen von Differentialausdrücken zu kontrollieren.
@@ -198,20 +205,19 @@ für $\z=\x+\i\y$ mit $\x,\y\in\R^n$.
 \begin{lem}\label{lem:2:2.2}
 Ein Polynom $F(\z,\overline{\z})$ in $\z=\x+\i\y$ und $\overline{\z}=\x-\i\y$
 kann genau dann in der Form \eqref{eq:2.15b} dargestellt werden,
-wenn $F(\x,\x)=0$ für alle $\x=0$ gilt.
+wenn $F(\x,\x)=0$ für alle $\x\in\R^n$ gilt.
 
-In diesem Fall kann
-\begin{equation}\label{eq:2.16}
+In diesem Fall gilt
+\begin{equation}\label{eq:2:2.16}
 G_k(\x,\x)=-\frac12\left.\frac{\partial F(\x+\i\y,\x-\i\y)}{\partial \y_k}\right\rvert_{\y=0}
 \end{equation}
-gesetzt werden.
+für alle $\x\in\R^n$.
 \end{lem}
 \begin{proof}
 Die Hinrichtung ist offensichtlich.
-Die Rückrichtung folgt aus der (reellen) Taylorformel von $F(\x+\i\y,\x-\i\y)$
+Die Rückrichtung und Formel \eqref{eq:2:2.16}
+folgen aus der (reellen) Taylorformel von $F(\x+\i\y,\x-\i\y)$
 mit den Entwicklungspunkten $(\x,0)\in\R^{2n}$.
-Der Satz von Taylor angewendet auf variables $\y\in\R^n$
-und festes $\x\in\R^n$ liefert schließlich \eqref{eq:2.16}.
 \end{proof}
 
 Die Polynome $G_k(\z,\overline{\z})$ sind nicht eindeutig durch $F(\zeta,\overline\zeta)$ bestimmt.
@@ -221,7 +227,7 @@ gewinnen wir folgende Ungleichung,
 mit der wir die Ableitungen der Differentialdrücke kontrollieren können.
 
 \begin{lem}
-Sei $\Om$ ein Gebiet, so dass für ein $k\in\{1,\ldots,n\}$ der $k$-Durchmesser $B_k:=\sup_{x,y\in\Om}\abs{x_k-y_k}<\infi$ endlich ist. Dann gilt
+Sei $\Om$ ein Gebiet, so dass für ein $k\in\{1,\ldots,n\}$ der $k$-Durchmesser $B_k:=\sup_{x,y\in\Om}\abs{x_k-y_k}$ endlich ist. Dann gilt
 für Differentialausdrücke $P(\D)$ und $Q(\D)$, sowie alle Funktionen $u\in\rmC_0^\infty(\Omega)$ die Ungleichung
 \begin{equation}\label{eq:lem:2:2.4}
 \abs{\spro{P^{(k)}(\D)u}{\overline{Q}(\D)u}}\leq\norm{P(\D)u}\left(\norm{\overline{Q}^{(k)}(\D)u}+B_k\norm{\overline{Q}(\D)u}\right).
@@ -230,30 +236,34 @@ für Differentialausdrücke $P(\D)$ und $Q(\D)$, sowie alle Funktionen $u\in\rmC
 
 \begin{proof}
 Wir betrachten den quadratischen Differentialausdruck mit dem Symbol
-\begin{equation}
+\begin{equation}\label{eq:2:spsym}
 F(\z,\bar{\z}):=P(\z)Q(\bar{\z})-Q(\z)P(\bar{\z}).
 \end{equation}
 Dieser erfüllt offensichtlich $F(\x,\x)=0$ für alle $\x\in\R^n$.
-Nach Lemma \ref{lem:2:2.2} (Formel \eqref{eq:2.16})
-erhalten wir, nachdem wir mit $-\i x_k$ multipliziert haben
+Nach Lemma \ref{lem:2:2.2} erhalten wir,
+nachdem wir mit $-\i x_k$ multipliziert haben
 \begin{equation}\label{eq:2:2.22}
 -\i x_kF(\D,\overline{\D})u\bar{u}=-\i x_k\sum_{j=1}^n\frac{\pd}{\partial x_j}\left[G_j(\D,\overline{\D})u\bar{u}\right],
 \end{equation}
-mit
+wobei nach Formel \eqref{eq:2:2.16} das Symbol
 \begin{equation}
-G_k(\x,\x)=-\i\left(P^{(k)}(\x)Q(\x)-Q^{(k)}(\x)P(\x)\right)\label{eq:2:Gk}.
+G_k(\z,\z)=-\i\left(P^{(k)}(\z)Q(\cc{\z})-Q^{(k)}(\z)P(\cc{\z})\right)\label{eq:2:Gk},
+\quad\z\in\C^n
 \end{equation}
+gewählt werden kann.
 Man beachte bei der Berechnung von \eqref{eq:2:Gk},
 dass $P(\z),Q(\z)$ holomorph
 und $P(\overline{\z}),Q(\overline{\z})$ anti-holomorph sind.
 Integrieren wir Gleichung \eqref{eq:2:2.22},
-so liefert eine partielle Integration auf rechten Seite den Term
-\begin{align}
-\i\int G_k(\D,\overline{\D})u\bar{u}\d x
-&=\int\left(P^{(k)}(\D)Q(\overline{D})-Q^{(k)}(\D)P(\cc{\D})\right)u\bar{u}\d x\\
-&=\spro{P^{(k)}(\D)u}{\overline{Q}(\D)u}-\spro{Q^{(k)}(\D)u}{\overline{P}(\D)u}.
-\end{align}
-Damit erhalten wir insgesamt
+so liefert eine partielle Integration
+in der Variablen $x_k$ auf rechten Seite
+\begin{equation}\label{eq:2:ints}
+\int-\i x_kF(\D,\cc{\D})u(x)\cc{u(x)}\d x=\i\int G_k(\D,\cc{\D})u(x)\cc{u(x)}\d x.
+\end{equation}
+Wir setzen nun \eqref{eq:2:spsym} und \eqref{eq:2:2.22} ein,
+schreiben die rechte Seite von \eqref{eq:2:ints}
+in Skalarprodukte um und bringen einen Term auf die andere Seite.
+Es resultiert die Gleichung
 \begin{equation}
 \spro{P^{(k)}(\D)u}{\overline{Q}(\D)u}
 =\spro{Q^{(k)}(\D)u}{\overline{P}(\D)u}-\i\int x_k\left(P(\D)u\cc{\overline{Q}(\D)u}-Q(\D)u\cc{\overline{P}(\D)u}\right)\d x.
@@ -310,10 +320,12 @@ für die Konstante in \eqref{eq:2:wantedineq} wählen.
 
 Wir betrachten als instruktive Beispiele
 einige klassische Differentialausdrücke zweiter Ordnung.
-Zur vereinfachung der Notation schreiben wir
+Zur Vereinfachung der Notation schreiben wir
 \begin{align}
-f(\x)\asymp g(\x)\quad&\gdw\quad\exists_{c,C>0}~cg(\x)\leq f(\x)\leq Cg(\x),\quad\text{f.a.}~\x\in\R^n,\\
-f(\x)\apprle g(\x)\quad&\gdw\quad\exists_{C>0}~f(\x)\leq Cg(\x).
+f(\x)\asymp g(\x)\quad&\gdw&
+\exists_{C_-,C_+>0}\forall_{\x\in\R^n}\quad&:\quad C_-g(\x)\leq f(\x)\leq C_+g(\x),\\
+f(\x)\apprle g(\x)\quad&\gdw&
+\exists_{C>0}\forall_{\x\in\R^n}~\quad&:\quad f(\x)\leq Cg(\x).
 \end{align}
 
 \begin{exa}\label{exa:2:lap}
@@ -430,7 +442,7 @@ Als letztes Beispiel betrachten wir die ultrahyperbolische Gleichung\index{Diffe
 \begin{equation}
 \Lap_1u=\Lap_2u,
 \end{equation}
-mit $\Lap_1:=\pd_1^2+\dots+\pd_m^2$, $\Lap_2:=\pd^2_{m+1}+\dots+\pd^2_m$.
+mit $\Lap_1:=\pd_1^2+\dots+\pd_m^2$, $\Lap_2:=\pd^2_{m+1}+\dots+\pd^2_n$.
 Das korrespondierende Symbol ist $P(\x)=\x^2_1+\dots+\x^2_m-\x^2_{m+1}-\dots-\x^2_n$.
 
 Ein Symbol $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
@@ -562,7 +574,7 @@ wenn der homogene Hauptteil $p(\xi)$ von $P(\xi)$ für alle $\xi\in\R^n\setminus
 
 
 Zum Abschluss betrachten wir Produktoperatoren auf Produkträumen.
-Dies sind zum Differentialoperatoren mit Symbolen
+Dies sind Differentialoperatoren mit Symbolen von der Form
 \begin{equation}\label{eq:2:prodpol}
 P(\x)=P_a(\x_a)P_b(\x_b),
 \end{equation}
