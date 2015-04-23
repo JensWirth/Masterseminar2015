@@ -1,71 +1,66 @@
 % !TEX root = main.tex
 \chapter{Minimale Operatoren}
 
-Als erste Etappe in diesem Kapitel,
-führen wir den Vergleich der Stärke (Definition \ref{df:1:1.2})
-zweier Differentialausdrücke mit konstanten koeffizienten
-auf einen Vergleich der Symbole zurück.
+Ein erstes Ziel in dieses Kapitels ist es, den Vergleich der Stärke (Definition \ref{df:1:1.2})
+zweier Differentialausdrücke mit konstanten Koeffizienten auf einen Vergleich ihrer Symbole zurückzuführen.
 
 \section{Die Stärke von Differentialausdrücken}
 
-Ziel dieses Abschnitts ist die Charaktierisierung der Aussage
-``$\mathcal Q=Q(\D)$ ist schächer als $\mcP=P(\D)$'',
-im Fall beschränkter Gebiete $\Om$,
-durch eine Ungleichung der Form
-\begin{equation}\label{eq:2:1}
-\sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi,
+Seien $\mcP=P(\D)$ und $\mcQ=Q(\D)$ zwei Differentialausdrücke mit konstanten Koeffizienten und zugehörigen Symbolen $P(\xi)$ und $Q(\xi)$. Wir nehmen zuerst an, es gibt eine Konstante $C>0$ mit $|Q(\xi)|\le C|P(\xi)|$ für alle $\xi\in\R^n$. Dann ist $\mcQ$ schwächer als $\mcP$, da mit der Formel von Plancherel 
+\begin{equation}
+    \|Q(\D) u\|^2 = \int |Q(\xi)\widehat u(\xi)|^2 \d\xi \le C^2 \int |P(\xi)\widehat u(\xi)|^2 \d\xi = C^2 \|P(\D)u \|^2 
 \end{equation}
-wobei $\til{P}$ und $\til{Q}$ geeignete Regularisierungen von $P$ und $Q$ sind.
-Beachte, dass reelle Nullstellen von $P$ in \eqref{eq:2:1} Probleme machen würden,
-wenn man $\til{P}=P$ verwendete.
+für alle $u\in\rmC_0^\infty(\R^n)$ gilt. Man beachte, daß in diesem Falle jede reelle Nullstelle von $P$ auch Nullstelle von $Q$ sein muß. Das soll im folgenden verallgemeinert und die genutzte Abschätzung $C=\sup_{\xi\in\R^n} |Q(\xi)|/|P(\xi)|$ für Operatoren auf beschränkten Gebieten  durch eine Bedingung der Form
+\begin{equation}\label{eq:2:1}
+\sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi
+\end{equation}
+ersetzt werden, wobei $\til{P}$ dem Polynom $P$ durch
+\begin{equation}\label{eq:2:2}
+\til{P}(\z)^2:=\sum_\al\abs{P^{(\al)}(\z)}^2,\qquad z=\xi+\i\eta \in\C^n
+\end{equation}
+zugeordnet ist und $\widetilde Q$ analog definiert sei. Dabei bezeichne 
+\begin{equation}
+P^{(\al)}(\x):=\partial^\alpha P(\x)
+\end{equation}
+die $\alpha$-te Ableitung von $P$. Es wird sich zeigen, daß die Bedingung \eqref{eq:2:1} genau dann gilt, wenn $\mcQ$ schwächer als $\mcP$ ist.
 
-In den folgenden Betrachtungen benötigt man häufig die Leibniz'sche Formel
+In den folgenden Betrachtungen benötigt man häufig die Leibnizsche Formel
 \begin{equation}\label{eq:2:leib}
 P(\D)(uv)=\sum_{\al}(P^{(\al)}(\D)v)\left(\frac{\D^\al u}{\al!}\right),
-\quad\text{f.a.}~u,v\in C^\infi,
-\end{equation}
-für Differentialausdrücke.
-Für den Differentialausdruck $P(\D)=\D^\al$
-ist dies die gewöhnliche Leibnizregel
-und somit folgt \eqref{eq:2:leib} aus Linearitätsgründen.
-Dabei ist $P^{(\al)}(\D)$ der Differentialausdruck,
-der zum Symbol
-\begin{equation}
-P^{(\al)}(\x):=\frac{\pd^{\abs{\al}}}{\pd\x_\al}P(\x),
-\end{equation}
-korrespondiert.
-Wir treffen folgende Konvention:
+\quad\text{f.a.}~u,v\in C^\infi.
+\end{equation} 
+Für $P(\D)=\D^\al$ ist dies die gewöhnliche Leibnizregel und somit folgt \eqref{eq:2:leib} aus Linearitätsgründen. Wir treffen weiter folgende Konvention:
 Im Falle griechischer Indizes
 ist die Ableitung nach einem Multiindex $\al\in\N^n_0$ gemeint,
-im Fall latainischer Indizes oder Zahlen definieren wir
+im Fall lateinischer Indizes oder Zahlen definieren wir
 \begin{equation}
 P^{(k_1,\dots,k_l)}(\x):=\frac{\pd}{\pd\x_{k_1}}\dots\frac{\pd}{\pd\x_{k_l}}P(\x).
 \end{equation}
-
-Im eindimensionalen Fall ist bekannt, dass $Q(\D)$ genau dann schwächer wie $P(\D)$ ist,
-wenn $P(\z)$ höheren oder gleichen Grad wie $Q(\z)$ hat.
-Die Resultate in diesem Abschnitt zeigen dies im Nachhinein.
-%Zum Beweis genügt die mehrfache Anwendung des Theorems \ref{thm:1:1.8}
-%auf den Operator $D$ und der Dreiecksungleichung.
-Als Regularisierungen könnte man $\til{P}(\z)=1+\abs{P(\z)}^2$
-und $\til{Q}(\z)=1+\abs{Q(\z)}^2$ verwenden.
-Daß dies schon im Zweidimensionalen nicht mehr funktioniert,
-hängt damit zusammen, dass $\abs{P^{(\al)}(\z)}^2/(1+\abs{P(\z)}^2)$
-nun im allgemeinen nicht mehr beschränkt ist.
-Man betrachte zum Beispiel $P(\z)=\z_1\z_2$ mit $P^{(1)}(\z)=\z_2$.
-
-Mit der Leibnizformel als Motivation,
-wählen wir als Ansatz für die Regularisierungen
-\begin{equation}\label{eq:2:2}
-\til{P}(\z):=\sum_\al\abs{P^{(\al)}(\z)}^2,
-\quad\text{f.a.}~\z\in\C^n,
-\end{equation}
-also das Betragsquadrat des Vektors $(P^{(\al)}(\z))_\al\in\C^M$.
-Beachte, dass für $\x\in\R^n$ der Ausdruck
-$\til{P}(\x)$ ein reelles Polynom mit $\Grad\til{P}(\x)=2\Grad P(\x)$ ist,
-das keine reellen Nullstellen besitzt.
-Der Beweis des folgenden zentralen Satzes in diesem Kapitel zeigt, 
-dass \eqref{eq:2:2} in der Tat eine geeignete Regularisierung ist.
+%
+%Im eindimensionalen Fall ist bekannt, dass $Q(\D)$ genau dann schwächer wie $P(\D)$ ist,
+%wenn $P(\z)$ höheren oder gleichen Grad wie $Q(\z)$ hat.
+%%Die Resultate in diesem Abschnitt zeigen dies im Nachhinein.
+%%%Zum Beweis genügt die mehrfache Anwendung des Theorems \ref{thm:1:1.8}
+%%%auf den Operator $D$ und der Dreiecksungleichung.
+%%Als Regularisierungen könnte man $\til{P}(\z)=1+\abs{P(\z)}^2$
+%%und $\til{Q}(\z)=1+\abs{Q(\z)}^2$ verwenden.
+%%Daß dies schon im Zweidimensionalen nicht mehr funktioniert,
+%%hängt damit zusammen, dass $\abs{P^{(\al)}(\z)}^2/(1+\abs{P(\z)}^2)$
+%%nun im allgemeinen nicht mehr beschränkt ist.
+%%Man betrachte zum Beispiel $P(\z)=\z_1\z_2$ mit $P^{(1)}(\z)=\z_2$.
+%%
+%%Mit der Leibnizformel als Motivation,
+%%wählen wir als Ansatz für die Regularisierungen
+%\begin{equation}\label{eq:2:2}
+%\til{P}(\z):=\sum_\al\abs{P^{(\al)}(\z)}^2,
+%\quad\text{f.a.}~\z\in\C^n,
+%\end{equation}
+%also das Betragsquadrat des Vektors $(P^{(\al)}(\z))_\al\in\C^M$.
+%Beachte, dass für $\x\in\R^n$ der Ausdruck
+%$\til{P}(\x)$ ein reelles Polynom mit $\Grad\til{P}(\x)=2\Grad P(\x)$ ist,
+%das keine reellen Nullstellen besitzt.
+%Der Beweis des folgenden zentralen Satzes in diesem Kapitel zeigt, 
+%dass \eqref{eq:2:2} in der Tat eine geeignete Regularisierung ist.
 
 \begin{thm}\label{thm:2:2.1}
 Der Differentialausdruck $\mcQ$ ist genau dann schwächer wie $\mcP$,
@@ -83,9 +78,9 @@ dass wir später beweisen.
 \begin{proof}
 {\em Hinrichtung}:
 Sei $\mcQ$ schwächer wie $\mcP$.
-Dann gilt für ein $C\in(0,\infi)$ die Ungleichung
+Dann gilt für ein $C\in\R_+$ die Ungleichung
 \begin{equation}\label{eq:2:4}
-\norm{\mcQ u}\leq C(\norm{\mcP u}^2+\norm{u}^2),\quad\text{f.a.}~u\in C^\infi_0(\Om).
+\norm{\mcQ u}^2\leq C(\norm{\mcP u}^2+\norm{u}^2),\quad\text{f.a.}~u\in C^\infi_0(\Om).
 \end{equation}
 Für jedes $\x\in\R^n$ und ein festes $\psi\in C^\infi_0(\Om)$, $\psi\neq0$,
 definieren wir $\psi_\x(x):=\psi(x)\e^{\ska{x}{\x}}$, f.a.~$x\in\R^n$.
