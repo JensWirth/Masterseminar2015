@@ -78,82 +78,69 @@ dass wir später beweisen.
 \begin{proof}
 {\em Hinrichtung}:
 Sei $\mcQ$ schwächer wie $\mcP$.
-Dann gilt für ein $C\in\R_+$ die Ungleichung
+Dann gilt für ein $C\in\R_+$ und alle $u\in\rmC_0^\infty(\Omega)$ die Ungleichung
 \begin{equation}\label{eq:2:4}
-\norm{\mcQ u}^2\leq C(\norm{\mcP u}^2+\norm{u}^2),\quad\text{f.a.}~u\in C^\infi_0(\Om).
+\norm{\mcQ u}^2\leq C(\norm{\mcP u}^2+\norm{u}^2).
 \end{equation}
-Für jedes $\x\in\R^n$ und ein festes $\psi\in C^\infi_0(\Om)$, $\psi\neq0$,
-definieren wir $\psi_\x(x):=\psi(x)\e^{\ska{x}{\x}}$, f.a.~$x\in\R^n$.
+Für jedes $\x\in\R^n$ und ein festes $\psi\in \rmC^\infi_0(\Om)$, $\psi\neq0$,
+definieren wir $\psi_\x(x):=\e^{\i x\cdot\xi}\psi(x)$.
 Dies bringt durch die Formel von Leibniz die Ableitungen von $P(\x)$ ins Spiel
 \begin{equation}\label{eq:2.5}
-P(\D)\psi_\x(x)=\e^{\ska{x}{\x}}\sum_\al P^{(\al)}(\x)\frac{\D^\alpha\psi(x)}{\al!},
+P(\D)\psi_\x(x)=\e^{\i x\cdot\xi}\sum_\al P^{(\al)}(\x)\frac{\D^\alpha\psi(x)}{\al!},
 \end{equation}
 analoges gilt für $Q(\D)$.
 Schreiben wir kurz
 \begin{equation}\label{eq:2.6}
 \Psi_{\al\be}:=\frac1{\al!\be!}\spro{\D^\alpha\psi}{\D^\beta\psi},
 \end{equation}
-so liest sich die Ungleichung \eqref{eq:2:4} mit $u=\psi_\x$ als
+so liest sich Ungleichung \eqref{eq:2:4} mit $u=\psi_\x$ als
 \begin{equation}\label{eq:2.7}
-\sum_{\al,\be}Q^{(\al)}(\x)\bar{Q}^{(\be)}(\x)\Psi_{\al\be}
-\leq C\left(\sum_{\al,\be}P^{(\al)}(\x)\bar{P}^{(\be)}(\x)\Psi_{\al\be}+\Psi_{00}\right).
+\sum_{\al,\be}Q^{(\al)}(\x)\overline{{Q}^{(\be)}(\x)}\Psi_{\al\be}
+\leq C\bigg(\sum_{\al,\be}P^{(\al)}(\x)\overline{{P}^{(\be)}(\x)}\Psi_{\al\be}+\Psi_{00}\bigg).
 \end{equation}
-Da $\psi_\x\in C^\infi_0$, $\psi_\x\neq0$ gilt, sind $\norm{\mcP\psi_\x}$ und $\norm{\mcQ\psi_\x}$ stets positiv.
-Somit ist $\left(\Psi_{\al\be}\right)_{\al,\be}$ auch die gram'sche Matrix
-eines Skalarproduktes auf einem $\C^M$.
-Es gibt also $\Psi_-,\Psi_+\in(0,\infi)$, so dass
+Bei $\left(\Psi_{\al\be}\right)_{\al,\be}$ handelt es sich um die gramsche Matrix
+eines Skalarproduktes auf einem $\C^M$, da für alle $t=(t_\alpha)_{|\alpha|\le m}\in\C^M\setminus\{0\}$
+\begin{equation}
+  \sum_{\alpha,\beta} t_\alpha \overline{t_\beta} \Psi_{\alpha\beta} = \int_\Omega \left|\sum_\alpha \frac{t_\alpha \D^\alpha\psi (x)}{\alpha! }\right|^2 \d x 
+  = \int \left|\sum_\alpha \frac{t_\alpha \xi^\alpha}{\alpha!} \right|^2 |\widehat\psi(\xi)|^2 \d\xi \ne0
+\end{equation}
+gilt. Es gibt also Konstanten $\Psi_-,\Psi_+\in\R_+$, so dass
 \begin{equation}\label{eq:2.8}
-\abs{\z}^2\Psi_-\leq\sum_{\al,\be}\z_\al\z_\be\Psi_{\al\be}\leq\abs{\z}^2\Psi_+,
-\quad\text{f.a.}~\z\in\C^M.
+\abs{t}^2\Psi_-\leq\sum_{\al,\be}t_\al \overline{t_\be}\Psi_{\al\be}\leq\abs{t}^2\Psi_+.
 \end{equation}
-Die Ungleichungen \eqref{eq:2.7} und \eqref{eq:2.8} kombinieren sich zu
+Die Ungleichungen \eqref{eq:2.7} und \eqref{eq:2.8} kombinieren für $t_\alpha=Q^{(\alpha)}(\xi)$ und damit $\widetilde Q(\xi)^2=|t|^2$ zu
 \begin{equation}\label{eq:2.9}
-\til{Q}(\x)\Psi_-C\leq\Psi_+\til{P}(\x),
-\quad\text{f.a.}~\x\in\R^n,
+\til{Q}(\x)^2 \Psi_- \le C  \bigg(\sum_{\al,\be}P^{(\al)}(\x)\overline{{P}^{(\be)}(\x)}\Psi_{\al\be}+\Psi_{00}\bigg) \leq 2 C \til{P}(\x)^2 \Psi_+
 \end{equation}
-und dies ist gerade die Ungleichung \eqref{eq:thm:2:2.1}.
-
-{\em Rückrichtung}:
-Sei die Ungleichung \eqref{eq:thm:2:2.1} erfüllt, d.h.
+für alle $\xi\in\R^n$ und ergeben damit gerade die Ungleichung \eqref{eq:thm:2:2.1}.
+%
+$\bullet$\qquad {\em Rückrichtung}:
+Sei die Ungleichung \eqref{eq:thm:2:2.1} erfüllt, das heißt gelte
 \begin{equation}\label{eq:2.10}
 \til{Q}(\x)\leq C\til{P}(\x),
-\quad\text{f.a.}~\x\in\R^n,
 \end{equation}
-mit $C\in(0,\infi)$.
-Wir schätzen wie folgt ab
-\begin{equation}
-\norm{Q\cdot\hat{u}}^2\leq\norm{\til{Q}^{1/2}\cdot\hat{u}}^2
-\leq C\norm{\til{P}^{1/2}\cdot\hat{u}}^2\leq C\sum_\al\norm{P^{(\al)}\cdot\hat{u}}^2,
-\end{equation}
-oder gleichbedeutend
-\begin{equation}
-\norm{Q(\D)u}\leq C\sum_\al\norm{P^{(\al)}(\D)u}^2.\label{eq:2.11}
-\end{equation}
+für alle $\xi\in\R^n$ und mit einer Konstanten $C>0$.
+Sei weiter $u\in\rmC_0^\infty(\Omega)$. Dann gilt
+\begin{align}
+\|Q(\D) u\|^2 &= \int |Q(\xi) \widehat{u}(\xi)|^2 \d\xi \leq \int |\widetilde Q(\xi) \widehat{u}(\xi)|^2 \d\xi \leq
+ C \int |\widetilde P(\xi) \widehat{u}(\xi)|^2 \d\xi \notag\\&  \leq C\sum_\al\int | P^{(\al)}(\xi)\widehat{u}(\xi)|^2\d\xi = C\sum_\al\norm{P^{(\al)}(\D)u}^2.\label{eq:2.11}
+\end{align}
 Um den Beweis abzuschließen,
-fehlte also nur noch eine Ungleichung der Art
+fehlt also nur noch eine Ungleichung der Form
 \begin{equation}
-\norm{P^{(\al)}(\D)u}\leq C_{\mcP,\Om}\norm{P(\D)u},
-\quad\text{f.a.}~u\in C^\infi_0(\Om),~\al\in\N^n_0,\label{eq:2:wantedineq}
+\norm{P^{(\al)}(\D)u}\leq C_{\mcP,\Om}\norm{P(\D)u}, \label{eq:2:wantedineq}
 \end{equation}
-mit $C_{\mcP,\Om}\in(0,\infi)$.
-Diese werden wir mit der Methode der Energieintegrale herleiten (Korollar \ref{cor:2:2.5}).
+mit $C_{\mcP,\Om}>0$ unabhängig von $u\in\rmC_0^\infty(\Omega)$ und $\alpha\in\N_0^n$. Diese werden wir mit der Methode der Energieintegrale herleiten (Korollar \ref{cor:2:2.5}).
 \end{proof}
 
 \begin{rem}
-Der Beweis zeigt:
-\begin{enumerate}
-\item
-In Formel \eqref{eq:thm:2:2.1} $\til{Q}(\x)$ kann $\til{Q}(\x)$
-durch $Q^2(\x)$ ersetzt werden.
-\item
-Definieren wir
+Der Beweis zeigt insbesondere, daß in Formel \eqref{eq:thm:2:2.1} die Funktion $\til{Q}(\x)$ durch $|Q(\x)|$ ersetzt werden kann.
+Definieren wir weiterhin
 \begin{equation}
-W(\mcP):=\{\mcQ=Q(\D):\mcQ~\text{ist schwächer wie}~\mcP\},
+W(\mcP):=\{\mcQ=Q(\D):\mcQ~\text{ist schwächer als}~\mcP\},
 \end{equation}
-so ist wegen $(Q_1(\x)+Q_2(\x))^2\leq2(Q_1(\x)^2+Q_2(\x)^2)$
+so ist wegen $|Q_1(\x)+Q_2(\x)|^2\leq2(|Q_1(\x)|^2+|Q_2(\x)|^2)$
 die Menge $W(\mcP)$ ein $\C$-Vektorraum.
-\end{enumerate}
-
 \end{rem}
 
 \section{Energieintegrale}
