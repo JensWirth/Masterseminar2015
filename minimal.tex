@@ -121,6 +121,7 @@ W(\mcP):=\{\mcQ=Q(\D):\mcQ~\text{ist schwächer als}~\mcP\},
 \end{equation}
 so ist wegen $|Q_1(\x)+Q_2(\x)|^2\leq2(|Q_1(\x)|^2+|Q_2(\x)|^2)$
 die Menge $W(\mcP)$ ein $\C$-Vektorraum.
+Dies folgt auch im ganz allgemeinen Fall aus Formel \eqref{eq:1:1.21}.
 \end{rem}
 
 \section{Energieintegrale}
@@ -443,12 +444,12 @@ Als letztes Beispiel betrachten wir die ultrahyperbolische Gleichung\index{Diffe
 \Lap_1u=\Lap_2u,
 \end{equation}
 mit $\Lap_1:=\pd_1^2+\dots+\pd_m^2$, $\Lap_2:=\pd^2_{m+1}+\dots+\pd^2_n$.
-Das korrespondierende Symbol ist $P(\x)=\x^2_1+\dots+\x^2_m-\x^2_{m+1}-\dots-\x^2_n$.
+Das korrespondierende Symbol ist $P(\x)=\x^2_1+\dots+\x^2_m-(\x^2_{m+1}+\dots+\x^2_n)$.
 
 Ein Symbol $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
 wenn
 \begin{equation}
-Q(\x)^2\apprle(\x^2_1+\dots+\x^2_m-\x^2_{m+1}+\dots+\x^2_n)^2+\x^2_1+\dots+\x^2_n+1.
+Q(\x)^2\apprle(\x^2_1+\dots+\x^2_m-(\x^2_{m+1}+\dots+\x^2_n))^2+\x^2_1+\dots+\x^2_n+1.
 \end{equation}
 Setzen wir wie in Beispiel \ref{exa:2:schroe} $\x^2_1+\dots+\x^2_m=\x^2_{m+1}+\dots+\x^2_n$,
 so erhalten wir für diese $\x$:
@@ -458,7 +459,7 @@ Q(\x)^2\apprle\x^2_1+\dots+\x^2_n+1.
 Da wir in \eqref{eq:2:rpQhyp} noch genug Wahlfreiheit haben folgt,
 dass $Q(\x)$ von der Form
 \begin{equation}
-Q(\x)=a_0+\sum_{k=1}^na_k\x^k+b(\x_1^2+\dots+\x^2_m-\x^2_{m+1}+\dots+\x^2_n),
+Q(\x)=a_0+\sum_{k=1}^na_k\x^k+b(\x_1^2+\dots+\x^2_m-(\x^2_{m+1}+\dots+\x^2_n)),
 \end{equation}
 mit beliebigen $a_0,a_1,\dots,a_n,b\in\C$ sein muss
 und $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
