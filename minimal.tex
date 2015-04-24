@@ -24,9 +24,9 @@ P^{(\al)}(\x):=\partial^\alpha P(\x)
 \end{equation}
 die $\alpha$-te Ableitung von $P$. Es wird sich zeigen, daß die Bedingung \eqref{eq:2:1} genau dann gilt, wenn $\mcQ$ schwächer als $\mcP$ ist.
 
-In den folgenden Betrachtungen benötigt man häufig die Leibnizsche Formel
+In den folgenden Betrachtungen benötigt man häufig die leibnizsche Formel
 \begin{equation}\label{eq:2:leib}
-\forall u,v\in C^\infi \quad:\quad P(\D)(uv)=\sum_{\al}(P^{(\al)}(\D)v)\left(\frac{\D^\al u}{\al!}\right).
+\forall u,v\in \rmC^\infi(\Omega) \quad:\quad P(\D)(uv)=\sum_{\al}(P^{(\al)}(\D)v)\left(\frac{\D^\al u}{\al!}\right).
 \end{equation} 
 Für $P(\D)=\D^\al$ ist dies die gewöhnliche Leibnizregel und somit folgt \eqref{eq:2:leib} aus Linearitätsgründen. Wir treffen weiter folgende Konvention:
 Im Falle griechischer Indizes
@@ -38,7 +38,7 @@ P^{(k_1,\dots,k_l)}(\x):=\pd_{k_1}\cdots\pd_{k_l}P(\x).
 
 \begin{thm}\label{thm:2:2.1}
 Sei $\Om$ ein beschränktes Gebiet.
-Der Differentialausdruck $\mcQ$ ist genau dann schwächer wie $\mcP$,
+Der Differentialausdruck $\mcQ$ ist genau dann schwächer als $\mcP$,
 wenn
 \begin{equation}\label{eq:thm:2:2.1}
 \sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi
@@ -52,7 +52,7 @@ das wir später beweisen.
 
 \begin{proof}
 {\em Hinrichtung.}
-Sei $\mcQ$ schwächer wie $\mcP$.
+Sei $\mcQ$ schwächer als $\mcP$.
 Dann gilt für ein $C>0$ und alle $u\in\rmC_0^\infty(\Omega)$ die Ungleichung
 \begin{equation}\label{eq:2:4}
 \norm{\mcQ u}^2\leq C(\norm{\mcP u}^2+\norm{u}^2).
@@ -192,7 +192,7 @@ Dazu betrachten wir zugeordnete Ableitungen sesquilinearer Differentialausdrück
 \left[F(\D,\overline{\D})u\bar{u}\right]
 =\i\left[(\D_k-\overline{\D}_k)F(\D,\overline{\D})\right]u\bar{u}.
 \end{equation}
-Für einen Vektor $\ul{G}=(G_k)_{k=1,\dots,n}$ sesquilinearer Differentialausdrücken $G_k$ ergibt sich damit formal als Divergenz die Formel
+Für einen Vektor $\ul{G}=(G_k)_{k=1,\dots,n}$ sesquilinearer Differentialausdrücke $G_k$ ergibt sich damit formal als Divergenz die Formel
 \begin{subequations}
 \begin{equation}\label{eq:2.15a}
 \div(\ul{G}(\D,\overline{\D})u\bar{u})=\sum_{k=1}^n\frac{\pd}{\partial x_k}\left[G_k(\D,\overline{\D})u\bar{u}\right]=F(\D,\overline{\D})u\bar{u},
@@ -225,7 +225,7 @@ Die Polynome $G_k(\z,\overline{\z})$ sind nicht eindeutig durch $F(\zeta,\overli
 %Doch aufgrund von Lemma \ref{lem:2:qfsym} stört das nicht.
 Mit Hilfe einer speziellen quadratischen Differentialform und obiger Formel
 gewinnen wir folgende Ungleichung,
-mit der wir die Ableitungen der Differentialdrücke kontrollieren können.
+mit der wir die Ableitungen der Differentialausdrücke kontrollieren können.
 
 \begin{lem}
 Sei $\Om$ ein Gebiet, so dass für ein $k\in\{1,\ldots,n\}$ der $k$-Durchmesser $B_k:=\sup_{x,y\in\Om}\abs{x_k-y_k}$ endlich ist. Dann gilt
@@ -257,7 +257,7 @@ dass $P(\z),Q(\z)$ holomorph
 und $P(\overline{\z}),Q(\overline{\z})$ anti-holomorph sind.
 Integrieren wir Gleichung \eqref{eq:2:2.22},
 so liefert eine partielle Integration
-in der Variablen $x_k$ auf rechten Seite
+in der Variablen $x_k$ auf der rechten Seite
 \begin{equation}\label{eq:2:ints}
 \int-\i x_kF(\D,\cc{\D})u(x)\cc{u(x)}\d x=\i\int G_k(\D,\cc{\D})u(x)\cc{u(x)}\d x.
 \end{equation}
@@ -267,7 +267,7 @@ in Skalarprodukte um und bringen einen Term auf die andere Seite.
 Es resultiert die Gleichung
 \begin{equation}
 \spro{P^{(k)}(\D)u}{\overline{Q}(\D)u}
-=\spro{Q^{(k)}(\D)u}{\overline{P}(\D)u}-\i\int x_k\left(P(\D)u\cc{\overline{Q}(\D)u}-Q(\D)u\cc{\overline{P}(\D)u}\right)\d x.
+=\spro{P(\D)u}{\overline{Q}^{(k)}(\D)u}-\i\int x_k\left(P(\D)u\cc{\overline{Q}(\D)u}-Q(\D)u\cc{\overline{P}(\D)u}\right)\d x.
 \end{equation}
 Ohne Beschränkung der Allgemeinheit können wir das Gebiet $\Om$ so legen,
 dass $\abs{x_k}\leq B_k/2$ für alle $x\in\Om$ gilt.
@@ -289,7 +289,7 @@ Setzen wir $\overline{Q}(\x)=P^{(k)}(\x)$, so erhalten wir aus \eqref{eq:lem:2:2
 \end{equation}
 für alle $u\in\rmC_0^\infty(\Omega)$. Wir gehen nun Induktiv in $m$ vor.
 Für $m=1$ ist $P^{(kk)}=0$, $P^{(k)}\neq0$ und somit entspricht die Gleichung \eqref{eq:cor:2:2.5}
-gerade der Gleichung \eqref{eq:lem:2:2.4} nach kürzen eines Faktors.
+gerade der Gleichung \eqref{eq:lem:2:2.4} nach Kürzen eines Faktors.
 Angenommen das Korollar ist für $m-1$ erfüllt,
 dann erhalten wir durch Kombination von \eqref{eq:2.28} und \eqref{eq:cor:2:2.5}
 \begin{equation}
@@ -304,7 +304,7 @@ Für festes beschränktes Gebiet $\Om$ und beliebiges $\al\in\N^n_0$ gilt
 \forall u\in\rmC_0^\infty(\Omega)\quad:\quad \norm{P^{(\al)}(\D)u}\leq C_{m,\al,\Om}\norm{P(\D)u},
 \end{equation}
 mit $C_{m,\al,\Om}=m(m-1)\cdots(m-\abs{\al})B^\al$, wobei $B^\al=\prod_{l=1}^n B^{\al_l}_l$.
-Die Konstante $C_{\al,m,\Om}$ hängt also nur vom Grad $m$ des Polynoms $P(\x)$,
+Die Konstante $C_{m,\al,\Om}$ hängt also nur vom Grad $m$ des Polynoms $P(\x)$,
 der Ableitungsordnung $\abs{\al}$ und der Ausdehnung des Gebiets $\Om$ ab.
 \end{cor}
 
@@ -424,7 +424,7 @@ Der Wärmeleitungsgleichung\index{Differentialoperator!parabolisch}
 \end{equation}
 entspricht das Symbol $P(\x)=\x^2_1+\dots+\x^2_{n-1}+\i\x_n$.
 
-Ein Symbol $Q(\x)$ ist genau dann schwächer wie $P(\x)$, wenn
+Ein Symbol $Q(\x)$ ist genau dann schwächer als $P(\x)$, wenn
 \begin{equation}
 Q(\x)^2\apprle(\x^2_1+\dots+\x^2_{n-1})^2+\x^2_1+\dots+\x^2_{n-1}+\x^2_n+1.
 \end{equation}
@@ -506,7 +506,7 @@ Wir geben nun Klassifikationen für diese Operatortypen.
 Ein Symbol $P(\x)$ ist genau dann vom Haupttyp,
 wenn die partiellen Ableitungen $p^{(k)}(\x)=\partial_k p(\xi)$
 des Hauptteils $p(\x)$ für kein $\x\in\R^n\setminus\{0\}$
-alle gleichzeitig null sind.
+alle gleichzeitig Null sind.
 \end{thm}
 
 \begin{proof}
@@ -626,7 +626,7 @@ gibt es $\x_{a,1},\dots,\x_{a,K}$,
 so dass $\left(p_k(a,\x_l)\right)_{k,l=1,\dots,K}$ invertierbar ist.
 Das Gleichungssystem
 \begin{equation}
-Q(\x_{a,l},\x_b)=\sum_{k=1}^lp_k(\x_{a,l})a_k(\x_b),\quad\text{f.a.}~k=1,\dots,K,
+Q(\x_{a,l},\x_b)=\sum_{k=1}^lp_k(\x_{a,l})a_k(\x_b)\quad\text{für}~k=1,\dots,K,
 \end{equation}
 kann also nach den $a_k(\x_b)$ aufgelöst werden kann.
 Dies impliziert nach obigem $a_k(\x_b)\in W(\mcP_b)$.
