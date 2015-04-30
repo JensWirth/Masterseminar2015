@@ -640,18 +640,18 @@ Wir wollen nun Satz \ref{thm:2:2.1} benutzen um Kriterien zu formulieren, so das
 \end{equation}
 nicht nur stetig, sondern auch kompakt ist, wobei wir dazu ebenfalls die regularisierten Symbole $\til{P}$, $\til{Q}$ heranziehen werden. Dazu definieren wir zunächst die Vollstetigkeit eines Operators.
 \begin{df}
-\item Seien $V,W$ zwei Banachräume und $T: V \rightarrow W$ ein linearer Operator. Der Operator $T$ heißt \eIndex[Operator]{vollstetig}, falls für jede schwach konvergente Folge $(x_n)_{n \in \mathbb{N}}$ in $V$ die Folge $(Tx_n)_{n \in \mathbb{N}}$ normkonvergent in $W$ ist.
+Seien $V,W$ zwei Banachräume und $T: V \supset \mathcal{D}_T \rightarrow W$ ein linearer Operator. $T$ heißt \eIndex[Operator]{kompakt}, wenn er abgeschlossen ist und für jede Folge $(u_n)_{n \in \mathbb{N}}$ in $\mathcal{D}_T$ mit $\Vert u_n \Vert \leq 1 \ \forall n \in \mathbb{N}$ eine Teilfolge $({u_n}_k)_{k \in \mathbb{N}}$ existiert, so dass die Folge $({Tu_n}_k)_{k\in \mathbb{N}}$ konvergent in $W$ ist.
 \end{df}
-Wir sagen im Folgenden $Q(D)$ ist vollstetig zu $P(D)$, wenn die Abbildung aus \eqref{eq:2:map} vollstetig ist. Setzt man zusätzlich voraus, dass es sich um einen reflexiven Raum handelt, dann impliziert die Vollstetigkeit der Abbildung auch die Kompaktheit. In unserem Fall handelt es sich bei den Bildräumen $\mcR_{P_0}$ und $\mcR_{Q_0}$ um Hilberträume, welche insbesondere reflexiv sind, weshalb hier immer von Kompaktheit die Rede sein wird.
+Wir sagen im Folgenden $P(\D)$ dominiert $Q(\D)$, wenn die Abbildung aus \eqref{eq:2:map} kompakt ist.
 \begin{thm}\label{Abbildung kompakt}
-Der Operator $Q(D)$ ist genau dann vollstetig zu $P(D)$,
+Der Operator $P(\D)$ dominiert genau dann den Operator $Q(\D)$,
 wenn folgendes gilt:
 \begin{equation}\label{eq:2:tozero}
-\frac{\til{Q}(\x)}{\til{P}(\x)}\to0 \quad\text{für}\quad\x\to\infi.
+\frac{\til{Q}(\x)}{\til{P}(\x)}\longrightarrow0 \quad\text{für}\quad\x\longrightarrow\infi.
 \end{equation}
 \end{thm}
-\begin{proof}
-\item Wir nehmen zunächst an, dass \eqref{eq:2:tozero} erfüllt ist und betrachten eine Folge ${(u_n)}_{n \in \mathbb{N}} $ in $C^\infi_0(\Om)$ mit
+\begin{proof} {\it Rückrichtung.}
+Wir nehmen zunächst an, dass \eqref{eq:2:tozero} erfüllt ist und betrachten eine Folge ${(u_n)}_{n \in \mathbb{N}} $ in $C^\infi_0(\Om)$ mit
 \begin{equation}\label{eq:2:PDb}
 \norm{P(D)u_n}\leq1 \ \ \forall n \in \mathbb{N}.
 \end{equation}
@@ -705,7 +705,7 @@ Mit der lokalen gleichmäßigen Konvergenz gilt außerdem
 \quad\text{für}~ k,l \rightarrow \infi,
 \end{equation}
 was die Konvergenz der Teilfolge $\left(Q(\D)u_{n_k} \right)_{k \in \mathbb{N}}$ impliziert. Da die Funktionen $P(\D)u$ für $u\in C^\infi_0(\Om)$ dicht in $\mcR_{P_0}$ liegen, ist $Q(\D)$ damit vollstetig zu $P(\D)$.
-
+$\bullet$\qquad{\it Hinrichtung.}
 Wir nehmen nun an, dass $Q(\D)$ vollstetig zu $P(\D)$ ist und zeigen, dass \eqref{eq:2:tozero} erfüllt ist.
  Ist $(\x)_{n \in \mathbb{N}}$ eine Folge mit $\x_n \rightarrow \infty$, dann genügt es zu zeigen, dass $\til{Q}(\x_{n})/\til{P}(\x_{n})\to0, \ n \rightarrow \infty$ gilt.
 Wir nehmen dazu ein beliebiges $u\in C^\infi_0(\Om)$, $u\neq0$ und definieren die Folge $(u_n)_{n \in \mathbb{N}}$ durch
