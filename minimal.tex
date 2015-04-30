@@ -640,7 +640,7 @@ Wir wollen nun Satz \ref{thm:2:2.1} benutzen um Kriterien zu formulieren, so das
 \end{equation}
 nicht nur stetig, sondern auch kompakt ist, wobei wir dazu ebenfalls die regularisierten Symbole $\til{P}$, $\til{Q}$ heranziehen werden. Dazu definieren wir zunächst die Vollstetigkeit eines Operators.
 \begin{df}
-Seien $V,W$ zwei Banachräume und $T: V \supset \mathcal{D}_T \rightarrow W$ ein linearer Operator. $T$ heißt \eIndex[Operator]{kompakt}, wenn er abgeschlossen ist und für jede Folge $(u_n)_{n \in \mathbb{N}}$ in $\mathcal{D}_T$ mit $\Vert u_n \Vert \leq 1 \ \forall n \in \mathbb{N}$ eine Teilfolge $({u_n}_k)_{k \in \mathbb{N}}$ existiert, so dass die Folge $({Tu_n}_k)_{k\in \mathbb{N}}$ konvergent in $W$ ist.
+Seien $V$ und $W$ zwei Banachräume und $T: V \supset \mathcal{D}_T \rightarrow W$ ein linearer Operator. $T$ heißt \eIndex[Operator]{kompakt}, wenn er abgeschlossen ist und für jede Folge $(u_n)_{n \in \mathbb{N}}$ in $\mathcal{D}_T$ mit $\Vert u_n \Vert \leq 1 \ \forall n \in \mathbb{N}$ eine Teilfolge $({u_n}_k)_{k \in \mathbb{N}}$ existiert, so dass die Folge $({Tu_n}_k)_{k\in \mathbb{N}}$ in $W$ konvergiert.
 \end{df}
 Wir sagen im Folgenden $P(\D)$ dominiert $Q(\D)$, wenn die Abbildung aus \eqref{eq:2:map} kompakt ist.
 \begin{thm}\label{Abbildung kompakt}
@@ -659,7 +659,7 @@ Wir zeigen, dass dann eine Teilfolge ${(u_{n_k})}_{k \in \mathbb{N}}$ in $C^\inf
 so dass die Folge $\left(Q(D)u_{n_k}\right)_{k \in \mathbb{N}}$ konvergiert.
 Nach Voraussetzung gilt 
 \begin{equation}
-\frac{\til{Q}(\x)}{\til{P}(\x)} = \frac{\left( \sum_{|\alpha| \leq k} | Q^{\alpha} (\x)|^2 \right)^{\frac{1}{2}} }{ \left(\sum_{|\alpha| \leq k} | P^{(\alpha)} (\x)|^2\right)^{\frac{1}{2}}} \rightarrow 0\ \ \text{für} \ \ \x \rightarrow \infty
+\frac{\til{Q}(\x)^2}{\til{P}(\x)^2} = \frac{\sum_{|\alpha| \leq k} | Q^{\alpha} (\x)|^2  }{ \sum_{|\alpha| \leq k} | P^{(\alpha)} (\x)|^2} \rightarrow 0\ \ \text{für} \ \ \x \rightarrow \infty
 \end{equation}
 und da über alle Ableitungen summiert wird, ist der Ausdruck $|Q(\x)|/\til{P}(\x)$ beschränkt. Also existiert eine Konstante $C>0$, so dass
 \begin{equation}
