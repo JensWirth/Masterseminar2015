@@ -156,13 +156,14 @@ Die  Definition hängt im Falle konstanter Koeffizienten nicht von der Wahl des 
 \begin{lem}\label{lm: Qu stetig}
 Seien $\mathcal P$ und $\mathcal Q$ Differentialausdr\"ucke auf einem Gebiet $\Omega$. 
 \begin{enumerate}
-\item[(1)]
+\item%[(1)]
 $\mathcal Q$ ist genau dann schwächer als $\mathcal P$, wenn
 \begin{equation}\label{eq:1:1.21}
     \forall u\in\rmC^\infty_0(\Omega)\quad:\quad \|\mathcal Qu\|^2 \le C \big( \|\mathcal Pu\|^2 + \|u\|^2 \big)
 \end{equation}
 gilt.
-\item[(2)] $Q_0 u$ besitzt für jedes $u\in\mathcal D_{P_0}$ genau dann einen stetigen Repräsentanten, wenn
+\item%[(2)] 
+$Q_0 u$ besitzt für jedes $u\in\mathcal D_{P_0}$ genau dann einen stetigen Repräsentanten, wenn
 \begin{equation}
     \forall u\in\rmC^\infty_0(\Omega)\quad:\quad  \sup_{x\in\Omega} |\mathcal Qu(x) |^2 \le C \big( \|\mathcal Pu\|^2 + \|u\|^2 \big)
 \end{equation}
@@ -170,8 +171,8 @@ gilt.
 \end{enumerate}
 \end{lem}
 \begin{proof}
-(1)\quad Die Hinrichtung folgt direkt aus Satz~\ref{thm:1:1.1}. Für die Rückrichtung nehmen wir an, die Ungleichung gilt. Dann existiert zu $u\in\mathcal D_{P_0}$ eine Folge $u_n\in\rmC_0^\infty(\Omega)$ mit $u_n\to u$ und $\mathcal P u_n\to P_0 u$ in $\rmL^2(\Omega)$. Dann ist aber $\mathcal Q(u_n-u_m)$ Cauchy und da $Q_0$ abgeschlossen ist folgt $u\in\mathcal D_{Q_0}$. $\bullet$\qquad
-(2)\quad Für die Hinrichtung betrachtet man $\mathcal Q$ als Operator $\mathcal G_{P_0}\to\rmL^\infty(\Omega)$ und wendet Satz~\ref{thm:1:1.1} an. Für die Rückrichtung sei $u\in\mathcal D_{P_0}$ beliebig und $u_n\in\rmC_0^\infty(\Omega)$ eine Folge mit $u_n\to u$ und $\mathcal Pu_n\to P_0u$ in $\rmL^2(\Omega)$.
+{\bf (i)}\quad Die Hinrichtung folgt direkt aus Satz~\ref{thm:1:1.1}. Für die Rückrichtung nehmen wir an, die Ungleichung gilt. Dann existiert zu $u\in\mathcal D_{P_0}$ eine Folge $u_n\in\rmC_0^\infty(\Omega)$ mit $u_n\to u$ und $\mathcal P u_n\to P_0 u$ in $\rmL^2(\Omega)$. Dann ist aber $\mathcal Q(u_n-u_m)$ Cauchy und da $Q_0$ abgeschlossen ist folgt $u\in\mathcal D_{Q_0}$. $\bullet$\qquad
+{\bf (ii)}\quad Für die Hinrichtung betrachtet man $\mathcal Q$ als Operator $\mathcal G_{P_0}\to\rmL^\infty(\Omega)$ und wendet Satz~\ref{thm:1:1.1} an. Für die Rückrichtung sei $u\in\mathcal D_{P_0}$ beliebig und $u_n\in\rmC_0^\infty(\Omega)$ eine Folge mit $u_n\to u$ und $\mathcal Pu_n\to P_0u$ in $\rmL^2(\Omega)$.
 Dann konvergiert $\mathcal Qu_n$ gleichmäßig und Behauptung folgt.
 \end{proof}
 
