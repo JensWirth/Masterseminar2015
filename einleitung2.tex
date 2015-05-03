@@ -36,16 +36,16 @@ Mit Linearität folgt die Behauptung.
 \end{proof}
 
 Wir betrachten im folgenden allgemeiner Operatoren $P : \rmC_0^\infty(\Omega) \to \rmC^\infty(\Omega)$ und deren Beschreibung durch ein \eIndex[Pseudodifferentialoperator]{Symbol}
-\begin{equation}
-    \sigma_P(\chi; x,\xi) = \e^{-\i x\cdot\xi} P( \chi(x) \e^{\i x\cdot\xi}).
+\begin{equation}\label{eq:6:6.6}
+    \sigma_P(f; x,\xi) = \e^{-\i x\cdot\xi} P( f(x) \e^{\i x\cdot\xi}).
 \end{equation}  
-Dabei sei $\chi\in\rmC_0^\infty(\Omega)$ kompakt getragen mit $\chi(x)=1$ auf einer kompakten Teilmenge $\omega\Subset\Omega$. 
+Dabei sei $f\in\rmC_0^\infty(\Omega)$ kompakt getragen mit $f(x)=1$ auf einer kompakten Teilmenge $\omega\Subset\Omega$. 
 Dann gilt für jedes $u\in\rmC_0^\infty(\omega)$ 
 \begin{equation}
-   P u (x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \sigma_P(\chi; x,\xi) \widehat u(\xi) \d\xi.
+   P u (x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \sigma_P(f; x,\xi) \widehat u(\xi) \d\xi.
 \end{equation}
 Der Operator $P$ wird als \eIndex{Pseudodifferentialoperator} der \eIndex[Pseudodifferentialoperator]{Ordnung} $m$ bezeichnet, falls jedes so entstehende Symbol 
-$\sigma_P(\chi;\cdot,\cdot)$ zur nachfolgend definierten \eIndex{Symbolklasse} $S^m(\Omega\times\R^n)$ gehört.
+$\sigma_P(f;\cdot,\cdot)$ zur nachfolgend definierten \eIndex{Symbolklasse} $S^m(\Omega\times\R^n)$ gehört.
 
 \begin{df}
 Eine Funktion $\sigma\in\rmC^\infty(\Omega\times\R^n)$ gehört zur Symbolklasse $S^m(\Omega\times\R^n)$ falls
@@ -55,3 +55,49 @@ Eine Funktion $\sigma\in\rmC^\infty(\Omega\times\R^n)$ gehört zur Symbolklasse 
 für alle Kompakta $K\Subset\Omega$ und alle Multiindices $\alpha,\beta\in\N^n_0$ gilt. Dabei bezeichnet $\langle\xi\rangle = \sqrt{1+|\xi|^2}$.
 \end{df}
 
+Ist nun $\sigma\in S^m(\Omega\times\R^n)$, so konvergiert für jedes $u\in\rmC_0^\infty(\Omega)$ das Integral
+\begin{equation}\label{eq:6:6.9}
+   P u (x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \sigma(x,\xi) \widehat u(\xi) \d\xi
+\end{equation}
+und definiert eine glatte Funktion $Pu\in\rmC^\infty(\Omega)$. Es gilt sogar mehr
+
+\begin{lem}
+Sei $\sigma\in S^m(\Omega\times\R^n)$ und $Pu$ für $u\in\rmC_0^\infty(\Omega)$ durch \eqref{eq:6:6.9} definiert. Dann gilt für jedes $f\in\rmC_0^\infty(\Omega)$
+und das durch \eqref{eq:6:6.6} zugeordnete Symbol
+\begin{equation}
+    \sigma_P(f;\cdot,\cdot)\in S^m(\Omega\times\R^n). 
+\end{equation}
+Weiterhin gilt
+\begin{equation}
+   \sigma_P(f;x,\xi) \sim \sum_{\alpha}  \frac{1}{\alpha!} \big( \partial_\xi^\alpha \sigma(x,\xi) \big) \big(\D_x^\alpha f(x)\big)
+\end{equation}
+\end{lem}
+\begin{proof}
+Nach Definition gilt
+\begin{align}
+   \sigma_P(f;x,\xi) &=(2\pi)^{-n}  \e^{-\i x\cdot\xi} \int \e^{\i x\cdot\eta} \sigma(x,\eta) \int_\Omega \e^{-\i y\cdot(\eta-\xi)} f(y) \d y \d\eta \notag\\
+   & = (2\pi)^{-n/2}  \int \e^{\i x\cdot(\eta-\xi)} \sigma(x,\eta) \widehat f(\eta-\xi)\d\eta \notag\\
+   & = (2\pi)^{-n/2}  \int \e^{\i x\cdot\eta} \sigma(x,\eta+\xi) \widehat f(\eta)\d\eta \notag\\
+   & = (2\pi)^{-n/2}  \int \e^{\i x\cdot\eta} \left( \sum_{|\alpha|<N} \frac{\eta^\alpha}{\alpha!} \partial_\xi^\alpha \sigma(x,\xi) + R_N(x,\xi,\eta) \right) \widehat f(\eta)\d\eta \notag\\  
+   & =  \sum_{|\alpha|<N} \frac{1}{\alpha!} \big( \partial_\xi^\alpha \sigma(x,\xi) \big) \big(\D_x^\alpha f(x)\big)  +
+   \rho_N(x,\xi)
+\end{align}
+unter Ausnutzung des taylorschen Satzes mit Entwicklungspunkt $\eta=0$. Weiter gilt unter Nutzung der Integraldarstellung des Restgliedes $R_N(x,\xi,\eta)$ 
+\begin{equation}
+   R_N(x,\xi,\eta) = N \int_0^1 \sum_{|\alpha|=N} \frac{(1-t)^N \eta^\alpha}{\alpha!} \partial_\xi^\alpha \sigma(x,\xi+t\eta) \d t 
+\end{equation}
+und somit für beliebige Kompakta $K\Subset\Omega$ und $N\ge m$
+\begin{align}
+   |\langle\xi\rangle^{N-m} \rho_N(x,\xi)|& \lesssim 
+   \left|\langle\xi\rangle^{N-m}  \int \e^{\i x\cdot\eta} \int_0^1 \sum_{|\alpha|=N} \frac{(1-t)^N \eta^\alpha}{\alpha!} \partial_\xi^\alpha \sigma(x,\xi+t\eta) \d t  \widehat f(\eta) \d\eta   \right| \notag\\
+&\lesssim  \int \int_0^1 \langle\eta\rangle^N \langle\xi+t\eta\rangle^{m-N} \langle\xi\rangle^{N-m} \d t | \widehat f(\eta) |\d\eta   
+\lesssim \int \langle\eta\rangle^{2N} |\widehat f(\eta)|\d\eta
+\end{align}
+gleichmäßig in $x\in K$ (und unter Ausnutzung der Ungleichung von Peetre $\langle \xi\rangle^s \lesssim \langle\eta\rangle^s \langle\xi-\eta\rangle^s$ für $s\ge0$).
+Weiter gilt für Multiindices $\beta,\gamma\in\N_0^n$
+\begin{multline}
+   \partial_x^\gamma \partial_\xi^\beta \rho_N(x,\xi) \\
+   =  (2\pi)^{-n/2} N \sum_{\delta\le\gamma} \binom{\gamma}{\delta} \i^{|\delta|} \int \e^{\i x\cdot\eta} \int_0^1 \sum_{|\alpha|=N} \frac{(1-t)^N \eta^{\alpha+\delta}}{\alpha!} \partial_x^{\gamma-\delta} \partial_\xi^{\alpha+\beta} \sigma(x,\xi+t\eta) \d t  \widehat f(\eta) \d\eta 
+\end{multline}
+und obige Abschätzung liefert $\rho_N\in S^{m-N}(\Omega\times\R^n)$. Das impliziert die Behauptung.
+\end{proof}
