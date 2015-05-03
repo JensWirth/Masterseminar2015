@@ -16,6 +16,10 @@
 \ifthenelse{\equal{#1}{}}{\index{#2}}{\index{#1!#2}}%	
 }%
 \def\spro#1#2{\pmb(#1,#2\pmb)}
+\def\abs#1{\lvert#1\rvert}
+\def\Abs#1{\left\lvert#1\right\rvert}
+\def\norm#1{\lVert#1\rVert}
+\def\Norm#1{\left\lVert#1\right\rVert}
 %
 % Aufzaehlungen roemisch numeriert....
 \renewcommand{\labelenumi}{{\rm\bf(\roman{enumi})}}
@@ -63,9 +67,6 @@
 \def\til#1{\widetilde{#1}}
 %\def\mto{\mapsto}
 %\def\ti{\times}
-\def\abs#1{\lvert#1\rvert}
-\def\Abs#1{\left\lvert#1\right\rvert}
-\def\norm#1{\lVert#1\rVert}
 %\def\Lap{\Delta}
 \def\cc#1{\overline{#1}}
 \def\ul#1{\underline{#1}}
@@ -84,6 +85,10 @@
 \DeclareMathOperator{\div}{div}                % Divergenz
 \DeclareMathOperator{\spann}{span}        % Lineare Huelle (span)
 \DeclareMathOperator{\Grad}{deg}           % Grad eines Polynoms
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
 %
 \begin{document}
 \titlehead{Priv.-Doz. Dr. Jens Wirth\\Institut f\"ur Analysis, Dynamik und Modellierung\\Universit\"at Stuttgart}
