@@ -909,8 +909,8 @@ $P(\xi) =  a \cdot \xi + b$ mit $ a  \in \mathbb{R}^n$, $b \in \mathbb{R}$. Für
 \noindent{\em Induktionsschritt:} Angenommen, die Aussage wurde schon für alle Polynome vom Grad kleiner $m$ gezeigt. Sei weiter $P$ vom Grad $m$.
 Nach Definition gilt $\widetilde{P}(\xi) \leq C$ für alle $\xi \in M_{C,P}$, insbesondere also auch $|P^{(\alpha)}(\xi)|\leq C$ für jeden Multiindex $\alpha$. Für $|\alpha|=m-1$ unterscheiden sich $P^{(\alpha)}(\xi)$ und $P_m^{(\alpha)}(\xi)$ nur um eine Konstante, d.h. es gilt $P^{(\alpha)}-P_m^{(\alpha)}=p_\alpha \in\mathbb{C}$ und damit $|P_m^{(\alpha)}(\xi)| \leq C'$ für eine neue Konstante $C'>0$ und alle $\xi \in M_{C,P}$. Gilt nun  $P_m^{(\alpha)}(\xi)=0$ für $\xi\in\R^n$ und alle $|\alpha|=m-1$, 
 so folgt mit Lemma \ref{Lema:homogene Polynome}, daß $\xi \in \Lambda(P_m)$. 
-Damit ist der Nullraum der linearen Abbildung $\xi \mapsto ( P^{(\alpha)}_m(\xi))_{|\alpha|=m-1} \in\C^M$, $M=\#\{\alpha : |\alpha|=m-1\}$, enthalten in $\Lambda(P_m)$
-und somit 
+Damit ist der Nullraum der affin-linearen Abbildung $\xi \mapsto ( P^{(\alpha)}_m(\xi))_{|\alpha|=m-1} \in\C^M$, $M=\#\{\alpha : |\alpha|=m-1\}$, enthalten in $\Lambda(P_m)$
+und somit gilt
 \begin{equation}
     \widetilde {P}(\xi)^2 \ge \sum_{|\alpha|=m-1} |P^{(\alpha)}(\xi)|^2 =\sum_{|\alpha|=m-1} |P^{(\alpha)}_m(\xi)+p_\alpha |^2  \ge C'' \dist( \xi,\Lambda(P_m) )^2 - C'''
 \end{equation}
