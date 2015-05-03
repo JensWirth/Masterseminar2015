@@ -633,11 +633,11 @@ Dies impliziert nach obigem $a_k(\xi_b)\in W(\mcP_b)$.
 \end{proof}
 
 \section{Kompaktheitskriterien minimaler Operatoren}
-Wir wollen nun Satz \ref{thm:2:2.1} benutzen um Kriterien zu formulieren, so dass die Abbildung
+Wir wollen nun Satz \ref{thm:2:2.1} nutzen um Kriterien zu formulieren, so dass die Abbildung
 \begin{equation}\label{eq:2:map}
 \mcR_{P_0}\to\mcR_{Q_0},\quad P(D)u\mapsto Q(D)u
 \end{equation}
-nicht nur stetig, sondern auch kompakt ist, wobei wir dazu ebenfalls die regularisierten Symbole $\til{P}$, $\til{Q}$ heranziehen werden. Dazu definieren wir zunächst die Vollstetigkeit eines Operators.
+nicht nur stetig, sondern auch kompakt ist, wobei wir dazu ebenfalls die regularisierten Symbole $\til{P}$, $\til{Q}$ heranziehen werden. Dazu definieren wir zunächst die Kompaktheit eines Operators.
 \begin{df}
 Seien $V$ und $W$ zwei Banachräume und $T: V \supset \mathcal{D}_T \rightarrow W$ ein linearer Operator. $T$ heißt \eIndex[Operator]{kompakt}, wenn er abgeschlossen ist und für jede Folge $(u_n)_{n \in \mathbb{N}}$ in $\mathcal{D}_T$ mit $\Vert u_n \Vert \leq 1 \ \forall n \in \mathbb{N}$ eine Teilfolge $({u_n}_k)_{k \in \mathbb{N}}$ existiert, so dass die Folge $({Tu_n}_k)_{k\in \mathbb{N}}$ in $W$ konvergiert.
 \end{df}
@@ -683,7 +683,7 @@ woraus sich dann mit \eqref{eq:2:PDb} sofort
 ergibt. Damit können wir zeigen, dass die Funktionen $\widehat{Q(\D)}u_n = Q(\xi) \hat{u}_n$ gleichgradig stetig und gleichmäßig beschränkt sind. Sei dazu $\varepsilon>0$, dann existiert ein $\delta>0$, so dass aus $|\xi_1 - \xi_2| < \delta$ und der Ungleichung von Cauchy-Schwarz 
 \begin{align}
 | Q(\xi_1)\widehat{u}_n(\xi_1) - Q(\xi_2)\widehat{u}_n(\xi_2)| & \leq \int_{\Omega}  \underbrace{\left| e^{\i x \cdot \xi_1} - e^{\i x \cdot \xi_2} \right| }_{\leq \varepsilon} | Q(\D) u_n(x)| \d x 
-\\ & \leq \varepsilon |\Omega|^{\frac{1}{2}} \Vert Q(\D)u_n \Vert \leq \varepsilon \tilde{C}
+\\ & \leq \varepsilon |\Omega|^{\frac{1}{2}} \Vert Q(\D)u_n \Vert \leq \varepsilon \widetilde{C}
 \end{align}
 folgt. Also können wir nach dem Satz von Arzel\`a-Ascoli eine lokal gleichmäßig konvergente Teilfolge $Q(\xi)\widehat{u}_{n_k}$ auswählen, d.h. $Q(\xi)\widehat{u}_{n_k}$ konvergiert auf jeder kompakten Menge $K \subseteq \Omega$ gleichmäßig.
 Nach Voraussetzung \eqref{eq:2:tozero} lässt sich für jedes $\varepsilon > 0$ eine kompakte Menge $K \subseteq \Omega$ finden, so dass 
@@ -694,7 +694,7 @@ gilt. Damit folgt nun
 \begin{align}
 \int_{K^{\mathrm c}}\abs{Q(\xi)}^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi
 &\leq\varepsilon^2\int\til{P}(\xi)^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi\\
-&=\varepsilon^2\sum_{|\alpha| \leq k}\norm{P^{(\alpha)}(\D)(u_{n_k}-u_{n_l})}^2.\label{eq:2:Kcsum}
+&=\varepsilon^2\sum_{|\alpha| \leq k}\norm{P^{(\alpha)}(\D)(u_{n_k}-u_{n_l})}^2\label{eq:2:Kcsum}
 \end{align}
 und diese Summe ist nach \eqref{eq:ableitung leq PD}
 und \eqref{eq:2:PDb} beschränkt.
@@ -732,7 +732,7 @@ Um $\delta_{nm}\to0$ zu erreichen setzen wir voraus, dass $\xi_n-\xi_m\to\infty$
 Da die Faktoren $Q^{(\alpha)}(\xi_n)/\til{P}(\xi_n)$ nach Satz \ref{thm:2:2.1} beschränkt und $\D^\alpha u\cc{\D^\beta u}$ integrierbar sind, folgt mit dem Riemannschen Lemma $\delta_{nm}\to0$ für $n,m\to\infty$, $n\neq m$.
 Aufgrund der Kompaktheit finden wir eine konvergente Teilfolge $(Q(\D)u_{n_k})_{k \in \mathbb{N}}$, sodass aus \eqref{eq:2:kz} und Satz \ref{thm:2:2.1}
 \begin{equation}
-\norm{Q(\D)u_{n_k}}^2=\sum_{\alpha,\beta}\frac{\abs{Q(\xi_{n_k})}^2}{\til{P}(\xi_{n_k})^2} \underbrace{\frac{1}{|\alpha|! |\beta|!}\int \D_\alpha u \overline{\D_\beta u} \d x}_{=\Psi_{\alpha \beta}} \longrightarrow 0
+\norm{Q(\D)u_{n_k}}^2=\sum_{\alpha,\beta}\frac{\abs{Q(\xi_{n_k})}^2}{\til{P}(\xi_{n_k})^2} \underbrace{\frac{1}{\alpha! \beta!}\int \D_\alpha u \overline{\D_\beta u} \d x}_{=\Psi_{\alpha \beta}} \longrightarrow 0
 \end{equation}
 und damit auch 
 \begin{equation}
@@ -846,11 +846,23 @@ auf die Beschränktheit in $\mathbb{R}^n$ schließen können. Wir gehen hierbei 
 \\Sei $P(\xi) = \sum a_k \xi_k + b = a \cdot \xi + b$ mit $ a := (a_1, \ldots , a_n) \in \mathbb{R}^n , b \in \mathbb{R}$, dann gilt $\Lambda(P)=\{a\}^{\bot}$. Also ist $M_C$ mod $\{a\}^{\bot}$ als Teilmenge des Quotientenraumes $\mathbb{R}^n/\{a\}^{\bot}$ beschränkt.
 \\IS:
 \\Die Induktionsvoraussetzung lautet dabei, dass die Aussage für Polynome $P$ mit $\deg(P)<m$ wahr ist.
-\\Gilt $\til{P}(\xi) \leq C$ für $\xi \in M_C$, dann folgt insbesondere $|P^{(\alpha)}(\xi)|\leq C$ für eine Konstante $C>0$. Für $|\alpha|=m-1$ unterscheiden sich $P^{(\alpha)}(\xi)$ und $P_m^{(\alpha)}(\xi)$ nur um eine Konstante, d.h. $P^{(\alpha)}(\xi)-P_m^{(\alpha)} \in \mathbb{C}$ und damit $|P_m^{(\alpha)}(\xi)| \leq C'$ für $C'>0$ und $\xi \in M_C$.
+\\Gilt $\til{P}(\xi) \leq C$ für $\xi \in M_C$, dann folgt insbesondere $|P^{(\alpha)}(\xi)|\leq C$ für eine Konstante $C>0$. Für $|\alpha|=m-1$ unterscheiden sich $P^{(\alpha)}(\xi)$ und $P_m^{(\alpha)}(\xi)$ nur um eine Konstante, d.h. es gilt $P^{(\alpha)}(\xi)-P_m^{(\alpha)}\in\mathbb{C}$ und damit $|P_m^{(\alpha)}(\xi)| \leq C'$ für $C'>0$ und $\xi \in M_C$. Wenn $P_m^{(\alpha)}(\xi)=0 \ \forall \alpha \in \mathbb{N}_0^n, \ |\alpha|=m-1$ gilt, dann folgt mit Lemma \ref{Lema:homogene Polynome} sofort $\xi \in \Lambda(P_m)$. Mit der Linearität von $P_m^{(\alpha)}(\xi), \ |\alpha|=m-1$ folgt  dann damit die Beschränktheit von $M_C$ mod $\Lambda(P_m)$ in $\mathbb{R}^n/\Lambda(P_m)$. Wir definieren das Polynom
+\begin{equation}
+R(\xi):=P(\xi) - P_m(\xi) = \sum_{k=0}^{m-1} P_k(\xi)
+\end{equation}
+dann gilt nach der Dreiecksungleichung
+\begin{equation}
+\til{R}(\xi) \leq \til{P}(\xi) + \til{P}_m(\xi).
+\end{equation}
+Da das Polynom $R$ vom Grad $m-1$ ist, folgt mit der Induktionsvoraussetzung, dass $M_{(C,R)}$ mod $\bigcap_{k=1}^{m-1} \Lambda (P_k)$ beschränkt ist. Aus $\til{P}_m(\xi) \leq C''$ in $M_C$ ergibt sich somit
+\begin{equation}
+\til{R}(\xi) \leq \til{P}(\xi) + \til{P}_m(\xi) \leq C + C'',
+\end{equation}
+d.h. $M_C \subseteq M_{(C+C'',R)}$, woraus die Beschränktheit von $M_C$ folgt.
 \end{proof}
 
 Wir wollen zum Abschluss des Kapitels ein weiteres Vergleichsresultat angeben welches ebenfalls aus dem Quotienten der regularisierten Symbole $\tilde{P}$ und $ \tilde{Q}$ hervorgeht. Es handelt sich hierbei um die Fortsetzung des Definitionsbereiches von $Q(\D)$ auf den des minimalen Operators $P_0$.
-\begin{thm}
+\begin{thm}[{\cite[Theorem~2.6]{Hormander:1955}}]
 Sei $u \in \mathcal{D}_{P_0}$ eine Funktion aus dem Definitionsbereich des minimalen Operators $P_0$. Ist die Funktion $Q(\D)u$ stetig, dann gilt
 \begin{equation}\label{satz: bedingung stetigkeit}
 \int \frac{|Q(\xi)|^2}{\tilde{P}(\xi)^2} \d \xi < \infty.
