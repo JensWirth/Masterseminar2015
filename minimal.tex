@@ -747,7 +747,7 @@ woraus sich dann mit \eqref{eq:2:PDb} sofort
 \norm{Q(\D)u_n}\leq C' \norm{P(\D)u_n} \leq C' 
 \end{equation}
 für die gegebene Folge $(u_n)_{n\in\N}$ ergibt. Da $\Omega$ beschränkt ist, ist auch die $\rmL^1$-Norm $\|Q(\D)u_n\|_1$ gleichmäßig beschränkt und die 
-Fouriertransformierten $Q(\xi) \widehat{u}_n(\xi)$ sind gleichmäßig beschränkt. Wir zeigen, daß sie auch gleichgradig stetig sind. Sei dazu $\varepsilon>0$ und $\delta>0$ so gewählt, dass für $|\xi_1 - \xi_2| < \delta$ stets $|\e^{\i x \cdot \xi_1} - \e^{\i x \cdot \xi_2}|\le\epsilon$ gilt. Dann folgt mit Ungleichung von Cauchy--Schwarz 
+Fouriertransformierten $Q(\xi) \widehat{u}_n(\xi)$ sind gleichmäßig in $\xi$ und $n$ beschränkt. Wir zeigen, daß sie auch gleichgradig stetig sind. Sei dazu $\varepsilon>0$ und $\delta>0$ so gewählt, dass für $|\xi_1 - \xi_2| < \delta$ stets $|\e^{\i x \cdot \xi_1} - \e^{\i x \cdot \xi_2}|\le\epsilon$ gilt. Dann folgt mit Ungleichung von Cauchy--Schwarz 
 \begin{align}
 | Q(\xi_1)\widehat{u}_n(\xi_1) - Q(\xi_2)\widehat{u}_n(\xi_2)| & \leq (2\pi)^{-n/2} \int_{\Omega} \left| \e^{\i x \cdot \xi_1} - \e^{\i x \cdot \xi_2} \right| | Q(\D) u_n(x)| \d x \notag
 \\ & \leq \varepsilon |\Omega|^{\frac{1}{2}} \Vert Q(\D)u_n \Vert \leq \varepsilon \widetilde{C}.
@@ -834,38 +834,39 @@ parabelförmig ins Unendliche läuft. Betrachtet man jedoch das regularisierte S
 dann gilt $\widetilde{P}(\xi) \rightarrow \infty$ für $\xi \rightarrow \infty$. Speziell mit $Q(\D)=I$ impliziert obiger Satz somit aus
 $1/\widetilde P(\xi)\to0$ die Kompaktheit der Inversen $P_0^{-1}$.
 \end{exa}
-Wir werden im Folgenden zeigen, dass der Operator $P_0^{-1}$ genau dann kompakt ist, wenn das dazugehörige Symbol $P(\xi)$ von allen Variablen abhängt. Dazu benötigen wir zunächst folgende Definition.
+Wir werden im Folgenden zeigen, dass der Operator $P_0^{-1}$ genau dann kompakt ist, wenn das dazugehörige Symbol $P(\xi)$ von allen Variablen abhängt. Dazu vorbereitend geben wir zunächst folgende Definition.
 \begin{df}
-Sei $P(\xi)$ das Symbol eines Differentialausdrucks $P(\D)$. Wir sagen dass $P(\xi)$ vollständig ist, wenn folgendes gilt:
-\begin{align*}
-\Lambda(P)=\{ \nu \in \mathbb{R}^n| \ \ \forall \xi \in \mathbb{C}^n, \forall t \in \mathbb{R}: P(\xi + t\nu) = P(\xi)  \} = \{0\}.
-\end{align*}
+Sei $P(\xi)$ das Symbol eines Differentialausdrucks $P(\D)$. Dann bezeichne
+\begin{equation}
+\Lambda(P)=\{ \nu \in \mathbb{R}^n| \ \ \forall \xi \in \mathbb{C}^n, \forall t \in \mathbb{R} \;:\; P(\xi + t\nu) = P(\xi)  \}
+\end{equation}
+den Linienraum\footnote{Dieser wurde von G\r{a}rding eingeführt und beschreibt den größten Unterraum des $\R^n$, so daß das Polynom $P$ auf den Quotienten $\R^n/\Lambda(P)$ projiziert werden kann.} von $P$. Weiter sagen wir $P$ sei \eIndex[Differentialoperator]{vollständig}, wenn $\Lambda(P)=\{0\}$ gilt.
 \end{df}
 \begin{lem}[{\cite[Lemma~2.13]{Hormander:1955}}]\label{Lema:homogene Polynome} 
 Sei $Q(\xi)$ ein homogenes Polynom vom Grad $m \in \mathbb{N}$ und  $\nu \in \mathbb{R}^n$ mit
-\begin{align*}
-\D^{\alpha}Q(\nu)=0 \ \forall \alpha \in \mathbb{N}_0^{n}, \ |\alpha| = m-1,
-\end{align*}
-dann gilt $\nu \in \Lambda(Q)$.
+\begin{equation}
+Q^{(\alpha)}(\nu)=0
+\end{equation}
+für alle $\alpha\in\N_0^n$ mit $|\alpha|=m-1$. Dann gilt $\nu \in \Lambda(Q)$.
 \end{lem}
 \begin{proof}
-Für $m=1$ gilt offensichtlich $\nu = 0 \in \Lambda(Q)$. Wir nehmen also an, dass die Behauptung für Polynome vom Grad kleiner $m>1$ erfüllt ist. Wir leiten das Polynom $Q(\xi)$ partiell nach einer Variable $\xi_i, \ i \in \{1,\ldots,n\}$ ab und benutzen die Induktionsvoraussetzung, d.h. es gilt
+Für $m=1$ gilt offensichtlich $\alpha = 0$ und es ist nichts zu zeigen. Sei also $m>1$ und wir nehmen an, dass die Behauptung schon für Polynome vom Grad kleiner $m$ gezeigt ist. Die partielle Ableitung $\partial Q/\partial_{\xi_j}$ verschwindet entweder identisch oder ist homogen vom Grad $m-1$. Da sie ebenso die Voraussetzungen des Lemmas erfüllt gilt also nach Induktionsvoraussetzung
 \begin{equation}
-\partial Q(\xi + t \nu)/ \partial \xi_i = \partial Q(\xi)/\partial \xi_i \ \ \forall i \in \{1,\ldots,n\}.
+\partial Q(\xi + t \nu)/ \partial \xi_j = \partial Q(\xi)/\partial \xi_j.
 \end{equation}
-Also ist der Ausdruck $Q(\xi + t \nu) - Q(\xi)$ unabhängig von $\xi$ und wir erhalten
+Da dies für alle $j\in\{1,\ldots,n\}$ gilt, ist der Ausdruck $Q(\xi + t \nu) - Q(\xi)$ unabhängig von $\xi$ und wir erhalten
 \begin{equation}
 Q(\xi + t \nu) - Q(\xi) = Q(t \nu).
 \end{equation}
-Mit $t=1$ und $\xi=\nu$ folgt
+Speziell mit $t=1$ und $\xi=\nu$ folgt
 \begin{equation}
-Q(\xi + t\nu) - Q(\xi) = Q(2 \nu) - Q(\nu)= Q(\nu) \Leftrightarrow 2^m Q(\nu) = 2 Q(\nu),
+Q(\xi + t\nu) - Q(\xi) = Q(2 \nu) - Q(\nu)= Q(\nu), 
 \end{equation}
-d.h. $Q(\nu)=0$ und damit 
+also $2^mQ(\nu)=Q(2\nu) = 2 Q(\nu)$ und damit $Q(\nu)=0$, also insbesondere
 \begin{equation}
-Q(\xi + t\nu) = Q(\xi).
+Q(\xi + t\nu) = Q(\xi)
 \end{equation}
-Also gilt $\nu \in \Lambda(Q)$.
+und damit $\nu \in \Lambda(Q)$.
 \end{proof}
 Mit diesem Lemma und Satz \ref{thm:2:2.1} können wir nun das Kompaktheitskriterium von $P_0^{-1}$ angeben.
 \begin{thm}[{\cite[Theorem~2.17]{Hormander:1955}}]
