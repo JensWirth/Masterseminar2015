@@ -17,7 +17,7 @@ Eine  lineare Abbildung   $P:\rmC_0^\infty(\Omega)\to\rmC^\infty(\Omega)$ ist ge
 ein Polynom vom Grad $m$ in $\lambda$ ist.
 \end{lem}
 \begin{proof}
-Die Hinrichtung ist klar. Zum Beweis der Rückrichtung sei $x'\in\Omega$ ein Punkt und $f\in\rmC_0^\infty(\Omega)$ mit $f=1$  in einer Umgebung $\omega$ von $x'$. Sei weiter $\xi\in\R^n$ und $g(x) = x\cdot\xi$. Dann folgt aus \eqref{eq:6:6.2}
+Die Hinrichtung ist klar. Zum Beweis der Rückrichtung sei $x'\in\Omega$ ein Punkt und $f\in\rmC_0^\infty(\Omega)$ mit $f=1$  in einer (in einem Kartengebiet liegenden) Umgebung $\omega$ von $x'$. Sei weiter $\xi\in\R^n$ und $g(x) = x\cdot\xi$. Dann folgt aus \eqref{eq:6:6.2}
 \begin{equation}
     \e^{-\i \lambda x\cdot\xi} P ( f\e^{\i \lambda x\cdot\xi}) = \sum_{j=0}^m p_j(f;x,\xi) \lambda^j
 \end{equation}
@@ -35,6 +35,7 @@ und da $u=fu$ folgt insbesondere
 Mit Linearität folgt die Behauptung.
 \end{proof}
 
+Sei nun $\Omega$ ein Gebiet.
 Wir betrachten im folgenden allgemeiner Operatoren $P : \rmC_0^\infty(\Omega) \to \rmC^\infty(\Omega)$ und deren Beschreibung durch ein \eIndex[Pseudodifferentialoperator]{Symbol}
 \begin{equation}\label{eq:6:6.6}
     \sigma_P(f; x,\xi) = \e^{-\i x\cdot\xi} P( f(x) \e^{\i x\cdot\xi}).
@@ -45,32 +46,33 @@ Dann gilt für jedes $u\in\rmC_0^\infty(\omega)$
    P u (x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \sigma_P(f; x,\xi) \widehat u(\xi) \d\xi.
 \end{equation}
 Der Operator $P$ wird als \eIndex{Pseudodifferentialoperator} der \eIndex[Pseudodifferentialoperator]{Ordnung} $m$ bezeichnet, falls jedes so entstehende Symbol 
-$\sigma_P(f;\cdot,\cdot)$ zur nachfolgend definierten \eIndex{Symbolklasse} $S^m(\Omega\times\R^n)$ gehört.
+$\sigma_P(f;\cdot,\cdot)$ zur nachfolgend definierten \eIndex{Symbolklasse} $S^m_{\rm loc}(\Omega\times\R^n)$ gehört.
 
 \begin{df}
-Eine Funktion $\sigma\in\rmC^\infty(\Omega\times\R^n)$ gehört zur Symbolklasse $S^m(\Omega\times\R^n)$ falls
+Eine Funktion $\sigma\in\rmC^\infty(\Omega\times\R^n)$ gehört zur Symbolklasse $S^m_{\rm loc}(\Omega\times\R^n)$ falls
 \begin{equation} 
   \sup_{x\in K}  |  \partial_x^\beta\partial_\xi^\alpha \sigma(x,\xi) | \le C_{K,\alpha,\beta} \langle\xi\rangle^{m-|\alpha|}
 \end{equation}
 für alle Kompakta $K\Subset\Omega$ und alle Multiindices $\alpha,\beta\in\N^n_0$ gilt. Dabei bezeichnet $\langle\xi\rangle = \sqrt{1+|\xi|^2}$.
 \end{df}
 
-Ist nun $\sigma\in S^m(\Omega\times\R^n)$, so konvergiert für jedes $u\in\rmC_0^\infty(\Omega)$ das Integral
+Ist nun $\sigma\in S^m_{\rm loc}(\Omega\times\R^n)$, so konvergiert für jedes $u\in\rmC_0^\infty(\Omega)$ das Integral
 \begin{equation}\label{eq:6:6.9}
    P u (x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \sigma(x,\xi) \widehat u(\xi) \d\xi
 \end{equation}
 und definiert eine glatte Funktion $Pu\in\rmC^\infty(\Omega)$. Es gilt sogar mehr
 
 \begin{lem}
-Sei $\sigma\in S^m(\Omega\times\R^n)$ und $Pu$ für $u\in\rmC_0^\infty(\Omega)$ durch \eqref{eq:6:6.9} definiert. Dann gilt für jedes $f\in\rmC_0^\infty(\Omega)$
+Sei $\sigma\in S^m_{\rm loc}(\Omega\times\R^n)$ und $Pu$ für $u\in\rmC_0^\infty(\Omega)$ durch \eqref{eq:6:6.9} definiert. Dann gilt für jedes $f\in\rmC_0^\infty(\Omega)$
 und das durch \eqref{eq:6:6.6} zugeordnete Symbol
 \begin{equation}
-    \sigma_P(f;\cdot,\cdot)\in S^m(\Omega\times\R^n). 
+    \sigma_P(f;\cdot,\cdot)\in S^m_{\rm loc}(\Omega\times\R^n). 
 \end{equation}
 Weiterhin gilt
 \begin{equation}
    \sigma_P(f;x,\xi) \sim \sum_{\alpha}  \frac{1}{\alpha!} \big( \partial_\xi^\alpha \sigma(x,\xi) \big) \big(\D_x^\alpha f(x)\big)
 \end{equation}
+und, falls $f(x)=1$ auf $\omega\Subset\Omega$ gilt, auch $\sigma_P(f;x,\xi)=\sigma(x,\xi) \mod\mathscr S(\overline{\omega}\times\R^n)$.
 \end{lem}
 \begin{proof}
 Nach Definition gilt
@@ -99,5 +101,56 @@ Weiter gilt für Multiindices $\beta,\gamma\in\N_0^n$
    \partial_x^\gamma \partial_\xi^\beta \rho_N(x,\xi) \\
    =  (2\pi)^{-n/2} N \sum_{\delta\le\gamma} \binom{\gamma}{\delta} \i^{|\delta|} \int \e^{\i x\cdot\eta} \int_0^1 \sum_{|\alpha|=N} \frac{(1-t)^N \eta^{\alpha+\delta}}{\alpha!} \partial_x^{\gamma-\delta} \partial_\xi^{\alpha+\beta} \sigma(x,\xi+t\eta) \d t  \widehat f(\eta) \d\eta 
 \end{multline}
-und obige Abschätzung liefert $\rho_N\in S^{m-N}(\Omega\times\R^n)$. Das impliziert die Behauptung.
+und obige Abschätzung liefert $\rho_N\in S^{m-N}_{\rm loc}(\Omega\times\R^n)$. Das impliziert die Behauptung.
+\end{proof}
+
+Pseudodifferentialoperatoren auf Gebieten kann man nicht notwendigerweise verketten. Wir bezeichnen einen Pseudodifferentialoperator $P$ als \eIndex[Pseudodifferentialoperator]{eigentlich getragen}, falls er $\rmC_0^\infty(\Omega)$ nach $\rmC_0^\infty(\Omega)$ abbildet. Dies gilt zum Beispiel dann, wenn das Symbol in $x$ kompakt getragen ist. 
+
+%
+%Analog ergibt sich eine erste Kompositionsformel für Pseudodifferentialoperatoren. Es gilt für zwei solche Operatoren $P$ und $Q$ und deren Symbole im Sinne von \eqref{eq:6:6.6}
+%\begin{equation}
+%  \sigma_Q(gPf; x,\xi) \sim \sum_{\alpha} \frac1{\alpha!} \big(\partial_\xi^\alpha\sigma_Q(g; x,\xi) \big) \big(\D_x^\alpha \sigma_P(f;x,\xi)\big).  
+%\end{equation}
+
+BLA
+
+\section{Hörmanders globales Kalkül}
+
+Im folgenden betrachten wir globale Symbole $\sigma(x,\xi)$, welche die Bedingung
+\begin{equation}
+    \sup_{x\in\R^n} |\partial_x^\beta\partial_\xi^\alpha \sigma(x,\xi)| \le C_{\alpha,\beta} \langle\xi\rangle^{m-|\alpha|}
+\end{equation}
+für alle Multiindices $\alpha,\beta\in\N_0^n$ erfüllen. Die Symbolabschätzungen sind also global gleichmäßig in $x$.
+Wir bezeichnen die Menge dieser Symbole mit $S^m_{\rm unif}(\R^n\times\R^n)$. Gilt $\sigma\in S^m_{\rm unif}(\R^n\times\R^n)$
+und $u\in\mathscr S(\R^n)$ eine Schwartzfunktion, so definiert
+\begin{equation}\label{eq:6:6.17}
+   Pu (x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \sigma(x,\xi) \widehat u(\xi)\d\xi
+\end{equation}
+wiederum eine Schwartzfunktion. Das folgt durch geeignetes partielles integrieren. Interessanter für uns ist folgender Satz; Operatoren der Ordnung $0$ sind $\rmL^2$--$\rmL^2$-beschränkt.
+
+\begin{thm}
+Sei $\sigma\in S^0_{\rm unif}(\R^n\times\R^n)$ und $P$ durch \eqref{eq:6:6.17} definiert. Dann gibt es eine Konstante $C>0$, so daß für alle $u\in\mathscr S(\R^n)$
+\begin{equation}
+   \| Pu\| \le C \|u\|
+\end{equation}
+gilt.
+\end{thm}
+\begin{proof}
+\end{proof}
+
+
+\begin{thm}
+Seien $A$ und $B$ globale Pseudodifferentialoperatoren mit Symbolen $\sigma_A\in S^{m_1}_{\rm unif}(\R^n\times\R^n)$ und $\sigma_B\in S^{m_2}_{\rm unif}(\R^n\times\R^n)$. Dann gilt
+\begin{enumerate}
+\item die Verkettung $A\circ B$ ist ein globaler Pseudodifferentialoperator der Ordnung $m_1+m_2$ und für das zugehörige Symbol gilt
+\begin{equation}
+   \sigma_{A\circ B}(x,\xi) \sim \sum_\alpha \frac1{\alpha!} \big(\partial_\xi^\alpha \sigma_A(x,\xi) \big) \big(\D_x^\alpha \sigma_B(x,\xi)\big);
+\end{equation}
+\item der formal adjungierte Operator $A^*$ ist ein Pseudodifferentialoperator der Ordnung $m_1$ und für das zugehörige Symbol gilt
+\begin{equation}
+   \sigma_{A^*}(x,\xi) = \sum_{\alpha} \frac1{\alpha!} \partial_\xi^\alpha \D_x^\alpha \overline{\sigma_A(x,\xi)}.
+\end{equation}
+\end{enumerate}
+\end{thm}
+\begin{proof}
 \end{proof}
