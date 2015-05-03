@@ -22,7 +22,7 @@ $(0,w)\in\mathcal G$ stets $w=0$ folgt. Wir versehen $V\times W$ mit der Norm $\
 
 Der Operator $T$ wird als \eIndex[Operator]{abgeschlossen} bezeichnet, falls der Graph $\mathcal G_T$ ein abgeschlossener Teilraum des Produktraumes $V\times W$ ist. Weiter heißt $T$ \eIndex[Operator]{abschließbar}, falls der Abschluß von $\mathcal G_T$ in $V\times W$ Graph eines Operators ist. Dieser wird als Abschluß von $T$ bezeichnet.
 
-\begin{thm}\label{thm:1:1.1}
+\begin{thm}[{\cite[Theorem~1.1]{Hormander:1955}}]\label{thm:1:1.1}
 Sei $T_1$ abgeschlossen und $T_2$ abschließbar und gelte $\mathcal D_{T_1}\subseteq \mathcal D_{T_2}$. Dann existiert eine Konstante $C$ mit  
 \begin{equation}
    \| T_2 u\|_W^2 \le C ( \|T_1 u\|_W^2 + \|u\|_V^2 ). 
@@ -44,7 +44,7 @@ Im folgenden sei $V=W=H$ ein Hilbertraum. Zur Vereinfachung der Notation verwend
 \end{equation}
 f\"ur $u\in\mathcal D_T$ und $v\in\mathcal D_{T^*}$.
 
-\begin{thm}\label{thm:1:1.2}
+\begin{thm}[{\cite[Lemma~1.1]{Hormander:1955}}]\label{thm:1:1.2}
 Sei $T$ ein dicht definierter Operator. Dann gilt $\mathcal R_T=H$ genau dann, wenn 
 $T^*$ beschränkt invertierbar ist.
 \end{thm}
@@ -62,7 +62,7 @@ Angenommen, $T^*$ erf\"ullt die Ungleichung \eqref{eq:1:1.6}. Dann ist der selbs
 strikt positiv und stetig invertierbar. Dann ist aber $TT^* (TT^*)^{-1}  = I$ und somit $\mathcal R_T = H$.
 \end{proof}
 
-\begin{cor}\label{cor:1:1.3}
+\begin{cor}[{\cite[Lemma~1.2]{Hormander:1955}}]\label{cor:1:1.3}
 Ein dicht definierter Operator $T$ besitzt eine Rechtsinverse $S$ genau dann, wenn $T^*$ beschränkt invertierbar ist.
 \end{cor}
 \begin{proof}
@@ -102,7 +102,7 @@ und ist durch
 \end{equation}
 gegeben.
 
-\begin{lem}
+\begin{lem}[{\cite[Lemma~1.4]{Hormander:1955}}]
 Der Differentialoperator $\mathcal P$ versehen mit Definitionsbereich
 \begin{equation}
   \mathcal D= \{ u\in\rmC^\infty(\Omega) \cap \rmL^2(\Omega) :  \mathcal Pu\in\rmL^2(\Omega) \}
@@ -136,7 +136,7 @@ wobei die Anwendung von $\mathcal P$ im distributionellen Sinne zu verstehen ist
 also den Sobolevraum $\rmH^2_0(\Omega)$ der am Rand verschwindenden Funktionen, und der maximale Operator gerade den gesamten Sobolevraum $\rmH^2(\Omega)$ als Definitionsbereich. Im Falle h\"oherer Raumdimensionen wird der Definitionsbereich des maximalen Operators in der Regel echt größer als der Sobolevraum passender Ordnung sein.
 Der Unterschied zwischen minimalen und maximalen Operatoren besteht in der Wahl von Randbedingungen. 
 
-\begin{thm}
+\begin{thm}[{\cite[Lemma~1.7]{Hormander:1955}}]
 Die Gleichung $Pu=f$ hat genau dann für jedes $f\in\rmL^2(\Omega)$ eine L\"osung $u\in\mathcal D_{P}$, wenn $\overline P_0$ beschränkt invertierbar ist, also wenn f\"ur den formal adjungierten Differentialausdruck
 \begin{equation}
   \forall u\in\rmC^\infty_0(\Omega)\quad:\quad   \|u\| \le C \| \overline{\mathcal P} u \|
@@ -153,7 +153,7 @@ Seien $\mathcal P$ und $\mathcal Q$ Differentialausdrücke und $\Omega$ ein Gebi
 \end{df}
 Die  Definition hängt im Falle konstanter Koeffizienten nicht von der Wahl des Gebietes ab. Im Falle variabler Koeffizienten (siehe später) sind die Gebiete hinreichend klein zu wählen um eine sinnvolle Definition erhalten.
 
-\begin{lem}\label{lm: Qu stetig}
+\begin{lem}[{\cite[Lemmata~1.5 und~1.6]{Hormander:1955}}]\label{lm: Qu stetig}
 Seien $\mathcal P$ und $\mathcal Q$ Differentialausdr\"ucke auf einem Gebiet $\Omega$. 
 \begin{enumerate}
 \item
@@ -163,17 +163,17 @@ $\mathcal Q$ ist genau dann schwächer als $\mathcal P$, wenn
 \end{equation}
 gilt.
 \item
-$Q_0 u$ besitzt für jedes $u\in\mathcal D_{P_0}$ genau dann einen stetigen Repräsentanten, wenn
+$Q_0 u$ ist für jedes $u\in\mathcal D_{P_0}$ genau dann beschränkt, wenn
 \begin{equation}
     \forall u\in\rmC^\infty_0(\Omega)\quad:\quad  \sup_{x\in\Omega} |\mathcal Qu(x) |^2 \le C \big( \|\mathcal Pu\|^2 + \|u\|^2 \big)
 \end{equation}
-gilt.
+gilt. In diesem Fall besitzt $Q_0u$ insbesondere einen stetigen auf $\partial\Omega$ verschwindenden Repräsentanten.
 \end{enumerate}
 \end{lem}
 \begin{proof}
 {\bf (i)}\quad Die Hinrichtung folgt direkt aus Satz~\ref{thm:1:1.1}. Für die Rückrichtung nehmen wir an, die Ungleichung gilt. Dann existiert zu $u\in\mathcal D_{P_0}$ eine Folge $u_n\in\rmC_0^\infty(\Omega)$ mit $u_n\to u$ und $\mathcal P u_n\to P_0 u$ in $\rmL^2(\Omega)$. Dann ist aber $\mathcal Q(u_n-u_m)$ Cauchy und da $Q_0$ abgeschlossen ist folgt $u\in\mathcal D_{Q_0}$. $\bullet$\qquad
 {\bf (ii)}\quad Für die Hinrichtung betrachtet man $\mathcal Q$ als Operator $\mathcal G_{P_0}\to\rmL^\infty(\Omega)$ und wendet Satz~\ref{thm:1:1.1} an. Für die Rückrichtung sei $u\in\mathcal D_{P_0}$ beliebig und $u_n\in\rmC_0^\infty(\Omega)$ eine Folge mit $u_n\to u$ und $\mathcal Pu_n\to P_0u$ in $\rmL^2(\Omega)$.
-Dann konvergiert $\mathcal Qu_n$ gleichmäßig und Behauptung folgt.
+Dann konvergiert $\mathcal Qu_n$ gleichmäßig und Behauptung folgt. Insbesondere verschwindet $Q_0u = \lim_{n\to\infty} \mathcal Qu_n$ auf dem unendlich fernen Punkt der Einpunktkompaktifizierung von $\Omega$.
 \end{proof}
 
 \section{Randwertprobleme}
@@ -199,7 +199,7 @@ $B$ bestimmt damit eine Einschr\"ankung $\widehat P$ des Operators $P$ auf den D
 Der so definierte Operator ist abgeschlossen genau dann, wenn $B$ abgeschlossen ist. Die Menge der abgeschlossenen Operatoren $\widehat P$ mit $P_0\subseteq\widehat P\subseteq P$ steht in Bijektion zu den abgeschlossenen Teilräumen des Cauchyraumes $\mathcal C$.
 Das Randwertproblem heißt \eIndex[Randwertproblem]{korrekt gestellt}, falls $\widehat P$ stetig invertierbar ist.
 
-\begin{thm}[Vi\v{s}ik]
+\begin{thm}[Vi\v{s}ik, [{\cite[Theorem~1.2]{Hormander:1955}}]]
 Zu einem Differentialausdruck $\mathcal P$ existieren auf einem Gebiet $\Omega$ genau dann korrekt gestellte Randwertprobleme, wenn $P_0$ und $\overline P_0$
 beschr\"ankt invertierbar sind.
 \end{thm} 
@@ -223,7 +223,7 @@ den Kern des maximalen Operators. Dann ist $\Gamma U\subseteq \mathcal C$ abgesc
   \|u\|^2\ge \|\Gamma u\|^2 = \inf_{w\in \mathcal D_{P_0}} (\|u-w\|^2 + \|Pu - Pw\|^2) \\   \ge \inf_{w\in \rmL^2} (\|u-w\|^2 + C^{-2} \|w\|^2) = \frac{C^{-2}}{1+C^{-2}}\|u\|^2
 \end{multline}
 ein Isomorphismus. 
-\begin{thm}
+\begin{thm}[{\cite[Theorem~1.3]{Hormander:1955}}]
 Seien $P_0$ und $\overline P_0$ beschränkt invertierbar und sei $B\subseteq\mathcal C$ abgeschlossener Teilraum. Das zugehörige homogene Randwertproblem $\widehat P$ ist genau dann korrekt gestellt, wenn $\mathcal C = B \dotplus \Gamma U $ als direkte Summe\footnote{Direkt, nicht notwendig orthogonal.} gilt.
 \end{thm}
 \begin{proof}
@@ -254,7 +254,7 @@ eine ganze Funktion auf $\C^n$. Die Anwendung des Operators $ P(\D)$ entspricht 
 
 Eine erste Anwendung ist folgender Satz. Ein Beweis ergibt sich später nochmals in allgemeinerer Form.
 
-\begin{thm}\label{thm:1:1.8}
+\begin{thm}[{\cite[Theorem~2.1]{Hormander:1955}}]\label{thm:1:1.8}
 Der Operator $P_0$ ist beschränkt invertierbar, es existiert also eine Konstante $C$ mit
 \begin{equation}
    \forall u\in\rmC_0^\infty(\Omega)\quad:\quad \|u\|\le C\| P(\D) u\|.
@@ -262,7 +262,7 @@ Der Operator $P_0$ ist beschränkt invertierbar, es existiert also eine Konstant
 \end{thm}
 
 Der Beweis basiert auf folgendem Lemma der Funktionentheorie. 
-\begin{lem}
+\begin{lem}[Malgrange, {\cite[Lemma~2.1]{Hormander:1955}}]
 Sei $g\in\mathfrak A(\overline{\mathbb D})$ analytisch in einer Umgebung der Kreisscheibe $|z|\le 1$  und $r$ ein Polynom mit höchstem Koeffizienten $A$. Dann gilt
 \begin{equation}
    |Ag(0)|^2 \le (2\pi)^{-1} \int_0^{2\pi} |g(\e^{\i\theta}) r(\e^{\i\theta})|^2 \d\theta.
