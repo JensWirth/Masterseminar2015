@@ -711,7 +711,7 @@ Seien $V$ und $W$ zwei Banachräume und $T: V \supset \mathcal{D}_T \rightarrow 
 
 Wir sagen im folgenden der Differentialausdruck $P(\D)$ \eIndex[Differentialoperator]{dominiert} den Differentialausdruck $Q(\D)$, wenn die Abbildung aus \eqref{eq:2:map} kompakt ist. Die Eigenschaft dominierend zu sein ist wiederum unabhängig vom beschränkten Gebiet $\Omega$.
 
-\begin{thm}[{\cite[Theorem~2.15]{Hormander:1955}}]\label{Abbildung kompakt}
+\begin{thm}[{\cite[Theorem~2.15]{Hormander:1955}}]\label{thm:2:Abbildung kompakt}
 Der Differentialausdruck $P(\D)$ dominiert genau dann den Differentialausdruck $Q(\D)$,
 wenn
 \begin{equation}\label{eq:2:tozero}
@@ -868,62 +868,68 @@ Q(\xi + t\nu) = Q(\xi)
 \end{equation}
 und damit $\nu \in \Lambda(Q)$.
 \end{proof}
-Mit diesem Lemma und Satz \ref{thm:2:2.1} können wir nun das Kompaktheitskriterium von $P_0^{-1}$ angeben.
+Mit diesem Lemma und Satz \ref{thm:2:Abbildung kompakt} können wir nun das versprochene Kompaktheitskriterium für $P_0^{-1}$ angeben.
 \begin{thm}[{\cite[Theorem~2.17]{Hormander:1955}}]
-Der Operator $P_0^{-1}$ ist genau dann kompakt, wenn das zu $P(\D)$ dazugehörige Symbol $P(\xi)$ vollständig ist.
+Der Operator $P_0^{-1}$ ist genau dann kompakt, wenn das zu $P(\D)$ gehörende Symbol $P(\xi)$ ein vollständiges Polynom ist.
 \end{thm}
-\begin{proof}
-Angenommen $P(\xi)$ ist nicht vollständig, dann existiert also ein von Null verschiedener Vektor $0 \not = \nu \in \mathbb{R}^n$ mit
+\begin{proof}{\em Hinrichtung.}
+Angenommen $P(\xi)$ ist nicht vollständig, es existiert also ein von Null verschiedener Vektor $0 \not = \nu \in \mathbb{R}^n$ mit
 \begin{equation}
-P(\xi + t \nu)  = P(\xi) \ \forall \xi \in \mathbb{C}, \forall t \in \mathbb{R}
+P(\xi + t \nu)  = P(\xi)
 \end{equation}
-und damit auch 
+für alle $\xi\in\R^n$ und $t\in\R$. Differenzieren dieser Identität liefert
 \begin{equation}
-\widetilde{P}(\xi + t \nu) = \widetilde{P}(\xi) \ \forall \xi \in \mathbb{C}, \forall t \in \mathbb{R}.
+\widetilde{P}(\xi + t \nu) = \widetilde{P}(\xi)
 \end{equation}
-Damit gilt  $\widetilde{P} \not \rightarrow \infty$ für $\xi \rightarrow \infty$ und mit $Q(\xi) = 1$ folgt aus Satz \ref{Abbildung kompakt}, dass $P_0^{-1}$ nicht kompakt sein kann. Für die Rückrichtung nehmen wir an, dass das Symbol $P(\xi)$ vollständig ist, d.h. es gilt $\Lambda (P)= \{0\}$. Wir zerlegen das Symbol $P(\xi)$ in seine homogenen Teile $P_k$, d.h.
+für alle $\xi\in\R^n$ und $t\in\R$ und $\widetilde{P}(\xi) \not \rightarrow \infty$ für $\xi \rightarrow \infty$. Also impliziert Satz \ref{thm:2:Abbildung kompakt} mit $Q(\xi)=1$, dass $P_0^{-1}$ nicht kompakt sein kann. $\bullet$\qquad {\em Rückrichtung.} Angenommen, dass das Symbol $P(\xi)$ ist vollständig, d.h. es gilt $\Lambda (P)= \{0\}$. Wir zerlegen das Symbol $P(\xi)$ in seine homogenen Komponenten $P_k(\xi)$, 
 \begin{equation}\label{eq:zerlegung des polynoms}
-P(\xi) = \sum_{k=0}^m P_k(\xi),
+P(\xi) = \sum_{k=0}^m P_k(\xi),\qquad \deg P_k=k.
 \end{equation}
-wobei $P_k(\xi)$ ein homogenes Polynom vom Grad $k \leq m$ ist.
-Gilt nun $\nu \in \Lambda (P)$, dann folgt
+Gilt nun $\nu \in \Lambda (P)$, dann folgt für beliebiges $\xi\in\R^n$ und $t\in\R$
 \begin{equation}
-\sum_{k=0}^m P_k (\xi + t \nu) = \sum_{k=0}^m P_k (\xi) \ \  \forall \xi \in \mathbb{C}^n, \forall t \in \mathbb{R}.
+\sum_{k=0}^m P_k (\xi + t \nu) = \sum_{k=0}^m P_k (\xi)
 \end{equation}
-und damit auch
+und damit unter Ausnutzung der Homogenität auch
 \begin{equation}
-P_k (\xi + t \nu) = P_k (\xi) \ \ \forall k \leq m,  \forall \xi \in \mathbb{C}^n, \forall t \in \mathbb{R}.
+P_k (\xi + t \nu) = P_k (\xi) 
 \end{equation}
-D.h. es gilt $\Lambda(P) \subseteq \bigcap_{k \leq m} \Lambda (P_k)$ und die andere Inklusion ergibt sich sofort aus \eqref{eq:zerlegung des polynoms}, woraus wir dann schließlich
+für jeden einzelnen Summanden. Also gilt $\Lambda(P) \subseteq \bigcap_{k \leq m} \Lambda (P_k)$. Die umgekehrte Inklusion ergibt sich sofort aus \eqref{eq:zerlegung des polynoms}, woraus wir dann schließlich
 \begin{equation}\label{eq:schnitt der homogenen teile}
 \Lambda(P) = \bigcap_{k \leq m} \Lambda (P_k) = \{0\}
 \end{equation}
-folgern. Wir müssen also zeigen, dass $\widetilde{P}(\xi) \rightarrow \infty$ für $\xi \rightarrow \infty$ gilt um Satz \ref{Abbildung kompakt} mit $Q(\xi) =1$ erneut anwenden zu können. Dafür zeigen wir, dass die Menge
+folgern. Wir müssen also zeigen, dass $\widetilde{P}(\xi) \rightarrow \infty$ für $\xi \rightarrow \infty$ gilt um Satz \ref{thm:2:Abbildung kompakt} mit $Q(\xi) =1$ erneut anwenden zu können. Dafür zeigen wir, dass die Menge
 \begin{equation}
-M_C := \{\xi \in \mathbb{C}^n | \ \widetilde{P}(\xi) \leq C\}
+M_{C,P} := \{\xi \in \R^n | \ \widetilde{P}(\xi) \leq C\}
 \end{equation}
-für jedes $C$ modulo $\Lambda(P_k)$, d.h. im Quotientenraum $\mathbb{R}^n/{\Lambda(P_k)} \ \forall k \leq m$ beschränkt ist, da wir mit der Voraussetzung 
-\begin{align*}
-\Lambda(P) = \bigcap_{k \leq m} \Lambda (P_k) = \{0\}
-\end{align*}
-auf die Beschränktheit in $\mathbb{R}^n$ schließen können. Wir gehen hierbei induktiv vor.
-\\IA: 
-\\Sei $P(\xi) = \sum a_k \xi_k + b = a \cdot \xi + b$ mit $ a := (a_1, \ldots , a_n) \in \mathbb{R}^n , b \in \mathbb{R}$, dann gilt $\Lambda(P)=\{a\}^{\bot}$. Also ist $M_C$ mod $\{a\}^{\bot}$ als Teilmenge des Quotientenraumes $\mathbb{R}^n/\{a\}^{\bot}$ beschränkt.
-\\IS:
-\\Die Induktionsvoraussetzung lautet dabei, dass die Aussage für Polynome $P$ mit $\deg(P)<m$ wahr ist.
-\\Gilt $\widetilde{P}(\xi) \leq C$ für $\xi \in M_C$, dann folgt insbesondere $|P^{(\alpha)}(\xi)|\leq C$ für eine Konstante $C>0$. Für $|\alpha|=m-1$ unterscheiden sich $P^{(\alpha)}(\xi)$ und $P_m^{(\alpha)}(\xi)$ nur um eine Konstante, d.h. es gilt $P^{(\alpha)}(\xi)-P_m^{(\alpha)}\in\mathbb{C}$ und damit $|P_m^{(\alpha)}(\xi)| \leq C'$ für $C'>0$ und $\xi \in M_C$. Wenn $P_m^{(\alpha)}(\xi)=0 \ \forall \alpha \in \mathbb{N}_0^n, \ |\alpha|=m-1$ gilt, dann folgt mit Lemma \ref{Lema:homogene Polynome} sofort $\xi \in \Lambda(P_m)$. Mit der Linearität von $P_m^{(\alpha)}(\xi), \ |\alpha|=m-1$ folgt  dann damit die Beschränktheit von $M_C$ mod $\Lambda(P_m)$ in $\mathbb{R}^n/\Lambda(P_m)$. Wir definieren das Polynom
+für jedes $C$ beschränkt ist. Dazu zeigen wir allgemeiner induktiv über den Polynomgrad $m$, daß für beliebige Polynome $P$ und Konstanten $C$ die zugeordnete Menge $M_{C,P}$ modulo $\Lambda(P)$ (also auf dem Quotientenraum $\R^n/\Lambda(P)$) beschränkt ist. 
+
+\noindent{\em Induktionsanfang:} Wir betrachten Polynome vom Grad $1$. Diese sind von der Form 
+$P(\xi) =  a \cdot \xi + b$ mit $ a  \in \mathbb{R}^n$, $b \in \mathbb{R}$. Für diese gilt $\Lambda(P)=\{a\}^{\perp}$ und $M_{C,P}$ ist ein zu $a$ paralleler Streifen. Dieser ist als Teilmenge des Quotientenraumes $\mathbb{R}^n/\{a\}^{\perp}\simeq a\R$ beschränkt.
+
+\noindent{\em Induktionsschritt:} Angenommen, die Aussage wurde schon für alle Polynome vom Grad kleiner $m$ gezeigt. Sei weiter $P$ vom Grad $m$.
+Nach Definition gilt $\widetilde{P}(\xi) \leq C$ für alle $\xi \in M_{C,P}$, insbesondere also auch $|P^{(\alpha)}(\xi)|\leq C$ für jeden Multiindex $\alpha$. Für $|\alpha|=m-1$ unterscheiden sich $P^{(\alpha)}(\xi)$ und $P_m^{(\alpha)}(\xi)$ nur um eine Konstante, d.h. es gilt $P^{(\alpha)}-P_m^{(\alpha)}=p_\alpha \in\mathbb{C}$ und damit $|P_m^{(\alpha)}(\xi)| \leq C'$ für eine neue Konstante $C'>0$ und alle $\xi \in M_{C,P}$. Gilt nun  $P_m^{(\alpha)}(\xi)=0$ für $\xi\in\R^n$ und alle $|\alpha|=m-1$, 
+so folgt mit Lemma \ref{Lema:homogene Polynome}, daß $\xi \in \Lambda(P_m)$. 
+Damit ist der Nullraum der linearen Abbildung $\xi \mapsto ( P^{(\alpha)}_m(\xi))_{|\alpha|=m-1} \in\C^M$, $M=\#\{\alpha : |\alpha|=m-1\}$, enthalten in $\Lambda(P_m)$
+und somit 
 \begin{equation}
-R(\xi):=P(\xi) - P_m(\xi) = \sum_{k=0}^{m-1} P_k(\xi)
+    \widetilde {P}(\xi)^2 \ge \sum_{|\alpha|=m-1} |P^{(\alpha)}(\xi)|^2 =\sum_{|\alpha|=m-1} |P^{(\alpha)}_m(\xi)+p_\alpha |^2  \ge C'' \dist( \xi,\Lambda(P_m) )^2 - C'''
 \end{equation}
-dann gilt nach der Dreiecksungleichung
+mit geeigneten Konstanten $C''>0$ und $C'''$. Damit folgt die Beschränktheit von $M_{C,P}$ modulo $\Lambda(P_m)$ in $\mathbb{R}^n/\Lambda(P_m)$. 
+
+Da $P_m^{(\alpha)}(\xi+\eta) = P_m^{(\alpha)}(\xi)$ für $\eta\in\Lambda(P_m)$ und alle $\alpha$ gilt, ist $\widetilde{P_m}(\xi)$ definiert auf $\R^n/\Lambda(P_m)$ und beschränkt auf Kompakta in diesem Raum. Insbesondere ist $\widetilde {P_m}(\xi)\le C''''$ auf $M_{C,P}$. 
+Betrachten wir nun das Polynom
+\begin{equation}
+R(\xi)=P(\xi) - P_m(\xi) = \sum_{k=0}^{m-1} P_k(\xi),
+\end{equation}
+so folgt mit der Dreiecksungleichung
 \begin{equation}
 \widetilde{R}(\xi) \leq \widetilde{P}(\xi) + \widetilde{P}_m(\xi).
 \end{equation}
-Da das Polynom $R$ vom Grad $m-1$ ist, folgt mit der Induktionsvoraussetzung, dass $M_{(C,R)}$ mod $\bigcap_{k=1}^{m-1} \Lambda (P_k)$ beschränkt ist. Aus $\widetilde{P}_m(\xi) \leq C''$ in $M_C$ ergibt sich somit
+Da das Polynom $R$ vom Grad $m-1$ ist, impliziert die Induktionsvoraussetzung, dass $M_{C,R}$ modulo $\Lambda(R)=\bigcap_{k=1}^{m-1} \Lambda (P_k)$ beschränkt ist. Aus $\widetilde{P}_m(\xi) \leq C''''$ in $M_{C,P}$ ergibt sich somit für alle $\xi\in M_{C,P}$
 \begin{equation}
-\widetilde{R}(\xi) \leq \widetilde{P}(\xi) + \widetilde{P}_m(\xi) \leq C + C'',
+\widetilde{R}(\xi) \leq \widetilde{P}(\xi) + \widetilde{P}_m(\xi) \leq C + C'''',
 \end{equation}
-d.h. $M_C \subseteq M_{(C+C'',R)}$, woraus die Beschränktheit von $M_C$ folgt.
+also $M_{C,P} \subseteq M_{C+C'''',R}$, und damit die Beschränktheit von $M_{C,P}$ modulo $\Lambda(R)$ folgt. Zusammen mit der Beschränktheit modulo $\Lambda(P_m)$ folgt die Behauptung.
 \end{proof}
 
 
