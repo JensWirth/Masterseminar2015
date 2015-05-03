@@ -17,6 +17,7 @@
 }%
 \def\spro#1#2{\pmb(#1,#2\pmb)}
 %
+% Aufzaehlungen roemisch numeriert....
 \renewcommand{\labelenumi}{{\rm\bf(\roman{enumi})}}
 %
 \newtheorem{thm}{Satz}[chapter]
@@ -30,6 +31,7 @@
 %
 %
 % DEFINITIONEN
+\def\N{\mathbb N}    % N
 \def\R{\mathbb R}    % Koerper R
 \def\C{\mathbb C}    % Koerper C
 \def\e{\mathrm e}     % Eulersche Zahl e
@@ -39,11 +41,11 @@
 \def\rmC{\mathrm C}% Raum C
 \def\rmL{\mathrm L} % Raum L
 \def\rmH{\mathrm H}% Raum H
+\def\mcP{\mathcal P}   % curly P
+\def\mcQ{\mathcal Q}  % curly Q  
+\def\mcR{\mathcal R}  % curly R
 %% von Tillmann
-\def\N{\mathbb N}
-\def\mcP{\mathcal P}
-\def\mcQ{\mathcal Q}
-\def\mcR{\mathcal R}
+% NOT TO BE USED, WILL BE REMOVED LATER
 \def\pr{\prime}
 \def\tr{\top}%{\mathrm{T}}
 \def\al{\alpha}
@@ -68,15 +70,19 @@
 \def\ul#1{\underline{#1}}
 \def\ska#1#2{\langle#1,#2\rangle}
 \def\Ska#1#2{\left\langle#1,#2\right\rangle}
-\def\div{\operatorname{div}}
-\def\diam{\operatorname{diam}}
 \def\subs{\subset}
-\def\Lin{\operatorname{span}}
-\def\Grad{\operatorname{deg}}
+%\def\Lin{\operatorname{span}}
+%\def\Grad{\operatorname{deg}}
 \def\gdw{\Leftrightarrow}
 %%%%%%%%%%%%%%%%%%%%
 %
-\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\supp}{supp}          % Traeger (supp)
+\DeclareMathOperator{\diam}{diam}          % Durchmesser  (diam)
+\DeclareMathOperator{\dist}{dist}               % Abstand (dist)
+\let\div\relax
+\DeclareMathOperator{\div}{div}                % Divergenz
+\DeclareMathOperator{\spann}{span}        % Lineare Huelle (span)
+\DeclareMathOperator{\Grad}{deg}           % Grad eines Polynoms
 %
 \begin{document}
 \titlehead{Priv.-Doz. Dr. Jens Wirth\\Institut f\"ur Analysis, Dynamik und Modellierung\\Universit\"at Stuttgart}

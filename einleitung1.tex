@@ -156,13 +156,13 @@ Die  Definition hängt im Falle konstanter Koeffizienten nicht von der Wahl des 
 \begin{lem}\label{lm: Qu stetig}
 Seien $\mathcal P$ und $\mathcal Q$ Differentialausdr\"ucke auf einem Gebiet $\Omega$. 
 \begin{enumerate}
-\item%[(1)]
+\item
 $\mathcal Q$ ist genau dann schwächer als $\mathcal P$, wenn
 \begin{equation}\label{eq:1:1.21}
     \forall u\in\rmC^\infty_0(\Omega)\quad:\quad \|\mathcal Qu\|^2 \le C \big( \|\mathcal Pu\|^2 + \|u\|^2 \big)
 \end{equation}
 gilt.
-\item%[(2)] 
+\item
 $Q_0 u$ besitzt für jedes $u\in\mathcal D_{P_0}$ genau dann einen stetigen Repräsentanten, wenn
 \begin{equation}
     \forall u\in\rmC^\infty_0(\Omega)\quad:\quad  \sup_{x\in\Omega} |\mathcal Qu(x) |^2 \le C \big( \|\mathcal Pu\|^2 + \|u\|^2 \big)
@@ -299,6 +299,11 @@ und mit $C=\sup_{x\in\Omega} \e^{|x\cdot\xi_0|} /|p(\xi_0)|$ folgt die Behauptun
 \end{proof}
 
 \begin{cor}\label{cor:1:1.10}
+\begin{enumerate}
+\item
+Maximale Differentialoperatoren mit konstanten Koeffizienten sind auf jedem beschränkten Gebiet surjektiv; zu jedem $f\in\rmL^2(\Omega)$ existiert ein $u\in\mathcal D_P$ mit $Pu=f$.
+\item
 Für Differentialoperatoren mit konstanten Koeffizienten existieren
-zu jedem Gebiet korrekt gestellte Randwertprobleme.
+zu jedem beschränkten Gebiet korrekt gestellte Randwertprobleme.
+\end{enumerate}
 \end{cor}
