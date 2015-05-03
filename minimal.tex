@@ -12,36 +12,36 @@ Seien $\mcP=P(\D)$ und $\mcQ=Q(\D)$ zwei Differentialausdrücke mit konstanten K
 \end{equation}
 für alle $u\in\rmC_0^\infty(\R^n)$ gilt. Man beachte, daß in diesem Falle jede reelle Nullstelle von $P$ auch Nullstelle von $Q$ sein muß. Das soll im folgenden verallgemeinert und die genutzte Abschätzung $C=\sup_{\xi\in\R^n} |Q(\xi)|/|P(\xi)|$ für Operatoren auf beschränkten Gebieten  durch eine Bedingung der Form
 \begin{equation}\label{eq:2:1}
-\sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi
+\sup_{\xi\in\R^n}\frac{\til{Q}(\xi)}{\til{P}(\xi)}<\infty
 \end{equation}
 ersetzt werden, wobei $\til{P}$ dem Polynom $P$ durch
 \begin{equation}\label{eq:2:2}
-\til{P}(\z)^2:=\sum_\al\abs{P^{(\al)}(\z)}^2,\qquad \zeta=\xi+\i\eta \in\C^n
+\til{P}(\zeta)^2:=\sum_\alpha\abs{P^{(\alpha)}(\zeta)}^2,\qquad \zeta=\xi+\i\eta \in\C^n
 \end{equation}
 zugeordnet wird und $\widetilde Q$ analog definiert sei. Dabei bezeichne 
 \begin{equation}
-P^{(\al)}(\x):=\partial^\alpha P(\x)
+P^{(\alpha)}(\xi):=\partial^\alpha P(\xi)
 \end{equation}
 die $\alpha$-te Ableitung von $P$. Es wird sich zeigen, daß die Bedingung \eqref{eq:2:1} genau dann gilt, wenn $\mcQ$ schwächer als $\mcP$ ist.
 
 In den folgenden Betrachtungen benötigt man häufig die leibnizsche Formel
 \begin{equation}\label{eq:2:leib}
-\forall u,v\in \rmC^\infi(\Omega) \quad:\quad P(\D)(uv)=\sum_{\al}(P^{(\al)}(\D)v)\left(\frac{\D^\al u}{\al!}\right).
+\forall u,v\in \rmC^\infty(\Omega) \quad:\quad P(\D)(uv)=\sum_{\alpha}(P^{(\alpha)}(\D)v)\left(\frac{\D^\alpha u}{\alpha!}\right).
 \end{equation} 
-Für $P(\D)=\D^\al$ ist dies die gewöhnliche Leibnizregel und somit folgt \eqref{eq:2:leib} aus Linearitätsgründen. Wir treffen weiter folgende Konvention:
+Für $P(\D)=\D^\alpha$ ist dies die gewöhnliche Leibnizregel und somit folgt \eqref{eq:2:leib} aus Linearitätsgründen. Wir treffen weiter folgende Konvention:
 Im Falle griechischer Indizes
-ist die Ableitung nach einem Multiindex $\al\in\N^n_0$ gemeint,
+ist die Ableitung nach einem Multiindex $\alpha\in\N^n_0$ gemeint,
 im Fall lateinischer Indizes oder Zahlen definieren wir
 \begin{equation}
-P^{(k_1,\dots,k_l)}(\x):=\pd_{k_1}\cdots\pd_{k_l}P(\x).
+P^{(k_1,\dots,k_l)}(\xi):=\partial_{k_1}\cdots\partial_{k_l}P(\xi).
 \end{equation}
 
 \begin{thm}\label{thm:2:2.1}
-Sei $\Om$ ein beschränktes Gebiet.
+Sei $\Omega$ ein beschränktes Gebiet.
 Der Differentialausdruck $\mcQ$ ist genau dann schwächer als $\mcP$,
 wenn
 \begin{equation}\label{eq:thm:2:2.1}
-\sup_{\x\in\R^n}\frac{\til{Q}(\x)}{\til{P}(\x)}<\infi
+\sup_{\xi\in\R^n}\frac{\til{Q}(\xi)}{\til{P}(\xi)}<\infty
 \end{equation}
 erfüllt ist.
 \end{thm}
@@ -57,23 +57,23 @@ Dann gilt für ein $C>0$ und alle $u\in\rmC_0^\infty(\Omega)$ die Ungleichung
 \begin{equation}\label{eq:2:4}
 \norm{\mcQ u}^2\leq C(\norm{\mcP u}^2+\norm{u}^2).
 \end{equation}
-Für jedes $\x\in\R^n$ und ein festes $\psi\in \rmC^\infi_0(\Om)$, $\psi\neq0$,
-definieren wir $\psi_\x(x):=\e^{\i x\cdot\xi}\psi(x)$.
-Dies bringt durch die Formel von Leibniz die Ableitungen von $P(\x)$ ins Spiel
+Für jedes $\xi\in\R^n$ und ein festes $\psi\in \rmC^\infty_0(\Omega)$, $\psi\neq0$,
+definieren wir $\psi_\xi(x):=\e^{\i x\cdot\xi}\psi(x)$.
+Dies bringt durch die Formel von Leibniz die Ableitungen von $P(\xi)$ ins Spiel
 \begin{equation}\label{eq:2.5}
-P(\D)\psi_\x(x)=\e^{\i x\cdot\xi}\sum_\al P^{(\al)}(\x)\frac{\D^\alpha\psi(x)}{\al!},
+P(\D)\psi_\xi(x)=\e^{\i x\cdot\xi}\sum_\alpha P^{(\alpha)}(\xi)\frac{\D^\alpha\psi(x)}{\alpha!},
 \end{equation}
 analoges gilt für $Q(\D)$.
 Schreiben wir kurz
 \begin{equation}\label{eq:2.6}
-\Psi_{\al\be}:=\frac1{\al!\be!}\spro{\D^\alpha\psi}{\D^\beta\psi},
+\Psi_{\alpha\beta}:=\frac1{\alpha!\beta!}\spro{\D^\alpha\psi}{\D^\beta\psi},
 \end{equation}
-so liest sich Ungleichung \eqref{eq:2:4} mit $u=\psi_\x$ als
+so liest sich Ungleichung \eqref{eq:2:4} mit $u=\psi_\xi$ als
 \begin{equation}\label{eq:2.7}
-\sum_{\al,\be}Q^{(\al)}(\x)\overline{{Q}^{(\be)}(\x)}\Psi_{\al\be}
-\leq C\bigg(\sum_{\al,\be}P^{(\al)}(\x)\overline{{P}^{(\be)}(\x)}\Psi_{\al\be}+\Psi_{00}\bigg).
+\sum_{\alpha,\beta}Q^{(\alpha)}(\xi)\overline{{Q}^{(\beta)}(\xi)}\Psi_{\alpha\beta}
+\leq C\bigg(\sum_{\alpha,\beta}P^{(\alpha)}(\xi)\overline{{P}^{(\beta)}(\xi)}\Psi_{\alpha\beta}+\Psi_{00}\bigg).
 \end{equation}
-Bei $\left(\Psi_{\al\be}\right)_{\al,\be}$ handelt es sich um die gramsche Matrix
+Bei $\left(\Psi_{\alpha\beta}\right)_{\alpha,\beta}$ handelt es sich um die gramsche Matrix
 eines Skalarproduktes auf einem $\C^M$, da für alle $t=(t_\alpha)_{|\alpha|\le m}\in\C^M\setminus\{0\}$
 \begin{equation}
   \sum_{\alpha,\beta} t_\alpha \overline{t_\beta} \Psi_{\alpha\beta} = \int_\Omega \left|\sum_\alpha \frac{t_\alpha \D^\alpha\psi (x)}{\alpha! }\right|^2 \d x 
@@ -81,45 +81,45 @@ eines Skalarproduktes auf einem $\C^M$, da für alle $t=(t_\alpha)_{|\alpha|\le 
 \end{equation}
 gilt.
 Dies ist gleichbedeutend damit,
-dass die Vektoren $D^\al\psi\in L^2$, $\abs{\al}\leq m$, linear unabhängig sind.
+dass die Vektoren $D^\alpha\psi\in L^2$, $\abs{\alpha}\leq m$, linear unabhängig sind.
 Es gibt also Konstanten $\Psi_-,\Psi_+\in\R_+$, so dass
 \begin{equation}\label{eq:2.8}
-\abs{t}^2\Psi_-\leq\sum_{\al,\be}t_\al \overline{t_\be}\Psi_{\al\be}\leq\abs{t}^2\Psi_+.
+\abs{t}^2\Psi_-\leq\sum_{\alpha,\beta}t_\alpha \overline{t_\beta}\Psi_{\alpha\beta}\leq\abs{t}^2\Psi_+.
 \end{equation}
 Die Ungleichungen \eqref{eq:2.7} und \eqref{eq:2.8} kombinieren für $t_\alpha=Q^{(\alpha)}(\xi)$ und damit $\widetilde Q(\xi)^2=|t|^2$ 
 und unter Ausnutzung von $\widetilde P(\xi)^2\ge c^{-1}>0$ zu
 \begin{equation}\label{eq:2.9}
-\til{Q}(\x)^2 \Psi_- \le C  \bigg(\sum_{\al,\be}P^{(\al)}(\x)\overline{{P}^{(\be)}(\x)}\Psi_{\al\be}+\Psi_{00}\bigg) \leq  C(1+c) \til{P}(\x)^2 \Psi_+
+\til{Q}(\xi)^2 \Psi_- \le C  \bigg(\sum_{\alpha,\beta}P^{(\alpha)}(\xi)\overline{{P}^{(\beta)}(\xi)}\Psi_{\alpha\beta}+\Psi_{00}\bigg) \leq  C(1+c) \til{P}(\xi)^2 \Psi_+
 \end{equation}
 für alle $\xi\in\R^n$ und ergeben damit gerade die Ungleichung \eqref{eq:thm:2:2.1}.
 %
 $\bullet$\qquad {\em Rückrichtung.}
 Sei die Ungleichung \eqref{eq:thm:2:2.1} erfüllt, das heißt gelte
 \begin{equation}\label{eq:2.10}
-\til{Q}(\x)\leq C\til{P}(\x),
+\til{Q}(\xi)\leq C\til{P}(\xi),
 \end{equation}
 für alle $\xi\in\R^n$ und mit einer Konstanten $C>0$,
-also auch $\abs{Q(\x)}\leq C\til{P}(\x)$.
+also auch $\abs{Q(\xi)}\leq C\til{P}(\xi)$.
 Für $u\in\rmC_0^\infty(\Omega)$ gilt
 \begin{align}
 \|Q(\D) u\|^2 &= \int |Q(\xi) \widehat{u}(\xi)|^2 \d\xi
-\leq C \int |\widetilde P(\xi) \widehat{u}(\xi)|^2 \d\xi \notag\\&  = C\sum_\al\int | P^{(\al)}(\xi)\widehat{u}(\xi)|^2\d\xi = C\sum_\al\norm{P^{(\al)}(\D)u}^2.\label{eq:2.11}
+\leq C \int |\widetilde P(\xi) \widehat{u}(\xi)|^2 \d\xi \notag\\&  = C\sum_\alpha\int | P^{(\alpha)}(\xi)\widehat{u}(\xi)|^2\d\xi = C\sum_\alpha\norm{P^{(\alpha)}(\D)u}^2.\label{eq:2.11}
 \end{align}
 Um den Beweis abzuschließen,
 fehlt also nur noch eine Ungleichung der Form
 \begin{equation}
-\norm{P^{(\al)}(\D)u}\leq C_{\mcP,\Om}\norm{P(\D)u}, \label{eq:2:wantedineq}
+\norm{P^{(\alpha)}(\D)u}\leq C_{\mcP,\Omega}\norm{P(\D)u}, \label{eq:2:wantedineq}
 \end{equation}
-mit $C_{\mcP,\Om}>0$ unabhängig von $u\in\rmC_0^\infty(\Omega)$ und $\alpha\in\N_0^n$. Diese werden wir mit der Methode der Energieintegrale herleiten (Korollar \ref{cor:2:2.5}).
+mit $C_{\mcP,\Omega}>0$ unabhängig von $u\in\rmC_0^\infty(\Omega)$ und $\alpha\in\N_0^n$. Diese werden wir mit der Methode der Energieintegrale herleiten (Korollar \ref{cor:2:2.5}).
 \end{proof}
 
 \begin{rem}
-Der Beweis zeigt insbesondere, daß in Formel \eqref{eq:thm:2:2.1} die Funktion $\til{Q}(\x)$ durch $|Q(\x)|$ ersetzt werden kann.
+Der Beweis zeigt insbesondere, daß in Formel \eqref{eq:thm:2:2.1} die Funktion $\til{Q}(\xi)$ durch $|Q(\xi)|$ ersetzt werden kann.
 Definieren wir weiterhin
 \begin{equation}
 W(\mcP):=\{\mcQ=Q(\D):\mcQ~\text{ist schwächer als}~\mcP\},
 \end{equation}
-so ist wegen $|Q_1(\x)+Q_2(\x)|^2\leq2(|Q_1(\x)|^2+|Q_2(\x)|^2)$
+so ist wegen $|Q_1(\xi)+Q_2(\xi)|^2\leq2(|Q_1(\xi)|^2+|Q_2(\xi)|^2)$
 die Menge $W(\mcP)$ ein $\C$-Vektorraum.
 Dies folgt auch im ganz allgemeinen Fall aus Formel \eqref{eq:1:1.21}.
 \end{rem}
@@ -130,105 +130,105 @@ Im folgenden entwickeln wir eine Methode, um sesquilineare Differentialausdrück
 Wir betrachten dazu für $u,v\in\rmC_0^\infty(\Omega)$
 \begin{equation}
 F(\D,\overline{\D})u\bar{v}
-:=\sum_{\al,\be}a_{\al\be}(\D^\alpha u)(\cc{\D^\beta v}),
+:=\sum_{\alpha,\beta}a_{\alpha\beta}(\D^\alpha u)(\cc{\D^\beta v}),
 \end{equation}
-mit Koeffizienten $a_{\al\be}\in\C$. Uns interessieren insbesondere die Terme
+mit Koeffizienten $a_{\alpha\beta}\in\C$. Uns interessieren insbesondere die Terme
 \begin{equation}\label{eq:2:qf}
 \Phi_F(u):=\int F(\D,\overline{\D})u(x)\bar{u}(x)\d x
-=\int F(\x,\x)\abs{\hat{u}(\x)}^2\d \x,
+=\int F(\xi,\xi)\abs{\hat{u}(\xi)}^2\d \xi,
 \end{equation}
-welche quadratische Formen $\Phi_F$ auf $\rmC^\infi_0(\Om)\subs \rmL^2(\Om)$
+welche quadratische Formen $\Phi_F$ auf $\rmC^\infty_0(\Omega)\subseteq \rmL^2(\Omega)$
 definieren.
 Es besteht eine eins-zu-eins Korrespondenz
 zwischen sesquilinearen Differentialausdrücken $F(\D,\cc{\D})$
 und den Symbolen
 \begin{equation}
-F(\z,\cc{\z}):=\sum_{\al,\be}a_{\al\be}\z^\al\cc{\z}^\be, \z\in\C^n,
+F(\zeta,\cc{\zeta}):=\sum_{\alpha,\beta}a_{\alpha\beta}\zeta^\alpha\cc{\zeta}^\beta, \zeta\in\C^n,
 \end{equation}
 analog zu den Symbolen von Differentialausdrücken.
 
 Die quadratischen Formen $\Phi_F$
-sind schon durch die Werte $F(\x,\x)$, $\x\in\R^n$ bestimmt.
+sind schon durch die Werte $F(\xi,\xi)$, $\xi\in\R^n$ bestimmt.
 Verschiedene quadratische Differentialausdrücke bzw.~Symbole
 können also die gleiche quadratische Form definieren.
 Folgendes Lemma zeigt, dass es eine eins-zu-eins
 Korrespondenz zwischen den auf reelle Werte eingeschränkten
-Symbolen $F(\x,\x)$, $\x\in\R^n$,
+Symbolen $F(\xi,\xi)$, $\xi\in\R^n$,
 und den quadratischen Formen $\Phi_F$ gibt.
 
 \begin{lem}\label{lem:2:qfsym}
-Sei $\Om$ ein beliebiges Gebiet.
+Sei $\Omega$ ein beliebiges Gebiet.
 Dann gilt 
 \begin{equation}\label{eq:lem:2:qfsym}
 \forall u\in\rmC_0^\infty(\Omega) \quad:\quad \int F(\D,\overline{\D})u\bar{u}\d x=0,
 \end{equation}
-genau dann, wenn $F(\x,\x)=0$ für alle $\x\in\R^n$.
+genau dann, wenn $F(\xi,\xi)=0$ für alle $\xi\in\R^n$.
 \end{lem}
 \begin{proof}
 Es ist nur die Hinrichtung zu beweisen. Gelte also \eqref{eq:lem:2:qfsym}.
-Sei $u_\y(x):=u(x)\e^{\i {x}\cdot{\y}}$ für ein festes $u\in \rmC^\infi_0(\Om)$, $u\neq0$.
+Sei $u_\eta(x):=u(x)\e^{\i {x}\cdot{\eta}}$ für ein festes $u\in \rmC^\infty_0(\Omega)$, $u\neq0$.
 Dann ist
 \begin{align}
-\int F(\D,\overline{\D})u_\y(x)\overline{u_\y(x)}\d x
-&=\int F(\x,\x)\abs{\widehat{u}(\x-\y)}^2\d \y\notag\\&
-=\int F(\x+\y,\x+\y)\abs{\widehat{u}(\x)}^2\d \x=:q(\y)
+\int F(\D,\overline{\D})u_\eta(x)\overline{u_\eta(x)}\d x
+&=\int F(\xi,\xi)\abs{\widehat{u}(\xi-\eta)}^2\d \eta\notag\\&
+=\int F(\xi+\eta,\xi+\eta)\abs{\widehat{u}(\xi)}^2\d \xi=:q(\eta)
 \end{align}
-für alle $\y\in\R^n$.
-Auf der rechten Seite steht wieder ein Polynom $q(\y)$ in $\y\in\R^n$
+für alle $\eta\in\R^n$.
+Auf der rechten Seite steht wieder ein Polynom $q(\eta)$ in $\eta\in\R^n$
 und nach Voraussetzung müssen dessen Koeffizienten verschwinden.
 Wegen
 \begin{equation}
-(\x+\y)^\al=\sum_{\be+\ga=\al}\begin{pmatrix}\al\\\be\end{pmatrix}\x^\be\y^\ga=\y^\al+\dots
+(\xi+\eta)^\alpha=\sum_{\beta+\gamma=\alpha}\begin{pmatrix}\alpha\\\beta\end{pmatrix}\xi^\beta\eta^\gamma=\eta^\alpha+\dots
 \end{equation}
-gilt für die homogenen Hauptteile $\pi_q(\x)$ bzw.~$\pi_F(\x)$
-von $p(\x)$ bzw.~$F(\x,\x)$ die Gleichung $\pi_q(\x)=\norm{u}^2\pi_F(\x)$.
-Also würde $F(\x,\x)\neq0$ zu einem Widerspruch führen.
+gilt für die homogenen Hauptteile $\pi_q(\xi)$ bzw.~$\pi_F(\xi)$
+von $p(\xi)$ bzw.~$F(\xi,\xi)$ die Gleichung $\pi_q(\xi)=\norm{u}^2\pi_F(\xi)$.
+Also würde $F(\xi,\xi)\neq0$ zu einem Widerspruch führen.
 \end{proof}
 
 Unser Ziel ist es, Ableitungen von Differentialausdrücken zu kontrollieren.
 Dazu betrachten wir zugeordnete Ableitungen sesquilinearer Differentialausdrücke. Wir beginnen mit
 \begin{equation}
-\frac{\pd}{\partial x_k}
+\frac{\partial}{\partial x_k}
 \left[F(\D,\overline{\D})u\bar{u}\right]
 =\i\left[(\D_k-\overline{\D}_k)F(\D,\overline{\D})\right]u\bar{u}.
 \end{equation}
 Für einen Vektor $\ul{G}=(G_k)_{k=1,\dots,n}$ sesquilinearer Differentialausdrücke $G_k$ ergibt sich damit formal als Divergenz die Formel
 \begin{subequations}
 \begin{equation}\label{eq:2.15a}
-\div(\ul{G}(\D,\overline{\D})u\bar{u})=\sum_{k=1}^n\frac{\pd}{\partial x_k}\left[G_k(\D,\overline{\D})u\bar{u}\right]=F(\D,\overline{\D})u\bar{u},
+\div(\ul{G}(\D,\overline{\D})u\bar{u})=\sum_{k=1}^n\frac{\partial}{\partial x_k}\left[G_k(\D,\overline{\D})u\bar{u}\right]=F(\D,\overline{\D})u\bar{u},
 \end{equation}
 wobei
 \begin{equation}\label{eq:2.15b}
-F(\z,\bar{\z})=\i\sum_{k=1}^n(\z_k-\bar{\z}_k)G_k(\z,\bar{\z})=-2\sum_{k=1}^n\y_kG_k(\z,\bar{\z})
+F(\zeta,\bar{\zeta})=\i\sum_{k=1}^n(\zeta_k-\bar{\zeta}_k)G_k(\zeta,\bar{\zeta})=-2\sum_{k=1}^n\eta_kG_k(\zeta,\bar{\zeta})
 \end{equation}
 \end{subequations}
-für $\z=\x+\i\y$ mit $\x,\y\in\R^n$.
+für $\zeta=\xi+\i\eta$ mit $\xi,\eta\in\R^n$.
 \begin{lem}\label{lem:2:2.2}
-Ein Polynom $F(\z,\overline{\z})$ in $\z=\x+\i\y$ und $\overline{\z}=\x-\i\y$
+Ein Polynom $F(\zeta,\overline{\zeta})$ in $\zeta=\xi+\i\eta$ und $\overline{\zeta}=\xi-\i\eta$
 kann genau dann in der Form \eqref{eq:2.15b} dargestellt werden,
-wenn $F(\x,\x)=0$ für alle $\x\in\R^n$ gilt.
+wenn $F(\xi,\xi)=0$ für alle $\xi\in\R^n$ gilt.
 
 In diesem Fall gilt
 \begin{equation}\label{eq:2:2.16}
-G_k(\x,\x)=-\frac12\left.\frac{\partial F(\x+\i\y,\x-\i\y)}{\partial \y_k}\right\rvert_{\y=0}
+G_k(\xi,\xi)=-\frac12\left.\frac{\partial F(\xi+\i\eta,\xi-\i\eta)}{\partial \eta_k}\right\rvert_{\eta=0}
 \end{equation}
-für alle $\x\in\R^n$.
+für alle $\xi\in\R^n$.
 \end{lem}
 \begin{proof}
 Die Hinrichtung ist offensichtlich.
 Die Rückrichtung und Formel \eqref{eq:2:2.16}
-folgen aus der (reellen) Taylorformel von $F(\x+\i\y,\x-\i\y)$
-mit den Entwicklungspunkten $(\x,0)\in\R^{2n}$.
+folgen aus der (reellen) Taylorformel von $F(\xi+\i\eta,\xi-\i\eta)$
+mit den Entwicklungspunkten $(\xi,0)\in\R^{2n}$.
 \end{proof}
 
-Die Polynome $G_k(\z,\overline{\z})$ sind nicht eindeutig durch $F(\zeta,\overline\zeta)$ bestimmt.
+Die Polynome $G_k(\zeta,\overline{\zeta})$ sind nicht eindeutig durch $F(\zeta,\overline\zeta)$ bestimmt.
 %Doch aufgrund von Lemma \ref{lem:2:qfsym} stört das nicht.
 Mit Hilfe einer speziellen quadratischen Differentialform und obiger Formel
 gewinnen wir folgende Ungleichung,
 mit der wir die Ableitungen der Differentialausdrücke kontrollieren können.
 
 \begin{lem}
-Sei $\Om$ ein Gebiet, so dass für ein $k\in\{1,\ldots,n\}$ der $k$-Durchmesser $B_k:=\sup_{x,y\in\Om}\abs{x_k-y_k}$ endlich ist. Dann gilt
+Sei $\Omega$ ein Gebiet, so dass für ein $k\in\{1,\ldots,n\}$ der $k$-Durchmesser $B_k:=\sup_{x,y\in\Omega}\abs{x_k-y_k}$ endlich ist. Dann gilt
 für Differentialausdrücke $P(\D)$ und $Q(\D)$, sowie alle Funktionen $u\in\rmC_0^\infty(\Omega)$ die Ungleichung
 \begin{equation}\label{eq:lem:2:2.4}
 \abs{\spro{P^{(k)}(\D)u}{\overline{Q}(\D)u}}\leq\norm{P(\D)u}\left(\norm{\overline{Q}^{(k)}(\D)u}+B_k\norm{\overline{Q}(\D)u}\right).
@@ -238,23 +238,23 @@ für Differentialausdrücke $P(\D)$ und $Q(\D)$, sowie alle Funktionen $u\in\rmC
 \begin{proof}
 Wir betrachten den quadratischen Differentialausdruck mit dem Symbol
 \begin{equation}\label{eq:2:spsym}
-F(\z,\bar{\z}):=P(\z)Q(\bar{\z})-Q(\z)P(\bar{\z}).
+F(\zeta,\bar{\zeta}):=P(\zeta)Q(\bar{\zeta})-Q(\zeta)P(\bar{\zeta}).
 \end{equation}
-Dieser erfüllt offensichtlich $F(\x,\x)=0$ für alle $\x\in\R^n$.
+Dieser erfüllt offensichtlich $F(\xi,\xi)=0$ für alle $\xi\in\R^n$.
 Nach Lemma \ref{lem:2:2.2} erhalten wir,
 nachdem wir mit $-\i x_k$ multipliziert haben
 \begin{equation}\label{eq:2:2.22}
--\i x_kF(\D,\overline{\D})u\bar{u}=-\i x_k\sum_{j=1}^n\frac{\pd}{\partial x_j}\left[G_j(\D,\overline{\D})u\bar{u}\right],
+-\i x_kF(\D,\overline{\D})u\bar{u}=-\i x_k\sum_{j=1}^n\frac{\partial}{\partial x_j}\left[G_j(\D,\overline{\D})u\bar{u}\right],
 \end{equation}
 wobei nach Formel \eqref{eq:2:2.16} das Symbol
 \begin{equation}
-G_k(\z,\z)=-\i\left(P^{(k)}(\z)Q(\cc{\z})-Q^{(k)}(\z)P(\cc{\z})\right)\label{eq:2:Gk},
-\quad\z\in\C^n
+G_k(\zeta,\zeta)=-\i\left(P^{(k)}(\zeta)Q(\cc{\zeta})-Q^{(k)}(\zeta)P(\cc{\zeta})\right)\label{eq:2:Gk},
+\quad\zeta\in\C^n
 \end{equation}
 gewählt werden kann.
 Man beachte bei der Berechnung von \eqref{eq:2:Gk},
-dass $P(\z),Q(\z)$ holomorph
-und $P(\overline{\z}),Q(\overline{\z})$ anti-holomorph sind.
+dass $P(\zeta),Q(\zeta)$ holomorph
+und $P(\overline{\zeta}),Q(\overline{\zeta})$ anti-holomorph sind.
 Integrieren wir Gleichung \eqref{eq:2:2.22},
 so liefert eine partielle Integration
 in der Variablen $x_k$ auf der rechten Seite
@@ -269,21 +269,21 @@ Es resultiert die Gleichung
 \spro{P^{(k)}(\D)u}{\overline{Q}(\D)u}
 =\spro{P(\D)u}{\overline{Q}^{(k)}(\D)u}-\i\int x_k\left(P(\D)u\cc{\overline{Q}(\D)u}-Q(\D)u\cc{\overline{P}(\D)u}\right)\d x.
 \end{equation}
-Ohne Beschränkung der Allgemeinheit können wir das Gebiet $\Om$ so legen,
-dass $\abs{x_k}\leq B_k/2$ für alle $x\in\Om$ gilt.
+Ohne Beschränkung der Allgemeinheit können wir das Gebiet $\Omega$ so legen,
+dass $\abs{x_k}\leq B_k/2$ für alle $x\in\Omega$ gilt.
 Also erhalten wir mit Cauchy-Schwarz
 und der Dreiecksungleichung die Ungleichung \eqref{eq:lem:2:2.4}.
 \end{proof}
 
 \begin{cor}\label{cor:2:2.5}
-Ist $P(\x)$ vom Grad $m$ in $\x_k$, so gilt
+Ist $P(\xi)$ vom Grad $m$ in $\xi_k$, so gilt
 \begin{equation}\label{eq:cor:2:2.5}
 \norm{P^{(k)}(\D)u}\leq mB_k\norm{P(\D)u}
 \end{equation}
 für alle $u\in\rmC_0^\infty(\Omega)$.
 \end{cor}
 \begin{proof}
-Setzen wir $\overline{Q}(\x)=P^{(k)}(\x)$, so erhalten wir aus \eqref{eq:lem:2:2.4} die Ungleichung
+Setzen wir $\overline{Q}(\xi)=P^{(k)}(\xi)$, so erhalten wir aus \eqref{eq:lem:2:2.4} die Ungleichung
 \begin{equation}\label{eq:2.28}
 \norm{P^{(k)}(\D)u}^2\leq\norm{P(\D)u}\left(\norm{P^{(kk)}(\D)u}+B_k\norm{P^{(k)}(\D)u}\right)
 \end{equation}
@@ -299,13 +299,13 @@ und der Induktionsschritt  ist gezeigt.
 \end{proof}
 
 \begin{cor}\label{cor:2:2.6}
-Für festes beschränktes Gebiet $\Om$ und beliebiges $\al\in\N^n_0$ gilt
+Für festes beschränktes Gebiet $\Omega$ und beliebiges $\alpha\in\N^n_0$ gilt
 \begin{equation}
-\forall u\in\rmC_0^\infty(\Omega)\quad:\quad \norm{P^{(\al)}(\D)u}\leq C_{m,\al,\Om}\norm{P(\D)u},
+\forall u\in\rmC_0^\infty(\Omega)\quad:\quad \norm{P^{(\alpha)}(\D)u}\leq C_{m,\alpha,\Omega}\norm{P(\D)u},
 \end{equation}
-mit $C_{m,\al,\Om}=m(m-1)\cdots(m-\abs{\al})B^\al$, wobei $B^\al=\prod_{l=1}^n B^{\al_l}_l$.
-Die Konstante $C_{m,\al,\Om}$ hängt also nur vom Grad $m$ des Polynoms $P(\x)$,
-der Ableitungsordnung $\abs{\al}$ und der Ausdehnung des Gebiets $\Om$ ab.
+mit $C_{m,\alpha,\Omega}=m(m-1)\cdots(m-\abs{\alpha})B^\alpha$, wobei $B^\alpha=\prod_{l=1}^n B^{\alpha_l}_l$.
+Die Konstante $C_{m,\alpha,\Omega}$ hängt also nur vom Grad $m$ des Polynoms $P(\xi)$,
+der Ableitungsordnung $\abs{\alpha}$ und der Ausdehnung des Gebiets $\Omega$ ab.
 \end{cor}
 
 \begin{proof}
@@ -314,7 +314,7 @@ Mehrfache Anwendung von Korollar \ref{cor:2:2.5}.
 
 Das letzte Korollar ist gerade der im Beweis
 von Satz \ref{thm:2:2.1} gebrauchte Baustein.
-Dabei können wir $C_{\mcP,\Om}:=\max_{|\al|\le m} C_{m,\al,\Om}$
+Dabei können wir $C_{\mcP,\Omega}:=\max_{|\alpha|\le m} C_{m,\alpha,\Omega}$
 für die Konstante in \eqref{eq:2:wantedineq} wählen.
 
 \section{Beispiele und spezielle Symbole}
@@ -323,18 +323,18 @@ Wir betrachten als instruktive Beispiele
 einige klassische Differentialausdrücke zweiter Ordnung.
 Zur Vereinfachung der Notation schreiben wir
 \begin{align}
-f(\x)\asymp g(\x)\quad&\gdw&
-\exists_{C_-,C_+>0}\forall_{\x\in\R^n}\quad&:\quad C_-g(\x)\leq f(\x)\leq C_+g(\x),\\
-f(\x)\apprle g(\x)\quad&\gdw&
-\exists_{C>0}\forall_{\x\in\R^n}~\quad&:\quad f(\x)\leq Cg(\x).
+f(\xi)\asymp g(\xi)\quad&\gdw&
+\exists_{C_-,C_+>0}\forall_{\xi\in\R^n}\quad&:\quad C_-g(\xi)\leq f(\xi)\leq C_+g(\xi),\\
+f(\xi)\apprle g(\xi)\quad&\gdw&
+\exists_{C>0}\forall_{\xi\in\R^n}~\quad&:\quad f(\xi)\leq Cg(\xi).
 \end{align}
 
 \begin{exa}\label{exa:2:lap}
-Wir betrachten das zum \eIndex[Differentialoperator]{Laplaceoperator} $\Lap$
-korrespondierende Symbol $P(\x)=\x_1^2+\dots+\x_n^2=\abs{\x}^2$.
+Wir betrachten das zum \eIndex[Differentialoperator]{Laplaceoperator} $\Delta$
+korrespondierende Symbol $P(\xi)=\xi_1^2+\dots+\xi_n^2=\abs{\xi}^2$.
 Das regularisierte Symbol ist gegeben durch
 \begin{equation}
-\til{P}(\x)^2=\abs{\x}^4+4\abs{\x}^2+4n.
+\til{P}(\xi)^2=\abs{\xi}^4+4\abs{\xi}^2+4n.
 \end{equation}
 Beachten wir, dass stets
 \begin{equation}\label{eq:2:sqrest}
@@ -342,44 +342,44 @@ a^2+b^2\leq(a+b)^2\leq2(a^2+b^2),\quad\text{für}~a,b\geq0,
 \end{equation}
 so sehen wir, dass
 \begin{equation}
-\til{P}(\x)^2\asymp\abs{\x}^4+1.
+\til{P}(\xi)^2\asymp\abs{\xi}^4+1.
 \end{equation}
 Also ist der Laplaceoperator stärker als alle Differentialausdrücke von gleichem oder kleinerem Grad.
 Diese sind alle von der Form
 \begin{equation}
-Q(\x)=\x^\tr A\x+\ska{b}{\x}+c,
+Q(\xi)=\xi^\top A\xi+\ska{b}{\xi}+c,
 \end{equation}
-mit einer Matrix $A\in\C^{n\ti n}$, $b\in\C^n$ und $c\in\C$,
-wobei wir $A^\tr=A$ annehmen können.
+mit einer Matrix $A\in\C^{n\times n}$, $b\in\C^n$ und $c\in\C$,
+wobei wir $A^\top=A$ annehmen können.
 Wir untersuchen, welche davon gleich stark wie der Laplaceoperator sind.
 Es ist
 \begin{equation}\label{eq:2:rpQLap1}
-\til{Q}(\x)=\abs{\x^\tr A\x+\ska{b}{\x}+c}^2+\sum_{k=1}^n\abs{2e^\tr_kA\x+b_k}^2
+\til{Q}(\xi)=\abs{\xi^\top A\xi+\ska{b}{\xi}+c}^2+\sum_{k=1}^n\abs{2e^\top_kA\xi+b_k}^2
 +4\sum_{1\leq k\leq l\leq n}\abs{a_{kl}}^2.
 \end{equation}
-Da die Ausdrücke $\til{Q}(\x)$ und $1+\abs{\x^\tr A\x}^2$
+Da die Ausdrücke $\til{Q}(\xi)$ und $1+\abs{\xi^\top A\xi}^2$
 auf kompakten Mengen positiv und beschränkt sind (falls $\mcQ\neq0$) genügt es,
-diese für $\abs{\x}\geq R$ mit festem $R>0$ groß genug zu betrachten.
-Ist $\abs{\x^\tr A\x}\neq0$ falls $\x\neq0$,
-so gilt $\abs{\x^\tr A\x}\asymp\abs{\x}^2$.
+diese für $\abs{\xi}\geq R$ mit festem $R>0$ groß genug zu betrachten.
+Ist $\abs{\xi^\top A\xi}\neq0$ falls $\xi\neq0$,
+so gilt $\abs{\xi^\top A\xi}\asymp\abs{\xi}^2$.
 In diesem Fall kann man, für $R$ groß genug,
 die linearen Terme in \eqref{eq:2:rpQLap1} vernachlässigen
 und erhält insgesamt
 \begin{equation}
-\til{Q}(\x)\asymp\abs{\x^\tr A\x}^2+1\asymp\abs{\x}^4+1\asymp\til{P}(\x).
+\til{Q}(\xi)\asymp\abs{\xi^\top A\xi}^2+1\asymp\abs{\xi}^4+1\asymp\til{P}(\xi).
 \end{equation}
 Im anderen Fall betrachtet man \eqref{eq:2:rpQLap1}
-für alle $\x\in\R^n$ mit $\x^\tr A\x=0$,
-und stellt fest, dass $\til{Q}(\x)$ für diese $\x$ nur linear wächst,
+für alle $\xi\in\R^n$ mit $\xi^\top A\xi=0$,
+und stellt fest, dass $\til{Q}(\xi)$ für diese $\xi$ nur linear wächst,
 $Q(\D)$ also echt schwächer als $P(\D)$ ist.
 
-Im Fall einer reellen Matrix gilt $\x^\tr A\x\neq0$ genau dann für alle $\x\neq0$,
+Im Fall einer reellen Matrix gilt $\xi^\top A\xi\neq0$ genau dann für alle $\xi\neq0$,
 wenn entweder alle Eigenwerte positiv oder alle negativ sind.
 Im Fall einer komplexen Matrix ist
 \begin{equation}
-\abs{\x^\tr A\x}^2=\abs{\x^\tr A_\Re\x}^2+\abs{\x^\tr A_\Im\x}^2,
+\abs{\xi^\top A\xi}^2=\abs{\xi^\top A_\Re\xi}^2+\abs{\xi^\top A_\Im\xi}^2,
 \end{equation}
-mit $A=A_\Re+\i A_\Im$, $A_\Re,A_\Im\in\R^{n\ti n}$.
+mit $A=A_\Re+\i A_\Im$, $A_\Re,A_\Im\in\R^{n\times n}$.
 Die weitere Untersuchung gestaltet sich allerdings recht aufwendig
 und soll nicht weiter vertieft werden.
 \end{exa}
@@ -387,82 +387,82 @@ und soll nicht weiter vertieft werden.
 \begin{exa}\label{exa:2:schroe}
 Der Schrödingergleichung für ein freies Teilchen\index{Differentialoperator!Schrödinger-}
 \begin{equation}
-\i\frac{\pd}{\partial t}\psi(x,t)=-\Lap\psi(x,t),\end{equation}
-lässt sich das Symbol $P(\x)=\x^2_1+\dots+\x^2_{n-1}-\x_n$ zuordnen.
+\i\frac{\partial}{\partial t}\psi(x,t)=-\Delta\psi(x,t),\end{equation}
+lässt sich das Symbol $P(\xi)=\xi^2_1+\dots+\xi^2_{n-1}-\xi_n$ zuordnen.
 
 Wir bestimmen alle Operatoren gleicher Stärke.
-Das Symbol $Q(\x)$ ist genau dann schwächer wie $P(\x)$,
+Das Symbol $Q(\xi)$ ist genau dann schwächer wie $P(\xi)$,
 wenn
 \begin{equation}\label{eq:2:subschroe}
-Q(\x)^2\apprle(\x^2_1+\dots+\x^2_{n-1}-\x_n)^2+\x^2_1+\dots+\x^2_{n-1}+1.
+Q(\xi)^2\apprle(\xi^2_1+\dots+\xi^2_{n-1}-\xi_n)^2+\xi^2_1+\dots+\xi^2_{n-1}+1.
 \end{equation}
-Also hat $Q(\x)$ maximalen Grad 2 in $\x_1,\dots,\x_{n-1}$,
-Grad 1 in $\x_n$ und ist somit von der Form
+Also hat $Q(\xi)$ maximalen Grad 2 in $\xi_1,\dots,\xi_{n-1}$,
+Grad 1 in $\xi_n$ und ist somit von der Form
 \begin{equation}
-Q(\x)=a_0+\sum^n_{k=1}a_k\x_k+\sum^n_{k,l=1}a_{kl}\x_k\x_l,
+Q(\xi)=a_0+\sum^n_{k=1}a_k\xi_k+\sum^n_{k,l=1}a_{kl}\xi_k\xi_l,
 \end{equation}
 mit $a_{nn}=0$.
 Wir betrachten die Gleichung \eqref{eq:2:subschroe}
 für spezielle Vektoren:
 \begin{equation}\label{eq:2:subschroespec}
-Q(\x)^2\apprle(\x^2_1+\dots+\x^2_{n-1}+1),
-\quad\text{für alle}~\x\in\R^n~\text{mit}~\x_n=\x^2_1+\dots+\x^2_{n-1}.
+Q(\xi)^2\apprle(\xi^2_1+\dots+\xi^2_{n-1}+1),
+\quad\text{für alle}~\xi\in\R^n~\text{mit}~\xi_n=\xi^2_1+\dots+\xi^2_{n-1}.
 \end{equation}
-Da wir $\x_1,\dots,\x_{n-1}$ in \eqref{eq:2:subschroespec} frei wählen können folgt, dass
+Da wir $\xi_1,\dots,\xi_{n-1}$ in \eqref{eq:2:subschroespec} frei wählen können folgt, dass
 \begin{equation}
-Q(\x)=a_0+\sum_{k=1}^{n-1}a_k\x_k+a_n(\x_n-\x^2_1-\dots-\x^2_{n-1}),
+Q(\xi)=a_0+\sum_{k=1}^{n-1}a_k\xi_k+a_n(\xi_n-\xi^2_1-\dots-\xi^2_{n-1}),
 \end{equation}
 mit beliebigen $a_0,a_1,\dots,a_n\in\C$.
-Es ist $Q(\x)$ genau dann gleich Stark wie $P(\x)$,
+Es ist $Q(\xi)$ genau dann gleich Stark wie $P(\xi)$,
 wenn $a_n\neq0$.
 \end{exa}
 
 \begin{exa}\label{exa:2:heat}
 Der Wärmeleitungsgleichung\index{Differentialoperator!parabolisch}
 \begin{equation}
-\frac{\pd}{\pd t}T(x,t)=\Lap T(x,t),
+\frac{\partial}{\partial t}T(x,t)=\Delta T(x,t),
 \end{equation}
-entspricht das Symbol $P(\x)=\x^2_1+\dots+\x^2_{n-1}+\i\x_n$.
+entspricht das Symbol $P(\xi)=\xi^2_1+\dots+\xi^2_{n-1}+\i\xi_n$.
 
-Ein Symbol $Q(\x)$ ist genau dann schwächer als $P(\x)$, wenn
+Ein Symbol $Q(\xi)$ ist genau dann schwächer als $P(\xi)$, wenn
 \begin{equation}
-Q(\x)^2\apprle(\x^2_1+\dots+\x^2_{n-1})^2+\x^2_1+\dots+\x^2_{n-1}+\x^2_n+1.
+Q(\xi)^2\apprle(\xi^2_1+\dots+\xi^2_{n-1})^2+\xi^2_1+\dots+\xi^2_{n-1}+\xi^2_n+1.
 \end{equation}
 Diese Ungleichung ist genau dann erfüllt, wenn
 \begin{equation}
-Q(\x)=a_0+\sum_{k=1}^na_k\x_k+\sum_{k,l=1}^{n-1}a_{kl}\x_k\x_l,
+Q(\xi)=a_0+\sum_{k=1}^na_k\xi_k+\sum_{k,l=1}^{n-1}a_{kl}\xi_k\xi_l,
 \end{equation}
 mit beliebigen $a_0,a_k,a_{kl}\in\C$.
-Das Symbol $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
-wenn $a_n\neq0$ und $\sum_{k,l=1}^{n-1}a_{kl}\x_k\x_l\neq0$ falls $\x\notin e_n\R$
+Das Symbol $Q(\xi)$ ist genau dann gleich stark wie $P(\xi)$,
+wenn $a_n\neq0$ und $\sum_{k,l=1}^{n-1}a_{kl}\xi_k\xi_l\neq0$ falls $\xi\notin e_n\R$
 mit dem $n$-ten Standartbasisvektor $e_n$.
 \end{exa}
 
 \begin{exa}\label{exa:2:hyper}
 Als letztes Beispiel betrachten wir die ultrahyperbolische Gleichung\index{Differentialoperator!(ultra)hyperbolisch}
 \begin{equation}
-\Lap_1u=\Lap_2u,
+\Delta_1u=\Delta_2u,
 \end{equation}
-mit $\Lap_1:=\pd_1^2+\dots+\pd_m^2$, $\Lap_2:=\pd^2_{m+1}+\dots+\pd^2_n$.
-Das korrespondierende Symbol ist $P(\x)=\x^2_1+\dots+\x^2_m-(\x^2_{m+1}+\dots+\x^2_n)$.
+mit $\Delta_1:=\partial_1^2+\dots+\partial_m^2$, $\Delta_2:=\partial^2_{m+1}+\dots+\partial^2_n$.
+Das korrespondierende Symbol ist $P(\xi)=\xi^2_1+\dots+\xi^2_m-(\xi^2_{m+1}+\dots+\xi^2_n)$.
 
-Ein Symbol $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
+Ein Symbol $Q(\xi)$ ist genau dann gleich stark wie $P(\xi)$,
 wenn
 \begin{equation}
-Q(\x)^2\apprle(\x^2_1+\dots+\x^2_m-(\x^2_{m+1}+\dots+\x^2_n))^2+\x^2_1+\dots+\x^2_n+1.
+Q(\xi)^2\apprle(\xi^2_1+\dots+\xi^2_m-(\xi^2_{m+1}+\dots+\xi^2_n))^2+\xi^2_1+\dots+\xi^2_n+1.
 \end{equation}
-Setzen wir wie in Beispiel \ref{exa:2:schroe} $\x^2_1+\dots+\x^2_m=\x^2_{m+1}+\dots+\x^2_n$,
-so erhalten wir für diese $\x$:
+Setzen wir wie in Beispiel \ref{exa:2:schroe} $\xi^2_1+\dots+\xi^2_m=\xi^2_{m+1}+\dots+\xi^2_n$,
+so erhalten wir für diese $\xi$:
 \begin{equation}\label{eq:2:rpQhyp}
-Q(\x)^2\apprle\x^2_1+\dots+\x^2_n+1.
+Q(\xi)^2\apprle\xi^2_1+\dots+\xi^2_n+1.
 \end{equation}
 Da wir in \eqref{eq:2:rpQhyp} noch genug Wahlfreiheit haben folgt,
-dass $Q(\x)$ von der Form
+dass $Q(\xi)$ von der Form
 \begin{equation}
-Q(\x)=a_0+\sum_{k=1}^na_k\x^k+b(\x_1^2+\dots+\x^2_m-(\x^2_{m+1}+\dots+\x^2_n)),
+Q(\xi)=a_0+\sum_{k=1}^na_k\xi^k+b(\xi_1^2+\dots+\xi^2_m-(\xi^2_{m+1}+\dots+\xi^2_n)),
 \end{equation}
 mit beliebigen $a_0,a_1,\dots,a_n,b\in\C$ sein muss
-und $Q(\x)$ ist genau dann gleich stark wie $P(\x)$,
+und $Q(\xi)$ ist genau dann gleich stark wie $P(\xi)$,
 wenn $b\neq0$.
 \end{exa}
 
@@ -472,7 +472,7 @@ mit den Beispielen \ref{exa:2:schroe}, \ref{exa:2:heat}.
 In den ersten beiden Fällen hängt der Vergleich der Stärke nur von den Hauptteilen,
 d.h.~den Potenzen größter Ordnung ab.
 In den zweiten zwei Fällen hängt die Vergleich auch von niederen Termen ab.
-Dies hängt damit zusammen, dass sich die Symbole $P(\x)$ in
+Dies hängt damit zusammen, dass sich die Symbole $P(\xi)$ in
 \ref{exa:2:schroe} und \ref{exa:2:heat} nicht auf allen (nicht-trivialen)
 Unterräumen des $\R^n$ wie die höchste im Symbol vorkommende Potenz verhalten.
 
@@ -483,7 +483,7 @@ Bei den ersten beiden Operatoren hat man viel Wahlfreiheit
 für gleich starke Operatoren.
 Bei den zweiten zwei Operatoren hat man im Hauptteil stets
 nur einen frei wählbaren Parameter.
-Dies hängt damit zusammen, dass in den Symbolen $P(\x)$
+Dies hängt damit zusammen, dass in den Symbolen $P(\xi)$
 in \ref{exa:2:schroe} und \ref{exa:2:hyper} Differenzterme auftreten.
 
 \begin{df}
@@ -503,65 +503,65 @@ die anderen beiden nicht. Der Laplaceoperator ist als einziger der angegebenen O
 Wir geben nun Klassifikationen für diese Operatortypen.
 
 \begin{thm}\label{thm:2:2.9}
-Ein Symbol $P(\x)$ ist genau dann vom Haupttyp,
-wenn die partiellen Ableitungen $p^{(k)}(\x)=\partial_k p(\xi)$
-des Hauptteils $p(\x)$ für kein $\x\in\R^n\setminus\{0\}$
+Ein Symbol $P(\xi)$ ist genau dann vom Haupttyp,
+wenn die partiellen Ableitungen $p^{(k)}(\xi)=\partial_k p(\xi)$
+des Hauptteils $p(\xi)$ für kein $\xi\in\R^n\setminus\{0\}$
 alle gleichzeitig Null sind.
 \end{thm}
 
 \begin{proof}
-{\it Hinrichtung.} Ist $P(\x)$ vom Haupttyp und vom Grad $m>0$,
-dann gilt das gleiche für $p(\x)$.
-Dann ist $p(\x)$ auch stärker als $p(\x)+\x^\al$
-mit $\abs{\al}=m-1$.
+{\it Hinrichtung.} Ist $P(\xi)$ vom Haupttyp und vom Grad $m>0$,
+dann gilt das gleiche für $p(\xi)$.
+Dann ist $p(\xi)$ auch stärker als $p(\xi)+\xi^\alpha$
+mit $\abs{\alpha}=m-1$.
 Nach Theorem \ref{thm:2:2.1} und der Linearität von $W(\mcP)$
 folgt dann
 \begin{equation}\label{eq:2:homquot}
-\sup_{\x\in\R^n}\frac{(\x^2_1+\dots+\x^2_n)^{m-1}}{\sum\abs{p^{(\al)}(\x)}^2}<\infi.
+\sup_{\xi\in\R^n}\frac{(\xi^2_1+\dots+\xi^2_n)^{m-1}}{\sum\abs{p^{(\alpha)}(\xi)}^2}<\infty.
 \end{equation}
-Angenommen es gibt ein $\x_0\in\R^n$,
-so dass $p^{(i)}(\x_0)=0$ für alle $i=1,\dots,n$.
-Dann gilt auch $p(\x_0)=0$, da nach Eulers Formel für homogene Polynome folgt
+Angenommen es gibt ein $\xi_0\in\R^n$,
+so dass $p^{(i)}(\xi_0)=0$ für alle $i=1,\dots,n$.
+Dann gilt auch $p(\xi_0)=0$, da nach Eulers Formel für homogene Polynome folgt
 \begin{equation}
-mp(\x)=\sum_{k=1}^n\x_kp^{(k)}(\x)
+mp(\xi)=\sum_{k=1}^n\xi_kp^{(k)}(\xi)
 \end{equation}
-Wir setzen $\x=t\x_0$, $t\in\R$, in Gleichung \eqref{eq:2:homquot},
+Wir setzen $\xi=t\xi_0$, $t\in\R$, in Gleichung \eqref{eq:2:homquot},
 und erhalten einen Quotienten aus Polynomen in der Variablen $t$.
 Aufgrund der Homogenität gilt
 \begin{equation}
-p(t\x_0)=t^mp(\x_0)=0,~p^{(1)}(t\x_0)=t^{m-1}p^{(1)}(\x_0)=0,
-\dots,~p^{(n)}(t\x_0)=t^{m-1}p^{(n)}(\x_0)=0,
+p(t\xi_0)=t^mp(\xi_0)=0,~p^{(1)}(t\xi_0)=t^{m-1}p^{(1)}(\xi_0)=0,
+\dots,~p^{(n)}(t\xi_0)=t^{m-1}p^{(n)}(\xi_0)=0,
 \end{equation}
 und somit hat das Polynom im Zähler echt kleineren Grad als $2(m-1)$.
-Dies liefert einen Widerspruch für $t\to\infi$. $\bullet$\qquad {\it Rückrichtung.}
-Nehmen wir nun umgekehrt an, $P(\x)$ erfüllt die Bedingung aus Theorem \ref{thm:2:2.9}
-und $Q(\x)$ hat den gleichen Hauptteil $p(\x)$ wie $P(\x)$.
+Dies liefert einen Widerspruch für $t\to\infty$. $\bullet$\qquad {\it Rückrichtung.}
+Nehmen wir nun umgekehrt an, $P(\xi)$ erfüllt die Bedingung aus Theorem \ref{thm:2:2.9}
+und $Q(\xi)$ hat den gleichen Hauptteil $p(\xi)$ wie $P(\xi)$.
 Durch Weglassen positiver Term erhalten wir 
 \begin{equation}
-\til{P}(\x)^2>\sum_{k=1}^n\abs{P^{(k)}(\x)}^2=\pi(\x)+r(\x).
+\til{P}(\xi)^2>\sum_{k=1}^n\abs{P^{(k)}(\xi)}^2=\pi(\xi)+r(\xi).
 \end{equation}
 Dabei fassen wir die höchsten Terme des Ausdrucks
-$\sum_{k=1}^n\abs{P^{(k)}(\x)}^2$ zu $\pi(\x)$ zusammen.
+$\sum_{k=1}^n\abs{P^{(k)}(\xi)}^2$ zu $\pi(\xi)$ zusammen.
 Diese sind dann gegeben durch
 \begin{equation}
-\pi(\x)=\sum_{k=1}^n\abs{p^{(k)}(\x)}^2,
+\pi(\xi)=\sum_{k=1}^n\abs{p^{(k)}(\xi)}^2,
 \end{equation}
 was direkt aus der binomischen Formel
 und der Additivität des Grads von Polynomen folgt.
-Also hat $r(\x)$ Grad echt kleiner als $2(m-1)$.
-Nach Annahme ist $\pi(\x)\neq0$ falls $\x\neq0$
-and somit $\abs{r(\x)}/\pi(\x)\leq\tfrac12$,
-für $\abs{\x}$ groß genug.
-Für diese $\x$ ist dann auch $\til{P}(\x)^2>\pi(\x)/2$.
+Also hat $r(\xi)$ Grad echt kleiner als $2(m-1)$.
+Nach Annahme ist $\pi(\xi)\neq0$ falls $\xi\neq0$
+and somit $\abs{r(\xi)}/\pi(\xi)\leq\tfrac12$,
+für $\abs{\xi}$ groß genug.
+Für diese $\xi$ ist dann auch $\til{P}(\xi)^2>\pi(\xi)/2$.
 Mit der Dreiecksungleichung erhalten wir nun
 \begin{equation}
-\frac{\abs{Q(\x)^2}}{\til{P}(\x)^2}
-\leq\frac{\abs{P(\x)}^2}{\til{P}(\x)^2}+\frac{\abs{Q(\x)-P(\x)}^2}{\til{P}(\x)^2}
-\leq1+2\frac{\abs{Q(\x)-P(\x)}^2}{\pi(\x)},
+\frac{\abs{Q(\xi)^2}}{\til{P}(\xi)^2}
+\leq\frac{\abs{P(\xi)}^2}{\til{P}(\xi)^2}+\frac{\abs{Q(\xi)-P(\xi)}^2}{\til{P}(\xi)^2}
+\leq1+2\frac{\abs{Q(\xi)-P(\xi)}^2}{\pi(\xi)},
 \end{equation}
-für $\abs{\x}$ groß genug.
+für $\abs{\xi}$ groß genug.
 Das Polynom im Zähler des zweiten Terms hat maximal den Grad $2(m-1)$.
-Insgesamt ist damit $\sup_{\x\in\R^n}\abs{Q(\x)}/\til{P}(\x)<\infi$,
+Insgesamt ist damit $\sup_{\xi\in\R^n}\abs{Q(\xi)}/\til{P}(\xi)<\infty$,
 also $Q(\D)$ schwächer als $P(\D)$.
 \end{proof}
 
@@ -577,12 +577,12 @@ wenn der homogene Hauptteil $p(\xi)$ von $P(\xi)$ für alle $\xi\in\R^n\setminus
 Zum Abschluss betrachten wir Produktoperatoren auf Produkträumen.
 Dies sind Differentialoperatoren mit Symbolen von der Form
 \begin{equation}\label{eq:2:prodpol}
-P(\x)=P_a(\x_a)P_b(\x_b),
+P(\xi)=P_a(\xi_a)P_b(\xi_b),
 \end{equation}
-mit $\x_a=(\x_1,\dots,\x_m)$ und $\x_b=(\x_{m+1},\dots,\x_n)$,
+mit $\xi_a=(\xi_1,\dots,\xi_m)$ und $\xi_b=(\xi_{m+1},\dots,\xi_n)$,
 wobei $0<m<n$ fest gewählt ist
-und $P_a(\x)$ ein Polynom in $\R^m$
-und $P_b(\x)$ ein Polynom in $\R^{n-m}$ ist.
+und $P_a(\xi)$ ein Polynom in $\R^m$
+und $P_b(\xi)$ ein Polynom in $\R^{n-m}$ ist.
 Wir erhalten:
 
 \begin{thm}
@@ -594,49 +594,49 @@ W(\mcP)=\spann\left(W(\mcP_a) W(\mcP_b)\right),
 $W(\mcP)$ ist also das Tensorprodukt von $W(\mcP_a)$ und $W(\mcP_b)$.
 \end{thm}
 \begin{proof}
-Wir betrachten zunächst einen Multiindex $\alpha\in\mathbb N_0^n$ und setzen $\al_a=(\al_1,\dots,\al_m,0,\dots,0)$
-und $\al_b=(0,\dots,0,\al_{m+1},\dots,\al_n)$. Dann gilt
+Wir betrachten zunächst einen Multiindex $\alpha\in\mathbb N_0^n$ und setzen $\alpha_a=(\alpha_1,\dots,\alpha_m,0,\dots,0)$
+und $\alpha_b=(0,\dots,0,\alpha_{m+1},\dots,\alpha_n)$. Dann gilt
 \begin{equation}
-P^{(\al)}(\x)
-=\partial^\alpha\left(P_a(\x_a)P_b(\x_b)\right)
-=P^{(\al_a)}_a(\x_a)P^{(\al_b)}_b(\x_b).
+P^{(\alpha)}(\xi)
+=\partial^\alpha\left(P_a(\xi_a)P_b(\xi_b)\right)
+=P^{(\alpha_a)}_a(\xi_a)P^{(\alpha_b)}_b(\xi_b).
 \end{equation} 
 Also folgt, dass
 \begin{equation}\label{eq:2:prodeq}
-\til{P}(\x)=\sum_\al\abs{P^{(\al)}(\x)}^2
-=\sum_{\al_a,\al_b}\abs{P^{(\al_a)}_a(\x_a)}^2\abs{P^{(\al_b)}_b(\x_b)}^2
-=\til{P}_a(\x_a)\til{P}_b(\x_b).
+\til{P}(\xi)=\sum_\alpha\abs{P^{(\alpha)}(\xi)}^2
+=\sum_{\alpha_a,\alpha_b}\abs{P^{(\alpha_a)}_a(\xi_a)}^2\abs{P^{(\alpha_b)}_b(\xi_b)}^2
+=\til{P}_a(\xi_a)\til{P}_b(\xi_b).
 \end{equation}
-Dies zeigt $\spann\left(W(\mcP_a) W(\mcP_b)\right)\subs W(\mcP)$. 
+Dies zeigt $\spann\left(W(\mcP_a) W(\mcP_b)\right)\subseteq W(\mcP)$. 
 
-Nehmen wir nun an, dass $Q(\x)\in W(\mcP)$.
-Betrachten wir $Q(\x_a,\x_{b})$ mit variablem $\x_a$ und festen $\x_{b}$,
+Nehmen wir nun an, dass $Q(\xi)\in W(\mcP)$.
+Betrachten wir $Q(\xi_a,\xi_{b})$ mit variablem $\xi_a$ und festen $\xi_{b}$,
 so folgt aus Gleichung \eqref{eq:2:prodeq},
-dass $Q(\x_a,\x_{b})\in W(\mcP_a)$.
+dass $Q(\xi_a,\xi_{b})\in W(\mcP_a)$.
 Analoges gilt bei vertauschten Rollen von $a$ und $b$.
-Wir wählen eine Vektoraumbasis $p_1(\x_a),\dots,p_l(\x_a)$ von $W(\mcP_a)$.
+Wir wählen eine Vektoraumbasis $p_1(\xi_a),\dots,p_l(\xi_a)$ von $W(\mcP_a)$.
 Es gilt
 \begin{equation}
-\sum_{k=1}^lp_k(\x_l)a_k(\x_b),
+\sum_{k=1}^lp_k(\xi_l)a_k(\xi_b),
 \end{equation}
-mit Polynomen $a_k(\x_b)$.
-Wir zeigen $a_k(\x_b)\in W(\mcP_b)$ für alle $k=1,\dots,K$.
-Da die $p_1(\x_a),\dots,p_K(\x_a)$ linear unabhängig sind,
-gibt es $\x_{a,1},\dots,\x_{a,K}$,
-so dass $\left(p_k(a,\x_l)\right)_{k,l=1,\dots,K}$ invertierbar ist.
+mit Polynomen $a_k(\xi_b)$.
+Wir zeigen $a_k(\xi_b)\in W(\mcP_b)$ für alle $k=1,\dots,K$.
+Da die $p_1(\xi_a),\dots,p_K(\xi_a)$ linear unabhängig sind,
+gibt es $\xi_{a,1},\dots,\xi_{a,K}$,
+so dass $\left(p_k(a,\xi_l)\right)_{k,l=1,\dots,K}$ invertierbar ist.
 Das Gleichungssystem
 \begin{equation}
-Q(\x_{a,l},\x_b)=\sum_{k=1}^lp_k(\x_{a,l})a_k(\x_b)\quad\text{für}~k=1,\dots,K,
+Q(\xi_{a,l},\xi_b)=\sum_{k=1}^lp_k(\xi_{a,l})a_k(\xi_b)\quad\text{für}~k=1,\dots,K,
 \end{equation}
-kann also nach den $a_k(\x_b)$ aufgelöst werden kann.
-Dies impliziert nach obigem $a_k(\x_b)\in W(\mcP_b)$.
+kann also nach den $a_k(\xi_b)$ aufgelöst werden kann.
+Dies impliziert nach obigem $a_k(\xi_b)\in W(\mcP_b)$.
 
 \end{proof}
 
 \section{Kompaktheitskriterien minimaler Operatoren}
 Wir wollen nun Satz \ref{thm:2:2.1} benutzen um Kriterien zu formulieren, so dass die Abbildung
 \begin{equation}\label{eq:2:map}
-\mcR_{P_0}\to\mcR_{Q_0},\quad P(D)u\mto Q(D)u
+\mcR_{P_0}\to\mcR_{Q_0},\quad P(D)u\mapsto Q(D)u
 \end{equation}
 nicht nur stetig, sondern auch kompakt ist, wobei wir dazu ebenfalls die regularisierten Symbole $\til{P}$, $\til{Q}$ heranziehen werden. Dazu definieren wir zunächst die Vollstetigkeit eines Operators.
 \begin{df}
@@ -647,31 +647,31 @@ Wir sagen im Folgenden $P(\D)$ dominiert $Q(\D)$, wenn die Abbildung aus \eqref{
 Der Operator $P(\D)$ dominiert genau dann den Operator $Q(\D)$,
 wenn folgendes gilt:
 \begin{equation}\label{eq:2:tozero}
-\frac{\til{Q}(\x)}{\til{P}(\x)}\rightarrow0 \quad\text{für}\quad\x\rightarrow\infi.
+\frac{\til{Q}(\xi)}{\til{P}(\xi)}\rightarrow0 \quad\text{für}\quad\xi\rightarrow\infty.
 \end{equation}
 \end{thm}
 \begin{proof} {\it Rückrichtung.}
-Wir nehmen zunächst an, dass \eqref{eq:2:tozero} erfüllt ist und betrachten eine Folge ${(u_n)}_{n \in \mathbb{N}} $ in $C^\infi_0(\Om)$ mit
+Wir nehmen zunächst an, dass \eqref{eq:2:tozero} erfüllt ist und betrachten eine Folge ${(u_n)}_{n \in \mathbb{N}} $ in $C^\infty_0(\Omega)$ mit
 \begin{equation}\label{eq:2:PDb}
 \norm{P(\D)u_n}\leq 1 \ \ \forall n \in \mathbb{N}.
 \end{equation}
-Wir zeigen, dass dann eine Teilfolge ${(u_{n_k})}_{k \in \mathbb{N}}$ in $C^\infi_0(\Om)$ existiert,
+Wir zeigen, dass dann eine Teilfolge ${(u_{n_k})}_{k \in \mathbb{N}}$ in $C^\infty_0(\Omega)$ existiert,
 so dass die Folge $\left(Q(D)u_{n_k}\right)_{k \in \mathbb{N}}$ konvergiert.
 Nach Voraussetzung gilt 
 \begin{equation}
-\frac{\til{Q}(\x)^2}{\til{P}(\x)^2} = \frac{\sum_{|\alpha| \leq k} | Q^{(\alpha)} (\x)|^2  }{ \sum_{|\alpha| \leq k} | P^{(\alpha)} (\x)|^2} \rightarrow 0\ \ \text{für} \ \ \x \rightarrow \infty
+\frac{\til{Q}(\xi)^2}{\til{P}(\xi)^2} = \frac{\sum_{|\alpha| \leq k} | Q^{(\alpha)} (\xi)|^2  }{ \sum_{|\alpha| \leq k} | P^{(\alpha)} (\xi)|^2} \rightarrow 0\ \ \text{für} \ \ \xi \rightarrow \infty
 \end{equation}
-und da über alle Ableitungen summiert wird, ist der Ausdruck $|Q(\x)|/\til{P}(\x)$ beschränkt. Also existiert eine Konstante $C>0$, so dass
+und da über alle Ableitungen summiert wird, ist der Ausdruck $|Q(\xi)|/\til{P}(\xi)$ beschränkt. Also existiert eine Konstante $C>0$, so dass
 \begin{equation}
-|Q(\x)|^2 \leq C \sum_{|\alpha| \leq k} | P^{\alpha} (\x)|^2 \label{eq:1.5}
+|Q(\xi)|^2 \leq C \sum_{|\alpha| \leq k} | P^{\alpha} (\xi)|^2 \label{eq:1.5}
 \end{equation}
-gilt. Für die Fouriertransformierte der Funktion $Q(\D)u$ mit $u \in C^\infi_0(\Om)$ gilt 
+gilt. Für die Fouriertransformierte der Funktion $Q(\D)u$ mit $u \in C^\infty_0(\Omega)$ gilt 
 \begin{equation}
-\widehat{Q(\D)u} = Q(\x) \widehat{u}.
+\widehat{Q(\D)u} = Q(\xi) \widehat{u}.
 \end{equation}
 Damit folgt nun mit dem Satz von Plancherel und der Ungleichung\eqref{eq:1.5}:
 \begin{equation}
-\int |Q(\D)u|^2 \mathrm{d}x = \int |Q(\x)|^2 |\widehat{u}|^2 \mathrm{d}\x \leq  \sum_{|\alpha| \leq k}C\int | P^{\alpha} (\x)|^2 \mathrm{d}\x =\sum_{|\alpha| \leq k} C\int |P^{\alpha}(\D)u|^2 \mathrm{d}x.
+\int |Q(\D)u|^2 \d x = \int |Q(\xi)|^2 |\widehat{u}|^2 \d \xi \leq  \sum_{|\alpha| \leq k}C\int | P^{\alpha} (\xi)|^2 \d \xi =\sum_{|\alpha| \leq k} C\int |P^{\alpha}(\D)u|^2 \d x.
 \end{equation}
 Satz \ref{thm:2:2.1} liefert uns eine Konstante $\widetilde{C}>0$ mit
 \begin{equation}
@@ -681,40 +681,40 @@ woraus sich dann mit \eqref{eq:2:PDb} sofort
 \begin{equation}
 \norm{Q(\D)u_n}\leq C' \norm{P(\D)u_n} \leq C' \ \ \forall n \in \mathbb{N}, C' >0
 \end{equation}
-ergibt. Damit können wir zeigen, dass die Funktionen $\widehat{Q(\D)}u_n = Q(\x) \hat{u}_n$ gleichgradig stetig und gleichmäßig beschränkt sind. Sei dazu $\varepsilon>0$, dann existiert ein $\delta>0$, so dass aus $|\xi_1 - \xi_2| < \delta$ und der Ungleichung von Cauchy-Schwarz 
+ergibt. Damit können wir zeigen, dass die Funktionen $\widehat{Q(\D)}u_n = Q(\xi) \hat{u}_n$ gleichgradig stetig und gleichmäßig beschränkt sind. Sei dazu $\varepsilon>0$, dann existiert ein $\delta>0$, so dass aus $|\xi_1 - \xi_2| < \delta$ und der Ungleichung von Cauchy-Schwarz 
 \begin{align}
-| Q(\x_1)\widehat{u}_n(\x_1) - Q(\x_2)\widehat{u}_n(\x_2)| & \leq \int_{\Omega}  \underbrace{\left| e^{\i x \cdot \xi_1} - e^{\i x \cdot \x_2} \right| }_{\leq \varepsilon} | Q(\D) u_n(x)| \mathrm{d}x 
+| Q(\xi_1)\widehat{u}_n(\xi_1) - Q(\xi_2)\widehat{u}_n(\xi_2)| & \leq \int_{\Omega}  \underbrace{\left| e^{\i x \cdot \xi_1} - e^{\i x \cdot \xi_2} \right| }_{\leq \varepsilon} | Q(\D) u_n(x)| \d x 
 \\ & \leq \varepsilon |\Omega|^{\frac{1}{2}} \Vert Q(\D)u_n \Vert \leq \varepsilon \tilde{C}
 \end{align}
-folgt. Also können wir nach dem Satz von Arzel\`a-Ascoli eine lokal gleichmäßig konvergente Teilfolge $Q(\x)\widehat{u}_{n_k}$ auswählen, d.h. $Q(\x)\widehat{u}_{n_k}$ konvergiert auf jeder kompakten Menge $K \subseteq \Omega$ gleichmäßig.
+folgt. Also können wir nach dem Satz von Arzel\`a-Ascoli eine lokal gleichmäßig konvergente Teilfolge $Q(\xi)\widehat{u}_{n_k}$ auswählen, d.h. $Q(\xi)\widehat{u}_{n_k}$ konvergiert auf jeder kompakten Menge $K \subseteq \Omega$ gleichmäßig.
 Nach Voraussetzung \eqref{eq:2:tozero} lässt sich für jedes $\varepsilon > 0$ eine kompakte Menge $K \subseteq \Omega$ finden, so dass 
 \begin{equation}
-\frac{\abs{Q(\x)}}{\til{P}(\x)} <\varepsilon \ \ \forall \x \in K^{\mathrm{c}}
+\frac{\abs{Q(\xi)}}{\til{P}(\xi)} <\varepsilon \ \ \forall \xi \in K^{\mathrm{c}}
 \end{equation}
 gilt. Damit folgt nun
 \begin{align}
-\int_{K^{\mathrm c}}\abs{Q(\x)}^2\abs{\widehat{u}_{n_k}(\x)-\widehat{u}_{n_l}(\x)}^2\mathrm{d}\x
-&\leq\varepsilon^2\int\til{P}(\x)^2\abs{\widehat{u}_{n_k}(\x)-\widehat{u}_{n_l}(\x)}^2\mathrm{d}\x\\
-&=\varepsilon^2\sum_{|\alpha| \leq k}\norm{P^{(\al)}(\D)(u_{n_k}-u_{n_l})}^2.\label{eq:2:Kcsum}
+\int_{K^{\mathrm c}}\abs{Q(\xi)}^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi
+&\leq\varepsilon^2\int\til{P}(\xi)^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi\\
+&=\varepsilon^2\sum_{|\alpha| \leq k}\norm{P^{(\alpha)}(\D)(u_{n_k}-u_{n_l})}^2.\label{eq:2:Kcsum}
 \end{align}
 und diese Summe ist nach \eqref{eq:ableitung leq PD}
 und \eqref{eq:2:PDb} beschränkt.
 Mit der lokal-gleichmäßigen Konvergenz gilt außerdem
 \begin{equation}
-\int_K\abs{Q(\x)}^2\abs{\widehat{u}_{n_k}(\x)-\widehat{u}_{n_l}(\x)}^2\mathrm{d}\x\longrightarrow0
-\quad\text{für}~ k,l \rightarrow \infi,
+\int_K\abs{Q(\xi)}^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi\longrightarrow0
+\quad\text{für}~ k,l \rightarrow \infty,
 \end{equation}
-was die Konvergenz der Teilfolge $\left(Q(\D)u_{n_k} \right)_{k \in \mathbb{N}}$ impliziert. Da die Funktionen $P(\D)u$ für $u\in C^\infi_0(\Om)$ dicht in $\mcR_{P_0}$ liegen, dominiert $P(\D)$ den Operator $Q(\D)$.
+was die Konvergenz der Teilfolge $\left(Q(\D)u_{n_k} \right)_{k \in \mathbb{N}}$ impliziert. Da die Funktionen $P(\D)u$ für $u\in C^\infty_0(\Omega)$ dicht in $\mcR_{P_0}$ liegen, dominiert $P(\D)$ den Operator $Q(\D)$.
 $\bullet$\qquad{\it Hinrichtung.}
 Wir nehmen nun an, dass $P(\D)$ den Operator $Q(\D)$ dominiert und zeigen, dass \eqref{eq:2:tozero} erfüllt ist.
- Ist $(\x)_{n \in \mathbb{N}}$ eine Folge mit $\x_n \rightarrow \infty$, dann genügt es zu zeigen, dass $\til{Q}(\x_{n})/\til{P}(\x_{n})\to0, \ n \rightarrow \infty$ gilt.
-Wir nehmen dazu ein beliebiges $u\in C^\infi_0(\Om)$, $u\neq0$ und definieren die Folge $(u_n)_{n \in \mathbb{N}}$ durch
+ Ist $(\xi)_{n \in \mathbb{N}}$ eine Folge mit $\xi_n \rightarrow \infty$, dann genügt es zu zeigen, dass $\til{Q}(\xi_{n})/\til{P}(\xi_{n})\to0, \ n \rightarrow \infty$ gilt.
+Wir nehmen dazu ein beliebiges $u\in C^\infty_0(\Omega)$, $u\neq0$ und definieren die Folge $(u_n)_{n \in \mathbb{N}}$ durch
 \begin{equation}
-u_n(x):=u(x)\frac{\e^{\i x \cdot \x_n}}{\til{P}(\x_n)}\ \ \forall x \in \Omega, n \in \mathbb{N}.
+u_n(x):=u(x)\frac{\e^{\i x \cdot \xi_n}}{\til{P}(\xi_n)}\ \ \forall x \in \Omega, n \in \mathbb{N}.
 \end{equation}
 Analog wie im Beweis von Satz \ref{thm:2:2.1} liefert die Produktregel
 \begin{equation}
-P(\D)u_n(x)=\e^{\i x \cdot \x_n}\sum_\al\frac{P^{(\al)}(\x_n)}{\til{P}(\x_n)}\frac{D^\al u(x)}{\al!}.
+P(\D)u_n(x)=\e^{\i x \cdot \xi_n}\sum_\alpha\frac{P^{(\alpha)}(\xi_n)}{\til{P}(\xi_n)}\frac{D^\alpha u(x)}{\alpha!}.
 \end{equation}
 und damit eine Konstante $C>0$ mit
 \begin{equation}\label{eq:2:PDunb}
@@ -722,22 +722,22 @@ und damit eine Konstante $C>0$ mit
 \end{equation}
 Wir zerlegen nun
 \begin{equation}\label{eq:2:kz}
-\norm{Q(\D)u_n-Q(\D)u_m}^2=\norm{Q(\D)u_n}^2+\norm{Q(\D)u_m}^2-\de_{nm},
+\norm{Q(\D)u_n-Q(\D)u_m}^2=\norm{Q(\D)u_n}^2+\norm{Q(\D)u_m}^2-\delta_{nm},
 \end{equation}
 wobei
 \begin{equation}
-\de_{nm}=2\Re\left\{\sum_{\al,\be}\frac{Q^{(\al)}(\x_n)}{\til{P}(\x_n)}\frac{\cc{Q^{(\be)}(\x_n)}}{\til{P}(\x_n)}
-\frac1{\al!\be!}\int \D^\al u\cc{\D^\be u}\e^{\i x \cdot(\x_n-\x_m)}\mathrm{d} x\right\}.
+\delta_{nm}=2\Re\left\{\sum_{\alpha,\beta}\frac{Q^{(\alpha)}(\xi_n)}{\til{P}(\xi_n)}\frac{\cc{Q^{(\beta)}(\xi_n)}}{\til{P}(\xi_n)}
+\frac1{\alpha!\beta!}\int \D^\alpha u\cc{\D^\beta u}\e^{\i x \cdot(\xi_n-\xi_m)}\d  x\right\}.
 \end{equation}
-Um $\de_{nm}\to0$ zu erreichen setzen wir voraus, dass $\x_n-\x_m\to\infi$, für $n,m\to\infi$, $n\neq m$ gilt. Ansonsten kann man ebenfalls eine entsprechende Teilfolge betrachten.
-Da die Faktoren $Q^{(\alpha)}(\x_n)/\til{P}(\x_n)$ nach Satz \ref{thm:2:2.1} beschränkt und $\D^\al u\cc{\D^\be u}$ integrierbar sind, folgt mit dem Riemannschen Lemma $\de_{nm}\to0$ für $n,m\to\infi$, $n\neq m$.
+Um $\delta_{nm}\to0$ zu erreichen setzen wir voraus, dass $\xi_n-\xi_m\to\infty$, für $n,m\to\infty$, $n\neq m$ gilt. Ansonsten kann man ebenfalls eine entsprechende Teilfolge betrachten.
+Da die Faktoren $Q^{(\alpha)}(\xi_n)/\til{P}(\xi_n)$ nach Satz \ref{thm:2:2.1} beschränkt und $\D^\alpha u\cc{\D^\beta u}$ integrierbar sind, folgt mit dem Riemannschen Lemma $\delta_{nm}\to0$ für $n,m\to\infty$, $n\neq m$.
 Aufgrund der Kompaktheit finden wir eine konvergente Teilfolge $(Q(\D)u_{n_k})_{k \in \mathbb{N}}$, sodass aus \eqref{eq:2:kz} und Satz \ref{thm:2:2.1}
 \begin{equation}
-\norm{Q(\D)u_{n_k}}^2=\sum_{\al,\be}\frac{\abs{Q(\x_{n_k})}^2}{\til{P}(\x_{n_k})^2} \underbrace{\frac{1}{|\alpha|! |\beta|!}\int \D_\alpha u \overline{\D_\beta u} \mathrm{d}x}_{=:\Psi_{\alpha \beta}} \longrightarrow 0
+\norm{Q(\D)u_{n_k}}^2=\sum_{\alpha,\beta}\frac{\abs{Q(\xi_{n_k})}^2}{\til{P}(\xi_{n_k})^2} \underbrace{\frac{1}{|\alpha|! |\beta|!}\int \D_\alpha u \overline{\D_\beta u} \d x}_{=:\Psi_{\alpha \beta}} \longrightarrow 0
 \end{equation}
 und damit auch 
 \begin{equation}
-\frac{\til{Q}(\x_{n_k})^2}{\til{P}(\x_{n_k})^2} \longrightarrow 0
+\frac{\til{Q}(\xi_{n_k})^2}{\til{P}(\xi_{n_k})^2} \longrightarrow 0
 \end{equation}
 folgt.
 \end{proof}
@@ -773,19 +773,19 @@ d.h. wir können Satz \ref{thm:2:2.1} anwenden und bekommen die Kompaktheit des 
 \end{exa}
 Wir werden im Folgenden zeigen, dass der Operator $P_0^{-1}$ genau dann kompakt ist, wenn das dazugehörige Symbol $P(\xi)$ von allen Variablen abhängt. Dazu benötigen wir zunächst folgende Definition.
 \begin{df}
-Sei $P(\x)$ das Symbol eines Differentialausdrucks $P(\D)$. Wir sagen dass $P(\x)$ vollständig ist, wenn folgendes gilt:
+Sei $P(\xi)$ das Symbol eines Differentialausdrucks $P(\D)$. Wir sagen dass $P(\xi)$ vollständig ist, wenn folgendes gilt:
 \begin{align*}
 \Lambda(P):=\{ \nu \in \mathbb{R}^n| \ \ \forall \xi \in \mathbb{C}^n, \forall t \in \mathbb{R}: P(\xi + t\nu) = P(\xi)  \} = \{0\}.
 \end{align*}
 \end{df}
-\begin{lem}\label{Lema:homogene Polynome} Sei $Q(\x)$ ein homogenes Polynom vom Grad $m \in \mathbb{N}$ und  $\nu \in \mathbb{R}^n$ mit
+\begin{lem}\label{Lema:homogene Polynome} Sei $Q(\xi)$ ein homogenes Polynom vom Grad $m \in \mathbb{N}$ und  $\nu \in \mathbb{R}^n$ mit
 \begin{align*}
 \D^{\alpha}Q(\nu)=0 \ \forall \alpha \in \mathbb{N}_0^{n}, \ |\alpha| = m-1,
 \end{align*}
 dann gilt $\nu \in \Lambda(Q)$.
 \end{lem}
 \begin{proof}
-Für $m=1$ gilt offensichtlich $\nu = 0 \in \Lambda(Q)$. Wir nehmen also an, dass die Behauptung für Polynome vom Grad kleiner $m>1$ erfüllt ist. Wir leiten das Polynom $Q(\xi)$ partiell nach einer Variable $\x_i, \ i \in \{1,\ldots,n\}$ ab und benutzen die Induktionsvoraussetzung, d.h. es gilt
+Für $m=1$ gilt offensichtlich $\nu = 0 \in \Lambda(Q)$. Wir nehmen also an, dass die Behauptung für Polynome vom Grad kleiner $m>1$ erfüllt ist. Wir leiten das Polynom $Q(\xi)$ partiell nach einer Variable $\xi_i, \ i \in \{1,\ldots,n\}$ ab und benutzen die Induktionsvoraussetzung, d.h. es gilt
 \begin{equation}
 \partial Q(\xi + t \nu)/ \partial \xi_i = \partial Q(\xi)/\partial \xi_i \ \ \forall i \in \{1,\ldots,n\}.
 \end{equation}
@@ -845,7 +845,7 @@ Wir wollen zum Abschluss des Kapitels ein weiteres Vergleichsresultat angeben we
 \begin{thm}
 Sei $u \in \mathcal{D}_{P_0}$ eine Funktion aus dem Definitionsbereich des minimalen Operators $P_0$. Ist die Funktion $Q(\D)u$ stetig, dann gilt
 \begin{equation}\label{satz: bedingung stetigkeit}
-\int \frac{|Q(\xi)2}{\tilde{P}(\xi)^2} \mathrm{d}\xi < \infty.
+\int \frac{|Q(\xi)2}{\tilde{P}(\xi)^2} \d \xi < \infty.
 \end{equation}
 Ist andererseits \eqref{satz: bedingung stetigkeit} erfüllt, dann ist $Q(D)u$ stetig und es existiert für jedes $\varepsilon >0$ eine kompakte Menge $K \subseteq \Omega$ mit
 \begin{align*}
@@ -868,11 +868,11 @@ Wir können ohne Einschränkung $0 \in \Omega$ und $\psi(0)=1$  annehmen, woraus
 \end{equation}
 folgt. Für eine schnell-fallende Funktion $ \varphi \in \mathcal{S}$ aus dem Schwarzraum $S$ definieren wir
 \begin{equation}
-v(x):= (2 \pi)^{-\frac{n}{2}} \int_{\Omega} \frac{\varphi (\xi)}{\tilde{P}(\xi)}e^{\i x \cdot \xi} \mathrm{d}\xi,
+v(x):= (2 \pi)^{-\frac{n}{2}} \int_{\Omega} \frac{\varphi (\xi)}{\tilde{P}(\xi)}e^{\i x \cdot \xi} \d \xi,
 \end{equation}
 dann folgt mit Plancherel
 \begin{equation}\label{eq:abschneide phi}
-\Vert P^{(\alpha)}(\D)v \Vert^2 = \int_{\Omega} |\widehat{v}(\xi)|^2 |P^{(\alpha)}(\xi)|^2 \mathrm{d}\xi = \int_{\Omega} \frac{|\varphi(\xi)|^2}{\tilde{P}(\xi)^2} | P^{(\alpha)} (\xi)|^2 \mathrm{d}\xi \leq \int_{\Omega} |\varphi(\xi)|^2 \mathrm{d}\xi= \Vert \varphi \Vert^2
+\Vert P^{(\alpha)}(\D)v \Vert^2 = \int_{\Omega} |\widehat{v}(\xi)|^2 |P^{(\alpha)}(\xi)|^2 \d \xi = \int_{\Omega} \frac{|\varphi(\xi)|^2}{\tilde{P}(\xi)^2} | P^{(\alpha)} (\xi)|^2 \d \xi \leq \int_{\Omega} |\varphi(\xi)|^2 \d \xi= \Vert \varphi \Vert^2
 \end{equation}
 Wir betrachten eine geeignete Abschneidefunktion $\tau \in C_0^{\infty}(\Omega)$ mit $\tau(x) \leq 1 \ \forall x \in \Omega$ und $\tau(0)=1$, dann gilt für die daraus entstehende Funktion $\tilde{u} = \tau v \in C_0^{\infty}(\Omega)$.
 Mit der Produktformel von Leibniz folgt
@@ -885,21 +885,21 @@ Mithilfe von \eqref{eq:abschneide phi} ergibt sich also
 \end{equation}
 Mit
 \begin{equation}
-v = (2 \pi)^{-\frac{n}{2}} \int_{\Omega} e^{\i x \cdot \xi} \widehat{v}(\xi) \mathrm{d}\xi, \qquad Q(\D)e^{\i x \cdot \xi} = e^{\i x \cdot \xi} Q(\xi), \qquad Q(\D)\tilde{u}(0) = Q(\D)v(0),
+v = (2 \pi)^{-\frac{n}{2}} \int_{\Omega} e^{\i x \cdot \xi} \widehat{v}(\xi) \d \xi, \qquad Q(\D)e^{\i x \cdot \xi} = e^{\i x \cdot \xi} Q(\xi), \qquad Q(\D)\tilde{u}(0) = Q(\D)v(0),
 \end{equation}
 und \eqref{eq:abschneide null} , \eqref{eq:abschatz phi} folgt schließlich
 \begin{equation}
-|Q(\D)\tilde{u}(0)|^2 = |Q(\D)v(0)|^2 = |(2 \pi)^{-\frac{n}{2}} \int \frac{Q(\xi)}{\til{P}(\xi)} \varphi(\xi) \mathrm{d}\xi |^2 \leq \widetilde{C} \Vert \varphi \Vert^2.
+|Q(\D)\tilde{u}(0)|^2 = |Q(\D)v(0)|^2 = |(2 \pi)^{-\frac{n}{2}} \int \frac{Q(\xi)}{\til{P}(\xi)} \varphi(\xi) \d \xi |^2 \leq \widetilde{C} \Vert \varphi \Vert^2.
 \end{equation}
 und damit
 \begin{equation}\label{eq:behauptung L2}
-\int_{\Omega} \frac{|Q(\xi)|^2}{\til{P}(\xi)^2} \mathrm{d}\xi < \infty.
+\int_{\Omega} \frac{|Q(\xi)|^2}{\til{P}(\xi)^2} \d \xi < \infty.
 \end{equation}
 
 Gilt andererseits \eqref{eq:behauptung L2}, dann folgt für alle $u \in C_0^{\infty}(\Omega)$ mit Cauchy-Schwarz-Ungleichung:
 \begin{align}
-|Q(\D)u(x)|^2 &=  |(2 \pi)^{-\frac{n}{2}} \int_{\Omega} Q(\xi) \widehat{u}(\xi) e^{\i x \cdot \xi} \mathrm{d}\xi |^2 
-\\ & \leq (2 \pi)^{-\frac{n}{2}} \int_{\Omega} \frac{|Q(\xi)|^2}{\til{P}(\xi)^2} \mathrm{d}\xi \int_{\Omega} \til{P}(\xi)^2 | \widehat{u}|^2 \mathrm{d}\xi = C \sum_{\alpha} \Vert P^{(\alpha)}(\D)u\Vert^2.
+|Q(\D)u(x)|^2 &=  |(2 \pi)^{-\frac{n}{2}} \int_{\Omega} Q(\xi) \widehat{u}(\xi) e^{\i x \cdot \xi} \d \xi |^2 
+\\ & \leq (2 \pi)^{-\frac{n}{2}} \int_{\Omega} \frac{|Q(\xi)|^2}{\til{P}(\xi)^2} \d \xi \int_{\Omega} \til{P}(\xi)^2 | \widehat{u}|^2 \d \xi = C \sum_{\alpha} \Vert P^{(\alpha)}(\D)u\Vert^2.
 \end{align}
 Mit Korollar \ref{cor:2:2.6} folgt also für alle $u \in C_0^{\infty}(\Omega)$:
 \begin{equation}
