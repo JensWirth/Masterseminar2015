@@ -374,13 +374,13 @@ $Q(\D)$ also echt schwächer als $P(\D)$ ist.
 
 Im Fall einer reellen Matrix gilt $\xi^\top A\xi\neq0$ genau dann für alle $\xi\neq0$,
 wenn entweder alle Eigenwerte positiv oder alle negativ sind.
-Im Fall einer komplexen Matrix ist
-\begin{equation}
-\abs{\xi^\top A\xi}^2=\abs{\xi^\top A_\Re\xi}^2+\abs{\xi^\top A_\Im\xi}^2,
-\end{equation}
-mit $A=A_\Re+\i A_\Im$, $A_\Re,A_\Im\in\R^{n\times n}$.
-Die weitere Untersuchung gestaltet sich allerdings recht aufwendig
-und soll nicht weiter vertieft werden.
+%Im Fall einer komplexen Matrix ist
+%\begin{equation}
+%\abs{\xi^\top A\xi}^2=\abs{\xi^\top A_\Re\xi}^2+\abs{\xi^\top A_\Im\xi}^2,
+%\end{equation}
+%mit $A=A_\Re+\i A_\Im$, $A_\Re,A_\Im\in\R^{n\times n}$.
+%Die weitere Untersuchung gestaltet sich allerdings recht aufwendig
+%und soll nicht weiter vertieft werden.
 \end{exa}
 
 \begin{exa}\label{exa:2:schroe}
@@ -698,113 +698,113 @@ Mit Korollar \ref{cor:2:2.6} folgt also für alle $u \in \rmC_0^{\infty}(\Omega)
 gleichmäßig in $x\in\Omega$ und damit mit Lemma \ref{lm: Qu stetig} die Behauptung.
 \end{proof}
 
-\section{Kompaktheitskriterien minimaler Operatoren}
-Wir wollen nun Satz \ref{thm:2:2.1} nutzen um Kriterien zu formulieren, so dass die Abbildung
+\section{Kompaktheitskriterien}
+Satz \ref{thm:2:2.1} gibt ein Kriterium dafür, daß der auf Operator
 \begin{equation}\label{eq:2:map}
-\mcR_{P_0}\to\mcR_{Q_0},\quad P(D)u\mapsto Q(D)u
+\mcR_{P_0}\ni P(\D)u\mapsto Q(\D)u\in  \mcR_{Q_0}
 \end{equation}
-nicht nur stetig, sondern auch kompakt ist, wobei wir dazu ebenfalls die regularisierten Symbole $\widetilde{P}$, $\widetilde{Q}$ heranziehen werden. Dazu definieren wir zunächst die Kompaktheit eines Operators.
+$\rmL^2$--$\rmL^2$-beschränkt ist. Im folgenden fragen wir nach der Kompaktheit dieses Operators. 
+
 \begin{df}
-Seien $V$ und $W$ zwei Banachräume und $T: V \supset \mathcal{D}_T \rightarrow W$ ein linearer Operator. $T$ heißt \eIndex[Operator]{kompakt}, wenn er abgeschlossen ist und für jede Folge $(u_n)_{n \in \mathbb{N}}$ in $\mathcal{D}_T$ mit $\Vert u_n \Vert \leq 1 \ \forall n \in \mathbb{N}$ eine Teilfolge $({u_n}_k)_{k \in \mathbb{N}}$ existiert, so dass die Folge $({Tu_n}_k)_{k\in \mathbb{N}}$ in $W$ konvergiert.
+Seien $V$ und $W$ zwei Banachräume und $T: V \supset \mathcal{D}_T \rightarrow W$ ein linearer Operator. $T$ heißt \eIndex[Operator]{kompakt}, wenn für jede Folge $(u_n)_{n \in \mathbb{N}}$ in $\mathcal{D}_T$ mit $\Vert u_n \Vert \leq 1$ für alle $n \in \mathbb{N}$ eine Teilfolge $(u_{n_k})_{k \in \mathbb{N}}$ existiert, so daß deren Bildfolge $(Tu_{n_k})_{k\in \mathbb{N}}$ in $W$ konvergiert.
 \end{df}
-Wir sagen im Folgenden $P(\D)$ dominiert $Q(\D)$, wenn die Abbildung aus \eqref{eq:2:map} kompakt ist.
+
+Wir sagen im folgenden der Differentialausdruck $P(\D)$ \eIndex[Differentialoperator]{dominiert} den Differentialausdruck $Q(\D)$, wenn die Abbildung aus \eqref{eq:2:map} kompakt ist. Die Eigenschaft dominierend zu sein ist wiederum unabhängig vom beschränkten Gebiet $\Omega$.
+
 \begin{thm}[{\cite[Theorem~2.15]{Hormander:1955}}]\label{Abbildung kompakt}
-Der Operator $P(\D)$ dominiert genau dann den Operator $Q(\D)$,
-wenn folgendes gilt:
+Der Differentialausdruck $P(\D)$ dominiert genau dann den Differentialausdruck $Q(\D)$,
+wenn
 \begin{equation}\label{eq:2:tozero}
-\frac{\widetilde{Q}(\xi)}{\widetilde{P}(\xi)}\rightarrow0 \quad\text{für}\quad\xi\rightarrow\infty.
+\lim_{|\xi|\to\infty} \frac{\widetilde{Q}(\xi)}{\widetilde{P}(\xi)} = 0
 \end{equation}
+gilt.
 \end{thm}
 \begin{proof} {\it Rückrichtung.}
-Wir nehmen zunächst an, dass \eqref{eq:2:tozero} erfüllt ist und betrachten eine Folge ${(u_n)}_{n \in \mathbb{N}} $ in $C^\infty_0(\Omega)$ mit
+Wir nehmen zunächst an, dass \eqref{eq:2:tozero} erfüllt ist und betrachten eine Folge ${(u_n)}_{n \in \mathbb{N}} $ in $\rmC^\infty_0(\Omega)$ mit
 \begin{equation}\label{eq:2:PDb}
-\norm{P(\D)u_n}\leq 1 \ \ \forall n \in \mathbb{N}.
+\norm{P(\D)u_n}\leq 1
 \end{equation}
-Wir zeigen, dass dann eine Teilfolge ${(u_{n_k})}_{k \in \mathbb{N}}$ in $C^\infty_0(\Omega)$ existiert,
-so dass die Folge $\left(Q(D)u_{n_k}\right)_{k \in \mathbb{N}}$ konvergiert.
-Nach Voraussetzung gilt 
+für alle $n$. Wir zeigen, dass dann eine Teilfolge ${(u_{n_k})}_{k \in \mathbb{N}}$ in $\rmC^\infty_0(\Omega)$ existiert,
+so dass  $\left(Q(\D)u_{n_k}\right)_{k \in \mathbb{N}}$ konvergent ist. Nach Voraussetzung gilt 
 \begin{equation}
-\frac{\widetilde{Q}(\xi)^2}{\widetilde{P}(\xi)^2} = \frac{\sum_{|\alpha| \leq k} | Q^{(\alpha)} (\xi)|^2  }{ \sum_{|\alpha| \leq k} | P^{(\alpha)} (\xi)|^2} \rightarrow 0\ \ \text{für} \ \ \xi \rightarrow \infty
+\frac{\widetilde{Q}(\xi)^2}{\widetilde{P}(\xi)^2} = \frac{\sum_{\alpha} | Q^{(\alpha)} (\xi)|^2  }{ \sum_{\alpha} | P^{(\alpha)} (\xi)|^2} \rightarrow 0\qquad  \text{für} \ \ \xi \rightarrow \infty;
 \end{equation}
-und da über alle Ableitungen summiert wird, ist der Ausdruck $|Q(\xi)|/\widetilde{P}(\xi)$ beschränkt. Also existiert eine Konstante $C>0$, so dass
+insbesondere ist $\widetilde Q(\xi)/\widetilde P(\xi)$ beschränkt. Also existiert eine Konstante $C>0$, so dass
 \begin{equation}
-|Q(\xi)|^2 \leq C \sum_{|\alpha| \leq k} | P^{\alpha} (\xi)|^2 \label{eq:1.5}
+|Q(\xi)|^2 \leq C \sum_{\alpha} | P^{\alpha} (\xi)|^2 \label{eq:1.5}
 \end{equation}
-gilt. Für die Fouriertransformierte der Funktion $Q(\D)u$ mit $u \in C^\infty_0(\Omega)$ gilt 
-\begin{equation}
-\widehat{Q(\D)u} = Q(\xi) \widehat{u}.
-\end{equation}
-Damit folgt nun mit dem Satz von Plancherel und der Ungleichung\eqref{eq:1.5}:
-\begin{equation}
-\int |Q(\D)u|^2 \d x = \int |Q(\xi)|^2 |\widehat{u}|^2 \d \xi \leq  \sum_{|\alpha| \leq k}C\int | P^{\alpha} (\xi)|^2 \d \xi =\sum_{|\alpha| \leq k} C\int |P^{\alpha}(\D)u|^2 \d x.
-\end{equation}
-Satz \ref{thm:2:2.1} liefert uns eine Konstante $\widetilde{C}>0$ mit
+gilt. Damit folgt mit dem Satz von Plancherel für beliebiges $u\in\rmC_0^\infty(\Omega)$
+\begin{multline}
+\int |Q(\D)u(x)|^2 \d x = \int |Q(\xi) \widehat{u}(\xi)|^2 \d \xi \\
+\leq  \sum_{|\alpha| \leq k}C\int | P^{(\alpha)} (\xi) \widehat u(\xi)|^2 \d \xi =\sum_{|\alpha| \leq k} C\int |P^{\alpha}(\D)u(x)|^2 \d x.
+\end{multline}
+Weiter liefert uns  Satz \ref{thm:2:2.1} eine Konstante $\widetilde{C}>0$ mit
 \begin{equation}
 \Vert P^{(\alpha)}(\D)u \Vert \leq \widetilde{C} \Vert P(\D)u \Vert, \label{eq:ableitung leq PD}
 \end{equation}
 woraus sich dann mit \eqref{eq:2:PDb} sofort
 \begin{equation}
-\norm{Q(\D)u_n}\leq C' \norm{P(\D)u_n} \leq C' \ \ \forall n \in \mathbb{N}, C' >0
+\norm{Q(\D)u_n}\leq C' \norm{P(\D)u_n} \leq C' 
 \end{equation}
-ergibt. Damit können wir zeigen, dass die Funktionen $\widehat{Q(\D)}u_n = Q(\xi) \hat{u}_n$ gleichgradig stetig und gleichmäßig beschränkt sind. Sei dazu $\varepsilon>0$, dann existiert ein $\delta>0$, so dass aus $|\xi_1 - \xi_2| < \delta$ und der Ungleichung von Cauchy-Schwarz 
+für die gegebene Folge $(u_n)_{n\in\N}$ ergibt. Da $\Omega$ beschränkt ist, ist auch die $\rmL^1$-Norm $\|Q(\D)u_n\|_1$ gleichmäßig beschränkt und die 
+Fouriertransformierten $Q(\xi) \widehat{u}_n(\xi)$ sind gleichmäßig beschränkt. Wir zeigen, daß sie auch gleichgradig stetig sind. Sei dazu $\varepsilon>0$ und $\delta>0$ so gewählt, dass für $|\xi_1 - \xi_2| < \delta$ stets $|\e^{\i x \cdot \xi_1} - \e^{\i x \cdot \xi_2}|\le\epsilon$ gilt. Dann folgt mit Ungleichung von Cauchy--Schwarz 
 \begin{align}
-| Q(\xi_1)\widehat{u}_n(\xi_1) - Q(\xi_2)\widehat{u}_n(\xi_2)| & \leq \int_{\Omega}  \underbrace{\left| e^{\i x \cdot \xi_1} - e^{\i x \cdot \xi_2} \right| }_{\leq \varepsilon} | Q(\D) u_n(x)| \d x 
-\\ & \leq \varepsilon |\Omega|^{\frac{1}{2}} \Vert Q(\D)u_n \Vert \leq \varepsilon \widetilde{C}
+| Q(\xi_1)\widehat{u}_n(\xi_1) - Q(\xi_2)\widehat{u}_n(\xi_2)| & \leq (2\pi)^{-n/2} \int_{\Omega} \left| \e^{\i x \cdot \xi_1} - \e^{\i x \cdot \xi_2} \right| | Q(\D) u_n(x)| \d x \notag
+\\ & \leq \varepsilon |\Omega|^{\frac{1}{2}} \Vert Q(\D)u_n \Vert \leq \varepsilon \widetilde{C}.
 \end{align}
-folgt. Also können wir nach dem Satz von Arzel\`a-Ascoli eine lokal gleichmäßig konvergente Teilfolge $Q(\xi)\widehat{u}_{n_k}$ auswählen, d.h. $Q(\xi)\widehat{u}_{n_k}$ konvergiert auf jeder kompakten Menge $K \subseteq \Omega$ gleichmäßig.
-Nach Voraussetzung \eqref{eq:2:tozero} lässt sich für jedes $\varepsilon > 0$ eine kompakte Menge $K \subseteq \Omega$ finden, so dass 
+Also können wir nach dem Satz von Arzel\`a-Ascoli eine lokal gleichmäßig konvergente Teilfolge $(Q(\xi)\widehat{u}_{n_k})_{k\in\N}$ auswählen, d.h. für jedes Kompaktum $K\Subset\R^n$ konvergiert $Q(\xi)\widehat{u}_{n_k}(\xi)$ gleichmäßig.
+Nach Voraussetzung \eqref{eq:2:tozero} lässt sich für jedes $\varepsilon > 0$ eine kompakte Menge $K \Subset \R^n$ finden, so dass 
 \begin{equation}
-\frac{\abs{Q(\xi)}}{\widetilde{P}(\xi)} <\varepsilon \ \ \forall \xi \in K^{\mathrm{c}}
+\forall \xi\in\R^n\setminus K \quad:\quad \frac{\abs{Q(\xi)}}{\widetilde{P}(\xi)} <\varepsilon
 \end{equation}
 gilt. Damit folgt nun
 \begin{align}
-\int_{K^{\mathrm c}}\abs{Q(\xi)}^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi
-&\leq\varepsilon^2\int\widetilde{P}(\xi)^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi\\
-&=\varepsilon^2\sum_{|\alpha| \leq k}\norm{P^{(\alpha)}(\D)(u_{n_k}-u_{n_l})}^2\label{eq:2:Kcsum}
+\int_{\R^n\setminus K}\abs{Q(\xi)}^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi
+&\leq\varepsilon^2\int\widetilde{P}(\xi)^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi\notag\\
+&=\varepsilon^2\sum_\alpha \int  \abs{ P^{(\alpha)}(\xi) (\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi) ) }^2\d \xi\notag\\
+&=\varepsilon^2\sum_\alpha \norm{P^{(\alpha)}(\D)(u_{n_k}-u_{n_l})}^2\label{eq:2:Kcsum}
 \end{align}
-und diese Summe ist nach \eqref{eq:ableitung leq PD}
-und \eqref{eq:2:PDb} beschränkt.
-Mit der lokal-gleichmäßigen Konvergenz gilt außerdem
+und diese Summe ist nach \eqref{eq:ableitung leq PD} und \eqref{eq:2:PDb} beschränkt.
+Da $Q(\xi)\widehat u_{n_k}(\xi)$ auf $K$ gleichmäßig konvergiert, gilt außerdem
 \begin{equation}
 \int_K\abs{Q(\xi)}^2\abs{\widehat{u}_{n_k}(\xi)-\widehat{u}_{n_l}(\xi)}^2\d \xi\longrightarrow0
 \quad\text{für}~ k,l \rightarrow \infty,
 \end{equation}
-was die Konvergenz der Teilfolge $\left(Q(\D)u_{n_k} \right)_{k \in \mathbb{N}}$ impliziert. Da die Funktionen $P(\D)u$ für $u\in C^\infty_0(\Omega)$ dicht in $\mcR_{P_0}$ liegen, dominiert $P(\D)$ den Operator $Q(\D)$.
+und damit die Konvergenz der Teilfolge $\left(Q(\D)u_{n_k} \right)_{k \in \mathbb{N}}$ in $\rmL^2(\Omega)$. 
+Da die Funktionen $P(\D)u$ für $u\in \rmC^\infty_0(\Omega)$ dicht in $\mcR_{P_0}$ liegen, dominiert $P(\D)$ den Operator $Q(\D)$.
 $\bullet$\qquad{\it Hinrichtung.}
 Wir nehmen nun an, dass $P(\D)$ den Operator $Q(\D)$ dominiert und zeigen, dass \eqref{eq:2:tozero} erfüllt ist.
- Ist $(\xi)_{n \in \mathbb{N}}$ eine Folge mit $\xi_n \rightarrow \infty$, dann genügt es zu zeigen, dass $\widetilde{Q}(\xi_{n})/\widetilde{P}(\xi_{n})\to0, \ n \rightarrow \infty$ gilt.
-Wir nehmen dazu ein beliebiges $u\in C^\infty_0(\Omega)$, $u\neq0$ und definieren die Folge $(u_n)_{n \in \mathbb{N}}$ durch
+ Sei dazu $(\xi)_{n \in \mathbb{N}}$ eine beliebige Folge mit $\xi_n \rightarrow \infty$. Wir zeigen, dass $\widetilde{Q}(\xi_{n})/\widetilde{P}(\xi_{n})\to0$ für $n \rightarrow \infty$ gilt. Da nach Satz~\ref{thm:2:2.1} der Quotient $\widetilde Q(\xi)/\widetilde P(\xi)$ beschränkt ist, reicht es zu zeigen, daß für jede Folge $\xi_n$, für welche der Quotient $\widetilde Q(\xi_n)/\widetilde P(\xi_n)$ konvergiert, dessen Grenzwert Null sein muß. Durch Wahl einer Teilfolge kann man weiter annehmen, daß $\xi_n-\xi_m\to\infty$ für $n,m\to\infty$, $n\ne m$ gilt. Für eine solche Folge konstruieren wir nun eine Folge von Testfunktionen.
+Sei dazu  $u\in \rmC^\infty_0(\Omega)$, $u\neq0$, und für $n\in\N$
 \begin{equation}
-u_n(x)=u(x)\frac{\e^{\i x \cdot \xi_n}}{\widetilde{P}(\xi_n)}\ \ \forall x \in \Omega, n \in \mathbb{N}.
+u_n(x)=u(x)\frac{\e^{\i x \cdot \xi_n}}{\widetilde{P}(\xi_n)}.
 \end{equation}
-Analog wie im Beweis von Satz \ref{thm:2:2.1} liefert die Produktregel
+Dann liefert die leibnizsche Produktregel
 \begin{equation}
-P(\D)u_n(x)=\e^{\i x \cdot \xi_n}\sum_\alpha\frac{P^{(\alpha)}(\xi_n)}{\widetilde{P}(\xi_n)}\frac{D^\alpha u(x)}{\alpha!}.
+P(\D)u_n(x)=\e^{\i x \cdot \xi_n}\sum_\alpha\frac{P^{(\alpha)}(\xi_n)}{\widetilde{P}(\xi_n)}\frac{\D^\alpha u(x)}{\alpha!}
 \end{equation}
-und damit eine Konstante $C>0$ mit
+und wir finden Konstante $C>0$ mit
 \begin{equation}\label{eq:2:PDunb}
 \norm{P(\D)u_n}\leq C.
 \end{equation}
-Wir zerlegen nun
+Ausmultiplizieren liefert nun
 \begin{equation}\label{eq:2:kz}
-\norm{Q(\D)u_n-Q(\D)u_m}^2=\norm{Q(\D)u_n}^2+\norm{Q(\D)u_m}^2-\delta_{nm},
+\norm{Q(\D)u_n-Q(\D)u_m}^2=\norm{Q(\D)u_n}^2+\norm{Q(\D)u_m}^2-2\Re\spro{Q(\D)u_n}{Q(\D)u_m}, 
 \end{equation}
-wobei
+wobei das Innenprodukt durch
 \begin{equation}
-\delta_{nm}=2\Re\left\{\sum_{\alpha,\beta}\frac{Q^{(\alpha)}(\xi_n)}{\widetilde{P}(\xi_n)}\frac{\cc{Q^{(\beta)}(\xi_n)}}{\widetilde{P}(\xi_n)}
-\frac1{\alpha!\beta!}\int \D^\alpha u\cc{\D^\beta u}\e^{\i x \cdot(\xi_n-\xi_m)}\d  x\right\}.
+\spro{Q(\D)u_n}{Q(\D)u_m}=
+\sum_{\alpha,\beta}\frac{Q^{(\alpha)}(\xi_n)}{\widetilde{P}(\xi_n)}\frac{\cc{Q^{(\beta)}(\xi_n)}}{\widetilde{P}(\xi_n)}
+\frac1{\alpha!\beta!}\int_\Omega \e^{\i x \cdot(\xi_n-\xi_m)} \D^\alpha u(x) \cc{\D^\beta u(x) }\d  x
 \end{equation}
-Um $\delta_{nm}\to0$ zu erreichen setzen wir voraus, dass $\xi_n-\xi_m\to\infty$, für $n,m\to\infty$, $n\neq m$ gilt. Ansonsten kann man ebenfalls eine entsprechende Teilfolge betrachten.
-Da die Faktoren $Q^{(\alpha)}(\xi_n)/\widetilde{P}(\xi_n)$ nach Satz \ref{thm:2:2.1} beschränkt und $\D^\alpha u\cc{\D^\beta u}$ integrierbar sind, folgt mit dem Riemannschen Lemma $\delta_{nm}\to0$ für $n,m\to\infty$, $n\neq m$.
-Aufgrund der Kompaktheit finden wir eine konvergente Teilfolge $(Q(\D)u_{n_k})_{k \in \mathbb{N}}$, sodass aus \eqref{eq:2:kz} und Satz \ref{thm:2:2.1}
+gegeben ist. Da die Faktoren $Q^{(\alpha)}(\xi_n)/\widetilde{P}(\xi_n)$ nach Satz \ref{thm:2:2.1} beschränkt und $\D^\alpha u\cc{\D^\beta u}$ integrierbar sind, folgt mit dem Riemann--Lebesue-Lemma $\spro{Q(\D)u_n}{Q(\D)u_m}\to0$ für $n,m\to\infty$, $n\neq m$. Aufgrund der Kompaktheit finden wir eine Teilfolge $(u_{n_k})_{k\in\N}$ für die $(Q(\D)u_{n_k})_{k \in \mathbb{N}}$ konvergiert. Damit muß nach \eqref{eq:2:kz}  aber $\|Q(\D)u_{n_k}\|\to0$, $k\to\infty$, gelten und somit 
 \begin{equation}
-\norm{Q(\D)u_{n_k}}^2=\sum_{\alpha,\beta}\frac{\abs{Q(\xi_{n_k})}^2}{\widetilde{P}(\xi_{n_k})^2} \underbrace{\frac{1}{\alpha! \beta!}\int \D_\alpha u \overline{\D_\beta u} \d x}_{=\Psi_{\alpha \beta}} \longrightarrow 0
+\norm{Q(\D)u_{n_k}}^2=\sum_{\alpha,\beta}\frac{Q^{(\alpha)}(\xi_{n_k}) \overline{Q^{(\beta)}(\xi_{n_k})}}{\widetilde{P}(\xi_{n_k})^2} \underbrace{\frac{1}{\alpha! \beta!}\int \D_\alpha u \overline{\D_\beta u} \d x}_{=\Psi_{\alpha \beta}} \longrightarrow 0
 \end{equation}
-und damit auch 
+und damit wegen der Äquivalenz der Innenprodukte in \eqref{eq:2.8} auch 
 \begin{equation}
-\frac{\widetilde{Q}(\xi_{n_k})^2}{\widetilde{P}(\xi_{n_k})^2} \longrightarrow 0
+\frac{\widetilde{Q}(\xi_{n_k})}{\widetilde{P}(\xi_{n_k})} \longrightarrow 0.
 \end{equation}
-folgt.
 \end{proof}
 \begin{exa}
 Wir betrachten einen Differentialausdruck $P(\D)$, welcher durch
