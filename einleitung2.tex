@@ -34,3 +34,24 @@ und da $u=fu$ folgt insbesondere
 \end{align}
 Mit Linearität folgt die Behauptung.
 \end{proof}
+
+Wir betrachten im folgenden allgemeiner Operatoren $P : \rmC_0^\infty(\Omega) \to \rmC^\infty(\Omega)$ und deren Beschreibung durch ein \eIndex[Pseudodifferentialoperator]{Symbol}
+\begin{equation}
+    \sigma_P(\chi; x,\xi) = \e^{-\i x\cdot\xi} P( \chi(x) \e^{\i x\cdot\xi}).
+\end{equation}  
+Dabei sei $\chi\in\rmC_0^\infty(\Omega)$ kompakt getragen mit $\chi(x)=1$ auf einer kompakten Teilmenge $\omega\Subset\Omega$. 
+Dann gilt für jedes $u\in\rmC_0^\infty(\omega)$ 
+\begin{equation}
+   P u (x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \sigma_P(\chi; x,\xi) \widehat u(\xi) \d\xi.
+\end{equation}
+Der Operator $P$ wird als \eIndex{Pseudodifferentialoperator} der \eIndex[Pseudodifferentialoperator]{Ordnung} $m$ bezeichnet, falls jedes so entstehende Symbol 
+$\sigma_P(\chi;\cdot,\cdot)$ zur nachfolgend definierten \eIndex{Symbolklasse} $S^m(\Omega\times\R^n)$ gehört.
+
+\begin{df}
+Eine Funktion $\sigma\in\rmC^\infty(\Omega\times\R^n)$ gehört zur Symbolklasse $S^m(\Omega\times\R^n)$ falls
+\begin{equation} 
+  \sup_{x\in K}  |  \partial_x^\beta\partial_\xi^\alpha \sigma(x,\xi) | \le C_{K,\alpha,\beta} \langle\xi\rangle^{m-|\alpha|}
+\end{equation}
+für alle Kompakta $K\Subset\Omega$ und alle Multiindices $\alpha,\beta\in\N^n_0$ gilt. Dabei bezeichnet $\langle\xi\rangle = \sqrt{1+|\xi|^2}$.
+\end{df}
+
