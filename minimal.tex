@@ -1,8 +1,8 @@
 % !TEX root = main.tex
 \chapter{Minimale Operatoren}
 
-Ein erstes Ziel in dieses Kapitels ist es, den Vergleich der Stärke (Definition \ref{df:1:1.2})
-zweier Differentialausdrücke mit konstanten Koeffizienten auf einen Vergleich ihrer Symbole zurückzuführen.
+Ein erstes Ziel dieses Kapitels ist es, den Vergleich der Stärke
+zweier Differentialausdrücke mit konstanten Koeffizienten  (Definition \ref{df:1:1.2})  auf einen Vergleich ihrer Symbole zurückzuführen. 
 
 \section{Die Stärke von Differentialausdrücken mit konstanten Koeffizienten}
 
@@ -16,27 +16,27 @@ für alle $u\in\rmC_0^\infty(\R^n)$ gilt. Man beachte, daß in diesem Falle jede
 \end{equation}
 ersetzt werden, wobei $\til{P}$ dem Polynom $P$ durch
 \begin{equation}\label{eq:2:2}
-\til{P}(\zeta)^2:=\sum_\alpha\abs{P^{(\alpha)}(\zeta)}^2,\qquad \zeta=\xi+\i\eta \in\C^n
+\til{P}(\zeta)^2=\sum_\alpha\abs{P^{(\alpha)}(\zeta)}^2,\qquad \zeta=\xi+\i\eta \in\C^n
 \end{equation}
 zugeordnet wird und $\widetilde Q$ analog definiert sei. Dabei bezeichne 
 \begin{equation}
-P^{(\alpha)}(\xi):=\partial^\alpha P(\xi)
+P^{(\alpha)}(\xi)=\partial^\alpha P(\xi)
 \end{equation}
-die $\alpha$-te Ableitung von $P$. Es wird sich zeigen, daß die Bedingung \eqref{eq:2:1} genau dann gilt, wenn $\mcQ$ schwächer als $\mcP$ ist.
+die $\alpha$-te Ableitung des Polynoms $P(\xi$. Es wird sich zeigen, daß die Bedingung \eqref{eq:2:1} genau dann gilt, wenn $\mcQ$ schwächer als $\mcP$ ist.
 
 In den folgenden Betrachtungen benötigt man häufig die leibnizsche Formel
 \begin{equation}\label{eq:2:leib}
 \forall u,v\in \rmC^\infty(\Omega) \quad:\quad P(\D)(uv)=\sum_{\alpha}(P^{(\alpha)}(\D)v)\left(\frac{\D^\alpha u}{\alpha!}\right).
 \end{equation} 
-Für $P(\D)=\D^\alpha$ ist dies die gewöhnliche Leibnizregel und somit folgt \eqref{eq:2:leib} aus Linearitätsgründen. Wir treffen weiter folgende Konvention:
+Für $P(\D)=\D^\alpha$ ist dies die gewöhnliche Leibnizregel, allgemein folgt \eqref{eq:2:leib} unter Ausnutzung der Linearität. Wir treffen weiter folgende Konvention:
 Im Falle griechischer Indizes
 ist die Ableitung nach einem Multiindex $\alpha\in\N^n_0$ gemeint,
 im Fall lateinischer Indizes oder Zahlen definieren wir
 \begin{equation}
-P^{(k_1,\dots,k_l)}(\xi):=\partial_{k_1}\cdots\partial_{k_l}P(\xi).
+P^{(k_1,\dots,k_l)}(\xi)=\partial_{k_1}\cdots\partial_{k_l}P(\xi).
 \end{equation}
 
-\begin{thm}\label{thm:2:2.1}
+\begin{thm}[{\cite[Theorem~2.1]{Hormander:1955}}]\label{thm:2:2.1}
 Sei $\Omega$ ein beschränktes Gebiet.
 Der Differentialausdruck $\mcQ$ ist genau dann schwächer als $\mcP$,
 wenn
@@ -58,7 +58,7 @@ Dann gilt für ein $C>0$ und alle $u\in\rmC_0^\infty(\Omega)$ die Ungleichung
 \norm{\mcQ u}^2\leq C(\norm{\mcP u}^2+\norm{u}^2).
 \end{equation}
 Für jedes $\xi\in\R^n$ und ein festes $\psi\in \rmC^\infty_0(\Omega)$, $\psi\neq0$,
-definieren wir $\psi_\xi(x):=\e^{\i x\cdot\xi}\psi(x)$.
+definieren wir $\psi_\xi(x)=\e^{\i x\cdot\xi}\psi(x)$.
 Dies bringt durch die Formel von Leibniz die Ableitungen von $P(\xi)$ ins Spiel
 \begin{equation}\label{eq:2.5}
 P(\D)\psi_\xi(x)=\e^{\i x\cdot\xi}\sum_\alpha P^{(\alpha)}(\xi)\frac{\D^\alpha\psi(x)}{\alpha!},
@@ -66,7 +66,7 @@ P(\D)\psi_\xi(x)=\e^{\i x\cdot\xi}\sum_\alpha P^{(\alpha)}(\xi)\frac{\D^\alpha\p
 analoges gilt für $Q(\D)$.
 Schreiben wir kurz
 \begin{equation}\label{eq:2.6}
-\Psi_{\alpha\beta}:=\frac1{\alpha!\beta!}\spro{\D^\alpha\psi}{\D^\beta\psi},
+\Psi_{\alpha\beta}=\frac1{\alpha!\beta!}\spro{\D^\alpha\psi}{\D^\beta\psi},
 \end{equation}
 so liest sich Ungleichung \eqref{eq:2:4} mit $u=\psi_\xi$ als
 \begin{equation}\label{eq:2.7}
@@ -117,7 +117,7 @@ mit $C_{\mcP,\Omega}>0$ unabhängig von $u\in\rmC_0^\infty(\Omega)$ und $\alpha\
 Der Beweis zeigt insbesondere, daß in Formel \eqref{eq:thm:2:2.1} die Funktion $\til{Q}(\xi)$ durch $|Q(\xi)|$ ersetzt werden kann.
 Definieren wir weiterhin
 \begin{equation}
-W(\mcP):=\{\mcQ=Q(\D):\mcQ~\text{ist schwächer als}~\mcP\},
+W(\mcP)=\{\mcQ=Q(\D):\mcQ~\text{ist schwächer als}~\mcP\},
 \end{equation}
 so ist wegen $|Q_1(\xi)+Q_2(\xi)|^2\leq2(|Q_1(\xi)|^2+|Q_2(\xi)|^2)$
 die Menge $W(\mcP)$ ein $\C$-Vektorraum.
@@ -130,11 +130,11 @@ Im folgenden entwickeln wir eine Methode, um sesquilineare Differentialausdrück
 Wir betrachten dazu für $u,v\in\rmC_0^\infty(\Omega)$
 \begin{equation}
 F(\D,\overline{\D})u\bar{v}
-:=\sum_{\alpha,\beta}a_{\alpha\beta}(\D^\alpha u)(\cc{\D^\beta v}),
+=\sum_{\alpha,\beta}a_{\alpha\beta}(\D^\alpha u)(\cc{\D^\beta v}),
 \end{equation}
 mit Koeffizienten $a_{\alpha\beta}\in\C$. Uns interessieren insbesondere die Terme
 \begin{equation}\label{eq:2:qf}
-\Phi_F(u):=\int F(\D,\overline{\D})u(x)\bar{u}(x)\d x
+\Phi_F(u)=\int F(\D,\overline{\D})u(x)\bar{u}(x)\d x
 =\int F(\xi,\xi)\abs{\hat{u}(\xi)}^2\d \xi,
 \end{equation}
 welche quadratische Formen $\Phi_F$ auf $\rmC^\infty_0(\Omega)\subseteq \rmL^2(\Omega)$
@@ -143,7 +143,7 @@ Es besteht eine eins-zu-eins Korrespondenz
 zwischen sesquilinearen Differentialausdrücken $F(\D,\cc{\D})$
 und den Symbolen
 \begin{equation}
-F(\zeta,\cc{\zeta}):=\sum_{\alpha,\beta}a_{\alpha\beta}\zeta^\alpha\cc{\zeta}^\beta, \zeta\in\C^n,
+F(\zeta,\cc{\zeta})=\sum_{\alpha,\beta}a_{\alpha\beta}\zeta^\alpha\cc{\zeta}^\beta, \zeta\in\C^n,
 \end{equation}
 analog zu den Symbolen von Differentialausdrücken.
 
@@ -156,7 +156,7 @@ Korrespondenz zwischen den auf reelle Werte eingeschränkten
 Symbolen $F(\xi,\xi)$, $\xi\in\R^n$,
 und den quadratischen Formen $\Phi_F$ gibt.
 
-\begin{lem}\label{lem:2:qfsym}
+\begin{lem}[{\cite[Lemma~2.5]{Hormander:1955}}]\label{lem:2:qfsym}
 Sei $\Omega$ ein beliebiges Gebiet.
 Dann gilt 
 \begin{equation}\label{eq:lem:2:qfsym}
@@ -166,12 +166,12 @@ genau dann, wenn $F(\xi,\xi)=0$ für alle $\xi\in\R^n$.
 \end{lem}
 \begin{proof}
 Es ist nur die Hinrichtung zu beweisen. Gelte also \eqref{eq:lem:2:qfsym}.
-Sei $u_\eta(x):=u(x)\e^{\i {x}\cdot{\eta}}$ für ein festes $u\in \rmC^\infty_0(\Omega)$, $u\neq0$.
+Sei $u_\eta(x)=u(x)\e^{\i {x}\cdot{\eta}}$ für ein festes $u\in \rmC^\infty_0(\Omega)$, $u\neq0$.
 Dann ist
 \begin{align}
 \int F(\D,\overline{\D})u_\eta(x)\overline{u_\eta(x)}\d x
 &=\int F(\xi,\xi)\abs{\widehat{u}(\xi-\eta)}^2\d \eta\notag\\&
-=\int F(\xi+\eta,\xi+\eta)\abs{\widehat{u}(\xi)}^2\d \xi=:q(\eta)
+=\int F(\xi+\eta,\xi+\eta)\abs{\widehat{u}(\xi)}^2\d \xi=q(\eta)
 \end{align}
 für alle $\eta\in\R^n$.
 Auf der rechten Seite steht wieder ein Polynom $q(\eta)$ in $\eta\in\R^n$
@@ -203,7 +203,7 @@ F(\zeta,\bar{\zeta})=\i\sum_{k=1}^n(\zeta_k-\bar{\zeta}_k)G_k(\zeta,\bar{\zeta})
 \end{equation}
 \end{subequations}
 für $\zeta=\xi+\i\eta$ mit $\xi,\eta\in\R^n$.
-\begin{lem}\label{lem:2:2.2}
+\begin{lem}[{\cite[Lemma~2.2]{Hormander:1955}}]\label{lem:2:2.2}
 Ein Polynom $F(\zeta,\overline{\zeta})$ in $\zeta=\xi+\i\eta$ und $\overline{\zeta}=\xi-\i\eta$
 kann genau dann in der Form \eqref{eq:2.15b} dargestellt werden,
 wenn $F(\xi,\xi)=0$ für alle $\xi\in\R^n$ gilt.
@@ -222,13 +222,12 @@ mit den Entwicklungspunkten $(\xi,0)\in\R^{2n}$.
 \end{proof}
 
 Die Polynome $G_k(\zeta,\overline{\zeta})$ sind nicht eindeutig durch $F(\zeta,\overline\zeta)$ bestimmt.
-%Doch aufgrund von Lemma \ref{lem:2:qfsym} stört das nicht.
 Mit Hilfe einer speziellen quadratischen Differentialform und obiger Formel
 gewinnen wir folgende Ungleichung,
 mit der wir die Ableitungen der Differentialausdrücke kontrollieren können.
 
 \begin{lem}
-Sei $\Omega$ ein Gebiet, so dass für ein $k\in\{1,\ldots,n\}$ der $k$-Durchmesser $B_k:=\sup_{x,y\in\Omega}\abs{x_k-y_k}$ endlich ist. Dann gilt
+Sei $\Omega$ ein Gebiet, so dass für ein $k\in\{1,\ldots,n\}$ der $k$-Durchmesser $B_k=\sup_{x,y\in\Omega}\abs{x_k-y_k}$ endlich ist. Dann gilt
 für Differentialausdrücke $P(\D)$ und $Q(\D)$, sowie alle Funktionen $u\in\rmC_0^\infty(\Omega)$ die Ungleichung
 \begin{equation}\label{eq:lem:2:2.4}
 \abs{\spro{P^{(k)}(\D)u}{\overline{Q}(\D)u}}\leq\norm{P(\D)u}\left(\norm{\overline{Q}^{(k)}(\D)u}+B_k\norm{\overline{Q}(\D)u}\right).
@@ -238,7 +237,7 @@ für Differentialausdrücke $P(\D)$ und $Q(\D)$, sowie alle Funktionen $u\in\rmC
 \begin{proof}
 Wir betrachten den quadratischen Differentialausdruck mit dem Symbol
 \begin{equation}\label{eq:2:spsym}
-F(\zeta,\bar{\zeta}):=P(\zeta)Q(\bar{\zeta})-Q(\zeta)P(\bar{\zeta}).
+F(\zeta,\bar{\zeta})=P(\zeta)Q(\bar{\zeta})-Q(\zeta)P(\bar{\zeta}).
 \end{equation}
 Dieser erfüllt offensichtlich $F(\xi,\xi)=0$ für alle $\xi\in\R^n$.
 Nach Lemma \ref{lem:2:2.2} erhalten wir,
@@ -275,7 +274,7 @@ Also erhalten wir mit Cauchy-Schwarz
 und der Dreiecksungleichung die Ungleichung \eqref{eq:lem:2:2.4}.
 \end{proof}
 
-\begin{cor}\label{cor:2:2.5}
+\begin{cor}[{\cite[Lemma~2.7]{Hormander:1955}}]\label{cor:2:2.5}
 Ist $P(\xi)$ vom Grad $m$ in $\xi_k$, so gilt
 \begin{equation}\label{eq:cor:2:2.5}
 \norm{P^{(k)}(\D)u}\leq mB_k\norm{P(\D)u}
@@ -298,7 +297,7 @@ dann erhalten wir durch Kombination von \eqref{eq:2.28} und \eqref{eq:cor:2:2.5}
 und der Induktionsschritt  ist gezeigt.
 \end{proof}
 
-\begin{cor}\label{cor:2:2.6}
+\begin{cor}[{\cite[Lemma~2.8]{Hormander:1955}}]\label{cor:2:2.6}
 Für festes beschränktes Gebiet $\Omega$ und beliebiges $\alpha\in\N^n_0$ gilt
 \begin{equation}
 \forall u\in\rmC_0^\infty(\Omega)\quad:\quad \norm{P^{(\alpha)}(\D)u}\leq C_{m,\alpha,\Omega}\norm{P(\D)u},
@@ -314,7 +313,7 @@ Mehrfache Anwendung von Korollar \ref{cor:2:2.5}.
 
 Das letzte Korollar ist gerade der im Beweis
 von Satz \ref{thm:2:2.1} gebrauchte Baustein.
-Dabei können wir $C_{\mcP,\Omega}:=\max_{|\alpha|\le m} C_{m,\alpha,\Omega}$
+Dabei können wir $C_{\mcP,\Omega}=\max_{|\alpha|\le m} C_{m,\alpha,\Omega}$
 für die Konstante in \eqref{eq:2:wantedineq} wählen.
 
 \section{Beispiele und spezielle Symbole}
@@ -443,7 +442,7 @@ Als letztes Beispiel betrachten wir die ultrahyperbolische Gleichung\index{Diffe
 \begin{equation}
 \Delta_1u=\Delta_2u,
 \end{equation}
-mit $\Delta_1:=\partial_1^2+\dots+\partial_m^2$, $\Delta_2:=\partial^2_{m+1}+\dots+\partial^2_n$.
+mit $\Delta_1=\partial_1^2+\dots+\partial_m^2$, $\Delta_2=\partial^2_{m+1}+\dots+\partial^2_n$.
 Das korrespondierende Symbol ist $P(\xi)=\xi^2_1+\dots+\xi^2_m-(\xi^2_{m+1}+\dots+\xi^2_n)$.
 
 Ein Symbol $Q(\xi)$ ist genau dann gleich stark wie $P(\xi)$,
@@ -502,7 +501,7 @@ und der Operator aus Beispiel \ref{exa:2:hyper} vom Haupttyp,
 die anderen beiden nicht. Der Laplaceoperator ist als einziger der angegebenen Operatoren elliptisch.
 Wir geben nun Klassifikationen für diese Operatortypen.
 
-\begin{thm}\label{thm:2:2.9}
+\begin{thm}[{\cite[Theorem~2.3]{Hormander:1955}}]\label{thm:2:2.9}
 Ein Symbol $P(\xi)$ ist genau dann vom Haupttyp,
 wenn die partiellen Ableitungen $p^{(k)}(\xi)=\partial_k p(\xi)$
 des Hauptteils $p(\xi)$ für kein $\xi\in\R^n\setminus\{0\}$
@@ -643,7 +642,7 @@ nicht nur stetig, sondern auch kompakt ist, wobei wir dazu ebenfalls die regular
 Seien $V$ und $W$ zwei Banachräume und $T: V \supset \mathcal{D}_T \rightarrow W$ ein linearer Operator. $T$ heißt \eIndex[Operator]{kompakt}, wenn er abgeschlossen ist und für jede Folge $(u_n)_{n \in \mathbb{N}}$ in $\mathcal{D}_T$ mit $\Vert u_n \Vert \leq 1 \ \forall n \in \mathbb{N}$ eine Teilfolge $({u_n}_k)_{k \in \mathbb{N}}$ existiert, so dass die Folge $({Tu_n}_k)_{k\in \mathbb{N}}$ in $W$ konvergiert.
 \end{df}
 Wir sagen im Folgenden $P(\D)$ dominiert $Q(\D)$, wenn die Abbildung aus \eqref{eq:2:map} kompakt ist.
-\begin{thm}\label{Abbildung kompakt}
+\begin{thm}[{\cite[Theorem~2.15]{Hormander:1955}}]\label{Abbildung kompakt}
 Der Operator $P(\D)$ dominiert genau dann den Operator $Q(\D)$,
 wenn folgendes gilt:
 \begin{equation}\label{eq:2:tozero}
@@ -710,7 +709,7 @@ Wir nehmen nun an, dass $P(\D)$ den Operator $Q(\D)$ dominiert und zeigen, dass 
  Ist $(\xi)_{n \in \mathbb{N}}$ eine Folge mit $\xi_n \rightarrow \infty$, dann genügt es zu zeigen, dass $\til{Q}(\xi_{n})/\til{P}(\xi_{n})\to0, \ n \rightarrow \infty$ gilt.
 Wir nehmen dazu ein beliebiges $u\in C^\infty_0(\Omega)$, $u\neq0$ und definieren die Folge $(u_n)_{n \in \mathbb{N}}$ durch
 \begin{equation}
-u_n(x):=u(x)\frac{\e^{\i x \cdot \xi_n}}{\til{P}(\xi_n)}\ \ \forall x \in \Omega, n \in \mathbb{N}.
+u_n(x)=u(x)\frac{\e^{\i x \cdot \xi_n}}{\til{P}(\xi_n)}\ \ \forall x \in \Omega, n \in \mathbb{N}.
 \end{equation}
 Analog wie im Beweis von Satz \ref{thm:2:2.1} liefert die Produktregel
 \begin{equation}
@@ -733,7 +732,7 @@ Um $\delta_{nm}\to0$ zu erreichen setzen wir voraus, dass $\xi_n-\xi_m\to\infty$
 Da die Faktoren $Q^{(\alpha)}(\xi_n)/\til{P}(\xi_n)$ nach Satz \ref{thm:2:2.1} beschränkt und $\D^\alpha u\cc{\D^\beta u}$ integrierbar sind, folgt mit dem Riemannschen Lemma $\delta_{nm}\to0$ für $n,m\to\infty$, $n\neq m$.
 Aufgrund der Kompaktheit finden wir eine konvergente Teilfolge $(Q(\D)u_{n_k})_{k \in \mathbb{N}}$, sodass aus \eqref{eq:2:kz} und Satz \ref{thm:2:2.1}
 \begin{equation}
-\norm{Q(\D)u_{n_k}}^2=\sum_{\alpha,\beta}\frac{\abs{Q(\xi_{n_k})}^2}{\til{P}(\xi_{n_k})^2} \underbrace{\frac{1}{|\alpha|! |\beta|!}\int \D_\alpha u \overline{\D_\beta u} \d x}_{=:\Psi_{\alpha \beta}} \longrightarrow 0
+\norm{Q(\D)u_{n_k}}^2=\sum_{\alpha,\beta}\frac{\abs{Q(\xi_{n_k})}^2}{\til{P}(\xi_{n_k})^2} \underbrace{\frac{1}{|\alpha|! |\beta|!}\int \D_\alpha u \overline{\D_\beta u} \d x}_{=\Psi_{\alpha \beta}} \longrightarrow 0
 \end{equation}
 und damit auch 
 \begin{equation}
@@ -744,7 +743,7 @@ folgt.
 \begin{exa}
 Wir betrachten einen Differentialausdruck $P(\D)$, welcher durch
 \begin{equation}
-P(\D) := -\i\partial_1 + \partial_2^2
+P(\D) = -\i\partial_1 + \partial_2^2
 \end{equation}
 gegeben ist. Für das dazugehörige Symbol $P(\xi)$ ergibt sich dann
 \begin{equation}
@@ -775,10 +774,11 @@ Wir werden im Folgenden zeigen, dass der Operator $P_0^{-1}$ genau dann kompakt 
 \begin{df}
 Sei $P(\xi)$ das Symbol eines Differentialausdrucks $P(\D)$. Wir sagen dass $P(\xi)$ vollständig ist, wenn folgendes gilt:
 \begin{align*}
-\Lambda(P):=\{ \nu \in \mathbb{R}^n| \ \ \forall \xi \in \mathbb{C}^n, \forall t \in \mathbb{R}: P(\xi + t\nu) = P(\xi)  \} = \{0\}.
+\Lambda(P)=\{ \nu \in \mathbb{R}^n| \ \ \forall \xi \in \mathbb{C}^n, \forall t \in \mathbb{R}: P(\xi + t\nu) = P(\xi)  \} = \{0\}.
 \end{align*}
 \end{df}
-\begin{lem}\label{Lema:homogene Polynome} Sei $Q(\xi)$ ein homogenes Polynom vom Grad $m \in \mathbb{N}$ und  $\nu \in \mathbb{R}^n$ mit
+\begin{lem}[{\cite[Lemma~2.13]{Hormander:1955}}]\label{Lema:homogene Polynome} 
+Sei $Q(\xi)$ ein homogenes Polynom vom Grad $m \in \mathbb{N}$ und  $\nu \in \mathbb{R}^n$ mit
 \begin{align*}
 \D^{\alpha}Q(\nu)=0 \ \forall \alpha \in \mathbb{N}_0^{n}, \ |\alpha| = m-1,
 \end{align*}
@@ -804,7 +804,7 @@ Q(\xi + t\nu) = Q(\xi).
 Also gilt $\nu \in \Lambda(Q)$.
 \end{proof}
 Mit diesem Lemma und Satz \ref{thm:2:2.1} können wir nun das Kompaktheitskriterium von $P_0^{-1}$ angeben.
-\begin{thm}
+\begin{thm}[{\cite[Theorem~2.17]{Hormander:1955}}]
 Der Operator $P_0^{-1}$ ist genau dann kompakt, wenn das zu $P(\D)$ dazugehörige Symbol $P(\xi)$ vollständig ist.
 \end{thm}
 \begin{proof}
@@ -835,7 +835,7 @@ D.h. es gilt $\Lambda(P) \subseteq \bigcap_{k \leq m} \Lambda (P_k)$ und die and
 \end{equation}
 folgern. Wir müssen also zeigen, dass $\tilde{P}(\xi) \rightarrow \infty$ für $\xi \rightarrow \infty$ gilt um Satz \ref{Abbildung kompakt} mit $Q(\xi) =1$ erneut anwenden zu können. Dafür zeigen wir, dass die Menge
 \begin{equation}
-M_C := \{\xi \in \mathbb{C}^n | \ \tilde{P}(\xi) \leq C\}
+M_C = \{\xi \in \mathbb{C}^n | \ \tilde{P}(\xi) \leq C\}
 \end{equation}
 für jedes $C$ modulo ${\Lambda(P_k)} \ \forall k \leq m$ beschränkt ist.
 \\ \textit{FEHLT} %Wir werden hierbei induktiv vorgehen. Für $\deg(P)=m=1$ ist die Beschränktheit klar. Wir nehmen also an, dass die Behauptung für Polynome vom Grad kleiner als $m$ gilt. Existiert ein Vektor $\xi_0$ mit $P^{\alpha}_m(\xi_0) = 0, \ \forall \alpha \in \mathbb{N}_0^n, |\alpha| = m-1$, dann gilt nach Lemma \ref{Lema:homogene Polynome} bereits $\xi_0 \in \Lambda(P_m)$. Damit ist klar, dass $\tilde{P}_m (\xi)$ in $M_C$ beschränkt ist
@@ -868,7 +868,7 @@ Wir können ohne Einschränkung $0 \in \Omega$ und $\psi(0)=1$  annehmen, woraus
 \end{equation}
 folgt. Für eine schnell-fallende Funktion $ \varphi \in \mathcal{S}$ aus dem Schwarzraum $S$ definieren wir
 \begin{equation}
-v(x):= (2 \pi)^{-\frac{n}{2}} \int_{\Omega} \frac{\varphi (\xi)}{\tilde{P}(\xi)}e^{\i x \cdot \xi} \d \xi,
+v(x)= (2 \pi)^{-\frac{n}{2}} \int_{\Omega} \frac{\varphi (\xi)}{\tilde{P}(\xi)}e^{\i x \cdot \xi} \d \xi,
 \end{equation}
 dann folgt mit Plancherel
 \begin{equation}\label{eq:abschneide phi}
