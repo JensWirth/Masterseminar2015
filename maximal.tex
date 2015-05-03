@@ -6,3 +6,40 @@
 
 
 \section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
+
+Im folgenden konstruieren wir eine Fundamentallösung, d.h. eine Distribution $E$ so dass
+\begin{equation}
+E*(P(D) u) = u, \quad u \in C_0^\infty(\R^n)
+\end{equation}
+gewisse Regularitätseigenschaften erfüllt.
+Um genauer zu sein,  wollen wir zeigen:
+\begin{thm}\label{fundamental_exist}
+Sei $P$ vollständig und von lokalem Typ, dann besitzt $P(D)$ eine Fundamentallösung $E$ mit 
+\begin{enumerate}
+\item Im Gebiet $\R^n\setminus\{0\}$ kann die Distribution $E$
+dargestellt werden durch eine unendlich differenzierbare Funktion $E(x)$
+\item Falls $u\in L^2(\R^n)$ mit kompakten Träger, so ist $P^{(\alpha)}(D) E*u$ eine lokal quadrat-integrierbare Funktion. 
+\end{enumerate}
+\end{thm}
+\begin{rem}
+Jede Fundamentallösung besitzt diese Eigenschaften und tatsächlich ist die Differenz zweier Fundamentallösungen unendlich oft differenzierbar wie wir später sehen werden.
+\end{rem}
+
+Zunächst einige Worte zur Beweisidee.  Falls $P(\xi)\neq 0$ für alle $\xi\in \mathbb R$, so ließe sich $E$ bestimmen aus
+\begin{equation}\label{distr1}
+E*u(x) = (2\pi)^{-n/2}\int e^{i\langle x, \xi \rangle} \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in C_0^\infty,
+\end{equation}
+oder äquivalent
+\begin{equation}\label{distr2}
+E(\check u)= (2\pi)^{-n/2} \int \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in C_0^\infty,
+\end{equation}
+wobei $\check u$ durch $\check u(x)=u(-x)$ gegeben ist. Wir überlegen uns also eine Verallgemeinerung von \ref{distr2}.
+
+\begin{proof}[Beweis von Satz \ref{fundamental_exist}]
+Wir werden diesen Beweis in einigen Schritten führen.
+\vspace{1mm}\\
+\textbf{Schritt 1:} \emph{Konstruktion einer Fundamentallösung.}
+Nach Theorem ?? ({\bf v}) gilt $|P(\xi)|\ge 1$ falls $\xi\in \mathbb R$ und $|\xi|\ge C$ mit geeigneter Konstante $C$.  Damit folgt $|P(\xi)\ge 1|$ falls $\xi_2^2+ \ldots + \xi_n^2 \ge C^2$.  
+
+Wir können annehmen, dass der Koeffizient vor der höchsten Potenz von $\xi_1$ von $P(\xi)$ konstant ist. Da die Nullstellen des Polynoms stetig von den Parametern abhängen, die nicht vor dem 
+\end{proof}
