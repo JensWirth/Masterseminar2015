@@ -835,17 +835,24 @@ D.h. es gilt $\Lambda(P) \subseteq \bigcap_{k \leq m} \Lambda (P_k)$ und die and
 \end{equation}
 folgern. Wir müssen also zeigen, dass $\tilde{P}(\xi) \rightarrow \infty$ für $\xi \rightarrow \infty$ gilt um Satz \ref{Abbildung kompakt} mit $Q(\xi) =1$ erneut anwenden zu können. Dafür zeigen wir, dass die Menge
 \begin{equation}
-M_C = \{\xi \in \mathbb{C}^n | \ \tilde{P}(\xi) \leq C\}
+M_C := \{\xi \in \mathbb{C}^n | \ \tilde{P}(\xi) \leq C\}
 \end{equation}
-für jedes $C$ modulo ${\Lambda(P_k)} \ \forall k \leq m$ beschränkt ist.
-\\ \textit{FEHLT} %Wir werden hierbei induktiv vorgehen. Für $\deg(P)=m=1$ ist die Beschränktheit klar. Wir nehmen also an, dass die Behauptung für Polynome vom Grad kleiner als $m$ gilt. Existiert ein Vektor $\xi_0$ mit $P^{\alpha}_m(\xi_0) = 0, \ \forall \alpha \in \mathbb{N}_0^n, |\alpha| = m-1$, dann gilt nach Lemma \ref{Lema:homogene Polynome} bereits $\xi_0 \in \Lambda(P_m)$. Damit ist klar, dass $\tilde{P}_m (\xi)$ in $M_C$ beschränkt ist
+für jedes $C$ modulo $\Lambda(P_k)$, d.h. im Quotientenraum $\mathbb{R}^n/{\Lambda(P_k)} \ \forall k \leq m$ beschränkt ist, da wir mit der Voraussetzung 
+\begin{align*}
+\Lambda(P) = \bigcap_{k \leq m} \Lambda (P_k) = \{0\}
+\end{align*}
+auf die Beschränktheit in $\mathbb{R}^n$ schließen können. Wir gehen hierbei induktiv vor.
+\\IA: 
+\\Sei $P(\xi) = \sum a_k \xi_k + b = a \cdot \xi + b$ mit $ a := (a_1, \ldots , a_n) \in \mathbb{R}^n , b \in \mathbb{R}$, dann gilt $\Lambda(P)=\{a\}^{\bot}$. Also ist $M_C$ mod $\{a\}^{\bot}$ als Teilmenge des Quotientenraumes $\mathbb{R}^n/\{a\}^{\bot}$ beschränkt.
+\\IS:
+\\Die Induktionsvoraussetzung lautet, dass die Aussage für Polynome $P$ mit $\deg(P)<m$ wahr ist.
 \end{proof}
 
-Wir wollen zum Abschluss des Kapitels ein weiteres Vergleichsresultat angeben welches ebenfalls aus dem Quotienten der regularisierten Symbole $\tilde{P}$ und $ \tilde{Q}$ hervorgeht. Es handelt sich hierbei um die Fortsetzung des Definitionsbereiches von $Q(\D)$ auf den des minimalen Operators $P_0^{-1}$.
+Wir wollen zum Abschluss des Kapitels ein weiteres Vergleichsresultat angeben welches ebenfalls aus dem Quotienten der regularisierten Symbole $\tilde{P}$ und $ \tilde{Q}$ hervorgeht. Es handelt sich hierbei um die Fortsetzung des Definitionsbereiches von $Q(\D)$ auf den des minimalen Operators $P_0$.
 \begin{thm}
 Sei $u \in \mathcal{D}_{P_0}$ eine Funktion aus dem Definitionsbereich des minimalen Operators $P_0$. Ist die Funktion $Q(\D)u$ stetig, dann gilt
 \begin{equation}\label{satz: bedingung stetigkeit}
-\int \frac{|Q(\xi)2}{\tilde{P}(\xi)^2} \d \xi < \infty.
+\int \frac{|Q(\xi)|^2}{\tilde{P}(\xi)^2} \d \xi < \infty.
 \end{equation}
 Ist andererseits \eqref{satz: bedingung stetigkeit} erfüllt, dann ist $Q(D)u$ stetig und es existiert für jedes $\varepsilon >0$ eine kompakte Menge $K \subseteq \Omega$ mit
 \begin{align*}
@@ -895,8 +902,7 @@ und damit
 \begin{equation}\label{eq:behauptung L2}
 \int_{\Omega} \frac{|Q(\xi)|^2}{\til{P}(\xi)^2} \d \xi < \infty.
 \end{equation}
-
-Gilt andererseits \eqref{eq:behauptung L2}, dann folgt für alle $u \in C_0^{\infty}(\Omega)$ mit Cauchy-Schwarz-Ungleichung:
+Gilt andererseits \eqref{eq:behauptung L2}, dann folgt für alle $u \in C_0^{\infty}(\Omega)$ mit der Cauchy-Schwarz-Ungleichung:
 \begin{align}
 |Q(\D)u(x)|^2 &=  |(2 \pi)^{-\frac{n}{2}} \int_{\Omega} Q(\xi) \widehat{u}(\xi) e^{\i x \cdot \xi} \d \xi |^2 
 \\ & \leq (2 \pi)^{-\frac{n}{2}} \int_{\Omega} \frac{|Q(\xi)|^2}{\til{P}(\xi)^2} \d \xi \int_{\Omega} \til{P}(\xi)^2 | \widehat{u}|^2 \d \xi = C \sum_{\alpha} \Vert P^{(\alpha)}(\D)u\Vert^2.
