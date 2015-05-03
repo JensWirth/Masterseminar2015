@@ -632,7 +632,7 @@ Dies impliziert nach obigem $a_k(\xi_b)\in W(\mcP_b)$.
 \end{proof}
 
 \section{Ein weiteres Vergleichsresultat}
-Wir wollen ein weiteres Vergleichsresultat angeben welches ebenfalls aus dem Quotienten der regularisierten Symbole $\widetilde{P}$ und $ \widetilde{Q}$ hervorgeht. Es handelt sich hierbei um die die Stetigkeit von $Q(\D) u$ für $u$ aus dem Definitionsbereich des minimalen Operators $P_0$. Das Resultat verallgemeinert den sobolevschen Einbettungssatz.
+Wir wollen ein weiteres Vergleichsresultat angeben, welches ebenfalls aus dem Quotienten der regularisierten Symbole $\widetilde{P}$ und $ \widetilde{Q}$ hervorgeht. Es handelt sich hierbei um die Stetigkeit von $Q(\D) u$ für $u$ aus dem Definitionsbereich des minimalen Operators $P_0$. Das Resultat verallgemeinert den sobolevschen Einbettungssatz.
 
 \begin{thm}[{\cite[Theorem~2.6]{Hormander:1955}}]
 Sei $Q(D)$ schwächer als $P(D)$. Angenommen, $Q(\D)u$ ist für jedes $u\in\mathcal D_{P_0}$ beschränkt. Dann gilt
@@ -817,24 +817,22 @@ P(\xi) = \xi_1 - \xi_2^2.
 \end{equation}
 Für jedes $\xi \not = 0$ gilt somit
 \begin{align}
-|P(\xi t)| \rightarrow \infty \ \text{für} \ t\in \mathbb{R} \ \text{und} \ t \rightarrow \infty,
+|P(\xi t)| \rightarrow \infty \qquad \text{für} \ t \rightarrow \infty,
 \end{align}
 aber nicht zwingend
 \begin{align}
-|P(\xi)| \rightarrow \infty \ \text{für} \ \xi \rightarrow \infty,
+|P(\xi)| \rightarrow \infty \qquad \text{für} \ \xi \rightarrow \infty,
 \end{align}
-falls man entlang der Parabel aus der Nullstellenmenge\begin{equation}
+da die Nullstellenmenge
+\begin{equation}
 N= \{ (\xi_1,\xi_2)\in \mathbb{R}^2 : \ \xi_1 = \xi_2^2 \}.
 \end{equation}
-läuft. Betrachtet man jedoch das regularisierte Symbol
+parabelförmig ins Unendliche läuft. Betrachtet man jedoch das regularisierte Symbol
 \begin{equation}
 \widetilde{P}(\xi)^2 = \sum_{|\alpha| \leq 2} |P^{\alpha}(\xi)|^2 = |\xi_1 - \xi_2^2|^2 + |2\xi_2|^2 + 2,
 \end{equation}
-dann gilt $\widetilde{P}(\xi) \rightarrow \infty$ für $\xi \rightarrow \infty$. Setzen wir den Operator $Q(\D)=I$, dann gilt
-\begin{equation}
-\frac{1}{\widetilde{P}(\xi)} \rightarrow 0 \ \text{für} \ \xi \rightarrow \infty,
-\end{equation}
-d.h. wir können Satz \ref{thm:2:2.1} anwenden und bekommen die Kompaktheit des inversen Operators $P_0^{-1}$.
+dann gilt $\widetilde{P}(\xi) \rightarrow \infty$ für $\xi \rightarrow \infty$. Speziell mit $Q(\D)=I$ impliziert obiger Satz somit aus
+$1/\widetilde P(\xi)\to0$ die Kompaktheit der Inversen $P_0^{-1}$.
 \end{exa}
 Wir werden im Folgenden zeigen, dass der Operator $P_0^{-1}$ genau dann kompakt ist, wenn das dazugehörige Symbol $P(\xi)$ von allen Variablen abhängt. Dazu benötigen wir zunächst folgende Definition.
 \begin{df}
