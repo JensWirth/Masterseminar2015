@@ -681,7 +681,7 @@ und \eqref{eq:abschneide null}, \eqref{eq:abschatz phi} folgt schließlich
 \begin{equation}
 |Q(\D)\tilde{u}(0)|^2 = |Q(\D)v(0)|^2 = \left|(2 \pi)^{-\frac{n}{2}} \int \frac{Q(\xi)}{\widetilde{P}(\xi)} \varphi(\xi) \d \xi \right|^2 \leq {C} \Vert \varphi \Vert^2
 \end{equation}
-und da $\varphi\in\mathscr S(\R^n)$ beliebig war folgt
+und da $\varphi\in\mathscr S(\R^n)$ beliebig war folgt mit dem Darstellungssatz von Fréchet-Riesz
 \begin{equation}\label{eq:behauptung L2}
 \int \frac{|Q(\xi)|^2}{\widetilde{P}(\xi)^2} \d \xi < \infty
 \end{equation}
@@ -774,8 +774,8 @@ und damit die Konvergenz der Teilfolge $\left(Q(\D)u_{n_k} \right)_{k \in \mathb
 Da die Funktionen $P(\D)u$ für $u\in \rmC^\infty_0(\Omega)$ dicht in $\mcR_{P_0}$ liegen, dominiert $P(\D)$ den Operator $Q(\D)$.
 $\bullet$\qquad{\it Hinrichtung.}
 Wir nehmen nun an, dass $P(\D)$ den Operator $Q(\D)$ dominiert und zeigen, dass \eqref{eq:2:tozero} erfüllt ist.
- Sei dazu $(\xi)_{n \in \mathbb{N}}$ eine beliebige Folge mit $\xi_n \rightarrow \infty$. Wir zeigen, dass $\widetilde{Q}(\xi_{n})/\widetilde{P}(\xi_{n})\to0$ für $n \rightarrow \infty$ gilt. Da nach Satz~\ref{thm:2:2.1} der Quotient $\widetilde Q(\xi)/\widetilde P(\xi)$ beschränkt ist, reicht es zu zeigen, daß für jede Folge $\xi_n$, für welche der Quotient $\widetilde Q(\xi_n)/\widetilde P(\xi_n)$ konvergiert, dessen Grenzwert Null sein muß. Durch Wahl einer Teilfolge kann man weiter annehmen, daß $\xi_n-\xi_m\to\infty$ für $n,m\to\infty$, $n\ne m$ gilt. Für eine solche Folge konstruieren wir nun eine Folge von Testfunktionen.
-Sei dazu  $u\in \rmC^\infty_0(\Omega)$, $u\neq0$, und für $n\in\N$
+ Sei dazu $(\xi_n)_{n \in \mathbb{N}}$ eine beliebige Folge in $\mathbb{R}^n$ mit $\xi_n \rightarrow \infty$. Wir zeigen, dass $\widetilde{Q}(\xi_{n})/\widetilde{P}(\xi_{n})\to0$ für $n \rightarrow \infty$ gilt. Da nach Satz~\ref{thm:2:2.1} der Quotient $\widetilde Q(\xi)/\widetilde P(\xi)$ beschränkt ist, reicht es zu zeigen, daß für jede Folge $(\xi_n)_{n \in \mathbb{N}}$, für welche der Quotient $\widetilde Q(\xi_n)/\widetilde P(\xi_n)$ konvergiert, dessen Grenzwert Null sein muß. Durch Wahl einer Teilfolge kann man weiter annehmen, daß $\xi_n-\xi_m\to\infty$ für $n,m\to\infty$, $n\ne m$ gilt. Für eine solche Folge konstruieren wir nun eine Folge von Testfunktionen.
+Sei dazu  $u\in \rmC^\infty_0(\Omega)$, $u\neq0$, und für $n\in\N$ definieren wir
 \begin{equation}
 u_n(x)=u(x)\frac{\e^{\i x \cdot \xi_n}}{\widetilde{P}(\xi_n)}.
 \end{equation}
@@ -832,7 +832,7 @@ parabelförmig ins Unendliche läuft. Betrachtet man jedoch das regularisierte S
 \widetilde{P}(\xi)^2 = \sum_{|\alpha| \leq 2} |P^{\alpha}(\xi)|^2 = |\xi_1 - \xi_2^2|^2 + |2\xi_2|^2 + 2,
 \end{equation}
 dann gilt $\widetilde{P}(\xi) \rightarrow \infty$ für $\xi \rightarrow \infty$. Speziell mit $Q(\D)=I$ impliziert obiger Satz somit aus
-$1/\widetilde P(\xi)\to0$ die Kompaktheit der Inversen $P_0^{-1}$.
+$1/\widetilde P(\xi)\to0$ die Kompaktheit von $P_0^{-1}$.
 \end{exa}
 Wir werden im Folgenden zeigen, dass der Operator $P_0^{-1}$ genau dann kompakt ist, wenn das dazugehörige Symbol $P(\xi)$ von allen Variablen abhängt. Dazu vorbereitend geben wir zunächst folgende Definition.
 \begin{df}
@@ -909,7 +909,7 @@ $P(\xi) =  a \cdot \xi + b$ mit $ a  \in \mathbb{R}^n$, $b \in \mathbb{R}$. Für
 \noindent{\em Induktionsschritt:} Angenommen, die Aussage wurde schon für alle Polynome vom Grad kleiner $m$ gezeigt. Sei weiter $P$ vom Grad $m$.
 Nach Definition gilt $\widetilde{P}(\xi) \leq C$ für alle $\xi \in M_{C,P}$, insbesondere also auch $|P^{(\alpha)}(\xi)|\leq C$ für jeden Multiindex $\alpha$. Für $|\alpha|=m-1$ unterscheiden sich $P^{(\alpha)}(\xi)$ und $P_m^{(\alpha)}(\xi)$ nur um eine Konstante, d.h. es gilt $P^{(\alpha)}-P_m^{(\alpha)}=p_\alpha \in\mathbb{C}$ und damit $|P_m^{(\alpha)}(\xi)| \leq C'$ für eine neue Konstante $C'>0$ und alle $\xi \in M_{C,P}$. Gilt nun  $P_m^{(\alpha)}(\xi)=0$ für $\xi\in\R^n$ und alle $|\alpha|=m-1$, 
 so folgt mit Lemma \ref{Lema:homogene Polynome}, daß $\xi \in \Lambda(P_m)$. 
-Damit ist der Nullraum der affin-linearen Abbildung $\xi \mapsto ( P^{(\alpha)}_m(\xi))_{|\alpha|=m-1} \in\C^M$, $M=\#\{\alpha : |\alpha|=m-1\}$, enthalten in $\Lambda(P_m)$
+Damit ist der Nullraum der linearen Abbildung $\xi \mapsto ( P^{(\alpha)}_m(\xi))_{|\alpha|=m-1} \in\C^M$, $M=\#\{\alpha : |\alpha|=m-1\}$, enthalten in $\Lambda(P_m)$
 und somit gilt
 \begin{equation}
     \widetilde {P}(\xi)^2 \ge \sum_{|\alpha|=m-1} |P^{(\alpha)}(\xi)|^2 =\sum_{|\alpha|=m-1} |P^{(\alpha)}_m(\xi)+p_\alpha |^2  \ge C'' \dist( \xi,\Lambda(P_m) )^2 - C'''
