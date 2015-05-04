@@ -104,15 +104,31 @@ Weiter gilt für Multiindices $\beta,\gamma\in\N_0^n$
 und obige Abschätzung liefert $\rho_N\in S^{m-N}_{\rm loc}(\Omega\times\R^n)$. Das impliziert die Behauptung.
 \end{proof}
 
-Pseudodifferentialoperatoren auf Gebieten kann man nicht notwendigerweise verketten. Wir bezeichnen einen Pseudodifferentialoperator $P$ als \eIndex[Pseudodifferentialoperator]{eigentlich getragen}, falls er $\rmC_0^\infty(\Omega)$ nach $\rmC_0^\infty(\Omega)$ abbildet. Dies gilt zum Beispiel dann, wenn das Symbol in $x$ kompakt getragen ist. 
-
-%
-%Analog ergibt sich eine erste Kompositionsformel für Pseudodifferentialoperatoren. Es gilt für zwei solche Operatoren $P$ und $Q$ und deren Symbole im Sinne von \eqref{eq:6:6.6}
-%\begin{equation}
-%  \sigma_Q(gPf; x,\xi) \sim \sum_{\alpha} \frac1{\alpha!} \big(\partial_\xi^\alpha\sigma_Q(g; x,\xi) \big) \big(\D_x^\alpha \sigma_P(f;x,\xi)\big).  
-%\end{equation}
-
-BLA
+Pseudodifferentialoperatoren auf Gebieten kann man nicht notwendigerweise verketten. Wir bezeichnen einen Pseudodifferentialoperator $P$ als \eIndex[Pseudodifferentialoperator]{eigentlich getragen}, falls er $\rmC_0^\infty(\Omega)$ nach $\rmC_0^\infty(\Omega)$ abbildet. Dies gilt zum Beispiel dann, wenn das Symbol in $x$ kompakt getragen ist. Allgemeiner gibt es für eigentlich getragene Operatoren zu jedem Kompaktum $K\Subset\Omega$ ein Kompaktum $L\Subset\Omega$, so daß für $u\in\rmC_0^\infty(K)$ stets $\supp Pu \subset L$ gilt. Sei nun $f\in\rmC_0^\infty(K)$. Dann gilt für einen zweiten Pseudodifferentialoperator $Q$ definiert durch das Symbol $\tau\in S^{m_2}_{\rm loc}(\Omega\times\R^n)$
+\begin{equation}
+    \sigma_{Q\circ P} (f;x,\xi) = (2\pi)^{-n} \e^{-\i x\cdot\xi} \int \e^{\i x\cdot\eta}  \tau(x,\eta) 
+      \int_{\Omega} \e^{-\i y\cdot(\eta-\xi)} \sigma_P(f;y,\xi) \d y \d\eta 
+\end{equation}
+und damit nach der Argumentation des letzten Beweises
+\begin{equation}
+    \sigma_{P\circ Q}(f;x,\xi) \sim \sum_\alpha \frac1{\alpha!} \big(\partial_\xi^\alpha \tau(x,\xi)\big) \big( \D_x^\alpha \sigma_P(f;x,\xi)\big).
+\end{equation}
+Das ist eine erste Form der Kompositionsformel für Pseudodifferentialoperatoren. Ist $f(x)=1$ auf einer kleineren Menge $\omega\Subset K$, so ergibt sich das Symbol der Komposition $P\circ Q$ für $x\in\omega$ und modulo $\mathscr S(\overline\omega\times\R^n)$ als asymptotische Summe
+\begin{equation}
+    \sum_{\alpha}  \frac1{\alpha!} \big(\partial_\xi^\alpha \tau(x,\xi)\big) \big( \D_x^\alpha \sigma(x,\xi)\big).
+\end{equation}
+Analog kann man den formal Adjungierten eines eigentlich getragenen Pseudodifferentialoperators bestimmen. So gilt (vorerst formal, also distributionell)
+\begin{equation}
+   P^* u (y) =\int \e^{\i x\cdot\xi}  \int_\Omega \e^{-\i y\cdot\xi} \overline{\sigma(y,\xi)} u(y)\d y\d\xi
+\end{equation}
+und damit wiederum
+\begin{equation}
+   \sigma_{P^*}(f;x,\xi) \sim \sum_\alpha \frac1{\alpha!} \partial_\xi^\alpha\D_x^\alpha \big(\overline{\sigma(x,\xi)} f(x)\big).
+\end{equation}
+Auf einer Menge $\omega\Subset\Omega$ auf welcher $f(x)=1$ gilt, vereinfacht sich dies modulo $\mathscr S(\overline\omega\times\R^n)$  zu
+\begin{equation}
+   \sum_\alpha \frac1{\alpha!} \partial_\xi^\alpha\D_x^\alpha \overline{\sigma(x,\xi)}.
+\end{equation}
 
 \section{Hörmanders globales Kalkül}
 
