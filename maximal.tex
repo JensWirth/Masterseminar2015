@@ -7,27 +7,26 @@
 
 \section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
 
-Im folgenden konstruieren wir eine Fundamentallösung, d.h. eine Distribution $E$ so dass
+Im folgenden konstruieren wir eine Fundamentallösung, also eine Distribution $E\in\mathscr D'(\R^n)$ mit
 \begin{equation}
-E*(P(D) u) = u, \quad u \in C_0^\infty(\R^n)
+E*(P(\D) u) = u, \quad u \in \rmC_0^\infty(\R^n),
 \end{equation}
-gewisse Regularitätseigenschaften erfüllt.
+welche zusätzliche Regularitätseigenschaften besitzt.
 Um genauer zu sein,  wollen wir zeigen:
 \begin{thm}\label{fundamental_exist}
-Sei $P$ vollständig und von lokalem Typ, dann besitzt $P(D)$ eine Fundamentallösung $E$ mit 
+Sei $P$ vollständig und von lokalem Typ, dann besitzt $P(\D)$ eine Fundamentallösung $E$, welche 
 \begin{enumerate}
-\item Im Gebiet $\R^n\setminus\{0\}$ kann die Distribution $E$
-dargestellt werden durch eine unendlich differenzierbare Funktion $E(x)$
-\item Falls $u\in L^2(\R^n)$ mit kompakten Träger, so ist $P^{(\alpha)}(D) E*u$ eine lokal quadrat-integrierbare Funktion. 
+\item im Gebiet $\R^n\setminus\{0\}$  durch eine unendlich differenzierbare Funktion $E(x)$ dargestellt wird und
+\item für die $P^{(\alpha)}(\D) E*u$ für jedes $u\in \rmL^2(\R^n)$ mit kompakten Träger $\supp u\Subset\R^n$ lokal quadrat-integrierbar ist. 
 \end{enumerate}
 \end{thm}
 \begin{rem}
-Jede Fundamentallösung besitzt diese Eigenschaften und tatsächlich ist die Differenz zweier Fundamentallösungen unendlich oft differenzierbar wie wir später sehen werden.
+Ist $P(\D)$ vollständig und von lokalem Typ so besitzt jede Fundamentallösung diese Eigenschaften, da die Differenz zweier Fundamentallösungen unendlich oft differenzierbar ist. Dies werden wir später sehen.
 \end{rem}
 
 Zunächst einige Worte zur Beweisidee.  Falls $P(\xi)\neq 0$ für alle $\xi\in \mathbb R$, so ließe sich $E$ bestimmen aus
 \begin{equation}\label{distr1}
-E*u(x) = (2\pi)^{-n/2}\int e^{i\langle x, \xi \rangle} \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in C_0^\infty,
+E*u(x) = (2\pi)^{-n/2}\int \e^{\i x\cdot \xi} \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in \rmC_0^\infty,
 \end{equation}
 oder äquivalent
 \begin{equation}\label{distr2}
@@ -51,15 +50,15 @@ E(\check u) = (2\pi)^{-n/2} \int \, \mathrm d\xi_2 \cdots \, \mathrm d\xi_n \oin
 \end{equation}
 wobei das Integral über $\xi_1$ über die reelle Achse gehe, falls $\xi_2^2+ \cdots + \xi_n^2 \ge C^2$, und über die reelle Achse mit dem Intervall $(-C', C')$ ersetzt durch einen Halbkreis in der unteren Halbebene, falls $\xi_2^2+ \cdots+ \xi_n^2 < C^2$. Damit gilt $|P(\xi)|\ge 1$  in dem Integral.  Damit ergibt sich analog zu \eqref{distr1}
 \begin{equation}
-E*u(x) = (2\pi)^{-n/2}\oint e^{i\langle x, \xi \rangle} \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in C_0^\infty.
+E*u(x) = (2\pi)^{-n/2}\oint e^{\i x\cdot \xi } \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in C_0^\infty.
 \end{equation} 
 Damit folgt für $u\in C_0^\infty(\mathbb R^n)$
 \begin{equation}
-E*(P(D)u) = (2\pi)^{-n/2} \oint e^{i\langle x,\xi\rangle} P(\xi)  \frac{\hat{u} (\xi)}{P(\xi)}\, \mathrm d\xi=(2\pi)^{-n/2} \oint e^{i\langle x,\xi\rangle} \hat u(\xi) \, \mathrm d\xi
+E*(P(\D)u) = (2\pi)^{-n/2} \oint \e^{\i x\cdot\xi} P(\xi)  \frac{\hat{u} (\xi)}{P(\xi)}\, \mathrm d\xi=(2\pi)^{-n/2} \oint \e^{\i x\cdot \xi} \hat u(\xi) \, \mathrm d\xi
 \end{equation}
 und da der Integrand analytisch in $\xi_1$ ist, können wir den Integrationsweg als reale Achse wählen. Damit folgt
 \begin{equation}
-E*(P(D) U)(x) = (2\pi)^{-n/2} \int e^{i\langle x, \xi\rangle} \hat u(\xi) \, \mathrm d\xi = u(x),
+E*(P(\D) U)(x) = (2\pi)^{-n/2} \int \e^{\i x\cdot \xi} \hat u(\xi) \, \mathrm d\xi = u(x),
 \end{equation}
 und $E$ ist somit eine Fundamentallösung.
 
@@ -73,11 +72,11 @@ E_1(\check u) = (2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{\hat u(\xi)}{P(\xi)}\, \ma
 \end{equation}
 Die Variable $\xi$ in der Definition von $E_1$ kann nur reelle Werte im Integral annehmen. Die Distribution $E_2$ ist eine ganze Funktion, da für $u\in C_0^\infty$ erhält man mit der Definition von $\hat u$
 \begin{equation}
-E_2(\check u) = (2\pi)^{-\nu} \oint_{|\xi |\le R} \frac{\mathrm d\xi}{P(\xi)} \int u(x) e^{-i\langle x,\xi\rangle}\, \mathrm dx= (2\pi)^{-n} \int \check u(x) \, \oint_{|\xi|\le R} \frac{e^{i\langle x, \xi\rangle}}{P(\xi)}\, \mathrm d\xi \, \mathrm dx
+E_2(\check u) = (2\pi)^{-\nu} \oint_{|\xi |\le R} \frac{\mathrm d\xi}{P(\xi)} \int u(x) \e^{-\i x\cdot\xi}\, \mathrm dx= (2\pi)^{-n} \int \check u(x) \, \oint_{|\xi|\le R} \frac{e^{\i x\cdot \xi}}{P(\xi)}\, \mathrm d\xi \, \mathrm dx
 \end{equation}
 erhält. Damit ist $E_2$ regulär und
 \begin{equation}
-E_2(x) = (2\pi)^{-n} \oint_{|\xi|\le R} \frac{e^{i\langle x, \xi\rangle}}{P(\xi)}\, \mathrm d\xi,
+E_2(x) = (2\pi)^{-n} \oint_{|\xi|\le R} \frac{\e^{\i x\cdot \xi}}{P(\xi)}\, \mathrm d\xi,
 \end{equation}
 die analytisch ist, da das Integral gleichmäßig konvergent auf Kompakta ist. 
 
