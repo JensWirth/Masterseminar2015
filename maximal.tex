@@ -6,3 +6,84 @@
 
 
 \section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
+
+Im folgenden konstruieren wir eine Fundamentallösung, d.h. eine Distribution $E$ so dass
+\begin{equation}
+E*(P(D) u) = u, \quad u \in C_0^\infty(\R^n)
+\end{equation}
+gewisse Regularitätseigenschaften erfüllt.
+Um genauer zu sein,  wollen wir zeigen:
+\begin{thm}\label{fundamental_exist}
+Sei $P$ vollständig und von lokalem Typ, dann besitzt $P(D)$ eine Fundamentallösung $E$ mit 
+\begin{enumerate}
+\item Im Gebiet $\R^n\setminus\{0\}$ kann die Distribution $E$
+dargestellt werden durch eine unendlich differenzierbare Funktion $E(x)$
+\item Falls $u\in L^2(\R^n)$ mit kompakten Träger, so ist $P^{(\alpha)}(D) E*u$ eine lokal quadrat-integrierbare Funktion. 
+\end{enumerate}
+\end{thm}
+\begin{rem}
+Jede Fundamentallösung besitzt diese Eigenschaften und tatsächlich ist die Differenz zweier Fundamentallösungen unendlich oft differenzierbar wie wir später sehen werden.
+\end{rem}
+
+Zunächst einige Worte zur Beweisidee.  Falls $P(\xi)\neq 0$ für alle $\xi\in \mathbb R$, so ließe sich $E$ bestimmen aus
+\begin{equation}\label{distr1}
+E*u(x) = (2\pi)^{-n/2}\int e^{i\langle x, \xi \rangle} \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in C_0^\infty,
+\end{equation}
+oder äquivalent
+\begin{equation}\label{distr2}
+E(\check u)= (2\pi)^{-n/2} \int \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in C_0^\infty,
+\end{equation}
+wobei $\check u$ durch $\check u(x)=u(-x)$ gegeben ist\footnote{Die Integrabilität von $\hat u$ folgt im Wesentlichen aus dem Satz von Paley-Wiener.}. Wir überlegen uns also eine Verallgemeinerung von \eqref{distr2}. 
+
+\begin{proof}[Beweis von Satz \ref{fundamental_exist}]
+Wir werden diesen Beweis in einigen Schritten führen.
+\vspace{1mm}\\
+\textbf{Schritt 1:} \emph{Konstruktion einer Fundamentallösung.}
+Nach Theorem ?? ({\bf v}) gilt $|P(\xi)|\ge 1$ falls $\xi\in \mathbb R$ und $|\xi|\ge C$ mit geeigneter Konstante $C$.  Damit folgt $|P(\xi)\ge 1|$ falls $\xi_2^2+ \ldots + \xi_n^2 \ge C^2$.  
+
+Wir können annehmen, dass der Koeffizient vor der höchsten Potenz von $\xi_1$ von $P(\xi)$ konstant ist (vgl. Lemma ??). 
+%Da die Nullstellen des Polynoms stetig von den Parametern abhängen, die nicht im führenden Koeffizienten stehen.  
+So finden wir außerdem leicht eine zweite Konstante $C'$ sodass $|P(\xi_1, \xi_2, \cdots, \xi_nu)|\ge 1$ für $\xi_2^2+\ldots + \xi_n^2< C$ and $|\xi_1|\ge C'$.  
+
+Jetzt setzen wir für $u\in C_0^\infty(\mathbb R^n)$
+\begin{equation}\label{distr3}
+E(\check u) = (2\pi)^{-n/2} \int \, \mathrm d\xi_2 \cdots \, \mathrm d\xi_n \oint \frac{\hat u(\xi)}{P(\xi)} \, \mathrm d\xi_1= (2\pi)^{-n/2} \oint \frac{\hat u(\xi)}{P(\xi)} \, \mathrm d\xi.
+\end{equation}
+wobei das Integral über $\xi_1$ über die reelle Achse gehe, falls $\xi_2^2+ \cdots + \xi_n^2 \ge C^2$, und über die reelle Achse mit dem Intervall $(-C', C')$ ersetzt durch einen Halbkreis in der unteren Halbebene, falls $\xi_2^2+ \cdots+ \xi_n^2 < C^2$. Damit gilt $|P(\xi)|\ge 1$  in dem Integral.  Damit ergibt sich analog zu \eqref{distr1}
+\begin{equation}
+E*u(x) = (2\pi)^{-n/2}\oint e^{i\langle x, \xi \rangle} \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in C_0^\infty.
+\end{equation} 
+Damit folgt für $u\in C_0^\infty(\mathbb R^n)$
+\begin{equation}
+E*(P(D)u) = (2\pi)^{-n/2} \oint e^{i\langle x,\xi\rangle} P(\xi)  \frac{\hat{u} (\xi)}{P(\xi)}\, \mathrm d\xi=(2\pi)^{-n/2} \oint e^{i\langle x,\xi\rangle} \hat u(\xi) \, \mathrm d\xi
+\end{equation}
+und da der Integrand analytisch in $\xi_1$ ist, können wir den Integrationsweg als reale Achse wählen. Damit folgt
+\begin{equation}
+E*(P(D) U)(x) = (2\pi)^{-n/2} \int e^{i\langle x, \xi\rangle} \hat u(\xi) \, \mathrm d\xi = u(x),
+\end{equation}
+und $E$ ist somit eine Fundamentallösung.
+
+\textbf{Schritt 2:} \emph{Beweis der Differenzierbarkeit in $\mathbb R^n\setminus\{0\}$.}
+Wir teilen das Integral \eqref{distr3} in zwei Teile auf. Falls $R=\sqrt{C^2 + C'^2}$, haben wir $|\xi<<R$ und der Teil des Integrals von \eqref{distr3}, wo $\xi$ nicht real ist. Schreibe also 
+\begin{equation}\label{distr4}
+E=E_1 + E_2,
+\end{equation}
+\begin{equation}\label{distr5}
+E_1(\check u) = (2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad E_2(\check u)= (2\pi)^{-n/2} \oint_{|\xi|\le R} \frac{\hat u(\xi)}{P(\xi)}\, \mathrm d\xi
+\end{equation}
+Die Variable $\xi$ in der Definition von $E_1$ kann nur reelle Werte im Integral annehmen. Die Distribution $E_2$ ist eine ganze Funktion, da für $u\in C_0^\infty$ erhält man mit der Definition von $\hat u$
+\begin{equation}
+E_2(\check u) = (2\pi)^{-\nu} \oint_{|\xi |\le R} \frac{\mathrm d\xi}{P(\xi)} \int u(x) e^{-i\langle x,\xi\rangle}\, \mathrm dx= (2\pi)^{-n} \int \check u(x) \, \oint_{|\xi|\le R} \frac{e^{i\langle x, \xi\rangle}}{P(\xi)}\, \mathrm d\xi \, \mathrm dx
+\end{equation}
+erhält. Damit ist $E_2$ regulär und
+\begin{equation}
+E_2(x) = (2\pi)^{-n} \oint_{|\xi|\le R} \frac{e^{i\langle x, \xi\rangle}}{P(\xi)}\, \mathrm d\xi,
+\end{equation}
+die analytisch ist, da das Integral gleichmäßig konvergent auf Kompakta ist. 
+
+Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(D)E_2 *u$ ist dann eine analytische Funktion.  Die Aussage ({\bf ii}) folgt dann, wenn wir zeigen, dass $P^{(\alpha)}(D) E_1 * u$ quadratintegrierbar ist.  Sei $\phi \in C_0^\infty$. Dann ist die Funktion $U*\phi$ auch in $C_0^\infty$ und im Sinne von \eqref{distr5} folgt
+\begin{equation}
+(P^{(\alpha)} (D) e_1 * u) (\check \phi) = P^{(\alpha)}(D) E_1 * u * \phi(0) = \int_{|\xi| \ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \hat u(\xi) \hat \phi(\xi) \, \mathrm d\xi,
+\end{equation}     
+so dass die Fourier transformierte von $P^{(\alpha)(D) E_1 * u}$ eine Funktion die für $|\xi|<R$ verschwindet 
+\end{proof}
