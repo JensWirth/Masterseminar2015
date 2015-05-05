@@ -63,7 +63,7 @@ E*(P(D) U)(x) = (2\pi)^{-n/2} \int e^{i\langle x, \xi\rangle} \hat u(\xi) \, \ma
 \end{equation}
 und $E$ ist somit eine Fundamentallösung.
 
-\textbf{Schritt 2:} \emph{Beweis der Differenzierbarkeit in $\mathbb R^n\setminus\{0\}$.}
+\textbf{Schritt 2:} \emph{Beweis der Quadratintegrierbarkeit von $P^{(\alpha)}(D) E * u$.}
 Wir teilen das Integral \eqref{distr3} in zwei Teile auf. Falls $R=\sqrt{C^2 + C'^2}$, haben wir $|\xi<<R$ und der Teil des Integrals von \eqref{distr3}, wo $\xi$ nicht real ist. Schreibe also 
 \begin{equation}\label{distr4}
 E=E_1 + E_2,
@@ -85,5 +85,5 @@ Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(D)E_2 *u$ ist dann
 \begin{equation}
 (P^{(\alpha)} (D) e_1 * u) (\check \phi) = P^{(\alpha)}(D) E_1 * u * \phi(0) = \int_{|\xi| \ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \hat u(\xi) \hat \phi(\xi) \, \mathrm d\xi,
 \end{equation}     
-so dass die Fourier transformierte von $P^{(\alpha)(D) E_1 * u}$ eine Funktion die für $|\xi|<R$ verschwindet 
+so dass die Fouriertransformierte von $P^{(\alpha)}(D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet. 
 \end{proof}
