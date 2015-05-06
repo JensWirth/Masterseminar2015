@@ -130,7 +130,35 @@ Auf einer Menge $\omega\Subset\Omega$ auf welcher $f(x)=1$ gilt, vereinfacht sic
    \sum_\alpha \frac1{\alpha!} \partial_\xi^\alpha\D_x^\alpha \overline{\sigma(x,\xi)}.
 \end{equation}
 
-\section{Hörmanders globales Kalkül}
+\begin{thm}
+Sei $\sigma\in S^0_{\rm loc}(\Omega\times\R^n)$ und $u,v\in\rmC_0^\infty(\Omega)$. Dann gilt für den durch \eqref{eq:6:6.6} definierten Operator $P$
+und jede Funktion $f\in\rmC_0^\infty(\Omega)$
+\begin{equation}
+   | \spro{Pu}{f v} | \le C \|u\|\|v\|.
+\end{equation}
+Die Konstante $C$ hängt dabei nur von endlich vielen Seminormen des Symbols und der Wahl von $f$ ab.
+\end{thm}
+\begin{proof}
+Nach Definition von $P$ gilt
+\begin{equation}
+   \spro{Pu}{fv} = (2\pi)^{-n/2} \iint \e^{\i x\cdot \xi} v(x) f(x) \sigma(x,\xi) \widehat u(\xi)\d\xi\d x,
+\end{equation}
+mit der Hilfsfunktion
+\begin{equation}\label{eq:6:h-def}
+  h(\eta,\xi) = (2\pi)^{-n/2} \int \e^{\i x\cdot\eta} f(x) \sigma(x,\xi) \d x
+\end{equation}
+und der Plancherel-Identität also
+\begin{equation}
+   \spro{Pu}{fv} = \iint \widehat v(\eta) h(\xi+\eta,\xi) \widehat u(\xi)\d\xi\d\eta.
+\end{equation}
+Es bleibt die Funktion $h$ abzuschätzen. Partielle Integration in \eqref{eq:6:h-def} liefert
+\begin{equation}
+   |h(\eta,\xi)|  \le C_N \langle\eta\rangle^{-N}
+\end{equation}
+für alle $N$ und mit dem Schur-Test die Behauptung.
+\end{proof}
+
+\section{Hörmanders globale Pseudodifferentialoperatoren}
 
 Im folgenden betrachten wir globale Symbole $\sigma(x,\xi)$, welche die Bedingung
 \begin{equation}
@@ -143,7 +171,7 @@ und $u\in\mathscr S(\R^n)$ eine Schwartzfunktion, so definiert
    Pu (x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \sigma(x,\xi) \widehat u(\xi)\d\xi
 \end{equation}
 wiederum eine Schwartzfunktion. Das folgt durch geeignetes partielles integrieren. Interessanter für uns ist folgender Satz; Operatoren der Ordnung $0$ sind $\rmL^2$--$\rmL^2$-beschränkt.
-
+ 
 \begin{thm}
 Sei $\sigma\in S^0_{\rm unif}(\R^n\times\R^n)$ und $P$ durch \eqref{eq:6:6.17} definiert. Dann gibt es eine Konstante $C>0$, so daß für alle $u\in\mathscr S(\R^n)$
 \begin{equation}
@@ -151,8 +179,35 @@ Sei $\sigma\in S^0_{\rm unif}(\R^n\times\R^n)$ und $P$ durch \eqref{eq:6:6.17} d
 \end{equation}
 gilt.
 \end{thm}
-\begin{proof}
-\end{proof}
+%\begin{proof}
+%%Wir nehmen in einem ersten Schritt an, daß das Symbol $\sigma(x,\xi)$ kompakt in $x$ getragen ist und bezeichnen seine Fouriertransformierte 
+%%als $\widehat \sigma(\zeta,\xi)$. Nach Voraussetzung ist diese gleichmäßig in $\xi$ schnell fallend in $\zeta$, insbesondere gilt also
+%%\begin{equation}
+%%   |\widehat \sigma(\zeta,\xi)| \le C_N \langle\zeta\rangle^{-N}, \qquad N>n. 
+%%\end{equation}
+%%Damit gilt mit der Fourierschen Inversionsformel und dem Satz von Fubini
+%%\begin{align}
+%%    P u(x) &= (2\pi)^{-n} \int \e^{\i x\cdot\xi} \left(\int \e^{\i x\cdot\zeta} \widehat \sigma(\zeta,\xi) \d\zeta\right) \widehat u(\xi)\d\xi \notag\\
+%%    &= (2\pi)^{-n} \int \e^{\i x\cdot\zeta} \left( \int \e^{\i x\cdot\xi}\widehat \sigma(\zeta,\xi) \widehat u(\xi) \d\xi \right) \d\zeta
+%%\end{align}
+%%die Normabschätzung
+%%\begin{equation}
+%%  \| Pu \| \le (2\pi)^{-n/2} \int  \sup_{\xi\in\R^n} |\widehat \sigma(\zeta,\xi)| \d\zeta\, \|u\| \le C \|u\|. 
+%%\end{equation}
+%%Ersetzt man nun allgemein das Symbol $\sigma(x,\xi)$ durch $\chi(x)\sigma(x,\xi)$ für eine Abschneidefunktion $\chi\in\rmC_0^\infty(\R^n)$ 
+%%mit $|\chi(x)|\le 1$, so hängt die Konstante $C$ in der Normabschätzung $\|\chi Pu\|\le C\|u\|$ nur von der Größe des Trägers von $\chi$ ab.
+%
+%%Der folgende Beweis kann analog für die $\rmL^p$--$\rmL^p$-Beschränktheit für $1<p<\infty$ genutzt werden, wenn man das im folgenden Abschnitt gegebene Littlewood--Paley-Lemma entsprechend nutzt. Wir wählen eine Funktion $\varphi\in\rmC_0^\infty(\R_+)$ derart, daß $\supp\varphi\subset[1,2]$
+%%\begin{equation}
+%% \varphi(s)\ge0\qquad\text{sowie}\qquad   \sum_{j\in\mathbb Z} \varphi(2^{-j}s) = 1,\qquad s>0,
+%%\end{equation}
+%%gilt. Dazu kann man zum Beispiel eine Abschneidefunktion $\chi\in\rmC^\infty(\R_+)$ mit $\chi(s)=1$ auf $s<1$, $\chi(s)=0$ auf $s>2$ und 
+%%$\chi'(s)\le0$ wählen und $\varphi(s)=\chi(2s)-\chi(s)$ setzen. Sei weiter $\varphi_j(s)=\varphi(2^{-j}s)$ und
+%%\begin{equation}
+%%    P_j = P\circ \varphi_j(\D) .
+%%\end{equation}
+%%Dann ist $P_j$ ein Operator zum Symbol $\sigma(x,\xi)\varphi_j(\xi)$.
+%\end{proof}
 
 
 \begin{thm}
@@ -168,5 +223,9 @@ Seien $A$ und $B$ globale Pseudodifferentialoperatoren mit Symbolen $\sigma_A\in
 \end{equation}
 \end{enumerate}
 \end{thm}
-\begin{proof}
-\end{proof}
+%\begin{proof}
+%\end{proof}
+
+\section{Littlewood--Paley Lemmata und Anwendungen}
+
+
