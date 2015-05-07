@@ -129,15 +129,15 @@ Auf einer Menge $\omega\Subset\Omega$ auf welcher $f(x)=1$ gilt, vereinfacht sic
 \begin{equation}
    \sum_\alpha \frac1{\alpha!} \partial_\xi^\alpha\D_x^\alpha \overline{\sigma(x,\xi)}.
 \end{equation}
-
-\begin{thm}
+Pseudodifferentialoperatoren mit Symbolen aus $S^0_{\rm loc}(\Omega\times\R^n)$ sind $\rmL^2_{\rm comp}$-$\rmL^2_{\rm loc}$-beschränkt. Das liefert nachfolgendes Lemma. Zusammen mit obigen asymptotischen Entwicklungen erhält man die $\rmH^s_{\rm comp}$-$\rmH^{s-m}_{\rm loc}$-Beschränktheit für Operatoren mit Symbolen aus $S^m_{\rm loc}(\Omega\times\R^n)$ für alle $s$.
+\begin{lem}
 Sei $\sigma\in S^0_{\rm loc}(\Omega\times\R^n)$ und $u,v\in\rmC_0^\infty(\Omega)$. Dann gilt für den durch \eqref{eq:6:6.6} definierten Operator $P$
 und jede Funktion $f\in\rmC_0^\infty(\Omega)$
 \begin{equation}
    | \spro{Pu}{f v} | \le C \|u\|\|v\|.
 \end{equation}
 Die Konstante $C$ hängt dabei nur von endlich vielen Seminormen des Symbols und der Wahl von $f$ ab.
-\end{thm}
+\end{lem}
 \begin{proof}
 Nach Definition von $P$ gilt
 \begin{equation}
@@ -226,6 +226,60 @@ Seien $A$ und $B$ globale Pseudodifferentialoperatoren mit Symbolen $\sigma_A\in
 %\begin{proof}
 %\end{proof}
 
-\section{Littlewood--Paley Lemmata und Anwendungen}
+\section{Lokalisierungen}
+Sei im folgenden $\Theta\in\rmC_0^\infty(\R^n)$ mit $\supp\Theta\subset [-3/4,3/4]^n$ sowie $\Theta>0$ auf $[-1/2,1/2]^n$. Dann sind die Funktionen
+\begin{equation}
+\varphi_k(x) = \Theta(x-k) \bigg(\sum_{j\in\Z^n} \Theta(x-j)^2\bigg)^{-1/2}
+\end{equation}
+Elemente von $\rmC_0^\infty(\R^n)$ mit $\sum_{k} \varphi_k(x)^2=1$ und es existiert für jeden Multiindex $\alpha\in\N_0^n$ eine Konstante $C_\alpha$ mit
+\begin{equation}
+    \sum_{k\in\Z^n} | \D^\alpha \varphi_k(x)|^2 \le C_\alpha.
+\end{equation}
+Weiterhin impliziert $x,y\in\supp\varphi_k$ stets $|x-y|\le 3\sqrt n/2$. Ausgehend von dieser Partition der Eins definieren wir
+\begin{equation}
+    \psi_k(\xi)= \varphi_k(\xi / \sqrt{|\xi|}), 
+\end{equation}
+so daß
+\begin{equation}\label{eq:6:6.35} 
+    \sum_{k\in\Z^n} \psi_k(\xi)^2 = 1\qquad\text{und}\qquad |\xi|^\alpha \sum_{k\in\Z^n} |\partial_\xi^\alpha \psi_k(\xi)|^2 \le C_\alpha
+\end{equation}
+gilt. Weiter impliziert $\xi,\eta\in\supp\psi_k$ stets $|\sqrt{|\xi|}-\sqrt{|\eta|}|\le C$ und damit 
+\begin{equation}
+ |\xi-\eta|\le C \langle\xi\rangle^{1/2} \qquad\text{für alle $\xi,\eta\in\supp\psi_k$}.
+\end{equation}
+Weiterhin nützlich ist
+\begin{equation}
+  \sum_{k\in\Z^n} |\psi_k(\xi)-\psi_k(\eta)|^2 \le C \frac{|\xi-\eta|^2}{ \langle\xi\rangle^{1/2} \langle\eta\rangle^{1/2}},
+\end{equation} 
+was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann aus \eqref{eq:6:6.35} für $|\alpha|=1$ per Integration über die Strecke von $\xi$ zu $\eta$ folgt.
+
+Als eine Anwendung wollen wir zu einem Operator $P$ zum Symbol $\sigma\in S^0_{\rm comp} (\Omega\times\R^n)$ die quadratische Form
+\begin{equation}
+   \spro{Pu}{u} = (2\pi)^{-n/2} \iint \e^{\i x\cdot\xi} \sigma(x,\xi) \widehat u(\xi) \d\xi \overline{u(x)}\d x 
+   = \iint \widehat u(\xi) \overline{\widehat u(\eta)} \widehat\sigma(\xi-\eta,\xi) \d\xi\d\eta
+\end{equation} 
+betrachten. Wir setzen $u_k(x) = \psi_k(\D) u(x)$, also $\widehat u_k(\xi) = \psi_k(\xi) \widehat u(\xi)$ und untersuchen die Differenz 
+$\spro{Pu}{u}-\sum_k \spro{Pu_k}{u_k}$. Für diese gilt
+\begin{align}
+       \spro{Pu}{u} -\sum_{k\in\Z^n} \spro{Pu_k}{u_k}  &=  \iint \widehat\sigma (\xi-\eta,\xi) \widehat u(\xi) \overline{\widehat u(\eta)} \bigg( 1 - \sum_{k\in\mathbb Z^n} \psi_k(\xi)\psi_k(\eta)\bigg) \d\xi\d\eta  \notag\\
+       &= \frac12 \iint \widehat\sigma (\xi-\eta,\xi) \widehat u(\xi) \overline{\widehat u(\eta)}  \sum_{k\in\mathbb Z^n} | \psi_k(\xi)-\psi_k(\eta)|^2 \d\xi\d\eta 
+\end{align}
+und damit
+\begin{equation}
+   \bigg|\spro{Pu}{u} - \sum_{k\in\Z^n}\spro{Pu_k}{u_k}\bigg| \le C \iint | \widehat \sigma(\xi-\eta,\xi) \widehat u(\xi) \overline{\widehat u(\eta)}| |\xi-\eta|^2 \langle\xi\rangle^{-1/2} \langle\xi\rangle^{-1/2} \d\xi\d\eta, 
+\end{equation}
+zusammen mit den Symbolabschätzungen also
+\begin{equation}
+    \bigg|\spro{Pu}{u} - \sum_{k\in\Z^n}\spro{Pu_k}{u_k}\bigg| \le C \|u\|_{\rmH^{-1/2}}^2.
+\end{equation}
+ Andererseits gilt für jeden einzelnen Summanden
+ \begin{align}
+     |\spro{Pu_k}{u_k} | &= \bigg|\iint \widehat u(\xi) \overline{\widehat u(\eta)} \psi_k(\xi)\psi_k(\eta) \widehat\sigma(\xi-\eta,\xi) \d\xi\d\eta\bigg|
+     \notag\\
+     &\le \|u\|^2 \iint | \psi_k(\xi)\psi_k(\eta) \widehat\sigma(\xi-\eta,\xi)|^2 \d\xi\d\eta.
+ \end{align}
+
+
+
 
 
