@@ -141,15 +141,15 @@ Die Konstante $C$ hängt dabei nur von endlich vielen Seminormen des Symbols und
 \begin{proof}
 Nach Definition von $P$ gilt
 \begin{equation}
-   \spro{Pu}{fv} = (2\pi)^{-n/2} \iint \e^{\i x\cdot \xi} v(x) f(x) \sigma(x,\xi) \widehat u(\xi)\d\xi\d x,
+   \spro{Pu}{fv} = (2\pi)^{-n/2} \iint \e^{\i x\cdot \xi}\overline{ v(x) f(x)} \sigma(x,\xi) \widehat u(\xi)\d\xi\d x,
 \end{equation}
 mit der Hilfsfunktion
 \begin{equation}\label{eq:6:h-def}
-  h(\eta,\xi) = (2\pi)^{-n/2} \int \e^{\i x\cdot\eta} f(x) \sigma(x,\xi) \d x
+  h(\eta,\xi) =  (2\pi)^{-n/2} \int \e^{-\i x\cdot\eta} \overline{f(x)} \sigma(x,\xi) \d x
 \end{equation}
 und der Plancherel-Identität also
 \begin{equation}
-   \spro{Pu}{fv} = \iint \widehat v(\eta) h(\xi+\eta,\xi) \widehat u(\xi)\d\xi\d\eta.
+   \spro{Pu}{fv} = (2\pi)^{-n/2} \iint \overline{ \widehat v(\eta) }h(\eta-\xi,\xi) \widehat u(\xi)\d\xi\d\eta.
 \end{equation}
 Es bleibt die Funktion $h$ abzuschätzen. Partielle Integration in \eqref{eq:6:h-def} liefert
 \begin{equation}
@@ -226,7 +226,7 @@ Seien $A$ und $B$ globale Pseudodifferentialoperatoren mit Symbolen $\sigma_A\in
 %\begin{proof}
 %\end{proof}
 
-\section{Lokalisierungen}
+\section{Lokalisierungen und Sobolevabschätzungen}
 Sei im folgenden $\Theta\in\rmC_0^\infty(\R^n)$ mit $\supp\Theta\subset [-3/4,3/4]^n$ sowie $\Theta>0$ auf $[-1/2,1/2]^n$. Dann sind die Funktionen
 \begin{equation}
 \varphi_k(x) = \Theta(x-k) \bigg(\sum_{j\in\Z^n} \Theta(x-j)^2\bigg)^{-1/2}
@@ -253,30 +253,39 @@ Weiterhin nützlich ist
 \end{equation} 
 was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann aus \eqref{eq:6:6.35} für $|\alpha|=1$ per Integration über die Strecke von $\xi$ zu $\eta$ folgt.
 
-Als eine Anwendung wollen wir zu einem Operator $P$ zum Symbol $\sigma\in S^0_{\rm comp} (\Omega\times\R^n)$ die quadratische Form
+\begin{df}[Sobolevnormen]
+Für $u\in\rmC_0^\infty(\Omega)$, $\Omega \subset\R^n$ ein Gebiet, definieren wir die Sobolevnorm der Ordnung $s$,
 \begin{equation}
-   \spro{Pu}{u} = (2\pi)^{-n/2} \iint \e^{\i x\cdot\xi} \sigma(x,\xi) \widehat u(\xi) \d\xi \overline{u(x)}\d x 
-   = \iint \widehat u(\xi) \overline{\widehat u(\eta)} \widehat\sigma(\xi-\eta,\xi) \d\xi\d\eta
+     \| u \|_{(s)} = \bigg(\int \langle\xi\rangle^{2s} |\widehat u(\xi)|^2\d\xi\bigg)^{1/2}. 
+\end{equation}
+Weiter bezeichne $\rmH^s_0(\Omega)$ den Abschluß von $\rmC_0^\infty(\Omega)$ bezüglich dieser Norm.
+\end{df}
+
+
+Als eine Anwendung wollen wir zu einem Operator $P$ zum Symbol $\sigma\in S^m_{\rm comp} (\Omega\times\R^n)$ die sesquilineare Form
+\begin{equation}
+   \spro{Pu}{v} = (2\pi)^{-n/2} \iint \e^{\i x\cdot\xi} \sigma(x,\xi) \widehat u(\xi) \d\xi \overline{v(x)}\d x 
+   = (2\pi)^{-n/2} \iint \widehat u(\xi) \overline{\widehat v(\eta)} \widehat\sigma(\eta-\xi,\xi) \d\xi\d\eta
 \end{equation} 
 betrachten. Wir setzen $u_k(x) = \psi_k(\D) u(x)$, also $\widehat u_k(\xi) = \psi_k(\xi) \widehat u(\xi)$ und untersuchen die Differenz 
-$\spro{Pu}{u}-\sum_k \spro{Pu_k}{u_k}$. Für diese gilt
+$\spro{Pu}{v}-\sum_k \spro{Pu_k}{v_k}$. Für diese gilt
 \begin{align}
-       \spro{Pu}{u} -\sum_{k\in\Z^n} \spro{Pu_k}{u_k}  &=  \iint \widehat\sigma (\xi-\eta,\xi) \widehat u(\xi) \overline{\widehat u(\eta)} \bigg( 1 - \sum_{k\in\mathbb Z^n} \psi_k(\xi)\psi_k(\eta)\bigg) \d\xi\d\eta  \notag\\
-       &= \frac12 \iint \widehat\sigma (\xi-\eta,\xi) \widehat u(\xi) \overline{\widehat u(\eta)}  \sum_{k\in\mathbb Z^n} | \psi_k(\xi)-\psi_k(\eta)|^2 \d\xi\d\eta 
+       \spro{Pu}{v} -\sum_{k\in\Z^n} \spro{Pu_k}{v_k}  &= (2\pi)^{-n/2}  \iint \widehat\sigma (\eta-\xi,\xi) \widehat u(\xi) \overline{\widehat v(\eta)} \bigg( 1 - \sum_{k\in\mathbb Z^n} \psi_k(\xi)\psi_k(\eta)\bigg) \d\xi\d\eta  \notag\\
+       &= \frac12 (2\pi)^{-n/2} \iint \widehat\sigma (\eta-\xi,\xi) \widehat u(\xi) \overline{\widehat v(\eta)}  \sum_{k\in\mathbb Z^n} | \psi_k(\xi)-\psi_k(\eta)|^2 \d\xi\d\eta 
 \end{align}
 und damit
 \begin{equation}
-   \bigg|\spro{Pu}{u} - \sum_{k\in\Z^n}\spro{Pu_k}{u_k}\bigg| \le C \iint | \widehat \sigma(\xi-\eta,\xi) \widehat u(\xi) \overline{\widehat u(\eta)}| |\xi-\eta|^2 \langle\xi\rangle^{-1/2} \langle\xi\rangle^{-1/2} \d\xi\d\eta, 
+   \bigg|\spro{Pu}{v} - \sum_{k\in\Z^n}\spro{Pu_k}{v_k}\bigg| \le C \iint | \widehat \sigma(\eta-\xi,\xi) \widehat u(\xi) \overline{\widehat u(\eta)}| |\eta-\xi|^2 \langle\xi\rangle^{-1/2} \langle\eta\rangle^{-1/2} \d\xi\d\eta, 
 \end{equation}
 zusammen mit den Symbolabschätzungen also
 \begin{equation}
-    \bigg|\spro{Pu}{u} - \sum_{k\in\Z^n}\spro{Pu_k}{u_k}\bigg| \le C \|u\|_{\rmH^{-1/2}}^2.
+    \bigg|\spro{Pu}{v} - \sum_{k\in\Z^n}\spro{Pu_k}{v_k}\bigg| \le C \|u\|_{(m-1/2)} \|v\|_{(-1/2)}.
 \end{equation}
  Andererseits gilt für jeden einzelnen Summanden
  \begin{align}
-     |\spro{Pu_k}{u_k} | &= \bigg|\iint \widehat u(\xi) \overline{\widehat u(\eta)} \psi_k(\xi)\psi_k(\eta) \widehat\sigma(\xi-\eta,\xi) \d\xi\d\eta\bigg|
+     |\spro{Pu_k}{v_k} | &= \bigg|\iint \widehat u(\xi) \overline{\widehat v(\eta)} \psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi) \d\xi\d\eta\bigg|
      \notag\\
-     &\le \|u\|^2 \iint | \psi_k(\xi)\psi_k(\eta) \widehat\sigma(\xi-\eta,\xi)|^2 \d\xi\d\eta.
+     &\le \|u\|_{(m)}  \|v\|_{(0)} \iint | \langle\xi\rangle^{-m}\psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi)|^2 \d\xi\d\eta.
  \end{align}
 
 
