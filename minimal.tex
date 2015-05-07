@@ -722,21 +722,21 @@ gilt.
 \begin{proof} {\it Rückrichtung.}
 Wir nehmen zunächst an, dass \eqref{eq:2:tozero} erfüllt ist und betrachten eine Folge ${(u_n)}_{n \in \mathbb{N}} $ in $\rmC^\infty_0(\Omega)$ mit
 \begin{equation}\label{eq:2:PDb}
-\norm{P(\D)u_n}\leq 1
+\norm{P(\D)u_n}\leq 1 \ \ \forall n \in \mathbb{N}.
 \end{equation}
-für alle $n$. Wir zeigen, dass dann eine Teilfolge ${(u_{n_k})}_{k \in \mathbb{N}}$ in $\rmC^\infty_0(\Omega)$ existiert,
+Wir zeigen, dass dann eine Teilfolge ${(u_{n_k})}_{k \in \mathbb{N}}$ in $\rmC^\infty_0(\Omega)$ existiert,
 so dass  $\left(Q(\D)u_{n_k}\right)_{k \in \mathbb{N}}$ konvergent ist. Nach Voraussetzung gilt 
 \begin{equation}
 \frac{\widetilde{Q}(\xi)^2}{\widetilde{P}(\xi)^2} = \frac{\sum_{\alpha} | Q^{(\alpha)} (\xi)|^2  }{ \sum_{\alpha} | P^{(\alpha)} (\xi)|^2} \rightarrow 0\qquad  \text{für} \ \ \xi \rightarrow \infty;
 \end{equation}
 insbesondere ist $\widetilde Q(\xi)/\widetilde P(\xi)$ beschränkt. Also existiert eine Konstante $C>0$, so dass
 \begin{equation}
-|Q(\xi)|^2 \leq C \sum_{\alpha} | P^{\alpha} (\xi)|^2 \label{eq:1.5}
+|Q(\xi)|^2 \leq C \sum_{\alpha} | P^{(\alpha)} (\xi)|^2 \label{eq:1.5}
 \end{equation}
 gilt. Damit folgt mit dem Satz von Plancherel für beliebiges $u\in\rmC_0^\infty(\Omega)$
 \begin{multline}
 \int |Q(\D)u(x)|^2 \d x = \int |Q(\xi) \widehat{u}(\xi)|^2 \d \xi \\
-\leq  \sum_{|\alpha| \leq k}C\int | P^{(\alpha)} (\xi) \widehat u(\xi)|^2 \d \xi =\sum_{|\alpha| \leq k} C\int |P^{\alpha}(\D)u(x)|^2 \d x.
+\leq  \sum_{|\alpha| \leq k}C\int | P^{(\alpha)} (\xi) \widehat u(\xi)|^2 \d \xi =\sum_{|\alpha| \leq k} C\int |P^{(\alpha)}(\D)u(x)|^2 \d x.
 \end{multline}
 Weiter liefert uns  Satz \ref{thm:2:2.1} eine Konstante $\widetilde{C}>0$ mit
 \begin{equation}
@@ -797,9 +797,9 @@ wobei das Innenprodukt durch
 \sum_{\alpha,\beta}\frac{Q^{(\alpha)}(\xi_n)}{\widetilde{P}(\xi_n)}\frac{\cc{Q^{(\beta)}(\xi_n)}}{\widetilde{P}(\xi_n)}
 \frac1{\alpha!\beta!}\int_\Omega \e^{\i x \cdot(\xi_n-\xi_m)} \D^\alpha u(x) \cc{\D^\beta u(x) }\d  x
 \end{equation}
-gegeben ist. Da die Faktoren $Q^{(\alpha)}(\xi_n)/\widetilde{P}(\xi_n)$ nach Satz \ref{thm:2:2.1} beschränkt und $\D^\alpha u\cc{\D^\beta u}$ integrierbar sind, folgt mit dem Riemann--Lebesue-Lemma $\spro{Q(\D)u_n}{Q(\D)u_m}\to0$ für $n,m\to\infty$, $n\neq m$. Aufgrund der Kompaktheit finden wir eine Teilfolge $(u_{n_k})_{k\in\N}$ für die $(Q(\D)u_{n_k})_{k \in \mathbb{N}}$ konvergiert. Damit muß nach \eqref{eq:2:kz}  aber $\|Q(\D)u_{n_k}\|\to0$, $k\to\infty$, gelten und somit 
+gegeben ist. Da die Faktoren $Q^{(\alpha)}(\xi_n)/\widetilde{P}(\xi_n)$ nach Satz \ref{thm:2:2.1} beschränkt und $\D^\alpha u\cc{\D^\beta u}$ integrierbar sind, folgt mit dem Riemann--Lebesue-Lemma $\spro{Q(\D)u_n}{Q(\D)u_m}\to0$ für $n,m\to\infty$, $n\neq m$. Aufgrund der Kompaktheit finden wir eine Teilfolge $(u_{n_k})_{k\in\N}$ für die $(Q(\D)u_{n_k})_{k \in \mathbb{N}}$ konvergiert. Damit muß nach \eqref{eq:2:kz}  aber $\|Q(\D)u_{n_k}\|\to0$, $k\to\infty$ gelten, d.h.
 \begin{equation}
-\norm{Q(\D)u_{n_k}}^2=\sum_{\alpha,\beta}\frac{Q^{(\alpha)}(\xi_{n_k}) \overline{Q^{(\beta)}(\xi_{n_k})}}{\widetilde{P}(\xi_{n_k})^2} \underbrace{\frac{1}{\alpha! \beta!}\int \D_\alpha u \overline{\D_\beta u} \d x}_{=\Psi_{\alpha \beta}} \longrightarrow 0
+\norm{Q(\D)u_{n_k}}^2=\sum_{\alpha,\beta}\frac{Q^{(\alpha)}(\xi_{n_k}) \overline{Q^{(\beta)}(\xi_{n_k})}}{\widetilde{P}(\xi_{n_k})^2} \underbrace{\frac{1}{\alpha! \beta!}\int \D^{\alpha} u \overline{\D^{\beta} u} \d x}_{=\Psi_{\alpha \beta}} \longrightarrow 0
 \end{equation}
 und damit wegen der Äquivalenz der Innenprodukte in \eqref{eq:2.8} auch 
 \begin{equation}
@@ -825,7 +825,7 @@ aber nicht zwingend
 \end{align}
 da die Nullstellenmenge
 \begin{equation}
-N= \{ (\xi_1,\xi_2)\in \mathbb{R}^2 : \ \xi_1 = \xi_2^2 \}.
+N= \{ (\xi_1,\xi_2)\in \mathbb{R}^2 : \ \xi_1 = \xi_2^2 \}
 \end{equation}
 parabelförmig ins Unendliche läuft. Betrachtet man jedoch das regularisierte Symbol
 \begin{equation}
@@ -836,11 +836,11 @@ $1/\widetilde P(\xi)\to0$ die Kompaktheit von $P_0^{-1}$.
 \end{exa}
 Wir werden im Folgenden zeigen, dass der Operator $P_0^{-1}$ genau dann kompakt ist, wenn das dazugehörige Symbol $P(\xi)$ von allen Variablen abhängt. Dazu vorbereitend geben wir zunächst folgende Definition.
 \begin{df}
-Sei $P(\xi)$ das Symbol eines Differentialausdrucks $P(\D)$. Dann bezeichne
+Sei $P(\xi)$ das Symbol eines Differentialausdrucks $P(\D)$. Dann bezeichnen wir mit
 \begin{equation}
-\Lambda(P)=\{ \nu \in \mathbb{R}^n| \ \ \forall \xi \in \mathbb{C}^n, \forall t \in \mathbb{R} \;:\; P(\xi + t\nu) = P(\xi)  \}
+\Lambda(P)=\{ \nu \in \mathbb{R}^n| \ \ \forall \xi \in \mathbb{R}^n, \forall t \in \mathbb{R} \;:\; P(\xi + t\nu) = P(\xi)  \}
 \end{equation}
-den Linienraum\footnote{Dieser wurde von G\r{a}rding eingeführt und beschreibt den größten Unterraum des $\R^n$, so daß das Polynom $P$ auf den Quotienten $\R^n/\Lambda(P)$ projiziert werden kann.} von $P$. Weiter sagen wir $P$ sei \eIndex[Differentialoperator]{vollständig}, wenn $\Lambda(P)=\{0\}$ gilt.
+den Linienraum\footnote{Dieser wurde von G\r{a}rding eingeführt und beschreibt den größten Unterraum des $\R^n$, so daß das Polynom $P$ auf den Quotienten $\R^n/\Lambda(P)$ projiziert werden kann.} von $P$. Wir nennen $P(\xi)$ \eIndex[Differentialoperator]{vollständig}, wenn $\Lambda(P)=\{0\}$ gilt.
 \end{df}
 \begin{lem}[{\cite[Lemma~2.13]{Hormander:1955}}]\label{Lema:homogene Polynome} 
 Sei $Q(\xi)$ ein homogenes Polynom vom Grad $m \in \mathbb{N}$ und  $\nu \in \mathbb{R}^n$ mit
@@ -881,7 +881,7 @@ für alle $\xi\in\R^n$ und $t\in\R$. Differenzieren dieser Identität liefert
 \begin{equation}
 \widetilde{P}(\xi + t \nu) = \widetilde{P}(\xi)
 \end{equation}
-für alle $\xi\in\R^n$ und $t\in\R$ und $\widetilde{P}(\xi) \not \rightarrow \infty$ für $\xi \rightarrow \infty$. Also impliziert Satz \ref{thm:2:Abbildung kompakt} mit $Q(\xi)=1$, dass $P_0^{-1}$ nicht kompakt sein kann. $\bullet$\qquad {\em Rückrichtung.} Angenommen, dass das Symbol $P(\xi)$ ist vollständig, d.h. es gilt $\Lambda (P)= \{0\}$. Wir zerlegen das Symbol $P(\xi)$ in seine homogenen Komponenten $P_k(\xi)$, 
+für alle $\xi\in\R^n$ und $t\in\R$ und $\widetilde{P}(\xi) \not \rightarrow \infty$ für $\xi \rightarrow \infty$. Also impliziert Satz \ref{thm:2:Abbildung kompakt} mit $Q(\xi)=1$, dass $P_0^{-1}$ nicht kompakt sein kann. $\bullet$\qquad {\em Rückrichtung.} Sei das Symbol $P(\xi)$ vollständig, d.h. es gilt $\Lambda (P)= \{0\}$. Wir zerlegen das Symbol $P(\xi)$ in seine homogenen Komponenten $P_k(\xi)$, 
 \begin{equation}\label{eq:zerlegung des polynoms}
 P(\xi) = \sum_{k=0}^m P_k(\xi),\qquad \deg P_k=k.
 \end{equation}
