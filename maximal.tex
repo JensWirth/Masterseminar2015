@@ -32,7 +32,7 @@ oder äquivalent
 \begin{equation}\label{distr2}
 \langle E,\check u\rangle = (2\pi)^{-n/2} \int \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in\rmC_0^\infty,
 \end{equation}
-wobei $\check u$ durch $\check u(x)=u(-x)$ gegeben ist\footnote{Die Integrabilität von $\widehat u$ folgt im Wesentlichen aus dem Satz von Paley-Wiener.}. Wir überlegen uns also eine Verallgemeinerung von \eqref{distr2}. 
+wobei $\check u$ durch $\check u(x)=u(-x)$ gegeben ist. Wir überlegen uns also eine Verallgemeinerung von \eqref{distr2}. 
 
 \begin{proof}[Beweis von Satz \ref{fundamental_exist}]
 Wir werden diesen Beweis in einigen Schritten führen.
@@ -56,7 +56,7 @@ Damit folgt für $u\in\rmC_0^\infty(\mathbb R^n)$
 \begin{equation}
 E*(P(\D)u) = (2\pi)^{-n/2} \oint \e^{\i x\cdot\xi} P(\xi)  \frac{\widehat{u} (\xi)}{P(\xi)}\, \mathrm d\xi=(2\pi)^{-n/2} \oint \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathrm d\xi
 \end{equation}
-und da der Integrand analytisch in $\xi_1$ ist, können wir den Integrationsweg als reale Achse wählen. Damit folgt
+und da der Integrand holomorph in $\xi_1$ ist, können wir den Integrationsweg als reale Achse wählen. Damit folgt
 \begin{equation}
 E*(P(\D) u)(x) = (2\pi)^{-n/2} \int \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathrm d\xi = u(x),
 \end{equation}
@@ -82,7 +82,23 @@ die analytisch ist, da das Integral gleichmäßig konvergent auf Kompakta ist.
 
 Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(\D)E_2 *u$ ist dann eine analytische Funktion.  Die Aussage ({\bf ii}) folgt dann, wenn wir zeigen, dass $P^{(\alpha)}(\D) E_1 * u$ quadratintegrierbar ist.  Sei $\phi \in\rmC_0^\infty$. Dann ist die Funktion $U*\phi$ auch in $C_0^\infty$ und im Sinne von \eqref{distr5} folgt
 \begin{equation}
-\langle P^{(\alpha)} (\D) E_1 * u, \check \phi\rangle  = P^{(\alpha)}(\D) E_1 * u * \phi(0) = \int_{|\xi| \ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \hat \phi(\xi) \, \mathrm d\xi,
+\langle P^{(\alpha)} (\D) E_1 * u, \check \phi\rangle  = P^{(\alpha)}(\D) E_1 * u * \phi(0) = \int_{|\xi| \ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \widehat \phi(\xi) \, \mathrm d\xi,
 \end{equation}     
-so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet. 
+so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet und gleich $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$ falls $|\xi|\ge R$. Damit ist $P^{(\alpha)}(\D) E_1 * u$ auch quadratintegrierbar und ({\bf ii}) folgt.
+
+\textbf{Schritt 3:} \emph{Beweis der Differenzierbarkeit in $\mathbb R^n\setminus{0}$.}
+Im Folgenden wenden wir uns dem Beweis von ({\bf i}) zu. Da $E_2$ eine ganze Funktion ist, genügt es zu zeigen, dass $E_1$ unendlich oft differenzierbar für $x\neq 0$ ist.  Wir beginnen mit folgenden Lemma:
+\begin{lem}\label{3.2lem1}
+Sei $0\neq y \in \mathbb R^n$ fest und sei
+\begin{equation}\label{3.2inf}
+M(\tau) = \inf_{\zeta, \xi} |\zeta-\xi|,
+\end{equation}
+wobei $\xi\in \mathbb C^n$ und $P(\xi)=0$, und $\xi\in \mathbb R^n$ mit $|y, \xi|= \tau$. Dann existieren positive Zahlen $a$ und $b$ mit
+\begin{equation}\label{3.2to}
+M(\tau) \tau^{-b} \to a\quad \text{mit } \tau \to \infty.
+\end{equation}
+\end{lem}
+\begin{proof}
+Nach Theorem ?? ({\bf i}) ist der Restriktionsbereich für $\zeta$ kompakt und das Infimum in \ref{3.2inf} wird angenommen. Weiter folgt leicht, dass $M(\tau)$ stetig von $\tau$ abhängt.  
+\end{proof}
 \end{proof}
