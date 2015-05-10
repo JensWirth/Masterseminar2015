@@ -2,8 +2,132 @@
 \chapter{Maximale Operatoren}
 
 % Voraussichtliche Struktur
-\section{Differentialoperatoren von lokalem Typ} % bearbeitet durch Thomas Hamm
 
+Sei $P(\D)$ eine Differentialausdruck und $\Omega\subset\R^n$ ein Gebiet. Wir erinnern an die Definition des maximalen Operators $P$, dieser versteht sich als größtmögliche distributionelle Fortsetzung von $P(D)$ und ist auf dem Definitionsbereich
+\begin{equation}
+   \mathcal D_P = \{ u\in\rmL^2(\Omega)\;:\; P(\D)u\in\rmL^2(\Omega) \}
+\end{equation}
+gegeben. Maximale Operatoren sind im wesentlichen durch ihren Definitionsbereich bestimmt. Es gilt
+\begin{thm}
+Angenommen, für zwei Differentialausdrücke $P(\D)$ und $Q(\D)$ und die zugeordneten maximalen Operatoren gilt $\mathcal D_P\subseteq\mathcal D_Q$. Dann gilt
+entweder $P(\xi)=a Q(\xi) + b$ mit Konstanten $a,b\in\C$ oder es gibt einen Vektor $\nu\in\R^n$ und Polynome $p$ und $q$ in einer Variablen mit
+$P(\xi)=p(\xi\cdot\nu)$ und $Q(\xi)=q(\xi\cdot\nu)$ sowie $\deg q\le\deg p$.
+\end{thm}
+\begin{proof} Vgl. \cite{Hormander:1955}, beruht auf strukturellen Argumenten zu Polynomringen über $\C$. Wesentlich ist, daß $\mathcal D_P\subseteq \mathcal D_Q$ Abschätzungen der Form
+\begin{equation}
+   |Q(\zeta)|^2 \le C \big( |P(\zeta)|^2 + 1\big)%,\qquad |Q^{(\alpha)}(\zeta)|^2 \le C \widetilde P(\zeta)^2
+\end{equation}
+für alle {\em komplexen} $\zeta\in\C^n$ impliziert.
+\end{proof}
+
+
+
+
+\section{Differentialoperatoren von lokalem Typ} % bearbeitet durch Thomas Hamm
+\begin{df}
+Der Differentialoperator $P(\D)$ heißt \eIndex[Differentialoperator]{von lokalem Typ}, wenn $u\varphi\in\mathcal D_{P_0}$ für alle $u\in\mathcal D_{P}$ und alle $\varphi\in C_0^\infty(\Omega)$.
+\end{df}
+
+\begin{lem}
+$P(\D)$ ist von lokalem Typ genau dann, wenn für jedes $u\in\mathcal{D}_P$ und jedes Kompaktum $K\subset\Omega$ eine Funktion $v\in\mathcal{D}_{P_0}$ existiert mit $u\vert_K=v\vert_K$.
+\end{lem}
+\begin{proof}
+Sei zunächst $P(\D)$ von lokalem Typ und $K\subset\Omega$ kompakt. Sei weiter $\varphi\in C_0^\infty(\Omega)$ mit $\varphi(x)=1$ für $x\in K$ und setze $v=u\varphi$. Dann ist nach Voraussetzung $v\in\mathcal{D}_P$ und darüber hinaus $\supp v$ kompakt. Wir zeigen, dass daraus bereits $v\in\mathcal{D}_{P_0}$ folgt. Sei dazu $\psi \in C_0^\infty(\R^n)$ mit $\int\psi(x)\d x=1$ und $\psi_\epsilon(x)=\epsilon^{-n} \psi(x/\epsilon)$ für $\epsilon>0$. Für alle hinreichend kleinen $\epsilon$ ist dann $v_\epsilon=v*\psi_\epsilon\in C_0^\infty(\Omega)$ und $v_\epsilon \to v$ in $\rmL^2(\Omega)$ für $\epsilon\to 0$. Da dann außerdem $P(\D)v_\epsilon=(P(\D)v)*\psi_\epsilon \to P(\D)v$ in $\rmL^2(\Omega)$ für $\epsilon\to 0$ folgt daraus $v\in \mathcal{D}_{P_0}$ gerade aus der Definition von $P_0$ als $\rmL^2$-$\rmL^2$-Abschluß auf $C_0^\infty(\Omega)$.\\
+Für die Umkehrung sei $u\in\mathcal{D}_P$ und $\varphi\in C_0^\infty(\Omega)$. Dann existiert für $K=\supp \varphi$ ein $v\in\mathcal{D}_{P_0}$ mit $u\vert_K=v\vert_K$. Dann ist $u\varphi=v\varphi $ und $v\varphi\in\mathcal{D}_{P_0}$. %klar?
+\end{proof}
+\begin{lem}[{\cite[Lemma~3.4]{Hormander:1955}}]\label{lem : loktyp}
+$P(\D)$ ist von lokalem Typ genau dann, wenn $P^{(\alpha)}(\D)u \in \rmL^2_{\text{loc}}(\Omega)$ für alle Multiindices $\alpha$ und $u\in\mathcal{D}_P$. In diesem Fall existiert für ein beliebiges Gebiet $\Omega'\subset \Omega$ mit kompaktem Abschluss in $\Omega$ ein $C>0$ mit
+\begin{equation}
+\int_{\Omega'} \abs{P^{(\alpha)}(\D)u(x)}^2\d x\leq C\left( \int_{\Omega} \abs{P(\D)u(x)}^2\d x + \int_{\Omega} \abs{u(x)}^2 \d x \right) \label{eq:lm3.4}
+\end{equation}
+für alle $u\in\mathcal{D}_P$.
+\end{lem}
+\begin{proof}
+Sei zuerst $P(\D)$ von lokalem Typ, $u\in\mathcal{D}_P$ und $K\subset\Omega$ kompakt. Nach Lemma \ref{lem : loktyp} existiert $v\in\mathcal{D}_{P_0}$ mit $v|_K=u|_K$. Daraus folgt $P^{(\alpha)}(\D)u|_K=P^{(\alpha)}(\D)v|_K$ und es ist $P^{(\alpha)}(\D)v\in\rmL^2(\Omega)$ nach Korollar \ref{cor:2:2.6}. Also ist $P^{(\alpha)}(\D)u \in \rmL^2_{\text{loc}}(\Omega)$.\\
+Sei umgekehrt $P^{(\alpha)}(\D)u \in \rmL^2_{\text{loc}}(\Omega)$ für alle Multiindices $\alpha$ und $K\subset\Omega$ kompakt. Sei $\varphi\in C_0^\infty(\Omega)$ mit $\varphi(x)=1$ für $x\in K$. Dann ist wegen
+\begin{equation}
+P(\D)v=\sum_\alpha \dfrac{\D^\alpha \varphi}{{\alpha}!}P^{(\alpha)}(\D)u
+\end{equation}
+$P(\D)v\in L^2(\Omega)$, also $v\in\mathcal{D}_P$. Da außerdem $\supp v$ kompakt, ist $v\in \mathcal{D}_{P_0}$, wie wir im Beweis von Lemma \ref{lem : loktyp} gesehen haben. Also ist $P(\D)$ nach Lemma \ref{lem : loktyp} von lokalem Typ.\\
+Die Ungleichung \ref{eq:lm3.4} folgt aus Satz \ref{thm:1:1.1} angewandt auf die Abbildung
+\begin{equation}
+\mathcal{D}_P \ni u \mapsto P^{(\alpha)}u\in \rmL^2(\Omega').
+\end{equation}
+\end{proof}
+
+%
+%
+%
+
+\begin{thm}[{\cite[Theorem~3.12]{Hormander:1955}}]
+   Angenommen, $P(\D)$ ist von lokalem Typ. Dann ist $P$ der Abschluß seiner Einschränkung auf $\mathcal D_P\cap \rmC^\infty(\Omega)$.
+\end{thm}
+\begin{proof}
+
+\end{proof}
+
+%%
+%
+%
+
+Im folgenden sollen Kriterien dafür gefunden werden, daß ein gegebener Differentialausdruck $P(\D)$ von lokalem Typ ist. Ein erstes notwendiges Kriterium liefert folgendes Lemma.
+
+\begin{lem}[{\cite[Lemma~3.5]{Hormander:1955}}]
+Sei $\Omega$ ein beschränktes Gebiet und $P(\D)$ von lokalem Typ. Dann existiert für jedes $A>0$ ein $C>0$, sodass
+\begin{equation}
+\widetilde{P}(\zeta)^2=\sum_\alpha \abs{P^{(\alpha)}(\zeta)}^2\leq C(1+\abs{P(\zeta)}^2)
+\end{equation}
+für alle $\zeta\in\C^n$ mit $\abs{\Im \zeta} < A$.
+\end{lem}
+\begin{proof}
+Setze $u(x)=\e^{\i x\cdot\zeta}$. Dann ist $P^{(\alpha)}(\D)u(x)=P^{(\alpha)}(\zeta)\e^{\i x\cdot\zeta}$ und mit Lemma \ref{lem : loktyp} folgt
+\begin{equation}
+\abs{P^{(\alpha)}(\zeta)}^2 \int_{\Omega} \e^{-2x\cdot \eta}\d x \leq C(1+\abs{P(\zeta)}^2)\int_\Omega \e^{-2x\cdot \eta}\d x
+\end{equation}
+wobei $\eta = \Im \zeta$. Setzen wir weiter $\delta = \sup \{2\abs{x}:x\in\Omega\}$, so folgt
+\begin{equation}
+\int_\Omega \e^{-2x\cdot \eta}\d x \geq \int_\Omega \e^{-\delta \abs{\eta}}=\abs{\Omega}\e^{-\delta \abs{\eta}}
+\end{equation}
+und
+\begin{equation}
+\int_\Omega \e^{-2x\cdot \eta}\d x \leq \int_\Omega \e^{\delta \abs{\eta}}=\abs{\Omega}\e^{\delta \abs{\eta}}.
+\end{equation}
+Insgesamt also $\abs{P^{(\alpha)}(\zeta)}^2\leq C\e^{2\delta \abs{\eta}}(1+\abs{P(\zeta)}^2)\leq \widetilde{C}(1+\abs{P(\zeta)}^2) $, wenn $\abs{\eta}=\abs{\Im \zeta}$ beschränkt. Summation über alle $\alpha$ liefert die Behauptung.
+\end{proof}
+
+
+%
+% Satz 3.3.
+%
+
+Es zeigt sich, dass das gerade gefundene Kriterium auch hinreichend ist. Wir formulieren den Satz, der Beweis wird sich über mehrere Abschnitte hinziehen und nachfolgend in einzelnen Teilschritten gezeigt werden.
+\begin{thm}[{\cite[Theorem~3.3]{Hormander:1955}}]
+Sei $P(\D)$ ein Differentialausdruck mit Symbol $P(\xi)$. Dann sind \"aquivalent:
+\begin{enumerate}
+\item Für jedes $A>0$ existiert ein $R>0$, so daß $P(\xi+\i\eta)\ne0$ für alle $|\eta|<A$ und $\dist(\xi,\Lambda(P))>R$.
+\item Für jedes $\vartheta\in\R^n$ gilt $\lim_{\xi\to\infty} P(\xi+\vartheta)/P(\xi)=1$ modulo $\Lambda(P)$.
+\item Für jeden Multiindex $\alpha\in\N_0^n$, $\alpha\ne0$, gilt $\lim_{\xi\to\infty} P^{(\alpha)}(\xi)/P(\xi)=0$ modulo $\Lambda(P)$.
+\item Für jedes $A>0$ existiert ein $C>0$, so daß $\widetilde P(\xi+\i\eta)^2\le C\big(|P(\xi+\i\eta)|^2+1\big)$ für $|\eta|\le A$.
+\item Für jedes $A>0$ gilt $\lim_{\xi\to\infty} P(\xi+\i\eta)=\infty$ modulo $\Lambda(P)$ gleichmäßig in $|\eta|\le A$.
+\item $P(\D)$ ist von lokalem Typ.
+\end{enumerate}
+\end{thm} 
+
+
+
+
+
+\begin{lem}[{\cite[Lemma~3.7]{Hormander:1955}}]
+Sei $P\in \C[X_1,\ldots,X_n]$. Angenommen für jedes $A>0$ existiert ein $B>0$, sodass $P(\xi+\i\eta)\neq 0$ für alle $\xi,\eta\in\R^n$ mit $\abs{\eta}<A$ und $\abs{\xi}>B$. Dann ist $P$ vollständig und
+\begin{equation}
+\lim_{\xi\to\infty}\dfrac{P(\xi+\vartheta)}{P(\xi)}=1 \label{eq:lm3.7}
+\end{equation}
+für alle $ \vartheta\in\R^n$.
+\end{lem}
+\begin{proof}
+Angenommen $P$ wäre nicht vollständig. Dann sei $0\neq\nu\in\Lambda(P)$. Sei außerdem $\zeta=\xi+\i\eta$ eine Nullstelle von $P$. Dann ist $P(\xi+t\nu+\i\eta)=0$ für alle $t\in\R$, also für $\abs{\xi+t\nu}$ beliebig groß. Ein Widerspruch.\\
+Durch Verschieben des Koordinatensystems zeigen wir \ref{eq:lm3.7} ohne Einschränkung für den Vektor $\vartheta=(1,0,\ldots,0)$.
+\end{proof}
 
 \section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
 
