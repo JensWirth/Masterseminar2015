@@ -3,7 +3,7 @@
 
 % Voraussichtliche Struktur
 
-Sei $P(\D)$ eine Differentialausdruck und $\Omega\subset\R^n$ ein Gebiet. Wir erinnern an die Definition des maximalen Operators $P$, dieser versteht als größtmögliche distributionelle Fortsetzung von $P(D)$ und ist auf dem Definitionsbereich
+Sei $P(\D)$ eine Differentialausdruck und $\Omega\subset\R^n$ ein Gebiet. Wir erinnern an die Definition des maximalen Operators $P$, dieser versteht sich als größtmögliche distributionelle Fortsetzung von $P(D)$ und ist auf dem Definitionsbereich
 \begin{equation}
    \mathcal D_P = \{ u\in\rmL^2(\Omega)\;:\; P(\D)u\in\rmL^2(\Omega) \}
 \end{equation}
@@ -46,7 +46,7 @@ für alle $u\in\mathcal{D}_P$.
 Sei zuerst $P(\D)$ von lokalem Typ, $u\in\mathcal{D}_P$ und $K\subset\Omega$ kompakt. Nach Lemma \ref{lem : loktyp} existiert $v\in\mathcal{D}_{P_0}$ mit $v|_K=u|_K$. Daraus folgt $P^{(\alpha)}(\D)u|_K=P^{(\alpha)}(\D)v|_K$ und es ist $P^{(\alpha)}(\D)v\in\rmL^2(\Omega)$ nach Korollar \ref{cor:2:2.6}. Also ist $P^{(\alpha)}(\D)u \in \rmL^2_{\text{loc}}(\Omega)$.\\
 Sei umgekehrt $P^{(\alpha)}(\D)u \in \rmL^2_{\text{loc}}(\Omega)$ für alle Multiindices $\alpha$ und $K\subset\Omega$ kompakt. Sei $\varphi\in C_0^\infty(\Omega)$ mit $\varphi(x)=1$ für $x\in K$. Dann ist wegen
 \begin{equation}
-P(\D)v=\sum_\alpha \dfrac{\D^\alpha \varphi}{\abs{\alpha}!}P^{(\alpha)}(\D)u
+P(\D)v=\sum_\alpha \dfrac{\D^\alpha \varphi}{{\alpha}!}P^{(\alpha)}(\D)u
 \end{equation}
 $P(\D)v\in L^2(\Omega)$, also $v\in\mathcal{D}_P$. Da außerdem $\supp v$ kompakt, ist $v\in \mathcal{D}_{P_0}$, wie wir im Beweis von Lemma \ref{lem : loktyp} gesehen haben. Also ist $P(\D)$ nach Lemma \ref{lem : loktyp} von lokalem Typ.\\
 Die Ungleichung \ref{eq:lm3.4} folgt aus Satz \ref{thm:1:1.1} angewandt auf die Abbildung
