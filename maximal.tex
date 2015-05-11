@@ -116,8 +116,7 @@ Sei $P(\D)$ ein Differentialausdruck mit Symbol $P(\xi)$. Dann sind \"aquivalent
 
 
 
-
-\begin{lem}[{\cite[Lemma~3.7]{Hormander:1955}}]
+\begin{lem}[{\bf(i) $\Rightarrow$ (ii)};{\cite[Lemma~3.7]{Hormander:1955}}]
 Sei $P\in \C[X_1,\ldots,X_n]$. Angenommen für jedes $A>0$ existiert ein $B>0$, sodass $P(\xi+\i\eta)\neq 0$ für alle $\xi,\eta\in\R^n$ mit $\abs{\eta}<A$ und $\abs{\xi}>B$. Dann ist $P$ vollständig und
 \begin{equation}
 \lim_{\xi\to\infty}\dfrac{P(\xi+\vartheta)}{P(\xi)}=1 \label{eq:lm3.7}
@@ -126,7 +125,63 @@ für alle $ \vartheta\in\R^n$.
 \end{lem}
 \begin{proof}
 Angenommen $P$ wäre nicht vollständig. Dann sei $0\neq\nu\in\Lambda(P)$. Sei außerdem $\zeta=\xi+\i\eta$ eine Nullstelle von $P$. Dann ist $P(\xi+t\nu+\i\eta)=0$ für alle $t\in\R$, also für $\abs{\xi+t\nu}$ beliebig groß. Ein Widerspruch.\\
-Durch Verschieben des Koordinatensystems zeigen wir \ref{eq:lm3.7} ohne Einschränkung für den Vektor $\vartheta=(1,0,\ldots,0)$.
+Durch Verschieben des Koordinatensystems zeigen wir \ref{eq:lm3.7} ohne Einschränkung für den Vektor $\vartheta=(1,0,\ldots,0)$. Sei $\epsilon > 0$ beliebig. Dann existiert nach Voraussetzung ein $B>0$, sodass $P(\xi+\i\eta)\neq 0$ für alle $\abs{\eta} < \epsilon^{-1}$ und $\abs{\xi}>B$. Sei nun $\xi=(\xi_1,\ldots,\xi_n)\in\R^n$ mit $\abs{\xi}>B+\epsilon^{-1}$ fest und $t_1,\ldots,t_m\in \C$ die Nullstellen des Polynoms $P(\cdot,\xi_2,\ldots,\xi_n)$. Für $\zeta=(t_k,\xi_2,\ldots,\xi_n)$ gilt dann wegen $P(\zeta)=0$, dass $\abs{\Re \zeta} \leq B$ oder $\abs{\Im \zeta} \geq \epsilon^{-1}$. Für $\abs{\xi-\zeta}= (\abs{\xi-\Re \zeta}^2+\abs{\Im \zeta})^{1/2}$ folgt dann in beiden Fällen $\abs{\xi-\zeta}\geq \epsilon^{-1}$. Weiterhin haben wir für $P$ die Darstellung
+\begin{equation}
+P(\xi)=c\prod_{k=1}^m (\xi_1-t_k).
+\end{equation}
+und damit
+\begin{equation}
+\dfrac{P(\xi+\vartheta)}{P(\xi)}=\prod_{k=1}^m \dfrac{\xi_1+1-t_k}{\xi_1-t_k}=\prod_{k=1}^m\left( 1+\dfrac{1}{\xi_1-t_k} \right).
+\end{equation}
+Zusammen mit der Abschätzung für die Linearfaktoren folgt
+\begin{equation}
+\left|\dfrac{P(\xi+\vartheta)}{P(\xi)}-1\right|\leq \epsilon\sum_{k=1}^m \binom{m}{k}\epsilon^{k-1} \leq m\epsilon  \sum_{k=0}^{m-1}\binom{m-1}{k}\epsilon^k = m\epsilon(1+\epsilon)^{m-1}
+\end{equation}
+für alle $\xi \in\R^n$ mit $\abs{\xi}>B+\epsilon^{-1}$.
+\end{proof}
+\begin{lem}[{\cite[Lemma~2.10]{Hormander:1955}}]
+Sei $P$ ein Polynom. Dann gilt $\spann\{P^{(\alpha)}:\abs{\alpha}\leq \deg P\}=\spann\{P(\cdot+\vartheta):\vartheta\in\R^n\}$.
+\end{lem}
+\begin{proof}
+\relax[$\supseteq$] Da $P$ ein Polynom ist, folgt aus der Taylorformel
+\begin{equation}
+P(\xi+\vartheta)=\sum_\alpha \dfrac{P^{(\alpha)}(\xi)}{\alpha!}\vartheta^{\alpha}
+\end{equation}
+für jedes feste $\vartheta\in\R^n$. $\bullet$\qquad [$\subseteq$] Betrachten wir nun den Unterraum, der von allen Translaten von $P$ aufgespannt wird. Dieser enthält alle Linearkombinationen der Form
+\begin{equation}
+\sum_{i=1}^m t_i P(\xi+\vartheta_i)=\sum_{i=1}^mt_i\sum_\alpha \dfrac{P^{(\alpha)}(\xi)}{\alpha!}\vartheta_i^\alpha =\sum_\alpha \dfrac{P^{(\alpha)}(\xi)}{\alpha!} \sum_{i=1}^mt_i\vartheta_i^\alpha=\sum_\alpha c_\alpha \dfrac{P^{(\alpha)}(\xi)}{\alpha!}
+\end{equation}
+mit Koeffizienten $t_i$ und Vektoren $\vartheta_i\in\R^n$. Für geeignet gewählte $ m,t_i,\vartheta_i $ nehmen dabei die Koeffizienten $c_\alpha$ beliebige Werte an. Also enthält dieser Unterraum auch alle Linearkombinationen der $P^{(\alpha)}$.
+\end{proof}
+\begin{lem}[{\bf(ii) $\Rightarrow$ (iii),(iv)};{\cite[Lemma~3.8]{Hormander:1955}}]
+Gilt
+\begin{equation}
+\lim_{\xi\to\infty}\dfrac{P(\xi+\vartheta)}{P(\xi)}=1
+\end{equation}
+für alle reellen $\vartheta$, so auch für alle komplexen und die Konvergenz ist gleichmäßig in $\vartheta$, wenn $\abs{\vartheta}$ beschränkt. Außerdem gilt dann für alle Multiindices $\alpha\neq0$
+\begin{equation}
+\lim_{\xi\to\infty}\dfrac{P^{(\alpha)}(\xi+\vartheta)}{P(\xi+\vartheta)}=0
+\end{equation}
+ebenfalls gleichmäßig in $\vartheta$, wenn $\abs{\vartheta}$ beschränkt.
+\end{lem}
+\begin{proof}
+Nach obigem Lemma existiert für $P^{(\alpha)}$ eine Darstellung der Form
+\begin{equation}
+P^{(\alpha)}(\xi)=\sum_{i=1}^m t_i P(\xi+\vartheta_i).
+\end{equation}
+Für $\alpha\neq0$ enthält der linke Term keine Monome der Ordnung $\deg P$ und durch Koeffizientenvergleich folgt $\sum t_i=0$. Damit folgt
+\begin{equation}
+\dfrac{P^{(\alpha)}(\xi)}{P(\xi)}=\sum_{i=1}^m t_i\dfrac{P(\xi+\vartheta_i)}{P(\xi)} \rightarrow \sum_{i=1}^m t_i=0
+\end{equation}
+nach Voraussetzung für $\xi\to\infty$. Weiterhin folgt mit der Taylorformel
+\begin{equation}
+\dfrac{P(\xi+\vartheta)}{P(\xi)}=1+\sum_{\alpha\neq 0} \dfrac{P^{(\alpha)}(\xi)}{P(\xi)}\dfrac{\vartheta^\alpha}{\alpha!}
+\end{equation}
+und damit die Konvergenz für komplexe $\vartheta$, sowie die gleichmäßige Konvergenz. Ebenso folgt damit für
+\begin{equation}
+\dfrac{P^{(\alpha)}(\xi+\vartheta)}{P(\xi+\vartheta)}=\sum_{i=1}^mt_i\dfrac{P(\xi+\vartheta+\vartheta_i)}{P(\xi)}\dfrac{P(\xi)}{P(\xi+\vartheta)} \rightarrow 0
+\end{equation}
+die gleichmäßige Konvergenz für $\xi\to\infty$, $\alpha\neq0$, wenn $\abs{\vartheta}$ bescrhänkt.
 \end{proof}
 
 \section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
