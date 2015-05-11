@@ -187,7 +187,7 @@ E*(P(\D) u)(x) = (2\pi)^{-n/2} \int \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathr
 und $E$ ist somit eine Fundamentallösung.
 
 \textbf{Schritt 2:} \emph{Beweis der Quadratintegrierbarkeit von $P^{(\alpha)}(\D) E * u$.}
-Wir teilen das Integral \eqref{distr3} in zwei Teile auf. Falls $R=\sqrt{C^2 + C'^2}$, haben wir $|\xi<<R$ und der Teil des Integrals von \eqref{distr3}, wo $\xi$ nicht real ist. Schreibe also 
+Wir teilen das Integral \eqref{distr3} in zwei Teile auf. Falls $R=\sqrt{C^2 + C'^2}$, haben wir $|\xi|<R$ und der Teil des Integrals von \eqref{distr3}, wo $\xi$ nicht real ist. Schreibe also 
 \begin{equation}\label{distr4}
 E=E_1 + E_2,
 \end{equation}
@@ -208,5 +208,7 @@ Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(\D)E_2 *u$ ist dan
 \begin{equation}
 \langle P^{(\alpha)} (\D) E_1 * u, \check \phi\rangle  = P^{(\alpha)}(\D) E_1 * u * \phi(0) = \int_{|\xi| \ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \hat \phi(\xi) \, \mathrm d\xi,
 \end{equation}     
-so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet. 
+so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet und gleich $\hat u(\xi) P^{(\alpha)}(\xi)/P(\xi)$ wenn $|\xi|\ge R$. Da $P^{(\alpha)}(\xi)/P(\xi)$ beschränkt is für $|\xi|\ge R$ nach Theorem ?? ({\bf iii})  und dass $\hat u(\xi)$ quadratintegrierbar ist, folgern wir, dass die Fouriertransformierte von $P^{(\alpha)}(D) E_1 * u$ quadratintegrierbar ist. Damit ist auch $P^{(\alpha)}(D) E_1 * u$ quadratintegrierbar ist, was den Beweis von ({\bf ii}) abschließt.  
+
+Im Folgenden wollen wir (\bf{i}) 
 \end{proof}
