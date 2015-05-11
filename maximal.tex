@@ -210,5 +210,37 @@ Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(\D)E_2 *u$ ist dan
 \end{equation}     
 so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet und gleich $\hat u(\xi) P^{(\alpha)}(\xi)/P(\xi)$ wenn $|\xi|\ge R$. Da $P^{(\alpha)}(\xi)/P(\xi)$ beschränkt is für $|\xi|\ge R$ nach Theorem ?? ({\bf iii})  und dass $\hat u(\xi)$ quadratintegrierbar ist, folgern wir, dass die Fouriertransformierte von $P^{(\alpha)}(D) E_1 * u$ quadratintegrierbar ist. Damit ist auch $P^{(\alpha)}(D) E_1 * u$ quadratintegrierbar ist, was den Beweis von ({\bf ii}) abschließt.  
 
-Im Folgenden wollen wir (\bf{i}) 
+Im Folgenden wollen wir (\bf{i})
+
+% fehlt was
+\begin{lem}
+Es gibt eine positive Konstanten $c$ und $d$ so dass für hinreichend große $|\xi|$ wir 
+\begin{equation}
+|\zeta- \xi|\ge c |\xi|^{d}
+\end{equation} 
+für alle reelle $\xi$ und alle $\zeta$ mit $P(\zeta)=0$.
+\end{lem} 
+\begin{proof}
+Sei der Vektor $y$ von Lemma ?? als $(0,\ldots, 0, 1, 0, \ldots, 0)$, erhalten wir für große $|\xi_i|$
+\begin{equation}
+|\zeta-\xi|\ge a_i |\xi_i|^{b_i}
+\end{equation}
+wobei $a_i$ und $b_i$ positive Zahlen sind. Damit ergibt sich mit $c'=\min a_i$ und $d=\min b_i$ 
+\begin{equation}
+|\zeta - \xi|\ge c'(\max |\xi_i|)^d \ge c |\xi|^d.
+\end{equation}
+\end{proof}
+\begin{lem}
+Sei $y\in \mathbb R^n$ und $\eta \in \mathbb R^n$ zwei feste Vektoren. Dann gibt es eine Konstante $C$ so dass
+\begin{equation}
+\left | \langle D, \eta \rangle^{k+j} \left ( \frac{1}{P(\xi)} \right )  \right | \le \frac{(k+j)! C^{k+j}}{|\xi|^{kd} ( 1+ |\langle y,\xi\rangle )^{bj}}, |\xi|\ge R, j, k=1,2,\ldots,
+\end{equation}
+wobei $b$ and $d$ aus dem vorigen Lemma seien. Dabei sei
+\begin{equation}
+\langle D, \eta\rangle^{k+j} \left (\frac{1}{P(\xi)} \right ) = i^{-(k+j)} \frac{\mathrm d^{k+j}}{\mathrm d t^{k+j}} \left ( \frac{1}{P(\xi+ t\eta)} \right )_{t=0}
+\end{equation}
+\end{lem}
+\begin{proof}
+
+\end{proof}
 \end{proof}
