@@ -722,7 +722,7 @@ gilt.
 \begin{proof} {\it Rückrichtung.}
 Wir nehmen zunächst an, dass \eqref{eq:2:tozero} erfüllt ist und betrachten eine Folge ${(u_n)}_{n \in \mathbb{N}} $ in $\rmC^\infty_0(\Omega)$ mit
 \begin{equation}\label{eq:2:PDb}
-\norm{P(\D)u_n}\leq 1 \ \ \forall n \in \mathbb{N}.
+\norm{P(\D)u_n}\leq 1.
 \end{equation}
 Wir zeigen, dass dann eine Teilfolge ${(u_{n_k})}_{k \in \mathbb{N}}$ in $\rmC^\infty_0(\Omega)$ existiert,
 so dass  $\left(Q(\D)u_{n_k}\right)_{k \in \mathbb{N}}$ konvergent ist. Nach Voraussetzung gilt 
@@ -736,7 +736,7 @@ insbesondere ist $\widetilde Q(\xi)/\widetilde P(\xi)$ beschränkt. Also existie
 gilt. Damit folgt mit dem Satz von Plancherel für beliebiges $u\in\rmC_0^\infty(\Omega)$
 \begin{multline}
 \int |Q(\D)u(x)|^2 \d x = \int |Q(\xi) \widehat{u}(\xi)|^2 \d \xi \\
-\leq  \sum_{|\alpha| \leq k}C\int | P^{(\alpha)} (\xi) \widehat u(\xi)|^2 \d \xi =\sum_{|\alpha| \leq k} C\int |P^{(\alpha)}(\D)u(x)|^2 \d x.
+\leq  \sum_{\alpha}C\int | P^{(\alpha)} (\xi) \widehat u(\xi)|^2 \d \xi =\sum_{\alpha} C\int |P^{(\alpha)}(\D)u(x)|^2 \d x.
 \end{multline}
 Weiter liefert uns  Satz \ref{thm:2:2.1} eine Konstante $\widetilde{C}>0$ mit
 \begin{equation}
@@ -840,7 +840,7 @@ Sei $P(\xi)$ das Symbol eines Differentialausdrucks $P(\D)$. Dann bezeichnen wir
 \begin{equation}
 \Lambda(P)=\{ \nu \in \mathbb{R}^n| \ \ \forall \xi \in \mathbb{R}^n, \forall t \in \mathbb{R} \;:\; P(\xi + t\nu) = P(\xi)  \}
 \end{equation}
-den Linienraum\footnote{Dieser wurde von G\r{a}rding eingeführt und beschreibt den größten Unterraum des $\R^n$, so daß das Polynom $P$ auf den Quotienten $\R^n/\Lambda(P)$ projiziert werden kann.} von $P$. Wir nennen $P(\xi)$ \eIndex[Differentialoperator]{vollständig}, wenn $\Lambda(P)=\{0\}$ gilt.
+den \eIndex[Polynom]{Linienraum}\footnote{Dieser wurde von G\r{a}rding eingeführt und beschreibt den größten Unterraum des $\R^n$, so daß das Polynom $P$ auf den Quotienten $\R^n/\Lambda(P)$ projiziert werden kann.} von $P$. Wir nennen $P(\xi)$ \eIndex[Differentialoperator]{vollständig}, wenn $\Lambda(P)=\{0\}$ gilt.
 \end{df}
 \begin{lem}[{\cite[Lemma~2.13]{Hormander:1955}}]\label{Lema:homogene Polynome} 
 Sei $Q(\xi)$ ein homogenes Polynom vom Grad $m \in \mathbb{N}$ und  $\nu \in \mathbb{R}^n$ mit
@@ -904,7 +904,8 @@ M_{C,P} := \{\xi \in \R^n | \ \widetilde{P}(\xi) \leq C\}
 für jedes $C$ beschränkt ist. {\em Dazu zeigen wir, daß für beliebige Polynome $P$ und Konstanten $C$ die zugeordnete Menge $M_{C,P}$ modulo $\Lambda(P)$ (also auf dem Quotientenraum $\R^n/\Lambda(P)$) beschränkt ist.} Der Beweis erfolgt per Induktion über $m$.
 
 \noindent{\em Induktionsanfang:} Wir betrachten Polynome vom Grad $1$. Diese sind von der Form 
-$P(\xi) =  a \cdot \xi + b$ mit $ a  \in \mathbb{R}^n$, $b \in \mathbb{R}$. Für diese gilt $\Lambda(P)=\{a\}^{\perp}$ und $M_{C,P}$ ist ein zu $a$ paralleler Streifen. Dieser ist als Teilmenge des Quotientenraumes $\mathbb{R}^n/\{a\}^{\perp}\simeq a\R$ beschränkt. $\bullet$
+$P(\xi) =  a \cdot \xi + b$ mit $ a  \in \mathbb{C}^n$, $b \in \mathbb{C}$. Für diese gilt $\Lambda(P)=\{\Re a\}^{\perp}\cap\{\Im a\}^\perp$ und $M_{C,P}$ ist wegen $\widetilde P(\xi)^2 = (\Re a\cdot \xi)^2+(\Im a\cdot \xi)^2 + C$ ein zu 
+$(\spann\{\Re a,\Im a\})^\perp$ paralleler Streifen. Letzterer ist als Teilmenge des Quotientenraumes $\mathbb{R}^n/(\spann\{\Re a,\Im a\})^{\perp}\simeq \spann\{\Re a,\Im a\}$ beschränkt. $\bullet$
 
 \noindent{\em Induktionsschritt:} Angenommen, die Aussage wurde schon für alle Polynome vom Grad kleiner $m$ gezeigt. Sei weiter $P$ vom Grad $m$.
 Nach Definition gilt $\widetilde{P}(\xi) \leq C$ für alle $\xi \in M_{C,P}$, insbesondere also auch $|P^{(\alpha)}(\xi)|\leq C$ für jeden Multiindex $\alpha$. Für $|\alpha|=m-1$ unterscheiden sich $P^{(\alpha)}(\xi)$ und $P_m^{(\alpha)}(\xi)$ nur um eine Konstante, d.h. es gilt $P^{(\alpha)}-P_m^{(\alpha)}=p_\alpha \in\mathbb{C}$ und damit $|P_m^{(\alpha)}(\xi)| \leq C'$ für eine neue Konstante $C'>0$ und alle $\xi \in M_{C,P}$. Gilt nun  $P_m^{(\alpha)}(\xi)=0$ für $\xi\in\R^n$ und alle $|\alpha|=m-1$, 
