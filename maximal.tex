@@ -68,7 +68,15 @@ Insbesondere gilt \eqref{eq:lm3.4} genau dann, wenn $P(\D)$ von lokalem Typ ist.
    Angenommen, $P(\D)$ ist von lokalem Typ. Dann ist $P$ der Abschluß seiner Einschränkung auf $\mathcal D_P\cap \rmC^\infty(\Omega)$.
 \end{thm}
 \begin{proof}
-\marginpar{Ergänzen!}
+Sei $\{\Omega_i\}_{i\in \N}$ eine abzählbare offene Überdeckung von $\Omega$ mit $\Omega_i$ beschränkt  und $\{\varphi_i\}_{i\in \N}$ mit $\varphi_i\in C_0^\infty (\Omega_i)$ eine untergeordnete lokal endliche Zerlegung der Eins. Zu einem beliebigen $u\in\mathcal{D}_P$ setze nun $u_i=u\varphi_i$. Dann ist $\sum_{i\geq 1} u_i=u$, $\sum_{i\geq 1} P(\D)u_i=P(\D)u$ und da $P$ von lokalem Typ ist, ist $u_i\in\mathcal{D}_{P_0}$. Da $P_0$ gerade der $\rmL^2$-$\rmL^2$-Abschluß auf $C_0^\infty(\Omega)$ ist, können wir für gegebenes $\epsilon>0$ Funktionen $v_i\in C_0^\infty(\Omega)$ wählen mit $\norm{u_i-v_i}<\epsilon 2^{-i}$ und $\norm{P(\D)u_i-P(\D)v_i}<\epsilon 2^{-i}$. Weiterhin können wir ohne Einschränkung davon ausgehen, dass $\supp v_i \subset \Omega_i$. Damit folgt
+\begin{equation}
+\norm{v-u}\leq \sum_{i=1}^\infty \norm{v_i-u_i} < \epsilon
+\end{equation}
+und
+\begin{equation}
+\norm{P(\D)v-P(\D)u}\leq \sum_{i=1}^\infty \norm{P(\D)v_i-P(\D)u_i} < \epsilon
+\end{equation}
+und $v,P(\D)v\in \mathcal D_P\cap \rmC^\infty(\Omega)$ und damit die Behauptung.
 \end{proof}
 
 %%
@@ -193,6 +201,7 @@ und damit die Konvergenz für komplexe $\vartheta$, sowie die gleichmäßige Kon
 \end{equation}
 die gleichmäßige Konvergenz für $\xi\to\infty$, $\alpha\neq0$, wenn $\abs{\vartheta}$ bescrhänkt.
 \end{proof}
+Der Beweis der Implikation {\bf (iv) $\Rightarrow$ (v)} verläuft analog zum Beweis von Satz \ref{}. Da die Implikation {\bf (v) $\Rightarrow$ (i)} offensichtlich ist, ist damit die Äquivalenz der Bedingungen {\bf (i)}-{\bf(v)} gezeigt. Also ist jede dieser Bedingungen notwendig dafür, dass $P(\D)$ von lokalem Typ ist. Um zu beweisen, dass diese auch hinreichend sind, benötigen wir eine Fundamentallösung, welche im folgenden Abschnitt konstruiert wird.
 
 \section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
 
