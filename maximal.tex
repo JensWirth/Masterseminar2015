@@ -108,29 +108,30 @@ Insgesamt also $\abs{P^{(\alpha)}(\zeta)}^2\leq C\e^{2\delta \abs{\eta}}(1+\abs{
 Es zeigt sich, dass das gerade gefundene Kriterium auch hinreichend ist. Wir formulieren den Satz, der Beweis wird sich über mehrere Abschnitte hinziehen und nachfolgend in einzelnen Teilschritten gezeigt werden.
 
 \begin{thm}[{\cite[Theorem~3.3]{Hormander:1955}}]\label{thm:3:3.3}
-Sei $P(\D)$ ein Differentialausdruck mit Symbol $P(\xi)$. Dann sind \"aquivalent:
+Sei $P(\D)$ ein Differentialausdruck mit Symbol $P(\xi)$ und gelte $\Lambda(P)=\{0\}$. Dann sind \"aquivalent:
 \begin{enumerate}
-\item Für jedes $A>0$ existiert ein $R>0$, so daß $P(\xi+\i\eta)\ne0$ für alle $|\eta|<A$ und $\dist(\xi,\Lambda(P))>R$.
-\item Für jedes $\vartheta\in\R^n$ gilt $\lim_{\xi\to\infty} P(\xi+\vartheta)/P(\xi)=1$ modulo $\Lambda(P)$.
-\item Für jeden Multiindex $\alpha\in\N_0^n$, $\alpha\ne0$, gilt $\lim_{\xi\to\infty} P^{(\alpha)}(\xi)/P(\xi)=0$ modulo $\Lambda(P)$.
+\item Für jedes $A>0$ existiert ein $R>0$, so daß $P(\xi+\i\eta)\ne0$ für alle $|\eta|<A$ und $|\xi|>R$.
+\item Für jedes $\vartheta\in\R^n$ gilt $\lim_{\xi\to\infty} P(\xi+\vartheta)/P(\xi)=1$.
+\item Für jeden Multiindex $\alpha\in\N_0^n$, $\alpha\ne0$, gilt $\lim_{\xi\to\infty} P^{(\alpha)}(\xi)/P(\xi)=0$.
 \item Für jedes $A>0$ existiert ein $C>0$, so daß $\widetilde P(\xi+\i\eta)^2\le C\big(|P(\xi+\i\eta)|^2+1\big)$ für $|\eta|\le A$.
-\item Für jedes $A>0$ gilt $\lim_{\xi\to\infty} P(\xi+\i\eta)=\infty$ modulo $\Lambda(P)$ gleichmäßig in $|\eta|\le A$.
+\item Für jedes $A>0$ gilt $\lim_{\xi\to\infty} P(\xi+\i\eta)=\infty$ gleichmäßig in $|\eta|\le A$.
 \item $P(\D)$ ist von lokalem Typ.
 \end{enumerate}
 \end{thm} 
 
- Der Schritt {\bf (vi)} $\Rightarrow$ {\bf(i)} wurde gerade gezeigt.
+ Der Schritt {\bf (vi)} $\Rightarrow$ {\bf(i)} wurde gerade gezeigt. Die Voraussetzung $\Lambda(P)=\{0\}$ kann entfallen, wenn die Aussagen {\bf (i)}, {\bf (ii)}, {\bf (iii)}
+ und {\bf (v)} jeweils modulo $\Lambda(P)$ gefordert werden.
 
 
 \begin{lem}[{\bf(i) $\Rightarrow$ (ii)};{\cite[Lemma~3.7]{Hormander:1955}}]
-Sei $P\in \C[X_1,\ldots,X_n]$. Angenommen für jedes $A>0$ existiert ein $B>0$, sodass $P(\xi+\i\eta)\neq 0$ für alle $\xi,\eta\in\R^n$ mit $\abs{\eta}<A$ und $\abs{\xi}>B$. Dann ist $P$ vollständig und
+Angenommen für jedes $A>0$ existiert ein $B>0$, sodass $P(\xi+\i\eta)\neq 0$ für alle $\xi,\eta\in\R^n$ mit $\abs{\eta}<A$ und $\abs{\xi}>B$. Dann gilt
 \begin{equation}
 \lim_{\xi\to\infty}\dfrac{P(\xi+\vartheta)}{P(\xi)}=1 \label{eq:lm3.7}
 \end{equation}
 für alle $ \vartheta\in\R^n$.
 \end{lem}
 \begin{proof}
-Angenommen $P$ wäre nicht vollständig. Dann sei $0\neq\nu\in\Lambda(P)$. Sei außerdem $\zeta=\xi+\i\eta$ eine Nullstelle von $P$. Dann ist $P(\xi+t\nu+\i\eta)=0$ für alle $t\in\R$, also für $\abs{\xi+t\nu}$ beliebig groß. Ein Widerspruch.\\
+%Angenommen $P$ wäre nicht vollständig. Dann sei $0\neq\nu\in\Lambda(P)$. Sei außerdem $\zeta=\xi+\i\eta$ eine Nullstelle von $P$. Dann ist $P(\xi+t\nu+\i\eta)=0$ für alle $t\in\R$, also für $\abs{\xi+t\nu}$ beliebig groß. Ein Widerspruch.\\
 Durch Verschieben des Koordinatensystems zeigen wir \ref{eq:lm3.7} ohne Einschränkung für den Vektor $\vartheta=(1,0,\ldots,0)$. Sei $\epsilon > 0$ beliebig. Dann existiert nach Voraussetzung ein $B>0$, sodass $P(\xi+\i\eta)\neq 0$ für alle $\abs{\eta} < \epsilon^{-1}$ und $\abs{\xi}>B$. Sei nun $\xi=(\xi_1,\ldots,\xi_n)\in\R^n$ mit $\abs{\xi}>B+\epsilon^{-1}$ fest und $t_1,\ldots,t_m\in \C$ die Nullstellen des Polynoms $P(\cdot,\xi_2,\ldots,\xi_n)$. Für $\zeta=(t_k,\xi_2,\ldots,\xi_n)$ gilt dann wegen $P(\zeta)=0$, dass $\abs{\Re \zeta} \leq B$ oder $\abs{\Im \zeta} \geq \epsilon^{-1}$. Für $\abs{\xi-\zeta}= (\abs{\xi-\Re \zeta}^2+\abs{\Im \zeta})^{1/2}$ folgt dann in beiden Fällen $\abs{\xi-\zeta}\geq \epsilon^{-1}$. Weiterhin haben wir für $P$ die Darstellung
 \begin{equation}
 P(\xi)=c\prod_{k=1}^m (\xi_1-t_k).
@@ -146,7 +147,10 @@ Zusammen mit der Abschätzung für die Linearfaktoren folgt
 für alle $\xi \in\R^n$ mit $\abs{\xi}>B+\epsilon^{-1}$.
 \end{proof}
 \begin{lem}[{\cite[Lemma~2.10]{Hormander:1955}}]
-Sei $P$ ein Polynom. Dann gilt $\spann\{P^{(\alpha)}:\abs{\alpha}\leq \deg P\}=\spann\{P(\cdot+\vartheta):\vartheta\in\R^n\}$.
+Sei $P$ ein Polynom. Dann gilt 
+\begin{equation}
+\spann\{P^{(\alpha)}:\abs{\alpha}\leq \deg P\}=\spann\{P(\cdot+\vartheta):\vartheta\in\R^n\}.
+\end{equation}
 \end{lem}
 \begin{proof}
 \relax[$\supseteq$] Da $P$ ein Polynom ist, folgt aus der Taylorformel
