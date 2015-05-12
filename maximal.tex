@@ -3,17 +3,17 @@
 
 % Voraussichtliche Struktur
 
-Sei $P(\D)$ eine Differentialausdruck und $\Omega\subset\R^n$ ein Gebiet. Wir erinnern an die Definition des maximalen Operators $P$, dieser versteht sich als größtmögliche distributionelle Fortsetzung von $P(D)$ und ist auf dem Definitionsbereich
+Sei $P(\D)$ eine Differentialausdruck und $\Omega\subset\R^n$ ein Gebiet. Wir erinnern an die Definition des maximalen Operators $P$, dieser versteht sich als größtmögliche distributionelle Fortsetzung von $P(\D)$ und ist auf dem Definitionsbereich
 \begin{equation}
    \mathcal D_P = \{ u\in\rmL^2(\Omega)\;:\; P(\D)u\in\rmL^2(\Omega) \}
 \end{equation}
 gegeben. Maximale Operatoren sind im wesentlichen durch ihren Definitionsbereich bestimmt. Es gilt
 \begin{thm}
-Angenommen, für zwei Differentialausdrücke $P(\D)$ und $Q(\D)$ und die zugeordneten maximalen Operatoren gilt $\mathcal D_P\subseteq\mathcal D_Q$. Dann gilt
+Angenommen, für zwei Differentialausdrücke $P(\D)$ und $Q(\D)$ und die zugeordneten maximalen Operatoren auf einem beschränkten Gebiet $\Omega$ gilt $\mathcal D_P\subseteq\mathcal D_Q$. Dann gilt
 entweder $P(\xi)=a Q(\xi) + b$ mit Konstanten $a,b\in\C$ oder es gibt einen Vektor $\nu\in\R^n$ und Polynome $p$ und $q$ in einer Variablen mit
 $P(\xi)=p(\xi\cdot\nu)$ und $Q(\xi)=q(\xi\cdot\nu)$ sowie $\deg q\le\deg p$.
 \end{thm}
-\begin{proof} Vgl. \cite{Hormander:1955}, beruht auf strukturellen Argumenten zu Polynomringen über $\C$. Wesentlich ist, daß $\mathcal D_P\subseteq \mathcal D_Q$ Abschätzungen der Form
+\begin{proof} Vgl. \cite{Hormander:1955}, beruht auf strukturellen Argumenten zu Polynomringen über $\C$. Wesentlich ist, daß $\mathcal D_P\subseteq \mathcal D_Q$ Abschätzungen der Form \marginpar{Ergänzen!}
 \begin{equation}
    |Q(\zeta)|^2 \le C \big( |P(\zeta)|^2 + 1\big)%,\qquad |Q^{(\alpha)}(\zeta)|^2 \le C \widetilde P(\zeta)^2
 \end{equation}
@@ -25,34 +25,39 @@ für alle {\em komplexen} $\zeta\in\C^n$ impliziert.
 
 \section{Differentialoperatoren von lokalem Typ} % bearbeitet durch Thomas Hamm
 \begin{df}
-Der Differentialoperator $P(\D)$ heißt \eIndex[Differentialoperator]{von lokalem Typ}, wenn $u\varphi\in\mathcal D_{P_0}$ für alle $u\in\mathcal D_{P}$ und alle $\varphi\in C_0^\infty(\Omega)$.
+Der Differentialausdruck $P(\D)$ heißt \eIndex[Differentialoperator]{von lokalem Typ} (auf einem beschränkten Gebiet $\Omega$), falls $u\varphi\in\mathcal D_{P_0}$ für alle $u\in\mathcal D_{P}$ und alle $\varphi\in C_0^\infty(\Omega)$ gilt.
 \end{df}
+Es wird sich zeigen, daß die Definition unabhängig vom Gebiet $\Omega$ ist. Gilt die definierende Bedingung für ein beschränktes Gebiet, so gilt sie für jedes. Im folgenden sei $\Omega$ fest gewählt. Identifiziert man man den Graphen der Operatoren $P$ und $P_0$ mit den Definitionsbereichen versehen mit der Graphennorm, dann charakterisiert der \eIndex[Differentialoperator]{Cauchyraum} $\mathcal C = \mathcal D_{P}/\mathcal D_{P_0}$ eines Operators von lokalem Typ das Randverhalten der Funktionen aus $\mathcal D_{P}$ in der Umgebung von $\partial\Omega$.
 
-\begin{lem}
-$P(\D)$ ist von lokalem Typ genau dann, wenn für jedes $u\in\mathcal{D}_P$ und jedes Kompaktum $K\subset\Omega$ eine Funktion $v\in\mathcal{D}_{P_0}$ existiert mit $u\vert_K=v\vert_K$.
-\end{lem}
-\begin{proof}
-Sei zunächst $P(\D)$ von lokalem Typ und $K\subset\Omega$ kompakt. Sei weiter $\varphi\in C_0^\infty(\Omega)$ mit $\varphi(x)=1$ für $x\in K$ und setze $v=u\varphi$. Dann ist nach Voraussetzung $v\in\mathcal{D}_P$ und darüber hinaus $\supp v$ kompakt. Wir zeigen, dass daraus bereits $v\in\mathcal{D}_{P_0}$ folgt. Sei dazu $\psi \in C_0^\infty(\R^n)$ mit $\int\psi(x)\d x=1$ und $\psi_\epsilon(x)=\epsilon^{-n} \psi(x/\epsilon)$ für $\epsilon>0$. Für alle hinreichend kleinen $\epsilon$ ist dann $v_\epsilon=v*\psi_\epsilon\in C_0^\infty(\Omega)$ und $v_\epsilon \to v$ in $\rmL^2(\Omega)$ für $\epsilon\to 0$. Da dann außerdem $P(\D)v_\epsilon=(P(\D)v)*\psi_\epsilon \to P(\D)v$ in $\rmL^2(\Omega)$ für $\epsilon\to 0$ folgt daraus $v\in \mathcal{D}_{P_0}$ gerade aus der Definition von $P_0$ als $\rmL^2$-$\rmL^2$-Abschluß auf $C_0^\infty(\Omega)$.\\
-Für die Umkehrung sei $u\in\mathcal{D}_P$ und $\varphi\in C_0^\infty(\Omega)$. Dann existiert für $K=\supp \varphi$ ein $v\in\mathcal{D}_{P_0}$ mit $u\vert_K=v\vert_K$. Dann ist $u\varphi=v\varphi $ und $v\varphi\in\mathcal{D}_{P_0}$. %klar?
-\end{proof}
+%\begin{lem}
+%$P(\D)$ ist von lokalem Typ genau dann, wenn für jedes $u\in\mathcal{D}_P$ und jedes Kompaktum $K\subset\Omega$ eine Funktion $v\in\mathcal{D}_{P_0}$ existiert mit $u\vert_K=v\vert_K$.
+%\end{lem}
+%\begin{proof}
+%Sei zunächst $P(\D)$ von lokalem Typ und $K\subset\Omega$ kompakt. Sei weiter $\varphi\in C_0^\infty(\Omega)$ mit $\varphi(x)=1$ für $x\in K$ und setze $v=u\varphi$. Dann ist nach Voraussetzung $v\in\mathcal{D}_P$ und darüber hinaus $\supp v$ kompakt. Wir zeigen, dass daraus bereits $v\in\mathcal{D}_{P_0}$ folgt. Sei dazu $\psi \in C_0^\infty(\R^n)$ mit $\int\psi(x)\d x=1$ und $\psi_\epsilon(x)=\epsilon^{-n} \psi(x/\epsilon)$ für $\epsilon>0$. Für alle hinreichend kleinen $\epsilon$ ist dann $v_\epsilon=v*\psi_\epsilon\in C_0^\infty(\Omega)$ und $v_\epsilon \to v$ in $\rmL^2(\Omega)$ für $\epsilon\to 0$. Da dann außerdem $P(\D)v_\epsilon=(P(\D)v)*\psi_\epsilon \to P(\D)v$ in $\rmL^2(\Omega)$ für $\epsilon\to 0$ folgt daraus $v\in \mathcal{D}_{P_0}$ gerade aus der Definition von $P_0$ als $\rmL^2$-$\rmL^2$-Abschluß auf $C_0^\infty(\Omega)$.\\
+%Für die Umkehrung sei $u\in\mathcal{D}_P$ und $\varphi\in C_0^\infty(\Omega)$. Dann existiert für $K=\supp \varphi$ ein $v\in\mathcal{D}_{P_0}$ mit $u\vert_K=v\vert_K$. Dann ist $u\varphi=v\varphi $ und $v\varphi\in\mathcal{D}_{P_0}$. %klar?
+%\end{proof}
+
 \begin{lem}[{\cite[Lemma~3.4]{Hormander:1955}}]\label{lem : loktyp}
-$P(\D)$ ist von lokalem Typ genau dann, wenn $P^{(\alpha)}(\D)u \in \rmL^2_{\text{loc}}(\Omega)$ für alle Multiindices $\alpha$ und $u\in\mathcal{D}_P$. In diesem Fall existiert für ein beliebiges Gebiet $\Omega'\subset \Omega$ mit kompaktem Abschluss in $\Omega$ ein $C>0$ mit
+Der Differentialausdruck $P(\D)$ ist genau dann von lokalem Typ, wenn für jedes $u\in\mathcal D_P$ und alle Multiindices $\alpha\in\N_0^n$ stets $P^{(\alpha)}(\D)u \in \rmL^2_{\rm loc}(\Omega)$ gilt. In diesem Fall existiert für jedes Teilebiet $\omega\Subset \Omega$ mit kompaktem Abschluss in $\Omega$ ein $C>0$ mit
 \begin{equation}
-\int_{\Omega'} \abs{P^{(\alpha)}(\D)u(x)}^2\d x\leq C\left( \int_{\Omega} \abs{P(\D)u(x)}^2\d x + \int_{\Omega} \abs{u(x)}^2 \d x \right) \label{eq:lm3.4}
+\int_{\omega} \abs{P^{(\alpha)}(\D)u(x)}^2\d x\leq C\left( \int_{\Omega} \abs{P(\D)u(x)}^2\d x + \int_{\Omega} \abs{u(x)}^2 \d x \right) \label{eq:lm3.4}
 \end{equation}
 für alle $u\in\mathcal{D}_P$.
 \end{lem}
 \begin{proof}
-Sei zuerst $P(\D)$ von lokalem Typ, $u\in\mathcal{D}_P$ und $K\subset\Omega$ kompakt. Nach Lemma \ref{lem : loktyp} existiert $v\in\mathcal{D}_{P_0}$ mit $v|_K=u|_K$. Daraus folgt $P^{(\alpha)}(\D)u|_K=P^{(\alpha)}(\D)v|_K$ und es ist $P^{(\alpha)}(\D)v\in\rmL^2(\Omega)$ nach Korollar \ref{cor:2:2.6}. Also ist $P^{(\alpha)}(\D)u \in \rmL^2_{\text{loc}}(\Omega)$.\\
-Sei umgekehrt $P^{(\alpha)}(\D)u \in \rmL^2_{\text{loc}}(\Omega)$ für alle Multiindices $\alpha$ und $K\subset\Omega$ kompakt. Sei $\varphi\in C_0^\infty(\Omega)$ mit $\varphi(x)=1$ für $x\in K$. Dann ist wegen
+Sei zuerst $P(\D)$ von lokalem Typ, $u\in\mathcal{D}_P$ und $\omega\Subset\Omega$ relativ kompakt. Sei weiter $\varphi\in\rmC_0^\infty(\Omega)$ so gewählt, dass $\varphi(x)=1$ auf $\omega$ gilt. Dann gilt $v=u\varphi\in\mathcal D_{P_0}$ und $u=v$ auf $\omega$. Daraus folgt $P^{(\alpha)}(\D)u|_\omega=P^{(\alpha)}(\D)v|_\omega$ und es ist $P^{(\alpha)}(\D)v\in\rmL^2(\Omega)$ nach Korollar \ref{cor:2:2.6} und damit $P^{(\alpha)}(\D)u|_\omega \in\rmL^2(\omega)$. 
+Also ist $P^{(\alpha)}(\D)u \in \rmL^2_{\rm loc}(\Omega)$. $\bullet$\qquad
+Sei umgekehrt $P^{(\alpha)}(\D)u \in \rmL^2_{\rm loc}(\Omega)$ für alle Multiindices $\alpha\in\N_0^n$. Sei weiter  $\omega\Subset\Omega$ relativ kompakt. Sei $\varphi\in C_0^\infty(\Omega)$ mit $\varphi(x)=1$ für $x\in \omega$. Dann ist wegen Leibniz
 \begin{equation}
 P(\D)v=\sum_\alpha \dfrac{\D^\alpha \varphi}{{\alpha}!}P^{(\alpha)}(\D)u
 \end{equation}
-$P(\D)v\in L^2(\Omega)$, also $v\in\mathcal{D}_P$. Da außerdem $\supp v$ kompakt, ist $v\in \mathcal{D}_{P_0}$, wie wir im Beweis von Lemma \ref{lem : loktyp} gesehen haben. Also ist $P(\D)$ nach Lemma \ref{lem : loktyp} von lokalem Typ.\\
-Die Ungleichung \ref{eq:lm3.4} folgt aus Satz \ref{thm:1:1.1} angewandt auf die Abbildung
+und damit nach Voraussetzung $P(\D)v\in \rmL^2(\Omega)$ und somit $v\in\mathcal{D}_P$. Da außerdem $\supp v\Subset\Omega$ kompakt ist gilt $\dist(\supp v,\partial\Omega)=\delta>0$. Wir wählen eine Funktion $\psi\in\rmC_0^\infty(B_{\delta/2})$ mit $\int\psi(x)\d x=1$ und setzen $\psi_k(x)=k^{n} \psi(k x)$. Dann ist
+$v_k=v*\psi_k\in\rmC_0^\infty(\Omega)$ und es gilt $\partial^\alpha v_k\to \partial^\alpha v$, $k\to\infty$, in $\rmL^2(\Omega)$. Damit ist $v\in \mathcal{D}_{P_0}$ und $P(\D)$ von lokalem Typ.$\bullet$ \qquad 
+Die Ungleichung \eqref{eq:lm3.4} folgt aus Satz \ref{thm:1:1.1} angewandt auf die Abbildung
 \begin{equation}
-\mathcal{D}_P \ni u \mapsto P^{(\alpha)}u\in \rmL^2(\Omega').
+\mathcal{D}_P \ni u \mapsto P^{(\alpha)}u\in \rmL^2(\omega).
 \end{equation}
+Insbesondere gilt \eqref{eq:lm3.4} genau dann, wenn $P(\D)$ von lokalem Typ ist.
 \end{proof}
 
 %
@@ -63,7 +68,7 @@ Die Ungleichung \ref{eq:lm3.4} folgt aus Satz \ref{thm:1:1.1} angewandt auf die 
    Angenommen, $P(\D)$ ist von lokalem Typ. Dann ist $P$ der Abschluß seiner Einschränkung auf $\mathcal D_P\cap \rmC^\infty(\Omega)$.
 \end{thm}
 \begin{proof}
-
+\marginpar{Ergänzen!}
 \end{proof}
 
 %%
