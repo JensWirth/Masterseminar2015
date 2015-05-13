@@ -306,7 +306,7 @@ Nach Theorem ?? ({\bf i}) ist der Restriktionsbereich für $\zeta$ kompakt und d
 %Im Folgenden wollen wir (\bf{i})
 
 % fehlt was
-\begin{lem}
+\begin{lem}\label{3.2lem2}
 Es gibt eine positive Konstanten $c$ und $d$ so dass für hinreichend große $|\xi|$ wir 
 \begin{equation}
 |\zeta- \xi|\ge c |\xi|^{d}
@@ -332,8 +332,13 @@ wobei $b$ and $d$ aus dem vorigen Lemma seien. Dabei sei
 \begin{equation}
 \langle D, \eta\rangle^{k+j} \left (\frac{1}{P(\xi)} \right ) = i^{-(k+j)} \frac{\mathrm d^{k+j}}{\mathrm d t^{k+j}} \left ( \frac{1}{P(\xi+ t\eta)} \right )_{t=0}
 \end{equation}
+wo $b$ unc $d$ Konstanten aus den zwei vorigen Lemmas.  
 \end{lem}
 \begin{proof}
-test
+Wir schreiben $P(\xi+t\eta) = A \prod_{1}^m (t-t_r) $. Da $\zeta = \xi+ t_r \eta$ ist eine Nullstelle von $P$ und $\zeta - \xi = t_r \eta$, die Zahlen $t_r$ kann entweder abgeschätzt werden durch Lemma \ref{3.2lem1} oder \ref{3.2lem2} zu
+\begin{equation}
+|t_r| \ge a' (1+|\langle y, \xi\rangle|)^b, |t_r|\ge c' |\xi|^d, (|\xi|\ge R).
+\end{equation}
+Dann ist die $(k+j)$-te  Ableitung von $1/P(\xi+t\eta)$ für $t=0$ eine Summe von Terme die alle von der Form $A^{-1}$ geteilt durch das Produkt der $k+j+m$.
 \end{proof}
 \end{proof}
