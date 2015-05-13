@@ -13,11 +13,19 @@ Angenommen, für zwei Differentialausdrücke $P(\D)$ und $Q(\D)$ und die zugeord
 entweder $P(\xi)=a Q(\xi) + b$ mit Konstanten $a,b\in\C$ oder es gibt einen Vektor $\nu\in\R^n$ und Polynome $p$ und $q$ in einer Variablen mit
 $P(\xi)=p(\xi\cdot\nu)$ und $Q(\xi)=q(\xi\cdot\nu)$ sowie $\deg q\le\deg p$.
 \end{thm}
-\begin{proof} Vgl. \cite{Hormander:1955}, beruht auf strukturellen Argumenten zu Polynomringen über $\C$. Wesentlich ist, daß $\mathcal D_P\subseteq \mathcal D_Q$ Abschätzungen der Form \marginpar{Ergänzen!}
+\begin{proof} Vgl. \cite{Hormander:1955}, beruht auf strukturellen Argumenten zu Polynomringen über $\C$. Wesentlich ist, daß $\mathcal D_P\subseteq \mathcal D_Q$ Abschätzungen der Form
 \begin{equation}
    |Q(\zeta)|^2 \le C \big( |P(\zeta)|^2 + 1\big)%,\qquad |Q^{(\alpha)}(\zeta)|^2 \le C \widetilde P(\zeta)^2
 \end{equation}
-für alle {\em komplexen} $\zeta\in\C^n$ impliziert.
+für alle {\em komplexen} $\zeta\in\C^n$ impliziert. Wir zeigen, dass die Gültigkeit dieser Ungleichung notwendig ist, für $\mathcal D_P\subseteq\mathcal D_Q$. Aus Satz \ref{thm:1:1.1} folgt sofort
+\begin{equation}
+\norm{Qu}^2\leq C(\norm{Pu}^2+\norm{u}^2)
+\end{equation}
+für alle $u\in\mathcal{D}_P$. Da wir das Gebiert $\Omega$ als beschränkt vorausgesetzt haben, gilt $C^\infty(\Omega)\subset\mathcal{D}_P$. Indem wir $u(x)=\e^{\i x\cdot \zeta}$ mit $\zeta\in\C^n$ setzen erhalten wir
+\begin{equation}
+\abs{Q(\zeta)}^2\int_\Omega \big|\e^{\i x\cdot \zeta}\big|^2\d x \leq C \left( \abs{P(\zeta)}^2\int_\Omega \big|\e^{\i x\cdot \zeta}\big|^2\d x+\int_\Omega \big|\e^{\i x\cdot \zeta}\big|^2\d x  \right)
+\end{equation}
+und damit die gewünschte Ungleichung für alle $\zeta\in\C^n$.
 \end{proof}
 
 
@@ -201,7 +209,7 @@ und damit die Konvergenz für komplexe $\vartheta$, sowie die gleichmäßige Kon
 \end{equation}
 die gleichmäßige Konvergenz für $\xi\to\infty$, $\alpha\neq0$, wenn $\abs{\vartheta}$ bescrhänkt.
 \end{proof}
-Der Beweis der Implikation {\bf (iv) $\Rightarrow$ (v)} verläuft analog zum Beweis von Satz \ref{}. Da die Implikation {\bf (v) $\Rightarrow$ (i)} offensichtlich ist, ist damit die Äquivalenz der Bedingungen {\bf (i)}-{\bf(v)} gezeigt. Also ist jede dieser Bedingungen notwendig dafür, dass $P(\D)$ von lokalem Typ ist. Um zu beweisen, dass diese auch hinreichend sind, benötigen wir eine Fundamentallösung, welche im folgenden Abschnitt konstruiert wird.
+Der Beweis der Implikation {\bf (iv) $\Rightarrow$ (v)} verläuft analog zum Beweis von Satz \ref{thm:2.17}. Da die Implikation {\bf (v) $\Rightarrow$ (i)} offensichtlich ist, ist damit die Äquivalenz der Bedingungen {\bf (i)}-{\bf(v)} gezeigt. Also ist jede dieser Bedingungen notwendig dafür, dass $P(\D)$ von lokalem Typ ist. Um zu beweisen, dass diese auch hinreichend sind, benötigen wir eine Fundamentallösung, welche im folgenden Abschnitt konstruiert wird.
 
 \section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
 
