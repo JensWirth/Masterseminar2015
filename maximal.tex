@@ -15,7 +15,7 @@ $P(\xi)=p(\xi\cdot\nu)$ und $Q(\xi)=q(\xi\cdot\nu)$ sowie $\deg q\le\deg p$.
 \end{thm}
 \begin{proof}[Beweisidee] Vgl. \cite{Hormander:1955}, der Beweis beruht auf strukturellen Argumenten zu Polynomringen über $\C$. Wesentlich ist, daß $\mathcal D_P\subseteq \mathcal D_Q$ Abschätzungen der Form
 \begin{equation}
-   |Q(\zeta)|^2 \le C \big( |P(\zeta)|^2 + 1\big)%,\qquad |Q^{(\alpha)}(\zeta)|^2 \le C \widetilde P(\zeta)^2
+   |Q(\zeta)|^2 \le C \big( |P(\zeta)|^2 + 1\big)
 \end{equation}
 für alle {\em komplexen} $\zeta\in\C^n$ impliziert. Wir zeigen dies kurz. Aus Satz \ref{thm:1:1.1} folgt
 \begin{equation}
@@ -37,14 +37,6 @@ Nichttriviale Vergleichsresultate, wie wir sie in Kapitel~\ref{chap2} für minim
 Der Differentialausdruck $P(\D)$ heißt \eIndex[Differentialoperator]{von lokalem Typ} (auf einem beschränkten Gebiet $\Omega$), falls $u\varphi\in\mathcal D_{P_0}$ für alle $u\in\mathcal D_{P}$ und alle $\varphi\in C_0^\infty(\Omega)$ gilt.
 \end{df}
 Es wird sich zeigen, daß die Definition unabhängig vom Gebiet $\Omega$ ist. Gilt die definierende Bedingung für ein beschränktes Gebiet, so gilt sie für jedes. Im folgenden sei $\Omega$ fest gewählt. Identifiziert man man den Graphen der Operatoren $P$ und $P_0$ mit den Definitionsbereichen versehen mit der Graphennorm, dann charakterisiert der \eIndex[Differentialoperator]{Cauchyraum} $\mathcal C = \mathcal D_{P}/\mathcal D_{P_0}$ eines Operators von lokalem Typ das Randverhalten der Funktionen aus $\mathcal D_{P}$ in der Umgebung von $\partial\Omega$.
-
-%\begin{lem}
-%$P(\D)$ ist von lokalem Typ genau dann, wenn für jedes $u\in\mathcal{D}_P$ und jedes Kompaktum $K\subset\Omega$ eine Funktion $v\in\mathcal{D}_{P_0}$ existiert mit $u\vert_K=v\vert_K$.
-%\end{lem}
-%\begin{proof}
-%Sei zunächst $P(\D)$ von lokalem Typ und $K\subset\Omega$ kompakt. Sei weiter $\varphi\in C_0^\infty(\Omega)$ mit $\varphi(x)=1$ für $x\in K$ und setze $v=u\varphi$. Dann ist nach Voraussetzung $v\in\mathcal{D}_P$ und darüber hinaus $\supp v$ kompakt. Wir zeigen, dass daraus bereits $v\in\mathcal{D}_{P_0}$ folgt. Sei dazu $\psi \in C_0^\infty(\R^n)$ mit $\int\psi(x)\d x=1$ und $\psi_\epsilon(x)=\epsilon^{-n} \psi(x/\epsilon)$ für $\epsilon>0$. Für alle hinreichend kleinen $\epsilon$ ist dann $v_\epsilon=v*\psi_\epsilon\in C_0^\infty(\Omega)$ und $v_\epsilon \to v$ in $\rmL^2(\Omega)$ für $\epsilon\to 0$. Da dann außerdem $P(\D)v_\epsilon=(P(\D)v)*\psi_\epsilon \to P(\D)v$ in $\rmL^2(\Omega)$ für $\epsilon\to 0$ folgt daraus $v\in \mathcal{D}_{P_0}$ gerade aus der Definition von $P_0$ als $\rmL^2$-$\rmL^2$-Abschluß auf $C_0^\infty(\Omega)$.\\
-%Für die Umkehrung sei $u\in\mathcal{D}_P$ und $\varphi\in C_0^\infty(\Omega)$. Dann existiert für $K=\supp \varphi$ ein $v\in\mathcal{D}_{P_0}$ mit $u\vert_K=v\vert_K$. Dann ist $u\varphi=v\varphi $ und $v\varphi\in\mathcal{D}_{P_0}$. %klar?
-%\end{proof}
 
 \begin{lem}[{\cite[Lemma~3.4]{Hormander:1955}}]\label{lem : loktyp}
 Der Differentialausdruck $P(\D)$ ist genau dann von lokalem Typ, wenn für jedes $u\in\mathcal D_P$ und alle Multiindices $\alpha\in\N_0^n$ stets $P^{(\alpha)}(\D)u \in \rmL^2_{\rm loc}(\Omega)$ gilt. In diesem Fall existiert für jedes Teilebiet $\omega\Subset \Omega$ mit kompaktem Abschluss in $\Omega$ ein $C>0$ mit
@@ -179,7 +171,7 @@ für jedes feste $\vartheta\in\R^n$. $\bullet$\qquad [$\subseteq$] Betrachten wi
 \begin{equation}
 \sum_{i=1}^m t_i P(\xi+\vartheta_i)=\sum_{i=1}^mt_i\sum_\alpha \dfrac{P^{(\alpha)}(\xi)}{\alpha!}\vartheta_i^\alpha =\sum_\alpha \dfrac{P^{(\alpha)}(\xi)}{\alpha!} \sum_{i=1}^mt_i\vartheta_i^\alpha=\sum_\alpha c_\alpha \dfrac{P^{(\alpha)}(\xi)}{\alpha!}
 \end{equation}
-mit Koeffizienten $t_i$ und Vektoren $\vartheta_i\in\R^n$. Für geeignet gewählte $ m,t_i,\vartheta_i $ nehmen dabei die Koeffizienten $c_\alpha$ beliebige Werte an. Also enthält dieser Unterraum auch alle Linearkombinationen der $P^{(\alpha)}$.
+mit Koeffizienten $t_i\in\C$ und Vektoren $\vartheta_i\in\R^n$. Für geeignet gewählte $ m,t_i,\vartheta_i $ nehmen dabei die Koeffizienten $c_\alpha$ beliebige Werte an. Also enthält dieser Unterraum auch alle Linearkombinationen der $P^{(\alpha)}$.
 \end{proof}
 \begin{lem}[{\bf(ii) $\Rightarrow$ (iii),(iv)};{\cite[Lemma~3.8]{Hormander:1955}}]
 Gilt
@@ -212,6 +204,16 @@ und damit die Konvergenz für komplexe $\vartheta$, sowie die gleichmäßige Kon
 die gleichmäßige Konvergenz für $\xi\to\infty$, $\alpha\neq0$, wenn $\abs{\vartheta}$ beschränkt.
 \end{proof}
 Der Beweis der Implikation {\bf (iv) $\Rightarrow$ (v)} verläuft analog zum Beweis von Satz \ref{thm:2.17}. Da die Implikation {\bf (v) $\Rightarrow$ (i)} offensichtlich ist, ist damit die Äquivalenz der Bedingungen {\bf (i)}-{\bf(v)} gezeigt. Also ist jede dieser Bedingungen notwendig dafür, dass $P(\D)$ von lokalem Typ ist. Um zu beweisen, dass diese auch hinreichend sind, benötigen wir eine Fundamentallösung, welche im folgenden Abschnitt konstruiert wird.
+
+\begin{exa}
+Die äquivalenten Bedingungen  {\bf (i)}-{\bf(v)} liefern einfache Kriterien dafür, wann Operatoren von lokalem Typ sind. So sind alle elliptischen Operatoren von lokalem Typ, da für diese der homogene Hauptteil $p(\xi)$ des Symbols $P(\xi)$ keine (reellen) Nullstellen besitzt und damit $1/P(\xi) = \mathcal O(|\xi|^{-m})$, $\xi\to\infty$, gilt. Daraus folgt sofort {\bf (iii)}. 
+
+Umgekehrt impliziert {\bf (i)}, dass das Symbol nur auf einem Kompaktum reelle Nullstellen besitzen darf. Damit sind die im letzten Kapitel schon erwähnten 
+Schrödingeroperatoren $\i\partial_1-\Delta_2$ auf $\Omega\subset \R\times\R^n$ und (ultra-) hyperbolischen Operatoren $\Delta_1-\Delta_2$ auf $\Omega\subset \R^k\times\R^l$, $k,l\ne0$,
+beide nicht von lokalem Typ. Andererseits liefert eine kurze Rechnung, daß der Wärmeleitungsoperator $\partial_1-\Delta_2$ auf $\Omega\subset\R\times\R^n$
+von lokalem Typ ist. Sein Symbol ist durch $P(\xi) = \i \xi_1 - \xi'\cdot\xi'$ in $\xi=(\xi_1,\xi')\in\R^n$ gegeben und erfüllt $|P(\xi)|^2 = |\xi_1|^2+|\xi'|^4$ und damit
+$1/P(\xi)\to0$, $\xi' / P(\xi)\to0$ und folglich {\bf (iii)}.
+\end{exa}
 
 \section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
 
