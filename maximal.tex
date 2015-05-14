@@ -13,7 +13,7 @@ Angenommen, für zwei Differentialausdrücke $P(\D)$ und $Q(\D)$ und die zugeord
 entweder $P(\xi)=a Q(\xi) + b$ mit Konstanten $a,b\in\C$ oder es gibt einen Vektor $\nu\in\R^n$ und Polynome $p$ und $q$ in einer Variablen mit
 $P(\xi)=p(\xi\cdot\nu)$ und $Q(\xi)=q(\xi\cdot\nu)$ sowie $\deg q\le\deg p$.
 \end{thm}
-\begin{proof}[Beweisidee] Vgl. \cite{Hormander:1955}, beruht auf strukturellen Argumenten zu Polynomringen über $\C$. Wesentlich ist, daß $\mathcal D_P\subseteq \mathcal D_Q$ Abschätzungen der Form
+\begin{proof}[Beweisidee] Vgl. \cite{Hormander:1955}, der Beweis beruht auf strukturellen Argumenten zu Polynomringen über $\C$. Wesentlich ist, daß $\mathcal D_P\subseteq \mathcal D_Q$ Abschätzungen der Form
 \begin{equation}
    |Q(\zeta)|^2 \le C \big( |P(\zeta)|^2 + 1\big)%,\qquad |Q^{(\alpha)}(\zeta)|^2 \le C \widetilde P(\zeta)^2
 \end{equation}
@@ -28,6 +28,7 @@ für alle $u\in\mathcal{D}_P$. Da wir das Gebiert $\Omega$ als beschränkt vorau
 und damit nach Division beider Seiten durch $ \int_\Omega \big|\e^{\i x\cdot \zeta}\big|^2\d x$ die gewünschte Ungleichung.
 \end{proof}
 
+Nichttriviale Vergleichsresultate, wie wir sie in Kapitel~\ref{chap2} für minimale Operatoren erhalten haben, sind damit für maximale Operatoren von vornherein ausgeschlossen.
 
 
 
@@ -55,12 +56,13 @@ für alle $u\in\mathcal{D}_P$.
 \begin{proof}
 Sei zuerst $P(\D)$ von lokalem Typ, $u\in\mathcal{D}_P$ und $\omega\Subset\Omega$ relativ kompakt. Sei weiter $\varphi\in\rmC_0^\infty(\Omega)$ so gewählt, dass $\varphi(x)=1$ auf $\omega$ gilt. Dann gilt $v=u\varphi\in\mathcal D_{P_0}$ und $u=v$ auf $\omega$. Daraus folgt $P^{(\alpha)}(\D)u|_\omega=P^{(\alpha)}(\D)v|_\omega$ und es ist $P^{(\alpha)}(\D)v\in\rmL^2(\Omega)$ nach Korollar \ref{cor:2:2.6} und damit $P^{(\alpha)}(\D)u|_\omega \in\rmL^2(\omega)$. 
 Also ist $P^{(\alpha)}(\D)u \in \rmL^2_{\rm loc}(\Omega)$. $\bullet$\qquad
-Sei umgekehrt $P^{(\alpha)}(\D)u \in \rmL^2_{\rm loc}(\Omega)$ für alle Multiindices $\alpha\in\N_0^n$. Sei weiter  $\omega\Subset\Omega$ relativ kompakt. Sei $\varphi\in C_0^\infty(\Omega)$ mit $\varphi(x)=1$ für $x\in \omega$. Dann ist wegen Leibniz
+Sei umgekehrt $P^{(\alpha)}(\D)u \in \rmL^2_{\rm loc}(\Omega)$ für alle Multiindices $\alpha\in\N_0^n$. Sei weiter $\varphi\in C_0^\infty(\Omega)$. Dann ist wegen Leibniz
 \begin{equation}
 P(\D)v=\sum_\alpha \dfrac{\D^\alpha \varphi}{{\alpha}!}P^{(\alpha)}(\D)u
 \end{equation}
 und damit nach Voraussetzung $P(\D)v\in \rmL^2(\Omega)$ und somit $v\in\mathcal{D}_P$. Da außerdem $\supp v\Subset\Omega$ kompakt ist gilt $\dist(\supp v,\partial\Omega)=\delta>0$. Wir wählen eine Funktion $\psi\in\rmC_0^\infty(B_{\delta/2})$ mit $\int\psi(x)\d x=1$ und setzen $\psi_k(x)=k^{n} \psi(k x)$. Dann ist
-$v_k=v*\psi_k\in\rmC_0^\infty(\Omega)$ und es gilt $\partial^\alpha v_k\to \partial^\alpha v$, $k\to\infty$, in $\rmL^2(\Omega)$. Damit ist $v\in \mathcal{D}_{P_0}$ und $P(\D)$ von lokalem Typ.$\bullet$ \qquad 
+$v_k=v*\psi_k\in\rmC_0^\infty(\Omega)$ und es gilt $\partial^\alpha v_k\to \partial^\alpha v$, $k\to\infty$, in $\rmL^2(\Omega)$ 
+und somit $P(\D)v_k\to P(\D)v$. Damit ist $v\in \mathcal{D}_{P_0}$ und $P(\D)$ von lokalem Typ. $\bullet$ \qquad 
 Die Ungleichung \eqref{eq:lm3.4} folgt aus Satz \ref{thm:1:1.1} angewandt auf die Abbildung
 \begin{equation}
 \mathcal{D}_P \ni u \mapsto P^{(\alpha)}u\in \rmL^2(\omega).
