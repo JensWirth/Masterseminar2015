@@ -336,11 +336,11 @@ wobei $a_i$ und $b_i$ positive Zahlen sind. Damit ergibt sich mit $c'=\min a_i$ 
 \begin{lem}
 Sei $y\in \mathbb R^n$ und $\eta \in \mathbb R^n$ zwei feste Vektoren. Dann gibt es eine Konstante $C$ so dass
 \begin{equation}
-\left | \langle D, \eta \rangle^{k+j} \left ( \frac{1}{P(\xi)} \right )  \right | \le \frac{(k+j)! C^{k+j}}{|\xi|^{kd} ( 1+ |\langle y,\xi\rangle )^{bj}}, |\xi|\ge R, j, k=1,2,\ldots,
+\left |(\eta\cdot\nabla)^{k+j} \left ( \frac{1}{P(\xi)} \right )  \right | \le \frac{(k+j)! C^{k+j}}{|\xi|^{kd} ( 1+ | y\cdot\xi | )^{bj}},\qquad  |\xi|\ge R, \quad j, k=1,2,\ldots,
 \end{equation}
-wobei $b$ and $d$ aus dem vorigen Lemma seien. Dabei sei
+wobei $b$ and $d$ aus dem vorigen Lemma seien. Dabei ist
 \begin{equation}
-\langle D, \eta\rangle^{k+j} \left (\frac{1}{P(\xi)} \right ) = i^{-(k+j)} \frac{\mathrm d^{k+j}}{\mathrm d t^{k+j}} \left ( \frac{1}{P(\xi+ t\eta)} \right )_{t=0}
+(\eta\cdot\nabla)^{k+j} \left (\frac{1}{P(\xi)} \right ) =  \frac{\mathrm d^{k+j}}{\mathrm d t^{k+j}}  \frac{1}{P(\xi+ t\eta)} \bigg|_{t=0}.
 \end{equation}
 \end{lem}
 \begin{proof}
