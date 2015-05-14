@@ -304,6 +304,7 @@ wobei $\xi\in \mathbb C^n$ und $P(\xi)=0$, und $\xi\in \mathbb R^n$ mit $|y, \xi
 \begin{equation}\label{3.2to}
 M(\tau) \tau^{-b} \to a\quad \text{mit } \tau \to \infty.
 \end{equation}
+wo $b$ unc $d$ Konstanten aus den zwei vorigen Lemmas.
 \end{lem}
 \begin{proof}
 Nach Theorem ?? ({\bf i}) ist der Restriktionsbereich für $\zeta$ kompakt und das Infimum in \ref{3.2inf} wird angenommen. Weiter folgt leicht, dass $M(\tau)$ stetig von $\tau$ abhängt.
@@ -315,12 +316,12 @@ Nach Theorem ?? ({\bf i}) ist der Restriktionsbereich für $\zeta$ kompakt und d
 %Im Folgenden wollen wir (\bf{i})
 
 % fehlt was
-\begin{lem}
-Es gibt eine positive Konstanten $c$ und $d$ so dass für hinreichend große $|\xi|$ wir 
+\begin{lem}\label{3.2lem2}
+Es gibt positive Konstanten $c$ und $d$ so dass für hinreichend große $|\xi|$ wir 
 \begin{equation}
 |\zeta- \xi|\ge c |\xi|^{d}
 \end{equation} 
-für alle reelle $\xi$ und alle $\zeta$ mit $P(\zeta)=0$.
+für alle reelle $\xi$ und alle $\zeta$ mit $P(\zeta)=0$ haben.
 \end{lem} 
 \begin{proof}
 Sei der Vektor $y$ von Lemma ?? als $(0,\ldots, 0, 1, 0, \ldots, 0)$, erhalten wir für große $|\xi_i|$
@@ -343,6 +344,21 @@ wobei $b$ and $d$ aus dem vorigen Lemma seien. Dabei ist
 \end{equation}
 \end{lem}
 \begin{proof}
+Wir schreiben $P(\xi+t\eta) = A \prod_{1}^m (t-t_r) $. Da $\zeta = \xi+ t_r \eta$ eine Nullstelle von $P$ ist und $\zeta - \xi = t_r \eta$ können die Zahlen $t_r$ abgeschätzt werden durch Lemma \ref{3.2lem1} und \ref{3.2lem2} zu
+\begin{equation}\label{3.2tr}
+|t_r| \ge a' (1+|\langle y, \xi\rangle|)^b,\quad |t_r|\ge c' |\xi|^d, (|\xi|\ge R).
+\end{equation}
+Dann ist die $(k+j)$-te  Ableitung von $1/P(\xi+t\eta)$ für $t=0$ eine Summe von Terme die alle von der Form $A^{-1}$ geteilt durch das Produkt von $k+j+m$ der Nullstellen $t_r$. Die Zahl der Terme kann abgeschätzt werden durch
+\begin{equation}
+m(m+1) \cdots (m+k+j-1) =(k+j)! \binom{m+k+j-1}{k+j}<(k+j)! 2^{m+k+j-1}.
+\end{equation}
+Weiter ist $A$ unabhängig von $\xi$. Dies folgt leicht mit Theorem \ref{thm:3:3.3} ({\bf iii}). Sonst würde folgen 
+\begin{equation}
+\frac{P^{(\alpha)}(\xi + t\eta)}{P(\xi + t\eta)}\to \frac{A^{(\alpha)}(\xi)}{A(\xi)}\neq 0\quad(t\to \infty).
+\end{equation}
+für ein $\xi\in \mathbb R^n$ und einem Multiindex $\alpha\neq 0$.
 
+% umsetzen
+Dann folgt das Lemma, indem wir $j$ der Terme mit Nullstellen durch die erste Ungleichung aus \eqref{3.2tr}, $k$ der Terme mit der zweiten Ungleichung und die weiteren $m$ durch eine Konstante.
 \end{proof}
 \end{proof}
