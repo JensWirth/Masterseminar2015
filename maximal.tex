@@ -34,7 +34,7 @@ Nichttriviale Vergleichsresultate, wie wir sie in Kapitel~\ref{chap2} für minim
 
 \section{Differentialoperatoren von lokalem Typ} % bearbeitet durch Thomas Hamm
 \begin{df}
-Der Differentialausdruck $P(\D)$ heißt \eIndex[Differentialoperator]{von lokalem Typ} (auf einem beschränkten Gebiet $\Omega$), falls $u\varphi\in\mathcal D_{P_0}$ für alle $u\in\mathcal D_{P}$ und alle $\varphi\in C_0^\infty(\Omega)$ gilt.
+Der Differentialausdruck $P(\D)$ heißt \eIndex[Differentialoperator]{von lokalem Typ} (auf einem beschränkten Gebiet $\Omega$), falls $u\varphi\in\mathcal D_{P_0}$ für alle $u\in\mathcal D_{P}$ und alle $\varphi\in \rmC_0^\infty(\Omega)$ gilt.
 \end{df}
 Es wird sich zeigen, daß die Definition unabhängig vom Gebiet $\Omega$ ist. Gilt die definierende Bedingung für ein beschränktes Gebiet, so gilt sie für jedes. Im folgenden sei $\Omega$ fest gewählt. Identifiziert man man den Graphen der Operatoren $P$ und $P_0$ mit den Definitionsbereichen versehen mit der Graphennorm, dann charakterisiert der \eIndex[Differentialoperator]{Cauchyraum} $\mathcal C = \mathcal D_{P}/\mathcal D_{P_0}$ eines Operators von lokalem Typ das Randverhalten der Funktionen aus $\mathcal D_{P}$ in der Umgebung von $\partial\Omega$.
 
@@ -209,10 +209,9 @@ Der Beweis der Implikation {\bf (iv) $\Rightarrow$ (v)} verläuft analog zum Bew
 Die äquivalenten Bedingungen  {\bf (i)}-{\bf(v)} liefern einfache Kriterien dafür, wann Operatoren von lokalem Typ sind. So sind alle elliptischen Operatoren von lokalem Typ, da für diese der homogene Hauptteil $p(\xi)$ des Symbols $P(\xi)$ keine (reellen) Nullstellen besitzt und damit $1/P(\xi) = \mathcal O(|\xi|^{-m})$, $\xi\to\infty$, gilt. Daraus folgt sofort {\bf (iii)}. 
 
 Umgekehrt impliziert {\bf (i)}, dass das Symbol nur auf einem Kompaktum reelle Nullstellen besitzen darf. Damit sind die im letzten Kapitel schon erwähnten 
-Schrödingeroperatoren $\i\partial_1-\Delta_2$ auf $\Omega\subset \R\times\R^n$ und (ultra-) hyperbolischen Operatoren $\Delta_1-\Delta_2$ auf $\Omega\subset \R^k\times\R^l$, $k,l\ne0$,
-beide nicht von lokalem Typ. Andererseits liefert eine kurze Rechnung, daß der Wärmeleitungsoperator $\partial_1-\Delta_2$ auf $\Omega\subset\R\times\R^n$
-von lokalem Typ ist. Sein Symbol ist durch $P(\xi) = \i \xi_1 - \xi'\cdot\xi'$ in $\xi=(\xi_1,\xi')\in\R^n$ gegeben und erfüllt $|P(\xi)|^2 = |\xi_1|^2+|\xi'|^4$ und damit
-$1/P(\xi)\to0$, $\xi' / P(\xi)\to0$ und folglich {\bf (iii)}.
+Schrödingeroperatoren $\i\partial_1-\Delta_2$ auf $\Omega\subset \R\times\R^n$ und (ultra-) hyperbolischen Operatoren $\Delta_1-\Delta_2$ auf $\Omega\subset \R^k\times\R^l$, $k,l\ne0$, beide nicht von lokalem Typ. Andererseits liefert eine kurze Rechnung, daß der Wärmeleitungsoperator $\partial_1-\Delta_2$ auf $\Omega\subset\R\times\R^n$ von lokalem Typ ist. Sein Symbol ist durch $P(\xi) = \i \xi_1 - \xi'\cdot\xi'$ in $\xi=(\xi_1,\xi')\in\R^n$ gegeben und erfüllt $|P(\xi)|^2 = |\xi_1|^2+|\xi'|^4$ und damit $1/P(\xi)\to0$, $\xi' / P(\xi)\to0$ und folglich {\bf (iii)}.
+
+Aus {\bf (iv)} folgt, dass jeder Operator von lokalem Typ ein Operator vom Haupttyp sein muß.
 \end{exa}
 
 \section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
