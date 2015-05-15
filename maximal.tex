@@ -3,14 +3,14 @@
 
 % Voraussichtliche Struktur
 
-Sei $P(\D)$ eine Differentialausdruck und $\Omega\subset\R^n$ ein Gebiet. Wir erinnern an die Definition des maximalen Operators $P$, dieser versteht sich als größtmögliche distributionelle Fortsetzung von $P(\D)$ und ist auf dem Definitionsbereich
+Sei $P(\D)$ ein Differentialausdruck und $\Omega\subset\R^n$ ein Gebiet. Wir erinnern an die Definition des maximalen Operators $P$, dieser versteht sich als größtmögliche distributionelle Fortsetzung von $P(\D)$ und ist auf dem Definitionsbereich
 \begin{equation}
    \mathcal D_P = \{ u\in\rmL^2(\Omega)\;:\; P(\D)u\in\rmL^2(\Omega) \}
 \end{equation}
 gegeben. Maximale Operatoren sind im wesentlichen durch ihren Definitionsbereich bestimmt. Es gilt
 \begin{thm}
 Angenommen, für zwei Differentialausdrücke $P(\D)$ und $Q(\D)$ und die zugeordneten maximalen Operatoren auf einem beschränkten Gebiet $\Omega$ gilt $\mathcal D_P\subseteq\mathcal D_Q$. Dann gilt
-entweder $P(\xi)=a Q(\xi) + b$ mit Konstanten $a,b\in\C$ oder es gibt einen Vektor $\nu\in\R^n$ und Polynome $p$ und $q$ in einer Variablen mit
+entweder $Q(\xi)=a P(\xi) + b$ mit Konstanten $a,b\in\C$ oder es gibt einen Vektor $\nu\in\R^n$ und Polynome $p$ und $q$ in einer Variablen mit
 $P(\xi)=p(\xi\cdot\nu)$ und $Q(\xi)=q(\xi\cdot\nu)$ sowie $\deg q\le\deg p$.
 \end{thm}
 \begin{proof}[Beweisidee] Vgl. \cite{Hormander:1955}, der Beweis beruht auf strukturellen Argumenten zu Polynomringen über $\C$. Wesentlich ist, daß $\mathcal D_P\subseteq \mathcal D_Q$ Abschätzungen der Form
@@ -21,7 +21,7 @@ für alle {\em komplexen} $\zeta\in\C^n$ impliziert. Wir zeigen dies kurz. Aus S
 \begin{equation}
 \norm{Qu}^2\leq C(\norm{Pu}^2+\norm{u}^2)
 \end{equation}
-für alle $u\in\mathcal{D}_P$. Da wir das Gebiert $\Omega$ als beschränkt vorausgesetzt haben, gilt $\rmC^\infty(\Omega)\subset\mathcal{D}_P$. Also folgt mit $u(x)=\e^{\i x\cdot \zeta}$ für $\zeta\in\C^n$
+für alle $u\in\mathcal{D}_P$. Da wir das Gebiert $\Omega$ als beschränkt vorausgesetzt haben, gilt $\rmC^\infty(\overline{\Omega})\subset\mathcal{D}_P$. Also folgt mit $u(x)=\e^{\i x\cdot \zeta}$ für $\zeta\in\C^n$
 \begin{equation}
 \abs{Q(\zeta)}^2\int_\Omega \big|\e^{\i x\cdot \zeta}\big|^2\d x \leq C \left( \abs{P(\zeta)}^2\int_\Omega \big|\e^{\i x\cdot \zeta}\big|^2\d x+\int_\Omega \big|\e^{\i x\cdot \zeta}\big|^2\d x  \right)
 \end{equation}
@@ -52,14 +52,14 @@ Sei umgekehrt $P^{(\alpha)}(\D)u \in \rmL^2_{\rm loc}(\Omega)$ für alle Multiin
 \begin{equation}
 P(\D)v=\sum_\alpha \dfrac{\D^\alpha \varphi}{{\alpha}!}P^{(\alpha)}(\D)u
 \end{equation}
-und damit nach Voraussetzung $P(\D)v\in \rmL^2(\Omega)$ und somit $v\in\mathcal{D}_P$. Da außerdem $\supp v\Subset\Omega$ kompakt ist gilt $\dist(\supp v,\partial\Omega)=\delta>0$. Wir wählen eine Funktion $\psi\in\rmC_0^\infty(B_{\delta/2})$ mit $\int\psi(x)\d x=1$ und setzen $\psi_k(x)=k^{n} \psi(k x)$. Dann ist
+und damit nach Voraussetzung $P(\D)v\in \rmL^2(\Omega)$ und somit $v\in\mathcal{D}_P$. Da außerdem $\supp v\Subset\Omega$ kompakt ist gilt $\dist(\supp v,\partial\Omega)=\delta>0$. Wir wählen eine Funktion $\psi\in\rmC_0^\infty(B_{\delta/2})$ mit $\psi\ge0$ und $\int\psi(x)\d x=1$ und setzen $\psi_k(x)=k^{n} \psi(k x)$. Dann ist
 $v_k=v*\psi_k\in\rmC_0^\infty(\Omega)$ und es gilt $\partial^\alpha v_k\to \partial^\alpha v$, $k\to\infty$, in $\rmL^2(\Omega)$ 
 und somit $P(\D)v_k\to P(\D)v$. Damit ist $v\in \mathcal{D}_{P_0}$ und $P(\D)$ von lokalem Typ. $\bullet$ \qquad 
 Die Ungleichung \eqref{eq:lm3.4} folgt aus Satz \ref{thm:1:1.1} angewandt auf die Abbildung
 \begin{equation}
 \mathcal{D}_P \ni u \mapsto P^{(\alpha)}u\in \rmL^2(\omega).
 \end{equation}
-Insbesondere gilt \eqref{eq:lm3.4} genau dann, wenn $P(\D)$ von lokalem Typ ist.
+Insbesondere gilt \eqref{eq:lm3.4} genau dann für alle $\omega\Subset\Omega$, wenn $P(\D)$ von lokalem Typ ist.
 \end{proof}
 
 %
@@ -70,7 +70,7 @@ Insbesondere gilt \eqref{eq:lm3.4} genau dann, wenn $P(\D)$ von lokalem Typ ist.
    Angenommen, $P(\D)$ ist von lokalem Typ. Dann ist $P$ der Abschluß seiner Einschränkung auf $\mathcal D_P\cap \rmC^\infty(\Omega)$.
 \end{thm}
 \begin{proof}
-Sei $\{\Omega_i\}_{i\in \N}$ eine abzählbare offene Überdeckung von $\Omega$ mit $\Omega_i$ beschränkt  und $\{\varphi_i\}_{i\in \N}$ mit $\varphi_i\in C_0^\infty (\Omega_i)$ eine untergeordnete lokal endliche Zerlegung der Eins. Zu einem beliebigen $u\in\mathcal{D}_P$ setze nun $u_i=u\varphi_i$. Dann ist $\sum_{i\geq 1} u_i=u$, $\sum_{i\geq 1} P(\D)u_i=P(\D)u$ und da $P$ von lokalem Typ ist, ist $u_i\in\mathcal{D}_{P_0}$. Da $P_0$ gerade der $\rmL^2$-$\rmL^2$-Abschluß auf $C_0^\infty(\Omega)$ ist, können wir für gegebenes $\epsilon>0$ Funktionen $v_i\in C_0^\infty(\Omega)$ wählen mit $\norm{u_i-v_i}<\epsilon 2^{-i}$ und $\norm{P(\D)u_i-P(\D)v_i}<\epsilon 2^{-i}$. Weiterhin können wir ohne Einschränkung davon ausgehen, dass $\supp v_i \subset \Omega_i$. Damit folgt
+Sei $\{\Omega_i\}_{i\in \N}$ eine abzählbare offene Überdeckung von $\Omega$ mit $\Omega_i$ beschränkt  und $\{\varphi_i\}_{i\in \N}$ mit $\varphi_i\in \rmC_0^\infty (\Omega_i)$ eine untergeordnete lokal endliche Zerlegung der Eins. Zu einem beliebigen $u\in\mathcal{D}_P$ setze nun $u_i=u\varphi_i$. Dann ist $\sum_{i\geq 1} u_i=u$, $\sum_{i\geq 1} P(\D)u_i=P(\D)u$ und da $P$ von lokalem Typ ist, ist $u_i\in\mathcal{D}_{P_0}$. Da $P_0$ gerade der $\rmL^2$-$\rmL^2$-Abschluß auf $\rmC_0^\infty(\Omega)$ ist, können wir für gegebenes $\epsilon>0$ Funktionen $v_i\in \rmC_0^\infty(\Omega)$ wählen mit $\norm{u_i-v_i}<\epsilon 2^{-i}$ und $\norm{P(\D)u_i-P(\D)v_i}<\epsilon 2^{-i}$. Weiterhin können wir ohne Einschränkung davon ausgehen, dass $\supp v_i \subset \Omega_i$. Damit folgt
 \begin{equation}
 \norm{v-u}\leq \sum_{i=1}^\infty \norm{v_i-u_i} < \epsilon
 \end{equation}
@@ -97,11 +97,11 @@ für alle $\zeta\in\C^n$ mit $\abs{\Im \zeta} < A$.
 \begin{proof}
 Setze $u(x)=\e^{\i x\cdot\zeta}$. Dann ist $P^{(\alpha)}(\D)u(x)=P^{(\alpha)}(\zeta)\e^{\i x\cdot\zeta}$ und mit Lemma \ref{lem : loktyp} folgt
 \begin{equation}
-\abs{P^{(\alpha)}(\zeta)}^2 \int_{\Omega} \e^{-2x\cdot \eta}\d x \leq C(1+\abs{P(\zeta)}^2)\int_\Omega \e^{-2x\cdot \eta}\d x
+\abs{P^{(\alpha)}(\zeta)}^2 \int_{\omega} \e^{-2x\cdot \eta}\d x \leq C(1+\abs{P(\zeta)}^2)\int_\Omega \e^{-2x\cdot \eta}\d x
 \end{equation}
-wobei $\eta = \Im \zeta$. Setzen wir weiter $\delta = \sup \{2\abs{x}:x\in\Omega\}$, so folgt
+wobei $\eta = \Im \zeta$ und $\omega\Subset\Omega$. Setzen wir weiter $\delta = \sup \{2\abs{x}:x\in\Omega\}$, so folgt
 \begin{equation}
-\int_\Omega \e^{-2x\cdot \eta}\d x \geq \int_\Omega \e^{-\delta \abs{\eta}}=\abs{\Omega}\e^{-\delta \abs{\eta}}
+\int_\omega \e^{-2x\cdot \eta}\d x \geq \int_\omega \e^{-\delta \abs{\eta}}=\abs{\omega}\e^{-\delta \abs{\eta}}
 \end{equation}
 und
 \begin{equation}
@@ -129,7 +129,7 @@ Sei $P(\D)$ ein Differentialausdruck mit Symbol $P(\xi)$ und gelte $\Lambda(P)=\
 \end{enumerate}
 \end{thm} 
 
- Der Schritt {\bf (vi)} $\Rightarrow$ {\bf(i)} wurde gerade gezeigt. Die Voraussetzung $\Lambda(P)=\{0\}$ kann entfallen, wenn die Aussagen {\bf (i)}, {\bf (ii)}, {\bf (iii)}
+ Der Schritt {\bf (vi)} $\Rightarrow$ {\bf(iv)} wurde gerade gezeigt. Die Voraussetzung $\Lambda(P)=\{0\}$ kann entfallen, wenn die Aussagen {\bf (i)}, {\bf (ii)}, {\bf (iii)}
  und {\bf (v)} jeweils modulo $\Lambda(P)$ gefordert werden.
 
 
@@ -141,7 +141,6 @@ Angenommen für jedes $A>0$ existiert ein $B>0$, sodass $P(\xi+\i\eta)\neq 0$ f�
 für alle $ \vartheta\in\R^n$.
 \end{lem}
 \begin{proof}
-%Angenommen $P$ wäre nicht vollständig. Dann sei $0\neq\nu\in\Lambda(P)$. Sei außerdem $\zeta=\xi+\i\eta$ eine Nullstelle von $P$. Dann ist $P(\xi+t\nu+\i\eta)=0$ für alle $t\in\R$, also für $\abs{\xi+t\nu}$ beliebig groß. Ein Widerspruch.\\
 Durch Verschieben des Koordinatensystems zeigen wir \ref{eq:lm3.7} ohne Einschränkung für den Vektor $\vartheta=(1,0,\ldots,0)$. Sei $\epsilon > 0$ beliebig. Dann existiert nach Voraussetzung ein $B>0$, sodass $P(\xi+\i\eta)\neq 0$ für alle $\abs{\eta} < \epsilon^{-1}$ und $\abs{\xi}>B$. Sei nun $\xi=(\xi_1,\ldots,\xi_n)\in\R^n$ mit $\abs{\xi}>B+\epsilon^{-1}$ fest und $t_1,\ldots,t_m\in \C$ die Nullstellen des Polynoms $P(\cdot,\xi_2,\ldots,\xi_n)$. Für $\zeta=(t_k,\xi_2,\ldots,\xi_n)$ gilt dann wegen $P(\zeta)=0$, dass $\abs{\Re \zeta} \leq B$ oder $\abs{\Im \zeta} \geq \epsilon^{-1}$. Für $\abs{\xi-\zeta}= (\abs{\xi-\Re \zeta}^2+\abs{\Im \zeta})^{1/2}$ folgt dann in beiden Fällen $\abs{\xi_1-t_k}=\abs{\xi-\zeta}\geq \epsilon^{-1}$. Weiterhin haben wir für $P$ die Darstellung
 \begin{equation}
 P(\xi)=c\prod_{k=1}^m (\xi_1-t_k).
@@ -203,10 +202,14 @@ und damit die Konvergenz für komplexe $\vartheta$, sowie die gleichmäßige Kon
 \end{equation}
 die gleichmäßige Konvergenz für $\xi\to\infty$, $\alpha\neq0$, wenn $\abs{\vartheta}$ beschränkt.
 \end{proof}
-Der Beweis der Implikation {\bf (iv) $\Rightarrow$ (v)} verläuft analog zum Beweis von Satz \ref{thm:2.17}. Da die Implikation {\bf (v) $\Rightarrow$ (i)} offensichtlich ist, ist damit die Äquivalenz der Bedingungen {\bf (i)}-{\bf(v)} gezeigt. Also ist jede dieser Bedingungen notwendig dafür, dass $P(\D)$ von lokalem Typ ist. Um zu beweisen, dass diese auch hinreichend sind, benötigen wir eine Fundamentallösung, welche im folgenden Abschnitt konstruiert wird.
+Der Beweis der Implikation {\bf (iv) $\Rightarrow$ (v)} verläuft mit Mitteln aus dem Beweis von Satz \ref{thm:2.17}. Analog zum dortigen Induktionsbeweis zeigt man $\widetilde P(\zeta)^2\to\infty$ auf $\C^n / \Lambda_*(P)$,  wobei 
+\begin{equation}
+\Lambda_*(P)=\{ \vartheta\in\C^n : \forall_{\zeta\in\C^n}\; P(\zeta+\vartheta)=P(\zeta)  \}
+\end{equation} 
+den entsprechenden komplexe Linienraum bezeichnet. Damit impliziert die untere Schranke aus {\bf (iv)} auf dem Streifen $|\Im\zeta|\le A$ die Divergenz von $|P(\zeta)|$. Da die Implikation {\bf (v) $\Rightarrow$ (i)} offensichtlich ist, ist damit die Äquivalenz der Bedingungen {\bf (i)}--{\bf(v)} gezeigt. Also ist jede dieser Bedingungen notwendig dafür, dass $P(\D)$ von lokalem Typ ist. Um zu beweisen, dass diese auch hinreichend sind, benötigen wir eine Fundamentallösung, welche im folgenden Abschnitt konstruiert wird.
 
 \begin{exa}
-Die äquivalenten Bedingungen  {\bf (i)}-{\bf(v)} liefern einfache Kriterien dafür, wann Operatoren von lokalem Typ sind. So sind alle elliptischen Operatoren von lokalem Typ, da für diese der homogene Hauptteil $p(\xi)$ des Symbols $P(\xi)$ keine (reellen) Nullstellen besitzt und damit $1/P(\xi) = \mathcal O(|\xi|^{-m})$, $\xi\to\infty$, gilt. Daraus folgt sofort {\bf (iii)}. 
+Die äquivalenten Bedingungen  {\bf (i)}--{\bf(v)} liefern einfache Kriterien dafür, wann Operatoren von lokalem Typ sind. So sind alle elliptischen Operatoren von lokalem Typ, da für diese der homogene Hauptteil $p(\xi)$ des Symbols $P(\xi)$ keine (reellen) Nullstellen besitzt und damit $1/P(\xi) = \mathcal O(|\xi|^{-m})$, $\xi\to\infty$, gilt. Daraus folgt sofort {\bf (iii)}. 
 
 Umgekehrt impliziert {\bf (i)}, dass das Symbol nur auf einem Kompaktum reelle Nullstellen besitzen darf. Damit sind die im letzten Kapitel schon erwähnten 
 Schrödingeroperatoren $\i\partial_1-\Delta_2$ auf $\Omega\subset \R\times\R^n$ und (ultra-) hyperbolischen Operatoren $\Delta_1-\Delta_2$ auf $\Omega\subset \R^k\times\R^l$, $k,l\ne0$, beide nicht von lokalem Typ. Andererseits liefert eine kurze Rechnung, daß der Wärmeleitungsoperator $\partial_1-\Delta_2$ auf $\Omega\subset\R\times\R^n$ von lokalem Typ ist. Sein Symbol ist durch $P(\xi) = \i \xi_1 - \xi'\cdot\xi'$ in $\xi=(\xi_1,\xi')\in\R^n$ gegeben und erfüllt $|P(\xi)|^2 = |\xi_1|^2+|\xi'|^4$ und damit $1/P(\xi)\to0$, $\xi' / P(\xi)\to0$ und folglich {\bf (iii)}.
