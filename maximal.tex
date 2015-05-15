@@ -296,21 +296,22 @@ Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(\D)E_2 *u$ ist dan
 \end{equation}     
 so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet und gleich $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$ falls $|\xi|\ge R$. Damit ist $P^{(\alpha)}(\D) E_1 * u$ auch quadratintegrierbar und ({\bf ii}) folgt.
 
-\textbf{Schritt 3:} \emph{Beweis der Differenzierbarkeit in $\mathbb R^n\setminus{0}$.}
+\textbf{Schritt 3:} \emph{Beweis der Differenzierbarkeit in $\mathbb R^n\setminus\{0\}$.}
 Im Folgenden wenden wir uns dem Beweis von ({\bf i}) zu. Da $E_2$ eine ganze Funktion ist, genügt es zu zeigen, dass $E_1$ unendlich oft differenzierbar für $x\neq 0$ ist.  Wir beginnen mit folgenden Lemma:
 \begin{lem}\label{3.2lem1}
-Sei $0\neq y \in \mathbb R^n$ fest und sei
+Sei $0\neq y \in \mathbb R^n$ fest und sei zu $\tau\in\R$
 \begin{equation}\label{3.2inf}
 M(\tau) = \inf_{\zeta, \xi} |\zeta-\xi|,
 \end{equation}
-wobei $\xi\in \mathbb C^n$ und $P(\xi)=0$, und $\xi\in \mathbb R^n$ mit $|y, \xi|= \tau$. Dann existieren positive Zahlen $a$ und $b$ mit
+wobei $\zeta\in \mathbb C^n$ mit $P(\zeta)=0$, und $\xi\in \mathbb R^n$ mit $y\cdot \xi= \tau$. Dann existieren positive Zahlen $a$ und $b$ mit
 \begin{equation}\label{3.2to}
-M(\tau) \tau^{-b} \to a\quad \text{mit } \tau \to \infty.
+M(\tau) \tau^{-b} \to a\quad \text{für } \tau \to \infty.
 \end{equation}
-wo $b$ unc $d$ Konstanten aus den zwei vorigen Lemmas.
 \end{lem}
 \begin{proof}
-Nach Theorem ?? ({\bf i}) ist der Restriktionsbereich für $\zeta$ kompakt und das Infimum in \ref{3.2inf} wird angenommen. Weiter folgt leicht, dass $M(\tau)$ stetig von $\tau$ abhängt.
+%Nach Theorem ?? ({\bf i}) ist der Restriktionsbereich für $\zeta$ kompakt   NEIN IST ER NICHT
+
+ und das Infimum in \eqref{3.2inf} wird angenommen. Weiter folgt leicht, dass $M(\tau)$ stetig von $\tau$ abhängt.
 \end{proof}
   
 
