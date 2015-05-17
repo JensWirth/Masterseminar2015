@@ -222,7 +222,7 @@ Im folgenden konstruieren wir eine Fundamentallösung, also eine Distribution $E
 E*(P(\D) u) = u, \quad u \in \rmC_0^\infty(\R^n),
 \end{equation}
 welche zusätzliche Regularitätseigenschaften besitzt.
-Um genauer zu sein,  wollen wir zeigen:
+Um genau zu sein,  wollen wir zeigen:
 \begin{thm}\label{fundamental_exist}
 Sei $P$ vollständig und von lokalem Typ, dann besitzt $P(\D)$ eine Fundamentallösung $E$, welche 
 \begin{enumerate}
@@ -336,7 +336,7 @@ wobei $a_i$ und $b_i$ positive Zahlen sind. Damit ergibt sich mit $c'=\min a_i$ 
 |\zeta - \xi|\ge c'(\max |\xi_i|)^d \ge c |\xi|^d.
 \end{equation}
 \end{proof}
-\begin{lem}
+\begin{lem}\label{3.2lem3}
 Sei $y\in \mathbb R^n$ und $\eta \in \mathbb R^n$ zwei feste Vektoren. Dann gibt es eine Konstante $C$ so dass
 \begin{equation}
 \left |(\eta\cdot\nabla)^{k+j} \left ( \frac{1}{P(\xi)} \right )  \right | \le \frac{(k+j)! C^{k+j}}{|\xi|^{kd} ( 1+ | y\cdot\xi | )^{bj}},\qquad  |\xi|\ge R, \quad j, k=1,2,\ldots,
@@ -362,8 +362,53 @@ Weiter ist $A$ unabhängig von $\xi$. Dies folgt leicht mit Theorem \ref{thm:3:3
 für ein $\xi\in \mathbb R^n$ und einem Multiindex $\alpha\neq 0$.
 
 % umsetzen
-Dann folgt das Lemma, indem wir $j$ der Terme mit Nullstellen durch die erste Ungleichung aus \eqref{3.2tr}, $k$ der Terme mit der zweiten Ungleichung und die weiteren $m$ durch eine Konstante.
+Dann folgt das Lemma, indem wir $j$ der Terme mit Nullstellen durch die erste Ungleichung aus \eqref{3.2tr}, $k$ der Terme mit der zweiten Ungleichung und die weiteren $m$ durch eine Konstante.  
 \end{proof}
+Seien $y$ und $\eta$ zwei feste Vektoren und sei $b$ und $d$ wie im vorigen Lemma.  Wir zeigen zunächst, dass
+\begin{equation}
+F= (x\cdot \eta)^l (y \cdot \nabla)^k E_1
+\end{equation}
+stetig ist, falls
+\begin{equation}\label{3.2l}
+l\ge \frac{k}{b}+r, % l hängt von k ab
+\end{equation}
+wobei $r=\lfloor n/d +1\rfloor$.  Dies schließt tatsächlich den Beweis des Theorems ab, da dann $E_1$ beliebig oft stetig differenzierbar ist außerhalb von $0$.  %Zusatz wie im Original?
+
+Nach Definition von $F$ bzw. $E_1$ folgt 
+\begin{equation}\label{3.2F}
+\langle F, \check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{(y\cdot \xi)^k}{P(\xi)} \left ( (\eta\cdot \D)^l \hat u(\xi)\right )\, \mathrm d\xi.
+\end{equation}
+Mit partieller Integration folgt $F(\check u)=G(\check u) + I(\check u)$ mit
+\begin{equation}\label{3.2G}
+\langle G,\check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \hat u(\xi) \left ( (-\eta \cdot \nabla)^l \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\, \mathrm d\xi
+\end{equation}
+\begin{equation}\label{3.2I}
+\langle I,\check u\rangle = i^{-1} (2\pi)^{-n/2} \sum_{j=0}^{l-1} \int_{|\xi|=R} \left ( (-\eta \cdot \nabla)^j \left ( \frac{(y\cdot \xi)^k}{P(\xi)}\right ) \right ) \left ( (\eta \cdot \nabla)^{l-1-j} \hat u(\xi) \right ) (\eta \cdot \mathrm n) \, \mathrm d\sigma.
+\end{equation}
+Nach Lemma \ref{3.2lem3} können wir den Integranden von \eqref{3.2G} abschätzen, den wir mit $g(\xi)$ bezeichnen.
+\begin{equation}
+\begin{split}
+|g(\xi)| &= \left | \sum_{j=0}^k \binom{l}{j} (y\cdot i\eta)^j (y \cdot \xi)^{k-j} \left ( (-D\cdot \eta)^{l-j} \frac{1}{P(\xi)} \right ) \right |\\
+&\le \sum_{j=0}^k \binom{l}{j} \frac{k!}{(k-j)!} |y\cdot \eta|^j |y\cdot \xi|^{k-j}  \frac{(l-j)! C^{l-j}}{|\xi|^{rd} (1+|y\cdot \xi|^{b(l-j-r)})} 
+\end{split}
+\end{equation}
+wo im ersten Schritt die Leibnizformel benutzt worden ist. Mit \eqref{3.2l} folgt
+\begin{equation}
+b(l-j-r) -(k-j)= b\left ( l-\frac{k}{b} -r \right )  + j(1-b) >0.
+\end{equation}
+und erhalten somit
+\begin{equation}
+|g(\xi)| \le |\xi|^{-rd} l! \sum_{j=0}^k \binom{k}{j} |y\cdot \eta|^j C^{l-j} = | \xi|^{-rd} l! C^l \left ( \frac{|y\cdot\eta|}{C+1} \right )^k.
+\end{equation}
+Die Funktion $|\xi|^{-rd}$ ist integrierbar über $|\xi|>R$, da $rd >n$.  Damit folgt, dass die Distribution $G$ gegeben ist durch die stetige Funktion
+\begin{equation}
+G(x) = (2\pi)^{-n} \int_{|\xi|\ge R} g(\xi) e^{i x\cdot \xi}\, \mathrm d\xi.
+\end{equation}
+Weiter folgt ähnlich wie zuvor mit der Definition von $\hat u$ eingesetzt in \eqref{3.2I}, dass $I$ durch die analytische Funktion 
+\begin{equation}
+I(x) = i^{-1}(2\pi)^{-n} \sum_{j=0}^{l-1} \int_{|\xi|=R} (x\cdot \eta)^{l-1-j} e^{ix\cdot \xi} \left ( (-\eta \cdot \nabla)^{j} \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\, \mathrm d\sigma
+\end{equation} 
+gegeben ist. Damit ist $F=G+I$ stetig.
 \end{proof}
 
 %
@@ -372,7 +417,30 @@ Dann folgt das Lemma, indem wir $j$ der Terme mit Nullstellen durch die erste Un
 %
 
 \begin{proof}[Beweis von Satz~\ref{thm:3:3.3} {\bf (i)--(v) $\Longrightarrow$ (vi)}]
+Sei $P$ ein vollständiger Operator, der die Voraussetzungen I-V von Theorem \ref{thm:3:3.3} erfüllt und sei $\Omega\subset \mathbb R^n$ eine beliebige Umgebung um die $0$ und $\Omega'\subset \subset \Omega$ kompakt enthalten.  Sei $\rho(x)\in C_=^\infty$, sodass die für $|x|\ge \varepsilon$ verschwindet und $1$ in einer Umgebung um den Ursprung ist. Wir definieren die Distribution
+\begin{equation}
+F= \rho E.
+\end{equation}
+Der Träger von $F$ ist damit in der Kugel $\overline {B_{\varepsilon}(0)}$ enthalten und es ist
+\begin{equation}
+P(D) F= P(D) E - P(D)((1-\rho)E) =\delta_0 + \omega(x)
+\end{equation}  
+wobei $P(D)E=\delta_0$ und $\omega(x):= -P(D)((1-\rho)E)$ eine unendlich oft differenzierbare Funktion ist nach vorigen Theorem, die für $|x|\ge \varepsilon$ und in einer Umgebung um die $0$ verschwindet.  
 
+Sei $u\in \mathcal D_{P}$, also insbesondere $u\in L^2(\Omega)$ und $P(\D)u\in L^2(\Omega)$.  Dann folgt in $\Omega'$
+\begin{equation}
+u= u*\delta_0 = u * (P(\D) F-\omega) = F*(P(\D)u)- \omega *u.
+\end{equation}
+Und damit
+\begin{equation}\label{3.2wichtig}
+P^{(\alpha)}(\D) u = (P^{(\alpha)}(D)F)*(Pu)-(P^{(\alpha)}(\D) \omega)*u.
+\end{equation}
+Im folgenden wollen wir zeigen, dass $P^{(\alpha)}(\D)\in L^2_{\text{loc}}(\Omega)$ gilt für alle Multiindices $\alpha\in \mathbb N_0^n$. Dann folgt mit Lemma \ref{lem : loktyp}, dass $P$ vom lokalen Typ ist.  $(P^{(\alpha)}(D)\omega)*u\in C^\infty$ ist offenbar quadrat-integrierbar in $\Omega'$. 
+Bezeichne $\phi$ die Funktion die gleich $Pu$ auf $\Omega'_\varepsilon:=\{x\in \Omega| \dist(\Omega', x)<\varepsilon\}$ und $0$ sonst ist. Dann folgt in $\Omega'$
+\begin{equation}
+(P^{(\alpha)}(\D)F)* (Pu) = (P^{(\alpha)}(\D)E)*\phi+ (P^{(\alpha)}(\D)((\rho-1)E))*\phi.
+\end{equation}
+$(P^{(\alpha)}(\D)E)*\phi$ ist nach Satz \ref{fundamental_exist} ({\bf ii}) quadrat-integrierbar. Offenbar besitzt $\phi$ kompakten Träger und leicht folgt auch, dass $P^{(\alpha)}(\D)((\rho-1)E)*\phi$ quadrat-integrierbar in $\Omega'$  ist. Daraus folgt schließlich mit \eqref{3.2wichtig}, dass $P^{(\alpha)}u\in L^2_{\text{loc}}$.
 \end{proof}
 
 
