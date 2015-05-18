@@ -309,9 +309,19 @@ M(\tau) \tau^{-b} \to a\quad \text{für } \tau \to \infty.
 \end{equation}
 \end{lem}
 \begin{proof}
-%Nach Theorem ?? ({\bf i}) ist der Restriktionsbereich für $\zeta$ kompakt   NEIN IST ER NICHT
-
- und das Infimum in \eqref{3.2inf} wird angenommen. Weiter folgt leicht, dass $M(\tau)$ stetig von $\tau$ abhängt.
+Nach Theorem ?? ({\bf i}) können wir uns auf ein Kompaktum in dem Restriktionsbereich einschränken
+ und das Infimum in \eqref{3.2inf} wird angenommen. Weiter folgt leicht, dass $M(\tau)$ stetig von $\tau$ abhängt.  
+ 
+ Das System aus Gleichungen
+ \begin{equation}\label{3.2gleich}
+ P(\zeta)=0, \langle y, \xi\rangle^2 =\tau^2, |\zeta-\xi|^2=\mu^2
+ \end{equation}
+ hat eine Lösung $\zeta\in \mathbb C^n$, $\xi \in \mathbb R^n$ genau dann wenn $\mu \ge M(\tau)$. 
+ Betrachtn wir $\mathbb C^n$ als $2n$-dimensionalen reellen Vektorraum und die Gleichung $P(\xi)=0$ als zwei reelle Gleichungen, dann können wir die Variablen $\zeta$ und $\xi$ im Sinne von Seidenberg eliminieren. Genauer, wir finden  eine endliche Menge an polynommiellen Gleichungen bzw. Ungleichungen $_1,\ldots, G_s$ in $\mu$ und $\tau$ so dass es Vektoren $\zeta$ und $\xi$ gibt, die die Gleichungen \eqref{3.2gleich} erfüllt genau dann, wenn alle Gleichungen bzw. Ungleichungen von $G_i$ von $\mu$ und $\tau$ für mindestens eins der $i=1,\ldots,s$ erfüllt. Da die Existenz von Lösung $\zeta, \xi$ in \eqref{3.2gleich} äquivalent zu $\mu \ge M(\tau)$ ist, können wir annehmen, dass $G_i$ von der Form
+ \begin{equation}
+ G_{ik}(\mu, \tau)\ge 0,  \quad k=1,\ldots,k_i.
+ \end{equation}
+ist. $\mu=M(\tau)$ muss eines dier Ungleichungen zu einer Gleichung machen. Sei $G(\mu,\tau)$ das Produkt aller Polynome $G_{ik}(\mu,\tau)\neq 0$ und sei $H(\mu, \tau)$ das Polynom mit den selben Linearfaktoren wie $G(\mu,\tau)$, aber alle mit Multiplizität $1$.   Dann folgt $H(M(\tau),\tau)=0$ für jedes $\tau$.  Für hinreichend große $\tau$ hängt der Grad von $H$ nicht von $\tau$ ab und die Nullstellenfunktionen $\mu_k(\tau)$ sind stetig, da $H$ nur aus Linearfaktoren der Vielfachheit $1$ besteht.  
 \end{proof}
   
 
@@ -461,4 +471,18 @@ Sei $P(\D)$ ein Differentialausdruck und $\Omega\subset\R^n$ ein beschränktes G
 \end{enumerate}
 \end{thm}
 \begin{proof}
+\emph{Hinrichtung.} Folgt direkt aus Gleichung ??. $\bullet$ \qquad
+\emph{Rückrichtung.} Wir zeigen, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt.   Sei $\Omega'\subset\subset \Omega$ kompakt enthaltenes Gebiet. Da $P(\D)$ ein abgeschlossener Operator ist (vgl. Definition), folgt dass der $Ker P$ ein abgeschlossener Teilraum von $L^2(\Omega)$. Die Abbildung
+\begin{equation}
+U\ni u \mapsto \frac{\partial u}{\partial x^k}
+\end{equation}  
+ist abgeschlossen (leicht zu zeigen), und nach Voraussetzung liegt $U$ im Definitionsbereich.  Insbesondere ist die Abbildung stetig nach dem Satz vom abgeschlossenen Graphen, so dass
+\begin{equation}
+\int_{\Omega'} \sum_{k=1}^n \left | \frac{\partial u}{\partial x^k}\right |^2\, \mathrm dx \le C \int_\Omega |u|^2\, \mathrm dx, \quad u\in U.
+\end{equation}
+Wenden wir dies für $u=e^{ix\cdot \zeta}$, wobei $\zeta = \xi + i \eta$ eine Lösung der Gleichung $P(\zeta)=0$, erhalten wir
+\begin{equation}
+\left (\sum_{k=1}^n |\xi_k|^2 \right ) \int_{\Omega'} e^{-2x\cdot \eta}\, \mathrm dx \le C\int_\Omega e^{-2 x\cdot \eta}\, \mathrm dx.
+\end{equation}
+Und damit falls  $|\eta|<A$ folgt $|\zeta|<C'$, was zeigt, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt ist.
 \end{proof}
