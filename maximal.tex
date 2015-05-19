@@ -462,16 +462,15 @@ u= u*\delta_0 = u * (P(\D) F-\omega) = F*(P(\D)u)- \omega *u
 \end{equation}
 und damit
 \begin{equation}\label{3.2wichtig}
-P^{(\alpha)}(\D) u = (P^{(\alpha)}(\D)F)*(Pu)-(P^{(\alpha)}(\D) \omega)*u
+P^{(\alpha)}(\D) u = (P^{(\alpha)}(\D)F)*(P(\D)u)-(P^{(\alpha)}(\D) \omega)*u
 \end{equation}
-für alle Multiindices $\alpha\in\N_0^n$. Es genügt zu zeigen, dass diese Distributionen auf jeder relativ kompakten Menge $\Omega'\Subset\Omega$ quadratintegrierbar sind.  Dann folgt mit Lemma \ref{lem : loktyp}, dass $P$ vom lokalen Typ ist. Dazu wählen wir $\epsilon<\dist(\Omega',\partial\Omega)$
-udn 
- $(P^{(\alpha)}(D)\omega)*u\in C^\infty$ ist offenbar quadrat-integrierbar in $\Omega'$. 
-Bezeichne $\phi$ die Funktion die gleich $Pu$ auf $\Omega'_\varepsilon:=\{x\in \Omega| \dist(\Omega', x)<\varepsilon\}$ und $0$ sonst ist. Dann folgt in $\Omega'$
+für alle Multiindices $\alpha\in\N_0^n$. Es genügt zu zeigen, dass diese Distributionen auf jeder relativ kompakten Menge $\Omega'\Subset\Omega$ quadratintegrierbar sind.  Dann folgt mit Lemma \ref{lem : loktyp}, dass $P$ vom lokalen Typ ist. Dazu wählen wir $\epsilon<\dist(\Omega',\partial\Omega)$. Da
+ $(P^{(\alpha)}(D)\omega)*u\in \rmC^\infty(\R^n)$ ist  quadratintegrierbar in $\Omega'$ ist, genügt es den ersten Summanden zu betrachten. 
+Bezeichne $\phi$ die Funktion die gleich $P(\D)u$ auf $\Omega'_\varepsilon=\{x\in \Omega| \dist(\Omega', x)<\varepsilon\}$ und $0$ sonst ist. Dann folgt in $\Omega'$
 \begin{equation}
-(P^{(\alpha)}(\D)F)* (Pu) = (P^{(\alpha)}(\D)E)*\phi+ (P^{(\alpha)}(\D)((\rho-1)E))*\phi.
+(P^{(\alpha)}(\D)F)* (P(\D)u) = (P^{(\alpha)}(\D)E)*\phi+ (P^{(\alpha)}(\D)((\rho-1)E))*\phi.
 \end{equation}
-$(P^{(\alpha)}(\D)E)*\phi$ ist nach Satz \ref{fundamental_exist} ({\bf ii}) quadrat-integrierbar. Offenbar besitzt $\phi$ kompakten Träger und leicht folgt auch, dass $P^{(\alpha)}(\D)((\rho-1)E)*\phi$ quadrat-integrierbar in $\Omega'$  ist. Daraus folgt schließlich mit \eqref{3.2wichtig}, dass $P^{(\alpha)}u\in L^2_{\text{loc}}$.
+Da $\phi$ kompakt getragen ist, ist $(P^{(\alpha)}(\D)E)*\phi$ nach Satz \ref{fundamental_exist} ({\bf ii}) quadrat-integrierbar. Desweiteren ist $P^{(\alpha)}(\D)((\rho-1)E)$ glatt und damit $(P^{(\alpha)}(\D)((\rho-1)E))*\phi\in\rmC^\infty(\R^n)$ quadrat-integrierbar in $\Omega'$. Daraus folgt schließlich mit \eqref{3.2wichtig}, dass $P^{(\alpha)}u\in \rmL^2_{\text{loc}}$.
 \end{proof}
 
 
