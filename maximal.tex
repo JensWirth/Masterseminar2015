@@ -226,7 +226,7 @@ Um genau zu sein,  wollen wir zeigen:
 \begin{thm}\label{fundamental_exist}
 Sei $P$ vollständig und von lokalem Typ, dann besitzt $P(\D)$ eine Fundamentallösung $E$, welche 
 \begin{enumerate}
-\item im Gebiet $\R^n\setminus\{0\}$  durch eine unendlich differenzierbare Funktion $E(x)$ dargestellt wird und
+\item im Gebiet $\R^n\setminus\{0\}$  durch eine unendlich oft differenzierbare Funktion $E(x)$ dargestellt wird und
 \item für die $P^{(\alpha)}(\D) E*u$ für jedes $u\in \rmL^2(\R^n)$ mit kompakten Träger $\supp u\Subset\R^n$ lokal quadrat-integrierbar ist. 
 \end{enumerate}
 \end{thm}
@@ -248,53 +248,54 @@ wobei $\check u$ durch $\check u(x)=u(-x)$ gegeben ist. Wir überlegen uns also 
 Wir werden diesen Beweis in einigen Schritten führen.
 \vspace{1mm}\\
 \textbf{Schritt 1:} \emph{Konstruktion einer Fundamentallösung.}
-Nach Satz~\ref{thm:3:3.3} {\bf (v)} gilt $|P(\xi)|\ge 1$ falls $\xi\in \mathbb R$ und $|\xi|\ge C$ mit geeigneter Konstante $C$.  Damit folgt $|P(\xi)\ge 1|$ falls $\xi_2^2+ \ldots + \xi_n^2 \ge C^2$.  
+Nach Satz~\ref{thm:3:3.3} {\bf (v)} gilt $|P(\xi)|\ge 1$ falls $\xi\in \mathbb R$ und $|\xi|\ge C$ mit geeigneter Konstante $C$.  Damit folgt $|P(\xi)|\ge 1$ falls $\xi_2^2+ \ldots + \xi_n^2 \ge C^2$.  
 
-Wir können annehmen, dass der Koeffizient vor der höchsten Potenz von $\xi_1$ von $P(\xi)$ konstant ist (vgl. Lemma ??). 
+Wir können annehmen, dass der Koeffizient vor der höchsten Potenz von $\xi_1$ von $P(\xi)$ konstant ist \footnote{Dies folgt aus [??]. Tatsächlich finden wir eine affine Transformation, so dass das Polynom die geforderte Eigenschaft erfüllt}.
 %Da die Nullstellen des Polynoms stetig von den Parametern abhängen, die nicht im führenden Koeffizienten stehen.  
-So finden wir außerdem leicht eine zweite Konstante $C'$ sodass $|P(\xi_1, \xi_2, \cdots, \xi_nu)|\ge 1$ für $\xi_2^2+\ldots + \xi_n^2< C$ and $|\xi_1|\ge C'$.  
+So finden wir außerdem leicht eine zweite Konstante $C'$ sodass $|P(\xi_1, \xi_2, \cdots, \xi_n)|\ge 1$ für $\xi_2^2+\ldots + \xi_n^2< C$ and $|\xi_1|\ge C'$.  
 
 Jetzt setzen wir für $u\in\rmC_0^\infty(\mathbb R^n)$
 \begin{equation}\label{distr3}
-\langle E, \check u\rangle  = (2\pi)^{-n/2} \int \, \mathrm d\xi_2 \cdots \, \mathrm d\xi_n \oint \frac{\widehat u(\xi)}{P(\xi)} \, \mathrm d\xi_1= (2\pi)^{-n/2} \oint \frac{\widehat u(\xi)}{P(\xi)} \, \mathrm d\xi.
+\langle E, \check u\rangle  = (2\pi)^{-n/2} \int \, \mathrm d\xi_2 \cdots \, \mathrm d\xi_n \oint \frac{\widehat u(\xi)}{P(\xi)} \, \mathrm d\xi_1=: (2\pi)^{-n/2} \int_\Gamma \frac{\widehat u(\xi)}{P(\xi)} \, \mathrm d\xi.
 \end{equation}
 wobei das Integral über $\xi_1$ über die reelle Achse gehe, falls $\xi_2^2+ \cdots + \xi_n^2 \ge C^2$, und über die reelle Achse mit dem Intervall $(-C', C')$ ersetzt durch einen Halbkreis in der unteren Halbebene, falls $\xi_2^2+ \cdots+ \xi_n^2 < C^2$. Damit gilt $|P(\xi)|\ge 1$  in dem Integral.  Damit ergibt sich analog zu \eqref{distr1}
 \begin{equation}
-E*u(x) = (2\pi)^{-n/2}\oint e^{\i x\cdot \xi } \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in \rmC_0^\infty.
+E*u(x) = (2\pi)^{-n/2}\int_\gamma e^{\i x\cdot \xi } \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in \rmC_0^\infty.
 \end{equation} 
 Damit folgt für $u\in\rmC_0^\infty(\mathbb R^n)$
 \begin{equation}
 E*(P(\D)u) = (2\pi)^{-n/2} \oint \e^{\i x\cdot\xi} P(\xi)  \frac{\widehat{u} (\xi)}{P(\xi)}\, \mathrm d\xi=(2\pi)^{-n/2} \oint \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathrm d\xi
 \end{equation}
-und da der Integrand holomorph in $\xi_1$ ist, können wir den Integrationsweg als reale Achse wählen. Damit folgt
+und da der Integrand holomorph in $\xi_1$ ist, können wir den Integrationsweg als reelle Achse wählen. Damit folgt
 \begin{equation}
-E*(P(\D) u)(x) = (2\pi)^{-n/2} \int \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathrm d\xi = u(x),
+E*(P(\D) u)(x) = (2\pi)^{-n/2} \int \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathrm d\xi = u(x)
 \end{equation}
 und $E$ ist somit eine Fundamentallösung.
 
 \textbf{Schritt 2:} \emph{Beweis der Quadratintegrierbarkeit von $P^{(\alpha)}(\D) E * u$.}
-Wir teilen das Integral \eqref{distr3} in zwei Teile auf. Falls $R=\sqrt{C^2 + C'^2}$, haben wir $|\xi|<R$ und der Teil des Integrals von \eqref{distr3}, wo $\xi$ nicht real ist. Schreibe also 
+Wir teilen das Integral \eqref{distr3} in zwei Teile auf. Sei $R=\sqrt{C^2 + C'^2}$, so ist der Integrationsweg in \eqref{distr3} für $|\xi|>R$ außschließlich reell. Schreibe also 
 \begin{equation}\label{distr4}
 E=E_1 + E_2,
 \end{equation}
 \begin{equation}\label{distr5}
-\langle E_1,\check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad E_2(\check u)= (2\pi)^{-n/2} \oint_{|\xi|\le R} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi
+\langle E_1,\check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad E_2(\check u)= (2\pi)^{-n/2} \int_{\Gamma |\xi|\le R} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi
 \end{equation}
-Die Variable $\xi$ in der Definition von $E_1$ kann nur reelle Werte im Integral annehmen. Die Distribution $E_2$ ist eine ganze Funktion, da für $u\in\rmC_0^\infty$ erhält man mit der Definition von $\widehat u$
+Die Variable $\xi$ in der Definition von $E_1$ kann nur reelle Werte im Integral annehmen. Die Distribution $E_2$ ist eine ganze Funktion, da für $u\in\rmC_0^\infty$ man mit der Definition von $\widehat u$
 \begin{equation}
 \langle E_2, \check u\rangle = (2\pi)^{-\nu} \oint_{|\xi |\le R} \frac{\mathrm d\xi}{P(\xi)} \int u(x) \e^{-\i x\cdot\xi}\, \mathrm dx= (2\pi)^{-n} \int \check u(x) \, \oint_{|\xi|\le R} \frac{e^{\i x\cdot \xi}}{P(\xi)}\, \mathrm d\xi \, \mathrm dx
 \end{equation}
 erhält. Damit ist $E_2$ regulär und
 \begin{equation}
-E_2(x) = (2\pi)^{-n} \oint_{|\xi|\le R} \frac{\e^{\i x\cdot \xi}}{P(\xi)}\, \mathrm d\xi,
+\langle E_2, x\rangle = (2\pi)^{-n} \oint_{|\xi|\le R} \frac{\e^{\i x\cdot \xi}}{P(\xi)}\, \mathrm d\xi,
 \end{equation}
 die analytisch ist, da das Integral gleichmäßig konvergent auf Kompakta ist. 
 
-Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(\D)E_2 *u$ ist dann eine analytische Funktion.  Die Aussage ({\bf ii}) folgt dann, wenn wir zeigen, dass $P^{(\alpha)}(\D) E_1 * u$ quadratintegrierbar ist.  Sei $\phi \in\rmC_0^\infty$. Dann ist die Funktion $U*\phi$ auch in $C_0^\infty$ und im Sinne von \eqref{distr5} folgt
+Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(\D)E_2 *u$ ist dann eine analytische Funktion.  Die Aussage ({\bf ii}) folgt dann, wenn wir zeigen, dass $P^{(\alpha)}(\D) E_1 * u$ quadratintegrierbar ist.  Sei $\phi \in\mathrm C_0^\infty$. Dann ist die Funktion $u*\phi$ auch in $C_0^\infty$ und im Sinne von \eqref{distr5} folgt
 \begin{equation}
 \langle P^{(\alpha)} (\D) E_1 * u, \check \phi\rangle  = P^{(\alpha)}(\D) E_1 * u * \phi(0) = \int_{|\xi| \ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \widehat \phi(\xi) \, \mathrm d\xi,
 \end{equation}     
-so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet und gleich $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$ falls $|\xi|\ge R$. Damit ist $P^{(\alpha)}(\D) E_1 * u$ auch quadratintegrierbar und ({\bf ii}) folgt.
+so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet und gleich $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$ falls $|\xi|\ge R$. Damit ist da $P^{ (\alpha)}(\xi)/P(\xi)$ für $|\xi|>R$ beschränkt ist nach Satz \ref{thm:3:3.3}
+ $P^{(\alpha)}(\D) E_1 * u$ auch quadratintegrierbar und ({\bf ii}) folgt.
 
 \textbf{Schritt 3:} \emph{Beweis der Differenzierbarkeit in $\mathbb R^n\setminus\{0\}$.}
 Im Folgenden wenden wir uns dem Beweis von ({\bf i}) zu. Da $E_2$ eine ganze Funktion ist, genügt es zu zeigen, dass $E_1$ unendlich oft differenzierbar für $x\neq 0$ ist.  Wir beginnen mit folgenden Lemma:
@@ -389,12 +390,12 @@ Mit partieller Integration folgt $F(\check u)=G(\check u) + I(\check u)$ mit
 \langle G,\check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \hat u(\xi) \left ( (-\eta \cdot \nabla)^l \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\, \mathrm d\xi
 \end{equation}
 \begin{equation}\label{3.2I}
-\langle I,\check u\rangle = i^{-1} (2\pi)^{-n/2} \sum_{j=0}^{l-1} \int_{|\xi|=R} \left ( (-\eta \cdot \nabla)^j \left ( \frac{(y\cdot \xi)^k}{P(\xi)}\right ) \right ) \left ( (\eta \cdot \nabla)^{l-1-j} \hat u(\xi) \right ) (\eta \cdot \mathrm n) \, \mathrm d\sigma.
+\langle I,\check u\rangle = \i^{-1} (2\pi)^{-n/2} \sum_{j=0}^{l-1} \int_{|\xi|=R} \left ( (-\eta \cdot \nabla)^j \left ( \frac{(y\cdot \xi)^k}{P(\xi)}\right ) \right ) \left ( (\eta \cdot \nabla)^{l-1-j} \hat u(\xi) \right ) (\eta \cdot \mathrm n) \, \mathrm d\sigma.
 \end{equation}
 Nach Lemma \ref{3.2lem3} können wir den Integranden von \eqref{3.2G} abschätzen, den wir mit $g(\xi)$ bezeichnen.
 \begin{equation}
 \begin{split}
-|g(\xi)| &= \left | \sum_{j=0}^k \binom{l}{j} (y\cdot i\eta)^j (y \cdot \xi)^{k-j} \left ( (-D\cdot \eta)^{l-j} \frac{1}{P(\xi)} \right ) \right |\\
+|g(\xi)| &= \left | \sum_{j=0}^k \binom{l}{j} (y\cdot \i\eta)^j (y \cdot \xi)^{k-j} \left ( (-D\cdot \eta)^{l-j} \frac{1}{P(\xi)} \right ) \right |\\
 &\le \sum_{j=0}^k \binom{l}{j} \frac{k!}{(k-j)!} |y\cdot \eta|^j |y\cdot \xi|^{k-j}  \frac{(l-j)! C^{l-j}}{|\xi|^{rd} (1+|y\cdot \xi|^{b(l-j-r)})} 
 \end{split}
 \end{equation}
@@ -408,11 +409,11 @@ und erhalten somit
 \end{equation}
 Die Funktion $|\xi|^{-rd}$ ist integrierbar über $|\xi|>R$, da $rd >n$.  Damit folgt, dass die Distribution $G$ gegeben ist durch die stetige Funktion
 \begin{equation}
-G(x) = (2\pi)^{-n} \int_{|\xi|\ge R} g(\xi) e^{i x\cdot \xi}\, \mathrm d\xi.
+G(x) = (2\pi)^{-n} \int_{|\xi|\ge R} g(\xi) \e^{\i x\cdot \xi}\, \mathrm d\xi.
 \end{equation}
 Weiter folgt ähnlich wie zuvor mit der Definition von $\hat u$ eingesetzt in \eqref{3.2I}, dass $I$ durch die analytische Funktion 
 \begin{equation}
-I(x) = i^{-1}(2\pi)^{-n} \sum_{j=0}^{l-1} \int_{|\xi|=R} (x\cdot \eta)^{l-1-j} e^{ix\cdot \xi} \left ( (-\eta \cdot \nabla)^{j} \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\, \mathrm d\sigma
+I(x) = i^{-1}(2\pi)^{-n} \sum_{j=0}^{l-1} \int_{|\xi|=R} (x\cdot \eta)^{l-1-j} \e^{\i x\cdot \xi} \left ( (-\eta \cdot \nabla)^{j} \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\, \mathrm d\sigma
 \end{equation} 
 gegeben ist. Damit ist $F=G+I$ stetig.
 \end{proof}
@@ -423,15 +424,15 @@ gegeben ist. Damit ist $F=G+I$ stetig.
 %
 
 \begin{proof}[Beweis von Satz~\ref{thm:3:3.3} {\bf (i)--(v) $\Longrightarrow$ (vi)}]
-Sei $P$ ein vollständiger Operator, der die Voraussetzungen I-V von Theorem \ref{thm:3:3.3} erfüllt und sei $\Omega\subset \mathbb R^n$ eine beliebige Umgebung um die $0$ und $\Omega'\subset \subset \Omega$ kompakt enthalten.  Sei $\rho(x)\in C_=^\infty$, sodass die für $|x|\ge \varepsilon$ verschwindet und $1$ in einer Umgebung um den Ursprung ist. Wir definieren die Distribution
+Sei $P$ ein vollständiger Operator, der die Voraussetzungen I-V von Theorem \ref{thm:3:3.3} erfüllt und sei $\Omega\subset \mathbb R^n$ eine beliebige Umgebung um die $0$ und $\Omega'\Subset \Omega$ kompakt enthalten.  Sei $\rho(x)\in C_0^\infty$, sodass die für $|x|\ge \varepsilon$ verschwindet und $1$ in einer Umgebung um den Ursprung ist. Wir definieren die Distribution
 \begin{equation}
 F= \rho E.
 \end{equation}
 Der Träger von $F$ ist damit in der Kugel $\overline {B_{\varepsilon}(0)}$ enthalten und es ist
 \begin{equation}
-P(D) F= P(D) E - P(D)((1-\rho)E) =\delta_0 + \omega(x)
+P(\D) F= P(\D) E - P(\D)((1-\rho)E) =\delta_0 + \omega(x)
 \end{equation}  
-wobei $P(D)E=\delta_0$ und $\omega(x):= -P(D)((1-\rho)E)$ eine unendlich oft differenzierbare Funktion ist nach vorigen Theorem, die für $|x|\ge \varepsilon$ und in einer Umgebung um die $0$ verschwindet.  
+wobei $P(\D)E=\delta_0$ und $\omega(x):= -P(\D)((1-\rho)E)$ eine unendlich oft differenzierbare Funktion ist nach vorigen Theorem, die für $|x|\ge \varepsilon$ und in einer Umgebung um die $0$ verschwindet.  
 
 Sei $u\in \mathcal D_{P}$, also insbesondere $u\in L^2(\Omega)$ und $P(\D)u\in L^2(\Omega)$.  Dann folgt in $\Omega'$
 \begin{equation}
@@ -467,7 +468,7 @@ Sei $P(\D)$ ein Differentialausdruck und $\Omega\subset\R^n$ ein beschränktes G
 \end{thm}
 \begin{proof}
 \emph{Hinrichtung.} Folgt direkt aus Gleichung ??. $\bullet$ \qquad
-\emph{Rückrichtung.} Wir zeigen, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt.   Sei $\Omega'\subset\subset \Omega$ kompakt enthaltenes Gebiet. Da $P(\D)$ ein abgeschlossener Operator ist (vgl. Definition), folgt dass der $Ker P$ ein abgeschlossener Teilraum von $L^2(\Omega)$. Die Abbildung
+\emph{Rückrichtung.} Wir zeigen, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt.   Sei $\Omega'\Subset \Omega$ kompakt enthaltenes Gebiet. Da $P(\D)$ ein abgeschlossener Operator ist (vgl. Definition), folgt dass $\ker P$ ein abgeschlossener Teilraum von $L^2(\Omega)$. Die Abbildung
 \begin{equation}
 U\ni u \mapsto \frac{\partial u}{\partial x^k}
 \end{equation}  
@@ -475,9 +476,9 @@ ist abgeschlossen (leicht zu zeigen), und nach Voraussetzung liegt $U$ im Defini
 \begin{equation}
 \int_{\Omega'} \sum_{k=1}^n \left | \frac{\partial u}{\partial x^k}\right |^2\, \mathrm dx \le C \int_\Omega |u|^2\, \mathrm dx, \quad u\in U.
 \end{equation}
-Wenden wir dies für $u=e^{ix\cdot \zeta}$, wobei $\zeta = \xi + i \eta$ eine Lösung der Gleichung $P(\zeta)=0$, erhalten wir
+Wenden wir dies für $u=\e^{\i x\cdot \zeta}$, wobei $\zeta = \xi + i \eta$ eine Lösung der Gleichung $P(\zeta)=0$, erhalten wir
 \begin{equation}
-\left (\sum_{k=1}^n |\xi_k|^2 \right ) \int_{\Omega'} e^{-2x\cdot \eta}\, \mathrm dx \le C\int_\Omega e^{-2 x\cdot \eta}\, \mathrm dx.
+\left (\sum_{k=1}^n |\xi_k|^2 \right ) \int_{\Omega'} \e^{-2x\cdot \eta}\, \mathrm dx \le C\int_\Omega \e^{-2 x\cdot \eta}\, \mathrm dx.
 \end{equation}
 Und damit falls  $|\eta|<A$ folgt $|\zeta|<C'$, was zeigt, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt ist. 
 \end{proof}
