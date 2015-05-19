@@ -393,49 +393,49 @@ Im Folgenden wenden wir uns dem Beweis von Aussage ({\bf i}) zu. Da $E_2$ eine g
 
 Seien dazu $y\in\R^n$ und $\eta\in\R^n$ zwei fest gewählte Vektoren.  Wir zeigen, dass dann
 \begin{equation}
-F= (x\cdot \eta)^l (y \cdot \nabla)^k E_1
+F= (x\cdot \eta)^l (y \cdot \D_x)^k E_1
 \end{equation}
-stetig ist, falls
-\begin{equation}\label{3.2l}
-l\ge \frac{k}{b}+\frac nd +1, 
-\end{equation}
-mit den Konstanten $b$ und $d$ aus Lemma~\ref{3.2lem1} und \ref{3.2lem2}. Das impliziert, dass  $E_1$  außerhalb des Ursprungs beliebig oft stetig differenzierbar ist.  %Zusatz wie im Original?
-
+stetig ist, falls $l$ in Abhängigkeit von $k$ hinreichend groß gewählt wird.
+%\begin{equation}\label{3.2l}
+%l\ge \frac{k}{b}+\frac nd +1, 
+%\end{equation}
+%mit den Konstanten $b$ und $d$ aus Lemma~\ref{3.2lem1} und \ref{3.2lem2}. 
+Das impliziert, dass  $E_1$  außerhalb des Ursprungs beliebig oft stetig differenzierbar ist.  %Zusatz wie im Original?
 Nach Definition von $F$ bzw. $E_1$ folgt 
 \begin{equation}\label{3.2F}
-\langle F, \check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{(y\cdot \xi)^k}{P(\xi)} \left ( (\eta\cdot \nabla)^l \hat u(\xi)\right )\d \xi.
+\langle F, \check u\rangle =  (2\pi)^{-n/2}\int_{|\xi|\ge R} \frac{(y\cdot \xi)^k}{P(\xi)} \left ( (\eta\cdot \D_\xi)^l \widehat u(\xi)\right )\d \xi.
 \end{equation}
 Mit partieller Integration folgt $\langle F,\check u\rangle=\langle G,\check u\rangle + \langle I,\check u\rangle $ mit
 \begin{equation}\label{3.2G}
-\langle G,\check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \hat u(\xi) \left ( (-\eta \cdot \nabla)^l \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\d \xi
+\langle G,\check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \widehat u(\xi) \left ( (-\eta \cdot \D_\xi)^l \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\d \xi
 \end{equation}
 \begin{equation}\label{3.2I}
-\langle I,\check u\rangle = \i^{-1} (2\pi)^{-n/2} \sum_{j=0}^{l-1} \int_{|\xi|=R} \left ( (-\eta \cdot \nabla)^j \left ( \frac{(y\cdot \xi)^k}{P(\xi)}\right ) \right ) \left ( (\eta \cdot \nabla)^{l-1-j} \hat u(\xi) \right ) (\eta \cdot \mathrm n) \d \sigma.
+\langle I,\check u\rangle =- \i\, (2\pi)^{-n/2} \sum_{j=0}^{l-1} \int_{|\xi|=R} \left ( (-\eta \cdot \D_\xi)^j \left ( \frac{(y\cdot \xi)^k}{P(\xi)}\right ) \right ) \left ( (\eta \cdot \D_\xi)^{l-1-j} \widehat u(\xi) \right ) \eta \cdot  \mathrm{d}\vec{\sigma}.
 \end{equation}
-Nach Lemma \ref{3.2lem3} können wir den Integranden von \eqref{3.2G} abschätzen, den wir mit $g(\xi)$ bezeichnen.
+Nach Lemma \ref{3.2lem3} können wir den Integranden von \eqref{3.2G} abschätzen, welchen wir mit $g(\xi)$ bezeichnen. Es gilt unter Ausnutzung der Leibnizformel
 \begin{equation}
 \begin{split}
-|g(\xi)| &= \left | \sum_{j=0}^k \binom{l}{j} (y\cdot \i\eta)^j (y \cdot \xi)^{k-j} \left ( (-D\cdot \eta)^{l-j} \frac{1}{P(\xi)} \right ) \right |\\
+|g(\xi)| &= \left | \sum_{j=0}^k \binom{l}{j} (y\cdot \i\eta)^j (y \cdot \xi)^{k-j} \left ( (-\eta\cdot\D_\xi)^{l-j} \frac{1}{P(\xi)} \right ) \right |\\
 &\le \sum_{j=0}^k \binom{l}{j} \frac{k!}{(k-j)!} |y\cdot \eta|^j |y\cdot \xi|^{k-j}  \frac{(l-j)! C^{l-j}}{|\xi|^{rd} (1+|y\cdot \xi|^{b(l-j-r)})} 
 \end{split}
 \end{equation}
-wo im ersten Schritt die Leibnizformel benutzt worden ist. Mit \eqref{3.2l} folgt
+mit den Konstanten $b$ und $d$ aus Lemma~\ref{3.2lem3} und noch zu wählendem $r\ge1$. Wir wählen $r$ so, dass $rd>n$ gilt. Weiterhin geschieht die Wahl von $l$ in Abhängigkeit von $k$ so, dass 
 \begin{equation}
-b(l-j-r) -(k-j)= b\left ( l-\frac{k}{b} -r \right )  + j(1-b) >0.
+b(l-j-r) -(k-j) \ge 0,\qquad j=0,\ldots,k
 \end{equation}
-und erhalten somit
+gilt. Da $b>0$ ist, gilt dies für $l$ hinreichend groß. Dann folgt 
 \begin{equation}
 |g(\xi)| \le |\xi|^{-rd} l! \sum_{j=0}^k \binom{k}{j} |y\cdot \eta|^j C^{l-j} = | \xi|^{-rd} l! C^l \left ( \frac{|y\cdot\eta|}{C+1} \right )^k.
 \end{equation}
-Die Funktion $|\xi|^{-rd}$ ist integrierbar über $|\xi|>R$, da $rd >n$.  Damit folgt, dass die Distribution $G$ gegeben ist durch die stetige Funktion
+Die Funktion $|\xi|^{-rd}$ ist integrierbar über $|\xi|>R$, da $rd >n$.  Damit folgt, dass die Distribution $G$ durch die stetige Funktion
 \begin{equation}
-G(x) = (2\pi)^{-n} \int_{|\xi|\ge R} g(\xi) \e^{\i x\cdot \xi}\d \xi.
+G(x) = (2\pi)^{-n} \int_{|\xi|\ge R}  \e^{\i x\cdot \xi} g(\xi)\d \xi
 \end{equation}
-Weiter folgt ähnlich wie zuvor mit der Definition von $\hat u$ eingesetzt in \eqref{3.2I}, dass $I$ durch die analytische Funktion 
+dargestellt ist. Weiter folgt ähnlich wie zuvor mit der Definition von $\widehat u$ eingesetzt in \eqref{3.2I}, dass $I$ durch die analytische Funktion 
 \begin{equation}
-I(x) = i^{-1}(2\pi)^{-n} \sum_{j=0}^{l-1} \int_{|\xi|=R} (x\cdot \eta)^{l-1-j} \e^{\i x\cdot \xi} \left ( (-\eta \cdot \nabla)^{j} \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\d \sigma
+I(x) = -\i\,(2\pi)^{-n} \sum_{j=0}^{l-1} \int_{|\xi|=R}\e^{\i x\cdot \xi} (x\cdot \eta)^{l-1-j}  \left ( (-\eta \cdot \nabla)^{j} \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\d \sigma
 \end{equation} 
-gegeben ist. Damit ist $F=G+I$ stetig.
+gegeben ist. Damit ist $F(x)=G(x)+I(x)$ stetig und somit $E_1$ auf $\R^n\setminus\{0\}$ glatt.
 \end{proof}
 
 %
@@ -444,25 +444,29 @@ gegeben ist. Damit ist $F=G+I$ stetig.
 %
 
 \begin{proof}[Beweis von Satz~\ref{thm:3:3.3} {\bf (i)--(v) $\Longrightarrow$ (vi)}]
-Sei $P$ ein vollständiger Operator, der die Voraussetzungen I-V von Theorem \ref{thm:3:3.3} erfüllt und sei $\Omega\subset \mathbb R^n$ eine beliebige Umgebung um die $0$ und $\Omega'\Subset \Omega$ kompakt enthalten.  Sei $\rho(x)\in C_0^\infty$, sodass die für $|x|\ge \varepsilon$ verschwindet und $1$ in einer Umgebung um den Ursprung ist. Wir definieren die Distribution
+Angenommen $P(\xi)$ erfüllt die Voraussetzungen {\bf (i)}--{\bf(v)} aus Satz~\ref{thm:3:3.3} und $P(\D)$ ist der zugeordnete hypoelliptische Differentialausdruck. 
+Sei weiter $E$ die gerade konstruierte Fundamentallösung und zu gegebenem $\epsilon>0$ eine Abschneidefunktion  $\rho(x)\in \rmC_0^\infty(B_\epsilon)$so gewählt, dass $\rho(x)=1$ in einer Umgebung um die Null gilt. Wir definieren die Distribution
 \begin{equation}
 F= \rho E.
 \end{equation}
-Der Träger von $F$ ist damit in der Kugel $\overline {B_{\varepsilon}(0)}$ enthalten und es ist
+Der Träger von $F$ ist damit in der Kugel $B_{\epsilon}$ enthalten und es gilt
 \begin{equation}
 P(\D) F= P(\D) E - P(\D)((1-\rho)E) =\delta_0 + \omega(x)
 \end{equation}  
-wobei $P(\D)E=\delta_0$ und $\omega(x):= -P(\D)((1-\rho)E)$ eine unendlich oft differenzierbare Funktion ist nach vorigen Theorem, die für $|x|\ge \varepsilon$ und in einer Umgebung um die $0$ verschwindet.  
+wobei $P(\D)E=\delta_0$ und $\omega(x)= P(\D)((\rho-1)E)$ nach vorigem Theorem eine beliebig oft differenzierbare Funktion ist, welche in einer Umgebung um die $0$ verschwindet.  
 
-Sei $u\in \mathcal D_{P}$, also insbesondere $u\in L^2(\Omega)$ und $P(\D)u\in L^2(\Omega)$.  Dann folgt in $\Omega'$
+Sei nun $\Omega\subset\R^n$ ein beschränktes Gebiet, $P$ der maximale Operator zu $P(\D)$ auf $\Omega$ und $u\in \mathcal D_{P}$, also 
+$u\in L^2(\Omega)$ mit $P(\D)u\in L^2(\Omega)$. Wir setzen $u$ durch Null auf $\R^n$ fort. Dann gilt 
 \begin{equation}
-u= u*\delta_0 = u * (P(\D) F-\omega) = F*(P(\D)u)- \omega *u.
+u= u*\delta_0 = u * (P(\D) F-\omega) = F*(P(\D)u)- \omega *u
 \end{equation}
-Und damit
+und damit
 \begin{equation}\label{3.2wichtig}
-P^{(\alpha)}(\D) u = (P^{(\alpha)}(D)F)*(Pu)-(P^{(\alpha)}(\D) \omega)*u.
+P^{(\alpha)}(\D) u = (P^{(\alpha)}(\D)F)*(Pu)-(P^{(\alpha)}(\D) \omega)*u
 \end{equation}
-Im folgenden wollen wir zeigen, dass $P^{(\alpha)}(\D)\in L^2_{\text{loc}}(\Omega)$ gilt für alle Multiindices $\alpha\in \mathbb N_0^n$. Dann folgt mit Lemma \ref{lem : loktyp}, dass $P$ vom lokalen Typ ist.  $(P^{(\alpha)}(D)\omega)*u\in C^\infty$ ist offenbar quadrat-integrierbar in $\Omega'$. 
+für alle Multiindices $\alpha\in\N_0^n$. Es genügt zu zeigen, dass diese Distributionen auf jeder relativ kompakten Menge $\Omega'\Subset\Omega$ quadratintegrierbar sind.  Dann folgt mit Lemma \ref{lem : loktyp}, dass $P$ vom lokalen Typ ist. Dazu wählen wir $\epsilon<\dist(\Omega',\partial\Omega)$
+udn 
+ $(P^{(\alpha)}(D)\omega)*u\in C^\infty$ ist offenbar quadrat-integrierbar in $\Omega'$. 
 Bezeichne $\phi$ die Funktion die gleich $Pu$ auf $\Omega'_\varepsilon:=\{x\in \Omega| \dist(\Omega', x)<\varepsilon\}$ und $0$ sonst ist. Dann folgt in $\Omega'$
 \begin{equation}
 (P^{(\alpha)}(\D)F)* (Pu) = (P^{(\alpha)}(\D)E)*\phi+ (P^{(\alpha)}(\D)((\rho-1)E))*\phi.
