@@ -308,7 +308,7 @@ wobei $\zeta\in \mathbb C^n$ mit $P(\zeta)=0$, und $\xi\in \mathbb R^n$ mit $y\c
 M(\tau) \tau^{-b} \to a\quad \text{für } \tau \to \infty.
 \end{equation}
 \end{lem}
-\begin{proof}
+\begin{proof}[Beweisskizze]
 Nach Theorem ?? ({\bf i}) können wir uns auf ein Kompaktum in dem Restriktionsbereich einschränken
  und das Infimum in \eqref{3.2inf} wird angenommen. Weiter folgt leicht, dass $M(\tau)$ stetig von $\tau$ abhängt.  
  
@@ -317,19 +317,14 @@ Nach Theorem ?? ({\bf i}) können wir uns auf ein Kompaktum in dem Restriktionsb
  P(\zeta)=0, \langle y, \xi\rangle^2 =\tau^2, |\zeta-\xi|^2=\mu^2
  \end{equation}
  hat eine Lösung $\zeta\in \mathbb C^n$, $\xi \in \mathbb R^n$ genau dann wenn $\mu \ge M(\tau)$. 
- Betrachtn wir $\mathbb C^n$ als $2n$-dimensionalen reellen Vektorraum und die Gleichung $P(\xi)=0$ als zwei reelle Gleichungen, dann können wir die Variablen $\zeta$ und $\xi$ im Sinne von Seidenberg eliminieren. Genauer, wir finden  eine endliche Menge an polynommiellen Gleichungen bzw. Ungleichungen $_1,\ldots, G_s$ in $\mu$ und $\tau$ so dass es Vektoren $\zeta$ und $\xi$ gibt, die die Gleichungen \eqref{3.2gleich} erfüllt genau dann, wenn alle Gleichungen bzw. Ungleichungen von $G_i$ von $\mu$ und $\tau$ für mindestens eins der $i=1,\ldots,s$ erfüllt. Da die Existenz von Lösung $\zeta, \xi$ in \eqref{3.2gleich} äquivalent zu $\mu \ge M(\tau)$ ist, können wir annehmen, dass $G_i$ von der Form
+ Betrachtn wir $\mathbb C^n$ als $2n$-dimensionalen reellen Vektorraum und die Gleichung $P(\xi)=0$ als zwei reelle Gleichungen, dann können wir die Variablen $\zeta$ und $\xi$ im Sinne von Seidenberg eliminieren. Genauer, wir finden  eine endliche Menge an polynommiellen Gleichungen bzw. Ungleichungen $G_1,\ldots, G_s$ in $\mu$ und $\tau$ so dass es Vektoren $\zeta$ und $\xi$ gibt, die die Gleichungen \eqref{3.2gleich} erfüllt genau dann, wenn alle Gleichungen bzw. Ungleichungen von $G_i$ von $\mu$ und $\tau$ für mindestens eins der $i=1,\ldots,s$ erfüllt. Da die Existenz von Lösung $\zeta, \xi$ in \eqref{3.2gleich} äquivalent zu $\mu \ge M(\tau)$ ist, können wir annehmen, dass $G_i$ von der Form
  \begin{equation}
  G_{ik}(\mu, \tau)\ge 0,  \quad k=1,\ldots,k_i.
  \end{equation}
-ist. $\mu=M(\tau)$ muss eines dier Ungleichungen zu einer Gleichung machen. Sei $G(\mu,\tau)$ das Produkt aller Polynome $G_{ik}(\mu,\tau)\neq 0$ und sei $H(\mu, \tau)$ das Polynom mit den selben Linearfaktoren wie $G(\mu,\tau)$, aber alle mit Multiplizität $1$.   Dann folgt $H(M(\tau),\tau)=0$ für jedes $\tau$.  Für hinreichend große $\tau$ hängt der Grad von $H$ nicht von $\tau$ ab und die Nullstellenfunktionen $\mu_k(\tau)$ sind stetig, da $H$ nur aus Linearfaktoren der Vielfachheit $1$ besteht.  
+ist. $\mu=M(\tau)$ muss eines dieser Ungleichungen zu einer Gleichung machen. Sei $G(\mu,\tau)$ das Produkt aller Polynome $G_{ik}(\mu,\tau)\neq 0$ und sei $H(\mu, \tau)$ das Polynom mit den selben irreduziblen Faktoren wie $G(\mu,\tau)$, aber alle mit Multiplizität $1$.   Dann folgt $H(M(\tau),\tau)=0$ für jedes $\tau$.  Für hinreichend große $\tau$ hängt der Grad von $H$ in $\mu$ nicht von $\tau$ ab und die Nullstellenfunktionen $\mu_k(\tau)$ sind stetig, da $H$ nur aus irreduziblen Faktoren besteht. Insbesondere ist der Index  $k$, mit $M(\tau)=\mu_k(\tau)$ unabhängig von $\tau$, da $M$ stetig ist. Dann ist $M(\tau)$ in eine Puiseux-Reihe entwichelbar für große $\tau$.  Der Koeffizient der höchsten Potenz in dieser muss positiv sein, da das Funktional nichtnegativ ist.  Nach Satz \ref{thm:3:3.3} ({\bf i}) folgt $M(\tau)\to \infty$ und die Aussage folgt.    
 \end{proof}
   
 
-%so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet und gleich $\hat u(\xi) P^{(\alpha)}(\xi)/P(\xi)$ wenn $|\xi|\ge R$. Da $P^{(\alpha)}(\xi)/P(\xi)$ beschränkt is für $|\xi|\ge R$ nach Theorem ?? ({\bf iii})  und dass $\hat u(\xi)$ quadratintegrierbar ist, folgern wir, dass die Fouriertransformierte von $P^{(\alpha)}(D) E_1 * u$ quadratintegrierbar ist. Damit ist auch $P^{(\alpha)}(D) E_1 * u$ quadratintegrierbar ist, was den Beweis von ({\bf ii}) abschließt.  
-
-%Im Folgenden wollen wir (\bf{i})
-
-% fehlt was
 \begin{lem}\label{3.2lem2}
 Es gibt positive Konstanten $c$ und $d$ so dass für hinreichend große $|\xi|$ wir 
 \begin{equation}
@@ -484,5 +479,5 @@ Wenden wir dies für $u=e^{ix\cdot \zeta}$, wobei $\zeta = \xi + i \eta$ eine L�
 \begin{equation}
 \left (\sum_{k=1}^n |\xi_k|^2 \right ) \int_{\Omega'} e^{-2x\cdot \eta}\, \mathrm dx \le C\int_\Omega e^{-2 x\cdot \eta}\, \mathrm dx.
 \end{equation}
-Und damit falls  $|\eta|<A$ folgt $|\zeta|<C'$, was zeigt, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt ist.
+Und damit falls  $|\eta|<A$ folgt $|\zeta|<C'$, was zeigt, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt ist. 
 \end{proof}
