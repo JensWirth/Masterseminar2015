@@ -378,10 +378,10 @@ folgt und somit $E_2$ durch
 \end{equation}
 gegeben ist. Da $\Gamma_{\le R}$ kompakt ist konvergiert das Integral lokal gleichmäßig in $x\in\C^n$ und definiert somit eine ganze Funktion. Die Einschränkung auf $\R^n$ ist (reell) analytisch. 
 
-Sei nun $u\in \rmL^2(\R^n)$ mit $\supp u\Subset\R^n$ kompakt. Die Faltung $P^{(\alpha)}(\D)E_2 *u$ ist dann reell analytisch.  Aussage ({\bf ii}) folgt also, wenn wir zeigen, dass $P^{(\alpha)}(\D) E_1 * u$ quadratintegrierbar ist.  Sei  dazu $\phi \in\rmC_0^\infty(\R^n)$. Dann ist die Funktion $u*\phi$ auch in $C_0^\infty(\R^n)$ und im Sinne von \eqref{distr5} folgt
+Sei nun $u\in \rmL^2(\R^n)$ mit $\supp u\Subset\R^n$ kompakt. Die Faltung $P^{(\alpha)}(\D)E_2 *u$ ist dann reell analytisch.  Aussage ({\bf ii}) folgt also, wenn wir zeigen, dass $P^{(\alpha)}(\D) E_1 * u$ quadratintegrierbar ist.  Sei  dazu $\phi \in\rmC_0^\infty(\R^n)$. Dann ist die Funktion $u*\phi$ auch in $\rmC_0^\infty(\R^n)$ und im Sinne von \eqref{distr5} folgt
 \begin{equation}
 \langle P^{(\alpha)} (\D) E_1 * u, \check \phi\rangle  %= P^{(\alpha)}(\D) E_1 * u * \phi(0) 
-=(2\pi)^{-n/2} \int_{|\xi|\ge0} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \widehat \phi(\xi) \d \xi,
+=(2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \widehat \phi(\xi) \d \xi,
 \end{equation}     
 so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist, die für $|\xi|<R$ verschwindet und für $|\xi|\ge R$ durch $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$ gegeben ist. Da nach Satz \ref{thm:3:3.3}~{\bf (iii)} $P^{ (\alpha)}(\xi)/P(\xi)$ für $|\xi|>R$ beschränkt ist, ist  $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$
 quadratintegrierbar und Aussage ({\bf ii}) folgt.
@@ -507,5 +507,5 @@ gilt. Wenden wir dies speziell auf $u=\e^{\i x\cdot \zeta}$ für (komplexe) Null
 \begin{equation}
 \left (\sum_{k=1}^n |\xi_k|^2 \right ) \int_{\Omega'} \e^{-2x\cdot \eta}\d x \le C\int_\Omega \e^{-2 x\cdot \eta}\d x,
 \end{equation}
-und damit falls  $|\eta|<A$ gilt, die Abschätzung $|\zeta|<C'$ für die Nullstelle. Damit ist $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} ist erfüllt. 
+und damit falls  $|\eta|<A$ gilt, die Abschätzung $|\zeta|<C'$ für die Nullstelle. Damit ist $P$ vollständig und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} ist erfüllt. 
 \end{proof}
