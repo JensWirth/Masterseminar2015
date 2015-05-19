@@ -215,90 +215,41 @@ Umgekehrt impliziert {\bf (i)}, dass das Symbol nur auf einem Kompaktum reelle N
 Schrödingeroperatoren $\i\partial_1-\Delta_2$ auf $\Omega\subset \R\times\R^n$ und (ultra-) hyperbolischen Operatoren $\Delta_1-\Delta_2$ auf $\Omega\subset \R^k\times\R^l$, $k,l\ne0$, beide nicht von lokalem Typ. Andererseits liefert eine kurze Rechnung, daß der Wärmeleitungsoperator $\partial_1-\Delta_2$ auf $\Omega\subset\R\times\R^n$ von lokalem Typ ist. Sein Symbol ist durch $P(\xi) = \i \xi_1 - \xi'\cdot\xi'$ in $\xi=(\xi_1,\xi')\in\R^n$ gegeben und erfüllt $|P(\xi)|^2 = |\xi_1|^2+|\xi'|^4$ und damit $1/P(\xi)\to0$, $\xi' / P(\xi)\to0$ und folglich {\bf (iii)}.
 \end{exa}
 
-\section{Konstruktion von Fundamentallösungen eines vollständigen Operators von lokalen Typ} % bearbeitet von Matthias Hofmann
+\section{Fundamentallösungen hypoelliptischer Operatoren} % bearbeitet von Matthias Hofmann
 
-Im folgenden konstruieren wir eine Fundamentallösung, also eine Distribution $E\in\mathscr D'(\R^n)$ mit
+
+\begin{df}
+Ein Differentialausdruck $P(\D)$ heißt \eIndex[Differentialoperator]{hypoelliptisch}, falls sein Symbol $P(\xi)$ eine (und damit jede) der Eigenschaften {\bf (i)}--{\bf (v)}
+aus Satz~\ref{thm:3:3.3} erfüllt.
+\end{df}
+
+Sei $P(\D)$ hypoelliptisch. Im folgenden konstruieren wir eine Fundamentallösung für $P(\D)$, also eine Distribution $E\in\mathscr D'(\R^n)$ mit
 \begin{equation}
 E*(P(\D) u) = u, \quad u \in \rmC_0^\infty(\R^n),
 \end{equation}
-welche zusätzliche Regularitätseigenschaften besitzt.
-Um genau zu sein,  wollen wir zeigen:
+und zeigen, dass diese zusätzliche Regularitätseigenschaften besitzt. Diese werden wir nachfolgend nutzen, um zu zeigen, dass jeder hypoelliptische Operator vollständig und von lokalem Typ ist. 
 \begin{thm}\label{fundamental_exist}
-Sei $P$ vollständig und von lokalem Typ, dann besitzt $P(\D)$ eine Fundamentallösung $E$, welche 
+Sei $P$ hypoelliptisch. Dann besitzt $P(\D)$ eine Fundamentallösung $E$, welche 
 \begin{enumerate}
 \item im Gebiet $\R^n\setminus\{0\}$  durch eine unendlich oft differenzierbare Funktion $E(x)$ dargestellt wird und
-\item für die $P^{(\alpha)}(\D) E*u$ für jedes $u\in \rmL^2(\R^n)$ mit kompakten Träger $\supp u\Subset\R^n$ lokal quadrat-integrierbar ist. 
+\item für die $P^{(\alpha)}(\D) E*u$ für jedes $u\in \rmL^2(\R^n)$ mit kompakten Träger $\supp u\Subset\R^n$ lokal quadratintegrierbar ist. 
 \end{enumerate}
 \end{thm}
 \begin{rem}
-Ist $P(\D)$ vollständig und von lokalem Typ so besitzt jede Fundamentallösung diese Eigenschaften, da die Differenz zweier Fundamentallösungen unendlich oft differenzierbar ist. Dies werden wir später sehen.
+Ist $P(\D)$ hypoelliptisch so besitzt jede Fundamentallösung diese Eigenschaften, da die Differenz zweier Fundamentallösungen beliebig oft differenzierbar ist. Dies werden wir später sehen.
 \end{rem}
 
-Zunächst einige Worte zur Beweisidee.  Falls $P(\xi)\neq 0$ für alle $\xi\in \mathbb R$, so ließe sich $E$ bestimmen aus
+Zunächst einige Worte zur Beweisidee.  Falls $P(\xi)\neq 0$ für alle $\xi\in \R^n$, so impliziert  Eigenschaft {\bf (v)} aus Satz~\ref{thm:3:3.3}  die Existenz einer unteren Schranke
+$\inf_{\xi\in\R^n} |P(\xi)|\ge\delta>0$ und die Distribution $E$ ließe sich aus
 \begin{equation}\label{distr1}
-E*u(x) = (2\pi)^{-n/2}\int \e^{\i x\cdot \xi} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in \rmC_0^\infty,
+E*u(x) = (2\pi)^{-n/2}\int \e^{\i x\cdot \xi} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in \rmC_0^\infty(\R^n)
 \end{equation}
-oder äquivalent
+bestimmen. Letzteres ist  äquivalent zu
 \begin{equation}\label{distr2}
-\langle E,\check u\rangle = (2\pi)^{-n/2} \int \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in\rmC_0^\infty,
+\langle E,\check u\rangle = (2\pi)^{-n/2} \int \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in\rmC_0^\infty(\R^n),
 \end{equation}
-wobei $\check u$ durch $\check u(x)=u(-x)$ gegeben ist. Wir überlegen uns also eine Verallgemeinerung von \eqref{distr2}. 
+wobei $\check u$ durch $\check u(x)=u(-x)$ definiert ist. Im Allgemeinen besitzt $P(\xi)$ Nullstellen; wir werden dazu den Integrationsweg (verstanden als Hyperebene im $\C^n$) geeignet komplex deformieren. Zum Beweis der Regularitätseigenschaften von $E$ benötigen wir noch einige technische Lemmata.
 
-\begin{proof}[Beweis von Satz \ref{fundamental_exist}]
-Wir werden diesen Beweis in einigen Schritten führen.
-\vspace{1mm}\\
-\textbf{Schritt 1:} \emph{Konstruktion einer Fundamentallösung.}
-Nach Satz~\ref{thm:3:3.3} {\bf (v)} gilt $|P(\xi)|\ge 1$ falls $\xi\in \mathbb R$ und $|\xi|\ge C$ mit geeigneter Konstante $C$.  Damit folgt $|P(\xi)|\ge 1$ falls $\xi_2^2+ \ldots + \xi_n^2 \ge C^2$.  
-
-Wir können annehmen, dass der Koeffizient vor der höchsten Potenz von $\xi_1$ von $P(\xi)$ konstant ist \footnote{Dies folgt aus [??]. Tatsächlich finden wir eine affine Transformation, so dass das Polynom die geforderte Eigenschaft erfüllt}.
-%Da die Nullstellen des Polynoms stetig von den Parametern abhängen, die nicht im führenden Koeffizienten stehen.  
-So finden wir außerdem leicht eine zweite Konstante $C'$ sodass $|P(\xi_1, \xi_2, \cdots, \xi_n)|\ge 1$ für $\xi_2^2+\ldots + \xi_n^2< C$ and $|\xi_1|\ge C'$.  
-
-Jetzt setzen wir für $u\in\rmC_0^\infty(\mathbb R^n)$
-\begin{equation}\label{distr3}
-\langle E, \check u\rangle  = (2\pi)^{-n/2} \int \, \mathrm d\xi_2 \cdots \, \mathrm d\xi_n \oint \frac{\widehat u(\xi)}{P(\xi)} \, \mathrm d\xi_1=: (2\pi)^{-n/2} \int_\Gamma \frac{\widehat u(\xi)}{P(\xi)} \, \mathrm d\xi.
-\end{equation}
-wobei das Integral über $\xi_1$ über die reelle Achse gehe, falls $\xi_2^2+ \cdots + \xi_n^2 \ge C^2$, und über die reelle Achse mit dem Intervall $(-C', C')$ ersetzt durch einen Halbkreis in der unteren Halbebene, falls $\xi_2^2+ \cdots+ \xi_n^2 < C^2$. Damit gilt $|P(\xi)|\ge 1$  in dem Integral.  Damit ergibt sich analog zu \eqref{distr1}
-\begin{equation}
-E*u(x) = (2\pi)^{-n/2}\int_\gamma e^{\i x\cdot \xi } \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in \rmC_0^\infty.
-\end{equation} 
-Damit folgt für $u\in\rmC_0^\infty(\mathbb R^n)$
-\begin{equation}
-E*(P(\D)u) = (2\pi)^{-n/2} \oint \e^{\i x\cdot\xi} P(\xi)  \frac{\widehat{u} (\xi)}{P(\xi)}\, \mathrm d\xi=(2\pi)^{-n/2} \oint \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathrm d\xi
-\end{equation}
-und da der Integrand holomorph in $\xi_1$ ist, können wir den Integrationsweg als reelle Achse wählen. Damit folgt
-\begin{equation}
-E*(P(\D) u)(x) = (2\pi)^{-n/2} \int \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathrm d\xi = u(x)
-\end{equation}
-und $E$ ist somit eine Fundamentallösung.
-
-\textbf{Schritt 2:} \emph{Beweis der Quadratintegrierbarkeit von $P^{(\alpha)}(\D) E * u$.}
-Wir teilen das Integral \eqref{distr3} in zwei Teile auf. Sei $R=\sqrt{C^2 + C'^2}$, so ist der Integrationsweg in \eqref{distr3} für $|\xi|>R$ außschließlich reell. Schreibe also 
-\begin{equation}\label{distr4}
-E=E_1 + E_2,
-\end{equation}
-\begin{equation}\label{distr5}
-\langle E_1,\check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad E_2(\check u)= (2\pi)^{-n/2} \int_{\Gamma |\xi|\le R} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi
-\end{equation}
-Die Variable $\xi$ in der Definition von $E_1$ kann nur reelle Werte im Integral annehmen. Die Distribution $E_2$ ist eine ganze Funktion, da für $u\in\rmC_0^\infty$ man mit der Definition von $\widehat u$
-\begin{equation}
-\langle E_2, \check u\rangle = (2\pi)^{-\nu} \oint_{|\xi |\le R} \frac{\mathrm d\xi}{P(\xi)} \int u(x) \e^{-\i x\cdot\xi}\, \mathrm dx= (2\pi)^{-n} \int \check u(x) \, \oint_{|\xi|\le R} \frac{e^{\i x\cdot \xi}}{P(\xi)}\, \mathrm d\xi \, \mathrm dx
-\end{equation}
-erhält. Damit ist $E_2$ regulär und
-\begin{equation}
-\langle E_2, x\rangle = (2\pi)^{-n} \oint_{|\xi|\le R} \frac{\e^{\i x\cdot \xi}}{P(\xi)}\, \mathrm d\xi,
-\end{equation}
-die analytisch ist, da das Integral gleichmäßig konvergent auf Kompakta ist. 
-
-Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(\D)E_2 *u$ ist dann eine analytische Funktion.  Die Aussage ({\bf ii}) folgt dann, wenn wir zeigen, dass $P^{(\alpha)}(\D) E_1 * u$ quadratintegrierbar ist.  Sei $\phi \in\mathrm C_0^\infty$. Dann ist die Funktion $u*\phi$ auch in $C_0^\infty$ und im Sinne von \eqref{distr5} folgt
-\begin{equation}
-\langle P^{(\alpha)} (\D) E_1 * u, \check \phi\rangle  = P^{(\alpha)}(\D) E_1 * u * \phi(0) = \int_{|\xi| \ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \widehat \phi(\xi) \, \mathrm d\xi,
-\end{equation}     
-so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet und gleich $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$ falls $|\xi|\ge R$. Damit ist da $P^{ (\alpha)}(\xi)/P(\xi)$ für $|\xi|>R$ beschränkt ist nach Satz \ref{thm:3:3.3}
- $P^{(\alpha)}(\D) E_1 * u$ auch quadratintegrierbar und ({\bf ii}) folgt.
-
-\textbf{Schritt 3:} \emph{Beweis der Differenzierbarkeit in $\mathbb R^n\setminus\{0\}$.}
-Im Folgenden wenden wir uns dem Beweis von ({\bf i}) zu. Da $E_2$ eine ganze Funktion ist, genügt es zu zeigen, dass $E_1$ unendlich oft differenzierbar für $x\neq 0$ ist.  Wir beginnen mit folgenden Lemma:
 \begin{lem}\label{3.2lem1}
 Sei $0\neq y \in \mathbb R^n$ fest und sei zu $\tau\in\R$
 \begin{equation}\label{3.2inf}
@@ -371,7 +322,66 @@ für ein $\xi\in \mathbb R^n$ und einem Multiindex $\alpha\neq 0$.
 % umsetzen
 Dann folgt das Lemma, indem wir $j$ der Terme mit Nullstellen durch die erste Ungleichung aus \eqref{3.2tr}, $k$ der Terme mit der zweiten Ungleichung und die weiteren $m$ durch eine Konstante.  
 \end{proof}
-Seien $y$ und $\eta$ zwei feste Vektoren und sei $b$ und $d$ wie im vorigen Lemma.  Wir zeigen zunächst, dass
+
+
+\begin{proof}[Beweis von Satz \ref{fundamental_exist}]
+Wir werden diesen Beweis in einigen Schritten führen.
+\vspace{1mm}\\
+\textbf{Schritt 1:} \emph{Konstruktion einer Fundamentallösung.}
+Nach Satz~\ref{thm:3:3.3} {\bf (v)} gilt $|P(\xi)|\ge 1$ falls $\xi\in \mathbb R$ und $|\xi|\ge C$ mit geeigneter Konstante $C$.  Damit folgt $|P(\xi)|\ge 1$ falls $\xi_2^2+ \ldots + \xi_n^2 \ge C^2$.  
+
+Wir können annehmen, dass der Koeffizient vor der höchsten Potenz von $\xi_1$ von $P(\xi)$ konstant ist \footnote{Dies folgt aus [??]. Tatsächlich finden wir eine affine Transformation, so dass das Polynom die geforderte Eigenschaft erfüllt}.
+%Da die Nullstellen des Polynoms stetig von den Parametern abhängen, die nicht im führenden Koeffizienten stehen.  
+So finden wir außerdem leicht eine zweite Konstante $C'$ sodass $|P(\xi_1, \xi_2, \cdots, \xi_n)|\ge 1$ für $\xi_2^2+\ldots + \xi_n^2< C$ and $|\xi_1|\ge C'$.  
+
+Jetzt setzen wir für $u\in\rmC_0^\infty(\mathbb R^n)$
+\begin{equation}\label{distr3}
+\langle E, \check u\rangle  = (2\pi)^{-n/2} \int \, \mathrm d\xi_2 \cdots \, \mathrm d\xi_n \oint \frac{\widehat u(\xi)}{P(\xi)} \, \mathrm d\xi_1=: (2\pi)^{-n/2} \int_\Gamma \frac{\widehat u(\xi)}{P(\xi)} \, \mathrm d\xi.
+\end{equation}
+wobei das Integral über $\xi_1$ über die reelle Achse gehe, falls $\xi_2^2+ \cdots + \xi_n^2 \ge C^2$, und über die reelle Achse mit dem Intervall $(-C', C')$ ersetzt durch einen Halbkreis in der unteren Halbebene, falls $\xi_2^2+ \cdots+ \xi_n^2 < C^2$. Damit gilt $|P(\xi)|\ge 1$  in dem Integral.  Damit ergibt sich analog zu \eqref{distr1}
+\begin{equation}
+E*u(x) = (2\pi)^{-n/2}\int_\gamma e^{\i x\cdot \xi } \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad u \in \rmC_0^\infty.
+\end{equation} 
+Damit folgt für $u\in\rmC_0^\infty(\mathbb R^n)$
+\begin{equation}
+E*(P(\D)u) = (2\pi)^{-n/2} \oint \e^{\i x\cdot\xi} P(\xi)  \frac{\widehat{u} (\xi)}{P(\xi)}\, \mathrm d\xi=(2\pi)^{-n/2} \oint \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathrm d\xi
+\end{equation}
+und da der Integrand holomorph in $\xi_1$ ist, können wir den Integrationsweg als reelle Achse wählen. Damit folgt
+\begin{equation}
+E*(P(\D) u)(x) = (2\pi)^{-n/2} \int \e^{\i x\cdot \xi} \widehat u(\xi) \, \mathrm d\xi = u(x)
+\end{equation}
+und $E$ ist somit eine Fundamentallösung.
+
+\textbf{Schritt 2:} \emph{Beweis der Quadratintegrierbarkeit von $P^{(\alpha)}(\D) E * u$.}
+Wir teilen das Integral \eqref{distr3} in zwei Teile auf. Sei $R=\sqrt{C^2 + C'^2}$, so ist der Integrationsweg in \eqref{distr3} für $|\xi|>R$ außschließlich reell. Schreibe also 
+\begin{equation}\label{distr4}
+E=E_1 + E_2,
+\end{equation}
+\begin{equation}\label{distr5}
+\langle E_1,\check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi, \quad E_2(\check u)= (2\pi)^{-n/2} \int_{\Gamma |\xi|\le R} \frac{\widehat u(\xi)}{P(\xi)}\, \mathrm d\xi
+\end{equation}
+Die Variable $\xi$ in der Definition von $E_1$ kann nur reelle Werte im Integral annehmen. Die Distribution $E_2$ ist eine ganze Funktion, da für $u\in\rmC_0^\infty$ man mit der Definition von $\widehat u$
+\begin{equation}
+\langle E_2, \check u\rangle = (2\pi)^{-\nu} \oint_{|\xi |\le R} \frac{\mathrm d\xi}{P(\xi)} \int u(x) \e^{-\i x\cdot\xi}\, \mathrm dx= (2\pi)^{-n} \int \check u(x) \, \oint_{|\xi|\le R} \frac{e^{\i x\cdot \xi}}{P(\xi)}\, \mathrm d\xi \, \mathrm dx
+\end{equation}
+erhält. Damit ist $E_2$ regulär und
+\begin{equation}
+\langle E_2, x\rangle = (2\pi)^{-n} \oint_{|\xi|\le R} \frac{\e^{\i x\cdot \xi}}{P(\xi)}\, \mathrm d\xi,
+\end{equation}
+die analytisch ist, da das Integral gleichmäßig konvergent auf Kompakta ist. 
+
+Sei $u\in L^2$ mit kompaktem Träger. Die Faltung $P^{\alpha}(\D)E_2 *u$ ist dann eine analytische Funktion.  Die Aussage ({\bf ii}) folgt dann, wenn wir zeigen, dass $P^{(\alpha)}(\D) E_1 * u$ quadratintegrierbar ist.  Sei $\phi \in\mathrm C_0^\infty$. Dann ist die Funktion $u*\phi$ auch in $C_0^\infty$ und im Sinne von \eqref{distr5} folgt
+\begin{equation}
+\langle P^{(\alpha)} (\D) E_1 * u, \check \phi\rangle  = P^{(\alpha)}(\D) E_1 * u * \phi(0) = \int_{|\xi| \ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \widehat \phi(\xi) \, \mathrm d\xi,
+\end{equation}     
+so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist die für $|\xi|<R$ verschwindet und gleich $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$ falls $|\xi|\ge R$. Damit ist da $P^{ (\alpha)}(\xi)/P(\xi)$ für $|\xi|>R$ beschränkt ist nach Satz \ref{thm:3:3.3}
+ $P^{(\alpha)}(\D) E_1 * u$ auch quadratintegrierbar und ({\bf ii}) folgt.
+
+\textbf{Schritt 3:} \emph{Beweis der Differenzierbarkeit in $\mathbb R^n\setminus\{0\}$.}
+Im Folgenden wenden wir uns dem Beweis von ({\bf i}) zu. Da $E_2$ eine ganze Funktion ist, genügt es zu zeigen, dass $E_1$ unendlich oft differenzierbar für $x\neq 0$ ist.  
+
+
+Seien $y$ und $\eta$ zwei feste Vektoren und sei $b$ und $d$ wie im Lemma ??.  Wir zeigen zunächst, dass
 \begin{equation}
 F= (x\cdot \eta)^l (y \cdot \nabla)^k E_1
 \end{equation}
@@ -467,7 +477,7 @@ Sei $P(\D)$ ein Differentialausdruck und $\Omega\subset\R^n$ ein beschränktes G
 \end{enumerate}
 \end{thm}
 \begin{proof}
-\emph{Hinrichtung.} Folgt direkt aus Gleichung ??. $\bullet$ \qquad
+\emph{Hinrichtung.} Folgt direkt aus Gleichung \eqref{3.2wichtig}. $\bullet$ \qquad
 \emph{Rückrichtung.} Wir zeigen, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt.   Sei $\Omega'\Subset \Omega$ kompakt enthaltenes Gebiet. Da $P(\D)$ ein abgeschlossener Operator ist (vgl. Definition), folgt dass $\ker P$ ein abgeschlossener Teilraum von $L^2(\Omega)$. Die Abbildung
 \begin{equation}
 U\ni u \mapsto \frac{\partial u}{\partial x^k}
