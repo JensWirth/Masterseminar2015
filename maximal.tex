@@ -295,7 +295,7 @@ Sei $y\in \mathbb R^n$ und $\eta \in \mathbb R^n$ zwei feste Vektoren. Dann gibt
 \begin{equation}
 \left |(\eta\cdot\nabla)^{k+j} \left ( \frac{1}{P(\xi)} \right )  \right | \le \frac{(k+j)! C^{k+j}}{|\xi|^{kd} ( 1+ | y\cdot\xi | )^{bj}},\qquad  |\xi|\ge R, \quad j, k=1,2,\ldots,
 \end{equation}
-wobei $b$ and $d$ aus dem vorigen Lemma seien. Dabei ist
+wobei $b$ und $d$ aus dem vorigen Lemma seien. Dabei ist
 \begin{equation}
 (\eta\cdot\nabla)^{k+j} \left (\frac{1}{P(\xi)} \right ) =  \frac{\mathrm d^{k+j}}{\mathrm d t^{k+j}}  \frac{1}{P(\xi+ t\eta)} \bigg|_{t=0}.
 \end{equation}
@@ -328,15 +328,15 @@ $|P(\xi)|\ge 1$ falls $\xi_2^2+ \dots + \xi_n^2 \ge C^2$.
 Wir können weiter annehmen, dass der Koeffizient vor der höchsten Potenz von $\xi_1$ von $P(\xi)$ konstant ist.\footnote{Es existiert eine lineare Transformation, so dass das Polynom nach Transformation die geforderte Eigenschaft erfüllt. Ein Beweis erfolgt durch Nachrechnen, sei dazu $p(\xi)=\sum_{|\alpha|=m}c_\alpha \xi^\alpha$ homogen vom Grad $m\ne0$ und seien $a_2,\ldots a_{n}\in\R$ mit  $p(1,a_2,\ldots,a_n)\ne0$. Solche Zahlen existieren, da $p$ nicht das Nullpolynom ist. Dann ist der führende Koeffizient von
 \[ p(\xi_1, \xi_2+a_2\xi_1, \xi_3+a_3\xi_1,\ldots,\xi_{n}+a_n\xi_1) =\sum_{|\alpha|=m} c_\alpha \xi_1^{\alpha_1} \prod_{j=2}^n  (\xi_j+a_j\xi_1)^{\alpha_j} \]
 als Polynom in $\xi_1$ gerade $p(1,a_2,\ldots,a_n)\in\R\setminus\{0\}$.}
-Damit finden wir eine zweite Konstante $C'$, so dass $|P(\xi)|\ge 1$ für $\xi_2^2+\dots + \xi_n^2\le C^2$ and $|\xi_1|\ge C'$, wobei wir $\xi_1\in\C$ wählen können.  
+Damit finden wir eine zweite Konstante $C'$, so dass $|P(\xi)|\ge 1$ für $\xi_2^2+\dots + \xi_n^2\le C^2$ und $|\xi_1|\ge C'$, wobei wir $\xi_1\in\C$ wählen können.  
 
 Jetzt setzen wir für $u\in\rmC_0^\infty(\mathbb R^n)$
 \begin{equation}\label{distr3}
 \langle E, \check u\rangle  = (2\pi)^{-n/2} \int\left( \oint \frac{\widehat u(\xi)}{P(\xi)} \d\xi_1\right) \d\xi_2 \cdots \d\xi_n 
-= (2\pi)^{-n/2} \int_\Gamma \frac{\widehat u(\xi)}{P(\xi)} \d \xi.
+= (2\pi)^{-n/2} \int_\Gamma \frac{\widehat u(\xi)}{P(\xi)} \d \xi,
 \end{equation}
 wobei das innere Integral bezüglich $\xi_1$ über die reelle Achse verlaufe, falls $\xi_2^2+ \cdots + \xi_n^2 > C^2$, und über die reelle Achse mit dem Intervall $(-C', C')$ ersetzt durch einen Halbkreis in der unteren Halbebene, falls $\xi_2^2+ \cdots+ \xi_n^2 \le C^2$. Man beachte, dass die Integrationsvariable damit komplex ist.
-Nach Konstruktion gilt $|P(\xi)|\ge 1$ auf dem gesamten Integrationsgebiet und wir erhalten analog zu \eqref{distr1}
+Nach Konstruktion gilt $|P(\xi)|\ge 1$ auf dem gesamten Integrationsgebiet und wir setzen analog zu \eqref{distr1} an:
 \begin{equation}
 E*u(x) = (2\pi)^{-n/2}\int_\Gamma e^{\i x\cdot \xi } \frac{\widehat u(\xi)}{P(\xi)}\d \xi, \quad u \in \rmC_0^\infty(\R^n)
 \end{equation} 
@@ -418,7 +418,7 @@ b(l-j-r) -(k-j) \ge 0,\qquad j=0,\ldots,k
 \end{equation}
 gilt. Da $b>0$ ist, gilt dies für $l$ hinreichend groß. Dann folgt 
 \begin{equation}
-|g(\xi)| \le |\xi|^{-rd} l! \sum_{j=0}^k \binom{k}{j} |y\cdot \eta|^j C^{l-j} = | \xi|^{-rd} l! C^l \left ( \frac{|y\cdot\eta|}{C+1} \right )^k.
+|g(\xi)| \le |\xi|^{-rd} l! \sum_{j=0}^k \binom{k}{j} |y\cdot \eta|^j C^{l-j} = | \xi|^{-rd} l! C^l \left ( \frac{|y\cdot\eta|}{C}+1 \right )^k.
 \end{equation}
 Die Funktion $|\xi|^{-rd}$ ist integrierbar über $|\xi|>R$, da $rd >n$.  Damit folgt, dass die Distribution $G$ durch die stetige Funktion
 \begin{equation}
@@ -426,7 +426,7 @@ G(x) = (2\pi)^{-n} \int_{|\xi|\ge R}  \e^{\i x\cdot \xi} g(\xi)\d \xi
 \end{equation}
 dargestellt ist. Weiter folgt ähnlich wie zuvor mit der Definition von $\widehat u$ eingesetzt in \eqref{3.2I}, dass $I$ durch die analytische Funktion 
 \begin{equation}
-I(x) = -\i\,(2\pi)^{-n} \sum_{j=0}^{l-1} \int_{|\xi|=R}\e^{\i x\cdot \xi} (x\cdot \eta)^{l-1-j}  \left ( (-\eta \cdot \nabla)^{j} \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\d \sigma
+I(x) = -\i\,(2\pi)^{-n} \sum_{j=0}^{l-1} \int_{|\xi|=R}\e^{\i x\cdot \xi} (x\cdot \eta)^{l-1-j}  \left ( (-\eta \cdot \D_\xi)^{j} \left ( \frac{(y\cdot \xi)^k}{P(\xi)} \right ) \right )\d \sigma
 \end{equation} 
 gegeben ist. Damit ist $F(x)=G(x)+I(x)$ stetig und somit $E_1$ auf $\R^n\setminus\{0\}$ glatt.
 \end{proof}
