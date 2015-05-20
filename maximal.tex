@@ -488,13 +488,13 @@ Sei $P(\D)$ ein Differentialausdruck und $\Omega\subset\R^n$ ein beschränktes G
  u = - \omega_\epsilon*u 
 \end{equation}
 gilt. Da diese Funktion glatt ist, folgt $u\in\rmC^\infty(\Omega')$ und da $\Omega'\Subset\Omega$ beliebig war die Behauptung. $\bullet$ \qquad
-\emph{Rückrichtung.} Wir zeigen, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt.   Sei $\Omega'\Subset \Omega$ kompakt enthaltenes Gebiet. Da der maximale Operator $P(\D)$  abgeschlossen ist, folgt dass $\ker P$ ein abgeschlossener Teilraum von $L^2(\Omega)$ ist. Die Abbildung
+\emph{Rückrichtung.} Wir zeigen, dass $P$ vollständig ist und die Bedingung ({\bf i}) von Theorem \ref{thm:3:3.3} erfüllt.   Sei $\Omega'\Subset \Omega$ kompakt enthaltenes Gebiet. Da der maximale Operator $P(\D)$  abgeschlossen ist, folgt dass $\ker P(\D)$ ein abgeschlossener Teilraum von $L^2(\Omega)$ ist. Die Abbildung
 \begin{equation}
-\ker P(\D)\ni u \mapsto \frac{\partial u}{\partial x^k} \in \rmL^2(\Omega')
+\ker P(\D)\ni u \mapsto \frac{\partial u}{\partial x_k} \in \rmL^2(\Omega')
 \end{equation}  
 ist abgeschlossen (Definition der schwachen Ableitung) und nach dem Satz vom abgeschlossenen Graphen damit insbesondere stetig, so dass
 \begin{equation}
-\int_{\Omega'} \sum_{k=1}^n \left | \frac{\partial u}{\partial x^k}\right |^2\d x \le C \int_\Omega |u|^2\d x, \qquad u\in \ker P(\D)
+\int_{\Omega'} \sum_{k=1}^n \left | \frac{\partial u}{\partial x_j}\right |^2\d x \le C \int_\Omega |u|^2\d x, \qquad u\in \ker P(\D)
 \end{equation}
 gilt. Wenden wir dies speziell auf $u=\e^{\i x\cdot \zeta}$ für (komplexe) Nullstellen $\zeta=\xi+\i\eta\in\C^n$ des Symbols $P(\zeta)$ an,  so erhalten wir
 \begin{equation}
