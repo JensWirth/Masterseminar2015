@@ -225,7 +225,7 @@ aus Satz~\ref{thm:3:3.3} erfüllt.
 
 Sei $P(\D)$ hypoelliptisch. Im folgenden konstruieren wir eine Fundamentallösung für $P(\D)$, also eine Distribution $E\in\mathscr D'(\R^n)$ mit
 \begin{equation}
-E*(P(\D) u) = u, \quad u \in \rmC_0^\infty(\R^n),
+\forall u\in\rmC_0^\infty(\R^n)\quad:\quad E*(P(\D) u) = u,
 \end{equation}
 und zeigen, dass diese zusätzliche Regularitätseigenschaften besitzt. Diese werden wir nachfolgend nutzen, um zu zeigen, dass jeder hypoelliptische Operator vollständig und von lokalem Typ ist. 
 \begin{thm}\label{fundamental_exist}
@@ -239,14 +239,14 @@ Sei $P$ hypoelliptisch. Dann besitzt $P(\D)$ eine Fundamentallösung $E$, welche
 Ist $P(\D)$ hypoelliptisch so besitzt jede Fundamentallösung diese Eigenschaften, da die Differenz zweier Fundamentallösungen beliebig oft differenzierbar ist. Dies werden wir später sehen.
 \end{rem}
 
-Zunächst einige Worte zur Beweisidee.  Falls $P(\xi)\neq 0$ für alle $\xi\in \R^n$, so impliziert  Eigenschaft {\bf (v)} aus Satz~\ref{thm:3:3.3}  die Existenz einer unteren Schranke
+Zunächst einige Worte zur Beweisidee.  Falls $P(\xi)\neq 0$ für alle $\xi\in \R^n$ gilt, impliziert  Eigenschaft {\bf (v)} aus Satz~\ref{thm:3:3.3}  die Existenz einer unteren Schranke
 $\inf_{\xi\in\R^n} |P(\xi)|\ge\delta>0$ und die Distribution $E$ ließe sich aus
 \begin{equation}\label{distr1}
-E*u(x) = (2\pi)^{-n/2}\int \e^{\i x\cdot \xi} \frac{\widehat u(\xi)}{P(\xi)}\d \xi, \quad u \in \rmC_0^\infty(\R^n)
+E*u(x) = (2\pi)^{-n/2}\int \e^{\i x\cdot \xi} \frac{\widehat u(\xi)}{P(\xi)}\d \xi
 \end{equation}
-bestimmen. Letzteres ist  äquivalent zu
+für $u\in\rmC_0^\infty(\R^n)$ bestimmen. Letzteres ist  äquivalent zu
 \begin{equation}\label{distr2}
-\langle E,\check u\rangle = (2\pi)^{-n/2} \int \frac{\widehat u(\xi)}{P(\xi)}\d \xi, \quad u \in\rmC_0^\infty(\R^n),
+\langle E,\check u\rangle = (2\pi)^{-n/2} \int \frac{\widehat u(\xi)}{P(\xi)}\d \xi
 \end{equation}
 wobei $\check u$ durch $\check u(x)=u(-x)$ definiert ist. Im Allgemeinen besitzt $P(\xi)$ Nullstellen; wir werden dazu den Integrationsweg (verstanden als Ebene im $\C^n$) geeignet komplex deformieren. Zum Beweis der Regularitätseigenschaften von $E$ benötigen wir noch einige technische Lemmata.
 
@@ -261,20 +261,14 @@ Dann existieren positive Zahlen $a$ und $b$ mit
 M(\tau) \tau^{-b} \to a\quad \text{für } \tau \to \infty.
 \end{equation}
 \end{lem}
-\begin{proof}[Beweisskizze]
-%Nach Theorem ?? ({\bf i}) können wir uns auf ein Kompaktum in dem Restriktionsbereich einschränken
-% und das Infimum in \eqref{3.2inf} wird angenommen. Weiter folgt leicht, dass $M(\tau)$ stetig von $\tau$ abhängt.  
-% 
-% Das System aus Gleichungen
-% \begin{equation}\label{3.2gleich}
-% P(\zeta)=0, \langle y, \xi\rangle^2 =\tau^2, |\zeta-\xi|^2=\mu^2
-% \end{equation}
-% hat eine Lösung $\zeta\in \mathbb C^n$, $\xi \in \mathbb R^n$ genau dann wenn $\mu \ge M(\tau)$. 
-% Betrachtn wir $\mathbb C^n$ als $2n$-dimensionalen reellen Vektorraum und die Gleichung $P(\xi)=0$ als zwei reelle Gleichungen, dann können wir die Variablen $\zeta$ und $\xi$ im Sinne von Seidenberg eliminieren. Genauer, wir finden  eine endliche Menge an polynommiellen Gleichungen bzw. Ungleichungen $G_1,\ldots, G_s$ in $\mu$ und $\tau$ so dass es Vektoren $\zeta$ und $\xi$ gibt, die die Gleichungen \eqref{3.2gleich} erfüllt genau dann, wenn alle Gleichungen bzw. Ungleichungen von $G_i$ von $\mu$ und $\tau$ für mindestens eins der $i=1,\ldots,s$ erfüllt. Da die Existenz von Lösung $\zeta, \xi$ in \eqref{3.2gleich} äquivalent zu $\mu \ge M(\tau)$ ist, können wir annehmen, dass $G_i$ von der Form
-% \begin{equation}
-% G_{ik}(\mu, \tau)\ge 0,  \quad k=1,\ldots,k_i.
-% \end{equation}
-%ist. $\mu=M(\tau)$ muss eines dieser Ungleichungen zu einer Gleichung machen. Sei $G(\mu,\tau)$ das Produkt aller Polynome $G_{ik}(\mu,\tau)\neq 0$ und sei $H(\mu, \tau)$ das Polynom mit den selben irreduziblen Faktoren wie $G(\mu,\tau)$, aber alle mit Multiplizität $1$.   Dann folgt $H(M(\tau),\tau)=0$ für jedes $\tau$.  Für hinreichend große $\tau$ hängt der Grad von $H$ in $\mu$ nicht von $\tau$ ab und die Nullstellenfunktionen $\mu_k(\tau)$ sind stetig, da $H$ nur aus irreduziblen Faktoren besteht. Insbesondere ist der Index  $k$, mit $M(\tau)=\mu_k(\tau)$ unabhängig von $\tau$, da $M$ stetig ist. Dann ist $M(\tau)$ in eine Puiseux-Reihe entwichelbar für große $\tau$.  Der Koeffizient der höchsten Potenz in dieser muss positiv sein, da das Funktional nichtnegativ ist.  Nach Satz \ref{thm:3:3.3} ({\bf i}) folgt $M(\tau)\to \infty$ und die Aussage folgt.    
+\begin{proof}[Beweisidee] Nach Satz~\ref{thm:3:3.3} {\bf (i)} streben die Imaginärteile $\Im\zeta$ der Nullstellen von $P$ zusammen mit den Realteilen gegen unendlich. Damit wird das Infimum in \eqref{3.2inf} angenommen und die so definierte Funktion $M(\tau)$ ist stetig. Weiter sind die Gleichungen
+\begin{equation}\label{eq:3.2gleich}
+  P(\zeta)=0,\qquad y\cdot\xi=\tau,\qquad |\zeta-\xi|^2=\mu^2
+\end{equation}
+genau dann in $\zeta\in\C^n$, $\xi\in\R^n$ und $\tau\in\R$ lösbar, wenn $\mu\ge M(\tau)$ gilt. Versteht man $\C^n$ als reellen Raum $\R^{2n}$, so sind dies Polynomgleichungen und die Lösbarkeit kann mit einem Eliminationsverfahren diskutiert werden. Basierend auf \cite{Seidenberg:1954} findet man Polynome
+$G_1,\dots, G_s$ in den reellen Variablen $\tau$ und $\mu$, so dass \eqref{eq:3.2gleich} genau dann in $\xi$ und $\zeta$ lösbar ist, wenn $G_i(\mu,\tau)\ge0$ für mindestens ein $i=1,\ldots,s$ gilt. Im Grenzfall $\mu=M(\tau)$ müssen daher einige der Ungleichungen als Gleichungen erfüllt sein. Sei deshalb $G(\mu,\tau)=\prod_i G_i(\mu,\tau)$ und sei weiter $H(\mu,\tau)$ das Polynom mit denselben irreduziblen Faktoren wie $G(\mu,\tau)$, jedoch alle mit Vielfachheit Eins. Dann folgt
+$H(M(\tau),\tau)=0$. Für hinreichend großes $\tau$ hat der führende Koeffizient von $H$ verstanden als Polynom in $\mu$ keine Nullstellen. Damit sind die Nullstellen $\mu=\mu_k(\tau)$ von $H$ paarweise verschieden und  besitzen insbesondere eine Darstellung als Puisseux-Reihe für $\tau\to\infty$. Damit folgt
+$M(\tau)\sim a \tau^b$ mit $a\in\R$ und $b\in\mathbb Q$ für $\tau\to\infty$. Da $M(\tau)\to\infty$ nach Satz \ref{thm:3:3.3} ({\bf i})  gilt, folgt $a,b>0$.
 \end{proof}
   
 
@@ -286,11 +280,11 @@ Es gibt positive Konstanten $c$ und $d$ so dass für hinreichend große $|\xi|$ 
 für alle $\xi\in\R^n$ und alle $\zeta\in\C^n$ mit $P(\zeta)=0$ gilt.
 \end{cor} 
 \begin{proof}
-Setzt man $y=e_i=(0,\ldots, 0, 1, 0, \ldots, 0)^\top$ in Lemma~\ref{3.2lem1}, so erhält man für große $|\xi_i|$
+Setzt man $y=\pm e_i=\pm(0,\ldots, 0, 1, 0, \ldots, 0)^\top$ in obigem Lemma, so erhält man 
 \begin{equation}
 |\zeta-\xi|\ge a_i |\xi_i|^{b_i}
 \end{equation}
-mit positiven Zahlen $a_i$ und $b_i$. Damit ergibt sich mit $c'=\min a_i$ und $d=\min b_i$ 
+für große $|\xi_i|$ und mit positiven Zahlen $a_i$ und $b_i$. Damit ergibt sich mit $c'=\min a_i$ und $d=\min b_i$ 
 \begin{equation}
 |\zeta - \xi|\ge c'(\max |\xi_i|)^d \ge c |\xi|^d.
 \end{equation}
@@ -307,22 +301,21 @@ wobei $b$ and $d$ aus dem vorigen Lemma seien. Dabei ist
 \end{equation}
 \end{lem}
 \begin{proof}
-Wir schreiben $P(\xi+t\eta) = A \prod_{1}^m (t-t_r) $. Da $\zeta = \xi+ t_r \eta$ eine Nullstelle von $P$ ist und $\zeta - \xi = t_r \eta$ können die Zahlen $t_r$ abgeschätzt werden durch Lemma \ref{3.2lem1} und \ref{3.2lem2} zu
+Wir schreiben $P(\xi+t\eta) = A \prod_{1}^m (t-t_r) $. Dann sind $\zeta = \xi+ t_r \eta$ Nullstellen von $P$ und die Differenzen $\zeta - \xi = t_r \eta$ können 
+durch Lemma \ref{3.2lem1} und \ref{3.2lem2} abgeschätzt werden zu
 \begin{equation}\label{3.2tr}
-|t_r| \ge a' (1+|\langle y, \xi\rangle|)^b,\quad |t_r|\ge c' |\xi|^d, (|\xi|\ge R).
+|t_r| \ge a' (1+| y\cdot  \xi |)^b,\qquad |t_r|\ge c' |\xi|^d
 \end{equation}
-Dann ist die $(k+j)$-te  Ableitung von $1/P(\xi+t\eta)$ für $t=0$ eine Summe von Terme die alle von der Form $A^{-1}$ geteilt durch das Produkt von $k+j+m$ der Nullstellen $t_r$. Die Zahl der Terme kann abgeschätzt werden durch
+für $|\xi|\ge R$. Dann ist die $(k+j)$-te  Ableitung von $1/P(\xi+t\eta)$ für $t=0$ eine Summe von Termen der Form $A^{-1}$ geteilt durch das Produkt von $k+j+m$ der Nullstellen $t_r$. Die Zahl der Terme kann abgeschätzt werden durch
 \begin{equation}
 m(m+1) \cdots (m+k+j-1) =(k+j)! \binom{m+k+j-1}{k+j}<(k+j)! 2^{m+k+j-1}.
 \end{equation}
-Weiter ist $A$ unabhängig von $\xi$. Dies folgt leicht mit Theorem \ref{thm:3:3.3} ({\bf iii}). Sonst würde folgen 
+Weiter ist $A$ unabhängig von $\xi$. Dies folgt mit Theorem \ref{thm:3:3.3} ({\bf iii}), da sonst
 \begin{equation}
-\frac{P^{(\alpha)}(\xi + t\eta)}{P(\xi + t\eta)}\to \frac{A^{(\alpha)}(\xi)}{A(\xi)}\neq 0\quad(t\to \infty).
+\frac{P^{(\alpha)}(\xi + t\eta)}{P(\xi + t\eta)}\to \frac{A^{(\alpha)}(\xi)}{A(\xi)}\neq 0\qquad(t\to \infty)
 \end{equation}
-für ein $\xi\in \mathbb R^n$ und einem Multiindex $\alpha\neq 0$.
-
-% umsetzen
-Dann folgt das Lemma, indem wir $j$ der Terme mit Nullstellen durch die erste Ungleichung aus \eqref{3.2tr}, $k$ der Terme mit der zweiten Ungleichung und die weiteren $m$ durch eine Konstante.  
+für ein $\xi\in \mathbb R^n$ und einem Multiindex $\alpha\neq 0$ gelten würde.
+Damit folgt die Behauptung, indem wir $j$ der Terme mit Nullstellen durch die erste Ungleichung aus \eqref{3.2tr}, $k$ der Terme mit der zweiten Ungleichung und die weiteren $m$ durch eine Konstante abschätzen.  
 \end{proof}
 
 
