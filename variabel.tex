@@ -1,3 +1,50 @@
 % !TEX root = main.tex
 \chapter{Operatoren von reellem Haupttyp}
+
+
+
+
+Zur Notation: Sei $\Omega\subset\R^n$ ein Gebiet und 
+\begin{equation}
+   P(x,\D) = \sum_{|\alpha|\le m} a_\alpha(x) \D^\alpha
+\end{equation}
+ein Differentialausdruck mit Koeffizienten $a_\alpha\in\rmC^\infty(\Omega)$. Wir definieren \eIndex[Differentialoperator]{Symbol} und \eIndex[Differentialoperator]{Hauptsymbol}
+\begin{equation}
+   P(x,\zeta) = \sum_{|\alpha|\le m} a_\alpha(x)\zeta^\alpha,\qquad p(x,\zeta)=\sum_{|\alpha|=m} a_\alpha(x)\zeta^\alpha
+\end{equation}
+als Polynome auf $\C^n$ mit Koeffizienten aus $\rmC^\infty(\Omega)$. Analog zu den schon für den Fall konstanter Koeffizienten eingeführten Bezeichnungen nennen wir den Differentialausdruck $P(x,\D)$ im Punkt $x\in\Omega$
+\begin{itemize}
+\item \eIndex[Differentialoperator]{elliptisch}, falls für alle (reellen) $\xi\in\R^n\setminus\{0\}$ das Hauptsymbol $p(x,\xi)\ne0$ erfüllt;
+\item \eIndex[Differentialoperator]{vom Haupttyp}, falls die Nullstellenmenge des Hauptsymbols 
+\begin{equation}
+    p(x,\xi) = 0 \quad \Longrightarrow \quad \nabla_\xi p(x,\xi)\ne0
+\end{equation}
+für alle $\xi\in\R^n\setminus\{0\}$ erfüllt.
+\end{itemize}
+Interessant sind Operatoren \eIndex[Differentialoperator]{von reellem Haupttyp}, für diese ist zusätzlich $p(x,\xi)$ reellwertig. Dann stimmt $P(x,\D)$ bis auf einen Operator der Ordnung $m-1$ mit seinem formal adjungierten ${}^t{P}(x,\D)$ \"uberein. Für komplexwertige Hauptsymbole fordert man oft allgemeiner, dass
+die \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$.
+\begin{equation}
+    \{ p,\overline p\} (x,\xi) = \sum_{j=1}^n \bigg(\frac{\partial p(x,\xi)}{\partial \xi_j} \frac{\partial \overline p (x,\xi)}{\partial x_j} - \frac{\partial \overline p(x,\xi)}{\partial \xi_j}\frac{\partial  p(x,\xi)}{\partial x_j} \bigg)    = 0 
+\end{equation}
+für alle $\xi\in\R^n$ verschwindet. Für solche Operatoren ist der Kommutator zwischen $P(x,\D)$ und ${}^t P(x,\D)$ ein Operator der Ordnung $2m-2$ (statt trivialerweise nur $2m-1$).
+
+Ist $P(\D)$ ein Operator vom Haupttyp mit konstanten Koeffizienten, so existiert insbesondere eine Konstante $C$, so dass
+\begin{equation}
+  \forall u\in\rmC_0^\infty(\Omega)\quad:\quad  \sum_{|\beta|<m} \| \D^\beta u\| \le C \| P(\D) u \|
+\end{equation}
+gilt. Im Falle variabler Koeffizienten suchen wir eine solche Abschätzung lokal und fragen, ob für $u$ mit hinreichend kleinem kompaktem Träger entsprechend
+\begin{equation}
+\forall u\in\rmC_0^\infty(\Omega')\quad:\quad      \sum_{|\beta|<m} \| \D^\beta u\| \le C \| P(x,\D) u \|
+\end{equation}
+gilt.
+
+\section{Hinreichende Bedingungen}
+\cite{Hormander:1955}
+
+
+\section{Notwendige Bedingungen}
 \cite{Hormander:1960a}
+%
+%
+%
+%
