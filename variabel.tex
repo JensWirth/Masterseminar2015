@@ -1,3 +1,87 @@
 % !TEX root = main.tex
+\newcommand{\A}{\forall}
+\newcommand{\E}{\exists}
+\newcommand{\imp}{\Rightarrow}
+\renewcommand{\labelenumi}{\roman{enumi})}
+
+\newcommand{\Sph}{\mathbb S}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\Pin}{\textbf{Pin}}
+\newcommand{\Q}{\mathbb Q}
+\renewcommand{\H}{\mathbb H}
+\newcommand{\Ri}{\widetilde{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\lle}{\preccurlyeq}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\M}{\widetilde{M}}
+\newcommand{\Or}{\mathcal{O}}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\O}{\textbf{O}}
+\newcommand{\SO}{\textbf{SO}}
+\newcommand{\U}{\textbf{U}}
+\newcommand{\Ad}{\text{Ad}}
+\newcommand{\SU}{\textbf{SU}}
+\newcommand{\Symp}{\textbf{Sp}}
+\newcommand{\id}{\text{id}}
+\newcommand{\Cl}{\textbf{Cl}}
+\newcommand{\Ind}{\text{Ind}}
+\newcommand{\proofed}{$\mbox{}$\hfill $\blacksquare{}$\\} 
+\newcommand{\g}{\mathfrak{g}}
+\renewcommand{\k}{\mathfrak{k}}
+\newcommand{\m}{\mathfrak{m}}
+\renewcommand{\o}{\overline}
 \chapter{Operatoren von reellem Haupttyp}
-\cite{Hormander:1960a}
+%\cite{Hormander:1960a}
+\section{Notation und Vorbereitung}
+
+Im folgenden sei $\P$ ein Differentialoperator auf einem Gebiet $\Omega \subset \R^n$, gegeben durch
+\[
+\P = \sum_{|\alpha| \le m} a_\alpha (x) D^\alpha.
+\]
+
+
+\begin{df}
+	Für $\xi \in \C^n$ bezeichnen wir mit
+	\[
+	p(x,\xi) = \sum_{|\alpha| = m} a_\alpha (x) \xi^\alpha
+	\]
+	das \emph{Hauptsymbol} oder das \emph{charakteristische Polynom} von $\P$. $\P$ heißt von \emph{reellem Haupttyp}, wenn für reelle $\xi$ auch $p(x,\xi)$ reell ist und für reelle $\xi \neq 0$ nicht alle partiellen Ableitungen $\partial p(x,\xi) / \partial \xi_i$ gleichzeitig verschwinden.
+\end{df} 
+Wir verwenden für Vektoren $\xi^1, \ldots, \xi^m$ die Notation
+\[
+p(x,\xi_1, \ldots, \xi_m) = \sum_{|\alpha|=m} a_\alpha(x)\xi_1^\alpha \cdots \xi_m^\alpha (?)
+\]
+und für $k_1 + \ldots + k_p=m$ schreiben wir auch $p(x,\xi_1^{k_1}, \ldots, \xi_p^{k_p})$, wenn $k_i$ Argumente gleich $\xi_i$ sein sollen.
+\begin{lem}
+Für den Tensor $T^{ik}$ gilt die Gleichung
+\[
+\sum_{i=1}^{n} (\zeta_i - \overline \zeta_i) T^{ik}(\zeta, \o \zeta)  =
+p(\zeta) \dfrac{\partial p(\o \zeta)}{\partial \o \zeta_k} - p(\o \zeta) \dfrac{\partial p( \zeta)}{\partial  \zeta_k}.
+\]
+\end{lem}
+\begin{proof}
+
+\end{proof}
+\begin{df}
+	Für variable $\xi, \eta$ definieren wir die Tensoren
+	\begin{align*}
+	\sum_{i,k=1}^n R^{ik}(\zeta, \overline \zeta) \xi_i \eta_k &= m \sum_{j=0}^{m-1} p(\zeta^j, \overline \zeta^{m-1-j},\xi) p(\zeta^{m-1-j},\overline \zeta^j ,\eta), \\
+	\sum_{i,k=1}^n S^{ik}(\zeta, \overline \zeta) \xi_i \eta_k &= m \sum_{j=0}^{m-1} p(\zeta^j, \overline \zeta^{m-j}) p(\zeta^{m-1-j},\overline \zeta^{j-1} ,\xi,\eta)
+	\end{align*}
+	sowie den symmetrischen Tensor $T^{ik} = R^{ik}-S^{ik}$, wobei wir den Punkt $x$ in der Notation zur Übersichtlichkeit unterschlagen.
+\end{df}
+
+\section{a}
+Wir nehmen im Folgenden an, dass $\P$ in einer Umgebung einer Sphäre $|x| \le A$ in $\R^n$ definiert ist.
+
+\begin{thm}
+	Sei $\P$ von reellem Haupttyp, die Koeffizienten von $p(x,\xi)$ seien stetig differenzierbar und die anderen Koeffizienten von $\P$ stetig. Dann existiert eine Umgebung $\Omega$ der Null, sodass
+	\begin{align}
+	\sum_{|\alpha| \le m} \lVert D^\alpha u \rVert^2 \le C \lVert \P u \rVert^2, \hspace{0.5cm} u \in C_0^\infty (\Omega).
+	\end{align}
+\end{thm}
+
+\begin{proof}
+	
+\end{proof}
