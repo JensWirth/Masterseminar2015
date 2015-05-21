@@ -32,56 +32,139 @@
 \newcommand{\m}{\mathfrak{m}}
 \renewcommand{\o}{\overline}
 \chapter{Operatoren von reellem Haupttyp}
-%\cite{Hormander:1960a}
-\section{Notation und Vorbereitung}
+%<<<<<<< HEAD
+%%\cite{Hormander:1960a}
+%\section{Notation und Vorbereitung}
+%
+%Im folgenden sei $\P$ ein Differentialoperator auf einem Gebiet $\Omega \subset \R^n$, gegeben durch
+%\[
+%\P = \sum_{|\alpha| \le m} a_\alpha (x) D^\alpha.
+%\]
+%
+%
+%\begin{df}
+%	Für $\xi \in \C^n$ bezeichnen wir mit
+%	\[
+%	p(x,\xi) = \sum_{|\alpha| = m} a_\alpha (x) \xi^\alpha
+%	\]
+%	das \emph{Hauptsymbol} oder das \emph{charakteristische Polynom} von $\P$. $\P$ heißt von \emph{reellem Haupttyp}, wenn für reelle $\xi$ auch $p(x,\xi)$ reell ist und für reelle $\xi \neq 0$ nicht alle partiellen Ableitungen $\partial p(x,\xi) / \partial \xi_i$ gleichzeitig verschwinden.
+%\end{df} 
+%Wir verwenden für Vektoren $\xi^1, \ldots, \xi^m$ die Notation
+%\[
+%p(x,\xi_1, \ldots, \xi_m) = \sum_{|\alpha|=m} a_\alpha(x)\xi_1^\alpha \cdots \xi_m^\alpha (?)
+%\]
+%und für $k_1 + \ldots + k_p=m$ schreiben wir auch $p(x,\xi_1^{k_1}, \ldots, \xi_p^{k_p})$, wenn $k_i$ Argumente gleich $\xi_i$ sein sollen.
+%\begin{lem}
+%Für den Tensor $T^{ik}$ gilt die Gleichung
+%\[
+%\sum_{i=1}^{n} (\zeta_i - \overline \zeta_i) T^{ik}(\zeta, \o \zeta)  =
+%p(\zeta) \dfrac{\partial p(\o \zeta)}{\partial \o \zeta_k} - p(\o \zeta) \dfrac{\partial p( \zeta)}{\partial  \zeta_k}.
+%\]
+%\end{lem}
+%\begin{proof}
+%
+%\end{proof}
+%\begin{df}
+%	Für variable $\xi, \eta$ definieren wir die Tensoren
+%	\begin{align*}
+%	\sum_{i,k=1}^n R^{ik}(\zeta, \overline \zeta) \xi_i \eta_k &= m \sum_{j=0}^{m-1} p(\zeta^j, \overline \zeta^{m-1-j},\xi) p(\zeta^{m-1-j},\overline \zeta^j ,\eta), \\
+%	\sum_{i,k=1}^n S^{ik}(\zeta, \overline \zeta) \xi_i \eta_k &= m \sum_{j=0}^{m-1} p(\zeta^j, \overline \zeta^{m-j}) p(\zeta^{m-1-j},\overline \zeta^{j-1} ,\xi,\eta)
+%	\end{align*}
+%	sowie den symmetrischen Tensor $T^{ik} = R^{ik}-S^{ik}$, wobei wir den Punkt $x$ in der Notation zur Übersichtlichkeit unterschlagen.
+%\end{df}
+%
+%\section{a}
+%Wir nehmen im Folgenden an, dass $\P$ in einer Umgebung einer Sphäre $|x| \le A$ in $\R^n$ definiert ist.
+%
+%\begin{thm}
+%	Sei $\P$ von reellem Haupttyp, die Koeffizienten von $p(x,\xi)$ seien stetig differenzierbar und die anderen Koeffizienten von $\P$ stetig. Dann existiert eine Umgebung $\Omega$ der Null, sodass
+%	\begin{align}
+%	\sum_{|\alpha| \le m} \lVert D^\alpha u \rVert^2 \le C \lVert \P u \rVert^2, \hspace{0.5cm} u \in C_0^\infty (\Omega).
+%	\end{align}
+%\end{thm}
+%
+%\begin{proof}
+%	
+%\end{proof}
+%=======
+%
 
-Im folgenden sei $\P$ ein Differentialoperator auf einem Gebiet $\Omega \subset \R^n$, gegeben durch
-\[
-\P = \sum_{|\alpha| \le m} a_\alpha (x) D^\alpha.
-\]
 
 
-\begin{df}
-	Für $\xi \in \C^n$ bezeichnen wir mit
-	\[
-	p(x,\xi) = \sum_{|\alpha| = m} a_\alpha (x) \xi^\alpha
-	\]
-	das \emph{Hauptsymbol} oder das \emph{charakteristische Polynom} von $\P$. $\P$ heißt von \emph{reellem Haupttyp}, wenn für reelle $\xi$ auch $p(x,\xi)$ reell ist und für reelle $\xi \neq 0$ nicht alle partiellen Ableitungen $\partial p(x,\xi) / \partial \xi_i$ gleichzeitig verschwinden.
-\end{df} 
-Wir verwenden für Vektoren $\xi^1, \ldots, \xi^m$ die Notation
-\[
-p(x,\xi_1, \ldots, \xi_m) = \sum_{|\alpha|=m} a_\alpha(x)\xi_1^\alpha \cdots \xi_m^\alpha (?)
-\]
-und für $k_1 + \ldots + k_p=m$ schreiben wir auch $p(x,\xi_1^{k_1}, \ldots, \xi_p^{k_p})$, wenn $k_i$ Argumente gleich $\xi_i$ sein sollen.
+Zur Notation: Sei $\Omega\subset\R^n$ ein Gebiet und 
+\begin{equation}
+   P(x,\D) = \sum_{|\alpha|\le m} a_\alpha(x) \D^\alpha
+\end{equation}
+ein Differentialausdruck mit Koeffizienten $a_\alpha\in\rmC^\infty(\Omega)$. Wir definieren \eIndex[Differentialoperator]{Symbol} und \eIndex[Differentialoperator]{Hauptsymbol}
+\begin{equation}
+   P(x,\zeta) = \sum_{|\alpha|\le m} a_\alpha(x)\zeta^\alpha,\qquad p(x,\zeta)=\sum_{|\alpha|=m} a_\alpha(x)\zeta^\alpha
+\end{equation}
+als Polynome auf $\C^n$ mit Koeffizienten aus $\rmC^\infty(\Omega)$. Analog zu den schon für den Fall konstanter Koeffizienten eingeführten Bezeichnungen nennen wir den Differentialausdruck $P(x,\D)$ im Punkt $x\in\Omega$
+\begin{itemize}
+\item \eIndex[Differentialoperator]{elliptisch}, falls für alle (reellen) $\xi\in\R^n\setminus\{0\}$ das Hauptsymbol $p(x,\xi)\ne0$ erfüllt;
+\item \eIndex[Differentialoperator]{vom Haupttyp}, falls die Nullstellenmenge des Hauptsymbols 
+\begin{equation}
+    p(x,\xi) = 0 \quad \Longrightarrow \quad \nabla_\xi p(x,\xi)\ne0
+\end{equation}
+für alle $\xi\in\R^n\setminus\{0\}$ erfüllt.
+\end{itemize}
+Interessant sind Operatoren \eIndex[Differentialoperator]{von reellem Haupttyp}, für diese ist zusätzlich $p(x,\xi)$ reellwertig. Dann stimmt $P(x,\D)$ bis auf einen Operator der Ordnung $m-1$ mit seinem formal adjungierten ${}^t{P}(x,\D)$ \"uberein. Für komplexwertige Hauptsymbole fordert man oft allgemeiner, dass
+die \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$.
+\begin{equation}
+    \{ p,\overline p\} (x,\xi) = \sum_{j=1}^n \bigg(\frac{\partial p(x,\xi)}{\partial \xi_j} \frac{\partial \overline p (x,\xi)}{\partial x_j} - \frac{\partial \overline p(x,\xi)}{\partial \xi_j}\frac{\partial  p(x,\xi)}{\partial x_j} \bigg)    = 0 
+\end{equation}
+für alle $\xi\in\R^n$ verschwindet. Für solche Operatoren ist der Kommutator zwischen $P(x,\D)$ und ${}^t P(x,\D)$ ein Operator der Ordnung $2m-2$ (statt trivialerweise nur $2m-1$).
+
+Ist $P(\D)$ ein Operator vom Haupttyp mit konstanten Koeffizienten, so existiert insbesondere eine Konstante $C$, so dass
+\begin{equation}
+  \forall u\in\rmC_0^\infty(\Omega)\quad:\quad  \sum_{|\beta|<m} \| \D^\beta u\| \le C \| P(\D) u \|
+\end{equation}
+gilt. Im Falle variabler Koeffizienten suchen wir eine solche Abschätzung lokal und fragen, ob für $u$ mit hinreichend kleinem kompaktem Träger entsprechend
+\begin{equation}
+\forall u\in\rmC_0^\infty(\Omega')\quad:\quad      \sum_{|\beta|<m} \| \D^\beta u\| \le C \| P(x,\D) u \|
+\end{equation}
+gilt.
+
+\section{Hinreichende Bedingungen}
+\cite{Hormander:1955}
+
+
+\section{Notwendige Bedingungen}
+Im folgenden sei $\Omega \subset \R^n$ eine offene Umgebung der Null. Zur Übersichtlichkeit schreiben wir
+\begin{align*}
+\lVert u \rVert_k := \left( \sum_{|\alpha| \le k} \lVert D^\alpha u \rVert^2 \right)^{\frac{1}{2}}.
+\end{align*}
 \begin{lem}
-Für den Tensor $T^{ik}$ gilt die Gleichung
-\[
-\sum_{i=1}^{n} (\zeta_i - \overline \zeta_i) T^{ik}(\zeta, \o \zeta)  =
-p(\zeta) \dfrac{\partial p(\o \zeta)}{\partial \o \zeta_k} - p(\o \zeta) \dfrac{\partial p( \zeta)}{\partial  \zeta_k}.
-\]
+Wir nehmen an, es existiert eine Funktion $u \in C^\infty (\Omega)$, sodass 
+\begin{align}
+p(x, \nabla u) = o \left(|x|^2\right), \, x \rightarrow 0.
+\end{align}
+Weiter habe $u$ die Taylorentwicklung \begin{align}
+u(x) = i \sum_{j=1}^{n} x_i \xi_j + \dfrac{1}{2} \sum_{j,k=1}^{n} x^j x^k \alpha_{jk} + O\left( |x|^3 \right),
+\end{align}
+wobei $\xi_j$ reell sei mit 
+\begin{align}
+\sum_{j=1}^{n}|\partial p(0,\xi)/\partial \xi_j|^2 \neq 0.
+\end{align}
+Zusätzlich sei die Matrix $\alpha_{jk}$ symmetrisch und die Matrix $\Re \alpha_{jk}$ negativ definit. Hat $P$ stetige Koeffizienten, so gilt
+\begin{align}
+\label{lm 1}
+\sup \frac{ \lVert v \rVert_{m-1} }{ \lVert P(x,D)v \rVert} = \infty
+\end{align}
+für alle $v \in C_0^\infty(\Omega)$.
 \end{lem}
 \begin{proof}
-
-\end{proof}
-\begin{df}
-	Für variable $\xi, \eta$ definieren wir die Tensoren
-	\begin{align*}
-	\sum_{i,k=1}^n R^{ik}(\zeta, \overline \zeta) \xi_i \eta_k &= m \sum_{j=0}^{m-1} p(\zeta^j, \overline \zeta^{m-1-j},\xi) p(\zeta^{m-1-j},\overline \zeta^j ,\eta), \\
-	\sum_{i,k=1}^n S^{ik}(\zeta, \overline \zeta) \xi_i \eta_k &= m \sum_{j=0}^{m-1} p(\zeta^j, \overline \zeta^{m-j}) p(\zeta^{m-1-j},\overline \zeta^{j-1} ,\xi,\eta)
-	\end{align*}
-	sowie den symmetrischen Tensor $T^{ik} = R^{ik}-S^{ik}$, wobei wir den Punkt $x$ in der Notation zur Übersichtlichkeit unterschlagen.
-\end{df}
-
-\section{a}
-Wir nehmen im Folgenden an, dass $\P$ in einer Umgebung einer Sphäre $|x| \le A$ in $\R^n$ definiert ist.
-
-\begin{thm}
-	Sei $\P$ von reellem Haupttyp, die Koeffizienten von $p(x,\xi)$ seien stetig differenzierbar und die anderen Koeffizienten von $\P$ stetig. Dann existiert eine Umgebung $\Omega$ der Null, sodass
-	\begin{align}
-	\sum_{|\alpha| \le m} \lVert D^\alpha u \rVert^2 \le C \lVert \P u \rVert^2, \hspace{0.5cm} u \in C_0^\infty (\Omega).
-	\end{align}
-\end{thm}
-
-\begin{proof}
-	
+Weil $\Re \alpha_{jk}$ negativ definit ist, gilt\begin{align*}
+\Re u(x) = \sum_{j,k=1}^{n} x^jx^k \Re \alpha_{jk} + O\left( |x|^3 \right) \le -2a |x|^2 + O\left( |x|^3 \right)
+\end{align*}
+mit $a<0$. Es folgt
+\begin{align}
+\label{realteil}
+\Re u(x) \le -a |x|^2
+\end{align}
+für kleine $|x|$. Nach Verkleinerung von $\Omega$ nehmen wir an, dass \ref{realteil} überall gilt. Für $\phi \in C_0^\infty(\Omega)$, $t>0$ ist $v_t := \phi e^{tu} \in C_0^\infty(\Omega)$ und es gilt $|v_t| \le |\phi| e^{-at|x|^2}$. Wir zeigen nun
+\[
+\frac{\lVert v_t \rVert_{m-1}}{\lVert p(x,D)v_t \rVert} \rightarrow \infty, \, t \rightarrow \infty,
+\]
+woraus die Behauptung \ref{lm 1} folgt.
 \end{proof}
