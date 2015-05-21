@@ -336,7 +336,7 @@ Jetzt setzen wir für $u\in\rmC_0^\infty(\mathbb R^n)$
 = (2\pi)^{-n/2} \int_\Gamma \frac{\widehat u(\xi)}{P(\xi)} \d \xi,
 \end{equation}
 wobei das innere Integral bezüglich $\xi_1$ über die reelle Achse verlaufe, falls $\xi_2^2+ \cdots + \xi_n^2 > C^2$, und über die reelle Achse mit dem Intervall $(-C', C')$ ersetzt durch einen Halbkreis in der unteren Halbebene, falls $\xi_2^2+ \cdots+ \xi_n^2 \le C^2$. Man beachte, dass die Integrationsvariable damit komplex ist.
-Nach Konstruktion gilt $|P(\xi)|\ge 1$ auf dem gesamten Integrationsgebiet und wir setzen analog zu \eqref{distr1} an:
+Nach Konstruktion gilt $|P(\xi)|\ge 1$ auf dem gesamten Integrationsgebiet und wir erhalten analog zu \eqref{distr1}
 \begin{equation}
 E*u(x) = (2\pi)^{-n/2}\int_\Gamma e^{\i x\cdot \xi } \frac{\widehat u(\xi)}{P(\xi)}\d \xi, \quad u \in \rmC_0^\infty(\R^n)
 \end{equation} 
@@ -349,7 +349,7 @@ $E*(P(\D)u)=u$ und $E$ ist eine Fundamentallösung.
 
 \medskip
 \noindent
-{\em Schritt 2: Beweis der Quadratintegrierbarkeit von $P^{(\alpha)}(\D) E * u$.}
+{\em Schritt 2: Beweis der lokalen Quadratintegrierbarkeit von $P^{(\alpha)}(\D) E * u$.}
 Wir teilen das Integral \eqref{distr3} in zwei Teile auf. Sei $R=\sqrt{C^2 + C'^2}$. Dann ist das Integrationsgebiet in \eqref{distr3} für $|\xi|>R$ ausschließlich reell 
 und für $|\xi|\le R$ kompakt. Wir schreiben $\Gamma_{\le R} = \Gamma\cap\{\xi\in\C^n : |\xi|\le R\}$ und zerlegen
 \begin{equation}\label{distr4}
@@ -409,7 +409,7 @@ Nach Lemma \ref{3.2lem3} können wir den Integranden von \eqref{3.2G} abschätze
 \begin{equation}
 \begin{split}
 |g(\xi)| &= \left | \sum_{j=0}^k \binom{l}{j} (y\cdot \i\eta)^j (y \cdot \xi)^{k-j} \left ( (-\eta\cdot\D_\xi)^{l-j} \frac{1}{P(\xi)} \right ) \right |\\
-&\le \sum_{j=0}^k \binom{l}{j} \frac{k!}{(k-j)!} |y\cdot \eta|^j |y\cdot \xi|^{k-j}  \frac{(l-j)! C^{l-j}}{|\xi|^{rd} (1+|y\cdot \xi|^{b(l-j-r)})} 
+&\le \sum_{j=0}^k \binom{l}{j} \frac{k!}{(k-j)!} |y\cdot \eta|^j |y\cdot \xi|^{k-j}  \frac{(l-j)! C^{l-j}}{|\xi|^{rd} (1+|y\cdot \xi|)^{b(l-j-r)}} 
 \end{split}
 \end{equation}
 mit den Konstanten $b$ und $d$ aus Lemma~\ref{3.2lem3} und noch zu wählendem $r\ge1$. Wir wählen $r$ so, dass $rd>n$ gilt. Weiterhin geschieht die Wahl von $l$ in Abhängigkeit von $k$ so, dass 
