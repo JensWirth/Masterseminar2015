@@ -92,13 +92,13 @@ Versieht man $\rmC_0^\infty(\Omega)$ durch
 \begin{equation}
     \spro{u}{v} = \int_{\Omega} u(x) \overline{v(x)} \d x
 \end{equation}
-mit einem $\rmL^2$-Innenprodukt, so kann man zu $\mathcal P$ den formal adjungierten Operator $\overline{\mathcal P}$ betrachten. Dieser erf\"ullt
+mit einem $\rmL^2$-Innenprodukt, so kann man zu $\mathcal P$ den formal adjungierten Operator ${}^t\mathcal P$ betrachten. Dieser erf\"ullt
 \begin{equation}
-   \forall u,v\in\rmC_0^\infty(\Omega)\quad:\quad \spro{\mathcal Pu}{v}=\spro{u}{\mathcal{\overline P}v}
+   \forall u,v\in\rmC_0^\infty(\Omega)\quad:\quad \spro{\mathcal Pu}{v}=\spro{u}{{}^t{\mathcal P}v}
 \end{equation}
 und ist durch
 \begin{equation}
-  \overline{ \mathcal P}v(x) = \sum_{|\alpha|\le m}  \D^\alpha\big(\overline{a_\alpha(x)}v(x)\big)
+  {}^t{ \mathcal P}v(x) = \sum_{|\alpha|\le m}  \D^\alpha\big(\overline{a_\alpha(x)}v(x)\big)
 \end{equation}
 gegeben.
 
@@ -113,7 +113,7 @@ ist $\rmL^2$-$\rmL^2$-abschließbar.
 Sei $u_n\in\mathcal D$ eine Folge mit $u_n\to 0$ in $\rmL^2(\Omega)$ und $\mathcal Pu_n \to w\in\rmL^2(\Omega)$. Dann gilt f\"ur jedes 
 $v\in\rmC^\infty_0(\Omega)$
 \begin{equation}
- \spro{w}{v}=\lim_{n\to\infty}   \spro{\mathcal Pu_n}{v} = \lim_{n\to\infty} \spro{u_n}{\overline{\mathcal P}v} = 0
+ \spro{w}{v}=\lim_{n\to\infty}   \spro{\mathcal Pu_n}{v} = \lim_{n\to\infty} \spro{u_n}{{}^t{\mathcal P}v} = 0
 \end{equation}
 somit $w=0$.
 \end{proof}
@@ -122,7 +122,7 @@ Die Aussage gilt allgemeiner, es ergibt sich $\rmL^p$-$\rmL^q$-, $\rmC$-$\rmC$ s
 
 \begin{df} 
 Sei $\mathcal P$ ein Differentialausdruck und $\Omega$ ein Gebiet. Dann wird der $\rmL^2$-$\rmL^2$-Abschluß des durch $\mathcal P$ auf $\rmC_0^\infty(\Omega)$ definierten Operators mit $P_0$ und als \eIndex[Differentialoperator]{minimaler Operator} zum Differentialausdruck $\mathcal P$ und Gebiet $\Omega$ bezeichnet. 
-Weiterhin heißt $P := (\overline P_0)^*$ \eIndex[Differentialoperator]{maximaler Operator} zu $\mathcal P$ und $\Omega$.
+Weiterhin heißt $P := ({}^t P_0)^*$ \eIndex[Differentialoperator]{maximaler Operator} zu $\mathcal P$ und $\Omega$.
 \end{df}
 
 Der so definierte maximale Operator besitzt den Definitionsbereich
@@ -137,9 +137,9 @@ also den Sobolevraum $\rmH^2_0(\Omega)$ der am Rand verschwindenden Funktionen, 
 Der Unterschied zwischen minimalen und maximalen Operatoren besteht in der Wahl von Randbedingungen. 
 
 \begin{thm}[{\cite[Lemma~1.7]{Hormander:1955}}]
-Die Gleichung $Pu=f$ hat genau dann für jedes $f\in\rmL^2(\Omega)$ eine L\"osung $u\in\mathcal D_{P}$, wenn $\overline P_0$ beschränkt invertierbar ist, also wenn f\"ur den formal adjungierten Differentialausdruck
+Die Gleichung $Pu=f$ hat genau dann für jedes $f\in\rmL^2(\Omega)$ eine L\"osung $u\in\mathcal D_{P}$, wenn ${}^t P_0$ beschränkt invertierbar ist, also wenn f\"ur den formal adjungierten Differentialausdruck
 \begin{equation}
-  \forall u\in\rmC^\infty_0(\Omega)\quad:\quad   \|u\| \le C \| \overline{\mathcal P} u \|
+  \forall u\in\rmC^\infty_0(\Omega)\quad:\quad   \|u\| \le C \| {}^t{\mathcal P} u \|
 \end{equation}
 gilt.
 \end{thm}
@@ -199,14 +199,14 @@ $B$ bestimmt damit eine Einschr\"ankung $\widehat P$ des Operators $P$ auf den D
 Der so definierte Operator ist abgeschlossen genau dann, wenn $B$ abgeschlossen ist. Die Menge der abgeschlossenen Operatoren $\widehat P$ mit $P_0\subseteq\widehat P\subseteq P$ steht in Bijektion zu den abgeschlossenen Teilräumen des Cauchyraumes $\mathcal C$.
 Das Randwertproblem heißt \eIndex[Randwertproblem]{korrekt gestellt}, falls $\widehat P$ stetig invertierbar ist.
 
-\begin{thm}[Vi\v{s}ik, [{\cite[Theorem~1.2]{Hormander:1955}}]]
+\begin{thm}[Vi\v{s}ik, [{\cite[Theorem~1.2]{Hormander:1955}}]
 Zu einem Differentialausdruck $\mathcal P$ existieren auf einem Gebiet $\Omega$ genau dann korrekt gestellte Randwertprobleme, wenn $P_0$ und $\overline P_0$
 beschr\"ankt invertierbar sind.
 \end{thm} 
 \begin{proof} 
-Angenommen, es existiert ein korrekt gestelltes homogenes Randwertproblem $\widehat P$. Da $P_0\subseteq \widehat P$ gilt, muß dann $P_0^{-1}$ beschränkt sein. Weiterhin ist $\widehat P^{-1}$ rechtsinvers zu $P$, damit muß $\overline P_0^{-1}$ nach Korollar~\ref{cor:1:1.3} beschränkt sein.
+Angenommen, es existiert ein korrekt gestelltes homogenes Randwertproblem $\widehat P$. Da $P_0\subseteq \widehat P$ gilt, muß dann $P_0^{-1}$ beschränkt sein. Weiterhin ist $\widehat P^{-1}$ rechtsinvers zu $P$, damit muß ${}^t P_0^{-1}$ nach Korollar~\ref{cor:1:1.3} beschränkt sein.
 
-Seien nun $P_0$ und $\overline P_0$ beschränkt invertierbar. Da $P_0^{-1}$ beschr\"ankt ist, ist $\mathcal R_{P_0}\subseteq \rmL^2(\Omega)$ abgeschlossen.  Bezeichne nun $\pi$ den Orthogonalprojektor auf $\mathcal R_{P_0}$. Ist nun $S$ eine Rechtsinverse zu $P$ (die nach  Korollar~\ref{cor:1:1.3} existiert), so gilt für
+Seien nun $P_0$ und ${}^t P_0$ beschränkt invertierbar. Da $P_0^{-1}$ beschr\"ankt ist, ist $\mathcal R_{P_0}\subseteq \rmL^2(\Omega)$ abgeschlossen.  Bezeichne nun $\pi$ den Orthogonalprojektor auf $\mathcal R_{P_0}$. Ist nun $S$ eine Rechtsinverse zu $P$ (die nach  Korollar~\ref{cor:1:1.3} existiert), so gilt für
 den durch  
 \begin{equation}
   Tf = P_0^{-1} \pi f + S(I-\pi) f,\qquad f\in\rmL^2(\Omega) 
@@ -214,7 +214,7 @@ den durch
 definierten Operator $T$ nach Konstruktion $PT f = \pi f + (I-\pi) f = f$ und $T$ besitzt eine Inverse $\widehat P \subseteq P$. Weiter ist $T\supset P_0^{-1}$ und $\widehat P\supset P_0$ , so daß $P_0\subseteq \widehat P\subseteq P$. Da $\widehat P^{-1}$ beschränkt und auf ganz $\rmL^2(\Omega)$ definiert ist, ist der Satz bewiesen.
 \end{proof}
 
-Seien nun $P_0$ und $\overline P_0$ beschränkt invertierbar und bezeichne 
+Seien nun $P_0$ und ${}^t P_0$ beschränkt invertierbar und bezeichne 
 \begin{equation}
   U=\ker P = \{u\in\rmL^2(\Omega) : Pu =0\}
 \end{equation}  
@@ -224,7 +224,7 @@ den Kern des maximalen Operators. Dann ist $\Gamma U\subseteq \mathcal C$ abgesc
 \end{multline}
 ein Isomorphismus. 
 \begin{thm}[{\cite[Theorem~1.3]{Hormander:1955}}]
-Seien $P_0$ und $\overline P_0$ beschränkt invertierbar und sei $B\subseteq\mathcal C$ abgeschlossener Teilraum. Das zugehörige homogene Randwertproblem $\widehat P$ ist genau dann korrekt gestellt, wenn $\mathcal C = B \dotplus \Gamma U $ als direkte Summe\footnote{Direkt, nicht notwendig orthogonal.} gilt.
+Seien $P_0$ und ${}^t P_0$ beschränkt invertierbar und sei $B\subseteq\mathcal C$ abgeschlossener Teilraum. Das zugehörige homogene Randwertproblem $\widehat P$ ist genau dann korrekt gestellt, wenn $\mathcal C = B \dotplus \Gamma U $ als direkte Summe\footnote{Direkt, nicht notwendig orthogonal.} gilt.
 \end{thm}
 \begin{proof}
 Angenommen, $\mathcal C = B \dotplus \Gamma U$. Dann ist der Lösungsoperator über eine Rechtsinverse $S$ zu $P$ und den Projektor $\pi\in\mathcal L(\mathcal C)$ auf  $\Gamma U$ entlang $B$ durch
@@ -250,7 +250,7 @@ für alle $\zeta\in\C^n$ und mit $x\cdot\zeta = \sum_{j=1}^n x_j\zeta_j$. Das Po
 \begin{equation}
     \widehat u (\zeta) = (2\pi)^{-n/2} \int_\Omega \e^{-\i x\cdot\zeta } u(x) \d x,\qquad \zeta\in\C^n
 \end{equation}
-eine ganze Funktion auf $\C^n$. Die Anwendung des Operators $ P(\D)$ entspricht im Fourierbild der Multiplikation mit $ P(\zeta)$. 
+eine ganze Funktion auf $\C^n$. Die Anwendung des Operators $ P(\D)$ entspricht im Fourierbild der Multiplikation mit $ P(\zeta)$. Der formal adjungierte Operator ${}^t P(\D)$ entspricht dabei dem Operator zum Symbol $\overline{P}(\zeta)=\overline{P(\overline\zeta)}$.
 
 Eine erste Anwendung ist folgender Satz. Ein Beweis ergibt sich später nochmals in allgemeinerer Form.
 
