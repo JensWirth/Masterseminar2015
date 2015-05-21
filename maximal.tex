@@ -228,7 +228,7 @@ Sei $P(\D)$ hypoelliptisch. Im folgenden konstruieren wir eine Fundamentallösun
 \forall u\in\rmC_0^\infty(\R^n)\quad:\quad E*(P(\D) u) = u,
 \end{equation}
 und zeigen, dass diese zusätzliche Regularitätseigenschaften besitzt. Diese werden wir nachfolgend nutzen, um zu zeigen, dass jeder hypoelliptische Operator vollständig und von lokalem Typ ist. 
-\begin{thm}\label{fundamental_exist}
+\begin{thm}[{\cite[Theorem~3.4]{Hormander:1955}}]\label{fundamental_exist}
 Sei $P$ hypoelliptisch. Dann besitzt $P(\D)$ eine Fundamentallösung $E$, welche 
 \begin{enumerate}
 \item im Gebiet $\R^n\setminus\{0\}$  durch eine unendlich oft differenzierbare Funktion $E(x)$ dargestellt wird und
@@ -250,7 +250,7 @@ für $u\in\rmC_0^\infty(\R^n)$ bestimmen. Letzteres ist  äquivalent zu
 \end{equation}
 wobei $\check u$ durch $\check u(x)=u(-x)$ definiert ist. Im Allgemeinen besitzt $P(\xi)$ Nullstellen; wir werden dazu den Integrationsweg (verstanden als Ebene im $\C^n$) geeignet komplex deformieren. Zum Beweis der Regularitätseigenschaften von $E$ benötigen wir noch einige technische Lemmata.
 
-\begin{lem}\label{3.2lem1}
+\begin{lem}[{\cite[Lemma~3.9]{Hormander:1955}}]\label{3.2lem1}
 Sei $0\neq y \in \mathbb R^n$ fest und sei zu $\tau\in\R$
 \begin{equation}\label{3.2inf}
 M(\tau) = \dist( \{ \zeta\in\C^n\;:\; P(\zeta)=0\} , \{ \xi\in\R^n \;:\; y\cdot\xi=\tau\} )
@@ -272,7 +272,7 @@ $M(\tau)\sim a \tau^b$ mit $a\in\R$ und $b\in\mathbb Q$ für $\tau\to\infty$. Da
 \end{proof}
   
 
-\begin{cor}\label{3.2lem2}
+\begin{cor}[{\cite[Lemma~3.10]{Hormander:1955}}]\label{3.2lem2}
 Es gibt positive Konstanten $c$ und $d$ so dass für hinreichend große $|\xi|$ die Abschätzung 
 \begin{equation}
 |\zeta- \xi|\ge c |\xi|^{d}
@@ -290,7 +290,7 @@ für große $|\xi_i|$ und mit positiven Zahlen $a_i$ und $b_i$. Damit ergibt sic
 \end{equation}
 \end{proof}
 
-\begin{lem}\label{3.2lem3}
+\begin{lem}[{\cite[Lemma~3.11]{Hormander:1955}}]\label{3.2lem3}
 Sei $y\in \mathbb R^n$ und $\eta \in \mathbb R^n$ zwei feste Vektoren. Dann gibt es eine Konstante $C$ so dass
 \begin{equation}
 \left |(\eta\cdot\nabla)^{k+j} \left ( \frac{1}{P(\xi)} \right )  \right | \le \frac{(k+j)! C^{k+j}}{|\xi|^{kd} ( 1+ | y\cdot\xi | )^{bj}},\qquad  |\xi|\ge R, \quad j, k=1,2,\ldots,
@@ -472,7 +472,7 @@ Da $\phi$ kompakt getragen ist, ist $(P^{(\alpha)}(\D)E)*\phi$ nach Satz \ref{fu
 %
 %
 
-\begin{thm}
+\begin{thm}[{\cite[Theorem~3.6]{Hormander:1955}}]
 Sei $P(\D)$ ein Differentialausdruck und $\Omega\subset\R^n$ ein beschränktes Gebiet. Dann sind die folgenden Aussagen äquivalent:
 \begin{enumerate}
 \item $P(\D)$ ist hypoelliptisch.
