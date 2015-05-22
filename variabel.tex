@@ -61,6 +61,12 @@ und der Haupttypabschätzung
 \end{equation}
 diskutiert werden. Hierbei sei $x_0\in\Omega$ fest gewählt und $\omega\Subset\Omega$ eine hinreichend kleine Umgebung von $x_0$. Die Größe von $\omega$ hängt vom Verhalten der Koeffizienten ab. Die Gültigkeit einer solchen lokalen Abschätzung für jedes $x_0\in\Omega$ impliziert offenbar das entsprechende Resultat auf jeder relativ kompakten Teilmenge $\Omega'\Subset\Omega$.
 
+Wir schreiben im folgenden kurz 
+\begin{equation}
+    \|u\|_{(m)} = \sum_{|\alpha|\le m} \|\D^\alpha u\|
+\end{equation}
+für die $m$-te Sobolevnorm einer Funktion $u\in\rmC_0^\infty(\Omega)$. 
+
 \section{Hinreichende Bedingungen}
 \cite{Hormander:1955}
 
@@ -68,6 +74,27 @@ diskutiert werden. Hierbei sei $x_0\in\Omega$ fest gewählt und $\omega\Subset\O
 Angenommen, $P(x,\D)$ ist elliptisch. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
 \eqref{eq:4:locEll} mit einer von $\omega$ abhängigen Konstanten $C$ gilt. Umgekehrt impliziert \eqref{eq:4:locEll} die Elliptizität von $P(x,\D)$ auf $\omega$.
 \end{thm}
+\begin{proof}{\em Hinrichtung.}
+Ohne Beschränkung der Allgemeinheit nehmen wir an der Ursprung liege im Gebiet und es gelte $x_0=0$. Sei weiter $P(\D)=P(0,\D)=\sum_\alpha a_\alpha(0)\D^\alpha$ der Operator der entsteht, wenn man in die Koeffizienten den Wert $0$ einsetzt. Dann gilt für alle $u\in\rmC_0^\infty(\Omega)$
+\begin{equation}
+ \|u\|_{(m)} \le C  \| P(\D) u\| 
+\end{equation}
+da $P(0,\D)$ elliptischer Operator mit konstanten Koeffizienten ist. Weiter existiert zu jedem $\epsilon>0$ ein $\delta>0$, so dass
+$|a_\alpha(x)-a_\alpha(0)|\le \epsilon$ für $|x|\le\delta$. Damit impliziert die Dreiecksungleichung
+\begin{equation}
+  \| P(\D) u - P(x,\D) u\| \le \epsilon \sum_{|\alpha|\le m} \|\D^\alpha u\| = \epsilon \|u\|_{(m)}
+\end{equation}
+für alle $u\in\rmC_0^\infty(B_\epsilon)$. Für $\epsilon$ klein genug folgt damit die Behauptung. $\bullet$\qquad {\em Rückrichtung.} Sei $\xi\in\R^n\setminus\{0\}$ und 
+$\psi\in\rmC_0^\infty(\omega)$. Dann gilt für $u_\lambda (x)=\psi(x) \e^{\i \lambda x\cdot\xi}$ mit der Leibnizformel
+\begin{equation}
+    P(x,\D) u_\lambda (x) = \e^{\i \lambda x\cdot \xi} \sum_\alpha P^{(\alpha)}(x,\lambda\xi) \frac{ \D^\alpha\psi(x)}{\alpha!}
+\end{equation}
+und die Gültigkeit der Abschätzung  \eqref{eq:4:locEll}  impliziert
+\begin{equation}
+    \| u_\lambda\|_{(m)}^2 \simeq \sum_{|\alpha|\le m} \| \D^\alpha u_\lambda\|^2 \lesssim \left\| \sum_\alpha P^{(\alpha)}(x,\lambda\xi) \frac{ \D^\alpha\psi(x)}{\alpha!} \right\|^2. 
+\end{equation}
+{\sl Die linke Seite ist ein Polynom vom Grad $2m$ in $\lambda$ mit führenden Koeffizienten $\|\psi\|$. Damit muss die rechte Seite ebenso ein Polynom vom Grad $2m$ sein und einen größeren führenden Koeffizienten besitzen. Angenommen, $p(x,\xi)=0$ für ein $x\in\Omega$ und $\xi\in\R^n$, dann wäre der führende Koeffizient der rechten Seite in $\lambda$ für kleine Träger von $\psi$ um $x$ beliebig klein zu bekommen. Widerspruch.}\marginpar{noch zu korrigieren}
+\end{proof}
 
 Ein Operator $P(x,\D)$ wird als  \eIndex[Differentialoperator]{von reellem Haupttyp}, falls Hauptsymbol $p(x,\xi)$ reellwertig ist. Unter der Voraussetzung stimmen $P(x,\D)$ und sein formal adjungierter ${}^tP(x,\D)$ bis auf einen Operator der Ordnung $m-1$ überein. Allgemeiner heißt $P(x,\D)$ \eIndex[Differentialoperator]{wesentlich normal}, falls die  \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$
 \begin{equation}

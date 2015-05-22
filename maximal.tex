@@ -357,13 +357,13 @@ E=E_1 + E_2,
 \end{equation}
 wobei die Distributionen $E_1$ und $E_2$ durch
 \begin{equation}\label{distr5}
-\langle E_1,\check u\rangle = (2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{\widehat u(\xi)}{P(\xi)}\d\xi, \qquad 
-\langle E_2, \check u\rangle = (2\pi)^{-n/2} \int_{\Gamma_{\le R}} \frac{\widehat u(\xi)}{P(\xi)}\d \xi
+\langle E_1,\check u\rangle = (2\pi)^{-n} \int_{|\xi|\ge R} \frac{\widehat u(\xi)}{P(\xi)}\d\xi, \qquad 
+\langle E_2, \check u\rangle = (2\pi)^{-n} \int_{\Gamma_{\le R}} \frac{\widehat u(\xi)}{P(\xi)}\d \xi
 \end{equation}
 für $u\in\rmC_0^\infty(\R^n)$ gegeben sind. Die Distribution $E_2$ ist regulär und durch eine (reell) analytische 
 Funktion dargestellt, da mit der Definition von $\widehat u$
 \begin{equation}
-\langle E_2, \check u\rangle = (2\pi)^{-n} \int_{\Gamma_{\le R}} \frac{\mathrm d\xi}{P(\xi)} \int u(x) \e^{-\i x\cdot\xi}\d x= (2\pi)^{-n} \int \check u(x) \, \int_{\Gamma_{\le R}}\frac{\e^{\i x\cdot \xi}}{P(\xi)}\d \xi \d x
+\langle E_2, \check u\rangle = (2\pi)^{-n} \int_{\Gamma_{\le R}} \frac{\mathrm d\xi}{P(\xi)} \int u(x) \e^{-\i x\cdot\xi}\d x= (2\pi)^{-n/2} \int \check u(x) \, \int_{\Gamma_{\le R}}\frac{\e^{\i x\cdot \xi}}{P(\xi)}\d \xi \d x
 \end{equation}
 folgt und somit $E_2$ durch
 \begin{equation}
@@ -373,8 +373,8 @@ gegeben ist. Da $\Gamma_{\le R}$ kompakt ist konvergiert das Integral lokal glei
 
 Sei nun $u\in \rmL^2(\R^n)$ mit $\supp u\Subset\R^n$ kompakt. Die Faltung $P^{(\alpha)}(\D)E_2 *u$ ist dann reell analytisch.  Aussage ({\bf ii}) folgt also, wenn wir zeigen, dass $P^{(\alpha)}(\D) E_1 * u$ quadratintegrierbar ist.  Sei  dazu $\phi \in\rmC_0^\infty(\R^n)$. Dann ist die Funktion $u*\phi$ auch in $\rmC_0^\infty(\R^n)$ und im Sinne von \eqref{distr5} folgt
 \begin{equation}
-\langle P^{(\alpha)} (\D) E_1 * u, \check \phi\rangle  %= P^{(\alpha)}(\D) E_1 * u * \phi(0) 
-=(2\pi)^{-n/2} \int_{|\xi|\ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \widehat \phi(\xi) \d \xi,
+\langle P^{(\alpha)} (\D) E_1 * u, \check \phi\rangle  
+= \int_{|\xi|\ge R} \frac{P^{(\alpha)}(\xi)}{P(\xi)} \widehat u(\xi) \widehat \phi(\xi) \d \xi,
 \end{equation}     
 so dass die Fouriertransformierte von $P^{(\alpha)}(\D) E_1 * u$ eine Funktion ist, die für $|\xi|<R$ verschwindet und für $|\xi|\ge R$ durch $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$ gegeben ist. Da nach Satz \ref{thm:3:3.3}~{\bf (iii)} $P^{ (\alpha)}(\xi)/P(\xi)$ für $|\xi|>R$ beschränkt ist, ist  $\widehat u(\xi)P^{(\alpha)}(\xi)/P(\xi)$
 quadratintegrierbar und Aussage ({\bf ii}) folgt.
