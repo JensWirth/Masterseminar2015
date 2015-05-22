@@ -113,20 +113,34 @@ die \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert dur
 \begin{equation}
     \{ p,\overline p\} (x,\xi) = \sum_{j=1}^n \bigg(\frac{\partial p(x,\xi)}{\partial \xi_j} \frac{\partial \overline p (x,\xi)}{\partial x_j} - \frac{\partial \overline p(x,\xi)}{\partial \xi_j}\frac{\partial  p(x,\xi)}{\partial x_j} \bigg)    = 0 
 \end{equation}
-für alle $\xi\in\R^n$ verschwindet. Für solche Operatoren ist der Kommutator zwischen $P(x,\D)$ und ${}^t P(x,\D)$ ein Operator der Ordnung $2m-2$ (statt trivialerweise nur $2m-1$).
+für alle $\xi\in\R^n$ verschwindet. Für solche Operatoren ist der Kommutator zwischen $P(x,\D)$ und ${}^t P(x,\D)$ ein Operator der Ordnung $2m-2$ (statt trivialerweise nur $2m-1$). Operatoren mit $\{p,\overline p\}=0$ werden als \eIndex[Differentialoperator]{wesentlich normal} bezeichnet.
 
-Ist $P(\D)$ ein Operator vom Haupttyp mit konstanten Koeffizienten, so existiert insbesondere eine Konstante $C$, so dass
-\begin{equation}
-  \forall u\in\rmC_0^\infty(\Omega)\quad:\quad  \sum_{|\beta|<m} \| \D^\beta u\| \le C \| P(\D) u \|
+
+Während die bisher für Operatoren mit konstanten Koeffizienten gezeigten Aussagen und Abschätzungen im wesentlichen unabhängig vom Gebiet waren, 
+treten bei Operatoren mit variablen Koeffizienten neue Effekte auf. Betrachtet man jedoch hinreichend {\em kleine} Gebiete, so kann man Abschätzungen auf den Fall konstanter Koeffizienten zurückführen. Das soll am Beispiel der Elliptizitätsabschätzung
+\begin{equation}\label{eq:4:locEll}
+\forall u\in\rmC_0^\infty(\omega)\quad:\quad      \sum_{|\beta|\le m} \| \D^\beta u\| \le C \| P(x,\D) u \|
 \end{equation}
-gilt. Im Falle variabler Koeffizienten suchen wir eine solche Abschätzung lokal und fragen, ob für $u$ mit hinreichend kleinem kompaktem Träger entsprechend
-\begin{equation}
-\forall u\in\rmC_0^\infty(\Omega')\quad:\quad      \sum_{|\beta|<m} \| \D^\beta u\| \le C \| P(x,\D) u \|
+und der Haupttypabschätzung 
+\begin{equation}\label{eq:4:locHT}
+\forall u\in\rmC_0^\infty(\omega)\quad:\quad      \sum_{|\beta|\le m-1} \| \D^\beta u\| \le C \| P(x,\D) u \|
 \end{equation}
-gilt.
+diskutiert werden. Hierbei sei $x_0\in\Omega$ fest gewählt und $\omega\Subset\Omega$ eine hinreichend kleine Umgebung von $x_0$. Die Größe von $\omega$ hängt vom Verhalten der Koeffizienten ab. Die Gültigkeit einer solchen lokalen Abschätzung für jedes $x_0\in\Omega$ impliziert offenbar das entsprechende Resultat auf jeder relativ kompakten Teilmenge $\Omega'\Subset\Omega$.
 
 \section{Hinreichende Bedingungen}
 \cite{Hormander:1955}
+
+\begin{thm}
+Angenommen, $P(x,\D)$ ist elliptisch. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
+\eqref{eq:4:locEll} mit einer von $\omega$ abhängigen Konstanten $C$ gilt. Umgekehrt impliziert \eqref{eq:4:locEll} die Elliptizität von $P(x,\D)$ auf $\omega$.
+\end{thm}
+
+
+\begin{thm}
+Angenommen, $P(x,\D)$ ist von reellem Haupttyp. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
+\eqref{eq:4:locHT} mit einer von $\omega$ abhängigen Konstanten $C$ gilt.
+\end{thm}
+Bemerkung: Die Umkehrung gilt nicht. Siehe später.
 
 
 \section{Notwendige Bedingungen}
