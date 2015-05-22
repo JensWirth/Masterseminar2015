@@ -31,65 +31,7 @@
 %\renewcommand{\k}{\mathfrak{k}}
 %\newcommand{\m}{\mathfrak{m}}
 %\renewcommand{\o}{\overline}
-\chapter{Operatoren von reellem Haupttyp}
-%<<<<<<< HEAD
-%%\cite{Hormander:1960a}
-%\section{Notation und Vorbereitung}
-%
-%Im folgenden sei $\P$ ein Differentialoperator auf einem Gebiet $\Omega \subset \R^n$, gegeben durch
-%\[
-%\P = \sum_{|\alpha| \le m} a_\alpha (x) D^\alpha.
-%\]
-%
-%
-%\begin{df}
-%	Für $\xi \in \C^n$ bezeichnen wir mit
-%	\[
-%	p(x,\xi) = \sum_{|\alpha| = m} a_\alpha (x) \xi^\alpha
-%	\]
-%	das \emph{Hauptsymbol} oder das \emph{charakteristische Polynom} von $\P$. $\P$ heißt von \emph{reellem Haupttyp}, wenn für reelle $\xi$ auch $p(x,\xi)$ reell ist und für reelle $\xi \neq 0$ nicht alle partiellen Ableitungen $\partial p(x,\xi) / \partial \xi_i$ gleichzeitig verschwinden.
-%\end{df} 
-%Wir verwenden für Vektoren $\xi^1, \ldots, \xi^m$ die Notation
-%\[
-%p(x,\xi_1, \ldots, \xi_m) = \sum_{|\alpha|=m} a_\alpha(x)\xi_1^\alpha \cdots \xi_m^\alpha (?)
-%\]
-%und für $k_1 + \ldots + k_p=m$ schreiben wir auch $p(x,\xi_1^{k_1}, \ldots, \xi_p^{k_p})$, wenn $k_i$ Argumente gleich $\xi_i$ sein sollen.
-%\begin{lem}
-%Für den Tensor $T^{ik}$ gilt die Gleichung
-%\[
-%\sum_{i=1}^{n} (\zeta_i - \overline \zeta_i) T^{ik}(\zeta, \o \zeta)  =
-%p(\zeta) \dfrac{\partial p(\o \zeta)}{\partial \o \zeta_k} - p(\o \zeta) \dfrac{\partial p( \zeta)}{\partial  \zeta_k}.
-%\]
-%\end{lem}
-%\begin{proof}
-%
-%\end{proof}
-%\begin{df}
-%	Für variable $\xi, \eta$ definieren wir die Tensoren
-%	\begin{align*}
-%	\sum_{i,k=1}^n R^{ik}(\zeta, \overline \zeta) \xi_i \eta_k &= m \sum_{j=0}^{m-1} p(\zeta^j, \overline \zeta^{m-1-j},\xi) p(\zeta^{m-1-j},\overline \zeta^j ,\eta), \\
-%	\sum_{i,k=1}^n S^{ik}(\zeta, \overline \zeta) \xi_i \eta_k &= m \sum_{j=0}^{m-1} p(\zeta^j, \overline \zeta^{m-j}) p(\zeta^{m-1-j},\overline \zeta^{j-1} ,\xi,\eta)
-%	\end{align*}
-%	sowie den symmetrischen Tensor $T^{ik} = R^{ik}-S^{ik}$, wobei wir den Punkt $x$ in der Notation zur Übersichtlichkeit unterschlagen.
-%\end{df}
-%
-%\section{a}
-%Wir nehmen im Folgenden an, dass $\P$ in einer Umgebung einer Sphäre $|x| \le A$ in $\R^n$ definiert ist.
-%
-%\begin{thm}
-%	Sei $\P$ von reellem Haupttyp, die Koeffizienten von $p(x,\xi)$ seien stetig differenzierbar und die anderen Koeffizienten von $\P$ stetig. Dann existiert eine Umgebung $\Omega$ der Null, sodass
-%	\begin{align}
-%	\sum_{|\alpha| \le m} \lVert D^\alpha u \rVert^2 \le C \lVert \P u \rVert^2, \hspace{0.5cm} u \in C_0^\infty (\Omega).
-%	\end{align}
-%\end{thm}
-%
-%\begin{proof}
-%	
-%\end{proof}
-%=======
-%
-
-
+\chapter{Operatoren mit variablen Koeffizienten}
 
 Zur Notation: Sei $\Omega\subset\R^n$ ein Gebiet und 
 \begin{equation}
@@ -108,14 +50,6 @@ als Polynome auf $\C^n$ mit Koeffizienten aus $\rmC^\infty(\Omega)$. Analog zu d
 \end{equation}
 für alle $\xi\in\R^n\setminus\{0\}$ erfüllt.
 \end{itemize}
-Interessant sind Operatoren \eIndex[Differentialoperator]{von reellem Haupttyp}, für diese ist zusätzlich $p(x,\xi)$ reellwertig. Dann stimmt $P(x,\D)$ bis auf einen Operator der Ordnung $m-1$ mit seinem formal adjungierten ${}^t{P}(x,\D)$ \"uberein. Für komplexwertige Hauptsymbole fordert man oft allgemeiner, dass
-die \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$.
-\begin{equation}
-    \{ p,\overline p\} (x,\xi) = \sum_{j=1}^n \bigg(\frac{\partial p(x,\xi)}{\partial \xi_j} \frac{\partial \overline p (x,\xi)}{\partial x_j} - \frac{\partial \overline p(x,\xi)}{\partial \xi_j}\frac{\partial  p(x,\xi)}{\partial x_j} \bigg)    = 0 
-\end{equation}
-für alle $\xi\in\R^n$ verschwindet. Für solche Operatoren ist der Kommutator zwischen $P(x,\D)$ und ${}^t P(x,\D)$ ein Operator der Ordnung $2m-2$ (statt trivialerweise nur $2m-1$). Operatoren mit $\{p,\overline p\}=0$ werden als \eIndex[Differentialoperator]{wesentlich normal} bezeichnet.
-
-
 Während die bisher für Operatoren mit konstanten Koeffizienten gezeigten Aussagen und Abschätzungen im wesentlichen unabhängig vom Gebiet waren, 
 treten bei Operatoren mit variablen Koeffizienten neue Effekte auf. Betrachtet man jedoch hinreichend {\em kleine} Gebiete, so kann man Abschätzungen auf den Fall konstanter Koeffizienten zurückführen. Das soll am Beispiel der Elliptizitätsabschätzung
 \begin{equation}\label{eq:4:locEll}
@@ -135,9 +69,14 @@ Angenommen, $P(x,\D)$ ist elliptisch. Dann existiert zu jedem $x_0\in\Omega$ ein
 \eqref{eq:4:locEll} mit einer von $\omega$ abhängigen Konstanten $C$ gilt. Umgekehrt impliziert \eqref{eq:4:locEll} die Elliptizität von $P(x,\D)$ auf $\omega$.
 \end{thm}
 
+Ein Operator $P(x,\D)$ wird als  \eIndex[Differentialoperator]{von reellem Haupttyp}, falls Hauptsymbol $p(x,\xi)$ reellwertig ist. Unter der Voraussetzung stimmen $P(x,\D)$ und sein formal adjungierter ${}^tP(x,\D)$ bis auf einen Operator der Ordnung $m-1$ überein. Allgemeiner heißt $P(x,\D)$ \eIndex[Differentialoperator]{wesentlich normal}, falls die  \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$
+\begin{equation}
+    \{ p,\overline p\} (x,\xi) = \sum_{j=1}^n \bigg(\frac{\partial p(x,\xi)}{\partial \xi_j} \frac{\partial \overline p (x,\xi)}{\partial x_j} - \frac{\partial \overline p(x,\xi)}{\partial \xi_j}\frac{\partial  p(x,\xi)}{\partial x_j} \bigg)    = 0 
+\end{equation}
+für alle $\xi\in\R^n$ verschwindet. In diesem Fall ist der Kommutator von $P(x,\D)$ und ${}^tP(x,\D)$ von Ordnung $2m-2$ (statt nur $2m-1$).
 
 \begin{thm}
-Angenommen, $P(x,\D)$ ist von reellem Haupttyp. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
+Angenommen, $P(x,\D)$ ist vom Haupttyp und wesentlich normal. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
 \eqref{eq:4:locHT} mit einer von $\omega$ abhängigen Konstanten $C$ gilt.
 \end{thm}
 Bemerkung: Die Umkehrung gilt nicht. Siehe später.
