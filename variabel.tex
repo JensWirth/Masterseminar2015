@@ -1,43 +1,16 @@
 % !TEX root = main.tex
-%\newcommand{\A}{\forall}
-%\newcommand{\E}{\exists}
-%\newcommand{\imp}{\Rightarrow}
-%\renewcommand{\labelenumi}{\roman{enumi})}
-%
-%\newcommand{\Sph}{\mathbb S}
-%\renewcommand{\P}{\mathcal{P}}
-%\newcommand{\Pin}{\textbf{Pin}}
-%\newcommand{\Q}{\mathbb Q}
-%\renewcommand{\H}{\mathbb H}
-%\newcommand{\Ri}{\widetilde{R}}
-%\newcommand{\K}{\mathbb{K}}
-%\newcommand{\lle}{\preccurlyeq}
-%\newcommand{\G}{\mathcal{G}}
-%\newcommand{\M}{\widetilde{M}}
-%\newcommand{\Or}{\mathcal{O}}
-%\renewcommand{\le}{\leqslant}
-%\renewcommand{\ge}{\geqslant}
-%\renewcommand{\O}{\textbf{O}}
-%\newcommand{\SO}{\textbf{SO}}
-%\newcommand{\U}{\textbf{U}}
-%\newcommand{\Ad}{\text{Ad}}
-%\newcommand{\SU}{\textbf{SU}}
-%\newcommand{\Symp}{\textbf{Sp}}
-%\newcommand{\id}{\text{id}}
-%\newcommand{\Cl}{\textbf{Cl}}
-%\newcommand{\Ind}{\text{Ind}}
-%\newcommand{\proofed}{$\mbox{}$\hfill $\blacksquare{}$\\} 
-%\newcommand{\g}{\mathfrak{g}}
-%\renewcommand{\k}{\mathfrak{k}}
-%\newcommand{\m}{\mathfrak{m}}
-%\renewcommand{\o}{\overline}
 \chapter{Operatoren mit variablen Koeffizienten}
 
-Zur Notation: Sei $\Omega\subset\R^n$ ein Gebiet und 
+Zur Notation: Sei $\Omega\subset\R^n$ ein Gebiet und weiterhin 
+\begin{equation}
+    \|u\|_{(m)} = \sum_{|\alpha|\le m} \|\D^\alpha u\|
+\end{equation}
+die $m$-te Sobolevnorm einer Funktion $u\in\rmC_0^\infty(\Omega)$. Im folgenden betrachten wir Differentialausdrücke
 \begin{equation}
    P(x,\D) = \sum_{|\alpha|\le m} a_\alpha(x) \D^\alpha
 \end{equation}
-ein Differentialausdruck mit Koeffizienten $a_\alpha\in\rmC^\infty(\Omega)$. Wir definieren \eIndex[Differentialoperator]{Symbol} und \eIndex[Differentialoperator]{Hauptsymbol}
+mit Koeffizienten $a_\alpha\in\rmC^\infty(\Omega)$. Offensichtlich gilt $\|P(x,\D)u\|\le C\|u\|_{(m)}$ mit einer nur von der Größe der Koeffizienten abhängenden Konstanten $C$.
+Wir definieren \eIndex[Differentialoperator]{Symbol} und \eIndex[Differentialoperator]{Hauptsymbol}
 \begin{equation}
    P(x,\zeta) = \sum_{|\alpha|\le m} a_\alpha(x)\zeta^\alpha,\qquad p(x,\zeta)=\sum_{|\alpha|=m} a_\alpha(x)\zeta^\alpha
 \end{equation}
@@ -50,31 +23,27 @@ als Polynome auf $\C^n$ mit Koeffizienten aus $\rmC^\infty(\Omega)$. Analog zu d
 \end{equation}
 für alle $\xi\in\R^n\setminus\{0\}$ erfüllt.
 \end{itemize}
-Während die bisher für Operatoren mit konstanten Koeffizienten gezeigten Aussagen und Abschätzungen im wesentlichen unabhängig vom Gebiet waren, 
+Während die für Operatoren mit konstanten Koeffizienten gezeigten Aussagen und Abschätzungen im wesentlichen unabhängig vom Gebiet waren, 
 treten bei Operatoren mit variablen Koeffizienten neue Effekte auf. Betrachtet man jedoch hinreichend {\em kleine} Gebiete, so kann man Abschätzungen auf den Fall konstanter Koeffizienten zurückführen. Das soll am Beispiel der Elliptizitätsabschätzung
 \begin{equation}\label{eq:4:locEll}
-\forall u\in\rmC_0^\infty(\omega)\quad:\quad      \sum_{|\beta|\le m} \| \D^\beta u\| \le C \| P(x,\D) u \|
+\forall u\in\rmC_0^\infty(\omega)\quad:\quad    \| u\|_{(m)} \le C \| P(x,\D) u \|
 \end{equation}
 und der Haupttypabschätzung 
 \begin{equation}\label{eq:4:locHT}
-\forall u\in\rmC_0^\infty(\omega)\quad:\quad      \sum_{|\beta|\le m-1} \| \D^\beta u\| \le C \| P(x,\D) u \|
+\forall u\in\rmC_0^\infty(\omega)\quad:\quad   \| u\|_{(m-1)} \le C \| P(x,\D) u \|
 \end{equation}
-diskutiert werden. Hierbei sei $x_0\in\Omega$ fest gewählt und $\omega\Subset\Omega$ eine hinreichend kleine Umgebung von $x_0$. Die Größe von $\omega$ hängt vom Verhalten der Koeffizienten ab. Die Gültigkeit einer solchen lokalen Abschätzung für jedes $x_0\in\Omega$ impliziert offenbar das entsprechende Resultat auf jeder relativ kompakten Teilmenge $\Omega'\Subset\Omega$.
+diskutiert werden. Hierbei sei $x_0\in\Omega$ fest gewählt und $\omega\Subset\Omega$ eine hinreichend kleine Umgebung von $x_0$. Die Größe von $\omega$ hängt vom Verhalten der Koeffizienten ab. Die Gültigkeit einer solchen lokalen Abschätzung für jedes $x_0\in\Omega$ impliziert offenbar das entsprechende Resultat auf jeder relativ kompakten Teilmenge $\Omega'\Subset\Omega$. Konstanten hängen von der Wahl von $\omega$ beziehungsweise $\Omega'$ ab.
 
-Wir schreiben im folgenden kurz 
-\begin{equation}
-    \|u\|_{(m)} = \sum_{|\alpha|\le m} \|\D^\alpha u\|
-\end{equation}
-für die $m$-te Sobolevnorm einer Funktion $u\in\rmC_0^\infty(\Omega)$. 
+
 
 \section{Hinreichende Bedingungen}
 \cite{Hormander:1955}
 
 \begin{thm}
 Angenommen, $P(x,\D)$ ist elliptisch. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
-\eqref{eq:4:locEll} mit einer von $\omega$ abhängigen Konstanten $C$ gilt. Umgekehrt impliziert \eqref{eq:4:locEll} die Elliptizität von $P(x,\D)$ auf $\omega$.
+\eqref{eq:4:locEll} mit einer von $\omega$ abhängigen Konstanten $C$ gilt. 
 \end{thm}
-\begin{proof}{\em Hinrichtung.}
+\begin{proof}
 Ohne Beschränkung der Allgemeinheit nehmen wir an der Ursprung liege im Gebiet und es gelte $x_0=0$. Sei weiter $P(\D)=P(0,\D)=\sum_\alpha a_\alpha(0)\D^\alpha$ der Operator der entsteht, wenn man in die Koeffizienten den Wert $0$ einsetzt. Dann gilt für alle $u\in\rmC_0^\infty(\Omega)$
 \begin{equation}
  \|u\|_{(m)} \le C  \| P(\D) u\| 
@@ -84,16 +53,7 @@ $|a_\alpha(x)-a_\alpha(0)|\le \epsilon$ für $|x|\le\delta$. Damit impliziert di
 \begin{equation}
   \| P(\D) u - P(x,\D) u\| \le \epsilon \sum_{|\alpha|\le m} \|\D^\alpha u\| = \epsilon \|u\|_{(m)}
 \end{equation}
-für alle $u\in\rmC_0^\infty(B_\epsilon)$. Für $\epsilon$ klein genug folgt damit die Behauptung. $\bullet$\qquad {\em Rückrichtung.} Sei $\xi\in\R^n\setminus\{0\}$ und 
-$\psi\in\rmC_0^\infty(\omega)$. Dann gilt für $u_\lambda (x)=\psi(x) \e^{\i \lambda x\cdot\xi}$ mit der Leibnizformel
-\begin{equation}
-    P(x,\D) u_\lambda (x) = \e^{\i \lambda x\cdot \xi} \sum_\alpha P^{(\alpha)}(x,\lambda\xi) \frac{ \D^\alpha\psi(x)}{\alpha!}
-\end{equation}
-und die Gültigkeit der Abschätzung  \eqref{eq:4:locEll}  impliziert
-\begin{equation}
-    \| u_\lambda\|_{(m)}^2 \simeq \sum_{|\alpha|\le m} \| \D^\alpha u_\lambda\|^2 \lesssim \left\| \sum_\alpha P^{(\alpha)}(x,\lambda\xi) \frac{ \D^\alpha\psi(x)}{\alpha!} \right\|^2. 
-\end{equation}
-{\sl Die linke Seite ist ein Polynom vom Grad $2m$ in $\lambda$ mit führenden Koeffizienten $\|\psi\|$. Damit muss die rechte Seite ebenso ein Polynom vom Grad $2m$ sein und einen größeren führenden Koeffizienten besitzen. Angenommen, $p(x,\xi)=0$ für ein $x\in\Omega$ und $\xi\in\R^n$, dann wäre der führende Koeffizient der rechten Seite in $\lambda$ für kleine Träger von $\psi$ um $x$ beliebig klein zu bekommen. Widerspruch.}\marginpar{noch zu korrigieren}
+für alle $u\in\rmC_0^\infty(B_\epsilon)$. Für $\epsilon$ klein genug folgt damit die Behauptung.
 \end{proof}
 
 Ein Operator $P(x,\D)$ wird als  \eIndex[Differentialoperator]{von reellem Haupttyp}, falls Hauptsymbol $p(x,\xi)$ reellwertig ist. Unter der Voraussetzung stimmen $P(x,\D)$ und sein formal adjungierter ${}^tP(x,\D)$ bis auf einen Operator der Ordnung $m-1$ überein. Allgemeiner heißt $P(x,\D)$ \eIndex[Differentialoperator]{wesentlich normal}, falls die  \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$
