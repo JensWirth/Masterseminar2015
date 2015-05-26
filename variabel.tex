@@ -1,15 +1,15 @@
 % !TEX root = main.tex
 \chapter{Operatoren mit variablen Koeffizienten}
 
-Zur Notation: Sei $\Omega\subset\R^n$ ein Gebiet und weiterhin 
+Zur Notation: Sei $\Omega\subset\R^n$ ein Gebiet und bezeichne weiterhin 
 \begin{equation}
     \|u\|_{(m)} = \sum_{|\alpha|\le m} \|\D^\alpha u\|
 \end{equation}
-die $m$-te Sobolevnorm einer Funktion $u\in\rmC_0^\infty(\Omega)$. Im folgenden betrachten wir Differentialausdrücke
+die $m$-te Sobolevnorm einer Funktion $u\in\rmC_0^\infty(\Omega)$. Im folgenden betrachten wir mininmale Operatoren zu Differentialausdrücken
 \begin{equation}
    P(x,\D) = \sum_{|\alpha|\le m} a_\alpha(x) \D^\alpha
 \end{equation}
-mit Koeffizienten $a_\alpha\in\rmC^\infty(\Omega)$. Offensichtlich gilt $\|P(x,\D)u\|\le C\|u\|_{(m)}$ mit einer nur von der Größe der Koeffizienten abhängenden Konstanten $C$.
+mit Koeffizienten $a_\alpha\in\rmC^\infty(\Omega)$. Offensichtlich gilt $\|P(x,\D)u\|\le C\|u\|_{(m)}$ für alle $u\in\rmC_0^\infty(\Omega)$ mit einer nur von der Größe der Koeffizienten abhängenden Konstanten $C$.
 Wir definieren \eIndex[Differentialoperator]{Symbol} und \eIndex[Differentialoperator]{Hauptsymbol}
 \begin{equation}
    P(x,\zeta) = \sum_{|\alpha|\le m} a_\alpha(x)\zeta^\alpha,\qquad p(x,\zeta)=\sum_{|\alpha|=m} a_\alpha(x)\zeta^\alpha
@@ -37,7 +37,7 @@ diskutiert werden. Hierbei sei $x_0\in\Omega$ fest gewählt und $\omega\Subset\O
 
 
 \section{Hinreichende Bedingungen}
-\cite{Hormander:1955}
+
 
 \begin{thm}
 Angenommen, $P(x,\D)$ ist elliptisch. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
@@ -62,35 +62,36 @@ Ein Operator $P(x,\D)$ wird als  \eIndex[Differentialoperator]{von reellem Haupt
 \end{equation}
 für alle $\xi\in\R^n$ verschwindet. In diesem Fall ist der Kommutator von $P(x,\D)$ und ${}^tP(x,\D)$ von Ordnung $2m-2$ (statt nur $2m-1$).
 
-\begin{thm}
+Das folgende Resultat ergibt sich aus \cite[Theorem~4.1]{Hormander:1955} zusammen mit der Vorbemerkung zu diesem Kapitel. Die Umkehrung dieses Satzes gilt nicht.
+
+\begin{thm}[{\cite[Theorem~4.1]{Hormander:1955}}]
 Angenommen, $P(x,\D)$ ist vom Haupttyp und wesentlich normal. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
 \eqref{eq:4:locHT} mit einer von $\omega$ abhängigen Konstanten $C$ gilt.
 \end{thm}
-Bemerkung: Die Umkehrung gilt nicht. Siehe später.
-
+\begin{proof}[Beweisskizze]
+Für den Originalbeweis konstruiert man wiederum Energieintegrale und schätzt diese mittels partieller Integration ab.
+\marginpar{zu Ergänzen}
+\end{proof}
 
 \section{Notwendige Bedingungen}
-Im folgenden sei $\Omega \subset \R^n$ eine offene Umgebung der Null. Zur Übersichtlichkeit schreiben wir
-\begin{align*}
-\lVert u \rVert_k := \left( \sum_{|\alpha| \le k} \lVert D^\alpha u \rVert^2 \right)^{\frac{1}{2}}.
-\end{align*}
+Im folgenden sei $\Omega \subset \R^n$ eine offene Umgebung der Null. 
 \begin{lem}
-Wir nehmen an, es existiert eine Funktion $u \in C^\infty (\Omega)$, sodass 
+Wir nehmen an, es existiert eine Funktion $u \in \rmC^\infty (\Omega)$, sodass 
 \begin{align}
 \label{grad}
-p(x, \nabla u) = o \left(|x|^2\right), \, x \rightarrow 0.
+p(x, \nabla u) = o \left(|x|^2\right), \qquad  x \rightarrow 0
 \end{align}
-Weiter habe $u$ die Taylorentwicklung \begin{align}
+und $u$ eine Taylorentwicklung 
+\begin{align}
 	\label{taylor}
-u(x) = i \sum_{j=1}^{n} x_i \xi_j + \dfrac{1}{2} \sum_{j,k=1}^{n} x^j x^k \alpha_{jk} + O\left( |x|^3 \right),
+u(x) = \i \sum_{j=1}^{n} x_j \xi_j + \dfrac{1}{2} \sum_{j,k=1}^{n} x_j x_k \alpha_{jk} + \mathcal O\left( |x|^3 \right), \qquad x\to0
 \end{align}
-
-wobei $\xi_j$ reell sei mit 
+mit reellen $\xi_j$, einer symmetrischen Matrix $(\alpha_{jk})$ und $\Re \alpha_{jk}$ positiv definit besitzt. Gilt weiterhin  
 \begin{align}
 \label{normpart}
-\sum_{j=1}^{n}|\partial p(0,\xi)/\partial \xi_j|^2 \neq 0.
+\sum_{j=1}^{n}|\partial p(0,\xi)/\partial \xi_j|^2 \neq 0,
 \end{align}
-Zusätzlich sei die Matrix $\alpha_{jk}$ symmetrisch und die Matrix $\Re \alpha_{jk}$ negativ definit. Hat $P$ stetige Koeffizienten, so gilt
+so folgt
 \begin{align}
 \label{lm 1 eq}
 \sup \frac{ \lVert v \rVert_{m-1} }{ \lVert P(x,D)v \rVert_{L^2}} = \infty
