@@ -56,7 +56,7 @@ $|a_\alpha(x)-a_\alpha(0)|\le \epsilon$ für $|x|\le\delta$. Damit impliziert di
 für alle $u\in\rmC_0^\infty(B_\epsilon)$. Für $\epsilon$ klein genug folgt damit die Behauptung.
 \end{proof}
 
-Ein Operator $P(x,\D)$ wird als  \eIndex[Differentialoperator]{von reellem Haupttyp}, falls Hauptsymbol $p(x,\xi)$ reellwertig ist. Unter der Voraussetzung stimmen $P(x,\D)$ und sein formal adjungierter ${}^tP(x,\D)$ bis auf einen Operator der Ordnung $m-1$ überein. Allgemeiner heißt $P(x,\D)$ \eIndex[Differentialoperator]{wesentlich normal}, falls die  \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$
+Ein Operator $P(x,\D)$ wird als  \eIndex[Differentialoperator]{von reellem Haupttyp} bezeichnet, falls sein Hauptsymbol $p(x,\xi)$ reellwertig ist. Unter der Voraussetzung stimmen $P(x,\D)$ und sein formal adjungierter ${}^tP(x,\D)$ bis auf einen Operator der Ordnung $m-1$ überein. Allgemeiner heißt $P(x,\D)$ \eIndex[Differentialoperator]{wesentlich normal}, falls die  \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$
 \begin{equation}
     \{ p,\overline p\} (x,\xi) = \sum_{j=1}^n \bigg(\frac{\partial p(x,\xi)}{\partial \xi_j} \frac{\partial \overline p (x,\xi)}{\partial x_j} - \frac{\partial \overline p(x,\xi)}{\partial \xi_j}\frac{\partial  p(x,\xi)}{\partial x_j} \bigg)    = 0 
 \end{equation}
@@ -76,17 +76,18 @@ Für den Originalbeweis konstruiert man wiederum Energieintegrale und schätzt d
 \section{Notwendige Bedingungen}
 Im folgenden sei $\Omega \subset \R^n$ eine offene Umgebung der Null. 
 \begin{lem}
+	\label{lem1}
 Wir nehmen an, es existiert eine Funktion $u \in \rmC^\infty (\Omega)$, sodass 
 \begin{align}
 \label{grad}
-p(x, \nabla u) = o \left(|x|^2\right), \qquad  x \rightarrow 0
+p(x, \nabla u) = \textbf{o} \left(|x|^2\right), \qquad  x \rightarrow 0
 \end{align}
 und $u$ eine Taylorentwicklung 
 \begin{align}
 	\label{taylor}
 u(x) = \i \sum_{j=1}^{n} x_j \xi_j + \dfrac{1}{2} \sum_{j,k=1}^{n} x_j x_k \alpha_{jk} + \mathcal O\left( |x|^3 \right), \qquad x\to0
 \end{align}
-mit reellen $\xi_j$, einer symmetrischen Matrix $(\alpha_{jk})$ und $\Re \alpha_{jk}$ positiv definit besitzt. Gilt weiterhin  
+mit reellen $\xi_j$, einer symmetrischen Matrix $\alpha = (\alpha_{jk})$ und $\Re \alpha$ negativ definit, besitzt. Gilt weiterhin  
 \begin{align}
 \label{normpart}
 \sum_{j=1}^{n}|\partial p(0,\xi)/\partial \xi_j|^2 \neq 0,
@@ -94,13 +95,13 @@ mit reellen $\xi_j$, einer symmetrischen Matrix $(\alpha_{jk})$ und $\Re \alpha_
 so folgt
 \begin{align}
 \label{lm 1 eq}
-\sup \frac{ \lVert v \rVert_{m-1} }{ \lVert P(x,D)v \rVert_{L^2}} = \infty
+\sup \frac{ \lVert v \rVert_{m-1} }{ \lVert P(x,D)v \rVert} = \infty
 \end{align}
 für alle $v \in C_0^\infty(\Omega)$.
 \end{lem}
 \begin{proof}
-Weil $\Re \alpha_{jk}$ negativ definit ist, gilt\begin{align*}
-\Re u(x) = \sum_{j,k=1}^{n} x^jx^k \Re \alpha_{jk} + O\left( |x|^3 \right) \le -2a |x|^2 + O\left( |x|^3 \right) (?)
+Weil $\Re \alpha$ negativ definit ist, gilt\begin{align*}
+\Re u(x) = \sum_{j,k=1}^{n} x^jx^k \Re \alpha_{jk} + \mathcal{O}\left( |x|^3 \right) \le -2a |x|^2 + \mathcal{O}\left( |x|^3 \right) (?)
 \end{align*}
 mit $a<0$. Es folgt
 \begin{align}
@@ -109,15 +110,17 @@ mit $a<0$. Es folgt
 \end{align}
 für kleine $|x|$. Nach Verkleinerung von $\Omega$ nehmen wir an, dass (\ref{realteil}) überall gilt. Für $\phi \in C_0^\infty(\Omega)$, $t>0$ ist $v_t := \phi e^{tu} \in C_0^\infty(\Omega)$ und es gilt $|v_t| \le |\phi| e^{-at|x|^2}$. Wir zeigen nun
 \[
-\frac{\lVert v_t \rVert_{m-1}}{\lVert P(x,D)v_t \rVert_{L^2}} \rightarrow \infty, \, t \rightarrow \infty,
+\frac{\lVert v_t \rVert_{m-1}}{\lVert P(x,D)v_t \rVert} \rightarrow \infty, \, t \rightarrow \infty,
 \]
 woraus die Behauptung (\ref{lm 1 eq}) folgt.
 \end{proof}
 \begin{lem}
+	\label{lem2}
 Wir nehmen an, die Koeffizienten von $p$ seien $C^2$ im Ursprung und es gelte (\ref{normpart}). Dann gibt es eine Funktion $u \in C^\infty(\Omega)$ mit (\ref{grad}) und (\ref{taylor}) genau dann, wenn
 \begin{align}
-p(0, \xi) = 0, \\
-\sum_{k=1}^{n} \alpha_{jk}p^{(k)}(0,\xi) = -i \cdot p_j(0,\xi), \hspace{0.5cm} j=1, \ldots, n,
+p(0, \xi) &= 0, \\
+	\label{4.16}
+\sum_{k=1}^{n} \alpha_{jk}\dfrac{\partial p(0,\xi)}{\partial \xi_k} &= -i \cdot p_j(0,\xi), \hspace{0.5cm} j=1, \ldots, n,
 \end{align}
 wobei
 \begin{align}
@@ -127,4 +130,68 @@ p_j(x,\xi) = \dfrac{\partial p(x,\xi)}{\partial x_j}.
 
 \begin{proof}
 Für $u \in C^\infty(\Omega)$ ist klar, dass (\ref{grad}) genau dann erfüllt ist, wenn $p(x, \nabla u)$ und alle Ableitungen der Ordnung $\le 2$ im Ursprung verschwinden. (?)
+\end{proof}
+
+\begin{lem}
+	\label{lem3}
+Für zwei Vektoren $a=(a_1, \ldots, a_n), f=(f_1,\ldots,f_n) \in \C^n$ mit $a_j \neq 0$ für ein $j$ gibt es eine symmetrische Matrix $\alpha = (\alpha_{jk})$ mit negativ definitem Realteil, sodass
+\begin{align}
+	\label{laag1}
+	\alpha \cdot a = f
+\end{align}
+genau dann gilt, wenn
+\begin{align}
+	\label{laag2}
+\Re (f,a) < 0.
+\end{align}
+\end{lem}
+\begin{proof}
+Es gelte (\ref{laag1}). Multiplikation beider Seiten mit $\overline a_k$ und Aufaddieren ergibt unter Verwendung der Symmetrie von $\alpha$
+\[
+(f,a) = \sum_{k=1}^{n}f_k \overline{a_k} = \sum_{j,k=1}^{n} \alpha_{kj} a_j \overline a_k
+=  \sum_{j,k=1}^{n} \alpha_{kj} b_j b_k +  \sum_{j,k=1}^{n} \alpha_{kj} c_j c_k,
+\]
+wobei $a_j = b_j + ic_j$ sei. Da ein $b_j$ oder $c_j$ ungleich Null ist folgt (\ref{laag2}) wegen der Definitheit von $\Re \alpha$.\\ \\
+Es gelte nun umgekehrt (\ref{laag2}). Wir nehmen zunächst an, $a$ ist proportional zu einem reellen Vektor. Nach Multiplikation von $f$ und $a$ mit derselben komplexen Zahl können wir dann annehmen, dass $a$ reell ist. Mit $\alpha = \beta + i \gamma$, $f= g+ih$ wird aus (\ref{laag1}) $\beta a = g$, $\gamma a = h$. Dass eine reelle, symmetrische Matrix $\gamma$ mit $\gamma a = h$ existiert, ist offensichtlich. Schreiben wir weiter $g = g' + a (g,a)/2(a,a)$, so gilt $(g',a) = (g,a)/2 < 0$. Man rechnet dann leicht nach, dass die Matrix $\beta$, gegeben durch
+\[
+\beta x = \dfrac{(g,a)}{2(a,a)} x + \dfrac{(x,g')}{(a,g')} g',
+\]
+negativ definit und symmetrisch ist. Sei nun $\alpha$ nicht proportional zu einem reellen Vektor. Wir zeigen, dass 
+\[
+\alpha = \dfrac{\Re (f,a)}{(a,a)} I + i \gamma
+\]
+für ein reelles $\gamma$ die gewünschten Eigenschaften erfüllt. Die Bedingung an $\gamma$ schreibt sich dann als
+\begin{align}
+	i \gamma a = f',
+\end{align}
+wobei $f' = f - a \Re (f,a)/(a,a)$ die Eigenschaft
+\begin{align}
+	\label{Ebene}
+\Re (f',a) = 0
+\end{align}
+hat. Um die Existenz eines solchen $\gamma$ zu zeigen, stellen wir zunächst fest, dass die Menge der Vektoren in $\C^n$, die als $i \gamma a$, $\gamma \in \R^{n \times n}$ symmetrisch, geschrieben werden können, einen reellen Vektorraum bilden. Dieser ist für ein $g \in \C^n$ in der Hyperebene $\{ z \in \C^n : \Re (g,z) = 0 \}$ enthalten. Für jedes $\xi \in \R^n$ ist die Matrix $\gamma$, gegeben durch $\gamma x = \xi (x,\xi)$, symmetrisch und es folgt
+\[
+\Re i(\xi,g)(a,\xi) = 0.
+\]
+Insbesondere ist $(\xi,g)(a,\xi)$ immer reell. Da $a$ nicht proportional zu einem reellen Vektor ist, muss $g$ folglich ein reelles Vielfaches von $a$ sein. (?) Insbesondere ist $\Re(z,a) = 0 \Leftrightarrow \Re(z,g) = 0$ und $f'$ lässt sich wegen (\ref{Ebene}) als (?) $i \gamma a$ schreiben für eine reelle, symmetrische Matrix $\gamma$.  Es folgt die Behauptung
+\end{proof}
+
+\begin{thm}
+Es seien die Koeffizienten von $P(x,D)$ stetig und die Koeffizienten von $p$ seien $C^2$. Weiter gelte die Gleichung (\ref{eq:4:locHT}), gegeben durch
+\[
+  \| u\|_{(m-1)} \le C \| P(x,\D) u \| \quad \forall u\in\rmC_0^\infty(\Omega).
+\]
+Dann gilt 
+\begin{align}
+	\label{Beh}
+\{p,\overline p\} (x,\xi) = 0,
+\end{align}
+falls $p(x,\xi) = 0$ und $x \in \Omega, \xi \in \R^n$.
+\end{thm}
+\begin{proof}
+Wir nehmen ohne Einschränkung $x=0$ an. Weiterhin gelte
+\[
+\sum_{j=1}^{n}|\partial p(0,\xi)/\partial \xi_j|^2 \neq 0,
+\]
+denn sonst ist (\ref{Beh}) trivialerweise erfüllt. Die Lemmata \ref{lem1} und \ref{lem2} zeigen dann, dass die Gleichung (\ref{4.16}) für keine symmetrische Matrix mit negativ definitem Realteil erfüllt sein kann. Mit Lemma \ref{lem3} folgt deshalb $\{p,\overline p\}(x,\xi) \ge 0$. Das analoge Argument mit $-\xi$ anstatt $\xi$ liefert $\{p,\overline p\}(x,-\xi) \ge 0$. Weil $\{p,\overline p\}(x,\xi)$ eine ungerade Funktion in $\xi$ ist, folgt die Behauptung.
 \end{proof}
