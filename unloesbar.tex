@@ -2,3 +2,232 @@
 \chapter{Ein unlösbarer Operator}
 \cite{Lewy:1957}
 \cite{Hormander:1960b}
+
+Bis Anfang des 20. Jahrhunderts ging man davon aus, dass die lokale Existenz glatter Lösungen für lineare Differentialgleichungen stets gegeben sei. Forschungsergebnisse von Hans Lewy zeigten jedoch auf, dass dies nicht zwingend der Fall sein muss.  In diesem Kapitel soll eine lineare, partielle Differentialgleichung erster Ordnung in drei Variablen mit komplexwertigen $C^\infty$-Koeffizienten vorgestellt werden, welche in \textit{keiner} Umgebung eine glatte Lösung besitzt. Hierfür betrachtet man den durch
+\begin{equation}\label{lewy:differentialausdruck}
+\mathscr L := -\frac{\partial}{\partial x_1} -i\frac{\partial}{\partial x_2} +2\i(x_1+ix_2)\frac{\partial}{\partial y_1}
+\end{equation}
+definierten Differentialausdruck auf $C^1(\mathbb{R}^3;\mathbb{C})$-Funktionen $u=u(x_1,x_2,y_1)$. Der zweite Teil des Kapitels behandelt einen dieses Beispiel verallgemeinerten Satz und dessen Beweis von Lars Hörmander. Dieser gibt Kriterien an, unter welchen in keiner offenen Menge noch nicht einmal distributionelle Lösungen $u$ von $Pu=f$ existieren.
+
+\section{Ein motivierender Satz}
+
+Zunächst benötigen wir einen zentralen Satz, dessen Kontraposition uns später die Existenz obig angesprochener PDE motiviert.
+
+\begin{thm}\label{thm:1_lewy}
+Zu den reellen, unabhängigen Variablen $x_1,x_2,y_1\in\mathbb{R}$ und einer reellwertigen Funktion $\psi\in C^1(\mathbb{R})$ sei das Problem
+\begin{equation}\label{thm:1_lewy:gleichung}
+\mathscr Lu:= \left(-\frac{\partial}{\partial x_1} -i\frac{\partial}{\partial x_2} +2\i(x_1+ix_2)\frac{\partial}{\partial y_1}\right)u=\psi'(y_1)
+\end{equation}
+gegeben. Angenommen, in einer Umgebung $U=U(0,0,y_1^0)$ von $(0,0,y_1^0)$ existiere eine $C^1$-Lösung $u=u(x_1,x_2,y_1)$ von (\ref{thm:1_lewy:gleichung}), dann ist $\psi$ analytisch in $y_1=y_1^0$.
+\end{thm}
+
+\begin{proof}
+Wir integrieren (\ref{thm:1_lewy:gleichung}) über einen Kreis in der nach Voraussetzung existierenden Umgebung $U$ von $(0,0,y_0^1)$ mit 
+\begin{equation}
+x_1^2+x_2^2=t=\mathrm{const},\qquad y_1=\mathrm{const}.
+\end{equation}
+Sei $\theta$ derjenige Winkel gegeben durch
+\begin{equation}
+x_1+ix_2=\sqrt{t}\cdot \e^{\i\theta} =\e^{\i\theta +\log\sqrt{t}},
+\end{equation}
+so erhält man mit der Identität
+\begin{equation}
+\theta=\arctan\left(\frac{x_2}{x_1}\right),\qquad s:=\log\sqrt{t}
+\end{equation}
+der Kettenregel 
+\begin{equation}
+\frac{\partial}{\partial x_1}+i\frac{\partial}{\partial x_2}
+= \left(\frac{\partial}{\partial \theta} \frac{\partial\theta}{\partial x_1}+\frac{\partial}{\partial s}\frac{\partial s}{\partial x_1}\right)
++i \left(\frac{\partial}{\partial \theta} \frac{\partial\theta}{\partial x_2}+\frac{\partial}{\partial s}\frac{\partial s}{\partial x_2}\right),
+\end{equation}
+und obiger Konstruktion dann durch Nachrechnen
+\begin{equation}\label{thm:1_lewy:proof1}
+\frac{\partial}{\partial x_1} +i\frac{\partial}{\partial x_2}=\frac{\e^{\i\theta}}{\sqrt{t}} \left(\frac{\partial}{\partial \,\log \sqrt{t}}+i\frac{\partial}{\partial \theta}\right).
+\end{equation}
+Setzen wir dies nun in folgendes Integral ein, so ergibt sich mittels partieller Integration des zweiten Summanden
+\begin{align}\label{thm:1_lewy:abl_gleich}
+\begin{split}
+\int_0^{2\pi} \left(\frac{\partial}{\partial x_1} +i\frac{\partial}{\partial x_2}\right)u\d\theta 
+&= \int_0^{2\pi} \frac{\e^{\i\theta}}{\sqrt{t}} \left(\frac{\partial}{\partial \,\log \sqrt{t}}+i\frac{\partial}{\partial \theta}\right)u \d\theta \\
+&= \int_0^{2\pi} \frac{\e^{\i\theta}}{\sqrt{t}} \left[ \left(\frac{\partial}{\partial \,\log \sqrt{t}}\right)u +i\left(\frac{\partial}{\partial \theta}\right)u\right]\d\theta \\
+&= \int_0^{2\pi} \frac{\e^{\i\theta}}{\sqrt{t}} \left[ \left(\frac{\partial}{\partial \,\log \sqrt{t}}\right)u +u\right]\d\theta .
+\end{split}
+\end{align}
+Setzen wir nun wie oben $\sqrt{t}=\e^s$, so ist $\frac{\partial}{\partial \,\log \sqrt{t}}=\frac{\partial}{\partial s}$ und
+\begin{align}\label{thm:1_lewy:int_gleichheit1}
+\begin{split}
+\frac{1}{\sqrt{t}}\left(\frac{\partial}{\partial\;\log\sqrt{t}}\right)u(t,\theta) + \frac{u(t,\theta)}{\sqrt{t}}
+&= \frac{1}{\e^s} \frac{\partial}{\partial s} u\left(\e^{2s},\theta\right)+\frac{1}{\e^s}u\left(\e^{2s},\theta\right) \\
+&= 2\e^s \left(\frac{\partial}{\partial r}\right) u\left(\e^{2s},\theta\right)+\frac{1}{\e^s} u\left(\e^{2s},\theta\right),
+\end{split}
+\end{align}
+sowie
+\begin{align}\label{thm:1_lewy:int_gleichheit2}
+\begin{split}
+2\frac{\partial}{\partial t}\left(\sqrt{t} u(t,\theta)\right) 
+&= \frac{1}{\sqrt{t}}u(t,\theta)+2\sqrt{t}\left(\frac{\partial}{\partial r}\right)u(t,\theta)\\
+&= \frac{1}{\e^s}u\left(\e^{2s},\theta\right) +2 \e^s \left(\frac{\partial}{\partial r}\right)u\left(\e^{2s},\theta\right).
+\end{split}
+\end{align}
+Da die rechten Seiten von (\ref{thm:1_lewy:int_gleichheit1}) und (\ref{thm:1_lewy:int_gleichheit2}) übereinstimmen, sind auch die linken Seiten gleich. Eingesetzt in das letzte Integral aus (\ref{thm:1_lewy:abl_gleich}) ergibt sich
+\begin{align}\label{thm:1_lewy:abl_gleich_final}
+\begin{split}
+\int_0^{2\pi} \left(\frac{\partial}{\partial x_1} +i\frac{\partial}{\partial x_2}\right)u\d\theta 
+= 2\left(\frac{\partial}{\partial t}\right)\int_0^{2\pi} \e^{\i\theta}\sqrt{t}u\d\theta.
+\end{split}
+\end{align}
+Setzen wir nun 
+\begin{equation}
+I(y_1,t)=i\int_0^{2\pi} \e^{\i\theta} \sqrt{t}u\d\theta,
+\end{equation}
+so liefert (\ref{thm:1_lewy:gleichung}) und danach (\ref{thm:1_lewy:abl_gleich_final})
+\begin{align}
+\begin{split}
+\frac{\partial I}{\partial y_1} +i\frac{\partial I}{\partial t} 
+&= i\int_{0}^{2\pi} \frac{\partial}{\partial y_1}\left(\e^{\i\theta}\sqrt{t}u\right)+i\frac{\partial}{\partial t}\left(\e^{\i\theta}\sqrt{t}u\right)\d\theta \\
+&= i\int_{0}^{2\pi} \e^{\i\theta}\sqrt{t}\left(\frac{\partial}{\partial y_1}u\right) +i\e^{\i\theta}\frac{\partial}{\partial t}(\sqrt{t}u)\d\theta\\
+&= i\int_{0}^{2\pi} \e^{\i\theta}\sqrt{t} \left(
+	\frac{\psi'(y_1)}{2\i(x_1+ix_2)}
+	+ \frac{\left(\frac{\partial}{\partial x_1} + i\frac{\partial}{\partial x_2}\right)u}{2\i(x_1+ix_2)} 
+	+ \frac{\i}{\sqrt{t}} \frac{\partial}{\partial t}(\sqrt{t} u)
+\right)\d\theta \\
+&= i\int_{0}^{2\pi} \e^{\i\theta}\sqrt{t} \left( 
+	\frac{\psi'(y_1)}{2\i\sqrt{t}\e^{\i\theta}} 
+	+ \frac{\left(\frac{\partial}{\partial x_1} + i\frac{\partial}{\partial x_2}\right)u}{2\i\sqrt{t}\e^{\i\theta}}
+	+ \frac{\i}{\sqrt{t}} \frac{\partial}{\partial t}(\sqrt{t} u)
+\right)\d\theta	 \\
+&= \int_0^{2\pi} \frac{\psi'(y_1)}{2}\d\theta 
+	+ \frac{1}{2}\int_0^{2\pi} \left(\frac{\partial}{\partial x_1} +i\frac{\partial}{\partial x_2}\right)u\d\theta
+	- \int_0^{2\pi} \e^{\i\theta}\frac{\partial}{\partial t}(\sqrt{t} u) \d\theta \\
+&= 2\pi\frac{\psi'(y_1)}{2}
+	+  \left(\frac{\partial}{\partial t}\right)\int_0^{2\pi} \e^{\i\theta}\sqrt{t}u\d\theta
+	- \left(\frac{\partial}{\partial t}\right) \int_0^{2\pi} \e^{\i\theta}\sqrt{t}u\d\theta\\
+&= \pi\psi'(y_1).
+\end{split}
+\end{align}
+Ferner ist
+\begin{equation}
+J(y):=J(y_1,t):=I(y_1,t)-\pi\psi(y_1),
+\end{equation}
+eine $C^1$-Funktion. Nach Konstruktion von $J$ erfüllt diese die Variante
+\begin{equation}
+\frac{\partial J}{\partial y_1} +i\frac{\partial J}{\partial t} = 0
+\end{equation}
+der Cauchy-Riemannschen Differentialgleichungen und ist somit analytisch in $y$. Ihr Definitionsbereich enthält alle $y=(y_1,t)$, wobei $t>0$ hinreichend klein ist und $y_1$
+\begin{equation}
+y_1\in U(x_1,x_2,y_1),\qquad x_1^2+x_2^2\leq t
+\end{equation}
+erfüllt. Da weiter
+\begin{align*}
+t=0 \quad\Rightarrow\quad I(y_1,0)=0 \quad\Rightarrow\quad J(y_1,0)=-\pi\psi'(y_1)
+\end{align*}
+mit nach Annahme reellem $\psi$ gilt, kann $J$ mithilfe des Spiegelungsprinzips (bezüglich obigem Definitionsbereich) auf $t=0$ analytisch fortgesetzt werden. Somit ist auch $\psi(y_1)$ analytisch sowohl im Punkt $y_1=y_1^0$ selbst, als auch in einer Umgebung von ihm und die Behauptung ist gezeigt.
+\end{proof}
+
+Betrachtet man nun (\ref{thm:1_lewy:gleichung}) mit reellem $\psi\in C^\infty(\mathbb{R}\rightarrow\mathbb{R})$, welches \textit{nicht} analytisch in $y_1=y_1^0$ ist, so liefert die Kontraposition des obigen Satzes, dass (\ref{thm:1_lewy:gleichung}) in \textit{keiner} Umgebung $U(0,0,y_0^1)$ eine Lösung $u\in C^1(\mathbb{R}^3\rightarrow\mathbb{C})$ besitzt.
+
+
+
+
+\section{Unlösbare Operatoren nach Hörmander}
+Lars Hörmander verallgemeinerte dieses Beispiel in dem Sinne, dass für keine offene Menge $\omega\subseteq\Omega$ eine Lösung $u\in\mathscr{D}'(\omega)$ existiert. Zunächst wollen wir jedoch einen zum Beweis dieser Verallgemeinerung verwendeten präsentieren, dessen Beweis in [\textbf{TODO Ref Hörmander}] zu finden ist.
+
+\begin{thm}
+Sei $\Omega\subset\mathbb{R}^n$ offen. Seien weiter die Koeffizienten des Differentialoperators $P$ analytisch und für jedes $f\in C_0^\infty(\Omega)$ existiere eine distributionelle Lösung $u\in\mathscr D'(\Omega)$ von
+\begin{equation}\label{thm:3.1_hoer}
+P(x,D)u=f.
+\end{equation}
+Dann gilt für $x\in\Omega$ und $\xi\in\mathbb{R}^n$
+\begin{equation}\label{thm:3.1_hoer_aussage}
+p(x,\xi)=0\quad\Rightarrow\quad \{p,\overline{p}\}(x,\xi)=0.
+\end{equation}
+\end{thm}
+
+\begin{rem}
+Lassen wir [\textbf{TODO}]
+\end{rem}
+
+
+
+Zur Formulierung des nächsten Satzes benötigen wir noch folgende Definition.
+
+\begin{df}
+Sei $\Omega\subseteq\mathbb{R}^n$ ein Gebiet. Wir bezeichnen mit $B_0^\infty(\Omega)$ die Teilmenge 
+\begin{equation}
+B_0^\infty(\Omega) :=\{f\in C^\infty(\Omega) \mid \forall\,\alpha\in\mathbb{N}_0^n\;\forall\,\epsilon >0\;\exists\,K_{\alpha,\epsilon}\;\mathrm{kompakt} : |\mathrm D^\alpha f|<\epsilon\;\mathrm{auf\;} K_{\alpha,\epsilon}\}
+\end{equation}
+von $C^\infty(\Omega)$.
+\end{df}
+
+
+
+\begin{thm}\label{thm:2_hoer}
+Sei $P$ ein Differentialausdruck erster Ordnung mit analytischen Koeffizienten und gelte \ref{thm:3.1_hoer_aussage} nicht für alle offenen, nichtleeren Mengen $\omega\subseteq\Omega$, d.h. 
+\begin{equation}
+p(x,\xi)=0 \quad\Rightarrow\quad C_1(x,\xi)=0
+\end{equation}
+für $x\in\omega$ und $\xi\in\mathbb{R}^n$ gelte für \eIndex[Operator]{keines} dieser $\omega\subseteq\Omega$.
+Dann existieren Funktionen $f\in B_0^\infty(\Omega)$ so dass
+\begin{equation}\label{lewy:pxDu=f}
+P(x,\mathrm D)u=f
+\end{equation}
+in keiner der Mengen $\omega\subseteq\Omega$ eine Lösung $u\in\mathcal{D}'(\omega)$ besitzt. Die Menge dieser Funktionen $f$ ist von zweiter Kategorie\footnote{Eine Teilmenge $A$ eines topologischen Raumes $B$ heißt von erster Kategorie, falls eine abzählbare Menge nirgends dichter Teilmengen aus $B$ existiert, deren Vereinigung $A$ ergibt. Ist dies nicht der Fall, so heißt $A$ von zweiter Kategorie.}.
+\end{thm}
+
+\begin{proof}
+Sei zunächst $\omega\subseteq\Omega$ eine feste, nichtleere Menge und $M$ gegeben durch
+\begin{equation}
+M:=\{f\in B_0^\infty(\Omega)\mid \exists\,u\in\mathscr{D}'(\omega) : P(x,\mathrm{D})u=f\}.
+\end{equation}
+\textit{Schritt 1}\\
+Wir wollen zeigen, dass $M$ von erster Kategorie ist. Sei hierzu $\omega_1\Subset\omega$ offen und nichtleer, d.h. insbesondere ist $\overline{\omega_1}\subset\omega$ kompakt. Dann existiert für jede Distribution $u\in\mathscr{D}'(\omega)$ ein $N\in\mathbb{N}$, so dass $u$ die Ungleichung
+\begin{equation}\label{lewy:uglSchwartz}
+|\langle u,\phi\rangle|\leq N\sum_{|\alpha|\leq N}\sup\limits_{x\in\omega_1} |\mathrm{D}^\alpha \phi(x)| 
+\end{equation}
+für alle $\phi\in C_c^\infty(\omega_1)$ erfüllt ist. Die Menge $M_N$, gegeben durch
+\begin{equation}
+M_N:= \{f\in B_0^\infty(\Omega)\mid \exists\,u\in\mathcal D'(\omega_1): P(x,\mathrm{D})u=f\;\mathrm{in}\;\omega_1\;\wedge\; u\mathrm{\;erf"ullt\;}(\ref{lewy:uglSchwartz})\},
+\end{equation}
+ist abgeschlossen, konvex und symmetrisch. Während die Konvexität (Konvexkombinationen von Lösungen sind wieder Lösungen) und die Symmetrie klar sind, bleibt noch die Abgeschlossenheit zu zeigen:\\\\
+\textit{Schritt 2}\\
+Bezüglich der schwachen Topologie auf $\mathscr{D}'(\omega_1)$ ist die Menge der Distributionen, welche (\ref{lewy:uglSchwartz}) erfüllen, (folgen-)kompakt: Dies folgt aus einem Diagonalfolgenargument. Zu zeigen ist, dass
+\begin{equation}
+\{u\in\mathscr D'(\omega)\mid \forall\,\phi\in C_c^\infty(\omega_1)\quad |\langle u,\phi\rangle|\leq N \|\phi\|_N\}\subset\mathscr D'(\omega)
+\end{equation}
+kompakt ist. Hierbei bezeichnet $\|\,\cdot\,\|_N$ die Sobolev-Norm zum Differentationsgrad $N$. 
+Aufgrund der Darstellung
+\begin{equation}
+\mathscr D(\omega_1)=\bigcup\limits_{\omega_2\Subset\omega_1}\bigcap\limits_N H_0^N(\omega_2)
+\end{equation}
+und der Separabilität der Sobolevräume $H_0^N(\omega_2)$, finden wir eine abzählbare, dichte Teilmenge $\Phi=\{\phi_1,\phi_2,\ldots\}$ in $\C_c^\infty(\omega_1)$.
+Für eine Folge $(u_n)_{n\in\mathbb{N}}$ in $\mathscr D'(\omega)$ finden wir dann eine Teilfolge $(u_{n_k}^{(1)})_{k\in\mathbb{N}}$, so dass
+$\langle u_{n_k}^{(1)},\phi_1\rangle$ als Folge auf einem Kompaktum (vgl. (\ref{lewy:uglSchwartz})) komplexer Zahlen konvergiert. Weiter finden wir auch eine Teilfolge $(u_{n_k}^{(2)})_{k\in\mathbb{N}}$ zu $\phi_2$, so dass $\langle u_{n_k}^{(2)},\phi_2\rangle$ konvergiert, etc. Wählen wir nun eine Diagonalfolge $(v_n)_{n\in\mathbb{N}}$, so konvergiert $\langle v_n,\phi_j\rangle$ für alle $j$, was jedoch gerade die obige Behauptung bezüglich der Kompaktheit beweist.\\\\
+Sei also $(f_j)_{j\in\mathbb{N}}$ eine gegen $f\in B_0^\infty(\Omega)$ stark konvergente Folge in $M_N$, d.h. $f_j=Pu_j$ auf $\omega_1$ für gewisse $u_j\in\mathscr{D}'(\omega_1)$, welche (\ref{lewy:uglSchwartz}) erfüllen. Dann existiert ein schwacher Grenzwert $u=\lim_{j\rightarrow\infty}u_j$, welcher aus Gründen der Separabilität von $H_0^N(\omega)$ ebenfalls (\ref{lewy:uglSchwartz}) erfüllt. Dann ist aber wegen $Pu_j\rightarrow Pu$ in $\mathscr D'(\omega_1)$ auch $f=Pu$ in $\omega_1$ und somit auch $f\in M_N$, was die Abgeschlossenheit liefert.\\\\
+\textit{Schritt 3}\\
+Wir zeigen nun per Kontraposition, dass $M_N$ keine inneren Punkte besitzt. Wenn wir in Satz \ref{thm:3.1_hoer} die Menge $\Omega$ durch $\omega_1$ ersetzen, so existiert nach Kontraposition ein $g\in\mathscr{D}(\omega_1)$ mit
+\begin{equation}\label{lewy:tgM}
+t\neq 0\quad\Rightarrow\quad tg\notin M_N.
+\end{equation}
+Angenommen, es existiere ein innerer Punkt $f$ von $M_N$, so wäre auch $f+tg\in M_N$ für $t$ klein genug. Aufgrund der Symmetrie und der Konvexität von $M_N$ ist dann aber auch (für alle $\lambda\in[0,1]$, also insbesondere für $\lambda=1/2$)
+\begin{equation}
+\lambda(f+tg)+(1-\lambda)(-f) = \frac{f+tg-f}{2}=\frac{tg}{2}\in M_N,
+\end{equation}
+was einen Widerspruch zu (\ref{lewy:tgM}) liefert.\\\\
+Also ist $M_N$ abgeschlossen und ohne innere Punkte, folglich also $\bigcup M_N$ nach Definition von erster Kategorie. Wegen $M\subset\bigcup M_N$ folgt also auch, dass $M$ von erster Kategorie ist.\\\\
+\textit{Schritt 4}\\
+Wir zeigen nun, dass (\ref{lewy:pxDu=f}) tatsächlich keine Lösung in $\omega$ besitzt: Sei $(\omega_j)_{j\in\mathbb{N}}$ eine abzählbare Basis aus offenen Teilmengen von $\Omega$, wobei $\omega_i\neq\emptyset$ für alle $i\in\mathbb{N}$ ist. Sei weiter
+\begin{equation}
+M^{(j)}:=\{f\in B_0^\infty(\Omega)\mid \exists u\in\mathscr{D}'(\omega_j): P(x,\mathrm{D})u=f\;\mathrm{auf\;}\omega_j\},
+\end{equation}
+dann folgt aus \textit{Schritt 1}, dass $M^{(j)}$ und folglich auch $\bigcup M^{(j)}$ von erster Kategorie ist. Für $f\notin \bigcup M^{(j)}$ kann somit $P(x,\mathrm{D})u=f$ auf keinem $\omega_j$ gelöst werden. Da für jede beliebige, offene, nichtleere Menge $\omega\subseteq\Omega$ ein Index $j_0$ existiert, so dass $\omega_{j_0}\subset\omega$ ist, besitzt $P(x,\mathrm{D})u=f$ keine Lösung auf $\omega$.
+\end{proof}
+
+Für Lewys Beispiel 
+\begin{equation}
+p(x,\xi)=-i\xi_1+\xi_2-2(x_1+ix_2)\xi_3
+\end{equation}
+in $n=3$ Dimensionen aus dem ersten Teil dieses Kapitels erhalten wir $\{p,\overline{p}\}(x,\xi)=-8\xi_3$. Wegen
+\begin{equation}
+\xi_3 =1,\quad \xi_1=-2x_2,\quad \xi_2=2x_1\qquad\Rightarrow\qquad p(x,\xi)=0
+\end{equation}
+ist $\{p,\overline{p}\}(x,\xi)=-8\neq 0$ und \ref{thm:3.1_hoer_aussage} gilt nicht für alle $x\in\mathbb{R}^n$ womit folglich die Voraussetzungen von Satz \ref{thm:2_hoer} erfüllt sind.
