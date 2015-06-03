@@ -109,13 +109,13 @@ mit geeignet gewähltem $a>0$. Damit folgt
 \label{realteil}
 \Re u(x) \le - a |x|^2 
 \end{align}
-für hinreichend kleine $|x|$. Nach Verkleinerung von $\Omega$ können wir also oBdA annehmen, dass (\ref{realteil}) überall in $\Omega$ gilt. 
+für hinreichend kleine $|x|$. Nach Verkleinerung von $\Omega$ können wir also ohne Einschränkung annehmen, dass (\ref{realteil}) überall in $\Omega$ gilt. 
 
 Sei nun $\phi \in \rmC_0^\infty(\Omega)$ und $t>0$. Dann erfüllt $v_t := \phi e^{tu} \in \rmC_0^\infty(\Omega)$ die Abschätzung $|v_t(x)| \le |\phi(x)| \e^{-at|x|^2}$. Wir zeigen nun
 \[
 \frac{\lVert v_t \rVert_{(m-1)}}{\lVert P(x,\D)v_t \rVert} \longrightarrow \infty, \qquad t \rightarrow \infty,
 \]
-woraus die Behauptung (\ref{lm 1 eq}) folgt. {\bf ZU ERGÄNZEN} 
+woraus die Behauptung (\ref{lm 1 eq}) folgt.
 
 Wir schreiben 
 \[
@@ -137,6 +137,60 @@ ebenfalls $b_m$ und $b_{m-1}$, denn alle anderen Summanden in der Leibnizformel 
 \begin{align}
 b_m(x) = \textbf{o} (|x|^2), \hspace{0.5cm} x \rightarrow 0.
 \end{align}
+Weiter erhalten wir
+\begin{align}
+	\label{4.17}
+b_{m-1} = (-i)^{m-1} \left( \phi (i^{m-1}g + q(x,\nabla u)) + \sum_{j=1}^{n} (D^j \phi) p^{(j)} (x,\nabla u) \right),
+\end{align}
+wobei $g$ eine glatte Funktion ist, die von $u$ und den Koeffizienten von $p$ abhängt. Wir wählen nun $\phi$ so, dass $\phi(0) =1$ gilt und sodass (\ref{4.17}) für $x=0$ verschwindet, was wegen (\ref{normpart}) möglich ist. Wegen Stetigkeit von $b_{m-1}$ ist dann $b_{m-1}(x) = \textbf{o}(1)$, wenn $x$ gegen Null strebt.
+
+Nach diesen Überlegungen können wir für $\varepsilon >0$ eine Umgebung $U$ der Null wählen, sodass
+\[
+|b_m(x)| < \varepsilon |x|^2, \hspace{0.5cm} |b_{m-1}(x)| < \varepsilon, \hspace{0.5cm} \forall \, x \in U.
+\]
+Mit Gleichung (\ref{realteil}) erhalten wir für alle $x\in U$ die Abschätzung
+\[
+|P(x,D)v_t| \le t^{m-1} e^{-at|x|^2}(\varepsilon t |x|^2 + \varepsilon + C/t)
+\]
+und mit der Transformation $x \mapsto x/\sqrt{(t)}$ im Integral folgt
+\[
+\lVert P(x,D) v_t \rVert_{L^2(U)} ^2 \le t^{2m-2-n/2} \varepsilon^2 \int_U (|x|^2 + 1 +C/\varepsilon t)^2 e^{-2a|x|^2} dx,
+\]
+wobei das letzte Integral für $t \rightarrow \infty$ gegen
+\[
+B^2 = \int_U (|x|^2 + 1)^2 e^{-2a|x|^2} dx
+\]
+konvergiert. Für große $t$ liefert dies die Abschätzung
+\[
+\lVert P(x,D) v_t \rVert_{L^2(U)} ^2 \le 2 t^{2m-2-n/2} \varepsilon^2  B^2.
+\]
+Da aus (\ref{realteil}) ebenso
+\[
+\lVert P(x,D) v_t \rVert_{L^2(U^c)} ^2 = \mathcal{O}(t^{2m}e^{-2ct})
+\]
+für eine Konstante $c>0$ folgt, erhalten wir
+\begin{align}
+	\label{4.18}
+\lVert P(x,D) v_t \rVert^2 \le 4 B^2 t^{2m-2-n/2} \varepsilon^2.
+\end{align}
+Als schätzen wir $\lVert v_t \rVert_{(m-1)}$ nach unten ab. Wir nehmen ohne Einschräung an, dass $\xi_1\neq 0$ gilt. Wir setzen $\alpha' = (m-1,0,\ldots,0)$ und erhalten
+\[
+D^{\alpha'} v_t = (\phi (D^1 u)^{m-1}t^{m-1}+ \ldots)e^{tu}.
+\]
+Wegen $\phi(0) (D^1u(0))^{m-1} = \xi_1^{m-1} \neq 0$ gilt $|\phi| |D^1u|^{m-1} \ge 2c > 0$ für eine Konstante $c > 0$ in einer Umgebung der Null und wegen $\Re u(x) = \mathcal{O} (|x|^2)$ existiert eine Konstante $A > 0$ sodass $\Re u(x) \ge -A |x|^2$. Für große $t$ erhalten wir
+\[
+|\phi| |D^1u|^{m-1} \ge ct^{m-1}e^{-tA|x|^2}.
+\]
+Für große $t$ folgt
+\begin{align}
+	\label{4.19}
+\lVert v_t \rVert_{(m-1)}^2 \ge \lVert D^{\alpha'} v_t\rVert^2 \ge \int\limits_{t|x|^2 < 1}c^2t^{2m-21}e^{-2tA|x|^2} dx = C^2 t^{2m-2-n/2}
+\end{align}
+für eine Konstante $C > 0$ und eine Umgebung $V$ der Null. Kombiniert man (\ref{4.18}) und (\ref{4.19}), so erhält man für große $t$
+\[
+\dfrac{\lVert v_t \rVert_{(m-1)}}{\lVert P(x,D) v_t \rVert} \ge \dfrac{C}{2B\varepsilon}
+\]
+und da $\varepsilon>0$ beliebig war folgt die Behauptung des Lemmas.
 \end{proof}
 
 \begin{lem}\label{lem2}
@@ -153,7 +207,7 @@ wobei $ p_j(x,\xi) = \partial_{x_j}  p(x,\xi)$ die partielle Ableitung des Haupt
 Betrachten wir die Taylorentwicklung, so stellen wir fest, dass (\ref{grad}) genau dann erfüllt ist, wenn $p(x,\nabla u)$ und alle Ableitungen der Ordnung $\le 2$ im Nullpunkt verschwinden. Das Verschwinden von $p(x,\nabla u)$ wird gerade durch (\ref{4.15}) beschrieben. Wir berechnen weiter
 \[
 \dfrac{\partial}{\partial x_j} p(0,\nabla u) = 
-p_j(0,i\xi) + \sum_{k=1}^{n} \alpha_{jk} \dfrac{\partial p(0,i\xi)}{\partial \xi_k}
+p_j(0,i\xi) + \sum_{k=1}^{n} \boldsymbol\alpha_{j,k} \dfrac{\partial p(0,i\xi)}{\partial \xi_k}
 \]
 und bemerken unter Verwendung der Homogenität von $p$, dass die linke Seite genau dann für alle $j$ verschwindet, wenn (\ref{4.16}) gilt. Es bleibt zu zeigen, dass für geeignet gewähltes $u$ unter den gegebenen Bedingungen auch die zweiten Ableitungen verschwinden. Hierzu leitet man die obige Gleichung ein weiteres Mal ab und stellt unter Verwendung von (\ref{normpart}) fest, dass das resultierende System partieller Differentialgleichungen die Voraussetzungen des Satzes von Cauchy-Kovalevsky erfüllt, woraus die Existenz eines solchen $u$ folgt.
 \end{proof}
