@@ -121,14 +121,20 @@ woraus die Behauptung (\ref{lm 1 eq}) folgt. {\bf ZU ERGÄNZEN}
 \begin{lem}\label{lem2}
 Wir nehmen an, es gelte (\ref{normpart}). Dann gibt es eine Funktion $u \in \rmC^\infty(\Omega)$ mit (\ref{grad}) und (\ref{taylor}) genau dann, wenn
 \begin{align}
+	\label{4.15}
 p(0, \xi) &= 0, \\ 	\label{4.16}
-\sum_{k=1}^{n} \boldsymbol\alpha_{j,k}\frac{\partial p(0,\xi)}{\partial \xi_k} &= -\i\,  p_j(0,\xi), \hspace{0.5cm} j=1, \ldots, n,
+\sum_{k=1}^{n} \boldsymbol\alpha_{j,k}\frac{\partial p(0,\xi)}{\partial \xi_k} &= -\i\,  p_j(0,\xi), \hspace{0.5cm} j=1, \ldots, n, 
 \end{align}
 wobei $ p_j(x,\xi) = \partial_{x_j}  p(x,\xi)$ die partielle Ableitung des Hauptsymbols bezeichne.
 \end{lem}
 
-\begin{proof} {\bf ERGÄNZEN}
-%Für $u \in C^\infty(\Omega)$ ist klar, dass (\ref{grad}) genau dann erfüllt ist, wenn $p(x, \nabla u)$ und alle Ableitungen der Ordnung $\le 2$ im Ursprung verschwinden. (?)
+\begin{proof} [Beweisskizze]
+Betrachten wir die Taylorentwicklung, so stellen wir fest, dass (\ref{grad}) genau dann erfüllt ist, wenn $p(x,\nabla u)$ und alle Ableitungen der Ordnung $\le 2$ im Nullpunkt verschwinden. Das Verschwinden von $p(x,\nabla u)$ wird gerade durch (\ref{4.15}) beschrieben. Wir berechnen weiter
+\[
+\dfrac{\partial}{\partial x_j} p(0,\nabla u) = 
+p_j(0,i\xi) + \sum_{k=1}^{n} \alpha_{jk} \dfrac{\partial p(0,i\xi)}{\partial \xi_k}
+\]
+und bemerken unter Verwendung der Homogenität von $p$, dass die linke Seite genau dann für alle $j$ verschwindet, wenn (\ref{4.16}) gilt. Es bleibt zu zeigen, dass für geeignet gewähltes $u$ auch die zweiten Ableitungen verschwinden. Hierzu leitet man die obige Gleichung ein weiteres Mal ab und stellt fest, dass das resultierende System partieller Differentialgleichungen die Voraussetzungen des Satzes von Cauchy-Kovalevsky erfüllt, woraus die Existenz eines solchen $u$ folgt.
 \end{proof}
 
 \begin{lem}\label{lem3}
