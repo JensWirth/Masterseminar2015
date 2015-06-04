@@ -182,14 +182,14 @@ Als schätzen wir $\lVert v_t \rVert_{(m-1)}$ nach unten ab. Wir nehmen ohne Ein
 \end{equation}
 Wegen $\phi(0) (\D_1u(0))^{m-1} = \xi_1^{m-1} \neq 0$ gilt $|\phi| |\D_1u|^{m-1} \ge 2c > 0$ für eine Konstante $c > 0$ in einer Umgebung der Null und wegen $\Re u(x) = \mathcal{O} (|x|^2)$ existiert eine Konstante $a' > 0$ sodass $\Re u(x) \ge -a' |x|^2$. Für große $t$ erhalten wir
 \begin{equation}
-|\phi| |\D_1u|^{m-1} \ge ct^{m-1}\e^{-ta'|x|^2}.
+|\phi| |\D_1v_t|^{m-1} \ge ct^{m-1}\e^{-ta'|x|^2}.
 \end{equation}
 Weiter folgt für große $t$    
 \begin{equation}
 	\label{4.19}
 \lVert v_t \rVert_{(m-1)}^2 \ge \lVert \D^{\alpha'} v_t\rVert^2 \ge \int\limits_{t|x|^2 < 1}c^2t^{2m-2}\e^{-2ta'|x|^2} \d x = C^2 t^{2m-2-n/2}
 \end{equation}
-für eine Konstante $C > 0$ und eine Umgebung $V$ der Null. Kombiniert man (\ref{4.18}) und (\ref{4.19}), so erhält man für große $t$
+für eine Konstante $C > 0$. Kombiniert man (\ref{4.18}) und (\ref{4.19}), so erhält man für große $t$
 \begin{equation}
 \dfrac{\lVert v_t \rVert_{(m-1)}}{\lVert P(x,\D) v_t \rVert} \ge \dfrac{C}{2B\varepsilon}
 \end{equation}
@@ -228,8 +228,7 @@ wenn die Vektoren $\zeta$ und $f$
 erfüllen.
 \end{lem}
 \begin{proof}
-Es gelte (\ref{laag1}). Multiplikation beider Seiten mit $\overline \zeta_k$ und Aufaddieren ergibt unter Verwendung der Symmetrie von $A$
-und mit $\zeta=\xi+\i\eta$
+Es gelte (\ref{laag1}). Dann folgt mit $A\zeta =f$ und $\zeta=\xi+\i\eta$
 \begin{equation}
  f\cdot \overline \zeta = \sum_{k=1}^{n}f_k \overline{\zeta_k} = \sum_{j,k=1}^{n} \boldsymbol\alpha_{kj} \zeta_j \overline \zeta_k
 =  \sum_{j,k=1}^{n} \boldsymbol\alpha_{kj} \xi_j \xi_k +  \sum_{j,k=1}^{n} \boldsymbol\alpha_{kj} \eta_j \eta_k,
