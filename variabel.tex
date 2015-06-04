@@ -180,14 +180,14 @@ Als schätzen wir $\lVert v_t \rVert_{(m-1)}$ nach unten ab. Wir nehmen ohne Ein
 \begin{equation}
 \D^{\alpha'} v_t = (\phi (\D_1 u)^{m-1}t^{m-1}+ \ldots)\e^{tu}.
 \end{equation}
-Wegen $\phi(0) (\D_1u(0))^{m-1} = \xi_1^{m-1} \neq 0$ gilt $|\phi| |\D_1u|^{m-1} \ge 2c > 0$ für eine Konstante $c > 0$ in einer Umgebung der Null und wegen $\Re u(x) = \mathcal{O} (|x|^2)$ existiert eine Konstante $A > 0$ sodass $\Re u(x) \ge -A |x|^2$. Für große $t$ erhalten wir
+Wegen $\phi(0) (\D_1u(0))^{m-1} = \xi_1^{m-1} \neq 0$ gilt $|\phi| |\D_1u|^{m-1} \ge 2c > 0$ für eine Konstante $c > 0$ in einer Umgebung der Null und wegen $\Re u(x) = \mathcal{O} (|x|^2)$ existiert eine Konstante $a' > 0$ sodass $\Re u(x) \ge -a' |x|^2$. Für große $t$ erhalten wir
 \begin{equation}
-|\phi| |\D_1u|^{m-1} \ge ct^{m-1}\e^{-tA|x|^2}.
+|\phi| |\D_1u|^{m-1} \ge ct^{m-1}\e^{-ta'|x|^2}.
 \end{equation}
-Für große $t$ folgt
+Weiter folgt für große $t$    
 \begin{equation}
 	\label{4.19}
-\lVert v_t \rVert_{(m-1)}^2 \ge \lVert \D^{\alpha'} v_t\rVert^2 \ge \int\limits_{t|x|^2 < 1}c^2t^{2m-21}\e^{-2tA|x|^2} \d x = C^2 t^{2m-2-n/2}
+\lVert v_t \rVert_{(m-1)}^2 \ge \lVert \D^{\alpha'} v_t\rVert^2 \ge \int\limits_{t|x|^2 < 1}c^2t^{2m-2}\e^{-2ta'|x|^2} \d x = C^2 t^{2m-2-n/2}
 \end{equation}
 für eine Konstante $C > 0$ und eine Umgebung $V$ der Null. Kombiniert man (\ref{4.18}) und (\ref{4.19}), so erhält man für große $t$
 \begin{equation}
@@ -260,6 +260,7 @@ Insbesondere ist $(\xi\cdot\overline g)(\zeta\cdot\xi) $ immer reell. Unter Verw
 \end{proof}
 
 \begin{thm}
+\label{Umkehrung}
 Es gelte die Ungleichung (\ref{eq:4:locHT}), d.h.
 \begin{equation}
   \| u\|_{(m-1)} \le C \| P(x,\D) u \| \quad \forall u\in\rmC_0^\infty(\Omega).
@@ -278,3 +279,6 @@ Wir nehmen ohne Einschränkung $x=0$ an. Weiterhin gelte
 \end{equation}
 denn sonst ist (\ref{Beh}) trivialerweise erfüllt. Die Lemmata \ref{lem1} und \ref{lem2} zeigen dann, dass die Gleichung (\ref{4.16}) für keine symmetrische Matrix mit negativ definitem Realteil erfüllt sein kann. Mit Lemma \ref{lem3} folgt deshalb $\{p,\overline p\}(x,\xi) \ge 0$. Das analoge Argument mit $-\xi$ anstatt $\xi$ liefert $\{p,\overline p\}(x,-\xi) \ge 0$. Weil $\{p,\overline p\}(x,\xi)$ eine ungerade Funktion in $\xi$ ist, folgt die Behauptung.
 \end{proof}
+\begin{rem}
+In Satz \ref{Umkehrung} folgt nur das Verschwinden der Poissonklammer auf der Nullstellenmenge von $p(x,\xi)$ und insbesondere nicht die wesentliche Normalität von $P(x,D)$. Folglich handelt es sich nicht um die Umkehrung von Satz \ref{thm:4:4.2}, wo wesentliche Normalität vorausgesetzt wurde.
+\end{rem}
