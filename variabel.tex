@@ -36,10 +36,10 @@ diskutiert werden. Hierbei sei $x_0\in\Omega$ fest gewählt und $\omega\Subset\O
 
 
 
-\section{Hinreichende Bedingungen}
+\section{Hinreichende Bedingungen für untere Schranken}
 
 
-\begin{thm}
+\begin{thm}\label{thm:4:4.1}
 Angenommen, $P(x,\D)$ ist elliptisch. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
 \eqref{eq:4:locEll} mit einer von $\omega$ abhängigen Konstanten $C$ gilt. 
 \end{thm}
@@ -64,7 +64,7 @@ für alle $\xi\in\R^n$ verschwindet. In diesem Fall ist der Kommutator von $P(x,
 
 Das folgende Resultat ergibt sich aus \cite[Theorem~4.1]{Hormander:1955} zusammen mit der Vorbemerkung zu diesem Kapitel. Die Umkehrung dieses Satzes gilt nicht.
 
-\begin{thm}[{\cite[Theorem~4.1]{Hormander:1955}}]
+\begin{thm}[{\cite[Theorem~4.1]{Hormander:1955}}]\label{thm:4:4.2}
 Angenommen, $P(x,\D)$ ist vom Haupttyp und wesentlich normal. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
 \eqref{eq:4:locHT} mit einer von $\omega$ abhängigen Konstanten $C$ gilt.
 \end{thm}
@@ -72,7 +72,15 @@ Angenommen, $P(x,\D)$ ist vom Haupttyp und wesentlich normal. Dann existiert zu 
 Für den Originalbeweis konstruiert man wiederum Energieintegrale und schätzt diese mittels partieller Integration ab.
 \end{proof}
 
-\section{Notwendige Bedingungen}
+\begin{cor}
+Angenommen, $P(x,\D)$ erfüllt die Voraussetzungen von Satz~\ref{thm:4:4.1} oder Satz~\ref{thm:4:4.2}. Dann existiert zu jedem $\Omega'\Subset\Omega$ und jedem
+$f\in\rmL^2(\Omega')$ ein $u\in\mathscr D'(\Omega')$ mit $P(x,\D)u=f$ in $\Omega'$.
+\end{cor}
+\begin{proof}
+Mit $P(x,\D)$ erfüllt auch ${}^tP(x,\D)$ die Voraussetzungen des Satzes. Insbesondere ist damit der zu ${}^tP(x,\D)$ auf $\Omega'$ assoziierte minimale Operator beschränkt invertierbar und damit nach Satz~\ref{thm:1:loesbarkeit} der zu $P(x,\D)$ assoziierte maximale Operator surjektiv.
+\end{proof}
+
+\section{Notwendige Bedingungen für untere Schranken}
 Im folgenden sei $\Omega \subset \R^n$ eine offene Umgebung der Null und $P(x,\D)$ ein Differentialausdruck auf $\Omega$ mit Hauptsymbol $p(x,\xi)$. 
 \begin{lem}\label{lem1}
 Angenommen, es existiert eine Funktion $u \in \rmC^\infty (\Omega)$ mit 
@@ -101,7 +109,6 @@ so folgt
 Da die Matrix $B$ negativ definit ist, gilt
 \begin{align*}
 \Re u(x) = x\cdot Bx + \mathcal O\big(|x|^3\big) \le - 2 a |x|^2 + \mathcal O\big(|x|^3\big),\qquad x\to0
-% \sum_{j,k=1}^{n} x^jx^k \Re \alpha_{jk} + \mathcal{O}\left( |x|^3 \right) \le -2a |x|^2 + \mathcal{O}\left( |x|^3 \right) (?)
 \end{align*}
 mit geeignet gewähltem $a>0$. Damit folgt
 \begin{align}
@@ -256,7 +263,6 @@ Insbesondere ist $(\xi\cdot\overline g)(\zeta\cdot\xi) $ immer reell. Unter Verw
 \end{proof}
 
 \begin{thm}
-%Es seien die Koeffizienten von $P(x,\D)$ stetig und die Koeffizienten von $p$ seien $C^2$. Weiter 
 Es gelte die Ungleichung (\ref{eq:4:locHT}), d.h.
 \[
   \| u\|_{(m-1)} \le C \| P(x,\D) u \| \quad \forall u\in\rmC_0^\infty(\Omega).
