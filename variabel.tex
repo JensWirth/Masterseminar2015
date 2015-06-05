@@ -92,11 +92,11 @@ Mit $P(x,\D)$ erfüllt auch ${}^tP(x,\D)$ die Voraussetzungen des Satzes. Insbes
 
 \section{Notwendige Bedingungen für untere Schranken}
 Im folgenden sei $\Omega \subset \R^n$ eine offene Umgebung der Null und $P(x,\D)$ ein Differentialausdruck auf $\Omega$ mit Hauptsymbol $p(x,\xi)$. 
-\begin{lem}\label{lem1}
+\begin{lem}[{\cite[Lemma 2.1]{Hormander:1960a}}]\label{lem1}
 Angenommen, es existiert eine Funktion $u \in \rmC^\infty (\Omega)$ mit 
 \begin{equation}
 \label{grad}
-p(x, \nabla u) = \mathbf{o} \big(|x|^2\big), \qquad  x \rightarrow 0,
+p(x, \nabla u(x)) = \mathbf{o} \big(|x|^2\big), \qquad  x \rightarrow 0,
 \end{equation}
 welche eine Taylorentwicklung 
 \begin{equation}\label{taylor}
@@ -153,7 +153,7 @@ b_m(x) = \mathbf{o} (|x|^2), \quad x \rightarrow 0.
 Weiter erhalten wir
 \begin{equation}
 	\label{4.17}
-b_{m-1} = (-\i)^{m-1} \bigg( \phi (\i^{m-1}g + q(x,\nabla u)) + \sum_{j=1}^{n} (\D_j \phi) p^{(j)} (x,\nabla u) \bigg),
+b_{m-1}(x) = (-\i)^{m-1} \bigg( \phi(x) (\i^{m-1}g(x) + q(x,\nabla u(x))) + \sum_{j=1}^{n} (\D_j \phi(x)) p^{(j)} (x,\nabla u(x)) \bigg),
 \end{equation}
 wobei $g$ eine glatte Funktion ist, die von $u$ und den Koeffizienten von $p$ abhängt. Wir wählen nun $\phi$ so, dass $\phi(0) =1$ gilt und sodass (\ref{4.17}) für $x=0$ verschwindet, was wegen (\ref{normpart}) möglich ist. Wegen Stetigkeit von $b_{m-1}$ ist dann $b_{m-1}(x) = \mathbf{o}(1)$, wenn $x$ gegen Null strebt.
 
@@ -165,13 +165,13 @@ Mit Gleichung (\ref{realteil}) erhalten wir für alle $x\in U$ die Abschätzung
 \begin{equation}
 |P(x,\D)v_t| \le t^{m-1} \e^{-at|x|^2}(\varepsilon t |x|^2 + \varepsilon + C/t)
 \end{equation}
-und mit der Transformation $x \mapsto x/\sqrt{t}$ im Integral folgt
+und mit der Transformation $x \mapsto x/\sqrt{t}$ im Integral und der Vergrößerung des Integrationsgebietes folgt
 \begin{equation}
-\lVert P(x,\D) v_t \rVert_{L^2(U)} ^2 \le t^{2m-2-n/2} \varepsilon^2 \int_U (|x|^2 + 1 +C/\varepsilon t)^2 \e^{-2a|x|^2} \d x,
+\lVert P(x,\D) v_t \rVert_{L^2(U)} ^2 \le t^{2m-2-n/2} \varepsilon^2 \int (|x|^2 + 1 +C/\varepsilon t)^2 \e^{-2a|x|^2} \d x,
 \end{equation}
 wobei das letzte Integral für $t \rightarrow \infty$ gegen
 \begin{equation}
-B^2 = \int_U (|x|^2 + 1)^2 \e^{-2a|x|^2} \d x
+B^2 = \int (|x|^2 + 1)^2 \e^{-2a|x|^2} \d x
 \end{equation}
 konvergiert. Für große $t$ liefert dies die Abschätzung
 \begin{equation}
@@ -188,11 +188,11 @@ für eine Konstante $c>0$ folgt, erhalten wir
 \end{equation}
 Als schätzen wir $\lVert v_t \rVert_{(m-1)}$ nach unten ab. Wir nehmen ohne Einschräung an, dass $\xi_1\neq 0$ gilt. Wir setzen $\alpha' = (m-1,0,\ldots,0)$ und erhalten
 \begin{equation}
-\D^{\alpha'} v_t = (\phi (\D_1 u)^{m-1}t^{m-1}+ \ldots)\e^{tu}.
+\D^{\alpha'} v_t = (\phi(x) (\D_1 u(x))^{m-1}t^{m-1}+ \ldots)\e^{tu}.
 \end{equation}
-Wegen $\phi(0) (\D_1u(0))^{m-1} = \xi_1^{m-1} \neq 0$ gilt $|\phi| |\D_1u|^{m-1} \ge 2c > 0$ für eine Konstante $c > 0$ in einer Umgebung der Null und wegen $\Re u(x) = \mathcal{O} (|x|^2)$ existiert eine Konstante $a' > 0$ sodass $\Re u(x) \ge -a' |x|^2$. Für große $t$ erhalten wir
+Wegen $\phi(0) (\D_1u(0))^{m-1} = \xi_1^{m-1} \neq 0$ gilt $|\phi(x)| |\D_1u(x)|^{m-1} \ge 2c > 0$ für eine Konstante $c > 0$ in einer Umgebung der Null und wegen $\Re u(x) = \mathcal{O} (|x|^2)$ existiert eine Konstante $a' > 0$ sodass $\Re u(x) \ge -a' |x|^2$. Für große $t$ erhalten wir
 \begin{equation}
-|\phi| |\D_1v_t|^{m-1} \ge ct^{m-1}\e^{-ta'|x|^2}.
+ |\D^{\alpha'} v_t(x)| \ge |\phi(x)|\, |\D_1 u(x)|^{m-1} \,\e^{t \Re u(x)} \ge ct^{m-1}\e^{-ta'|x|^2}.
 \end{equation}
 Weiter folgt für große $t$    
 \begin{equation}
@@ -206,7 +206,7 @@ für eine Konstante $C > 0$. Kombiniert man (\ref{4.18}) und (\ref{4.19}), so er
 und da $\varepsilon>0$ beliebig war folgt die Behauptung des Lemmas.
 \end{proof}
 
-\begin{lem}\label{lem2}
+\begin{lem}[{\cite[Lemma 2.2]{Hormander:1960a}}]\label{lem2}
 Wir nehmen an, es gelte (\ref{normpart}). Dann gibt es eine Funktion $u \in \rmC^\infty(\Omega)$ mit (\ref{grad}) und (\ref{taylor}) genau dann, wenn
 \begin{align}
 	\label{4.15}
@@ -222,10 +222,10 @@ Betrachten wir die Taylorentwicklung, so stellen wir fest, dass (\ref{grad}) gen
 \dfrac{\partial}{\partial x_j} p(0,\nabla u) = 
 p_j(0,\i\xi) + \sum_{k=1}^{n} \boldsymbol\alpha_{j,k} \dfrac{\partial p(0,\i\xi)}{\partial \xi_k}
 \end{equation}
-und bemerken unter Verwendung der Homogenität von $p$, dass die linke Seite genau dann für alle $j$ verschwindet, wenn (\ref{4.16}) gilt. Es bleibt zu zeigen, dass für geeignet gewähltes $u$ unter den gegebenen Bedingungen auch die zweiten Ableitungen verschwinden. Hierzu leitet man die obige Gleichung ein weiteres Mal ab und stellt unter Verwendung von (\ref{normpart}) fest, dass das resultierende System partieller Differentialgleichungen die Voraussetzungen des Satzes von Cauchy-Kovalevsky erfüllt, woraus die Existenz eines solchen $u$ folgt.
+und bemerken unter Verwendung der Homogenität von $p$, dass die linke Seite genau dann für alle $j$ verschwindet, wenn (\ref{4.16}) gilt. Es bleibt zu zeigen, dass für geeignet gewähltes $u$ unter den gegebenen Bedingungen auch die zweiten Ableitungen verschwinden. Hierzu leitet man die obige Gleichung ein weiteres Mal ab und stellt unter Verwendung von (\ref{normpart}) fest, dass das resultierende System partieller Differentialgleichungen die Voraussetzungen des Satzes von Cauchy-Kovalewskaja erfüllt, woraus die Existenz eines solchen $u$ folgt.
 \end{proof}
 
-\begin{lem}\label{lem3}
+\begin{lem}[{\cite[Lemma 2.3]{Hormander:1960a}}]\label{lem3}
 Seien $\zeta, f \in \C^n$ mit $\zeta \neq 0$. Dann gibt es genau dann eine symmetrische Matrix $A = (\boldsymbol\alpha_{i,j})_{i,j}$ mit negativ definitem Realteil
 $B=(\Re\boldsymbol \alpha_{i,j})_{i,j}$ und
 \begin{equation}\label{laag1}
@@ -268,18 +268,18 @@ hat. Um die Existenz eines solchen $C$ zu zeigen, stellen wir zunächst fest, da
 Insbesondere ist $(\xi\cdot\overline g)(\zeta\cdot\xi) $ immer reell. Unter Verwendung, dass $\zeta$ nicht proportional zu einem reellen Vektor ist, berechnet man schnell, dass $g$ ein reelles Vielfaches von $\zeta$ sein muss. Insbesondere ist $\Re(z\cdot\overline\zeta) = 0 \Leftrightarrow \Re(z\cdot \overline g) = 0$ und $f'$ lässt sich wegen (\ref{Ebene}) als $\i C \zeta$ schreiben für eine reelle, symmetrische Matrix $C$.  Es folgt die Behauptung.
 \end{proof}
 
-\begin{thm}
+\begin{thm}[{\cite[Theorem 2.1]{Hormander:1960a}}]
 \label{Umkehrung}
-Es gelte die Ungleichung (\ref{eq:4:locHT}), d.h.
+Es gelte die Ungleichung (\ref{eq:4:locHT}), d.h. für ein $\Omega'\Subset\Omega$
 \begin{equation}
-  \| u\|_{(m-1)} \le C \| P(x,\D) u \| \quad \forall u\in\rmC_0^\infty(\Omega).
+  \| u\|_{(m-1)} \le C \| P(x,\D) u \| \quad \forall u\in\rmC_0^\infty(\Omega').
 \end{equation}
 Dann folgt 
 \begin{equation}
 	\label{Beh}
 \{p,\overline p\} (x,\xi) = 0,
 \end{equation}
-falls $p(x,\xi) = 0$, $x \in \Omega$ und $ \xi \in \R^n$.
+falls $p(x,\xi) = 0$, $x \in \Omega'$ und $ \xi \in \R^n$.
 \end{thm}
 \begin{proof}
 Wir nehmen ohne Einschränkung $x=0$ an. Weiterhin gelte
@@ -289,5 +289,5 @@ Wir nehmen ohne Einschränkung $x=0$ an. Weiterhin gelte
 denn sonst ist (\ref{Beh}) trivialerweise erfüllt. Die Lemmata \ref{lem1} und \ref{lem2} zeigen dann, dass die Gleichung (\ref{4.16}) für keine symmetrische Matrix mit negativ definitem Realteil erfüllt sein kann. Mit Lemma \ref{lem3} folgt deshalb $\{p,\overline p\}(x,\xi) \ge 0$. Das analoge Argument mit $-\xi$ anstatt $\xi$ liefert $\{p,\overline p\}(x,-\xi) \ge 0$. Weil $\{p,\overline p\}(x,\xi)$ eine ungerade Funktion in $\xi$ ist, folgt die Behauptung.
 \end{proof}
 \begin{rem}
-In Satz \ref{Umkehrung} folgt nur das Verschwinden der Poissonklammer auf der Nullstellenmenge von $p(x,\xi)$ und insbesondere nicht die wesentliche Normalität von $P(x,D)$. Folglich handelt es sich nicht um die Umkehrung von Satz \ref{thm:4:4.2}, wo wesentliche Normalität vorausgesetzt wurde.
+In Satz \ref{Umkehrung} folgt nur das Verschwinden der Poissonklammer auf der Nullstellenmenge von $p(x,\xi)$ und insbesondere nicht die wesentliche Normalität von $P(x,\D)$. Folglich handelt es sich nicht um die Umkehrung von Satz \ref{thm:4:4.2}, wo wesentliche Normalität vorausgesetzt wurde.
 \end{rem}
