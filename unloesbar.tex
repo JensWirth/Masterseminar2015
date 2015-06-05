@@ -9,7 +9,7 @@
 
 Bis Mitte des 20. Jahrhunderts ging man davon aus, dass die lokale Existenz glatter Lösungen für lineare Differentialgleichungen stets gegeben sei. Das Beispiel von Hans Lewy zeigt eindrucksvoll, dass dies nicht zwingend der Fall sein muss.  In diesem Abschnitt soll eine lineare, partielle Differentialgleichung erster Ordnung in drei Variablen mit komplexwertigen $\rmC^\infty$-Koeffizienten vorgestellt werden, welche in \textit{keiner} offenen Menge eine glatte/distributionelle Lösung besitzt. Hierfür betrachtet man den durch
 \begin{equation}\label{lewy:differentialausdruck}
-\mathscr L := -\frac{\partial}{\partial x_1} -i\frac{\partial}{\partial x_2} +2\i(x_1+ix_2)\frac{\partial}{\partial y_1}
+\mathscr L := -\frac{\partial}{\partial x_1} -\i\frac{\partial}{\partial x_2} +2\i(x_1+ix_2)\frac{\partial}{\partial y_1}
 \end{equation}
 definierten Differentialausdruck auf $\R^3$.%$C^1(\mathbb{R}^3;\mathbb{C})$-Funktionen $u=u(x_1,x_2,y_1)$. 
 %Der zweite Teil des Kapitels behandelt einen dieses Beispiel verallgemeinerten Satz und dessen Beweis von Lars Hörmander. Dieser gibt Kriterien an, unter welchen in keiner offenen Menge noch nicht einmal distributionelle Lösungen $u$ von $Pu=f$ existieren.
@@ -18,13 +18,13 @@ Das erste überraschende Resultat von Lewy ist in folgendem Lemma enthalten:
 \begin{lem}\label{thm:1_lewy}
 Zu den reellen, unabhängigen Variablen $x_1,x_2,y_1\in\mathbb{R}$ und einer reellwertigen Funktion $\psi\in C^1(\mathbb{R})$ sei das Problem
 \begin{equation}\label{eq:1_lewy:gleichung}
-\mathscr Lu:= \left(-\frac{\partial}{\partial x_1} -i\frac{\partial}{\partial x_2} +2\i(x_1+\i x_2)\frac{\partial}{\partial y_1}\right)u=\psi'(y_1)
+\mathscr Lu:= \left(-\frac{\partial}{\partial x_1} -\i\frac{\partial}{\partial x_2} +2\i(x_1+\i x_2)\frac{\partial}{\partial y_1}\right)u=\psi'(y_1)
 \end{equation}
-gegeben. Angenommen, in einer Umgebung $U=U(0,0,y_1^0)$ von $(0,0,y_1^0)$ existiere eine $\rmC^1$-Lösung $u=u(x_1,x_2,y_1)$ von (\ref{eq:1_lewy:gleichung}), dann ist $\psi$ analytisch in $y_1=y_1^0$.
+gegeben. Angenommen, in einer Umgebung $U$ von $(0,0,y_1^0)$ existiere eine $\rmC^1$-Lösung $u$ von \eqref{eq:1_lewy:gleichung}, dann ist $\psi$ analytisch in $y_1=y_1^0$.
 \end{lem}
 
 \begin{proof}
-Wir integrieren (\ref{thm:1_lewy:gleichung}) über einen Kreis in der nach Voraussetzung existierenden Umgebung $U$ von $(0,0,y_0^1)$ mit 
+Wir integrieren \eqref{eq:1_lewy:gleichung} über einen Kreis in der nach Voraussetzung existierenden Umgebung $U$ von $(0,0,y_1^0)$ mit 
 \begin{equation}
 x_1^2+x_2^2=t=\mathrm{const},\qquad y_1=\mathrm{const}.
 \end{equation}
@@ -82,7 +82,7 @@ Setzen wir nun
 \begin{equation}
 I(y_1,t)=i\int_0^{2\pi} \e^{\i\theta} \sqrt{t}u\d\theta,
 \end{equation}
-so liefert (\ref{thm:1_lewy:gleichung}) und danach (\ref{thm:1_lewy:abl_gleich_final})
+so liefert (\ref{eq:1_lewy:gleichung}) und danach (\ref{thm:1_lewy:abl_gleich_final})
 \begin{align}
 \begin{split}
 \frac{\partial I}{\partial y_1} +i\frac{\partial I}{\partial t} 
