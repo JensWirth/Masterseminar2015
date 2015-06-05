@@ -1,25 +1,27 @@
 % !TEX root = main.tex
-\chapter{Ein unlösbarer Operator}
-\cite{Lewy:1957}
-\cite{Hormander:1960b}
+%\chapter{Ein unlösbarer Operator}
+%\cite{Lewy:1957}
+%\cite{Hormander:1960b}
 
-Bis Anfang des 20. Jahrhunderts ging man davon aus, dass die lokale Existenz glatter Lösungen für lineare Differentialgleichungen stets gegeben sei. Forschungsergebnisse von Hans Lewy zeigten jedoch auf, dass dies nicht zwingend der Fall sein muss.  In diesem Kapitel soll eine lineare, partielle Differentialgleichung erster Ordnung in drei Variablen mit komplexwertigen $C^\infty$-Koeffizienten vorgestellt werden, welche in \textit{keiner} Umgebung eine glatte Lösung besitzt. Hierfür betrachtet man den durch
+
+\section{Das Beispiel von Lewy}
+
+
+Bis Mitte des 20. Jahrhunderts ging man davon aus, dass die lokale Existenz glatter Lösungen für lineare Differentialgleichungen stets gegeben sei. Das Beispiel von Hans Lewy zeigt eindrucksvoll, dass dies nicht zwingend der Fall sein muss.  In diesem Abschnitt soll eine lineare, partielle Differentialgleichung erster Ordnung in drei Variablen mit komplexwertigen $\rmC^\infty$-Koeffizienten vorgestellt werden, welche in \textit{keiner} offenen Menge eine glatte/distributionelle Lösung besitzt. Hierfür betrachtet man den durch
 \begin{equation}\label{lewy:differentialausdruck}
 \mathscr L := -\frac{\partial}{\partial x_1} -i\frac{\partial}{\partial x_2} +2\i(x_1+ix_2)\frac{\partial}{\partial y_1}
 \end{equation}
-definierten Differentialausdruck auf $C^1(\mathbb{R}^3;\mathbb{C})$-Funktionen $u=u(x_1,x_2,y_1)$. Der zweite Teil des Kapitels behandelt einen dieses Beispiel verallgemeinerten Satz und dessen Beweis von Lars Hörmander. Dieser gibt Kriterien an, unter welchen in keiner offenen Menge noch nicht einmal distributionelle Lösungen $u$ von $Pu=f$ existieren.
-
-\section{Ein motivierender Satz}
-
-Zunächst benötigen wir einen zentralen Satz, dessen Kontraposition uns später die Existenz obig angesprochener PDE motiviert.
-
-\begin{thm}\label{thm:1_lewy}
+definierten Differentialausdruck auf $\R^3$.%$C^1(\mathbb{R}^3;\mathbb{C})$-Funktionen $u=u(x_1,x_2,y_1)$. 
+%Der zweite Teil des Kapitels behandelt einen dieses Beispiel verallgemeinerten Satz und dessen Beweis von Lars Hörmander. Dieser gibt Kriterien an, unter welchen in keiner offenen Menge noch nicht einmal distributionelle Lösungen $u$ von $Pu=f$ existieren.
+%Zunächst benötigen wir einen zentralen Satz, dessen Kontraposition uns später die Existenz obig angesprochener PDE motiviert.
+Das erste überraschende Resultat von Lewy ist in folgendem Lemma enthalten:
+\begin{lem}\label{thm:1_lewy}
 Zu den reellen, unabhängigen Variablen $x_1,x_2,y_1\in\mathbb{R}$ und einer reellwertigen Funktion $\psi\in C^1(\mathbb{R})$ sei das Problem
-\begin{equation}\label{thm:1_lewy:gleichung}
-\mathscr Lu:= \left(-\frac{\partial}{\partial x_1} -i\frac{\partial}{\partial x_2} +2\i(x_1+ix_2)\frac{\partial}{\partial y_1}\right)u=\psi'(y_1)
+\begin{equation}\label{eq:1_lewy:gleichung}
+\mathscr Lu:= \left(-\frac{\partial}{\partial x_1} -i\frac{\partial}{\partial x_2} +2\i(x_1+\i x_2)\frac{\partial}{\partial y_1}\right)u=\psi'(y_1)
 \end{equation}
-gegeben. Angenommen, in einer Umgebung $U=U(0,0,y_1^0)$ von $(0,0,y_1^0)$ existiere eine $C^1$-Lösung $u=u(x_1,x_2,y_1)$ von (\ref{thm:1_lewy:gleichung}), dann ist $\psi$ analytisch in $y_1=y_1^0$.
-\end{thm}
+gegeben. Angenommen, in einer Umgebung $U=U(0,0,y_1^0)$ von $(0,0,y_1^0)$ existiere eine $\rmC^1$-Lösung $u=u(x_1,x_2,y_1)$ von (\ref{eq:1_lewy:gleichung}), dann ist $\psi$ analytisch in $y_1=y_1^0$.
+\end{lem}
 
 \begin{proof}
 Wir integrieren (\ref{thm:1_lewy:gleichung}) über einen Kreis in der nach Voraussetzung existierenden Umgebung $U$ von $(0,0,y_0^1)$ mit 
@@ -28,7 +30,7 @@ x_1^2+x_2^2=t=\mathrm{const},\qquad y_1=\mathrm{const}.
 \end{equation}
 Sei $\theta$ derjenige Winkel gegeben durch
 \begin{equation}
-x_1+ix_2=\sqrt{t}\cdot \e^{\i\theta} =\e^{\i\theta +\log\sqrt{t}},
+x_1+\i x_2=\sqrt{t}\cdot \e^{\i\theta} =\e^{\i\theta +\log\sqrt{t}},
 \end{equation}
 so erhält man mit der Identität
 \begin{equation}
@@ -124,21 +126,21 @@ t=0 \quad\Rightarrow\quad I(y_1,0)=0 \quad\Rightarrow\quad J(y_1,0)=-\pi\psi'(y_
 mit nach Annahme reellem $\psi$ gilt, kann $J$ mithilfe des Spiegelungsprinzips (bezüglich obigem Definitionsbereich) auf $t=0$ analytisch fortgesetzt werden. Somit ist auch $\psi(y_1)$ analytisch sowohl im Punkt $y_1=y_1^0$ selbst, als auch in einer Umgebung von ihm und die Behauptung ist gezeigt.
 \end{proof}
 
-Betrachtet man nun (\ref{thm:1_lewy:gleichung}) mit reellem $\psi\in C^\infty(\mathbb{R}\rightarrow\mathbb{R})$, welches \textit{nicht} analytisch in $y_1=y_1^0$ ist, so liefert die Kontraposition des obigen Satzes, dass (\ref{thm:1_lewy:gleichung}) in \textit{keiner} Umgebung $U(0,0,y_0^1)$ eine Lösung $u\in C^1(\mathbb{R}^3\rightarrow\mathbb{C})$ besitzt.
+Betrachtet man nun \eqref{eq:1_lewy:gleichung} mit reellem $\psi\in C^\infty(\mathbb{R}\rightarrow\mathbb{R})$, welches \textit{nicht} analytisch in $y_1=y_1^0$ ist, so liefert die Kontraposition des obigen Lemmas, dass \eqref{eq:1_lewy:gleichung} in \textit{keiner} Umgebung $U(0,0,y_0^1)$ eine Lösung $u\in C^1(\mathbb{R}^3\rightarrow\mathbb{C})$ besitzt. Lewy nutzte obiges Lemma zu jedem gegebenen Gebiet $\Omega\subset\R^n$ eine Funktion $f\in\rmC^\infty(\Omega)$ zu konstruieren, so dass $\mathscr Lu=f$ keine Lösung in einem Hölderraum $\rmC^{1,\alpha}(\Omega)$ besitzen kann.
 
 
 
 
-\section{Unlösbare Operatoren nach Hörmander}
+\section{Hörmander's Unlösbarkeitskriterium für Operatoren erster Ordnung}
 Lars Hörmander verallgemeinerte dieses Beispiel in dem Sinne, dass für keine offene Menge $\omega\subseteq\Omega$ eine Lösung $u\in\mathscr{D}'(\omega)$ existiert. Zunächst wollen wir jedoch einen zum Beweis dieser Verallgemeinerung verwendeten präsentieren, dessen Beweis in [\textbf{TODO Ref Hörmander}] zu finden ist.
 
-\begin{thm}
+\begin{thm}\label{thm:3.1_hoer}
 Sei $\Omega\subset\mathbb{R}^n$ offen. Seien weiter die Koeffizienten des Differentialoperators $P$ analytisch und für jedes $f\in C_0^\infty(\Omega)$ existiere eine distributionelle Lösung $u\in\mathscr D'(\Omega)$ von
-\begin{equation}\label{thm:3.1_hoer}
+\begin{equation}\label{eq:3.1_hoer}
 P(x,D)u=f.
 \end{equation}
 Dann gilt für $x\in\Omega$ und $\xi\in\mathbb{R}^n$
-\begin{equation}\label{thm:3.1_hoer_aussage}
+\begin{equation}\label{eq:3.1_hoer_aussage}
 p(x,\xi)=0\quad\Rightarrow\quad \{p,\overline{p}\}(x,\xi)=0.
 \end{equation}
 \end{thm}
@@ -162,9 +164,9 @@ von $C^\infty(\Omega)$.
 
 
 \begin{thm}\label{thm:2_hoer}
-Sei $P$ ein Differentialausdruck erster Ordnung mit analytischen Koeffizienten und gelte \ref{thm:3.1_hoer_aussage} nicht für alle offenen, nichtleeren Mengen $\omega\subseteq\Omega$, d.h. 
+Sei $P$ ein Differentialausdruck erster Ordnung mit analytischen Koeffizienten und gelte \eqref{eq:3.1_hoer_aussage} nicht für alle offenen, nichtleeren Mengen $\omega\subseteq\Omega$, d.h. 
 \begin{equation}
-p(x,\xi)=0 \quad\Rightarrow\quad C_1(x,\xi)=0
+p(x,\xi)=0 \quad\Rightarrow\quad \{p,\overline p\}(x,\xi)=0
 \end{equation}
 für $x\in\omega$ und $\xi\in\mathbb{R}^n$ gelte für \eIndex[Operator]{keines} dieser $\omega\subseteq\Omega$.
 Dann existieren Funktionen $f\in B_0^\infty(\Omega)$ so dass
@@ -230,4 +232,4 @@ in $n=3$ Dimensionen aus dem ersten Teil dieses Kapitels erhalten wir $\{p,\over
 \begin{equation}
 \xi_3 =1,\quad \xi_1=-2x_2,\quad \xi_2=2x_1\qquad\Rightarrow\qquad p(x,\xi)=0
 \end{equation}
-ist $\{p,\overline{p}\}(x,\xi)=-8\neq 0$ und \ref{thm:3.1_hoer_aussage} gilt nicht für alle $x\in\mathbb{R}^n$ womit folglich die Voraussetzungen von Satz \ref{thm:2_hoer} erfüllt sind.
+ist $\{p,\overline{p}\}(x,\xi)=-8\neq 0$ und \eqref{eq:3.1_hoer_aussage} gilt nicht für alle $x\in\mathbb{R}^n$ womit folglich die Voraussetzungen von Satz \ref{thm:2_hoer} erfüllt sind.
