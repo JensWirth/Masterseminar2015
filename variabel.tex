@@ -68,8 +68,18 @@ Das folgende Resultat ergibt sich aus \cite[Theorem~4.1]{Hormander:1955} zusamme
 Angenommen, $P(x,\D)$ ist vom Haupttyp und wesentlich normal. Dann existiert zu jedem $x_0\in\Omega$ eine Umgebung $\omega\Subset\Omega$, so dass
 \eqref{eq:4:locHT} mit einer von $\omega$ abhängigen Konstanten $C$ gilt.
 \end{thm}
-\begin{proof}[Beweisskizze]
-Für den Originalbeweis konstruiert man wiederum Energieintegrale und schätzt diese mittels partieller Integration ab.
+\begin{proof}[Beweisidee]
+%%Für den Beweis nutzt man quadratische Energieformen der Ordnung $(m,\mu)$
+%%\begin{equation}
+%%   F(x,\D,\overline\D) u\overline v = \sum_{\alpha,\beta} a_{\alpha,\beta}(x) \big(\D^\alpha u(x)\big) \overline{\big(\D^\beta v(x)\big)},\qquad F(x,\zeta,\overline\zeta)=\sum_{\alpha,\beta} a_{\alpha,\beta}(x) \zeta^\alpha \overline\zeta^\beta,
+%%\end{equation}
+%%wobei die Summe über alle Multiindices mit $|\alpha|,|\beta|\le m$ und $|\alpha+\beta|\le \mu$ läuft. In Analogie zu Lemma~\ref{lem:2:qfsym} und \ref{lem:2:2.2}
+%%impliziert $F(x,\xi,\xi)=0$ für alle $\xi\in\R^n$ die Existenz einer Energieform $G$ der Ordnung $(m-1,\mu)$ mit
+%%\begin{equation}
+%%    \int_\Omega F(x,\D,\overline\D) u\overline u \d x = \int_\Omega G(x,\D,\overline\D) u\overline u \d x
+%%\end{equation}
+%%für alle $u\in\rmC_0^\infty(\Omega)$. 
+Der Beweis beruht wiederum auf geeignet konstruierten Energieformen und partieller Integration. Dazu verweisen wir auf die Originalarbeit \cite[Section 4.2]{Hormander:1955} für den Spezialfall mit reellwertigem Hauptsymbol oder auf \cite[Section 8.5]{Hormander:1963} für das allgemeine Resultat.
 \end{proof}
 
 \begin{cor}
