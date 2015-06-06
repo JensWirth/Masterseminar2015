@@ -17,11 +17,11 @@ Zu einer reellwertigen Funktion $\psi\in \rmC^1(\mathbb{R})$ besitze das Problem
 \begin{equation}\label{eq:1_lewy:gleichung}
 \mathscr Lu=\psi'(y_1)
 \end{equation}
-in einer Umgebung $U\subset\R^3$ von $(0,0,y_1^0)$ eine $\rmC^1$-Lösung $u$. Dann ist $\psi$ analytisch in $y_1=y_1^0$.
+in einer Umgebung $\Omega\subset\R^3$ von $(0,0,y_1^0)$ eine $\rmC^1$-Lösung $u$. Dann ist $\psi$ analytisch in $y_1=y_1^0$.
 \end{lem}
 
 \begin{proof}
-Wir integrieren $(\partial_1+\i\partial_2) u$ für eine Lösung $u$ von \eqref{eq:1_lewy:gleichung} über einen Kreis in der $x_1$-$x_2$ Ebene um den Punkt $(0,0,y_1^0)$. Der Radius wird dabei so klein gewählt, dass der Kreis in $U$ liegt. Sei dazu
+Wir integrieren $(\partial_1+\i\partial_2) u$ für eine Lösung $u$ von \eqref{eq:1_lewy:gleichung} über einen Kreis in der $x_1$-$x_2$ Ebene um den Punkt $(0,0,y_1^0)$. Der Radius wird dabei so klein gewählt, dass der Kreis in $\Omega$ liegt. Sei dazu
 \begin{equation}
 x_1^2+x_2^2=y_2=\mathrm{const},\qquad y_1=\mathrm{const},
 \end{equation}
@@ -29,18 +29,7 @@ $t=\log\sqrt{y_2}=\log\sqrt{x_1^2+x_2^2}$ und $\theta$ derjenige Winkel gegeben 
 \begin{equation}
 x_1+\i x_2=\sqrt{y_2} \, \e^{\i\theta} =\e^{t+\i\theta}.
 \end{equation}
-Dann erhält man
-% mit der Identität
-%\begin{equation}
-%\theta=\arctan\left(\frac{x_2}{x_1}\right)
-%\end{equation}
-%und der Kettenregel 
-%\begin{equation}
-%\frac{\partial}{\partial x_1}+\i\frac{\partial}{\partial x_2}
-%= \left(\frac{\partial}{\partial \theta} \frac{\partial\theta}{\partial x_1}+\frac{\partial}{\partial t}\frac{\partial t}{\partial x_1}\right)
-%+\i \left(\frac{\partial}{\partial \theta} \frac{\partial\theta}{\partial x_2}+\frac{\partial}{\partial t}\frac{\partial t}{\partial x_2}\right)
-%\end{equation}
-durch einfaches Nachrechnen $\overline x \overline\partial_x = \overline\partial_t$, also
+Dann erhält man durch einfaches Nachrechnen $\overline x \overline\partial_x = \overline\partial_t$, also
 \begin{equation}\label{thm:1_lewy:proof1}
 \frac{\partial}{\partial x_1} +\i\frac{\partial}{\partial x_2}=
 \e^{-t+\i\theta} \left(\frac{\partial}{\partial t}
@@ -114,7 +103,11 @@ mit nach Voraussetzung reellem $\psi$ und $J$ kann mithilfe des Spiegelungsprinz
 und damit auch $\psi(y_1)$ analytisch in einer Umgebung des Punktes $y_1=y_1^0$ und die Behauptung ist gezeigt.
 \end{proof}
 
-Betrachtet man nun \eqref{eq:1_lewy:gleichung} mit reellem $\psi\in C^\infty(\mathbb{R}\rightarrow\mathbb{R})$, welches \textit{nicht} analytisch in $y_1=y_1^0$ ist, so liefert die Kontraposition des obigen Lemmas, dass \eqref{eq:1_lewy:gleichung} in \textit{keiner} Umgebung $U(0,0,y_0^1)$ eine Lösung $u\in C^1(\mathbb{R}^3\rightarrow\mathbb{C})$ besitzt. Lewy nutzte obiges Lemma zu jedem gegebenen Gebiet $\Omega\subset\R^n$ eine Funktion $f\in\rmC^\infty(\Omega)$ zu konstruieren, so dass $\mathscr Lu=f$ keine Lösung in einem Hölderraum $\rmC^{1,\alpha}(\Omega)$ besitzen kann.
+Betrachtet man nun \eqref{eq:1_lewy:gleichung} mit reellwertigem $\psi\in \rmC^\infty(\R)$, welches \textit{nicht} analytisch in $y_1=y_1^0$ ist, so liefert die Kontraposition des obigen Lemmas, dass \eqref{eq:1_lewy:gleichung} in keiner Umgebung $\Omega$ von $(0,0,y_1^0)$ eine Lösung $u\in \rmC^1(\Omega)$ besitzen kann. Lewy nutzte obiges Lemma um eine Funktion $f\in\rmC^\infty(\R)$ zu konstruieren, so dass
+\begin{equation} 
+   \mathscr L u = f(y_1)
+\end{equation}
+in {\em keinem} Gebiet $\Omega\subset\R^3$ eine Lösung in einem Hölderraum $\rmC^{1,\alpha}(\Omega)$ besitzen kann.
 
 
 
