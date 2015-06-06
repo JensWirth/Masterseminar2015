@@ -9,121 +9,109 @@
 
 Bis Mitte des 20. Jahrhunderts ging man davon aus, dass die lokale Existenz glatter Lösungen für lineare Differentialgleichungen stets gegeben sei. Das Beispiel von Hans Lewy zeigt eindrucksvoll, dass dies nicht zwingend der Fall sein muss.  In diesem Abschnitt soll eine lineare, partielle Differentialgleichung erster Ordnung in drei Variablen mit komplexwertigen $\rmC^\infty$-Koeffizienten vorgestellt werden, welche in \textit{keiner} offenen Menge eine glatte/distributionelle Lösung besitzt. Hierfür betrachtet man den durch
 \begin{equation}\label{lewy:differentialausdruck}
-\mathscr L := -\frac{\partial}{\partial x_1} -\i\frac{\partial}{\partial x_2} +2\i(x_1+ix_2)\frac{\partial}{\partial y_1}
+\mathscr L := -\frac{\partial}{\partial x_1} -\i\frac{\partial}{\partial x_2} +2\i(x_1+\i x_2)\frac{\partial}{\partial y_1}
 \end{equation}
-definierten Differentialausdruck auf $\R^3$.%$C^1(\mathbb{R}^3;\mathbb{C})$-Funktionen $u=u(x_1,x_2,y_1)$. 
-%Der zweite Teil des Kapitels behandelt einen dieses Beispiel verallgemeinerten Satz und dessen Beweis von Lars Hörmander. Dieser gibt Kriterien an, unter welchen in keiner offenen Menge noch nicht einmal distributionelle Lösungen $u$ von $Pu=f$ existieren.
-%Zunächst benötigen wir einen zentralen Satz, dessen Kontraposition uns später die Existenz obig angesprochener PDE motiviert.
-Das erste überraschende Resultat von Lewy ist in folgendem Lemma enthalten:
-\begin{lem}\label{thm:1_lewy}
-Zu den reellen, unabhängigen Variablen $x_1,x_2,y_1\in\mathbb{R}$ und einer reellwertigen Funktion $\psi\in C^1(\mathbb{R})$ sei das Problem
+definierten Differentialausdruck auf $\R^3$. Das erste überraschende Resultat von Lewy ist in folgendem Lemma enthalten:
+\begin{lem}[{\cite{Lewy:1957}}]\label{thm:1_lewy}
+Zu einer reellwertigen Funktion $\psi\in \rmC^1(\mathbb{R})$ besitze das Problem
 \begin{equation}\label{eq:1_lewy:gleichung}
-\mathscr Lu:= \left(-\frac{\partial}{\partial x_1} -\i\frac{\partial}{\partial x_2} +2\i(x_1+\i x_2)\frac{\partial}{\partial y_1}\right)u=\psi'(y_1)
+\mathscr Lu=\psi'(y_1)
 \end{equation}
-gegeben. Angenommen, in einer Umgebung $U$ von $(0,0,y_1^0)$ existiere eine $\rmC^1$-Lösung $u$ von \eqref{eq:1_lewy:gleichung}, dann ist $\psi$ analytisch in $y_1=y_1^0$.
+in einer Umgebung $U\subset\R^3$ von $(0,0,y_1^0)$ eine $\rmC^1$-Lösung $u$. Dann ist $\psi$ analytisch in $y_1=y_1^0$.
 \end{lem}
 
 \begin{proof}
-Wir integrieren \eqref{eq:1_lewy:gleichung} über einen Kreis in der nach Voraussetzung existierenden Umgebung $U$ von $(0,0,y_1^0)$ mit 
+Wir integrieren $(\partial_1+\i\partial_2) u$ für eine Lösung $u$ von \eqref{eq:1_lewy:gleichung} über einen Kreis in der $x_1$-$x_2$ Ebene um den Punkt $(0,0,y_1^0)$. Der Radius wird dabei so klein gewählt, dass der Kreis in $U$ liegt. Sei dazu
 \begin{equation}
-x_1^2+x_2^2=t=\mathrm{const},\qquad y_1=\mathrm{const}.
+x_1^2+x_2^2=y_2=\mathrm{const},\qquad y_1=\mathrm{const},
 \end{equation}
-Sei $\theta$ derjenige Winkel gegeben durch
+$t=\log\sqrt{y_2}=\log\sqrt{x_1^2+x_2^2}$ und $\theta$ derjenige Winkel gegeben durch
 \begin{equation}
-x_1+\i x_2=\sqrt{t}\cdot \e^{\i\theta} =\e^{\i\theta +\log\sqrt{t}},
+x_1+\i x_2=\sqrt{y_2} \, \e^{\i\theta} =\e^{t+\i\theta}.
 \end{equation}
-so erhält man mit der Identität
-\begin{equation}
-\theta=\arctan\left(\frac{x_2}{x_1}\right),\qquad s:=\log\sqrt{t}
-\end{equation}
-der Kettenregel 
-\begin{equation}
-\frac{\partial}{\partial x_1}+i\frac{\partial}{\partial x_2}
-= \left(\frac{\partial}{\partial \theta} \frac{\partial\theta}{\partial x_1}+\frac{\partial}{\partial s}\frac{\partial s}{\partial x_1}\right)
-+i \left(\frac{\partial}{\partial \theta} \frac{\partial\theta}{\partial x_2}+\frac{\partial}{\partial s}\frac{\partial s}{\partial x_2}\right),
-\end{equation}
-und obiger Konstruktion dann durch Nachrechnen
+Dann erhält man
+% mit der Identität
+%\begin{equation}
+%\theta=\arctan\left(\frac{x_2}{x_1}\right)
+%\end{equation}
+%und der Kettenregel 
+%\begin{equation}
+%\frac{\partial}{\partial x_1}+\i\frac{\partial}{\partial x_2}
+%= \left(\frac{\partial}{\partial \theta} \frac{\partial\theta}{\partial x_1}+\frac{\partial}{\partial t}\frac{\partial t}{\partial x_1}\right)
+%+\i \left(\frac{\partial}{\partial \theta} \frac{\partial\theta}{\partial x_2}+\frac{\partial}{\partial t}\frac{\partial t}{\partial x_2}\right)
+%\end{equation}
+durch einfaches Nachrechnen $\overline x \overline\partial_x = \overline\partial_t$, also
 \begin{equation}\label{thm:1_lewy:proof1}
-\frac{\partial}{\partial x_1} +i\frac{\partial}{\partial x_2}=\frac{\e^{\i\theta}}{\sqrt{t}} \left(\frac{\partial}{\partial \,\log \sqrt{t}}+i\frac{\partial}{\partial \theta}\right).
+\frac{\partial}{\partial x_1} +\i\frac{\partial}{\partial x_2}=
+\e^{-t+\i\theta} \left(\frac{\partial}{\partial t}
++\i\frac{\partial}{\partial \theta}\right).
 \end{equation}
-Setzen wir dies nun in folgendes Integral ein, so ergibt sich mittels partieller Integration des zweiten Summanden
+Diese Identität zusammen mit partieller Integration liefert
 \begin{align}\label{thm:1_lewy:abl_gleich}
 \begin{split}
-\int_0^{2\pi} \left(\frac{\partial}{\partial x_1} +i\frac{\partial}{\partial x_2}\right)u\d\theta 
-&= \int_0^{2\pi} \frac{\e^{\i\theta}}{\sqrt{t}} \left(\frac{\partial}{\partial \,\log \sqrt{t}}+i\frac{\partial}{\partial \theta}\right)u \d\theta \\
-&= \int_0^{2\pi} \frac{\e^{\i\theta}}{\sqrt{t}} \left[ \left(\frac{\partial}{\partial \,\log \sqrt{t}}\right)u +i\left(\frac{\partial}{\partial \theta}\right)u\right]\d\theta \\
-&= \int_0^{2\pi} \frac{\e^{\i\theta}}{\sqrt{t}} \left[ \left(\frac{\partial}{\partial \,\log \sqrt{t}}\right)u +u\right]\d\theta .
+\int_0^{2\pi} \left(\frac{\partial}{\partial x_1} +\i\frac{\partial}{\partial x_2}\right)u\d\theta 
+&= \int_0^{2\pi} \e^{-t+\i\theta} \left(\frac{\partial}{\partial \,t}+\i\frac{\partial}{\partial \theta}\right)u \d\theta \\
+&= \int_0^{2\pi} \e^{-t+\i\theta} \left(\frac{\partial u}{\partial \,t} +\i\frac{\partial u}{\partial \theta}\right)\d\theta \\
+&= \int_0^{2\pi} \e^{-t+\i\theta} \left(\frac{\partial u}{\partial \,t} +u\right)\d\theta .
 \end{split}
 \end{align}
-Setzen wir nun wie oben $\sqrt{t}=\e^s$, so ist $\frac{\partial}{\partial \,\log \sqrt{t}}=\frac{\partial}{\partial s}$ und
+Weiter impliziert $\sqrt{y_2}=\e^t$ für jede differenzierbare Funktion $w$
 \begin{align}\label{thm:1_lewy:int_gleichheit1}
 \begin{split}
-\frac{1}{\sqrt{t}}\left(\frac{\partial}{\partial\;\log\sqrt{t}}\right)u(t,\theta) + \frac{u(t,\theta)}{\sqrt{t}}
-&= \frac{1}{\e^s} \frac{\partial}{\partial s} u\left(\e^{2s},\theta\right)+\frac{1}{\e^s}u\left(\e^{2s},\theta\right) \\
-&= 2\e^s \left(\frac{\partial}{\partial r}\right) u\left(\e^{2s},\theta\right)+\frac{1}{\e^s} u\left(\e^{2s},\theta\right),
+\frac{\partial w}{\partial\, t}+ w  = 2\sqrt{y_2} \frac{\partial}{\partial y_2} \left( \sqrt{y_2} w(\log\sqrt{y_2})\right).
 \end{split}
 \end{align}
-sowie
-\begin{align}\label{thm:1_lewy:int_gleichheit2}
-\begin{split}
-2\frac{\partial}{\partial t}\left(\sqrt{t} u(t,\theta)\right) 
-&= \frac{1}{\sqrt{t}}u(t,\theta)+2\sqrt{t}\left(\frac{\partial}{\partial r}\right)u(t,\theta)\\
-&= \frac{1}{\e^s}u\left(\e^{2s},\theta\right) +2 \e^s \left(\frac{\partial}{\partial r}\right)u\left(\e^{2s},\theta\right).
-\end{split}
-\end{align}
-Da die rechten Seiten von (\ref{thm:1_lewy:int_gleichheit1}) und (\ref{thm:1_lewy:int_gleichheit2}) übereinstimmen, sind auch die linken Seiten gleich. Eingesetzt in das letzte Integral aus (\ref{thm:1_lewy:abl_gleich}) ergibt sich
+Eingesetzt in das letzte Integral aus \eqref{thm:1_lewy:abl_gleich} ergibt sich
 \begin{align}\label{thm:1_lewy:abl_gleich_final}
 \begin{split}
-\int_0^{2\pi} \left(\frac{\partial}{\partial x_1} +i\frac{\partial}{\partial x_2}\right)u\d\theta 
-= 2\left(\frac{\partial}{\partial t}\right)\int_0^{2\pi} \e^{\i\theta}\sqrt{t}u\d\theta.
+\int_0^{2\pi} \left(\frac{\partial}{\partial x_1} +\i\frac{\partial}{\partial x_2}\right)u\d\theta 
+= 2\left(\frac{\partial}{\partial y_2}\right)\int_0^{2\pi} \e^{\i\theta}\sqrt{y_2}u\d\theta.
 \end{split}
 \end{align}
 Setzen wir nun 
 \begin{equation}
-I(y_1,t)=i\int_0^{2\pi} \e^{\i\theta} \sqrt{t}u\d\theta,
+I(y_1,y_2)=\i\int_0^{2\pi} \e^{\i\theta} \sqrt{y_2} u\d\theta,
 \end{equation}
-so liefert (\ref{eq:1_lewy:gleichung}) und danach (\ref{thm:1_lewy:abl_gleich_final})
+so liefert \eqref{eq:1_lewy:gleichung} und danach \eqref{thm:1_lewy:abl_gleich_final}
 \begin{align}
 \begin{split}
-\frac{\partial I}{\partial y_1} +i\frac{\partial I}{\partial t} 
-&= i\int_{0}^{2\pi} \frac{\partial}{\partial y_1}\left(\e^{\i\theta}\sqrt{t}u\right)+i\frac{\partial}{\partial t}\left(\e^{\i\theta}\sqrt{t}u\right)\d\theta \\
-&= i\int_{0}^{2\pi} \e^{\i\theta}\sqrt{t}\left(\frac{\partial}{\partial y_1}u\right) +i\e^{\i\theta}\frac{\partial}{\partial t}(\sqrt{t}u)\d\theta\\
-&= i\int_{0}^{2\pi} \e^{\i\theta}\sqrt{t} \left(
-	\frac{\psi'(y_1)}{2\i(x_1+ix_2)}
-	+ \frac{\left(\frac{\partial}{\partial x_1} + i\frac{\partial}{\partial x_2}\right)u}{2\i(x_1+ix_2)} 
-	+ \frac{\i}{\sqrt{t}} \frac{\partial}{\partial t}(\sqrt{t} u)
+\frac{\partial I}{\partial y_1} +\i\frac{\partial I}{\partial y_2} 
+&= \i\int_{0}^{2\pi} \frac{\partial}{\partial y_1}\left(\e^{\i\theta}\sqrt{y_2}u\right)+\i\frac{\partial}{\partial y_2}\left(\e^{\i\theta}\sqrt{y_2}u\right)\d\theta \\
+&= \i\int_{0}^{2\pi} \e^{\i\theta}\sqrt{y_2}\left(\frac{\partial}{\partial y_1}u\right) +\i\e^{\i\theta}\frac{\partial}{\partial y_2}(\sqrt{y_2}u)\d\theta\\
+&= \i\int_{0}^{2\pi} \e^{\i\theta}\sqrt{y_2} \left(
+	\frac{\psi'(y_1)}{2\i(x_1+\i x_2)}
+	+ \frac{\left(\frac{\partial}{\partial x_1} + \i\frac{\partial}{\partial x_2}\right)u}{2\i(x_1+\i x_2)} 
+	+ \frac{\i}{\sqrt{y_2}} \frac{\partial}{\partial y_2}(\sqrt{y_2} u)
 \right)\d\theta \\
-&= i\int_{0}^{2\pi} \e^{\i\theta}\sqrt{t} \left( 
-	\frac{\psi'(y_1)}{2\i\sqrt{t}\e^{\i\theta}} 
-	+ \frac{\left(\frac{\partial}{\partial x_1} + i\frac{\partial}{\partial x_2}\right)u}{2\i\sqrt{t}\e^{\i\theta}}
-	+ \frac{\i}{\sqrt{t}} \frac{\partial}{\partial t}(\sqrt{t} u)
+&= \i\int_{0}^{2\pi} \e^{\i\theta}\sqrt{y_2} \left( 
+	\frac{\psi'(y_1)}{2\i\sqrt{y_2}\e^{\i\theta}} 
+	+ \frac{\left(\frac{\partial}{\partial x_1} + \i\frac{\partial}{\partial x_2}\right)u}{2\i\sqrt{y_2}\e^{\i\theta}}
+	+ \frac{\i}{\sqrt{y_2}} \frac{\partial}{\partial y_2}(\sqrt{y_2} u)
 \right)\d\theta	 \\
 &= \int_0^{2\pi} \frac{\psi'(y_1)}{2}\d\theta 
-	+ \frac{1}{2}\int_0^{2\pi} \left(\frac{\partial}{\partial x_1} +i\frac{\partial}{\partial x_2}\right)u\d\theta
-	- \int_0^{2\pi} \e^{\i\theta}\frac{\partial}{\partial t}(\sqrt{t} u) \d\theta \\
+	+ \frac{1}{2}\int_0^{2\pi} \left(\frac{\partial}{\partial x_1} +\i \frac{\partial}{\partial x_2}\right)u\d\theta
+	- \int_0^{2\pi} \e^{\i\theta}\frac{\partial}{\partial y_2}(\sqrt{y_2} u) \d\theta \\
 &= 2\pi\frac{\psi'(y_1)}{2}
-	+  \left(\frac{\partial}{\partial t}\right)\int_0^{2\pi} \e^{\i\theta}\sqrt{t}u\d\theta
-	- \left(\frac{\partial}{\partial t}\right) \int_0^{2\pi} \e^{\i\theta}\sqrt{t}u\d\theta\\
+	+  \left(\frac{\partial}{\partial y_2}\right)\int_0^{2\pi} \e^{\i\theta}\sqrt{y_2}u\d\theta
+	- \left(\frac{\partial}{\partial y_2}\right) \int_0^{2\pi} \e^{\i\theta}\sqrt{y_2}u\d\theta\\
 &= \pi\psi'(y_1).
 \end{split}
 \end{align}
 Ferner ist
 \begin{equation}
-J(y):=J(y_1,t):=I(y_1,t)-\pi\psi(y_1),
+J(y):=J(y_1,y_2):=I(y_1,y_2)-\pi\psi(y_1),
 \end{equation}
-eine $C^1$-Funktion. Nach Konstruktion von $J$ erfüllt diese die Variante
+eine $\rmC^1$-Funktion. Nach Konstruktion erfüllt diese die Cauchy-Riemannschen Differentialgleichungen
 \begin{equation}
-\frac{\partial J}{\partial y_1} +i\frac{\partial J}{\partial t} = 0
+\frac{\partial J}{\partial y_1} +\i\frac{\partial J}{\partial y_2} = 0
 \end{equation}
-der Cauchy-Riemannschen Differentialgleichungen und ist somit analytisch in $y$. Ihr Definitionsbereich enthält alle $y=(y_1,t)$, wobei $t>0$ hinreichend klein ist und $y_1$
-\begin{equation}
-y_1\in U(x_1,x_2,y_1),\qquad x_1^2+x_2^2\leq t
-\end{equation}
-erfüllt. Da weiter
+ und ist somit analytisch in $y=y_1+\i y_2$. Ihr Definitionsbereich enthält alle $y=(y_1,y_2)$ mit $y_2>0$ hinreichend klein und $y_1$ nahe $y_1^0$.
+ Da weiter für $y_2=0$ nach Konstruktion $I(y_1,0)=0$ gilt, folgt
 \begin{align*}
-t=0 \quad\Rightarrow\quad I(y_1,0)=0 \quad\Rightarrow\quad J(y_1,0)=-\pi\psi'(y_1)
+ J(y_1,0)=-\pi\psi'(y_1)
 \end{align*}
-mit nach Annahme reellem $\psi$ gilt, kann $J$ mithilfe des Spiegelungsprinzips (bezüglich obigem Definitionsbereich) auf $t=0$ analytisch fortgesetzt werden. Somit ist auch $\psi(y_1)$ analytisch sowohl im Punkt $y_1=y_1^0$ selbst, als auch in einer Umgebung von ihm und die Behauptung ist gezeigt.
+mit nach Voraussetzung reellem $\psi$ und $J$ kann mithilfe des Spiegelungsprinzips in die untere komplexe Halbebene analytisch fortgesetzt werden. Somit ist $\psi'(y_1)$ 
+und damit auch $\psi(y_1)$ analytisch in einer Umgebung des Punktes $y_1=y_1^0$ und die Behauptung ist gezeigt.
 \end{proof}
 
 Betrachtet man nun \eqref{eq:1_lewy:gleichung} mit reellem $\psi\in C^\infty(\mathbb{R}\rightarrow\mathbb{R})$, welches \textit{nicht} analytisch in $y_1=y_1^0$ ist, so liefert die Kontraposition des obigen Lemmas, dass \eqref{eq:1_lewy:gleichung} in \textit{keiner} Umgebung $U(0,0,y_0^1)$ eine Lösung $u\in C^1(\mathbb{R}^3\rightarrow\mathbb{C})$ besitzt. Lewy nutzte obiges Lemma zu jedem gegebenen Gebiet $\Omega\subset\R^n$ eine Funktion $f\in\rmC^\infty(\Omega)$ zu konstruieren, so dass $\mathscr Lu=f$ keine Lösung in einem Hölderraum $\rmC^{1,\alpha}(\Omega)$ besitzen kann.
