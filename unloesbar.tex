@@ -115,6 +115,8 @@ in {\em keinem} Gebiet $\Omega\subset\R^3$ eine Lösung in einem Hölderraum $\r
 \section{Hörmanders Unlösbarkeitskriterium}
 Hörmander zeigte in \cite{Hormander:1960a}, dass für jedes Gebiet $\Omega\subset\R^n$ eine glatte Funktion $f\in\rmC^\infty(\R^n)$ existiert, für welche keine Distribution $u\in\mathscr{D}'(\Omega)$ mit $\mathscr Lu=f$ existiert. Dazu zeigte er eine notwendige Bedingung für die Lösbarkeit eines Differentialausdrucks erster Ordnung. In \cite{Hormander:1960b} verallgemeinerte er diese noch auf Operatoren höherer Ordnung.
 
+
+
 Zunächst benötigen wir ein Analogon zu Satz~\ref{thm:4:Umkehrung}, welches es erlaubt von Lösbarkeitsaussagen auf das Verschwinden der Poissonklammer 
 von $p$ und $\overline p$ zu schließen. 
 
@@ -129,37 +131,57 @@ Dann gilt für alle $x\in\Omega$ und $\xi\in\mathbb{R}^n$ mit $p(x,\xi)=0$
  \{p,\overline{p}\}(x,\xi)=0.
 \end{equation}
 \end{thm}
-\begin{proof}[Beweisskizze] 
-Der Beweis beruht wiederum auf der Konstruktion geeigneter Testfunktionen zum Einsetzen in den Operator, allerdings kombiniert mit einer Anwendung des Satzes von Baire.\\
-{\bf TODO}
+\begin{proof}
+Wir zeigen die Kontraposition. {\sl Schritt 1.} Angenommen, die Behauptung gilt nicht. Sei also ohne Beschränkung der Allgemeinheit $0\in\Omega$ und gelte für ein $\xi\in\R^n$ sowohl $p(0,\xi)=0$ als auch\footnote{Da $\{p,\overline p\}$ reellwertig und ungerade in $\xi$ ist, erfüllt für $\{p,\overline p\}(0,\xi)\ne0$ entweder $\xi$ oder $-\xi$ die Bedingung $\{p,\overline p\}(0,\xi)<0$.}   $\{p,\overline p\}(0,\xi)<0$. Analog zu Lemma~\ref{thm:4:lem2} folgt die Existenz einer Funktion $u\in\rmC^\infty(\Omega)$ mit 
+\begin{equation}
+    p(x,\nabla u(x)) = \mathcal O(|x|^q),\qquad x\to0
+\end{equation}
+sowie
+\begin{equation}
+   u(x) = \i \xi\cdot x + x\cdot Ax + \mathcal O(|x|^3),\qquad x\to0 
+\end{equation}
+zu vorgegebener Ordnung $q$, obigem Vektor $\xi$ und geeignet (mit Lemma~\ref{thm:4:lem3}) gewählter symmetrischer Matrix $A$ mit negativ definitem Realteil. 
+$\bullet$\qquad {\it Schritt 2.} Wir definieren die Hilfsfunktionen
+\begin{equation}
+   f_{\tau, k}(x) = \tau^{-k} \chi(\tau x),\qquad \text{wobei $\chi\in\rmC_0^\infty(\R)$ mit}\quad \widehat \chi(-\xi) = (2\pi)^{-n/2}  \int \e^{\i x\cdot\xi} \chi(x) \d x \ne 0,
+\end{equation}
+sowie für $q=2(r+1)$, $r=n+k+m+N$ und dem oben konstruierten $u(x)$ die Hilfsfunktionen
+\begin{equation}
+   v_{\tau,k,N} (x) = \tau^{n+1+k} \e^{\tau u(x)} \sum_{j=0}^{r-1} \tau^{-j} \varphi_j(x) 
+\end{equation}
+mit noch zu bestimmenden Koeffizienten $\varphi_j\in\rmC_0^\infty(\Omega)$. Nach Konstruktion gilt für die Sobolevnormen
+\begin{equation}\label{eq:cond1}
+    \limsup_{\tau\to\infty} \| f_{k,\tau}\|_{(k)} < \infty,
+\end{equation}
+und für $\varphi_0(0)=1$ folgt
+\begin{equation}\label{eq:cond3}
+   \frac1\tau \int f_{\tau,k}(x) v_{\tau,k,N}(x)\d x = \int \e^{\tau u(\frac x\tau)} \chi(x) \sum_{j=0}^{r-1} \varphi_j(\frac x\tau) \tau^{-j} \d x \longrightarrow \int \e^{\i x\cdot\xi}\chi(x)\d x\ne0
+\end{equation}
+für $\tau\to\infty$. Die verbleibenden $\varphi_j$ werden so gewählt, dass 
+\begin{equation}\label{eq:cond2}
+   \limsup_{\tau\to\infty} \|{}^tP(x,\D) v_{\tau,k,N}(x)\|_{(N)} <\infty 
+\end{equation}
+gilt. Dazu nutzt man, dass 
+\begin{equation}
+{}^tP(x,\D) v_{\tau,k,N}(x)=\tau^{n+1+k+m}  \e^{\tau u(x)} \sum_{j=0}^m \tau^{-j} a_j(x) 
+\end{equation}
+mit Koeffizienten $c_j\in\rmC_0^\infty(\Omega)$ gilt und wählt $\varphi_j$ so, dass $a_j(x)=\mathcal O(|x|^{q-2j})$ (was auf eine erneute Anwendung des Satzes von Cauchy--Kowalewskaja hinausläuft). Danach zeigt eine einfache Rechnung, dass für jedes $\psi\in\rmC_0^\infty(\omega)$ mit $\psi(x)=\mathcal O(|x|^{2s})$, $x\to0$,
+und $\omega\Subset\Omega$ hinreichend klein stets die Normabschätzung $\limsup_{\tau\to\infty} \|\tau^{s-N}\psi \e^{\tau u}\|_{(N)}<\infty$ gilt und \eqref{eq:cond2} folgt. 
+$\bullet$\qquad {\it Schritt~3.}  Sei $F=\{f\in\rmC^\infty(\Omega) \mid \supp f\subseteq\overline\omega\}$ und 
+\begin{equation}
+   M_N = \{ f\in F\mid \exists_{u\in\mathscr D'(\omega)} \; \forall_{\psi\in\rmC_0^\infty(\omega)}\; |\langle u,\psi\rangle | \le N \|\psi\|_{(N)} \quad\text{und}\quad P(x,\D)u=f \}.
+\end{equation}
+Für jedes $u\in\mathscr D'(\Omega)$ und $\omega\Subset\Omega$ gilt $ |\langle u,\psi\rangle | \le N \|\psi\|_{(N)}$ für alle $\psi\in\rmC_0^\infty(\omega)$ und ein hinreichend großes $N$. Die Voraussetzung von Satz~\ref{thm:3.1_hoer} 
+impliziert also
+\begin{equation}
+   \bigcup_{N=1}^\infty M_N = F.
+\end{equation} 
+Die Mengen $M_N$ sind {\bf abgeschlossen},  konvex und symmetrisch. Weiter ist $F$ metrisierbar, der Bairesche Kategoriensatz impliziert also dass mindestens eine der Mengen $M_N$ einen inneren Punkt (wegen Symmetrie den Ursprung) besitzt. Es gibt also ein $k$ und $\epsilon>0$, so dass
+\begin{equation}\label{eq:fepsInMN}
+    \{ f\in F\mid \|f\|_{(k)}<\epsilon\} \subset M_N
+\end{equation}
+für ein $N$ gilt. $\bullet$ \qquad {\em Schritt 4.} Wir zeigen, dass \eqref{eq:fepsInMN} im Widerspruch zur Existenz der Hilfsfunktionen aus Schritt 2 steht. {\bf TODO}
 \end{proof}
-
-%Beweis zu 3.1 aus Paper 1, erster Ordnung...{\bf wieder löschen?}
-%\begin{proof}
-%Angenommen, (\ref{eq:3.1_hoer_aussage}) gelte nicht (o.B.d.A. nach Verschiebung für $x_0=0\in\Omega$), dann existiert eine Testfunktion $f$, so dass $P(x,\D)u=f$ für kein $u\in%\mathscr D'(\Omega)$ erfüllt ist. Da die Poisson-Klammer $\{p,\overline{p}\}$ ungerade im zweiten Argument $\xi$ ist, existiert zu $x_0$ ein $\xi_0\in\R^n$ mit
-%\begin{equation}\label{thm:3.1_hoer:poisson}
-%p(0,\xi_0)=0\qquad\mathrm{und}\qquad \{p,\overline{p}\}(0,\xi_0)<0.
-%\end{equation} 
-%Nach Lemma \ref{lem3} existiert (genau) eine symmetrische Matrix $A=(\boldsymbol\alpha_{i,j})_{i,j}$ (mit negativ definitem Realteil $\Re A:=(\Re\boldsymbol\alpha_{i,j})_{i,j}$, welche (\ref{4.15}) und (\ref{4.16}) erfüllt. Da die variablen Koeffizienten $a_j$ wegen (\ref{thm:3.1_hoer:poisson}) nicht alle in $x_0=0$ verschwinden, existiert nach Cauchy-Kowalewskaya eine Lösung $u$, welche in einer Umgebung der Null $\Omega_1\subset\Omega$ die Gleichung $p(x,\D)u=f$ löst. Für den zu $P$ adjungierten (und mit $-1$ multiplizierten) Operator $-{}^t P$ lässt sich nun zeigen (vergleiche Lemma 3.1 in \cite{Hormander:1960a}), dass Testfunktionen $v_s\in\rmC_0^\infty(\Omega_1)$, $s>0$, existieren, so dass in $\rmC_0^\infty(\Omega_1)$
-%\begin{align}
-%{}^t P(x,\D)v_s\longrightarrow 0\qquad(s\rightarrow\infty),
-%\end{align}
-%sowie
-%\begin{equation}
-%\limsup\limits_{s\rightarrow\infty} \left|\int fv_s\d x\right|=\infty
-%\end{equation}
-%für (mindestens eine) Testfunktion $f\in \rmC_0^\infty(\Omega_1)$ gilt. Hätte $Pu=f$ nun eine distributionelle Lösung $u$, so wäre
-%\begin{equation}
-%\int_{\Omega_1} fv_s\d x
-%=\langle Pu,v_s\rangle
-%=\langle u,{}^tP v_s\rangle
-%\rightarrow 0\qquad (s\rightarrow \infty)
-%\end{equation}
-%ein Widerspruch. 
-%\end{proof}
-
-
-Zur Formulierung des nächsten Satzes benötigen wir noch folgende Definition.
 
 \begin{df}
 Sei $\Omega\subseteq\mathbb{R}^n$ ein Gebiet. Wir bezeichnen mit $B_0^\infty(\Omega)$ den Raum 
