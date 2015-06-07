@@ -217,12 +217,14 @@ wobei $ p_j(x,\xi) = \partial_{x_j}  p(x,\xi)$ die partielle Ableitung des Haupt
 \end{lem}
 
 \begin{proof} [Beweisskizze]
-Betrachten wir die Taylorentwicklung, so stellen wir fest, dass (\ref{grad}) genau dann erfüllt ist, wenn $p(x,\nabla u)$ und alle Ableitungen der Ordnung $\le 2$ im Nullpunkt verschwinden. Das Verschwinden von $p(x,\nabla u)$ wird gerade durch (\ref{4.15}) beschrieben. Wir berechnen weiter
+Betrachten wir die Taylorentwicklung, so stellen wir fest, dass (\ref{grad}) genau dann erfüllt ist, wenn $p(x,\nabla u(x))$ und alle Ableitungen der Ordnung $\le 2$ im Nullpunkt verschwinden. Das Verschwinden von $p(0,\nabla u(0))$ wird gerade durch (\ref{4.15}) beschrieben. Wir berechnen weiter
 \begin{equation}
-\dfrac{\partial}{\partial x_j} p(0,\nabla u) = 
+\dfrac{\partial}{\partial x_j} p(0,\nabla u(0)) = 
 p_j(0,\i\xi) + \sum_{k=1}^{n} \boldsymbol\alpha_{j,k} \dfrac{\partial p(0,\i\xi)}{\partial \xi_k}
 \end{equation}
-und bemerken unter Verwendung der Homogenität von $p$, dass die linke Seite genau dann für alle $j$ verschwindet, wenn (\ref{4.16}) gilt. Es bleibt zu zeigen, dass für geeignet gewähltes $u$ unter den gegebenen Bedingungen auch die zweiten Ableitungen verschwinden. Hierzu leitet man die obige Gleichung ein weiteres Mal ab und stellt unter Verwendung von (\ref{normpart}) fest, dass das resultierende System partieller Differentialgleichungen die Voraussetzungen des Satzes von Cauchy-Kovalewskaja erfüllt, woraus die Existenz eines solchen $u$ folgt.
+und bemerken unter Verwendung der Homogenität von $p$, dass die linke Seite genau dann für alle $j$ verschwindet, wenn (\ref{4.16}) gilt. Es bleibt zu zeigen, dass für geeignet gewähltes $u$ unter den gegebenen Bedingungen auch die zweiten Ableitungen verschwinden. Dazu schreiben wir $\tilde p(x,\xi)$ für die Taylorapproximation von $p(x,\xi)$ zur Ordnung $3$ in $x=0$ und nutzen den Satz von Cauchy-Kowalewskaja um ein $u$ mit $\tilde p(x,\nabla u(x))=0$ zu finden.
+Da $\nabla_\xi \tilde p(0,\xi) = \nabla_\xi p(0,\xi)\ne0$ gilt, existiert insbesondere eine Richtung $\eta\in\R^n$ in welche die Richtungsableitung nicht verschwindet. Die 
+Hyperebene $\{ x\in\R^n : x\cdot\eta = 0\}$ ist dann nichtcharakteristisch in einer Umgebung des Ursprungs und die Gleichung $\tilde p(x,\nabla u(x))=0$ mit der Nebenbedingung $u(x) = \i x\cdot\xi+x\cdot Ax$ für $x\cdot\eta=0$ in einer Umgebung des Ursprungs eindeutig lösbar. 
 \end{proof}
 
 \begin{lem}[{\cite[Lemma 2.3]{Hormander:1960a}}]\label{lem3}
