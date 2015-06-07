@@ -112,13 +112,15 @@ in {\em keinem} Gebiet $\Omega\subset\R^3$ eine Lösung in einem Hölderraum $\r
 
 
 
-\section{Hörmander's Unlösbarkeitskriterium für Operatoren erster Ordnung}
+\section{Hörmander's Unlösbarkeitskriterium}
 Hörmander zeigte in \cite{Hormander:1960a}, dass für jedes Gebiet $\Omega\subset\R^n$ eine glatte Funktion $f\in\rmC^\infty(\R^n)$ existiert, für welche keine Distribution $u\in\mathscr{D}'(\Omega)$ mit $\mathscr Lu=f$ existiert. Dazu zeigte er eine notwendige Bedingung für die Lösbarkeit eines Differentialausdrucks erster Ordnung. In \cite{Hormander:1960b} verallgemeinerte er diese noch auf Operatoren höherer Ordnung.
 
-Zunächst benötigen wir eine Verallgemeinerung von Satz~\ref{thm:4:Umkehrung}.
+Zunächst benötigen wir ein Analogon zu Satz~\ref{thm:4:Umkehrung}, welches es erlaubt von Lösbarkeitsaussagen auf das Verschwinden der Poissonklammer 
+von $p$ und $\overline p$ zu schließen. 
 
-\begin{thm}[{\cite[Theorem 3.1]{Hormander:1960a}}]\label{thm:3.1_hoer}
-Sei $\Omega\subset\mathbb{R}^n$ ein Gebiet und $P(x,\D)$ ein Differentialausdruck erster Ordnung  mit analytischen Koeffizienten. Angenommen, für jedes $f\in \rmC_0^\infty(\Omega)$  existiert eine distributionelle Lösung $u\in\mathscr D'(\Omega)$ zu
+\begin{thm}[{\cite[Theorem 1]{Hormander:1960b}}]\label{thm:3.1_hoer}
+Sei $\Omega\subset\mathbb{R}^n$ ein Gebiet und $P(x,\D)$ ein Differentialausdruck der Ordnung $m$ mit Hauptsymbol $p(x,\xi)$.
+Angenommen, für jedes $f\in \rmC_0^\infty(\Omega)$  existiert eine distributionelle Lösung $u\in\mathscr D'(\Omega)$ zu
 \begin{equation}\label{eq:3.1_hoer}
 P(x,\D)u=f.
 \end{equation}
@@ -127,7 +129,9 @@ Dann gilt für alle $x\in\Omega$ und $\xi\in\mathbb{R}^n$ mit $p(x,\xi)=0$
  \{p,\overline{p}\}(x,\xi)=0.
 \end{equation}
 \end{thm}
-\begin{proof}[Beweisskizze] {\bf TODO}
+\begin{proof}[Beweisskizze] 
+Der Beweis beruht wiederum auf der Konstruktion geeigneter Testfunktionen zum Einsetzen in den Operator, allerdings kombiniert mit einer Anwendung des Satzes von Baire.
+{\bf TODO}
 \end{proof}
 
 
@@ -145,8 +149,8 @@ versehen mit der durch die Seminormen $p_\alpha(f)=\sup_{x\in\Omega} |\D^\alpha 
 
 
 
-\begin{thm}[{\cite[Theorem 3.2]{Hormander:1960a}}]\label{thm:2_hoer}
-Sei $P(x,\D)$ ein Differentialausdruck erster Ordnung mit analytischen Koeffizienten und existiere zu jedem $\omega\Subset\Omega$ 
+\begin{thm}[{\cite[Theorem 2]{Hormander:1960b}}]\label{thm:2_hoer}
+Sei $P(x,\D)$ ein Differentialausdruck der Ordnung $m$ mit  Hauptsymbol $p(x,\xi)$ und existiere zu jedem $\omega\Subset\Omega$ 
 ein $x\in\omega$ und ein $\xi\in\R^n$ mit
 \begin{equation}
  \{p,\overline p\}(x,\xi)\ne 0.
@@ -158,7 +162,7 @@ P(x,\mathrm D)u=f
 in keiner der Mengen $\omega\subseteq\Omega$ eine Lösung $u\in\mathscr D'(\omega)$ besitzt. Die Menge dieser Funktionen $f$ ist von zweiter Kategorie\footnote{Eine Teilmenge $A$ eines topologischen Raumes $B$ heißt von erster Kategorie, falls eine abzählbare Menge nirgends dichter Teilmengen aus $B$ existiert, deren Vereinigung $A$ ergibt. Ist dies nicht der Fall, so heißt $A$ von zweiter Kategorie.}.
 \end{thm}
 
-\begin{proof}
+\begin{proof} Der Beweis folgt {\cite[Theorem 3.2]{Hormander:1960a}}.
 Sei zunächst $\omega\subseteq\Omega$ eine feste, nichtleere Menge und $M$ gegeben durch
 \begin{equation}
 M:=\{f\in B_0^\infty(\Omega)\mid \exists\,u\in\mathscr{D}'(\omega) : P(x,\mathrm{D})u=f\}.
