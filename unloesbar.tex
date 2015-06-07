@@ -7,7 +7,7 @@
 \section{Das Beispiel von Lewy}
 
 
-Bis Mitte des 20. Jahrhunderts ging man davon aus, dass die lokale Existenz glatter Lösungen für lineare Differentialgleichungen stets gegeben sei. Das Beispiel von Hans Lewy zeigt eindrucksvoll, dass dies nicht zwingend der Fall sein muss.  In diesem Abschnitt soll eine lineare, partielle Differentialgleichung erster Ordnung in drei Variablen mit komplexwertigen $\rmC^\infty$-Koeffizienten vorgestellt werden, welche in \textit{keiner} offenen Menge eine glatte/distributionelle Lösung besitzt. Hierfür betrachtet man den durch
+Bis Mitte des 20. Jahrhunderts ging man davon aus, dass die lokale Existenz glatter Lösungen für lineare Differentialgleichungen stets gegeben sei. Das Beispiel von Hans Lewy zeigt eindrucksvoll, dass dies nicht zwingend der Fall sein muss.  In diesem Abschnitt soll eine lineare, partielle Differentialgleichung erster Ordnung in drei Variablen mit komplexwertigen $\rmC^\infty$-Koeffizienten vorgestellt werden, welche in \emph{keiner} offenen Menge eine glatte/distributionelle Lösung besitzt. Hierfür betrachtet man den durch
 \begin{equation}\label{lewy:differentialausdruck}
 \mathscr L := -\frac{\partial}{\partial x_1} -\i\frac{\partial}{\partial x_2} +2\i(x_1+\i x_2)\frac{\partial}{\partial y_1}
 \end{equation}
@@ -168,22 +168,22 @@ Wir wollen zeigen, dass $M$ von erster Kategorie ist. Sei hierzu $\omega_1\Subse
 \begin{equation}\label{lewy:uglSchwartz}
 |\langle u,\phi\rangle|\leq N\sum_{|\alpha|\leq N}\sup\limits_{x\in\omega_1} |\mathrm{D}^\alpha \phi(x)| 
 \end{equation}
-für alle $\phi\in C_c^\infty(\omega_1)$ erfüllt ist. Die Menge $M_N$, gegeben durch
+für alle $\phi\in \rmC_0^\infty(\omega_1)$ erfüllt ist. Die Menge $M_N$, gegeben durch
 \begin{equation}
-M_N:= \{f\in B_0^\infty(\Omega)\mid \exists\,u\in\mathcal D'(\omega_1): P(x,\mathrm{D})u=f\;\mathrm{in}\;\omega_1\;\wedge\; u\mathrm{\;erf"ullt\;}(\ref{lewy:uglSchwartz})\},
+M_N:= \{f\in B_0^\infty(\Omega)\mid \exists\,u\in\mathscr D'(\omega_1): P(x,\mathrm{D})u=f\;\mathrm{in}\;\omega_1\;\wedge\; u\mathrm{\;erf"ullt\;}(\ref{lewy:uglSchwartz})\},
 \end{equation}
 ist abgeschlossen, konvex und symmetrisch. Während die Konvexität (Konvexkombinationen von Lösungen sind wieder Lösungen) und die Symmetrie klar sind, bleibt noch die Abgeschlossenheit zu zeigen:\\\\
 \textit{Schritt 2}\\
 Bezüglich der schwachen Topologie auf $\mathscr{D}'(\omega_1)$ ist die Menge der Distributionen, welche (\ref{lewy:uglSchwartz}) erfüllen, (folgen-)kompakt: Dies folgt aus einem Diagonalfolgenargument. Zu zeigen ist, dass
 \begin{equation}
-\{u\in\mathscr D'(\omega)\mid \forall\,\phi\in C_c^\infty(\omega_1)\quad |\langle u,\phi\rangle|\leq N \|\phi\|_N\}\subset\mathscr D'(\omega)
+\{u\in\mathscr D'(\omega)\mid \forall\,\phi\in \rmC_0^\infty(\omega_1)\quad |\langle u,\phi\rangle|\leq N \|\phi\|_N\}\subset\mathscr D'(\omega)
 \end{equation}
 kompakt ist. Hierbei bezeichnet $\|\,\cdot\,\|_N$ die Sobolev-Norm zum Differentationsgrad $N$. 
 Aufgrund der Darstellung
 \begin{equation}
 \mathscr D(\omega_1)=\bigcup\limits_{\omega_2\Subset\omega_1}\bigcap\limits_N H_0^N(\omega_2)
 \end{equation}
-und der Separabilität der Sobolevräume $H_0^N(\omega_2)$, finden wir eine abzählbare, dichte Teilmenge $\Phi=\{\phi_1,\phi_2,\ldots\}$ in $\C_c^\infty(\omega_1)$.
+und der Separabilität der Sobolevräume $H_0^N(\omega_2)$, finden wir eine abzählbare, dichte Teilmenge $\Phi=\{\phi_1,\phi_2,\ldots\}$ in $\rmC_0^\infty(\omega_1)$.
 Für eine Folge $(u_n)_{n\in\mathbb{N}}$ in $\mathscr D'(\omega)$ finden wir dann eine Teilfolge $(u_{n_k}^{(1)})_{k\in\mathbb{N}}$, so dass
 $\langle u_{n_k}^{(1)},\phi_1\rangle$ als Folge auf einem Kompaktum (vgl. (\ref{lewy:uglSchwartz})) komplexer Zahlen konvergiert. Weiter finden wir auch eine Teilfolge $(u_{n_k}^{(2)})_{k\in\mathbb{N}}$ zu $\phi_2$, so dass $\langle u_{n_k}^{(2)},\phi_2\rangle$ konvergiert, etc. Wählen wir nun eine Diagonalfolge $(v_n)_{n\in\mathbb{N}}$, so konvergiert $\langle v_n,\phi_j\rangle$ für alle $j$, was jedoch gerade die obige Behauptung bezüglich der Kompaktheit beweist.\\\\
 Sei also $(f_j)_{j\in\mathbb{N}}$ eine gegen $f\in B_0^\infty(\Omega)$ stark konvergente Folge in $M_N$, d.h. $f_j=Pu_j$ auf $\omega_1$ für gewisse $u_j\in\mathscr{D}'(\omega_1)$, welche (\ref{lewy:uglSchwartz}) erfüllen. Dann existiert ein schwacher Grenzwert $u=\lim_{j\rightarrow\infty}u_j$, welcher aus Gründen der Separabilität von $H_0^N(\omega)$ ebenfalls (\ref{lewy:uglSchwartz}) erfüllt. Dann ist aber wegen $Pu_j\rightarrow Pu$ in $\mathscr D'(\omega_1)$ auch $f=Pu$ in $\omega_1$ und somit auch $f\in M_N$, was die Abgeschlossenheit liefert.\\\\
@@ -206,6 +206,7 @@ M^{(j)}:=\{f\in B_0^\infty(\Omega)\mid \exists u\in\mathscr{D}'(\omega_j): P(x,\
 dann folgt aus \textit{Schritt 1}, dass $M^{(j)}$ und folglich auch $\bigcup M^{(j)}$ von erster Kategorie ist. Für $f\notin \bigcup M^{(j)}$ kann somit $P(x,\mathrm{D})u=f$ auf keinem $\omega_j$ gelöst werden. Da für jede beliebige, offene, nichtleere Menge $\omega\subseteq\Omega$ ein Index $j_0$ existiert, so dass $\omega_{j_0}\subset\omega$ ist, besitzt $P(x,\mathrm{D})u=f$ keine Lösung auf $\omega$.
 \end{proof}
 
+\begin{exa}
 Für Lewys Beispiel 
 \begin{equation}
 p(x,\xi)=-i\xi_1+\xi_2-2(x_1+ix_2)\xi_3
@@ -215,3 +216,4 @@ in $n=3$ Dimensionen aus dem ersten Teil dieses Kapitels erhalten wir $\{p,\over
 \xi_3 =1,\quad \xi_1=-2x_2,\quad \xi_2=2x_1\qquad\Rightarrow\qquad p(x,\xi)=0
 \end{equation}
 ist $\{p,\overline{p}\}(x,\xi)=-8\neq 0$ und \eqref{eq:3.1_hoer_aussage} gilt nicht für alle $x\in\mathbb{R}^n$ womit folglich die Voraussetzungen von Satz \ref{thm:2_hoer} erfüllt sind.
+\end{exa}
