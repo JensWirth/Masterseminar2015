@@ -113,18 +113,23 @@ in {\em keinem} Gebiet $\Omega\subset\R^3$ eine Lösung in einem Hölderraum $\r
 
 
 \section{Hörmander's Unlösbarkeitskriterium für Operatoren erster Ordnung}
-Lars Hörmander verallgemeinerte dieses Beispiel in dem Sinne, dass für keine offene Menge $\omega\subseteq\Omega$ eine Lösung $u\in\mathscr{D}'(\omega)$ existiert. Zunächst wollen wir jedoch einen zum Beweis dieser Verallgemeinerung verwendeten präsentieren, dessen Beweis in [\textbf{TODO Ref Hörmander}] zu finden ist.
+Hörmander zeigte in \cite{Hormander:1960a}, dass für jedes Gebiet $\Omega\subset\R^n$ eine glatte Funktion $f\in\rmC^\infty(\R^n)$ existiert, für welche keine Distribution $u\in\mathscr{D}'(\Omega)$ mit $\mathscr Lu=f$ existiert. Dazu zeigte er eine notwendige Bedingung für die Lösbarkeit eines Differentialausdrucks erster Ordnung. In \cite{Hormander:1960b} verallgemeinerte er diese noch auf Operatoren höherer Ordnung.
+
+Zunächst benötigen wir eine Verallgemeinerung von Satz~\ref{thm:4:Umkehrung}.
 
 \begin{thm}\label{thm:3.1_hoer}
-Sei $\Omega\subset\mathbb{R}^n$ offen. Seien weiter die Koeffizienten des Differentialoperators $P$ analytisch und für jedes $f\in C_0^\infty(\Omega)$ existiere eine distributionelle Lösung $u\in\mathscr D'(\Omega)$ von
+Sei $\Omega\subset\mathbb{R}^n$ offen. Seien weiter die Koeffizienten des Differentialausdrucks $P(x,\D)$ analytisch und existiere für jedes $f\in \rmC_0^\infty(\Omega)$  eine distributionelle Lösung $u\in\mathscr D'(\Omega)$ von
 \begin{equation}\label{eq:3.1_hoer}
-P(x,D)u=f.
+P(x,\D)u=f.
 \end{equation}
-Dann gilt für $x\in\Omega$ und $\xi\in\mathbb{R}^n$
-\begin{equation}\label{eq:3.1_hoer_aussage}
-p(x,\xi)=0\quad\Rightarrow\quad \{p,\overline{p}\}(x,\xi)=0.
-\end{equation}
+Dann gilt für alle $x\in\Omega$ und $\xi\in\mathbb{R}^n$ mit $p(x,\xi)$ stets $ \{p,\overline{p}\}(x,\xi)=0$.
+%
+%\begin{equation}\label{eq:3.1_hoer_aussage}
+%p(x,\xi)=0\quad\Rightarrow\quad \{p,\overline{p}\}(x,\xi)=0.
+%\end{equation}
 \end{thm}
+\begin{proof}[Beweisskizze] {\bf TODO}
+\end{proof}
 
 \begin{rem}
 Lassen wir [\textbf{TODO}]
