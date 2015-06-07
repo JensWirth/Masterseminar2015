@@ -117,49 +117,45 @@ Hörmander zeigte in \cite{Hormander:1960a}, dass für jedes Gebiet $\Omega\subs
 
 Zunächst benötigen wir eine Verallgemeinerung von Satz~\ref{thm:4:Umkehrung}.
 
-\begin{thm}\label{thm:3.1_hoer}
-Sei $\Omega\subset\mathbb{R}^n$ offen. Seien weiter die Koeffizienten des Differentialausdrucks $P(x,\D)$ analytisch und existiere für jedes $f\in \rmC_0^\infty(\Omega)$  eine distributionelle Lösung $u\in\mathscr D'(\Omega)$ von
+\begin{thm}[{\cite[Theorem 3.1]{Hormander:1960a}}]\label{thm:3.1_hoer}
+Sei $\Omega\subset\mathbb{R}^n$ ein Gebiet und $P(x,\D)$ ein Differentialausdruck erster Ordnung  mit analytischen Koeffizienten. Angenommen, für jedes $f\in \rmC_0^\infty(\Omega)$  existiert eine distributionelle Lösung $u\in\mathscr D'(\Omega)$ zu
 \begin{equation}\label{eq:3.1_hoer}
 P(x,\D)u=f.
 \end{equation}
-Dann gilt für alle $x\in\Omega$ und $\xi\in\mathbb{R}^n$ mit $p(x,\xi)$ stets $ \{p,\overline{p}\}(x,\xi)=0$.
-%
-%\begin{equation}\label{eq:3.1_hoer_aussage}
-%p(x,\xi)=0\quad\Rightarrow\quad \{p,\overline{p}\}(x,\xi)=0.
-%\end{equation}
+Dann gilt für alle $x\in\Omega$ und $\xi\in\mathbb{R}^n$ mit $p(x,\xi)=0$
+\begin{equation}\label{eq:3.1_hoer_aussage}
+ \{p,\overline{p}\}(x,\xi)=0.
+\end{equation}
 \end{thm}
 \begin{proof}[Beweisskizze] {\bf TODO}
 \end{proof}
 
-\begin{rem}
-Lassen wir [\textbf{TODO}]
-\end{rem}
 
 
 
 Zur Formulierung des nächsten Satzes benötigen wir noch folgende Definition.
 
 \begin{df}
-Sei $\Omega\subseteq\mathbb{R}^n$ ein Gebiet. Wir bezeichnen mit $B_0^\infty(\Omega)$ die Teilmenge 
+Sei $\Omega\subseteq\mathbb{R}^n$ ein Gebiet. Wir bezeichnen mit $B_0^\infty(\Omega)$ den Raum 
 \begin{equation}
-B_0^\infty(\Omega) :=\{f\in C^\infty(\Omega) \mid \forall\,\alpha\in\mathbb{N}_0^n\;\forall\,\epsilon >0\;\exists\,K_{\alpha,\epsilon}\;\mathrm{kompakt} : |\mathrm D^\alpha f|<\epsilon\;\mathrm{auf\;} K_{\alpha,\epsilon}\}
+B_0^\infty(\Omega) :=\{f\in \rmC^\infty(\Omega) \mid \forall_{\alpha\in\N_0^n}\;\forall_{\epsilon >0} \;\exists_{K_{\alpha,\epsilon}\Subset\Omega} \;:\; \sup\nolimits_{x\in \Omega\setminus K_{\alpha,\epsilon}}|\D^\alpha f(x)|<\epsilon \}
 \end{equation}
-von $C^\infty(\Omega)$.
+versehen mit der durch die Seminormen $p_\alpha(f)=\sup_{x\in\Omega} |\D^\alpha f|$ erzeugten lokalkonvexen Struktur.
 \end{df}
 
 
 
-\begin{thm}\label{thm:2_hoer}
-Sei $P$ ein Differentialausdruck erster Ordnung mit analytischen Koeffizienten und gelte \eqref{eq:3.1_hoer_aussage} nicht für alle offenen, nichtleeren Mengen $\omega\subseteq\Omega$, d.h. 
+\begin{thm}[{\cite[Theorem 3.2]{Hormander:1960a}}]\label{thm:2_hoer}
+Sei $P(x,\D)$ ein Differentialausdruck erster Ordnung mit analytischen Koeffizienten und existiere zu jedem $\omega\Subset\Omega$ 
+ein $x\in\omega$ und ein $\xi\in\R^n$ mit
 \begin{equation}
-p(x,\xi)=0 \quad\Rightarrow\quad \{p,\overline p\}(x,\xi)=0
+ \{p,\overline p\}(x,\xi)\ne 0.
 \end{equation}
-für $x\in\omega$ und $\xi\in\mathbb{R}^n$ gelte für \eIndex[Operator]{keines} dieser $\omega\subseteq\Omega$.
-Dann existieren Funktionen $f\in B_0^\infty(\Omega)$ so dass
+Dann existieren Funktionen $f\in B_0^\infty(\Omega)$, so dass
 \begin{equation}\label{lewy:pxDu=f}
 P(x,\mathrm D)u=f
 \end{equation}
-in keiner der Mengen $\omega\subseteq\Omega$ eine Lösung $u\in\mathcal{D}'(\omega)$ besitzt. Die Menge dieser Funktionen $f$ ist von zweiter Kategorie\footnote{Eine Teilmenge $A$ eines topologischen Raumes $B$ heißt von erster Kategorie, falls eine abzählbare Menge nirgends dichter Teilmengen aus $B$ existiert, deren Vereinigung $A$ ergibt. Ist dies nicht der Fall, so heißt $A$ von zweiter Kategorie.}.
+in keiner der Mengen $\omega\subseteq\Omega$ eine Lösung $u\in\mathscr D'(\omega)$ besitzt. Die Menge dieser Funktionen $f$ ist von zweiter Kategorie\footnote{Eine Teilmenge $A$ eines topologischen Raumes $B$ heißt von erster Kategorie, falls eine abzählbare Menge nirgends dichter Teilmengen aus $B$ existiert, deren Vereinigung $A$ ergibt. Ist dies nicht der Fall, so heißt $A$ von zweiter Kategorie.}.
 \end{thm}
 
 \begin{proof}
