@@ -130,10 +130,33 @@ Dann gilt für alle $x\in\Omega$ und $\xi\in\mathbb{R}^n$ mit $p(x,\xi)=0$
 \end{equation}
 \end{thm}
 \begin{proof}[Beweisskizze] 
-Der Beweis beruht wiederum auf der Konstruktion geeigneter Testfunktionen zum Einsetzen in den Operator, allerdings kombiniert mit einer Anwendung des Satzes von Baire. {\bf TODO}
+Der Beweis beruht wiederum auf der Konstruktion geeigneter Testfunktionen zum Einsetzen in den Operator, allerdings kombiniert mit einer Anwendung des Satzes von Baire.\\
+{\bf TODO}
 \end{proof}
 
-
+%Beweis zu 3.1 aus Paper 1, erster Ordnung...{\bf wieder löschen?}
+%\begin{proof}
+%Angenommen, (\ref{eq:3.1_hoer_aussage}) gelte nicht (o.B.d.A. nach Verschiebung für $x_0=0\in\Omega$), dann existiert eine Testfunktion $f$, so dass $P(x,\D)u=f$ für kein $u\in%\mathscr D'(\Omega)$ erfüllt ist. Da die Poisson-Klammer $\{p,\overline{p}\}$ ungerade im zweiten Argument $\xi$ ist, existiert zu $x_0$ ein $\xi_0\in\R^n$ mit
+%\begin{equation}\label{thm:3.1_hoer:poisson}
+%p(0,\xi_0)=0\qquad\mathrm{und}\qquad \{p,\overline{p}\}(0,\xi_0)<0.
+%\end{equation} 
+%Nach Lemma \ref{lem3} existiert (genau) eine symmetrische Matrix $A=(\boldsymbol\alpha_{i,j})_{i,j}$ (mit negativ definitem Realteil $\Re A:=(\Re\boldsymbol\alpha_{i,j})_{i,j}$, welche (\ref{4.15}) und (\ref{4.16}) erfüllt. Da die variablen Koeffizienten $a_j$ wegen (\ref{thm:3.1_hoer:poisson}) nicht alle in $x_0=0$ verschwinden, existiert nach Cauchy-Kowalewskaya eine Lösung $u$, welche in einer Umgebung der Null $\Omega_1\subset\Omega$ die Gleichung $p(x,\D)u=f$ löst. Für den zu $P$ adjungierten (und mit $-1$ multiplizierten) Operator $-{}^t P$ lässt sich nun zeigen (vergleiche Lemma 3.1 in \cite{Hormander:1960a}), dass Testfunktionen $v_s\in\rmC_0^\infty(\Omega_1)$, $s>0$, existieren, so dass in $\rmC_0^\infty(\Omega_1)$
+%\begin{align}
+%{}^t P(x,\D)v_s\longrightarrow 0\qquad(s\rightarrow\infty),
+%\end{align}
+%sowie
+%\begin{equation}
+%\limsup\limits_{s\rightarrow\infty} \left|\int fv_s\d x\right|=\infty
+%\end{equation}
+%für (mindestens eine) Testfunktion $f\in \rmC_0^\infty(\Omega_1)$ gilt. Hätte $Pu=f$ nun eine distributionelle Lösung $u$, so wäre
+%\begin{equation}
+%\int_{\Omega_1} fv_s\d x
+%=\langle Pu,v_s\rangle
+%=\langle u,{}^tP v_s\rangle
+%\rightarrow 0\qquad (s\rightarrow \infty)
+%\end{equation}
+%ein Widerspruch. 
+%\end{proof}
 
 
 Zur Formulierung des nächsten Satzes benötigen wir noch folgende Definition.
