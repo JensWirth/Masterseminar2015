@@ -183,9 +183,9 @@ Die Mengen $M_N$ sind {\bf abgeschlossen},  konvex und symmetrisch. Weiter ist $
 für ein $N$ gilt. $\bullet$ \qquad {\em Schritt 4.} Wir zeigen, dass \eqref{eq:fepsInMN} im Widerspruch zur Existenz der Hilfsfunktionen aus Schritt 2 steht. 
 Zum Einen impliziert \eqref{eq:fepsInMN} die Existenz einer Distribution $u$ mit $P(x,\D)u=f$ für $f\in F$ mit $\|f\|_{(k)}<\epsilon$. Damit gilt für jede Testfunktion $v\in\rmC_0^\infty(\omega)$ die Abschätzung
 \begin{equation}
-   \bigg| \int f(x) v(x) \d x\bigg| = |\langle u, {}^t P(x,\D) v \rangle| \le N \| {}^t P(x,\D) v\|_{(N)} \le \frac N\epsilon \|f\|_{(k)} \|{}^tP(x,\D) v\|_{(N)}.
+   \bigg| \int f(x) v(x) \d x\bigg| = |\langle u, {}^t P(x,\D) v \rangle| \le N \| {}^t P(x,\D) v\|_{(N)}.
 \end{equation}
-Speziell mit $f=c f_{k,\tau}$ und $v=v_{k,N,\tau}$ folgt für $\tau\to\infty$ ein Widerspruch. Wegen \eqref{eq:cond1} und \eqref{eq:cond2} ist die rechte Seite beschränkt, die linke strebt mit \eqref{eq:cond3} aber gegen Unendlich.
+Speziell mit $f=c f_{k,\tau}$ und $v=v_{k,N,\tau}$ folgt für $\tau\to\infty$ ein Widerspruch: Für $c>0$ klein genug ist dann $f\in M_N$. Weiter ist die rechte Seite wegen \eqref{eq:cond1} und \eqref{eq:cond2} beschränkt, die linke strebt mit \eqref{eq:cond3} aber gegen Unendlich.
 \end{proof}
 
 \begin{df}
