@@ -4,4 +4,91 @@
 \cite{Lax:1966}
 
 
-bla
+\begin{thm}[\cite{Garding:1953}, Theorem 2.1]
+Sei $p(f,f)$ ein zu $p$ gehörendes Dirichletintegral (ToBeDefined). Dann gilt 
+\begin{align}
+	\inf\limits_{f \in H_0^m(\Omega)} \frac{p(f,f)}{(f,f)} > -\infty.
+\end{align}
+\end{thm}
+\begin{proof}
+	Wir beginnen mit dem Spezialfall, dass $p(x,\xi) = p(\xi)$ unabhängig von $x$ ist. Die Fourier-Transformierte von $\D^\alpha f$ ist dann von der Form
+	\begin{align}
+		\widehat{\D^\alpha f} = (-i)^m\xi^\alpha \hat{f}, 
+	\end{align}
+	d.h. mit Plancherel ergibt sich
+	\begin{align}
+		(f,f)_m = (2\pi)^{-n}\int \vert\hat{f}(x)\vert^2 \left(\sum\limits_{\vert \beta \vert = m} \xi_\beta^2\right)\mathrm{d}\xi.
+	\end{align}
+	Da $p$ homogen vom Grad $2m$ und positiv definit ist, existiert eine Konstante $c>0$ mit $\inf_{\vert \xi \vert =1} p(\xi)/(\sum  \xi_\beta^2) = c >0$. Für $p(f,f)$ folgt
+	\begin{align}
+		\begin{split}&p(f,f) = \int\limits_\Omega \sum\limits_{\vert\alpha\vert = \vert \beta\vert =m}p_{\alpha\beta}\D^\alpha f(x)\overline{\D^\beta f(x)}\mathrm{d}x =\left(2\pi\right)^{-n}\int\vert \mathcal{F}(\xi)\vert^2\sum\limits_{\vert\alpha\vert =\vert\beta\vert = m}p_{\alpha\beta}\xi^{\alpha}\xi^\beta\mathrm{d}\xi\\
+& = \left(2\pi\right)^{-n} \int \vert \mathcal{F}(\xi)\vert^2 p(\xi)\mathrm{d}\xi \ge c \left(2\pi\right)^{-n}\int\vert\mathcal{F}(\xi)\vert^2  \left(\sum\limits_{\vert \beta\vert=m} \vert\xi^\beta\vert^2\right)		= c (f,f)_m.
+\end{split}
+\end{align}	
+Den allgemeinen Fall führen wir auf diesen Spezialfall zurück. Im Folgenden bezeichne
+\begin{align}
+	w(\rho):= \sup\left\{\vert p_{\alpha\beta}(x)-p_{\alpha\beta}(y)\vert : \vert\alpha\vert, \vert\beta\vert \le m, \vert x-y\vert \le \rho\right\}.
+\end{align} 
+Sei $x_0\in \Omega$ beliebig, $f\in H_0^1\left(\Omega\cap \partial B_\rho(x_0)\right)$ und $p_0(x, \xi):=p(x_0,\xi)$ unabhängig von $x$. Dann gilt
+\begin{align}
+\begin{split}
+	&\vert p(f,f)-p_0(f,f)\vert=\left\vert \int\limits_\Omega\sum\limits_{\vert\alpha\vert=\vert\beta\vert =m} \left(p_{\alpha\beta}(x)-p_{\alpha\beta}(x_0)\right){\D^\alpha(f(x)}\overline{D^\beta f(x))}\mathrm{d}x\right\vert\\
+	&\le \frac{1}{2}w(\rho)\int\limits_\Omega \sum\limits_{\vert\alpha\vert=\vert\beta\vert =m}  \vert \D^\alpha f(x)\vert^2+\vert \D^\beta f<(x) \vert^2 \mathrm{d}x = w(\rho)d_m\vert f\vert_m^2,
+	\end{split}
+\end{align}
+wobei $d_m$ die Anzahl der Ableitungen der Ordnung $m$ bezeichne. Damit folgt unter Verwendung des oben betrachteten Spezialfalls
+\begin{align}
+	p(f,f) \ge p_0(f,f)-\vert p(f,f)-p_0(f,f)\vert \ge (2c-w(\rho)d_m)\vert f\vert_m^2
+\end{align} 
+für ein $c>0$ und alle $f\in H_0^m\left(\Omega \cap \partial B_\rho(x_0)\right)$. Aus der gleichmäßigen Stetigkeit der $p_{\alpha\beta}$ folgt $w(\rho) \rightarrow 0, \ (\rho \rightarrow 0)$ und damit 
+\begin{align}
+	p(f,f) \ge c\vert f\vert_m^2
+\end{align}
+für $\rho$ klein genug.\\
+Da $\Omega$ beschränkt ist, finden wir zu jedem $\epsilon>0$ eine endliche Überdeckung $\Omega=\bigcup_{k=1}^N B_{\frac{\epsilon}{2}}(x_k)$ und eine dieser Überdeckung untergeordnete Zerlegung der Eins $\left\{\psi_k\right\}$ mit
+\begin{align}
+ \psi_k \in H_0^m\left(B_\epsilon (x_k)\right),\  1=\sum\limits_{k=1}^N \vert h_k(x)\vert^2, \ x\in \Omega.
+\end{align}
+Jedes $f\in H_0^m(\Omega)$ lässt sich dann schreiben als
+\begin{align}
+	p(f,f) = \sum\limits_{k=1}^N\underbrace{\int\limits_\Omega \sum\limits_{\vert\alpha\vert=\vert\beta\vert=m}\vert h_k(x)\vert^2p_{\alpha\beta}(x)\D^\alpha f(x)\overline{D^\beta f(x)}\mathrm{d}x}_{=:A_k}.
+\end{align}
+Für $A_k$ gilt
+\begin{align}
+	A_k= \int\limits_\Omega \sum\limits_{\vert\alpha\vert=\vert\beta\vert=m}p_{\alpha\beta}(x)\D^\alpha(h_k(x)f(x))\overline{\D^\beta(h_k(x)f(x))}\d x -R_k=p(h_kf,h_kf)-R_k,
+\end{align}
+wobei $R_k$ eine Summe von Integralen über Produkte einer beschränkten Funktion mit zwei Ableitungen von $f$ der Ordnung $\le m$ (und nicht beide der Ordnung $m$) darstellt.
+Wir schätzen $R_k$ nach oben ab und erhalten
+\begin{align}
+ A_k \ge p(h_kf,h_kf)-a_k\vert f\vert_m\vert f\vert_{m-1} \ge c \vert h_kf\vert_m^2-a_k\vert f\vert_m\vert f\vert_{m-1}
+\end{align}
+für geeignet gewählte Konstanten $a_k$. Weil außerdem
+\begin{align}
+\begin{split}
+	&\vert h_kf\vert_m^2 = \int\limits_\Omega \sum\limits_{\vert\alpha\vert=\vert\beta\vert=m}p_{\alpha\beta}\D^\alpha(h_kf(x))\overline{D^\beta(h_kf(x))}\d x \\
+	&\ge \int\limits_\Omega \vert h_k(x)\vert^2 \sum\limits_{\vert\alpha\vert=m}\vert \D^\alpha (f(x))\vert^2 \d x-b_k \vert f\vert_m\vert f\vert_{m-1}
+	\end{split}
+\end{align}
+gilt, lässt sich $A_k$ weiter abschätzen zu
+\begin{align}
+	A_k \ge c\int\limits_\Omega \vert h_k(x)\vert^2 \sum\limits_{\vert\alpha\vert=m}\vert \D^\alpha (f(x))\vert^2 \d x-(cb_k+a_k)\vert f\vert_m\vert f\vert_{m-1}.
+\end{align}
+Aufsummieren der $A_k$ liefert
+\begin{align}
+	p(f,f) \ge c \sum\limits_{k=1}^N \int\limits_\Omega\vert h_k(x)\vert^2  \sum\limits_{\vert\alpha\vert=m}\vert \D^\alpha (f(x))\vert^2 \d x-a\vert f\vert_m\vert f\vert_{m-1} =c\vert f\vert_m^2 -a \vert f\vert_m\vert f\vert_{m-1},
+\end{align}
+wobei $a= \sum_{k=1}^N (a_k+cb_k)$. Für $t\in \R$ und $f\in H_0^m(\Omega)$ definieren wir $\vert f\vert^2:= c \vert f\vert_m^2+t\vert f\vert_0^2$ sowie
+\begin{align}
+\begin{split}
+	&p_t(f,f) := p(f,f)+t(f,f) \ge c\vert f\vert_m^2-a\vert f\vert_m\vert f\vert_{m-1}+t\vert f\vert_0^2 \ge \vert f\vert^2\left(1-a\vert f\vert^2\vert f\vert_m\vert f\vert_{m-1}\right)\\
+	& \ge \vert f\vert^2\big(1-\underbrace{a \sqrt{c}\vert f\vert_{m-1}\vert f\vert^{-1}}_{\rightarrow 0, \ t \rightarrow \infty, \text{ glm in } f}\big)
+	\end{split}
+\end{align}
+Damit folgt $p_t(f,f) \ge \frac{1}{2}\left(c\vert f\vert_m^2+t\vert f\vert_0^2\right)$ für große $t$ oder äquivalent
+\begin{align}
+	p(f,f) \ge \frac{1}{2}c\vert f\vert_m^2
+\end{align}
+gleichmäßig in $f$. 
+\end{proof}
+
+
