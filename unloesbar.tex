@@ -115,9 +115,7 @@ in {\em keinem} Gebiet $\Omega\subset\R^3$ eine Lösung in einem Hölderraum $\r
 \section{Hörmanders Unlösbarkeitskriterium}
 Hörmander zeigte in \cite{Hormander:1960a}, dass für jedes Gebiet $\Omega\subset\R^n$ eine glatte Funktion $f\in\rmC^\infty(\R^n)$ existiert, für welche keine Distribution $u\in\mathscr{D}'(\Omega)$ mit $\mathscr Lu=f$ existiert. Dazu zeigte er eine notwendige Bedingung für die Lösbarkeit eines Differentialausdrucks erster Ordnung. In \cite{Hormander:1960b} verallgemeinerte er diese noch auf Operatoren höherer Ordnung.
 
-
-
-Zunächst benötigen wir ein Analogon zu Satz~\ref{thm:4:Umkehrung}, welches es erlaubt von Lösbarkeitsaussagen auf das Verschwinden der Poissonklammer 
+Zuerst zeigen wir ein Analogon zu Satz~\ref{thm:4:Umkehrung}, welches es erlaubt von Lösbarkeitsaussagen auf das Verschwinden der Poissonklammer 
 von $p$ und $\overline p$ zu schließen. 
 
 \begin{thm}[{\cite[Theorem 1]{Hormander:1960b}}]\label{thm:3.1_hoer}
@@ -132,7 +130,7 @@ Dann gilt für alle $x\in\Omega$ und $\xi\in\mathbb{R}^n$ mit $p(x,\xi)=0$
 \end{equation}
 \end{thm}
 \begin{proof}
-Wir zeigen die Kontraposition. {\sl Schritt 1.} Angenommen, die Behauptung gilt nicht. Sei also ohne Beschränkung der Allgemeinheit $0\in\Omega$ und gelte für ein $\xi\in\R^n$ sowohl $p(0,\xi)=0$ als auch\footnote{Da $\{p,\overline p\}$ reellwertig und ungerade in $\xi$ ist, erfüllt für $\{p,\overline p\}(0,\xi)\ne0$ entweder $\xi$ oder $-\xi$ die Bedingung $\{p,\overline p\}(0,\xi)<0$.}   $\{p,\overline p\}(0,\xi)<0$. Analog zu Lemma~\ref{thm:4:lem2} folgt die Existenz einer Funktion $u\in\rmC^\infty(\Omega)$ mit 
+Wir zeigen dies indirekt. {\sl Schritt 1.} Angenommen, die Behauptung gilt nicht. Sei also ohne Beschränkung der Allgemeinheit $0\in\Omega$ und gelte für ein $\xi\in\R^n$ sowohl $p(0,\xi)=0$ als auch\footnote{Da $\{p,\overline p\}$ reellwertig und ungerade in $\xi$ ist, erfüllt für $\{p,\overline p\}(0,\xi)\ne0$ entweder $\xi$ oder $-\xi$ die Bedingung $\{p,\overline p\}(0,\xi)<0$.}   $\{p,\overline p\}(0,\xi)<0$. Analog zu Lemma~\ref{thm:4:lem2} folgt die Existenz einer Funktion $u\in\rmC^\infty(\Omega)$ mit 
 \begin{equation}
     p(x,\nabla u(x)) = \mathcal O(|x|^q),\qquad x\to0
 \end{equation}
@@ -182,10 +180,10 @@ Die Mengen $M_N$ sind abgeschlossen (siehe nachfolgendes Lemma \ref{lm:closed}),
 \end{equation}
 für ein $N$ gilt. $\bullet$ \qquad {\em Schritt 4.} Wir zeigen, dass \eqref{eq:fepsInMN} im Widerspruch zur Existenz der Hilfsfunktionen aus Schritt 2 steht. 
 Zum Einen impliziert \eqref{eq:fepsInMN} die Existenz einer Distribution $u$ mit $P(x,\D)u=f$ für $f\in F$ mit $\|f\|_{(k)}<\epsilon$. Damit gilt für jede Testfunktion $v\in\rmC_0^\infty(\omega)$ die Abschätzung
-\begin{equation}
+\begin{equation}\label{eq:4.74}
    \bigg| \int f(x) v(x) \d x\bigg| = |\langle u, {}^t P(x,\D) v \rangle| \le N \| {}^t P(x,\D) v\|_{(N)}.
 \end{equation}
-Speziell mit $f=c f_{k,\tau}$ und $v=v_{k,N,\tau}$ folgt für $\tau\to\infty$ ein Widerspruch: Für $c>0$ klein genug ist dann $f\in M_N$. Weiter ist die rechte Seite wegen \eqref{eq:cond1} und \eqref{eq:cond2} beschränkt, die linke strebt mit \eqref{eq:cond3} aber gegen Unendlich.
+Speziell mit $f=c f_{k,\tau}$ und $v=v_{k,N,\tau}$ folgt für $\tau\to\infty$ ein Widerspruch: Für $c>0$ klein genug impliziert \eqref{eq:fepsInMN} zusammen mit \eqref{eq:cond1}, dass $f\in M_N$. Also gilt \eqref{eq:4.74}. Nun ist die rechte Seite aber wegen \eqref{eq:cond2} gleichmäßig in $\tau$ beschränkt, die linke strebt mit \eqref{eq:cond3} für $\tau\to\infty$  gegen Unendlich. Widerspruch.
 \end{proof}
 
 Das folgende Lemma liefert die im Beweis verwendete Abgeschlossenheit der Menge $M_N$.
