@@ -175,13 +175,13 @@ und für $\varphi_0(0)=1$ folgt
 \end{equation}
 für $\tau\to\infty$. Die verbleibenden $\varphi_j$ werden so gewählt, dass 
 \begin{equation}\label{eq:cond2}
-   \limsup_{\tau\to\infty} \|{}^tP(x,\D) v_{\tau,k,N}(x)\|_{(N)} <\infty 
+   \limsup_{\tau\to\infty} \|{}^tP(x,\D) v_{\tau,k,N}\|_{(N)} <\infty 
 \end{equation}
 gilt. Dazu nutzt man, dass 
 \begin{equation}
 {}^tP(x,\D) v_{\tau,k,N}(x)=\tau^{n+1+k+m}  \e^{\tau u(x)} \sum_{j=0}^m \tau^{-j} a_j(x) 
 \end{equation}
-mit Koeffizienten $a_j\in\rmC_0^\infty(\Omega)$ gilt und wählt $\varphi_j$ so, dass $a_j(x)=\mathcal O(|x|^{q-2j})$ (was auf eine erneute Anwendung des Satzes von Cauchy--Kowalewskaja hinausläuft). Danach zeigt eine einfache Rechnung, dass für jedes $\psi\in\rmC_0^\infty(\omega)$ mit $\psi(x)=\mathcal O(|x|^{2s})$, $x\to0$,
+mit Koeffizienten $a_j\in\rmC_0^\infty(\Omega)$ gilt und wählt $\varphi_j$ so, dass $a_j(x)=\mathcal O(|x|^{q-2j})$ (was auf eine erneute Anwendung des Satzes von Cauchy--Kowalewskaja hinausläuft). Danach zeigt eine einfache Rechnung, dass für jedes $\psi\in\rmC_0^\infty(\omega)$ mit $\psi(x)=\mathcal O(|x|^{2s})$, $x\to0$, $s\geq 0$
 und $\omega\Subset\Omega$ hinreichend klein stets die Normabschätzung $\limsup_{\tau\to\infty} \|\tau^{s-N}\psi \e^{\tau u}\|_{(N)}<\infty$ gilt und \eqref{eq:cond2} folgt.~$\bullet$ \qquad {\sl Schritt~4.} Wir zeigen, dass \eqref{eq:fepsInMN} im Widerspruch zur Existenz der gerade konstruierten Hilfsfunktionen steht. 
 Zum Einen impliziert \eqref{eq:fepsInMN} die Existenz einer Distribution $u$ mit $P(x,\D)u=f$ für $f\in B^\infty_0(\omega)$ mit $\|f\|_{(k)}<\epsilon$. Damit gilt für jede Testfunktion $v\in\rmC_0^\infty(\omega)$ die Abschätzung
 \begin{equation}\label{eq:4.74}
@@ -193,7 +193,7 @@ Speziell mit $f=c f_{k,\tau}$ und $v=v_{k,N,\tau}$ folgt für $\tau\to\infty$ ei
 
 \begin{rem}
 Die im obigen Beweis verwendete Menge $B^\infty_0(\omega)$ ist gerade der Abschluss von $\rmC_0^\infty(\omega)$ in $\rmC^\infty(\Omega)$
-(also auch in $\rmC^\infty(\R^n)$). Damit kann für jedes Gebiet $\Omega\subset\R^n$ den entsprechenden Raum auch als
+(also auch in $\rmC^\infty(\R^n)$). Damit kann man für jedes Gebiet $\Omega\subset\R^n$ den entsprechenden Raum auch als
 \begin{equation}
 B_0^\infty(\Omega) =\{f\in \rmC^\infty(\Omega) \mid \forall_{\alpha\in\N_0^n}\;\forall_{\epsilon >0} \;\exists_{K_{\alpha,\epsilon}\Subset\Omega} \;:\; \sup\nolimits_{x\in \Omega\setminus K_{\alpha,\epsilon}}|\D^\alpha f(x)|<\epsilon \}
 \end{equation}
@@ -201,7 +201,7 @@ charakterisieren. Weiter sei
 \begin{equation}
 B^\infty(\Omega) = \{ f\in\rmC^\infty(\Omega) \mid  \forall_{\alpha\in\N_0^n} \;:\; \sup\nolimits_{x\in\Omega} |\D^\alpha f(x)|<\infty \}.
 \end{equation}
-Nach Konstruktion ist $B^\infty_0(\Omega)$ abgeschlossener Teilraum von $B^\infty(\Omega)$ und für $\omega\Subset\Omega$ liefert ist die Einschränkung auf $\omega$ surjektiv von $B^\infty_0(\Omega)$ auf $B^\infty(\omega)$. Das nachfolgende Lemma liefert damit insbesondere die im Beweis verwendete Abgeschlossenheit der Mengen $M_N$.
+Nach Konstruktion ist $B^\infty_0(\Omega)$ abgeschlossener Teilraum von $B^\infty(\Omega)$ und für $\omega\Subset\Omega$ ist die Einschränkung auf $\omega$ surjektiv von $B^\infty_0(\Omega)$ auf $B^\infty(\omega)$. Das nachfolgende Lemma liefert damit insbesondere die im Beweis verwendete Abgeschlossenheit der Mengen $M_N$.
 \end{rem}
 
 
