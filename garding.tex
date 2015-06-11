@@ -3,6 +3,40 @@
 \cite{Garding:1953}
 \cite{Lax:1966}
 
+\section{Dirichletformen}
+Im folgenden sollen Dirichletformen 
+\begin{equation}
+   P(x,\D,\overline\D)[u,v] = \sum_{|\alpha|,|\beta|\le m} \int_\Omega a_{\alpha,\beta}(x) \big(D^\alpha u(x)\big) \overline{\big(\D^\beta v(x)\big)} \d x,\qquad u,v\in\rmC_0^\infty(\Omega)
+\end{equation}
+zu eingem gegebenen Gebiet $\Omega\subset\R^n$ und für Koeffizienten $a_{\alpha,\beta}\in\rmC^\infty(\Omega)$ betrachtet werden. Wir schreiben kurz 
+$P(x,\D,\overline\D)[u]=P(x,\D,\overline\D)[u,u]$. Zugeordnet zu einer solchen Form betrachten wir das Symbol
+\begin{equation}
+   P(x,\zeta,\overline\zeta) = \sum_{\alpha,\beta} p_{\alpha,\beta}(x) \zeta^\alpha\overline\zeta^\beta,\qquad \zeta\in\C^n,
+\end{equation}
+und das zugeordnete Hauptsymbol
+\begin{equation}
+   p(x,\zeta,\overline\zeta) = \sum_{|\alpha|=|\beta|=m} p_{\alpha,\beta}(x) \zeta^\alpha\overline\zeta^\beta,\qquad \zeta\in\C^n.
+\end{equation}
+Die Form heiße symmetrisch, falls $a_{\beta,\alpha}(x)=\overline{a_{\alpha,\beta}(x)}$ gilt. Unter dieser Voraussetzung ist $P(x,\xi,\xi)$ reellwertig f\"ur $\xi\in\R^n$
+und ebenso $P(x,\D,\overline \D)[u]$ reell. 
+
+Spezialfälle symmetrischer Dirichletformen sind die Innenprodukte des $\rmH^m_0(\Omega)$. Für diese schreiben wir kurz
+\begin{equation}
+  \spro{u}{v}_{(m)} = \sum_{|\alpha|\le m} \spro{\D^\alpha u}{\D^\alpha v} = \sum_{|\alpha|\le m} \int_\Omega   \big(D^\alpha u(x)\big) \overline{\big(\D^\alpha v(x)\big)} \d x.
+\end{equation}
+Es stellt sich die Frage, unter welchen Voraussetzungen eine symmetrische Dirichletform äquivalent zu einem solchen Innenprodukt ist. Gilt $a_{\alpha,\beta}\in B^\infty(\Omega)$, so ergibt sich stets eine obere Schranke der Form
+\begin{equation}
+    P(x,\D,\overline\D)[u,u] \le C \spro{u}{u}_{(m)}.
+\end{equation}
+Untere Schranken sind komplizierter. Wir nennen die Form (gleichmäßig) elliptisch, falls 
+\begin{equation}
+  \inf_{x\in\Omega}  \inf_{|\xi|=1} |p(x,\xi,\xi)| > 0.
+\end{equation}
+Unter dieser Voraussetzung zeigen wir, dass es Konstanten $c,t\in\R$ gibt, für welche
+\begin{equation} 
+   \spro{u}{u}_{(m)} \le c P(x,\D,\overline \D) [u] + t \spro{u}{u}
+\end{equation}
+gilt.
 
 \begin{thm}[\cite{Garding:1953}, Theorem 2.1]
 Sei $p(f,f)$ ein zu $p$ gehörendes Dirichletintegral (ToBeDefined). Dann gilt 
@@ -90,6 +124,11 @@ Damit folgt $p_t(f,f) \ge \frac{1}{2}\left(c\vert f\vert_m^2+t\vert f\vert_0^2\r
 \end{align}
 gleichmäßig in $f$. 
 \end{proof}
+
+
+\section{$\Psi$do}
+
+
 
 \begin{lem}
 	Sei das Symbol $p(x)$ eine von $\xi$ unabhängige hermitesche Matrix, $p\in \mathcal{C}_{0,2}$. Ist $\Phi: \mathbb{R}^n\rightarrow\mathbb{R}, \ \xi \mapsto\Phi(\xi)$ Lipschitz-stetig mit Lipschitzkonstante $K$ auf $\supp \widehat{u}$, dann gilt
