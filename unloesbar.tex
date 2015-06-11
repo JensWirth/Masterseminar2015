@@ -165,56 +165,64 @@ gilt. Dazu nutzt man, dass
 \end{equation}
 mit Koeffizienten $a_j\in\rmC_0^\infty(\Omega)$ gilt und wählt $\varphi_j$ so, dass $a_j(x)=\mathcal O(|x|^{q-2j})$ (was auf eine erneute Anwendung des Satzes von Cauchy--Kowalewskaja hinausläuft). Danach zeigt eine einfache Rechnung, dass für jedes $\psi\in\rmC_0^\infty(\omega)$ mit $\psi(x)=\mathcal O(|x|^{2s})$, $x\to0$,
 und $\omega\Subset\Omega$ hinreichend klein stets die Normabschätzung $\limsup_{\tau\to\infty} \|\tau^{s-N}\psi \e^{\tau u}\|_{(N)}<\infty$ gilt und \eqref{eq:cond2} folgt. 
-$\bullet$\qquad {\it Schritt~3.}  Sei $F=\{f\in\rmC^\infty(\Omega) \mid \supp f\subseteq\overline\omega\}$ und 
+$\bullet$\qquad {\it Schritt~3.}  Sei $B^\infty_0(\omega)=\{f\in\rmC^\infty(\Omega) \mid \supp f\subseteq\overline\omega\}$ und 
 \begin{equation}\label{eq:M_N}
-   M_N = \{ f\in F\mid \exists_{u\in\mathscr D'(\omega)} \; \forall_{\psi\in\rmC_0^\infty(\omega)}\; |\langle u,\psi\rangle | \le N \|\psi\|_{(N)} \quad\text{und}\quad P(x,\D)u=f \}.
+   M_N = \{ f\in B^\infty_0(\omega)\mid \exists_{u\in\mathscr D'(\omega)} \; \forall_{\psi\in\rmC_0^\infty(\omega)}\; |\langle u,\psi\rangle | \le N \|\psi\|_{(N)} \quad\text{und}\quad P(x,\D)u=f \}.
 \end{equation}
 Für jedes $u\in\mathscr D'(\Omega)$ und $\omega\Subset\Omega$ gilt $ |\langle u,\psi\rangle | \le N \|\psi\|_{(N)}$ für alle $\psi\in\rmC_0^\infty(\omega)$ und ein hinreichend großes $N$. Die Voraussetzung von Satz~\ref{thm:3.1_hoer} 
 impliziert also
 \begin{equation}
-   \bigcup_{N=1}^\infty M_N = F.
+   \bigcup_{N=1}^\infty M_N = B^\infty_0(\omega).
 \end{equation} 
-Die Mengen $M_N$ sind abgeschlossen (siehe nachfolgendes Lemma \ref{lm:closed}),  konvex und symmetrisch. Weiter ist $F$ metrisierbar, der Bairesche Kategoriensatz impliziert also, dass mindestens eine der Mengen $M_N$ einen inneren Punkt (wegen Symmetrie den Ursprung) besitzt. Es gibt also ein $k$ und $\epsilon>0$, so dass
+Die Mengen $M_N$ sind abgeschlossen (siehe nachfolgendes Lemma \ref{lm:closed}),  konvex und symmetrisch. Weiter ist $B^\infty_0(\omega)$ metrisierbar, der Bairesche Kategoriensatz impliziert also, dass mindestens eine der Mengen $M_N$ einen inneren Punkt (wegen Symmetrie den Ursprung) besitzt. Es gibt also ein $k$ und $\epsilon>0$, so dass
 \begin{equation}\label{eq:fepsInMN}
-    \{ f\in F\mid \|f\|_{(k)}<\epsilon\} \subset M_N
+    \{ f\in B^\infty_0(\omega)\mid \|f\|_{(k)}<\epsilon\} \subset M_N
 \end{equation}
 für ein $N$ gilt. $\bullet$ \qquad {\em Schritt 4.} Wir zeigen, dass \eqref{eq:fepsInMN} im Widerspruch zur Existenz der Hilfsfunktionen aus Schritt 2 steht. 
-Zum Einen impliziert \eqref{eq:fepsInMN} die Existenz einer Distribution $u$ mit $P(x,\D)u=f$ für $f\in F$ mit $\|f\|_{(k)}<\epsilon$. Damit gilt für jede Testfunktion $v\in\rmC_0^\infty(\omega)$ die Abschätzung
+Zum Einen impliziert \eqref{eq:fepsInMN} die Existenz einer Distribution $u$ mit $P(x,\D)u=f$ für $f\in B^\infty_0(\omega)$ mit $\|f\|_{(k)}<\epsilon$. Damit gilt für jede Testfunktion $v\in\rmC_0^\infty(\omega)$ die Abschätzung
 \begin{equation}\label{eq:4.74}
    \bigg| \int f(x) v(x) \d x\bigg| = |\langle u, {}^t P(x,\D) v \rangle| \le N \| {}^t P(x,\D) v\|_{(N)}.
 \end{equation}
 Speziell mit $f=c f_{k,\tau}$ und $v=v_{k,N,\tau}$ folgt für $\tau\to\infty$ ein Widerspruch: Für $c>0$ klein genug impliziert \eqref{eq:fepsInMN} zusammen mit \eqref{eq:cond1}, dass $f\in M_N$. Also gilt \eqref{eq:4.74}. Nun ist die rechte Seite aber wegen \eqref{eq:cond2} gleichmäßig in $\tau$ beschränkt, die linke strebt mit \eqref{eq:cond3} für $\tau\to\infty$  gegen Unendlich. Widerspruch.
 \end{proof}
 
-Das folgende Lemma liefert die im Beweis verwendete Abgeschlossenheit der Menge $M_N$.
+
+\begin{rem}
+Die im obigen Beweis verwendete Menge $B^\infty_0(\omega)$ ist gerade der Abschluss von $\rmC_0^\infty(\omega)$ in $\rmC^\infty(\Omega)$
+(also auch in $\rmC^\infty(\R^n)$). Damit kann für jedes Gebiet $\Omega\subset\R^n$ den entsprechenden Raum auch als
+\begin{equation}
+B_0^\infty(\Omega) =\{f\in \rmC^\infty(\Omega) \mid \forall_{\alpha\in\N_0^n}\;\forall_{\epsilon >0} \;\exists_{K_{\alpha,\epsilon}\Subset\Omega} \;:\; \sup\nolimits_{x\in \Omega\setminus K_{\alpha,\epsilon}}|\D^\alpha f(x)|<\epsilon \}
+\end{equation}
+charakterisieren. Das nachfolgende Lemma liefert damit insbesondere die im Beweis verwendete Abgeschlossenheit der Mengen $M_N$.
+\end{rem}
+
 
 \begin{lem}\label{lm:closed}
-Sei $M_N$ wie in (\ref{eq:M_N}). Dann ist $M_N$ abgeschlossen.
+Sei $\omega\Subset\Omega$ und
+\begin{equation}
+M_N:= \{f\in B_0^\infty(\omega)\mid \exists_{u\in\mathscr D'(\omega)}\; \forall_{\psi\in\rmC_0^\infty(\omega)}\; |\langle u,\psi\rangle | \le N \|\psi\|_{(N)} \quad\text{und}\quad P(x,\mathrm{D})u=f\quad \text{in $\omega$} \}.
+\end{equation}
+Dann ist $M_N\subset B_0^\infty(\omega)$ abgeschlossen.
 \end{lem}
 
 \begin{proof}
-Die Menge der Distributionen, welche die erste Bedingung von (\ref{eq:M_N}) erfüllen, ist  bezüglich der schwachen Topologie auf $\mathscr{D}'(\omega_1)$ (folgen-)kompakt: Wir zeigen dies mit einem Diagonalfolgenargument. Zu zeigen ist also, dass
-\begin{equation}
-\{u\in\mathscr D'(\omega)\mid \forall_{\phi\in \rmC_0^\infty(\omega)}\quad |\langle u,\phi\rangle|\leq N \|\phi\|_{(N)}\}\subset\mathscr D'(\omega)
+Die Menge der Distributionen $u\in\mathscr D'(\omega)$, welche die  Bedingung 
+\begin{equation}\label{lewy:uglSchwartz}
+|\langle u,\psi\rangle|\leq N\|\psi\|_{(N)} 
 \end{equation}
-kompakt ist.
-Aufgrund der Darstellung
-\begin{equation}
-\rmC_0^\infty(\omega)=\bigcup\limits_{\omega_1\Subset\omega}\bigcap\limits_N H_0^N(\omega_1)
-\end{equation}
-und der Separabilität der Sobolevräume $H_0^N(\omega_1)$, finden wir eine abzählbare, dichte Teilmenge $\Phi=\{\phi_1,\phi_2,\ldots\}$ in $\rmC_0^\infty(\omega)$.
-Für eine Folge $(u_n)_{n\in\mathbb{N}}$ in $\mathscr D'(\omega)$ finden wir dann eine Teilfolge $(u_{n_k}^{(1)})_{k\in\mathbb{N}}$, so dass
-$\langle u_{n_k}^{(1)},\phi_1\rangle$ als Folge auf einem Kompaktum (vgl. (\ref{lewy:uglSchwartz})) komplexer Zahlen konvergiert. Weiter finden wir auch eine Teilfolge $(u_{n_k}^{(2)})_{k\in\mathbb{N}}$ zu $\phi_2$, so dass $\langle u_{n_k}^{(2)},\phi_2\rangle$ konvergiert, etc. Wählen wir nun eine Diagonalfolge $(v_n)_{n\in\mathbb{N}}$, so konvergiert $\langle v_n,\phi_j\rangle$ für alle $j$, was jedoch gerade die obige Behauptung bezüglich der Kompaktheit beweist.\\\\
-Sei also $(f_j)_{j\in\mathbb{N}}$ eine gegen $f\in B_0^\infty(\Omega)$ stark konvergente Folge in $M_N$, d.h. $f_j=Pu_j$ auf $\omega$ für gewisse $u_j\in\mathscr{D}'(\omega)$, welche die erste Bedingung aus (\ref{eq:M_N}) erfüllen. Dann existiert ein schwacher Grenzwert $u=\lim_{j\rightarrow\infty}u_j$, welcher aus Gründen der Separabilität von $H_0^N(\omega)$ ebenfalls (\ref{eq:M_N}) erfüllt. Dann ist aber wegen $Pu_j\rightarrow Pu$ in $\mathscr D'(\omega)$ auch $f=Pu$ in $\omega$ und somit auch $f\in M_N$, was die Abgeschlossenheit liefert.
+für alle $\psi\in\rmC_0^\infty(\omega)$ erfüllen, ist folgenkompakt. Wir zeigen dies mit einem Diagonalfolgenargument.
+Sei dazu $(u_n)_{n\in\N}$ eine Folge in $\mathscr D'(\omega)$ mit dieser Schranke. Sei weiter $(\psi_j)_{j\in\N}$ eine Folge
+von $\rmC_0\infty(\omega)$ Funktionen, die in $\rmH^N_0(\omega)$ (also dem Abschluss von $\rmC_0^\infty(\omega)$ in der $\|\cdot\|_{(N)}$-Norm) dicht ist.
+Diese Existiert wegen der Separabilität von $\rmH_0^N(\omega)$.
+
+Da die Folge $\langle u_n,\psi_1\rangle$ in $\C$ beschränkt ist, existiert eine Teilfolge $(u_{n_k}^{(1)})_{k\in\mathbb{N}}$ derart, dass
+$\langle u_{n_k}^{(1)},\psi_1\rangle$ konvergiert. Weiter finden wir auch eine Teilfolge $(u_{n_k}^{(2)})_{k\in\mathbb{N}}$ von $u_{n_k}^{(1)}$, so dass $\langle u_{n_k}^{(2)},\psi_2\rangle$ konvergiert, etc. Wählen wir nun die Diagonalfolge $v_k = u_{n_k}^{(k)}$, so konvergiert $\langle v_k,\psi_j\rangle$ nach Konstruktion für alle $j$. 
+Also konvergiert wegen der vorausgesetzten Schranke \eqref{lewy:uglSchwartz} die Folge   $\langle v_k,\psi\rangle$  für alle $\psi\in\rmH^N_0(\omega)$ und da $\rmC_0^\infty(\omega)\subset \rmH_0^N(\omega)$ gilt in $\mathscr D'(\omega)$. Der Grenzwert erfüllt offenbar ebenfalls \eqref{lewy:uglSchwartz}.
+
+Sei also $(f_n)_{n\in\mathbb{N}}$ eine gegen $f\in B_0^\infty(\omega)$ konvergente Folge aus $M_N$. Dann gilt  $f_n=P(x,\D)u_n$ für gewisse $u_n\in\mathscr{D}'(\omega)$ mit  $|\langle u,\psi\rangle | \le N \|\psi\|_{(N)}$ für alle $\psi\in\rmC_0^\infty(\omega)$. Auf Grund der gerade gezeigten Folgenkompaktheit existiert eine in $\mathscr D'(\omega)$  konvergente Teilfolge $(u_{n_k})_{k\in\N}$. Sei nun $u=\lim_{k\rightarrow\infty}u_{n_k}$. Dann erfüllt $u$ ebenfalls  
+ \eqref{lewy:uglSchwartz} und da $P(x,\D)u_{n_k}\to P(x,\D)u$ in $\mathscr D'(\omega)$ konvergiert, folgt $P(x,\D)u=f$.
 \end{proof}
 
-\begin{df}
-Sei $\Omega\subseteq\mathbb{R}^n$ ein Gebiet. Wir bezeichnen mit $B_0^\infty(\Omega)$ den Raum 
-\begin{equation}
-B_0^\infty(\Omega) :=\{f\in \rmC^\infty(\Omega) \mid \forall_{\alpha\in\N_0^n}\;\forall_{\epsilon >0} \;\exists_{K_{\alpha,\epsilon}\Subset\Omega} \;:\; \sup\nolimits_{x\in \Omega\setminus K_{\alpha,\epsilon}}|\D^\alpha f(x)|<\epsilon \}
-\end{equation}
-versehen mit der durch die Seminormen $p_\alpha(f)=\sup_{x\in\Omega} |\D^\alpha f|$ erzeugten lokalkonvexen Struktur.
-\end{df}
 
 
 
@@ -243,9 +251,9 @@ Wir wollen zeigen, dass $M$ von erster Kategorie ist. Sei hierzu $\omega_1\Subse
 \end{equation}
 für alle $\phi\in \rmC_0^\infty(\omega_1)$ erfüllt ist. Die Menge $M_N$, gegeben durch
 \begin{equation}
-M_N:= \{f\in B_0^\infty(\Omega)\mid \exists\,u\in\mathscr D'(\omega_1): P(x,\mathrm{D})u=f\;\mathrm{in}\;\omega_1\;\wedge\; u\mathrm{\;erf"ullt\;}(\ref{lewy:uglSchwartz})\},
+M_N:= \{f\in B_0^\infty(\Omega)\mid \exists\,u\in\mathscr D'(\omega_1): P(x,\mathrm{D})u=f\;\mathrm{in}\;\omega_1\;\wedge\; u\mathrm{\;erf"ullt\;}\eqref{lewy:uglSchwartz}\},
 \end{equation}
-ist abgeschlossen (vergleiche vorigies Lemma (\ref{lm:closed})), konvex und symmetrisch. \\\\
+ist abgeschlossen (vergleiche vorigies Lemma \eqref{lm:closed}), konvex und symmetrisch. \\\\
 \textit{Schritt 2}\\
 Wir zeigen nun per Kontraposition, dass $M_N$ keine inneren Punkte besitzt. Wenn wir in Satz \ref{thm:3.1_hoer} die Menge $\Omega$ durch $\omega_1$ ersetzen, so existiert nach Kontraposition ein $g\in\mathscr{D}(\omega_1)$ mit
 \begin{equation}\label{lewy:tgM}
@@ -255,10 +263,10 @@ Angenommen, es existiere ein innerer Punkt $f$ von $M_N$, so wäre auch $f+tg\in
 \begin{equation}
 \lambda(f+tg)+(1-\lambda)(-f) = \frac{f+tg-f}{2}=\frac{tg}{2}\in M_N,
 \end{equation}
-was einen Widerspruch zu (\ref{lewy:tgM}) liefert.\\\\
+was einen Widerspruch zu \eqref{lewy:tgM} liefert.\\\\
 Also ist $M_N$ abgeschlossen und ohne innere Punkte, folglich also $\bigcup M_N$ nach Definition von erster Kategorie. Wegen $M\subset\bigcup M_N$ folgt also auch, dass $M$ von erster Kategorie ist.\\\\
 \textit{Schritt 3}\\
-Wir zeigen nun, dass (\ref{lewy:pxDu=f}) tatsächlich keine Lösung in $\omega$ besitzt: Sei $(\omega_j)_{j\in\mathbb{N}}$ eine abzählbare Basis aus offenen Teilmengen von $\Omega$, wobei $\omega_i\neq\emptyset$ für alle $i\in\mathbb{N}$ ist. Sei weiter
+Wir zeigen nun, dass \eqref{lewy:pxDu=f} tatsächlich keine Lösung in $\omega$ besitzt: Sei $(\omega_j)_{j\in\mathbb{N}}$ eine abzählbare Basis aus offenen Teilmengen von $\Omega$, wobei $\omega_i\neq\emptyset$ für alle $i\in\mathbb{N}$ ist. Sei weiter
 \begin{equation}
 M^{(j)}:=\{f\in B_0^\infty(\Omega)\mid \exists u\in\mathscr{D}'(\omega_j): P(x,\mathrm{D})u=f\;\mathrm{auf\;}\omega_j\},
 \end{equation}
