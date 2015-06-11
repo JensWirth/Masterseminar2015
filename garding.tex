@@ -91,4 +91,31 @@ Damit folgt $p_t(f,f) \ge \frac{1}{2}\left(c\vert f\vert_m^2+t\vert f\vert_0^2\r
 gleichmäßig in $f$. 
 \end{proof}
 
+\begin{lem}
+	Sei das Symbol $p(x)$ eine von $\xi$ unabhängige hermitesche Matrix, $p\in \mathcal{C}_{0,2}$. Ist $\Phi: \mathbb{R}^n\rightarrow\mathbb{R}, \ \xi \mapsto\Phi(\xi)$ Lipschitz-stetig mit Lipschitzkonstante $K$ auf $\supp \widehat{u}$, dann gilt
+	\begin{align}
+		\vert \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(D)u}{\Phi(d)u}\vert \le\frac{1}{2}\vert p\vert_{0,2}K^2\vert\vert u\vert\vert_0^2.
+\end{align}	 
+\begin{proof}
+	Die Rechenregeln der Fouriertransformation liefern
+	\begin{align}\label{lem3.1:Lax;1}
+		\begin{split} J:&=  \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(D)u}{\Phi(d)u} \\
+		&=\Re \left( \spro{\Phi(\cdot)\left(\widehat{u}\ast \widehat{p}\right)}{\Phi(\cdot)\widehat{u}}-\spro{\widehat{p}\ast\widehat{\Phi(\cdot)u}}{\Phi(\cdot)\widehat{u}}\right)\\
+		&= \left(2\pi\right)^{-\frac{n}{2}}\Re\int\int\widehat{p}(\xi-\eta)\widehat{u}(\eta)\widehat{u}(\xi)\left(\Phi(\xi)-\Phi(\eta)\right)\Phi(\xi)\d \xi\d\eta.
+		\end{split}
+	\end{align}
+	Weil $p$ hermitesch ist, folgt $\widehat{p}(\xi) = \overline{\widehat{p}}(-\xi)$. Durch Vertauschen der Integrationsvariablen erhalten wir also
+	\begin{align}\label{lem3.1:Lax;2}
+	\begin{split}	J&= \left(2\pi\right)^{-\frac{n}{2}}\Re\int\int\overline{\widehat{p}}(\eta-\xi)\widehat{u}(\eta)\widehat{u}(\xi)\left(\Phi(\eta)-\Phi(\xi)\right)\Phi(\eta)\d \xi\d\eta\\
+		&= \left(2\pi\right)^{-\frac{n}{2}}\Re\int\int\widehat{p}(\xi-\eta)\widehat{u}(\eta)\widehat{u}(\xi)\left(\Phi(\eta)-\Phi(\xi)\right)\Phi(\eta)\d \xi\d\eta.
+	\end{split}	
+	\end{align}
+	Addieren von $(\ref{lem3.1:Lax;1})$ und $(\ref{lem3.1:Lax;2})$ liefert
+	\begin{align}
+		J= \frac{1}{2}\left(2\pi\right)^{-\frac{n}{2}}\Re\int\int \widehat{p}(\xi-\eta)\widehat{u}(\eta)\widehat{u}(\xi)\left(\Phi(\xi)-\Phi(\eta)\right)^2\d\xi\d\eta.
+	\end{align}
+	Mit $\vert \widehat{p}(\xi-\eta,\cdot)\vert_0 = \vert \widehat{p}(\xi-\eta)\vert$ und der Ungleichung von Cauchy-Schwarz folgt die Behauptung. 
+\end{proof}
+\end{lem}
+
 
