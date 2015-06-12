@@ -56,11 +56,11 @@ $|a_\alpha(x)-a_\alpha(0)|\le \epsilon$ für $|x|\le\delta$. Damit impliziert di
 für alle $u\in\rmC_0^\infty(B_\delta)$. Für $\epsilon$ klein genug folgt damit die Behauptung.
 \end{proof}
 
-Ein Operator $P(x,\D)$ wird als  \eIndex[Differentialoperator]{von reellem Haupttyp} bezeichnet, falls sein Hauptsymbol $p(x,\xi)$ reellwertig ist. Unter der Voraussetzung stimmen $P(x,\D)$ und sein formal adjungierter ${}^tP(x,\D)$ bis auf einen Operator der Ordnung $m-1$ überein. Allgemeiner heißt $P(x,\D)$ \eIndex[Differentialoperator]{wesentlich normal}, falls die  \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$
+Ein Operator $P(x,\D)$ wird als  \eIndex[Differentialoperator]{von reellem Haupttyp} bezeichnet, falls sein Hauptsymbol $p(x,\xi)$ reellwertig ist. Unter der Voraussetzung stimmen $P(x,\D)$ und sein formal adjungierter $P^*(x,\D)$ bis auf einen Operator der Ordnung $m-1$ überein. Allgemeiner heißt $P(x,\D)$ \eIndex[Differentialoperator]{wesentlich normal}, falls die  \eIndex{Poissonklammer} des Hauptsymbols $p$ mit $\overline p$ definiert durch $\overline p(x, \overline\zeta) = \overline{p(x,\zeta)}$
 \begin{equation}
     \{ p,\overline p\} (x,\xi) = \sum_{j=1}^n \bigg(\frac{\partial p(x,\xi)}{\partial \xi_j} \frac{\partial \overline p (x,\xi)}{\partial x_j} - \frac{\partial \overline p(x,\xi)}{\partial \xi_j}\frac{\partial  p(x,\xi)}{\partial x_j} \bigg)    = 0 
 \end{equation}
-für alle $\xi\in\R^n$ verschwindet. In diesem Fall ist der Kommutator von $P(x,\D)$ und ${}^tP(x,\D)$ von Ordnung $2m-2$ (statt nur $2m-1$).
+für alle $\xi\in\R^n$ verschwindet. In diesem Fall ist der Kommutator von $P(x,\D)$ und $P^*(x,\D)$ von Ordnung $2m-2$ (statt nur $2m-1$).
 
 Das folgende Resultat ergibt sich aus \cite[Theorem~4.1]{Hormander:1955} zusammen mit der Vorbemerkung zu diesem Kapitel. Die Umkehrung dieses Satzes gilt nicht.
 
@@ -87,7 +87,7 @@ Angenommen, $P(x,\D)$ erfüllt die Voraussetzungen von Satz~\ref{thm:4:4.1} oder
 $f\in\rmL^2(\Omega')$ ein $u\in\mathscr D'(\Omega')$ mit $P(x,\D)u=f$ in $\Omega'$.
 \end{cor}
 \begin{proof}
-Mit $P(x,\D)$ erfüllt auch ${}^tP(x,\D)$ die Voraussetzungen des Satzes. Insbesondere ist damit der zu ${}^tP(x,\D)$ auf $\Omega'$ assoziierte minimale Operator beschränkt invertierbar und damit nach Satz~\ref{thm:1:loesbarkeit} der zu $P(x,\D)$ assoziierte maximale Operator surjektiv.
+Mit $P(x,\D)$ erfüllt auch $P^*(x,\D)$ die Voraussetzungen des Satzes. Insbesondere ist damit der zu $P^*(x,\D)$ auf $\Omega'$ assoziierte minimale Operator beschränkt invertierbar und damit nach Satz~\ref{thm:1:loesbarkeit} der zu $P(x,\D)$ assoziierte maximale Operator surjektiv.
 \end{proof}
 
 \section{Notwendige Bedingungen für untere Schranken}

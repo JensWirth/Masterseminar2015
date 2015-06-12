@@ -84,7 +84,7 @@ das Monom, sowie durch
 \end{equation}
 ein formaler Differentialoperator definiert. Sei nun $\Omega\subseteq\R^n$ ein Gebiet. Ein Differentialoperator der Ordnung $m$ ist ein formaler Ausdruck der Form
 \begin{equation}
-   \mathcal P = \sum_{|\alpha|\le m} a_\alpha(x) \D^\alpha
+    P(x,\D) = \sum_{|\alpha|\le m} a_\alpha(x) \D^\alpha
 \end{equation}
 mit Koeffizientenfunktionen $a_\alpha\in \rmC^\infty(\Omega)$. Er agiert in nat\"urlicher Weise auf $u\in\rmC^\infty_0(\Omega)$ (oder auf $u\in\mathscr D'(\Omega)$ in distributionellem Sinne).
 
@@ -92,44 +92,44 @@ Versieht man $\rmC_0^\infty(\Omega)$ durch
 \begin{equation}
     \spro{u}{v} = \int_{\Omega} u(x) \overline{v(x)} \d x
 \end{equation}
-mit einem $\rmL^2$-Innenprodukt, so kann man zu $\mathcal P$ den formal adjungierten Operator ${}^t\mathcal P$ betrachten. Dieser erf\"ullt
+mit einem $\rmL^2$-Innenprodukt, so kann man zu $P(x,\D)$ den formal adjungierten Operator $P^*(x,\D))$ betrachten. Dieser erf\"ullt
 \begin{equation}
-   \forall u,v\in\rmC_0^\infty(\Omega)\quad:\quad \spro{\mathcal Pu}{v}=\spro{u}{{}^t{\mathcal P}v}
+   \forall u,v\in\rmC_0^\infty(\Omega)\quad:\quad \spro{ P(x,\D)u}{v}=\spro{u}{  P^*(x,\D)v}
 \end{equation}
 und ist durch
 \begin{equation}
-  {}^t{ \mathcal P}v(x) = \sum_{|\alpha|\le m}  \D^\alpha\big(\overline{a_\alpha(x)}v(x)\big)
+    P^*(x,\D) v(x) = \sum_{|\alpha|\le m}  \D^\alpha\big(\overline{a_\alpha(x)}v(x)\big)
 \end{equation}
 gegeben.
 
 \begin{lem}[{\cite[Lemma~1.4]{Hormander:1955}}]
-Der Differentialoperator $\mathcal P$ versehen mit Definitionsbereich
+Der Differentialoperator  $P(x,\D)$ versehen mit Definitionsbereich
 \begin{equation}
-  \mathcal D= \{ u\in\rmC^\infty(\Omega) \cap \rmL^2(\Omega) :  \mathcal Pu\in\rmL^2(\Omega) \}
+  \mathcal D= \{ u\in\rmC^\infty(\Omega) \cap \rmL^2(\Omega) :   P(x,\D)u\in\rmL^2(\Omega) \}
 \end{equation}
 ist $\rmL^2$-$\rmL^2$-abschließbar.
 \end{lem}
 \begin{proof}
-Sei $u_n\in\mathcal D$ eine Folge mit $u_n\to 0$ in $\rmL^2(\Omega)$ und $\mathcal Pu_n \to w\in\rmL^2(\Omega)$. Dann gilt f\"ur jedes 
+Sei $u_n\in\mathcal D$ eine Folge mit $u_n\to 0$ in $\rmL^2(\Omega)$ und $P(x,\D) u_n \to w\in\rmL^2(\Omega)$. Dann gilt f\"ur jedes 
 $v\in\rmC^\infty_0(\Omega)$
 \begin{equation}
- \spro{w}{v}=\lim_{n\to\infty}   \spro{\mathcal Pu_n}{v} = \lim_{n\to\infty} \spro{u_n}{{}^t{\mathcal P}v} = 0
+ \spro{w}{v}=\lim_{n\to\infty}   \spro{ P(x,\D) u_n}{v} = \lim_{n\to\infty} \spro{u_n}{P^*(x,\D)v} = 0
 \end{equation}
 somit $w=0$.
 \end{proof}
 
-Die Aussage gilt allgemeiner, es ergibt sich $\rmL^p$-$\rmL^q$-, $\rmC$-$\rmC$ sowie $\rmL^p$-$\rmC$-Abschließbarkeit bei entsprechend gewähltem $\mathcal D$. Insbesondere ist $\mathcal P$ mit Definitionsbereich $\rmC^\infty_0(\Omega)$ abschließbar als Operator auf $\rmL^2(\Omega)$. 
+Die Aussage gilt allgemeiner, es ergibt sich $\rmL^p$-$\rmL^q$-, $\rmC$-$\rmC$ sowie $\rmL^p$-$\rmC$-Abschließbarkeit bei entsprechend gewähltem $\mathcal D$. Insbesondere ist $P(x,\D)$ mit Definitionsbereich $\rmC^\infty_0(\Omega)$ abschließbar als Operator auf $\rmL^2(\Omega)$. 
 
 \begin{df} 
-Sei $\mathcal P$ ein Differentialausdruck und $\Omega$ ein Gebiet. Dann wird der $\rmL^2$-$\rmL^2$-Abschluß des durch $\mathcal P$ auf $\rmC_0^\infty(\Omega)$ definierten Operators mit $P_0$ und als \eIndex[Differentialoperator]{minimaler Operator} zum Differentialausdruck $\mathcal P$ und Gebiet $\Omega$ bezeichnet. 
-Weiterhin heißt $P := ({}^t P_0)^*$ \eIndex[Differentialoperator]{maximaler Operator} zu $\mathcal P$ und $\Omega$.
+Sei $P(x,\D)$ ein Differentialausdruck und $\Omega$ ein Gebiet. Dann wird der $\rmL^2$-$\rmL^2$-Abschluß des durch  $P(x,\D)$ auf $\rmC_0^\infty(\Omega)$ definierten Operators mit $P_0$ und als \eIndex[Differentialoperator]{minimaler Operator} zum Differentialausdruck $P(x,\D)$ und Gebiet $\Omega$ bezeichnet. 
+Weiterhin heißt $P := (  (P^*)_0)^*$ \eIndex[Differentialoperator]{maximaler Operator} zu $\mathcal P$ und $\Omega$.
 \end{df}
 
 Der so definierte maximale Operator besitzt den Definitionsbereich
 \begin{equation}
-   \mathcal D_P = \{ u\in\rmL^2(\Omega) : \mathcal Pu \in\rmL^2(\Omega)\},
+   \mathcal D_P = \{ u\in\rmL^2(\Omega) :  P(x,\D)u \in\rmL^2(\Omega)\},
 \end{equation}
-wobei die Anwendung von $\mathcal P$ im distributionellen Sinne zu verstehen ist. Wir betrachten ein einfaches Beispiel. Dazu sei $\Omega=(a,b)\subseteq\R$ ein Intervall und $\mathcal P = \D^2 = - \partial^2$ die Zuordnung der zweiten Ableitung. Dann besitzt der minimale Operator den Definitionsbereich
+wobei die Anwendung von $P(x,\D)$ im distributionellen Sinne zu verstehen ist. Wir betrachten ein einfaches Beispiel. Dazu sei $\Omega=(a,b)\subseteq\R$ ein Intervall und $P(x,\D) = \D^2 = - \partial^2$ die Zuordnung der zweiten Ableitung. Dann besitzt der minimale Operator den Definitionsbereich
 \begin{equation}
     \{ u\in\rmH^2(\Omega) :  u(a)=\partial u(a)=u(b)=\partial u(b) = 0\} = \rmH^2_0(\Omega),
 \end{equation}
@@ -137,9 +137,9 @@ also den Sobolevraum $\rmH^2_0(\Omega)$ der am Rand verschwindenden Funktionen, 
 Der Unterschied zwischen minimalen und maximalen Operatoren besteht in der Wahl von Randbedingungen. 
 
 \begin{thm}[{\cite[Lemma~1.7]{Hormander:1955}}]\label{thm:1:loesbarkeit}
-Die Gleichung $Pu=f$ hat genau dann für jedes $f\in\rmL^2(\Omega)$ eine L\"osung $u\in\mathcal D_{P}$, wenn ${}^t P_0$ beschränkt invertierbar ist, also wenn f\"ur den formal adjungierten Differentialausdruck
+Die Gleichung $Pu=f$ hat genau dann für jedes $f\in\rmL^2(\Omega)$ eine L\"osung $u\in\mathcal D_{P}$, wenn $\overline  P_0$ beschränkt invertierbar ist, also wenn f\"ur den formal adjungierten Differentialausdruck
 \begin{equation}
-  \forall u\in\rmC^\infty_0(\Omega)\quad:\quad   \|u\| \le C \| {}^t{\mathcal P} u \|
+  \forall u\in\rmC^\infty_0(\Omega)\quad:\quad   \|u\| \le C \|   P^*(x,\D) u \|
 \end{equation}
 gilt.
 \end{thm}
@@ -149,40 +149,40 @@ Folgt aus Satz~\ref{thm:1:1.2} in Verbindung mit der Definition des maximalen Op
 
 Solche und allgemeinere Ungleichungen stehen im Zusammenhang mit Enthaltenseinsbeziehungen zwischen Definitionsbereichen minimaler Operatoren. Dazu definieren wir zuerst: 
 \begin{df}\label{df:1:1.2}
-Seien $\mathcal P$ und $\mathcal Q$ Differentialausdrücke und $\Omega$ ein Gebiet. Gilt dann $\mathcal D_{P_0}\subseteq \mathcal D_{Q_0}$, so heiße $\mathcal P$ \eIndex[Differentialoperator]{stärker} als $\mathcal Q$ bzw. $\mathcal Q$ \eIndex[Differentialoperator]{schwächer} als $\mathcal P$. Gilt $\mathcal D_{P_0}=\mathcal D_{Q_0}$, so heißen beide \eIndex[Differentialoperator]{gleich stark}.
+Seien $P(x,\D)$ und $Q(x,\D)$ Differentialausdrücke und $\Omega$ ein Gebiet. Gilt dann $\mathcal D_{P_0}\subseteq \mathcal D_{Q_0}$, so heiße $P(x,\D)$ \eIndex[Differentialoperator]{stärker} als $Q(x,D)$ bzw. $Q(x,\D)$ \eIndex[Differentialoperator]{schwächer} als $P(x,\D)$. Gilt $\mathcal D_{P_0}=\mathcal D_{Q_0}$, so heißen beide \eIndex[Differentialoperator]{gleich stark}.
 \end{df}
 Die  Definition hängt im Falle konstanter Koeffizienten nicht von der Wahl des Gebietes ab. Im Falle variabler Koeffizienten (siehe später) sind die Gebiete hinreichend klein zu wählen um eine sinnvolle Definition erhalten.
 
 \begin{lem}[{\cite[Lemmata~1.5 und~1.6]{Hormander:1955}}]\label{lm: Qu stetig}
-Seien $\mathcal P$ und $\mathcal Q$ Differentialausdr\"ucke auf einem Gebiet $\Omega$. 
+Seien $P(x,\D)$ und $Q(x,\D)$ Differentialausdr\"ucke auf einem Gebiet $\Omega$. 
 \begin{enumerate}
 \item
-$\mathcal Q$ ist genau dann schwächer als $\mathcal P$, wenn
+$Q(x,\D)$ ist genau dann schwächer als $P(x,\D)$, wenn
 \begin{equation}\label{eq:1:1.21}
-    \forall u\in\rmC^\infty_0(\Omega)\quad:\quad \|\mathcal Qu\|^2 \le C \big( \|\mathcal Pu\|^2 + \|u\|^2 \big)
+    \forall u\in\rmC^\infty_0(\Omega)\quad:\quad \| Q(x,\D)u\|^2 \le C \big( \| P(x,\D)u\|^2 + \|u\|^2 \big)
 \end{equation}
 gilt.
 \item
 $Q_0 u$ ist für jedes $u\in\mathcal D_{P_0}$ genau dann beschränkt, wenn
 \begin{equation}
-    \forall u\in\rmC^\infty_0(\Omega)\quad:\quad  \sup_{x\in\Omega} |\mathcal Qu(x) |^2 \le C \big( \|\mathcal Pu\|^2 + \|u\|^2 \big)
+    \forall u\in\rmC^\infty_0(\Omega)\quad:\quad  \sup_{x\in\Omega} | Q(x,\D) u(x) |^2 \le C \big( \| P(x,\D)u\|^2 + \|u\|^2 \big)
 \end{equation}
 gilt. In diesem Fall besitzt $Q_0u$ insbesondere einen stetigen auf $\partial\Omega$ verschwindenden Repräsentanten.
 \end{enumerate}
 \end{lem}
 \begin{proof}
-{\bf (i)}\quad Die Hinrichtung folgt direkt aus Satz~\ref{thm:1:1.1}. Für die Rückrichtung nehmen wir an, die Ungleichung gilt. Dann existiert zu $u\in\mathcal D_{P_0}$ eine Folge $u_n\in\rmC_0^\infty(\Omega)$ mit $u_n\to u$ und $\mathcal P u_n\to P_0 u$ in $\rmL^2(\Omega)$. Dann ist aber $\mathcal Q(u_n-u_m)$ Cauchy und da $Q_0$ abgeschlossen ist folgt $u\in\mathcal D_{Q_0}$. $\bullet$\qquad
-{\bf (ii)}\quad Für die Hinrichtung betrachtet man $\mathcal Q$ als Operator $\mathcal G_{P_0}\to\rmL^\infty(\Omega)$ und wendet Satz~\ref{thm:1:1.1} an. Für die Rückrichtung sei $u\in\mathcal D_{P_0}$ beliebig und $u_n\in\rmC_0^\infty(\Omega)$ eine Folge mit $u_n\to u$ und $\mathcal Pu_n\to P_0u$ in $\rmL^2(\Omega)$.
-Dann konvergiert $\mathcal Qu_n$ gleichmäßig und Behauptung folgt. Insbesondere verschwindet $Q_0u = \lim_{n\to\infty} \mathcal Qu_n$ auf dem unendlich fernen Punkt der Einpunktkompaktifizierung von $\Omega$.
+{\bf (i)}\quad Die Hinrichtung folgt direkt aus Satz~\ref{thm:1:1.1}. Für die Rückrichtung nehmen wir an, die Ungleichung gilt. Dann existiert zu $u\in\mathcal D_{P_0}$ eine Folge $u_n\in\rmC_0^\infty(\Omega)$ mit $u_n\to u$ und $P(x,\D) u_n\to P_0 u$ in $\rmL^2(\Omega)$. Dann ist aber $Q(x,\D)(u_n-u_m)$ Cauchy und da $Q_0$ abgeschlossen ist folgt $u\in\mathcal D_{Q_0}$. $\bullet$\qquad
+{\bf (ii)}\quad Für die Hinrichtung betrachtet man $Q(x,\D)$ als Operator $\mathcal G_{P_0}\to\rmL^\infty(\Omega)$ und wendet Satz~\ref{thm:1:1.1} an. Für die Rückrichtung sei $u\in\mathcal D_{P_0}$ beliebig und $u_n\in\rmC_0^\infty(\Omega)$ eine Folge mit $u_n\to u$ und $P(x,\D)u_n\to P_0u$ in $\rmL^2(\Omega)$.
+Dann konvergiert $ Q(x,\D)u_n$ gleichmäßig und Behauptung folgt. Insbesondere verschwindet $Q_0u = \lim_{n\to\infty}  Q(x,\D) u_n$ auf dem unendlich fernen Punkt der Einpunktkompaktifizierung von $\Omega$.
 \end{proof}
 
 \section{Randwertprobleme}
-Sei im folgenden $\mathcal P$ und $\Omega$ fixiert. Dann sind  $\mathcal G_P$ und $\mathcal G_{P_0}$ abgeschlossene Teilräume von $\rmL^2\times\rmL^2$. Da
+Sei im folgenden $P(x,\D)$ und $\Omega$ fixiert. Dann sind  $\mathcal G_P$ und $\mathcal G_{P_0}$ abgeschlossene Teilräume von $\rmL^2\times\rmL^2$. Da
 $\mathcal G_{P_0}\subseteq \mathcal G_P$ gilt, kann man den Quotientenraum
 \begin{equation}
    \mathcal C = \mathcal G_P / \mathcal G_{P_0}
 \end{equation}
-betrachten. Dieser wird als \eIndex[Differentialoperator]{Cauchyraum} des Differentialausdrucks $\mathcal P$ auf dem Gebiet $\Omega$ bezeichnet. Für $u\in\mathcal D_P$ sei
+betrachten. Dieser wird als \eIndex[Differentialoperator]{Cauchyraum} des Differentialausdrucks $P(x,\D)$ auf dem Gebiet $\Omega$ bezeichnet. Für $u\in\mathcal D_P$ sei
 \begin{equation}
      \Gamma u := [ (u,Pu) ]_{\mathcal G_{P_0}} \in \mathcal C
 \end{equation}
@@ -200,13 +200,13 @@ Der so definierte Operator ist abgeschlossen genau dann, wenn $B$ abgeschlossen 
 Das Randwertproblem heißt \eIndex[Randwertproblem]{korrekt gestellt}, falls $\widehat P$ stetig invertierbar ist.
 
 \begin{thm}[Vi\v{s}ik, [{\cite[Theorem~1.2]{Hormander:1955}}]
-Zu einem Differentialausdruck $\mathcal P$ existieren auf einem Gebiet $\Omega$ genau dann korrekt gestellte Randwertprobleme, wenn $P_0$ und $\overline P_0$
+Zu einem Differentialausdruck $\mathcal P$ existieren auf einem Gebiet $\Omega$ genau dann korrekt gestellte Randwertprobleme, wenn $P_0$ und $(P^*)_0$
 beschr\"ankt invertierbar sind.
 \end{thm} 
 \begin{proof} 
-Angenommen, es existiert ein korrekt gestelltes homogenes Randwertproblem $\widehat P$. Da $P_0\subseteq \widehat P$ gilt, muß dann $P_0^{-1}$ beschränkt sein. Weiterhin ist $\widehat P^{-1}$ rechtsinvers zu $P$, damit muß ${}^t P_0^{-1}$ nach Korollar~\ref{cor:1:1.3} beschränkt sein.
+Angenommen, es existiert ein korrekt gestelltes homogenes Randwertproblem  für $P(x,\D)$. Da $P_0\subseteq \widehat P$ gilt, muß dann $P_0^{-1}$ beschränkt sein. Weiterhin ist $\widehat P^{-1}$ rechtsinvers zu $P$, damit muß $(P^*)_0^{-1}$ nach Korollar~\ref{cor:1:1.3} beschränkt sein.
 
-Seien nun $P_0$ und ${}^t P_0$ beschränkt invertierbar. Da $P_0^{-1}$ beschr\"ankt ist, ist $\mathcal R_{P_0}\subseteq \rmL^2(\Omega)$ abgeschlossen.  Bezeichne nun $\pi$ den Orthogonalprojektor auf $\mathcal R_{P_0}$. Ist nun $S$ eine Rechtsinverse zu $P$ (die nach  Korollar~\ref{cor:1:1.3} existiert), so gilt für
+Seien nun $P_0$ und $ (P^*)_0$ beschränkt invertierbar. Da $P_0^{-1}$ beschr\"ankt ist, ist $\mathcal R_{P_0}\subseteq \rmL^2(\Omega)$ abgeschlossen.  Bezeichne nun $\pi$ den Orthogonalprojektor auf $\mathcal R_{P_0}$. Ist nun $S$ eine Rechtsinverse zu $P$ (die nach  Korollar~\ref{cor:1:1.3} existiert), so gilt für
 den durch  
 \begin{equation}
   Tf = P_0^{-1} \pi f + S(I-\pi) f,\qquad f\in\rmL^2(\Omega) 
@@ -214,7 +214,7 @@ den durch
 definierten Operator $T$ nach Konstruktion $PT f = \pi f + (I-\pi) f = f$ und $T$ besitzt eine Inverse $\widehat P \subseteq P$. Weiter ist $T\supset P_0^{-1}$ und $\widehat P\supset P_0$ , so daß $P_0\subseteq \widehat P\subseteq P$. Da $\widehat P^{-1}$ beschränkt und auf ganz $\rmL^2(\Omega)$ definiert ist, ist der Satz bewiesen.
 \end{proof}
 
-Seien nun $P_0$ und ${}^t P_0$ beschränkt invertierbar und bezeichne 
+Seien nun $P_0$ und  $(P^*)_0$ beschränkt invertierbar und bezeichne 
 \begin{equation}
   U=\ker P = \{u\in\rmL^2(\Omega) : Pu =0\}
 \end{equation}  
@@ -224,7 +224,7 @@ den Kern des maximalen Operators. Dann ist $\Gamma U\subseteq \mathcal C$ abgesc
 \end{multline}
 ein Isomorphismus. 
 \begin{thm}[{\cite[Theorem~1.3]{Hormander:1955}}]
-Seien $P_0$ und ${}^t P_0$ beschränkt invertierbar und sei $B\subseteq\mathcal C$ abgeschlossener Teilraum. Das zugehörige homogene Randwertproblem $\widehat P$ ist genau dann korrekt gestellt, wenn $\mathcal C = B \dotplus \Gamma U $ als direkte Summe\footnote{Direkt, nicht notwendig orthogonal.} gilt.
+Seien $P_0$ und $\overline  P_0$ beschränkt invertierbar und sei $B\subseteq\mathcal C$ abgeschlossener Teilraum. Das zugehörige homogene Randwertproblem $\widehat P$ ist genau dann korrekt gestellt, wenn $\mathcal C = B \dotplus \Gamma U $ als direkte Summe\footnote{Direkt, nicht notwendig orthogonal.} gilt.
 \end{thm}
 \begin{proof}
 Angenommen, $\mathcal C = B \dotplus \Gamma U$. Dann ist der Lösungsoperator über eine Rechtsinverse $S$ zu $P$ und den Projektor $\pi\in\mathcal L(\mathcal C)$ auf  $\Gamma U$ entlang $B$ durch
@@ -250,7 +250,7 @@ für alle $\zeta\in\C^n$ und mit $x\cdot\zeta = \sum_{j=1}^n x_j\zeta_j$. Das Po
 \begin{equation}
     \widehat u (\zeta) = (2\pi)^{-n/2} \int_\Omega \e^{-\i x\cdot\zeta } u(x) \d x,\qquad \zeta\in\C^n
 \end{equation}
-eine ganze Funktion auf $\C^n$. Die Anwendung des Operators $ P(\D)$ entspricht im Fourierbild der Multiplikation mit $ P(\zeta)$. Der formal adjungierte Operator ${}^t P(\D)$ entspricht dabei dem Operator zum Symbol $\overline{P}(\zeta)=\overline{P(\overline\zeta)}$.
+eine ganze Funktion auf $\C^n$. Die Anwendung des Operators $ P(\D)$ entspricht im Fourierbild der Multiplikation mit $ P(\zeta)$. Der formal adjungierte Operator $  P^*(\D)$ entspricht dabei dem Operator zum Symbol $\overline{P}(\zeta)=\overline{P(\overline\zeta)}$.
 
 Eine erste Anwendung ist folgender Satz. Ein Beweis ergibt sich später nochmals in allgemeinerer Form.
 
