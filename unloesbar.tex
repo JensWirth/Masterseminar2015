@@ -131,7 +131,7 @@ Dann gilt für alle $x\in\Omega$ und $\xi\in\mathbb{R}^n$ mit $p(x,\xi)=0$
 \end{thm}
 \begin{proof}
 Wir zeigen dies indirekt, beginnen mit einer Umformulierung der Voraussetzung als Ungleichung und konstruieren danach geeignete Testfunktionen um einen Widerspruch herzuleiten. 
-\noindent {\sl Schritt 1.}  
+\noindent {\em Schritt 1.}  
  Bezeichne $\rmB^\infty_0(\omega)=\{f\in\rmC^\infty(\Omega) \mid \supp f\subseteq\overline\omega\}$ und 
 \begin{equation}\label{eq:M_N}
    M_N = \{ f\in \rmB^\infty_0(\omega)\mid \exists_{u\in\mathscr D'(\omega)} \; \forall_{\psi\in\rmC_0^\infty(\omega)}\; |\langle u,\psi\rangle | \le N \|\psi\|_{(N)} \quad\text{und}\quad P(x,\D)u=f \}.
@@ -140,13 +140,13 @@ Für jedes $u\in\mathscr D'(\Omega)$ und $\omega\Subset\Omega$ gilt $ |\langle u
 \begin{equation}
    \bigcup_{N=1}^\infty M_N = \rmB^\infty_0(\omega).
 \end{equation} 
-Die Mengen $M_N$ sind abgeschlossen (siehe nachfolgendes Lemma \ref{lm:closed}),  konvex und symmetrisch. Weiter ist $\rmB^\infty_0(\omega)$ metrisierbar, der Bairesche Kategoriensatz impliziert also, dass mindestens eine der Mengen $M_N$ einen inneren Punkt (wegen Symmetrie den Ursprung) besitzt. Es gibt also ein $k$ und $\epsilon>0$, so dass
+Die Mengen $M_N$ sind abgeschlossen (siehe nachfolgendes Lemma \ref{lm:closed}),  konvex und symmetrisch. Weiter ist $\rmB^\infty_0(\omega)$ metrisierbar, der Bairesche Kategoriensatz impliziert also, dass mindestens eine der Mengen $M_N$ einen inneren Punkt (wegen Symmetrie und Konvexität den Ursprung) besitzt. Es gibt also ein $k$ und $\epsilon>0$, so dass
 \begin{equation}\label{eq:fepsInMN}
     \{ f\in \rmB^\infty_0(\omega)\mid \|f\|_{(k)}<\epsilon\} \subset M_N
 \end{equation}
 für ein $N$ gilt.
 %
-$\bullet$\qquad {\sl Schritt 2.} 
+$\bullet$\qquad {\em Schritt 2.} 
 Angenommen, die Behauptung gilt nicht. Sei also ohne Beschränkung der Allgemeinheit $0\in\Omega$ und gelte für ein $\xi\in\R^n$ sowohl $p(0,\xi)=0$ als auch\footnote{Da $\{p,\overline p\}$ reellwertig und ungerade in $\xi$ ist, erfüllt für $\{p,\overline p\}(0,\xi)\ne0$ entweder $\xi$ oder $-\xi$ die Bedingung $\{p,\overline p\}(0,\xi)<0$.}   $\{p,\overline p\}(0,\xi)<0$. Analog zu Lemma~\ref{thm:4:lem2} folgt die Existenz einer Funktion $u\in\rmC^\infty(\Omega)$ mit 
 \begin{equation}
     p(x,\nabla u(x)) = \mathcal O(|x|^q),\qquad x\to0
@@ -157,7 +157,7 @@ sowie
 \end{equation}
 zu vorgegebener Ordnung $q$, obigem Vektor $\xi$ und geeignet (mit Lemma~\ref{thm:4:lem3}) gewählter symmetrischer Matrix $A$ mit negativ definitem Realteil. 
 %
-$\bullet$\qquad {\sl Schritt~3.} Wir definieren die Hilfsfunktionen
+$\bullet$\qquad {\em Schritt~3.} Wir definieren die Hilfsfunktionen
 \begin{equation}
    f_{\tau, k}(x) = \tau^{-k} \chi(\tau x),\qquad \text{wobei $\chi\in\rmC_0^\infty(\R)$ mit}\quad \widehat \chi(-\xi) = (2\pi)^{-n/2}  \int \e^{\i x\cdot\xi} \chi(x) \d x \ne 0,
 \end{equation}
@@ -175,17 +175,17 @@ und für $\varphi_0(0)=1$ folgt
 \end{equation}
 für $\tau\to\infty$. Die verbleibenden $\varphi_j$ werden so gewählt, dass für den transponierten Differentialausdruck
 \begin{equation}\label{eq:cond2}
-   \limsup_{\tau\to\infty} \|{}^tP(x,\D) v_{\tau,k,N}\|_{(N)} <\infty 
+   \limsup_{\tau\to\infty} \|P^{\mathrm t}(x,\D) v_{\tau,k,N}\|_{(N)} <\infty 
 \end{equation}
 gilt. Dazu nutzt man, dass 
 \begin{equation}
-{}^tP(x,\D) v_{\tau,k,N}(x)=\tau^{n+1+k+m}  \e^{\tau u(x)} \sum_{j=0}^m \tau^{-j} a_j(x) 
+P^{\mathrm t}(x,\D) v_{\tau,k,N}(x)=\tau^{n+1+k+m}  \e^{\tau u(x)} \sum_{j=0}^m \tau^{-j} a_j(x) 
 \end{equation}
 mit Koeffizienten $a_j\in\rmC_0^\infty(\Omega)$ gilt und wählt $\varphi_j$ so, dass $a_j(x)=\mathcal O(|x|^{q-2j})$ (was auf eine erneute Anwendung des Satzes von Cauchy--Kowalewskaja hinausläuft). Danach zeigt eine einfache Rechnung, dass für jedes $\psi\in\rmC_0^\infty(\omega)$ mit $\psi(x)=\mathcal O(|x|^{2s})$, $x\to0$, $s\geq 0$
-und $\omega\Subset\Omega$ hinreichend klein stets die Normabschätzung $\limsup_{\tau\to\infty} \|\tau^{s-N}\psi \e^{\tau u}\|_{(N)}<\infty$ gilt und \eqref{eq:cond2} folgt.~$\bullet$ \qquad {\sl Schritt~4.} Wir zeigen, dass \eqref{eq:fepsInMN} im Widerspruch zur Existenz der gerade konstruierten Hilfsfunktionen steht. 
+und $\omega\Subset\Omega$ hinreichend klein stets die Normabschätzung $\limsup_{\tau\to\infty} \|\tau^{s-N}\psi \e^{\tau u}\|_{(N)}<\infty$ gilt und \eqref{eq:cond2} folgt.~$\bullet$ \qquad {\em Schritt~4.} Wir zeigen, dass \eqref{eq:fepsInMN} im Widerspruch zur Existenz der gerade konstruierten Hilfsfunktionen steht. 
 Zum Einen impliziert \eqref{eq:fepsInMN} die Existenz einer Distribution $u$ mit $P(x,\D)u=f$ für $f\in \rmB^\infty_0(\omega)$ mit $\|f\|_{(k)}<\epsilon$. Damit gilt für jede Testfunktion $v\in\rmC_0^\infty(\omega)$ die Abschätzung
 \begin{equation}\label{eq:4.74}
-   \bigg| \int f(x) v(x) \d x\bigg| = |\langle u, {}^t P(x,\D) v \rangle| \le N \| {}^t P(x,\D) v\|_{(N)}.
+   \bigg| \int f(x) v(x) \d x\bigg| = |\langle u, P^{\mathrm t}(x,\D) v \rangle| \le N \| P^{\mathrm t}(x,\D) v\|_{(N)}.
 \end{equation}
 Speziell mit $f=c f_{k,\tau}$ und $v=v_{k,N,\tau}$ folgt für $\tau\to\infty$ ein Widerspruch: Für $c>0$ klein genug impliziert \eqref{eq:fepsInMN} zusammen mit \eqref{eq:cond1}, dass $f\in M_N$. Also gilt \eqref{eq:4.74}. Nun ist die rechte Seite aber wegen \eqref{eq:cond2} gleichmäßig in $\tau$ beschränkt, die linke strebt mit \eqref{eq:cond3} für $\tau\to\infty$  gegen Unendlich. Widerspruch.
 \end{proof}
@@ -244,7 +244,7 @@ in keiner der Mengen $\omega\subseteq\Omega$ eine Lösung $u\in\mathscr D'(\omeg
 \end{thm}
 
 \begin{proof} Der Beweis folgt {\cite[Theorem 3.2]{Hormander:1960a}}.
-{\sl Schritt 1.}
+{\em Schritt 1.}
 Sei zunächst $\omega\subseteq\Omega$ eine feste, nichtleere Menge und $M$ definiert durch
 \begin{equation}
 M=\{f\in \rmB_0^\infty(\Omega)\mid \exists\,u\in\mathscr{D}'(\omega) : P(x,\mathrm{D})u=f\quad \text{auf $\omega$}\}.
@@ -260,7 +260,7 @@ Anderenfalls gäbe es wiederum ein $N$, ein $k$ und ein $\epsilon>0$, so dass al
 $\|f\|_{(k)}<\epsilon$ in $M_N$ liegen. Also gäbe es zu jedem $f\in\rmC_0^\infty(\omega_1)$ eine Konstante $\delta\ne0$, so dass $P(x,\D)u=\delta f$ in $\mathscr D'(\omega_1)$ eine L\"osung besitzt. Da aber dann $\delta^{-1}u$ schon $P(x,\D)u=f$ löst und $f$ beliebig war, widerspricht dies Satz~\ref{thm:3.1_hoer}. 
 
 Gleiches trifft auch auf ihre Urbilder $\widetilde M_N$ unter der stetigen Einschränkung $\rmB^\infty_0(\Omega)\to \rmB^\infty(\omega_1)$ zu. Insbesondere sind diese Mengen abgeschlossen und besitzen keine inneren Punkte. Also ist $\widetilde M_N$ von erster Kategorie und ebenso die abzählbare Vereinigung dieser Mengen. Da aber $M\subset \bigcup_N \widetilde M_N$ gilt, folgt die  Behauptung.
-$\bullet$\qquad {\sl Schritt 2.}
+$\bullet$\qquad {\em Schritt 2.}
 Wir zeigen nun, dass \eqref{lewy:pxDu=f} tatsächlich keine Lösung in $\Omega$ besitzt. Sei dazu $(\omega_j)_{j\in\mathbb{N}}$ eine abzählbare Basis der Topologie von $\Omega$ und bezeichne
 \begin{equation}
 M^{(j)}:=\{f\in \rmB_0^\infty(\Omega)\mid \exists u\in\mathscr{D}'(\omega_j): P(x,\mathrm{D})u=f\;\mathrm{auf\;}\omega_j\}.

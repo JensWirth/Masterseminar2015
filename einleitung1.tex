@@ -122,7 +122,7 @@ Die Aussage gilt allgemeiner, es ergibt sich $\rmL^p$-$\rmL^q$-, $\rmC$-$\rmC$ s
 
 \begin{df} 
 Sei $P(x,\D)$ ein Differentialausdruck und $\Omega$ ein Gebiet. Dann wird der $\rmL^2$-$\rmL^2$-Abschluß des durch  $P(x,\D)$ auf $\rmC_0^\infty(\Omega)$ definierten Operators mit $P_0$ und als \eIndex[Differentialoperator]{minimaler Operator} zum Differentialausdruck $P(x,\D)$ und Gebiet $\Omega$ bezeichnet. 
-Weiterhin heißt $P := (  (P^*)_0)^*$ \eIndex[Differentialoperator]{maximaler Operator} zu $\mathcal P$ und $\Omega$.
+Weiterhin heißt $P := (  (P^*)_0)^*$ \eIndex[Differentialoperator]{maximaler Operator} zu $P(x,\D)$ und $\Omega$.
 \end{df}
 
 Der so definierte maximale Operator besitzt den Definitionsbereich
@@ -200,7 +200,7 @@ Der so definierte Operator ist abgeschlossen genau dann, wenn $B$ abgeschlossen 
 Das Randwertproblem heißt \eIndex[Randwertproblem]{korrekt gestellt}, falls $\widehat P$ stetig invertierbar ist.
 
 \begin{thm}[Vi\v{s}ik, [{\cite[Theorem~1.2]{Hormander:1955}}]
-Zu einem Differentialausdruck $\mathcal P$ existieren auf einem Gebiet $\Omega$ genau dann korrekt gestellte Randwertprobleme, wenn $P_0$ und $(P^*)_0$
+Zu einem Differentialausdruck $P(x,\D)$ existieren auf einem Gebiet $\Omega$ genau dann korrekt gestellte Randwertprobleme, wenn $P_0$ und $(P^*)_0$
 beschr\"ankt invertierbar sind.
 \end{thm} 
 \begin{proof} 
@@ -246,7 +246,7 @@ mit $a_\alpha\in\C$. Für diese gilt
 \begin{equation}
      P(\D) \e^{\i x\cdot\zeta}  =  P(\zeta) \e^{\i x\cdot\zeta}
 \end{equation}
-für alle $\zeta\in\C^n$ und mit $x\cdot\zeta = \sum_{j=1}^n x_j\zeta_j$. Das Polynom $ P(\zeta)$ heißt das \eIndex[Differentialoperator]{Symbol} des Differentialausdrucks $\mathcal P(\D)$. Ist nun $\Omega\subseteq\R^n$ beschränkt und $u\in\rmC_0^\infty(\Omega)$, so ist die Fourier--Laplace-transformierte von $u$
+für alle $\zeta\in\C^n$ und mit $x\cdot\zeta = \sum_{j=1}^n x_j\zeta_j$. Das Polynom $ P(\zeta)$ heißt das \eIndex[Differentialoperator]{Symbol} des Differentialausdrucks $P(\D)$. Ist nun $\Omega\subseteq\R^n$ beschränkt und $u\in\rmC_0^\infty(\Omega)$, so ist die Fourier--Laplace-transformierte von $u$
 \begin{equation}
     \widehat u (\zeta) = (2\pi)^{-n/2} \int_\Omega \e^{-\i x\cdot\zeta } u(x) \d x,\qquad \zeta\in\C^n
 \end{equation}
