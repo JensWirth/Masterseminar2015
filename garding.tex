@@ -6,9 +6,10 @@
 \section{Dirichletformen}
 Im folgenden sollen Dirichletformen 
 \begin{equation}
-   P(x,\D,\overline\D)[u,v] = \sum_{|\alpha|,|\beta|\le m} \int_\Omega a_{\alpha,\beta}(x) \big(\D^\alpha u(x)\big) \overline{\big(\D^\beta v(x)\big)} \d x,\qquad u,v\in\rmC_0^\infty(\Omega)
+   P(x,\D,\overline\D)[u,v] = \sum_{|\alpha|,|\beta|\le m} \int_\Omega a_{\alpha,\beta}(x) \big(D^\alpha u(x)\big) \overline{\big(\D^\beta v(x)\big)} \d x,\qquad u,v\in\rmC_0^\infty(\Omega)
 \end{equation}
-zu eingem gegebenen Gebiet $\Omega\subset\R^n$ und für Koeffizienten $a_{\alpha,\beta}\in\rmC^\infty(\Omega)$ mit $a_{\beta,\alpha}(x)=\overline{a_{\alpha,\beta}(x)}$  betrachtet werden. Wir schreiben kurz $P(x,\D,\overline\D)[u]=P(x,\D,\overline\D)[u,u]$ und wenn klar ist, welche Form wir betrachten nur $P[u]$. Zugeordnet zu einer solchen Form betrachten wir das Symbol
+zu eingem gegebenen Gebiet $\Omega\subset\R^n$ und für Koeffizienten $a_{\alpha,\beta}\in\rmC^\infty(\Omega)$ betrachtet werden. Wir schreiben kurz 
+$P(x,\D,\overline\D)[u]=P(x,\D,\overline\D)[u,u]$. Zugeordnet zu einer solchen Form betrachten wir das Symbol
 \begin{equation}
    P(x,\zeta,\overline\zeta) = \sum_{\alpha,\beta} p_{\alpha,\beta}(x) \zeta^\alpha\overline\zeta^\beta,\qquad \zeta\in\C^n,
 \end{equation}
@@ -16,14 +17,16 @@ und das zugeordnete Hauptsymbol
 \begin{equation}
    p(x,\zeta,\overline\zeta) = \sum_{|\alpha|=|\beta|=m} p_{\alpha,\beta}(x) \zeta^\alpha\overline\zeta^\beta,\qquad \zeta\in\C^n.
 \end{equation}
-Auf Grund der Symmetriebedingung ist das Symbol $P(x,\xi,\xi)$ reellwertig f\"ur alle $\xi\in\R^n$, ebenso ist 
-$P(x,\D,\overline \D)[u]$ reell. Spezialfälle solcher Dirichletformen sind die Innenprodukte des $\rmH^m_0(\Omega)$. Für diese schreiben wir kurz
+Die Form heiße symmetrisch, falls $a_{\beta,\alpha}(x)=\overline{a_{\alpha,\beta}(x)}$ gilt. Unter dieser Voraussetzung ist $P(x,\xi,\xi)$ reellwertig f\"ur $\xi\in\R^n$
+und ebenso $P(x,\D,\overline \D)[u]$ reell. 
+
+Spezialfälle symmetrischer Dirichletformen sind die Innenprodukte des $\rmH^m_0(\Omega)$. Für diese schreiben wir kurz
 \begin{equation}
   \spro{u}{v}_{(m)} = \sum_{|\alpha|\le m} \spro{\D^\alpha u}{\D^\alpha v} = \sum_{|\alpha|\le m} \int_\Omega   \big(D^\alpha u(x)\big) \overline{\big(\D^\alpha v(x)\big)} \d x.
 \end{equation}
-Es stellt sich die Frage, unter welchen Voraussetzungen eine Dirichletform äquivalent zu einem solchen Innenprodukt ist. Gilt $a_{\alpha,\beta}\in \rmB^\infty(\Omega)$, so ergibt sich stets eine obere Schranke der Form
+Es stellt sich die Frage, unter welchen Voraussetzungen eine symmetrische Dirichletform äquivalent zu einem solchen Innenprodukt ist. Gilt $a_{\alpha,\beta}\in B^\infty(\Omega)$, so ergibt sich stets eine obere Schranke der Form
 \begin{equation}
-    P(x,\D,\overline\D)[u] \le C \spro{u}{u}_{(m)}.
+    P(x,\D,\overline\D)[u,u] \le C \spro{u}{u}_{(m)}.
 \end{equation}
 Untere Schranken sind komplizierter. Wir nennen die Form (gleichmäßig) elliptisch, falls 
 \begin{equation}
@@ -33,7 +36,7 @@ Unter dieser Voraussetzung zeigen wir, dass es Konstanten $c,t\in\R$ gibt, für 
 \begin{equation} 
    \spro{u}{u}_{(m)} \le c P(x,\D,\overline \D) [u] + t \spro{u}{u}
 \end{equation}
-gilt. Auf beschränkten Gebieten ist dies äquivalent dazu, dass der Qutient $P(x,\D,\overline \D) [u]  / \spro{u}{u}_{(m)}$ nach unten beschränkt ist.
+gilt.
 
 \begin{thm}[\cite{Garding:1953}, Theorem 2.1]
 Sei $p(f,f)$ ein zu $p$ gehörendes Dirichletintegral (ToBeDefined). Dann gilt 
@@ -132,6 +135,7 @@ gleichmäßig in $f$.
 	\begin{align}
 		\vert \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(D)u}{\Phi(d)u}\vert \le\frac{1}{2}\vert p\vert_{0,2}K^2\vert\vert u\vert\vert_0^2.
 \end{align}	 
+\end{lem}
 \begin{proof}
 	Die Rechenregeln der Fouriertransformation liefern
 	\begin{align}\label{lem3.1:Lax;1}
@@ -152,6 +156,59 @@ gleichmäßig in $f$.
 	\end{align}
 	Mit $\vert \widehat{p}(\xi-\eta,\cdot)\vert_0 = \vert \widehat{p}(\xi-\eta)\vert$ und der Ungleichung von Cauchy-Schwarz folgt die Behauptung. 
 \end{proof}
-\end{lem}
+
+\begin{thm}
+Sei $a(x,\xi)\in\mathcal{C}_{0,2}\cap\mathcal{C}_{2,0}$ hermitesch und positiv-semidefinit. Dann erfüllt der Operator $A$ die Ungleichung
+\begin{align}
+	\Re \spro{Au}{u} \ge - K\vert\vert u\vert\vert_{\left(-\frac{1}{2}\right)}^2.
+\end{align}
+\begin{proof}
+	Wir machen Gebrauch von der Zerlegung der Eins und lokalisieren wie im eindimensionalen Fall: Sei
+	\begin{align}
+		u_k:= \psi_k(\D)u, \text{ d.h. } \widehat{u_k}(\xi) = \psi_k(\xi) \widehat{u}(\xi).
+\end{align}
+Wegen 
+\begin{align}
+	\widehat{Au}(\xi) = \left(2\pi\right)^{-\frac{n}{2}}\int \widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\d \eta
+\end{align}	 
+folgt
+\begin{align}
+	\begin{split} I:&=\spro{Au}{u}-\sum\limits_k \spro{Au_k}{u_k} = \left(2\pi\right)^{-\frac{n}{2}}\int\int \widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)\big(1-\sum\limits_k \psi_k(\eta)\psi_k(\xi)\big)\d \xi\d\eta\\
+	&= \frac{1}{2}\left(2\pi\right)^{-\frac{n}{2}} \int\int \widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)\sum\limits_k\big(\psi_k(\eta)-\psi_k(\xi)\big)^2\d \xi\d\eta,
+\end{split}
+\end{align}
+denn $\sum\limits_k\big(\psi_k(\eta)-\psi_k(\xi)\big)^2=\sum\limits_k\psi_k(\eta)^2-2\psi_k(\xi)\psi_k(\eta)+\psi_k(\xi)^2=2-2\sum\limits_k\psi_k(\xi)\psi_k(\eta).$
+Damit folgt
+\begin{align}
+\begin{split}	&\vert I\vert \overset{\text{Zerlegung}}{\le}\frac{1}{2}\int\int\vert\widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)\vert C \vert\xi-\eta\vert^2\left(1+\vert \xi\vert\right)^{-\frac{1}{2}} \left(1+\vert \eta\vert\right)^{-\frac{1}{2}}\d \xi \d \eta\\ 
+& \le \frac{1}{2}\vert a\vert_{0,2}\vert\vert u\vert\vert_{-\frac{1}{2}}^2
+\end{split}.
+\end{align}
+Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ zu zeigen. Wir halten ein beliebiges $k$ fest und setzen $v:= u_k.$ Sei $\tau\in \supp \widehat{v}.$ Für $\mu, \eta \in \supp \widehat{v}$ gilt (nach Konstruktion der Z.d.E.)
+\begin{align}
+	1+\vert\mu\vert \le 1+\vert \eta\vert+\vert \eta-\mu\vert \le 1+\vert\eta\vert+c_1(1+\vert  \mu \vert)^{\frac{1}{2}},
+\end{align}
+also
+\begin{align}
+	1+\vert \mu\vert \le c_2\left(1+\vert\eta\vert\right)
+\end{align}
+und somit
+\begin{align}
+	\left(1+\vert\tau\vert\right)^{-1}\vert\vert v\vert\vert_0^2 \le C_3\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2
+\end{align}
+Wir setzen $\widehat{a}^l(\xi-\eta,\tau):=\frac{\partial}{\partial \tau_l}\widehat{a}(\xi-\eta,\tau)$ und wenden darauf den Mittelwertsatz an. Für $\eta\in \supp \psi_k$ ergibt sich dann
+\begin{align}
+\begin{split}	&\vert \widehat{a}(\xi-\eta,\eta)-\widehat{a}(\xi-\eta,\tau) -\sum\limits_{l=1}^n (\eta_l-\tau_l)\widehat{a}^l\left(\xi-\eta,\tau\right)\vert \le C_4\vert \eta-\tau\vert^2\vert \widehat{a}(\xi-\eta,\cdot)\vert_2\left(1+\vert\eta\vert\right)^{-2} \\&
+\le \vert \widehat{a}(\xi-\eta,\cdot)\vert_2 \left(1+\vert\eta\vert\right)^{-1} \le\vert \widehat{a}(\xi-\eta,\cdot)\vert_2\left(1+\vert\eta\vert\right)^{-\frac{1}{2}}\left(1+\vert\xi\vert\right)^{-\frac{1}{2}}.
+\end{split}
+\end{align}
+Setzen wir $p(x):=a(x,\tau),\ p^l(x):= a^l(x,\tau) $ und $v^l:=(D_l-\tau_l)v$, dann folgt weiter
+\begin{align}
+	\vert\spro{Av}{v}-\spro{p(x)v}{v}-\sum\spro{p^l(x)v^l}{v}\vert \le c \vert a\vert_{2,0}\vert\vert u\vert\vert_{\left(-\frac{1}{2}\right)}^2
+\end{align}
+\end{proof}
+
+
+\end{thm}
 
 
