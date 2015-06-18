@@ -27,7 +27,7 @@ $p_j(f;x,\xi) = \sum_{|\alpha|=j} a_\alpha(f;x) \xi^\alpha$. Sei nun $u\in\rmC_0
 \begin{equation}
     u(x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \widehat u(\xi)\d\xi
 \end{equation}
-und da $u=fu$ folgt insbesondere 
+und da nach Konstruktion $u=fu$ gilt, folgt insbesondere 
 \begin{align}
     Pu(x) &= P(fu)(x) = (2\pi)^{-n/2} \int P(f \e^{\i x\cdot\xi}) \widehat u(\xi)\d\xi \notag \\&= \sum_{j=0}^m (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} p_j(f;x,\xi) \widehat u(\xi)\d\xi
     = \sum_{|\alpha|\le m} a_\alpha(f;x)\D^\alpha u.
@@ -41,7 +41,7 @@ Wir betrachten im folgenden allgemeiner Operatoren $P : \rmC_0^\infty(\Omega) \t
     \sigma_P(f; x,\xi) = \e^{-\i x\cdot\xi} P( f(x) \e^{\i x\cdot\xi}).
 \end{equation}  
 Dabei sei $f\in\rmC_0^\infty(\Omega)$ kompakt getragen mit $f(x)=1$ auf einer kompakten Teilmenge $\omega\Subset\Omega$. 
-Dann gilt für jedes $u\in\rmC_0^\infty(\omega)$ 
+Dann gilt wiederum für jedes $u\in\rmC_0^\infty(\omega)$ 
 \begin{equation}
    P u (x) = (2\pi)^{-n/2} \int \e^{\i x\cdot\xi} \sigma_P(f; x,\xi) \widehat u(\xi) \d\xi.
 \end{equation}
@@ -62,7 +62,7 @@ Ist nun $\sigma\in S^m_{\rm loc}(\Omega\times\R^n)$, so konvergiert für jedes $
 \end{equation}
 und definiert eine glatte Funktion $Pu\in\rmC^\infty(\Omega)$. Es gilt sogar mehr
 
-\begin{lem}
+\begin{lem}\label{lem:5.3}
 Sei $\sigma\in S^m_{\rm loc}(\Omega\times\R^n)$ und $Pu$ für $u\in\rmC_0^\infty(\Omega)$ durch \eqref{eq:6:6.9} definiert. Dann gilt für jedes $f\in\rmC_0^\infty(\Omega)$
 und das durch \eqref{eq:6:6.6} zugeordnete Symbol
 \begin{equation}
@@ -72,7 +72,11 @@ Weiterhin gilt
 \begin{equation}
    \sigma_P(f;x,\xi) \sim \sum_{\alpha}  \frac{1}{\alpha!} \big( \partial_\xi^\alpha \sigma(x,\xi) \big) \big(\D_x^\alpha f(x)\big)
 \end{equation}
-und, falls $f(x)=1$ auf $\omega\Subset\Omega$ gilt, auch $\sigma_P(f;x,\xi)=\sigma(x,\xi) \mod\mathscr S(\overline{\omega}\times\R^n)$.
+und, falls $f(x)=1$ auf $\omega\Subset\Omega$ gilt, auch $\sigma_P(f;x,\xi)=\sigma(x,\xi) \mod\mathscr S(\overline{\omega}\times\R^n)$.\footnote{Der Schwartzraum $\mathscr S(\overline\omega\times\R^n)$ auf dem Vollzylinder $\overline\omega\times\R^n$ ist so definiert, wie man es sich vorstellt. Eine Funktion $g$ gehört zu $\mathscr S(\overline\omega\times\R^n)$, falls für alle Multiindices $\alpha,\beta,\gamma\in\N_0^n$ die Abschätzung
+\begin{equation}
+  \sup_{x\in\overline\omega}\sup_{\xi\in\R^n} | \xi^\alpha \D_x^\beta \D_\xi^\gamma g(x,\xi) | < \infty
+\end{equation}
+gilt.}
 \end{lem}
 \begin{proof}
 Nach Definition gilt
@@ -179,35 +183,52 @@ Sei $\sigma\in S^0_{\rm unif}(\R^n\times\R^n)$ und $P$ durch \eqref{eq:6:6.17} d
 \end{equation}
 gilt.
 \end{thm}
-%\begin{proof}
-%%Wir nehmen in einem ersten Schritt an, daß das Symbol $\sigma(x,\xi)$ kompakt in $x$ getragen ist und bezeichnen seine Fouriertransformierte 
-%%als $\widehat \sigma(\zeta,\xi)$. Nach Voraussetzung ist diese gleichmäßig in $\xi$ schnell fallend in $\zeta$, insbesondere gilt also
-%%\begin{equation}
-%%   |\widehat \sigma(\zeta,\xi)| \le C_N \langle\zeta\rangle^{-N}, \qquad N>n. 
-%%\end{equation}
-%%Damit gilt mit der Fourierschen Inversionsformel und dem Satz von Fubini
-%%\begin{align}
-%%    P u(x) &= (2\pi)^{-n} \int \e^{\i x\cdot\xi} \left(\int \e^{\i x\cdot\zeta} \widehat \sigma(\zeta,\xi) \d\zeta\right) \widehat u(\xi)\d\xi \notag\\
-%%    &= (2\pi)^{-n} \int \e^{\i x\cdot\zeta} \left( \int \e^{\i x\cdot\xi}\widehat \sigma(\zeta,\xi) \widehat u(\xi) \d\xi \right) \d\zeta
-%%\end{align}
-%%die Normabschätzung
-%%\begin{equation}
-%%  \| Pu \| \le (2\pi)^{-n/2} \int  \sup_{\xi\in\R^n} |\widehat \sigma(\zeta,\xi)| \d\zeta\, \|u\| \le C \|u\|. 
-%%\end{equation}
-%%Ersetzt man nun allgemein das Symbol $\sigma(x,\xi)$ durch $\chi(x)\sigma(x,\xi)$ für eine Abschneidefunktion $\chi\in\rmC_0^\infty(\R^n)$ 
-%%mit $|\chi(x)|\le 1$, so hängt die Konstante $C$ in der Normabschätzung $\|\chi Pu\|\le C\|u\|$ nur von der Größe des Trägers von $\chi$ ab.
-%
-%%Der folgende Beweis kann analog für die $\rmL^p$--$\rmL^p$-Beschränktheit für $1<p<\infty$ genutzt werden, wenn man das im folgenden Abschnitt gegebene Littlewood--Paley-Lemma entsprechend nutzt. Wir wählen eine Funktion $\varphi\in\rmC_0^\infty(\R_+)$ derart, daß $\supp\varphi\subset[1,2]$
-%%\begin{equation}
-%% \varphi(s)\ge0\qquad\text{sowie}\qquad   \sum_{j\in\mathbb Z} \varphi(2^{-j}s) = 1,\qquad s>0,
-%%\end{equation}
-%%gilt. Dazu kann man zum Beispiel eine Abschneidefunktion $\chi\in\rmC^\infty(\R_+)$ mit $\chi(s)=1$ auf $s<1$, $\chi(s)=0$ auf $s>2$ und 
-%%$\chi'(s)\le0$ wählen und $\varphi(s)=\chi(2s)-\chi(s)$ setzen. Sei weiter $\varphi_j(s)=\varphi(2^{-j}s)$ und
-%%\begin{equation}
-%%    P_j = P\circ \varphi_j(\D) .
-%%\end{equation}
-%%Dann ist $P_j$ ein Operator zum Symbol $\sigma(x,\xi)\varphi_j(\xi)$.
-%\end{proof}
+\begin{proof}
+Wir nehmen in einem ersten Schritt an, daß das Symbol $\sigma(x,\xi)$ kompakt in $x$ getragen ist und bezeichnen seine Fouriertransformierte 
+als $\widehat \sigma(\zeta,\xi)$. Nach Voraussetzung ist diese gleichmäßig in $\xi$ schnell fallend in $\zeta$, insbesondere gilt also
+\begin{equation}
+   |\widehat \sigma(\zeta,\xi)| \le C_N \langle\zeta\rangle^{-N}, \qquad N>n. 
+\end{equation}
+Damit gilt mit der Fourierschen Inversionsformel und dem Satz von Fubini
+\begin{align}
+    P u(x) &= (2\pi)^{-n} \int \e^{\i x\cdot\xi} \left(\int \e^{\i x\cdot\zeta} \widehat \sigma(\zeta,\xi) \d\zeta\right) \widehat u(\xi)\d\xi \notag\\
+    &= (2\pi)^{-n} \int \e^{\i x\cdot\zeta} \left( \int \e^{\i x\cdot\xi}\widehat \sigma(\zeta,\xi) \widehat u(\xi) \d\xi \right) \d\zeta
+\end{align}
+die Normabschätzung
+\begin{equation}
+  \| Pu \| \le (2\pi)^{-n/2} \int  \sup_{\xi\in\R^n} |\widehat \sigma(\zeta,\xi)| \d\zeta\, \|u\| \le C \|u\|. 
+\end{equation}
+Ersetzt man nun allgemein das Symbol $\sigma(x,\xi)$ durch $\chi(x)\sigma(x,\xi)$ für eine Abschneidefunktion $\chi\in\rmC_0^\infty(\R^n)$ 
+mit $|\chi(x)|\le 1$, so hängt die Konstante $C$ in der Normabschätzung $\|\chi Pu\|\le C\|u\|$ nur von den Konstanten in den Symbolabschätzungen von $\sigma$ und der Größe des Trägers von $\chi$ (aber nicht seiner Position) ab.
+
+Für allgemeine Symbole nutzen wir obiges Argument in der Nähe beliebiger Punkte $x_0$ und betrachten dazu das Symbol $\sigma(x,\xi)\chi(x-x_0)$ 
+für ein fest gewähltes $\chi\in\rmC_0^\infty(\R^n)$ getragen in einer Kugel vom Radius $1$ und gleich $1$ in der Nähe des Ursprungs.
+Zeigt man nun die Hilfsaussage
+\begin{equation}\label{eq:5.34}
+\int |\chi(x-x_0) P u(x) |^2\d x\le C_N \int \frac{|u(x)|^2}{(1+|x-x_0|)^N} \d x,
+\end{equation}
+so folgt durch Integration in $x_0$ und mit dem Satz von Fubini
+\begin{multline}
+  \|\chi\|_2^2 \| Pu\|_2^2 = \iint  |\chi(x-x_0) P u(x) |^2\d x \d x_0 \\
+  \le C_N \int |u(x)|^2 \int (1+|x-x_0|)^{-N} \d x_0 \d x = C_N \|u\|_2^2
+\end{multline}
+und damit für hinreichend große $N$ die Behauptung. Zum Beweis von \eqref{eq:5.34} zerlegen wir $u$ in zwei Teile, $u=u_1+u_2$, wobei $u_2$ außerhalb einer Kugel vom Radius $2$ um $x_0$ getragen sei und $u_1$ Träger in einer Kugel vom Radius $3$ um $x_0$ habe. Weiter nehmen wir an, $|u_j(x)|\le |u(x)|$. Für $u_1$ folgt aus dem ersten Teil
+\begin{equation}
+    \int |\chi(x-x_0) P u(x) |^2\d x \le C \int_{|x-x_0|\le 3} |u_1(x)|^2\d x \le C_N \int \int \frac{|u(x)|^2}{(1+|x-x_0|)^N} \d x
+\end{equation}
+für alle $N$ mit geeigneten Konstanten $C_N$. Für den zweiten Teil nutzt man partielle Integration
+\begin{equation}
+\begin{split}
+   \chi(x-x_0) Pu_2(x) &= (2\pi)^{-n}  \iint \e^{\i (x-y)\cdot\xi} \chi(x-x_0) \sigma(x,\xi) u_2(y)\d y\d\xi \\
+   &= \iint \e^{\i(x-y)\cdot\xi} \big( \Delta_\xi^\ell \sigma(x,\xi) \big) \frac{\chi(x-x_0) u_2(y)}{|x-y|^{2\ell}} \d y\d\xi
+\end{split}
+\end{equation}
+und mit Cauchy--Schwarz folgt 
+\begin{equation}
+   |\chi(x-x_0) Pu_2(x)|^2 \le C \int \frac{|u_2(x)|^2}{1+|x-y|^{2\ell}} \d y\; \int \frac{\d y}{1+|x-y|^{2\ell}}
+\end{equation}
+für hinreichend große $\ell$. Nach nochmaliger Integration in $x$ folgt \eqref{eq:5.34} und damit die Behauptung.
+\end{proof}
 
 
 \begin{thm}
@@ -223,8 +244,27 @@ Seien $A$ und $B$ globale Pseudodifferentialoperatoren mit Symbolen $\sigma_A\in
 \end{equation}
 \end{enumerate}
 \end{thm}
-%\begin{proof}
-%\end{proof}
+\begin{proof}[Beweisidee] Die Idee ist wiederum ähnlich zum Beweis von Lemma~\ref{lem:5.3}. Der durch Verkettung entstehende Operator hat formal das Symbol
+\begin{equation}
+    \sigma_{A\circ B}(x,\xi) = \lim_{\epsilon\to0}  (2\pi)^{-n} \iint \e^{-\i y\cdot\eta  } \sigma_A(x,\eta+\xi) \sigma_B(y+x,\xi) \chi(\epsilon y,\epsilon\eta) \d\eta\d y
+\end{equation}
+für eine Abschneidefunktion\footnote{Die Funktion dient nur dazu die Integrale konvergent und damit Fubini anwendbar zu machen.} $\chi\in\rmC_0^\infty(\R^{n}\times\R^n)$, $\chi(x,\xi)=1$ in der Nähe von $(0,0)$. Nun schreibt man $\sigma_A(x,\eta+\xi)$ als Taylorreihe bezüglich $\eta$ im Punkt $\eta=0$ 
+\begin{equation}
+   \sigma_A(x,\eta+\xi) = \sum_{|\alpha|\le N} \frac1{\alpha!} \big(\partial_\xi^\alpha \sigma_A(x,\xi)\big) \eta^\alpha + r_N(x,\xi,\eta)
+\end{equation}
+und erhält
+\begin{equation}
+\begin{split}
+  \sigma_{A\circ B}(x,\xi) =& \lim_{\epsilon\to0}  (2\pi)^{-n}  \sum_{|\alpha|\le N}  \frac1{\alpha!} \iint \e^{-\i y\cdot\eta  }  \big(\partial_\xi^\alpha \sigma_A(x,\xi)\big) \sigma_B(x+y,\xi)  \eta^\alpha \chi(\epsilon y, \epsilon \eta)\d\eta\d y \\
+  &+ \lim_{\epsilon\to0}  (2\pi)^{-n}  \iint \e^{-\i y\cdot\eta  }  r_N(x,\xi,\eta) \sigma_B(x+y,\xi)  \chi(\epsilon y, \epsilon \eta)\d\eta\d y.
+\end{split}
+\end{equation}
+Der zweite Term wird durch partielle Integration und mit Hilfe des Integralrestgliedes abgeschätzt. Der erste Term liefert nach partieller Integration und unter Ausnutzung der Fourierschen Inversionsformel
+\begin{equation}
+  \sum_{|\alpha|\le N}  \frac1{\alpha!}  \big(\partial_\xi^\alpha \sigma_A(x,\xi)\big) \big(\D_x^\alpha \sigma_B(x,\xi)  \big).
+\end{equation}
+Die Formel für das Symbol des adjungierten Operators erhält man ähnlich.
+\end{proof}
 
 \section{Lokalisierungen und Sobolevabschätzungen}
 Sei im folgenden $\Theta\in\rmC_0^\infty(\R^n)$ mit $\supp\Theta\subset [-3/4,3/4]^n$ sowie $\Theta>0$ auf $[-1/2,1/2]^n$. Dann sind die Funktionen
