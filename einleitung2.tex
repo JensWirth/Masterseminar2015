@@ -294,11 +294,11 @@ Weiterhin nützlich ist
 was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann aus \eqref{eq:6:6.35} für $|\alpha|=1$ per Integration über die Strecke von $\xi$ zu $\eta$ folgt.
 
 \begin{df}[Sobolevnormen]
-Für $u\in\rmC_0^\infty(\Omega)$, $\Omega \subset\R^n$ ein Gebiet, definieren wir die Sobolevnorm der Ordnung $s$,
+Für $u\in\rmC_0^\infty(\Omega)$, $\Omega \subset\R^n$ ein Gebiet, definieren wir die Sobolevnorm der Ordnung $s\in\R$,
 \begin{equation}
      \| u \|_{(s)} = \bigg(\int \langle\xi\rangle^{2s} |\widehat u(\xi)|^2\d\xi\bigg)^{1/2}. 
 \end{equation}
-Weiter bezeichne $\rmH^s_0(\Omega)$ den Abschluß von $\rmC_0^\infty(\Omega)$ bezüglich dieser Norm.
+Weiter bezeichne $\rmH^s_0(\Omega)$ den Abschluß von $\rmC_0^\infty(\Omega)$ bezüglich dieser Norm. Die bisher für $s\in\N$ genutzten Sobolevnormen sind zu dieser äquivalent.
 \end{df}
 
 
@@ -327,7 +327,16 @@ zusammen mit den Symbolabschätzungen also
      \notag\\
      &\le \|u\|_{(m)}  \|v\|_{(0)} \iint | \langle\xi\rangle^{-m}\psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi)|^2 \d\xi\d\eta.
  \end{align}
-
+Das verbleibende Integral ist beschränkt, 
+\begin{align}
+ \iint | \langle\xi\rangle^{-m}\psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi)|^2 \d\xi\d\eta 
+ \le C_N  \iint | \psi_k(\xi)\psi_k(\eta) \langle \xi-\eta\rangle^{-N} |^2 \d\xi\d\eta \le C
+\end{align}
+gleichmäßig in $k$. Insgesamt haben wir also gezeigt, dass
+\begin{equation}
+   |\spro{Pu}{v}| \le C \|u\|_{(m)} \|v\|_{(0)}
+\end{equation}
+gilt, der Operator $P$ also von $\rm H^m_0(\Omega) \to \rmL^2(\Omega)$ beschränkt ist. Das hätte man auch direkt mit dem Kalkül und der $\rmL^2$-Beschränktheit der Operatoren der Ordnung Null zeigen können, der hier dargestellte Beweis hat aber den Vorteil mit weniger Voraussetzungen an das Symbol auszukommen. Die Beweisidee wird uns in den folgenden Abschnitten noch mehrmals begegnen.
 
 
 
