@@ -127,7 +127,7 @@ gleichmäßig in $f$.
 
 
 
-\begin{lem}
+\begin{lem}\label{lem3.1:Lax}
 	Sei das Symbol $p(x)$ eine von $\xi$ unabhängige hermitesche Matrix, $p\in \mathcal{C}_{0,2}$. Ist $\Phi: \mathbb{R}^n\rightarrow\mathbb{R}, \ \xi \mapsto\Phi(\xi)$ Lipschitz-stetig mit Lipschitzkonstante $K$ auf $\supp \widehat{u}$, dann gilt
 	\begin{align}
 		\vert \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(D)u}{\Phi(d)u}\vert \le\frac{1}{2}\vert p\vert_{0,2}K^2\vert\vert u\vert\vert_0^2.
@@ -159,6 +159,8 @@ Sei $a(x,\xi)\in\mathcal{C}_{0,2}\cap\mathcal{C}_{2,0}$ hermitesch und positiv-s
 \begin{align}
 	\Re \spro{Au}{u} \ge - K\vert\vert u\vert\vert_{\left(-\frac{1}{2}\right)}^2.
 \end{align}
+
+\end{thm}
 \begin{proof}
 	Wir machen Gebrauch von der Zerlegung der Eins und lokalisieren wie im eindimensionalen Fall: Sei
 	\begin{align}
@@ -190,7 +192,7 @@ also
 	1+\vert \mu\vert \le c_2\left(1+\vert\eta\vert\right)
 \end{align}
 und somit
-\begin{align}
+\begin{align}\label{Abschaetzung 0-Norm}
 	\left(1+\vert\tau\vert\right)^{-1}\vert\vert v\vert\vert_0^2 \le C_3\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2
 \end{align}
 Wir setzen $\widehat{a}^l(\xi-\eta,\tau):=\frac{\partial}{\partial \tau_l}\widehat{a}(\xi-\eta,\tau)$ und wenden darauf den Mittelwertsatz an. Für $\eta\in \supp \psi_k$ ergibt sich dann
@@ -199,13 +201,72 @@ Wir setzen $\widehat{a}^l(\xi-\eta,\tau):=\frac{\partial}{\partial \tau_l}\wideh
 \le \vert \widehat{a}(\xi-\eta,\cdot)\vert_2 \left(1+\vert\eta\vert\right)^{-1} \le\vert \widehat{a}(\xi-\eta,\cdot)\vert_2\left(1+\vert\eta\vert\right)^{-\frac{1}{2}}\left(1+\vert\xi\vert\right)^{-\frac{1}{2}}.
 \end{split}
 \end{align}
-Setzen wir $p(x):=a(x,\tau),\ p^l(x):= a^l(x,\tau) $ und $v^l:=(D_l-\tau_l)v$, dann folgt weiter
+Setzen wir $p(x):=a(x,\tau),\ p^l(x):= a^l(x,\tau) $ und $v^l:=(D_l-\tau_l)v$ (also $\widehat{v}^l=\left(\xi_l-\tau_l\right)\widehat{v}$, dann folgt weiter
 \begin{align}
 	\vert\spro{Av}{v}-\spro{p(x)v}{v}-\sum\spro{p^l(x)v^l}{v}\vert \le c \vert a\vert_{2,0}\vert\vert u\vert\vert_{\left(-\frac{1}{2}\right)}^2
 \end{align}
+Damit verbleibt es, die Ungleichung \begin{align}
+	Q \ge -C\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2
+\end{align}
+für die quatratische Form
+\begin{align}
+	Q=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} 
+\end{align}
+zu zeigen.\\
+Für jedes $l\in\{1,\cdots n\}$ gilt für ein $c$ (das wir später wählen) und für $\xi = \pm c(1+\vert \tau\vert)^{\frac{1}{2}}e_l$
+
+\begin{align}
+	a(x,\xi+\tau) = a(x,\tau)\pm(1+\vert\tau\vert)^{\frac{1}{2}}a^l(x,\tau) + R(x,\xi,\tau)
+\end{align}
+Weil $a(x,\xi+\tau)$ positiv definit ist, folgt dass für eine geeignete Konstante $C_1$ auch
+\begin{align}
+	a(x,\tau) \pm c(1+\vert\tau\vert)^{\frac{1}{2}}a^l(x,\tau)+C_1(1+\vert \tau\vert)\frac{\vert a(x,\cdot\vert_{2}}{\left(1+\vert \tau\vert\right)^2}\ge 0
+\end{align}
+positiv definit ist.\\
+ToDO\\
+Ohne Einschränkung sei 
+\begin{align}
+	p(x) \pm (1+\vert \tau\vert)^{\frac{1}{2}}p^l(x) \ge 0
+\end{align}
+positiv definit. Dann gilt nach (ToDo: Lemma 2.2)
+\begin{align}
+	c\left(1+\vert\tau\vert\right)^{\frac{1}{2}} \vert\spro{p^lv^}{v}\vert\le\spro{pv}{v}^{\frac{1}{2}}\spro{pv^l}{v^l}^{\frac{1}{2}}.
+\end{align}
+Wenden wir darauf die Ungleichung $\sqrt{ab}\le \frac{n}{2}a+\frac{1}{2n}b$ an, so folgt
+\begin{align}
+	\vert\spro{p^lv^l}{v}\vert\le \frac{1}{2n}\spro{pv}{v}+\frac{n}{2c^2}\frac{1}{1+\vert\tau\vert}\spro{pv^l}{v^l},
+\end{align}
+was 
+\begin{align}
+	Q=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} \ge \frac{1}{2}\spro{pv}{v} -\frac{n}{2c^2}\frac{1}{1+\vert \tau\vert}\sum\spro{pv^l}{v^l}
+\end{align}
+impliziert. Lemma \ref{lem3.1:Lax}, angewandt auf $\Phi(\xi) = \xi_l-\tau_l$, liefert in Verbindung mit $(\ref{Abschaetzung 0-Norm})$
+\begin{align}
+\sum\spro{pv^l}{v^l}=\Re\sum \spro{pv}{\left(D_l-\tau_l\right)v}+\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right) 
+\end{align}
+und damit
+\begin{align}
+	Q \ge \frac{1}{2}\spro{pv}{v}-\frac{n}{2c^2}\frac{1}{1+\vert \tau\vert}\Re\spro{pv}{\vert D-\tau\vert^2v)}+\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right)
+\end{align}
+oder äquivalent
+\begin{align}
+	2Q \ge \Re\spro{pv}{\left(1-\frac{n}{2c^2}\frac{\vert D-\tau\vert^2}{1+\vert\tau\vert}\right)v}+\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right).
+\end{align}
+Auf $\supp\widehat{v}$ gilt
+\begin{align}
+	\frac{\vert\xi-\tau\vert^2}{1+\vert \tau\vert}\le \tilde{C}^2 
+\end{align}
+für eine Konstante $\tilde{C}>0$. Setzen wir nun $c:=\tilde{C}\sqrt{n}$ und 
+\begin{align}
+	\Phi(\xi):=\begin{cases}
+		\left(1-\frac{n}{2c^2}\frac{\vert \xi-\tau\vert^2}{1+\vert\tau\vert}\right)^{\frac{1}{2}}, &\vert \xi-\tau\vert \le C(1+\vert\tau\vert)^{\frac{1}{2}},\\
+		\sqrt{\frac{1}{2}}, & \text{sonst},
+	\end{cases}
+\end{align}
+Dann ist $\Phi(\xi)$ Lipschitz-stetig mit Lipschitz-Konstante $K=\mathcal{O(1+\vert \tau\vert)^{-\frac{1}{2}}}$, erneute Anwendung von Lemma \ref{lem3.1:Lax} liefert
+\begin{align}
+	2Q \ge \Re\spro{pv}{\Phi(D)^2v}++\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right) = \Re\spro{p\Phi(D)v}{\Phi(D)v}+\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right).
+\end{align}
+Weil $a(x,\tau)$ positiv definit ist, folgt $\Re\spro{p\Phi(D)v}{\Phi(D)v}\ge 0$ und damit die gewünschte Ungleichung. 
 \end{proof}
-
-
-\end{thm}
-
 
