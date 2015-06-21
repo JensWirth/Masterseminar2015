@@ -115,7 +115,7 @@ Pseudodifferentialoperatoren auf Gebieten kann man nicht notwendigerweise verket
 \end{equation}
 und damit nach der Argumentation des letzten Beweises
 \begin{equation}
-    \sigma_{P\circ Q}(f;x,\xi) \sim \sum_\alpha \frac1{\alpha!} \big(\partial_\xi^\alpha \tau(x,\xi)\big) \big( \D_x^\alpha \sigma_P(f;x,\xi)\big).
+    \sigma_{Q\circ P}(f;x,\xi) \sim \sum_\alpha \frac1{\alpha!} \big(\partial_\xi^\alpha \tau(x,\xi)\big) \big( \D_x^\alpha \sigma_P(f;x,\xi)\big).
 \end{equation}
 Das ist eine erste Form der Kompositionsformel für Pseudodifferentialoperatoren. Ist $f(x)=1$ auf einer kleineren Menge $\omega\Subset K$, so ergibt sich das Symbol der Komposition $P\circ Q$ für $x\in\omega$ und modulo $\mathscr S(\overline\omega\times\R^n)$ als asymptotische Summe
 \begin{equation}
@@ -143,23 +143,22 @@ und jede Funktion $f\in\rmC_0^\infty(\Omega)$
 Die Konstante $C$ hängt dabei nur von endlich vielen Seminormen des Symbols und der Wahl von $f$ ab.
 \end{lem}
 \begin{proof}
-Nach Definition von $P$ gilt
-\begin{equation}
-   \spro{Pu}{fv} = (2\pi)^{-n/2} \iint \e^{\i x\cdot \xi}\overline{ v(x) f(x)} \sigma(x,\xi) \widehat u(\xi)\d\xi\d x,
-\end{equation}
-mit der Hilfsfunktion
+Wir betrachten die Hilfsfunktion
 \begin{equation}\label{eq:6:h-def}
-  h(\eta,\xi) =  (2\pi)^{-n/2} \int \e^{-\i x\cdot\eta} \overline{f(x)} \sigma(x,\xi) \d x
+  h(\eta,\xi) =  (2\pi)^{-n/2} \int \e^{-\i x\cdot\eta} \overline{f(x)} \sigma(x,\xi) \d x.
 \end{equation}
-und der Plancherel-Identität also
-\begin{equation}
-   \spro{Pu}{fv} = (2\pi)^{-n/2} \iint \overline{ \widehat v(\eta) }h(\eta-\xi,\xi) \widehat u(\xi)\d\xi\d\eta.
-\end{equation}
-Es bleibt die Funktion $h$ abzuschätzen. Partielle Integration in \eqref{eq:6:h-def} liefert
+Da $f$ kompakt getragen ist, liefert partielle Integration Abschätzungen
 \begin{equation}
    |h(\eta,\xi)|  \le C_N \langle\eta\rangle^{-N}
 \end{equation}
-für alle $N$ und mit dem Schur-Test die Behauptung.
+für alle $N$, so dass für die quadratische Form $\spro{Pu}{fv}$
+\begin{equation}
+\begin{split}
+   \spro{Pu}{fv} &= (2\pi)^{-n/2} \iint \e^{\i x\cdot \xi}\overline{ v(x) f(x)} \sigma(x,\xi) \widehat u(\xi)\d\xi\d x\\
+   &= (2\pi)^{-n/2} \iint \overline{ \widehat v(\eta) }h(\eta-\xi,\xi) \widehat u(\xi)\d\xi\d\eta
+\end{split}
+\end{equation}
+gilt. Mit dem Schurtest folgt die Behauptung.
 \end{proof}
 
 \section{Hörmanders globale Pseudodifferentialoperatoren}
@@ -266,7 +265,25 @@ Der zweite Term wird durch partielle Integration und mit Hilfe des Integralrestg
 Die Formel für das Symbol des adjungierten Operators erhält man ähnlich.
 \end{proof}
 
-\section{Lokalisierungen und Sobolevabschätzungen}
+
+\begin{df}[Sobolevnormen]
+Für $u\in\rmC_0^\infty(\Omega)$, $\Omega \subset\R^n$ ein Gebiet, definieren wir die Sobolevnorm der Ordnung $s\in\R$,
+\begin{equation}
+     \| u \|_{(s)} = \bigg(\int \langle\xi\rangle^{2s} |\widehat u(\xi)|^2\d\xi\bigg)^{1/2}. 
+\end{equation}
+Weiter bezeichne $\rmH^s_0(\Omega)$ den Abschluß von $\rmC_0^\infty(\Omega)$ bezüglich dieser Norm. Die bisher für $s\in\N$ genutzten Sobolevnormen sind zu dieser äquivalent. Speziell für $\Omega=\R^n$ schreiben wir $\rmH^s(\R^n)$ für den Abschluß von $\rmC_0^\infty(\R^n)$ in der $\|\cdot\|_{(s)}$-Norm.
+\end{df}
+
+\begin{cor}
+Sei $A$ ein Pseudodifferentialoperator mit Symbol $\sigma_A\in S^m_{\rm unif}(\R^n\times\R^n)$ für ein $m\in\R$. Dann gilt für alle $s\in\R$ und geeignete Konstanten $C_s>0$ die Abschätzung
+\begin{equation}
+  \forall u\in\rmC_0^\infty(\R^n)\quad:\quad \|Pu \|_{(s)} \le C_s \|u\|_{(s+m)}.
+\end{equation}
+\end{cor}
+
+
+
+\section{Lokalisierungen}
 Sei im folgenden $\Theta\in\rmC_0^\infty(\R^n)$ mit $\supp\Theta\subset [-3/4,3/4]^n$ sowie $\Theta>0$ auf $[-1/2,1/2]^n$. Dann sind die Funktionen
 \begin{equation}
 \varphi_k(x) = \Theta(x-k) \bigg(\sum_{j\in\Z^n} \Theta(x-j)^2\bigg)^{-1/2}
@@ -292,14 +309,6 @@ Weiterhin nützlich ist
   \sum_{k\in\Z^n} |\psi_k(\xi)-\psi_k(\eta)|^2 \le C \frac{|\xi-\eta|^2}{ \langle\xi\rangle^{1/2} \langle\eta\rangle^{1/2}},
 \end{equation} 
 was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann aus \eqref{eq:6:6.35} für $|\alpha|=1$ per Integration über die Strecke von $\xi$ zu $\eta$ folgt.
-
-\begin{df}[Sobolevnormen]
-Für $u\in\rmC_0^\infty(\Omega)$, $\Omega \subset\R^n$ ein Gebiet, definieren wir die Sobolevnorm der Ordnung $s\in\R$,
-\begin{equation}
-     \| u \|_{(s)} = \bigg(\int \langle\xi\rangle^{2s} |\widehat u(\xi)|^2\d\xi\bigg)^{1/2}. 
-\end{equation}
-Weiter bezeichne $\rmH^s_0(\Omega)$ den Abschluß von $\rmC_0^\infty(\Omega)$ bezüglich dieser Norm. Die bisher für $s\in\N$ genutzten Sobolevnormen sind zu dieser äquivalent.
-\end{df}
 
 
 Als eine Anwendung wollen wir zu einem Operator $P$ zum Symbol $\sigma\in S^m_{\rm comp} (\Omega\times\R^n)$ die sesquilineare Form
@@ -336,7 +345,7 @@ gleichmäßig in $k$. Insgesamt haben wir also gezeigt, dass
 \begin{equation}
    |\spro{Pu}{v}| \le C \|u\|_{(m)} \|v\|_{(0)}
 \end{equation}
-gilt, der Operator $P$ also von $\rm H^m_0(\Omega) \to \rmL^2(\Omega)$ beschränkt ist. Das hätte man auch direkt mit dem Kalkül und der $\rmL^2$-Beschränktheit der Operatoren der Ordnung Null zeigen können, der hier dargestellte Beweis hat aber den Vorteil mit weniger Voraussetzungen an das Symbol auszukommen. Die Beweisidee wird uns in den folgenden Abschnitten noch mehrmals begegnen.
+gilt, der Operator $P$ also von $\rm H^m_0(\Omega) \to \rmL^2(\Omega)$ beschränkt ist. Das haben wir vorher schon aus dem Kalkül und der $\rmL^2$-Beschränktheit der Operatoren der Ordnung Null geschlossen, der hier dargestellte Beweis hat aber den Vorteil mit weniger Voraussetzungen an das Symbol auszukommen. Die Beweisidee wird uns in den folgenden Abschnitten noch mehrmals begegnen.
 
 
 
