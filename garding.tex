@@ -40,22 +40,22 @@ Sei $P[u]$ eine gleichmäßig elliptische Dirichletform auf einem beschränkten 
 \end{equation}
 \end{thm}
 \begin{proof}
-{\sl Schritt 1.} Wir beginnen mit dem Spezialfall, dass $P(x,\xi,\xi) = P(\xi)$ unabhängig von $x$ und homogen vom Grad $2m$ in $\xi$ ist. Dann folgt mit dem Satz von Plancherel
+{\sl Schritt 1.} Wir beginnen mit dem Spezialfall, dass $P(x,\xi,\xi) = P(\xi)$ unabhängig von $x$ ist. Dann folgt mit dem Satz von Plancherel
 \begin{equation}
- P[u] =  \sum_{|\alpha|=|\beta|=m} \int_\Omega  p_{\alpha,\beta} \big(\D^\alpha u(x)\big)\overline{\big(\D^\beta u(x)\big)} \d x
- =   \sum_{|\alpha|=|\beta|=m} \int  p_{\alpha,\beta} \xi^\alpha \xi^\beta  |\widehat u(\xi)|^2 \d\xi 
+ P[u] =  \sum_{|\alpha|,|\beta|\le m} \int_\Omega  p_{\alpha,\beta} \big(\D^\alpha u(x)\big)\overline{\big(\D^\beta u(x)\big)} \d x
+ =   \sum_{|\alpha|,|\beta|\le m} \int  p_{\alpha,\beta} \xi^\alpha \xi^\beta  |\widehat u(\xi)|^2 \d\xi 
 \end{equation}
 mit $p_{\alpha,\beta}\in\C$ den Koeffizienten der Form und für beliebiges $u\in\rmC_0^\infty(\Omega)$. Da weiterhin die Elliptizitätsbedingung $p(\xi)\ge \tilde c |\xi|^{2m}$ 
 vorausgesetzt ist und $\Omega$ beschränkt ist, gilt
 \begin{equation}
-  P[u] \ge \tilde c \int |\xi|^{2m} |\widehat u(\xi)|^2 \d\xi \ge  2c\; \spro{u}{u}_{(m)}
+  P[u] \ge \tilde c \int |\xi|^{2m} |\widehat u(\xi)|^2 \d\xi  -  \tilde c' \int \langle \xi\rangle^{2m-1} |\widehat u(\xi)|^2 \d\xi  \ge  2c\; \spro{u}{u}_{(m)}
 \end{equation}
-mit einer geeigneten Konstanten $c>0$. $\bullet$\qquad{\sl Schritt 2.}  Wir führen den allgemeinen Fall auf den gerade gezeigten Spezialfall zurück. Dazu bezeichne im Folgenden
+mit einer geeigneten Konstanten $c$. $\bullet$\qquad{\sl Schritt 2.}  Wir führen den allgemeinen Fall auf den gerade gezeigten Spezialfall zurück. Dazu bezeichne im Folgenden
 \begin{align}
 	w(\rho) = \sup\left\{| p_{\alpha,\beta}(x)-p_{\alpha,\beta}(y)| : |\alpha|, |\beta| \le m, | x-y| \le \rho\right\}.
 \end{align} 
 Da nach Voraussetzung die Koeffizienten aus $\rmC^\infty(\overline\Omega)$ sind, sind sie insbesondere gleichmäßig stetig und somit gilt
-$\lim_{\rho\to0} w(\rho)=0$.  Sei nun $x_0\in \Omega$ beliebig, $u\in \rmH_0^m(\Omega\cap \partial B_\rho(x_0))$ und bezeichne $p_0(x,\xi, \xi):=p(x_0,\xi,\xi)$ die Form mit in $x_0$ eingefrorenen Koeffizienten. Dann gilt
+$\lim_{\rho\to0} w(\rho)=0$.  Sei nun $x_0\in \Omega$ beliebig, $u\in \rmH_0^m(\Omega\cap \partial B_\rho(x_0))$ und bezeichne $P_0(x,\xi, \xi):=P(x_0,\xi,\xi)$ die Form mit in $x_0$ eingefrorenen Koeffizienten. Dann gilt
 \begin{align}
 \begin{split}
 \big| P[u]-P_0[u] \big| &=\left| \sum\limits_{|\alpha|, |\beta| \le m} \int_\Omega \left(p_{\alpha,\beta}(x)-p_{\alpha,\beta}(x_0)\right){\D^\alpha(u(x)}\overline{\D^\beta u(x))}\mathrm{d}x\right|\\
@@ -97,7 +97,7 @@ Mit $\|u\|_{(m-1)}\le \|u\|_{(m)}$ folgt die Behauptung.
 \end{proof}
 
 
-\section{$\Psi$do}
+\section{Die scharfe G\r{a}rdingungleichung}
 
 
 
