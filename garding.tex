@@ -6,7 +6,7 @@ Im folgenden sollen Dirichletformen
 \begin{equation}
    P(x,\D,\overline\D)[u,v] = \sum_{|\alpha|,|\beta|\le m} \int_\Omega p_{\alpha,\beta}(x) \big(\D^\alpha u(x)\big) \overline{\big(\D^\beta v(x)\big)} \d x,\qquad u,v\in\rmC_0^\infty(\Omega)
 \end{equation}
-zu eingem gegebenen Gebiet $\Omega\subset\R^n$ und für Koeffizienten $p_{\alpha,\beta}\in\rmC^\infty(\overline{\Omega})$ mit $p_{\beta,\alpha}(x)=\overline{p_{\alpha,\beta}(x)}$  betrachtet werden. Wir schreiben kurz $P(x,\D,\overline\D)[u]=P(x,\D,\overline\D)[u,u]$ und wenn klar ist, welche Form wir betrachten nur $P[u,v]$ beziehungsweise $P[u]$. Zugeordnet zu einer solchen Form betrachten wir das Symbol
+zu einem gegebenen Gebiet $\Omega\subset\R^n$ und für Koeffizienten $p_{\alpha,\beta}\in\rmC^\infty(\overline{\Omega})$ mit $p_{\beta,\alpha}(x)=\overline{p_{\alpha,\beta}(x)}$  betrachtet werden. Wir schreiben kurz $P(x,\D,\overline\D)[u]=P(x,\D,\overline\D)[u,u]$ und wenn klar ist, welche Form wir betrachten nur $P[u,v]$ beziehungsweise $P[u]$. Zugeordnet zu einer solchen Form betrachten wir das Symbol
 \begin{equation}
    P(x,\zeta,\overline\zeta) = \sum_{\alpha,\beta} p_{\alpha,\beta}(x) \zeta^\alpha\overline\zeta^\beta,\qquad \zeta\in\C^n,
 \end{equation}
@@ -76,8 +76,7 @@ Sei nun $u\in\rmH_0^m(\Omega)$ beliebig. Dann gilt
 \begin{equation}
 \begin{split}
 	P[u]&= \sum_{k=1}^N \sum\limits_{|\alpha|,|\beta|\le m} \int_\Omega |\psi_k(x)|^2p_{\alpha\beta}(x)\big(\D^\alpha u(x)\big)\overline{\big(\D^\beta u(x)\big)}\d x\\
-	&=  \sum_{k=1}^N \bigg( \sum\limits_{|\alpha|,|\beta|\le m} \int_\Omega  p_{\alpha\beta}(x)\big(\D^\alpha \psi_k(x) u(x)\big)\overline{\big(\D^\beta \psi_k(x) u(x)\big)}\d x
-	- R_k[u]\bigg),
+	&=  \sum_{k=1}^N \bigg( \sum\limits_{|\alpha|,|\beta|\le m} \int_\Omega  p_{\alpha\beta}(x)\big(\D^\alpha \psi_k(x) u(x)\big)\overline{\big(\D^\beta \psi_k(x) u(x)\big)}\d x + R_k[u]\bigg),
 \end{split}
 \end{equation}
 wobei der Restterm $R_k[u]$ eine Form der Ordnung $m$ mit verschwindendem Hauptsymbol\footnote{Zur Erinnerung: $r_k(x,\xi,\xi)=0$ heißt, daß im Integral nie ein Produkt von zwei Ableitungen der Ordnung $m$ steht.} ist. Es gilt also mit Cauchy--Schwarz $|R_k[u]|\le c_k \|u\|_{(m)} \|u\|_{(m-1)}$, während jeder Summand der äußeren Summe mit Schritt 2 abgeschätzt werden kann. Also folgt 
@@ -90,19 +89,84 @@ Weiter gilt
    =   \sum_{|\alpha|\le m} \int_\Omega  |\psi_k(x)|^2  |\D^\alpha u(x) |^2 \d x + \tilde R_k[u]
 \end{equation}
 mit einer weiteren Form $\tilde R_k[u]$  der Ordnung $m$ und verschwindendem Hauptsymbol. Also gilt wiederum $|\tilde R_k[u]|\le b_k \|u\|_{(m)}\|u\|_{(m-1)}$ und  \eqref{eq:6.16} liefert mit $b= \sum_{k=1}^N (c_k + c b_k  )$
-\begin{equation}
+\begin{equation}\label{eq:6.18}
 P[u] \ge c \|u\|_{(m)}^2 - b \|u\|_{(m)}\|u\|_{(m-1)} .
 \end{equation}
 Mit $\|u\|_{(m-1)}\le \|u\|_{(m)}$ folgt die Behauptung.
 \end{proof}
 
+\begin{rem} 
+Durch Interpolation folgt aus \eqref{eq:6.18}
+\begin{equation}
+P[u] \ge c \|u\|_{(m)}^2 - \tilde b \|u\|_{(m-1/2)}^2
+\end{equation}
+mit den in Definiton~\ref{df:sob-norm} definierten Sobolevnormen. Da $\|u\|_{(m-1/2)} \lesssim \|u\|_{(m)}$ gilt, folgt insbesondere für jedes $\epsilon>0$
+die Existenz einer Konstanten $K(\epsilon)>0$ mit
+\begin{equation}
+P[u] \ge -\epsilon \|u\|_{(m)}^2 - K(\epsilon) \|u\|_{(m-1/2)}^2.
+\end{equation}
+Es stellt sich die Frage, was mit $K(\epsilon)$ für $\epsilon\to0$ passiert. 
+\end{rem}
 
 \section{Die scharfe G\r{a}rdingungleichung}
 
+Nun soll die gerade aufgeworfene Frage beantwortet werden. Wir betrachten dazu klassische Pseudodifferentialoperatoren $A$ zu Symbolen $a(x,\xi)$.
+
+\begin{thm}[Hörmander, {\cite[Theorem 1.3.3]{Hormander:1966}}]
+Sei $A\in {\rm OP}S^{2m}_{\rm loc}(\Omega\times\R^n)$ Pseudodifferentialoperator mit Hauptsymbol\footnote{Es gilt also $\sigma_A-a\in S^{2m-1}_{\rm loc}(\Omega\times\R^n)$.} $a(x,\xi)\ge0$. Dann gibt es  für alle $\omega\Subset \Omega$ ein $K>0$ mit
+ \begin{equation}
+    \Re \spro{Au}{u} \ge - K \|u\|_{(m-1/2)}^2 
+ \end{equation}
+ für alle $u\in\rmC_0^\infty(\omega)$.
+\end{thm}
+
+Es genügt, die Aussage für Operatoren der Ordnung Null zu beweisen. Wir folgen Lax und Nirenberg \cite{Lax:1966} und zeigen eine entsprechende Aussage für (matrixwertige) Operatoren. Zuerst benötigen wir einige Definitionen und Hilfsmittel:
+
+{\em Symbolklassen:} Sei $\mathcal C_{k,\ell}$ der Abschluß der Symbolklasse  $S^0_{\rm comp}(\R^n\times\R^n)$ bezüglich der Norm
+\begin{equation}
+   \| a\|_{k,\ell} = (2\pi)^{-n/2} \int \langle\eta\rangle^\ell \sup_\xi  |\langle\xi\rangle^{-|\beta|} \D_\xi^\beta \widehat a(\eta,\xi) | \d\eta,\qquad a\in S^0_{\rm comp}(\R^n\times\R^n).
+\end{equation}
+Hier bezeichnet $\widehat a(\eta,\xi)$ wiederum die Fouriertransformierte des Symbols bezüglich $x$. Im folgenden werden Symbole matrixwertige sein.
+
+
+{\em Zerlegung der Eins:} Sei im folgenden $\Theta\in\rmC_0^\infty(\R^n)$ mit $\supp\Theta\subset [-3/4,3/4]^n$ sowie $\Theta>0$ auf $[-1/2,1/2]^n$. Dann sind die Funktionen
+\begin{equation}
+\varphi_k(x) = \Theta(x-k) \bigg(\sum_{j\in\Z^n} \Theta(x-j)^2\bigg)^{-1/2}
+\end{equation}
+Elemente von $\rmC_0^\infty(\R^n)$ mit $\sum_{k} \varphi_k(x)^2=1$ und es existiert für jeden Multiindex $\alpha\in\N_0^n$ eine Konstante $C_\alpha$ mit
+\begin{equation}
+    \sum_{k\in\Z^n} | \D^\alpha \varphi_k(x)|^2 \le C_\alpha.
+\end{equation}
+Weiterhin impliziert $x,y\in\supp\varphi_k$ stets $|x-y|\le 3\sqrt n/2$. Ausgehend von dieser Partition der Eins definieren wir
+\begin{equation}
+    \psi_k(\xi)= \varphi_k(\xi / \sqrt{|\xi|}), 
+\end{equation}
+so daß
+\begin{equation}\label{eq:6:6.35} 
+    \sum_{k\in\Z^n} \psi_k(\xi)^2 = 1\qquad\text{und}\qquad |\xi|^\alpha \sum_{k\in\Z^n} |\partial_\xi^\alpha \psi_k(\xi)|^2 \le C_\alpha
+\end{equation}
+gilt. Weiter impliziert $\xi,\eta\in\supp\psi_k$ stets $|\sqrt{|\xi|}-\sqrt{|\eta|}|\le C$ und damit 
+\begin{equation}
+ |\xi-\eta|\le C \langle\xi\rangle^{1/2} \qquad\text{für alle $\xi,\eta\in\supp\psi_k$}.
+\end{equation}
+Weiterhin nützlich ist
+\begin{equation}
+  \sum_{k\in\Z^n} |\psi_k(\xi)-\psi_k(\eta)|^2 \le C \frac{|\xi-\eta|^2}{ \langle\xi\rangle^{1/2} \langle\eta\rangle^{1/2}},
+\end{equation} 
+was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann aus \eqref{eq:6:6.35} für $|\alpha|=1$ per Integration über die Strecke von $\xi$ zu $\eta$ folgt.
+
+
+{\em Positiv semidefinite Matrizen etc.}
+Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betrachten wir zugeordneten quadratischen Formen $(Av,v)$ auf $\C^d$ und  schreiben $A \preceq B$ für zwei solche Matrizen, falls 
+\begin{equation}
+   \forall_{v\in\C^d} \quad:\quad (Av,v)\le (Bv,v).
+\end{equation}
+
+{\bf LEMMA}
 
 
 \begin{lem}\label{lem3.1:Lax}
-	Sei das Symbol $p(x)$ eine von $\xi$ unabhängige hermitesche Matrix, $p\in \mathcal{C}_{0,2}$. Ist $\Phi: \mathbb{R}^n\rightarrow\mathbb{R}, \ \xi \mapsto\Phi(\xi)$ Lipschitz-stetig mit Lipschitzkonstante $K$ auf $\supp \widehat{u}$, dann gilt
+	Sei das Symbol $p(x)$ eine von $\xi$ unabhängige selbstadjungierte Matrix, $p\in \mathcal{C}_{0,2}$. Ist $\Phi: \mathbb{R}^n\rightarrow\mathbb{R}, \ \xi \mapsto\Phi(\xi)$ Lipschitz-stetig mit Lipschitzkonstante $K$ auf $\supp \widehat{u}$, dann gilt
 	\begin{align}
 		| \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(D)u}{\Phi(d)u}| \le\frac{1}{2}| p|_{0,2}K^2|| u||_0^2.
 \end{align}	 

@@ -266,7 +266,7 @@ Die Formel für das Symbol des adjungierten Operators erhält man ähnlich.
 \end{proof}
 
 
-\begin{df}[Sobolevnormen]
+\begin{df}[Sobolevnormen]\label{df:sob-norm}
 Für $u\in\rmC_0^\infty(\Omega)$, $\Omega \subset\R^n$ ein Gebiet, definieren wir die Sobolevnorm der Ordnung $s\in\R$,
 \begin{equation}
      \| u \|_{(s)} = \bigg(\int \langle\xi\rangle^{2s} |\widehat u(\xi)|^2\d\xi\bigg)^{1/2}. 
@@ -281,72 +281,72 @@ Sei $A$ ein Pseudodifferentialoperator mit Symbol $\sigma_A\in S^m_{\rm unif}(\R
 \end{equation}
 \end{cor}
 
-
-
-\section{Lokalisierungen}
-Sei im folgenden $\Theta\in\rmC_0^\infty(\R^n)$ mit $\supp\Theta\subset [-3/4,3/4]^n$ sowie $\Theta>0$ auf $[-1/2,1/2]^n$. Dann sind die Funktionen
-\begin{equation}
-\varphi_k(x) = \Theta(x-k) \bigg(\sum_{j\in\Z^n} \Theta(x-j)^2\bigg)^{-1/2}
-\end{equation}
-Elemente von $\rmC_0^\infty(\R^n)$ mit $\sum_{k} \varphi_k(x)^2=1$ und es existiert für jeden Multiindex $\alpha\in\N_0^n$ eine Konstante $C_\alpha$ mit
-\begin{equation}
-    \sum_{k\in\Z^n} | \D^\alpha \varphi_k(x)|^2 \le C_\alpha.
-\end{equation}
-Weiterhin impliziert $x,y\in\supp\varphi_k$ stets $|x-y|\le 3\sqrt n/2$. Ausgehend von dieser Partition der Eins definieren wir
-\begin{equation}
-    \psi_k(\xi)= \varphi_k(\xi / \sqrt{|\xi|}), 
-\end{equation}
-so daß
-\begin{equation}\label{eq:6:6.35} 
-    \sum_{k\in\Z^n} \psi_k(\xi)^2 = 1\qquad\text{und}\qquad |\xi|^\alpha \sum_{k\in\Z^n} |\partial_\xi^\alpha \psi_k(\xi)|^2 \le C_\alpha
-\end{equation}
-gilt. Weiter impliziert $\xi,\eta\in\supp\psi_k$ stets $|\sqrt{|\xi|}-\sqrt{|\eta|}|\le C$ und damit 
-\begin{equation}
- |\xi-\eta|\le C \langle\xi\rangle^{1/2} \qquad\text{für alle $\xi,\eta\in\supp\psi_k$}.
-\end{equation}
-Weiterhin nützlich ist
-\begin{equation}
-  \sum_{k\in\Z^n} |\psi_k(\xi)-\psi_k(\eta)|^2 \le C \frac{|\xi-\eta|^2}{ \langle\xi\rangle^{1/2} \langle\eta\rangle^{1/2}},
-\end{equation} 
-was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann aus \eqref{eq:6:6.35} für $|\alpha|=1$ per Integration über die Strecke von $\xi$ zu $\eta$ folgt.
-
-
-Als eine Anwendung wollen wir zu einem Operator $P$ zum Symbol $\sigma\in S^m_{\rm comp} (\Omega\times\R^n)$ die sesquilineare Form
-\begin{equation}
-   \spro{Pu}{v} = (2\pi)^{-n/2} \iint \e^{\i x\cdot\xi} \sigma(x,\xi) \widehat u(\xi) \d\xi \overline{v(x)}\d x 
-   = (2\pi)^{-n/2} \iint \widehat u(\xi) \overline{\widehat v(\eta)} \widehat\sigma(\eta-\xi,\xi) \d\xi\d\eta
-\end{equation} 
-betrachten. Wir setzen $u_k(x) = \psi_k(\D) u(x)$, also $\widehat u_k(\xi) = \psi_k(\xi) \widehat u(\xi)$ und untersuchen die Differenz 
-$\spro{Pu}{v}-\sum_k \spro{Pu_k}{v_k}$. Für diese gilt
-\begin{align}
-       \spro{Pu}{v} -\sum_{k\in\Z^n} \spro{Pu_k}{v_k}  &= (2\pi)^{-n/2}  \iint \widehat\sigma (\eta-\xi,\xi) \widehat u(\xi) \overline{\widehat v(\eta)} \bigg( 1 - \sum_{k\in\mathbb Z^n} \psi_k(\xi)\psi_k(\eta)\bigg) \d\xi\d\eta  \notag\\
-       &= \frac12 (2\pi)^{-n/2} \iint \widehat\sigma (\eta-\xi,\xi) \widehat u(\xi) \overline{\widehat v(\eta)}  \sum_{k\in\mathbb Z^n} | \psi_k(\xi)-\psi_k(\eta)|^2 \d\xi\d\eta 
-\end{align}
-und damit
-\begin{equation}
-   \bigg|\spro{Pu}{v} - \sum_{k\in\Z^n}\spro{Pu_k}{v_k}\bigg| \le C \iint | \widehat \sigma(\eta-\xi,\xi) \widehat u(\xi) \overline{\widehat u(\eta)}| |\eta-\xi|^2 \langle\xi\rangle^{-1/2} \langle\eta\rangle^{-1/2} \d\xi\d\eta, 
-\end{equation}
-zusammen mit den Symbolabschätzungen also
-\begin{equation}
-    \bigg|\spro{Pu}{v} - \sum_{k\in\Z^n}\spro{Pu_k}{v_k}\bigg| \le C \|u\|_{(m-1/2)} \|v\|_{(-1/2)}.
-\end{equation}
- Andererseits gilt für jeden einzelnen Summanden
- \begin{align}
-     |\spro{Pu_k}{v_k} | &= \bigg|\iint \widehat u(\xi) \overline{\widehat v(\eta)} \psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi) \d\xi\d\eta\bigg|
-     \notag\\
-     &\le \|u\|_{(m)}  \|v\|_{(0)} \iint | \langle\xi\rangle^{-m}\psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi)|^2 \d\xi\d\eta.
- \end{align}
-Das verbleibende Integral ist beschränkt, 
-\begin{align}
- \iint | \langle\xi\rangle^{-m}\psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi)|^2 \d\xi\d\eta 
- \le C_N  \iint | \psi_k(\xi)\psi_k(\eta) \langle \xi-\eta\rangle^{-N} |^2 \d\xi\d\eta \le C
-\end{align}
-gleichmäßig in $k$. Insgesamt haben wir also gezeigt, dass
-\begin{equation}
-   |\spro{Pu}{v}| \le C \|u\|_{(m)} \|v\|_{(0)}
-\end{equation}
-gilt, der Operator $P$ also von $\rm H^m_0(\Omega) \to \rmL^2(\Omega)$ beschränkt ist. Das haben wir vorher schon aus dem Kalkül und der $\rmL^2$-Beschränktheit der Operatoren der Ordnung Null geschlossen, der hier dargestellte Beweis hat aber den Vorteil mit weniger Voraussetzungen an das Symbol auszukommen. Die Beweisidee wird uns in den folgenden Abschnitten noch mehrmals begegnen.
-
+%
+%
+%\section{Lokalisierungen}
+%Sei im folgenden $\Theta\in\rmC_0^\infty(\R^n)$ mit $\supp\Theta\subset [-3/4,3/4]^n$ sowie $\Theta>0$ auf $[-1/2,1/2]^n$. Dann sind die Funktionen
+%\begin{equation}
+%\varphi_k(x) = \Theta(x-k) \bigg(\sum_{j\in\Z^n} \Theta(x-j)^2\bigg)^{-1/2}
+%\end{equation}
+%Elemente von $\rmC_0^\infty(\R^n)$ mit $\sum_{k} \varphi_k(x)^2=1$ und es existiert für jeden Multiindex $\alpha\in\N_0^n$ eine Konstante $C_\alpha$ mit
+%\begin{equation}
+%    \sum_{k\in\Z^n} | \D^\alpha \varphi_k(x)|^2 \le C_\alpha.
+%\end{equation}
+%Weiterhin impliziert $x,y\in\supp\varphi_k$ stets $|x-y|\le 3\sqrt n/2$. Ausgehend von dieser Partition der Eins definieren wir
+%\begin{equation}
+%    \psi_k(\xi)= \varphi_k(\xi / \sqrt{|\xi|}), 
+%\end{equation}
+%so daß
+%\begin{equation}\label{eq:6:6.35} 
+%    \sum_{k\in\Z^n} \psi_k(\xi)^2 = 1\qquad\text{und}\qquad |\xi|^\alpha \sum_{k\in\Z^n} |\partial_\xi^\alpha \psi_k(\xi)|^2 \le C_\alpha
+%\end{equation}
+%gilt. Weiter impliziert $\xi,\eta\in\supp\psi_k$ stets $|\sqrt{|\xi|}-\sqrt{|\eta|}|\le C$ und damit 
+%\begin{equation}
+% |\xi-\eta|\le C \langle\xi\rangle^{1/2} \qquad\text{für alle $\xi,\eta\in\supp\psi_k$}.
+%\end{equation}
+%Weiterhin nützlich ist
+%\begin{equation}
+%  \sum_{k\in\Z^n} |\psi_k(\xi)-\psi_k(\eta)|^2 \le C \frac{|\xi-\eta|^2}{ \langle\xi\rangle^{1/2} \langle\eta\rangle^{1/2}},
+%\end{equation} 
+%was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann aus \eqref{eq:6:6.35} für $|\alpha|=1$ per Integration über die Strecke von $\xi$ zu $\eta$ folgt.
+%
+%
+%Als eine Anwendung wollen wir zu einem Operator $P$ zum Symbol $\sigma\in S^m_{\rm comp} (\Omega\times\R^n)$ die sesquilineare Form
+%\begin{equation}
+%   \spro{Pu}{v} = (2\pi)^{-n/2} \iint \e^{\i x\cdot\xi} \sigma(x,\xi) \widehat u(\xi) \d\xi \overline{v(x)}\d x 
+%   = (2\pi)^{-n/2} \iint \widehat u(\xi) \overline{\widehat v(\eta)} \widehat\sigma(\eta-\xi,\xi) \d\xi\d\eta
+%\end{equation} 
+%betrachten. Wir setzen $u_k(x) = \psi_k(\D) u(x)$, also $\widehat u_k(\xi) = \psi_k(\xi) \widehat u(\xi)$ und untersuchen die Differenz 
+%$\spro{Pu}{v}-\sum_k \spro{Pu_k}{v_k}$. Für diese gilt
+%\begin{align}
+%       \spro{Pu}{v} -\sum_{k\in\Z^n} \spro{Pu_k}{v_k}  &= (2\pi)^{-n/2}  \iint \widehat\sigma (\eta-\xi,\xi) \widehat u(\xi) \overline{\widehat v(\eta)} \bigg( 1 - \sum_{k\in\mathbb Z^n} \psi_k(\xi)\psi_k(\eta)\bigg) \d\xi\d\eta  \notag\\
+%       &= \frac12 (2\pi)^{-n/2} \iint \widehat\sigma (\eta-\xi,\xi) \widehat u(\xi) \overline{\widehat v(\eta)}  \sum_{k\in\mathbb Z^n} | \psi_k(\xi)-\psi_k(\eta)|^2 \d\xi\d\eta 
+%\end{align}
+%und damit
+%\begin{equation}
+%   \bigg|\spro{Pu}{v} - \sum_{k\in\Z^n}\spro{Pu_k}{v_k}\bigg| \le C \iint | \widehat \sigma(\eta-\xi,\xi) \widehat u(\xi) \overline{\widehat u(\eta)}| |\eta-\xi|^2 \langle\xi\rangle^{-1/2} \langle\eta\rangle^{-1/2} \d\xi\d\eta, 
+%\end{equation}
+%zusammen mit den Symbolabschätzungen also
+%\begin{equation}
+%    \bigg|\spro{Pu}{v} - \sum_{k\in\Z^n}\spro{Pu_k}{v_k}\bigg| \le C \|u\|_{(m-1/2)} \|v\|_{(-1/2)}.
+%\end{equation}
+% Andererseits gilt für jeden einzelnen Summanden
+% \begin{align}
+%     |\spro{Pu_k}{v_k} | &= \bigg|\iint \widehat u(\xi) \overline{\widehat v(\eta)} \psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi) \d\xi\d\eta\bigg|
+%     \notag\\
+%     &\le \|u\|_{(m)}  \|v\|_{(0)} \iint | \langle\xi\rangle^{-m}\psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi)|^2 \d\xi\d\eta.
+% \end{align}
+%Das verbleibende Integral ist beschränkt, 
+%\begin{align}
+% \iint | \langle\xi\rangle^{-m}\psi_k(\xi)\psi_k(\eta) \widehat\sigma(\eta-\xi,\xi)|^2 \d\xi\d\eta 
+% \le C_N  \iint | \psi_k(\xi)\psi_k(\eta) \langle \xi-\eta\rangle^{-N} |^2 \d\xi\d\eta \le C
+%\end{align}
+%gleichmäßig in $k$. Insgesamt haben wir also gezeigt, dass
+%\begin{equation}
+%   |\spro{Pu}{v}| \le C \|u\|_{(m)} \|v\|_{(0)}
+%\end{equation}
+%gilt, der Operator $P$ also von $\rm H^m_0(\Omega) \to \rmL^2(\Omega)$ beschränkt ist. Das haben wir vorher schon aus dem Kalkül und der $\rmL^2$-Beschränktheit der Operatoren der Ordnung Null geschlossen, der hier dargestellte Beweis hat aber den Vorteil mit weniger Voraussetzungen an das Symbol auszukommen. Die Beweisidee wird uns in den folgenden Abschnitten noch mehrmals begegnen.
+%
 
 
 
