@@ -6,9 +6,9 @@
 \section{Dirichletformen}
 Im folgenden sollen Dirichletformen 
 \begin{equation}
-   P(x,\D,\overline\D)[u,v] = \sum_{|\alpha|,|\beta|\le m} \int_\Omega a_{\alpha,\beta}(x) \big(\D^\alpha u(x)\big) \overline{\big(\D^\beta v(x)\big)} \d x,\qquad u,v\in\rmC_0^\infty(\Omega)
+   P(x,\D,\overline\D)[u,v] = \sum_{|\alpha|,|\beta|\le m} \int_\Omega p_{\alpha,\beta}(x) \big(\D^\alpha u(x)\big) \overline{\big(\D^\beta v(x)\big)} \d x,\qquad u,v\in\rmC_0^\infty(\Omega)
 \end{equation}
-zu eingem gegebenen Gebiet $\Omega\subset\R^n$ und für Koeffizienten $a_{\alpha,\beta}\in\rmC^\infty(\Omega)$ mit $a_{\beta,\alpha}(x)=\overline{a_{\alpha,\beta}(x)}$  betrachtet werden. Wir schreiben kurz $P(x,\D,\overline\D)[u]=P(x,\D,\overline\D)[u,u]$ und wenn klar ist, welche Form wir betrachten nur $P[u]$. Zugeordnet zu einer solchen Form betrachten wir das Symbol
+zu eingem gegebenen Gebiet $\Omega\subset\R^n$ und für Koeffizienten $p_{\alpha,\beta}\in\rmC^\infty(\overline{\Omega})$ mit $p_{\beta,\alpha}(x)=\overline{p_{\alpha,\beta}(x)}$  betrachtet werden. Wir schreiben kurz $P(x,\D,\overline\D)[u]=P(x,\D,\overline\D)[u,u]$ und wenn klar ist, welche Form wir betrachten nur $P[u,v]$ beziehungsweise $P[u]$. Zugeordnet zu einer solchen Form betrachten wir das Symbol
 \begin{equation}
    P(x,\zeta,\overline\zeta) = \sum_{\alpha,\beta} p_{\alpha,\beta}(x) \zeta^\alpha\overline\zeta^\beta,\qquad \zeta\in\C^n,
 \end{equation}
@@ -23,103 +23,79 @@ $P(x,\D,\overline \D)[u]$ reell. Spezialfälle solcher Dirichletformen sind die 
 \end{equation}
 Es stellt sich die Frage, unter welchen Voraussetzungen eine Dirichletform äquivalent zu einem solchen Innenprodukt ist. Gilt $a_{\alpha,\beta}\in \rmB^\infty(\Omega)$, so ergibt sich stets eine obere Schranke der Form
 \begin{equation}
-    P(x,\D,\overline\D)[u] \le C \spro{u}{u}_{(m)}.
+    P[u] \le C \spro{u}{u}_{(m)}.
 \end{equation}
 Untere Schranken sind komplizierter. Wir nennen die Form (gleichmäßig) elliptisch, falls 
 \begin{equation}
   \inf_{x\in\Omega}  \inf_{|\xi|=1} |p(x,\xi,\xi)| > 0.
 \end{equation}
-Unter dieser Voraussetzung zeigen wir, dass es Konstanten $c,t\in\R$ gibt, für welche
+Unter dieser Voraussetzung zeigen wir, dass es Konstanten $a,b\in\R$ gibt, für welche
 \begin{equation} 
-   \spro{u}{u}_{(m)} \le c P(x,\D,\overline \D) [u] + t \spro{u}{u}
+   \spro{u}{u}_{(m)} \le a\, P[u] + b\, \spro{u}{u}
 \end{equation}
-gilt. Auf beschränkten Gebieten ist dies äquivalent dazu, dass der Qutient $P(x,\D,\overline \D) [u]  / \spro{u}{u}_{(m)}$ nach unten beschränkt ist.
+gilt. Dies ist dazu äquivalent, dass der Quotient $P [u]  / \spro{u}{u}_{(m)}$ nach unten beschränkt ist.
 
 \begin{thm}[\cite{Garding:1953}, Theorem 2.1]
-Sei $p(f,f)$ ein zu $p$ gehörendes Dirichletintegral (ToBeDefined). Dann gilt 
-\begin{align}
-	\inf\limits_{f \in H_0^m(\Omega)} \frac{p(f,f)}{(f,f)} > -\infty.
-\end{align}
+Sei $P[u]$ eine gleichmäßig elliptische Dirichletform auf einem beschränkten Gebiet $\Omega\Subset\R^n$. Dann gilt
+\begin{equation}
+  \inf_{u\in\rmH_0^m(\Omega)} \frac{P[u]}{\spro{u}{u}_{(m)}} > -\infty.
+\end{equation}
 \end{thm}
 \begin{proof}
-	Wir beginnen mit dem Spezialfall, dass $p(x,\xi) = p(\xi)$ unabhängig von $x$ ist. Die Fourier-Transformierte von $\D^\alpha f$ ist dann von der Form
-	\begin{align}
-		\widehat{\D^\alpha f} = (-i)^m\xi^\alpha \hat{f}, 
-	\end{align}
-	d.h. mit Plancherel ergibt sich
-	\begin{align}
-		(f,f)_m = (2\pi)^{-n}\int \vert\hat{f}(x)\vert^2 \left(\sum\limits_{\vert \beta \vert = m} \xi_\beta^2\right)\mathrm{d}\xi.
-	\end{align}
-	Da $p$ homogen vom Grad $2m$ und positiv definit ist, existiert eine Konstante $c>0$ mit $\inf_{\vert \xi \vert =1} p(\xi)/(\sum  \xi_\beta^2) = c >0$. Für $p(f,f)$ folgt
-	\begin{align}
-		\begin{split}&p(f,f) = \int\limits_\Omega \sum\limits_{\vert\alpha\vert = \vert \beta\vert =m}p_{\alpha\beta}\D^\alpha f(x)\overline{\D^\beta f(x)}\mathrm{d}x =\left(2\pi\right)^{-n}\int\vert \mathcal{F}(\xi)\vert^2\sum\limits_{\vert\alpha\vert =\vert\beta\vert = m}p_{\alpha\beta}\xi^{\alpha}\xi^\beta\mathrm{d}\xi\\
-& = \left(2\pi\right)^{-n} \int \vert \mathcal{F}(\xi)\vert^2 p(\xi)\mathrm{d}\xi \ge c \left(2\pi\right)^{-n}\int\vert\mathcal{F}(\xi)\vert^2  \left(\sum\limits_{\vert \beta\vert=m} \vert\xi^\beta\vert^2\right)		= c (f,f)_m.
+{\sl Schritt 1.} Wir beginnen mit dem Spezialfall, dass $P(x,\xi,\xi) = P(\xi)$ unabhängig von $x$ und homogen vom Grad $2m$ in $\xi$ ist. Dann folgt mit dem Satz von Plancherel
+\begin{equation}
+ P[u] =  \sum_{|\alpha|=|\beta|=m} \int_\Omega  p_{\alpha,\beta} \big(\D^\alpha u(x)\big)\overline{\big(\D^\beta u(x)\big)} \d x
+ =   \sum_{|\alpha|=|\beta|=m} \int  p_{\alpha,\beta} \xi^\alpha \xi^\beta  |\widehat u(\xi)|^2 \d\xi 
+\end{equation}
+mit $p_{\alpha,\beta}\in\C$ den Koeffizienten der Form und für beliebiges $u\in\rmC_0^\infty(\Omega)$. Da weiterhin die Elliptizitätsbedingung $p(\xi)\ge \tilde c |\xi|^{2m}$ 
+vorausgesetzt ist und $\Omega$ beschränkt ist, gilt
+\begin{equation}
+  P[u] \ge \tilde c \int |\xi|^{2m} |\widehat u(\xi)|^2 \d\xi \ge  2c\; \spro{u}{u}_{(m)}
+\end{equation}
+mit einer geeigneten Konstanten $c>0$. $\bullet$\qquad{\sl Schritt 2.}  Wir führen den allgemeinen Fall auf den gerade gezeigten Spezialfall zurück. Dazu bezeichne im Folgenden
+\begin{align}
+	w(\rho) = \sup\left\{| p_{\alpha,\beta}(x)-p_{\alpha,\beta}(y)| : |\alpha|, |\beta| \le m, | x-y| \le \rho\right\}.
+\end{align} 
+Da nach Voraussetzung die Koeffizienten aus $\rmC^\infty(\overline\Omega)$ sind, sind sie insbesondere gleichmäßig stetig und somit gilt
+$\lim_{\rho\to0} w(\rho)=0$.  Sei nun $x_0\in \Omega$ beliebig, $u\in \rmH_0^m(\Omega\cap \partial B_\rho(x_0))$ und bezeichne $p_0(x,\xi, \xi):=p(x_0,\xi,\xi)$ die Form mit in $x_0$ eingefrorenen Koeffizienten. Dann gilt
+\begin{align}
+\begin{split}
+\big| P[u]-P_0[u] \big| &=\left| \sum\limits_{|\alpha|, |\beta| \le m} \int_\Omega \left(p_{\alpha,\beta}(x)-p_{\alpha,\beta}(x_0)\right){\D^\alpha(u(x)}\overline{\D^\beta u(x))}\mathrm{d}x\right|\\
+	&\le w(\rho) \sum\limits_{|\alpha|,|\beta| \le m} \spro{\D^\alpha u}{\D^\beta u} \le  w(\rho) \sum\limits_{|\alpha|,|\beta| \le m}\|\D^\alpha u\|\, \|\D^\beta u\| \le
+	 w(\rho) \|u\|_{(m)}^2
 \end{split}
-\end{align}	
-Den allgemeinen Fall führen wir auf diesen Spezialfall zurück. Im Folgenden bezeichne
+\end{align}
+unter zweifacher Ausnutzung der Ungleichung von Cauchy--Schwarz. Also folgt unter Verwendung des oben betrachteten Spezialfalls
 \begin{align}
-	w(\rho):= \sup\left\{\vert p_{\alpha\beta}(x)-p_{\alpha\beta}(y)\vert : \vert\alpha\vert, \vert\beta\vert \le m, \vert x-y\vert \le \rho\right\}.
+	P[u] \ge P_0[u] - \big| P[u] - P_0[u] \big| \ge \big( 2c - w(\rho) \big) \|u\|_{(m)}^2 \ge  c \| u\|_{(m)}^2
 \end{align} 
-Sei $x_0\in \Omega$ beliebig, $f\in H_0^1\left(\Omega\cap \partial B_\rho(x_0)\right)$ und $p_0(x, \xi):=p(x_0,\xi)$ unabhängig von $x$. Dann gilt
+für obiges $c$ und alle $u\in \rmH_0^m(\Omega \cap \partial B_\rho(x_0))$,  $\rho$ hinreichend klein. Die Abschätzung ist gleichmäßig in $x_0\in\Omega$.
+$\bullet$\qquad {\sl Schritt 3.} Da $\Omega$ beschränkt ist, finden wir zu jedem $\epsilon>0$ eine endliche Überdeckung $\Omega\subset\bigcup_{k=1}^N B_{{\epsilon}/{2}}(x_k)$ und eine dieser Überdeckung untergeordnete Zerlegung der Eins $\psi_k\in\rmC_0^\infty(B_{\epsilon/2}(x_k))$ mit
 \begin{align}
+ \sum\limits_{k=1}^N |\psi_k(x)|^2 = 1,\qquad \ x\in \Omega.
+\end{align}
+Sei nun $u\in\rmH_0^m(\Omega)$ beliebig. Dann gilt
+\begin{equation}
 \begin{split}
-	&\vert p(f,f)-p_0(f,f)\vert=\left\vert \int\limits_\Omega\sum\limits_{\vert\alpha\vert=\vert\beta\vert =m} \left(p_{\alpha\beta}(x)-p_{\alpha\beta}(x_0)\right){\D^\alpha(f(x)}\overline{D^\beta f(x))}\mathrm{d}x\right\vert\\
-	&\le \frac{1}{2}w(\rho)\int\limits_\Omega \sum\limits_{\vert\alpha\vert=\vert\beta\vert =m}  \vert \D^\alpha f(x)\vert^2+\vert \D^\beta f<(x) \vert^2 \mathrm{d}x = w(\rho)d_m\vert f\vert_m^2,
-	\end{split}
-\end{align}
-wobei $d_m$ die Anzahl der Ableitungen der Ordnung $m$ bezeichne. Damit folgt unter Verwendung des oben betrachteten Spezialfalls
-\begin{align}
-	p(f,f) \ge p_0(f,f)-\vert p(f,f)-p_0(f,f)\vert \ge (2c-w(\rho)d_m)\vert f\vert_m^2
-\end{align} 
-für ein $c>0$ und alle $f\in H_0^m\left(\Omega \cap \partial B_\rho(x_0)\right)$. Aus der gleichmäßigen Stetigkeit der $p_{\alpha\beta}$ folgt $w(\rho) \rightarrow 0, \ (\rho \rightarrow 0)$ und damit 
-\begin{align}
-	p(f,f) \ge c\vert f\vert_m^2
-\end{align}
-für $\rho$ klein genug.\\
-Da $\Omega$ beschränkt ist, finden wir zu jedem $\epsilon>0$ eine endliche Überdeckung $\Omega=\bigcup_{k=1}^N B_{\frac{\epsilon}{2}}(x_k)$ und eine dieser Überdeckung untergeordnete Zerlegung der Eins $\left\{\psi_k\right\}$ mit
-\begin{align}
- \psi_k \in H_0^m\left(B_\epsilon (x_k)\right),\  1=\sum\limits_{k=1}^N \vert h_k(x)\vert^2, \ x\in \Omega.
-\end{align}
-Jedes $f\in H_0^m(\Omega)$ lässt sich dann schreiben als
-\begin{align}
-	p(f,f) = \sum\limits_{k=1}^N\underbrace{\int\limits_\Omega \sum\limits_{\vert\alpha\vert=\vert\beta\vert=m}\vert h_k(x)\vert^2p_{\alpha\beta}(x)\D^\alpha f(x)\overline{D^\beta f(x)}\mathrm{d}x}_{=:A_k}.
-\end{align}
-Für $A_k$ gilt
-\begin{align}
-	A_k= \int\limits_\Omega \sum\limits_{\vert\alpha\vert=\vert\beta\vert=m}p_{\alpha\beta}(x)\D^\alpha(h_k(x)f(x))\overline{\D^\beta(h_k(x)f(x))}\d x -R_k=p(h_kf,h_kf)-R_k,
-\end{align}
-wobei $R_k$ eine Summe von Integralen über Produkte einer beschränkten Funktion mit zwei Ableitungen von $f$ der Ordnung $\le m$ (und nicht beide der Ordnung $m$) darstellt.
-Wir schätzen $R_k$ nach oben ab und erhalten
-\begin{align}
- A_k \ge p(h_kf,h_kf)-a_k\vert f\vert_m\vert f\vert_{m-1} \ge c \vert h_kf\vert_m^2-a_k\vert f\vert_m\vert f\vert_{m-1}
-\end{align}
-für geeignet gewählte Konstanten $a_k$. Weil außerdem
-\begin{align}
-\begin{split}
-	&\vert h_kf\vert_m^2 = \int\limits_\Omega \sum\limits_{\vert\alpha\vert=\vert\beta\vert=m}p_{\alpha\beta}\D^\alpha(h_kf(x))\overline{D^\beta(h_kf(x))}\d x \\
-	&\ge \int\limits_\Omega \vert h_k(x)\vert^2 \sum\limits_{\vert\alpha\vert=m}\vert \D^\alpha (f(x))\vert^2 \d x-b_k \vert f\vert_m\vert f\vert_{m-1}
-	\end{split}
-\end{align}
-gilt, lässt sich $A_k$ weiter abschätzen zu
-\begin{align}
-	A_k \ge c\int\limits_\Omega \vert h_k(x)\vert^2 \sum\limits_{\vert\alpha\vert=m}\vert \D^\alpha (f(x))\vert^2 \d x-(cb_k+a_k)\vert f\vert_m\vert f\vert_{m-1}.
-\end{align}
-Aufsummieren der $A_k$ liefert
-\begin{align}
-	p(f,f) \ge c \sum\limits_{k=1}^N \int\limits_\Omega\vert h_k(x)\vert^2  \sum\limits_{\vert\alpha\vert=m}\vert \D^\alpha (f(x))\vert^2 \d x-a\vert f\vert_m\vert f\vert_{m-1} =c\vert f\vert_m^2 -a \vert f\vert_m\vert f\vert_{m-1},
-\end{align}
-wobei $a= \sum_{k=1}^N (a_k+cb_k)$. Für $t\in \R$ und $f\in H_0^m(\Omega)$ definieren wir $\vert f\vert^2:= c \vert f\vert_m^2+t\vert f\vert_0^2$ sowie
-\begin{align}
-\begin{split}
-	&p_t(f,f) := p(f,f)+t(f,f) \ge c\vert f\vert_m^2-a\vert f\vert_m\vert f\vert_{m-1}+t\vert f\vert_0^2 \ge \vert f\vert^2\left(1-a\vert f\vert^2\vert f\vert_m\vert f\vert_{m-1}\right)\\
-	& \ge \vert f\vert^2\big(1-\underbrace{a \sqrt{c}\vert f\vert_{m-1}\vert f\vert^{-1}}_{\rightarrow 0, \ t \rightarrow \infty, \text{ glm in } f}\big)
-	\end{split}
-\end{align}
-Damit folgt $p_t(f,f) \ge \frac{1}{2}\left(c\vert f\vert_m^2+t\vert f\vert_0^2\right)$ für große $t$ oder äquivalent
-\begin{align}
-	p(f,f) \ge \frac{1}{2}c\vert f\vert_m^2
-\end{align}
-gleichmäßig in $f$. 
+	P[u]&= \sum_{k=1}^N \sum\limits_{|\alpha|,|\beta|\le m} \int_\Omega |\psi_k(x)|^2p_{\alpha\beta}(x)\big(\D^\alpha u(x)\big)\overline{\big(\D^\beta u(x)\big)}\d x\\
+	&=  \sum_{k=1}^N \bigg( \sum\limits_{|\alpha|,|\beta|\le m} \int_\Omega  p_{\alpha\beta}(x)\big(\D^\alpha \psi_k(x) u(x)\big)\overline{\big(\D^\beta \psi_k(x) u(x)\big)}\d x
+	- R_k[u]\bigg),
+\end{split}
+\end{equation}
+wobei der Restterm $R_k[u]$ eine Form der Ordnung $m$ mit verschwindendem Hauptsymbol\footnote{Zur Erinnerung: $r_k(x,\xi,\xi)=0$ heißt, daß im Integral nie ein Produkt von zwei Ableitungen der Ordnung $m$ steht.} ist. Es gilt also mit Cauchy--Schwarz $|R_k[u]|\le c_k \|u\|_{(m)} \|u\|_{(m-1)}$, während jeder Summand der äußeren Summe mit Schritt 2 abgeschätzt werden kann. Also folgt 
+\begin{equation}\label{eq:6.16}
+P[u] \ge \sum_{k=1}^N  \bigg( c \|\psi_k u\|_{(m)}^2 - c_k \|u\|_{(m)} \|u\|_{(m-1)} \bigg) .
+\end{equation}
+Weiter gilt 
+\begin{equation}
+   \|\psi_k u\|_{(m)}^2 =  \sum_{|\alpha|\le m} \int_\Omega |\D^\alpha (\psi_k(x) u(x)) |^2 \d x
+   =   \sum_{|\alpha|\le m} \int_\Omega  |\psi_k(x)|^2  |\D^\alpha u(x) |^2 \d x + \tilde R_k[u]
+\end{equation}
+mit einer weiteren Form $\tilde R_k[u]$  der Ordnung $m$ und verschwindendem Hauptsymbol. Also gilt wiederum $|\tilde R_k[u]|\le b_k \|u\|_{(m)}\|u\|_{(m-1)}$ und  \eqref{eq:6.16} liefert mit $b= \sum_{k=1}^N (c_k + c b_k  )$
+\begin{equation}
+P[u] \ge c \|u\|_{(m)}^2 - b \|u\|_{(m)}\|u\|_{(m-1)} .
+\end{equation}
+Mit $\|u\|_{(m-1)}\le \|u\|_{(m)}$ folgt die Behauptung.
 \end{proof}
 
 
@@ -130,7 +106,7 @@ gleichmäßig in $f$.
 \begin{lem}\label{lem3.1:Lax}
 	Sei das Symbol $p(x)$ eine von $\xi$ unabhängige hermitesche Matrix, $p\in \mathcal{C}_{0,2}$. Ist $\Phi: \mathbb{R}^n\rightarrow\mathbb{R}, \ \xi \mapsto\Phi(\xi)$ Lipschitz-stetig mit Lipschitzkonstante $K$ auf $\supp \widehat{u}$, dann gilt
 	\begin{align}
-		\vert \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(D)u}{\Phi(d)u}\vert \le\frac{1}{2}\vert p\vert_{0,2}K^2\vert\vert u\vert\vert_0^2.
+		| \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(D)u}{\Phi(d)u}| \le\frac{1}{2}| p|_{0,2}K^2|| u||_0^2.
 \end{align}	 
 \end{lem}
 \begin{proof}
@@ -151,13 +127,13 @@ gleichmäßig in $f$.
 	\begin{align}
 		J= \frac{1}{2}\left(2\pi\right)^{-\frac{n}{2}}\Re\int\int \widehat{p}(\xi-\eta)\widehat{u}(\eta)\widehat{u}(\xi)\left(\Phi(\xi)-\Phi(\eta)\right)^2\d\xi\d\eta.
 	\end{align}
-	Mit $\vert \widehat{p}(\xi-\eta,\cdot)\vert_0 = \vert \widehat{p}(\xi-\eta)\vert$ und der Ungleichung von Cauchy-Schwarz folgt die Behauptung. 
+	Mit $| \widehat{p}(\xi-\eta,\cdot)|_0 = | \widehat{p}(\xi-\eta)|$ und der Ungleichung von Cauchy-Schwarz folgt die Behauptung. 
 \end{proof}
 
 \begin{thm}
 Sei $a(x,\xi)\in\mathcal{C}_{0,2}\cap\mathcal{C}_{2,0}$ hermitesch und positiv-semidefinit. Dann erfüllt der Operator $A$ die Ungleichung
 \begin{align}
-	\Re \spro{Au}{u} \ge - K\vert\vert u\vert\vert_{\left(-\frac{1}{2}\right)}^2.
+	\Re \spro{Au}{u} \ge - K|| u||_{\left(-\frac{1}{2}\right)}^2.
 \end{align}
 
 \end{thm}
@@ -179,93 +155,93 @@ folgt
 denn $\sum\limits_k\big(\psi_k(\eta)-\psi_k(\xi)\big)^2=\sum\limits_k\psi_k(\eta)^2-2\psi_k(\xi)\psi_k(\eta)+\psi_k(\xi)^2=2-2\sum\limits_k\psi_k(\xi)\psi_k(\eta).$
 Damit folgt
 \begin{align}
-\begin{split}	&\vert I\vert \overset{\text{Zerlegung}}{\le}\frac{1}{2}\int\int\vert\widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)\vert C \vert\xi-\eta\vert^2\left(1+\vert \xi\vert\right)^{-\frac{1}{2}} \left(1+\vert \eta\vert\right)^{-\frac{1}{2}}\d \xi \d \eta\\ 
-& \le \frac{1}{2}\vert a\vert_{0,2}\vert\vert u\vert\vert_{-\frac{1}{2}}^2
+\begin{split}	&| I| \overset{\text{Zerlegung}}{\le}\frac{1}{2}\int\int|\widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)| C |\xi-\eta|^2\left(1+| \xi|\right)^{-\frac{1}{2}} \left(1+| \eta|\right)^{-\frac{1}{2}}\d \xi \d \eta\\ 
+& \le \frac{1}{2}| a|_{0,2}|| u||_{-\frac{1}{2}}^2
 \end{split}.
 \end{align}
 Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ zu zeigen. Wir halten ein beliebiges $k$ fest und setzen $v:= u_k.$ Sei $\tau\in \supp \widehat{v}.$ Für $\mu, \eta \in \supp \widehat{v}$ gilt (nach Konstruktion der Z.d.E.)
 \begin{align}
-	1+\vert\mu\vert \le 1+\vert \eta\vert+\vert \eta-\mu\vert \le 1+\vert\eta\vert+c_1(1+\vert  \mu \vert)^{\frac{1}{2}},
+	1+|\mu| \le 1+| \eta|+| \eta-\mu| \le 1+|\eta|+c_1(1+|  \mu |)^{\frac{1}{2}},
 \end{align}
 also
 \begin{align}
-	1+\vert \mu\vert \le c_2\left(1+\vert\eta\vert\right)
+	1+| \mu| \le c_2\left(1+|\eta|\right)
 \end{align}
 und somit
 \begin{align}\label{Abschaetzung 0-Norm}
-	\left(1+\vert\tau\vert\right)^{-1}\vert\vert v\vert\vert_0^2 \le C_3\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2
+	\left(1+|\tau|\right)^{-1}|| v||_0^2 \le C_3|| v||_{\left(-\frac{1}{2}\right)}^2
 \end{align}
 Wir setzen $\widehat{a}^l(\xi-\eta,\tau):=\frac{\partial}{\partial \tau_l}\widehat{a}(\xi-\eta,\tau)$ und wenden darauf den Mittelwertsatz an. Für $\eta\in \supp \psi_k$ ergibt sich dann
 \begin{align}
-\begin{split}	&\vert \widehat{a}(\xi-\eta,\eta)-\widehat{a}(\xi-\eta,\tau) -\sum\limits_{l=1}^n (\eta_l-\tau_l)\widehat{a}^l\left(\xi-\eta,\tau\right)\vert \le C_4\vert \eta-\tau\vert^2\vert \widehat{a}(\xi-\eta,\cdot)\vert_2\left(1+\vert\eta\vert\right)^{-2} \\&
-\le \vert \widehat{a}(\xi-\eta,\cdot)\vert_2 \left(1+\vert\eta\vert\right)^{-1} \le\vert \widehat{a}(\xi-\eta,\cdot)\vert_2\left(1+\vert\eta\vert\right)^{-\frac{1}{2}}\left(1+\vert\xi\vert\right)^{-\frac{1}{2}}.
+\begin{split}	&| \widehat{a}(\xi-\eta,\eta)-\widehat{a}(\xi-\eta,\tau) -\sum\limits_{l=1}^n (\eta_l-\tau_l)\widehat{a}^l\left(\xi-\eta,\tau\right)| \le C_4| \eta-\tau|^2| \widehat{a}(\xi-\eta,\cdot)|_2\left(1+|\eta|\right)^{-2} \\&
+\le | \widehat{a}(\xi-\eta,\cdot)|_2 \left(1+|\eta|\right)^{-1} \le| \widehat{a}(\xi-\eta,\cdot)|_2\left(1+|\eta|\right)^{-\frac{1}{2}}\left(1+|\xi|\right)^{-\frac{1}{2}}.
 \end{split}
 \end{align}
 Setzen wir $p(x):=a(x,\tau),\ p^l(x):= a^l(x,\tau) $ und $v^l:=(D_l-\tau_l)v$ (also $\widehat{v}^l=\left(\xi_l-\tau_l\right)\widehat{v}$, dann folgt weiter
 \begin{align}
-	\vert\spro{Av}{v}-\spro{p(x)v}{v}-\sum\spro{p^l(x)v^l}{v}\vert \le c \vert a\vert_{2,0}\vert\vert u\vert\vert_{\left(-\frac{1}{2}\right)}^2
+	|\spro{Av}{v}-\spro{p(x)v}{v}-\sum\spro{p^l(x)v^l}{v}| \le c | a|_{2,0}|| u||_{\left(-\frac{1}{2}\right)}^2
 \end{align}
 Damit verbleibt es, die Ungleichung \begin{align}
-	Q \ge -C\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2
+	Q \ge -C|| v||_{\left(-\frac{1}{2}\right)}^2
 \end{align}
 für die quatratische Form
 \begin{align}
 	Q=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} 
 \end{align}
 zu zeigen.\\
-Für jedes $l\in\{1,\cdots n\}$ gilt für ein $c$ (das wir später wählen) und für $\xi = \pm c(1+\vert \tau\vert)^{\frac{1}{2}}e_l$
+Für jedes $l\in\{1,\cdots n\}$ gilt für ein $c$ (das wir später wählen) und für $\xi = \pm c(1+| \tau|)^{\frac{1}{2}}e_l$
 
 \begin{align}
-	a(x,\xi+\tau) = a(x,\tau)\pm(1+\vert\tau\vert)^{\frac{1}{2}}a^l(x,\tau) + R(x,\xi,\tau)
+	a(x,\xi+\tau) = a(x,\tau)\pm(1+|\tau|)^{\frac{1}{2}}a^l(x,\tau) + R(x,\xi,\tau)
 \end{align}
 Weil $a(x,\xi+\tau)$ positiv definit ist, folgt dass für eine geeignete Konstante $C_1$ auch
 \begin{align}
-	a(x,\tau) \pm c(1+\vert\tau\vert)^{\frac{1}{2}}a^l(x,\tau)+C_1(1+\vert \tau\vert)\frac{\vert a(x,\cdot\vert_{2}}{\left(1+\vert \tau\vert\right)^2}\ge 0
+	a(x,\tau) \pm c(1+|\tau|)^{\frac{1}{2}}a^l(x,\tau)+C_1(1+| \tau|)\frac{| a(x,\cdot|_{2}}{\left(1+| \tau|\right)^2}\ge 0
 \end{align}
 positiv definit ist.\\
 ToDO\\
 Ohne Einschränkung sei 
 \begin{align}
-	p(x) \pm (1+\vert \tau\vert)^{\frac{1}{2}}p^l(x) \ge 0
+	p(x) \pm (1+| \tau|)^{\frac{1}{2}}p^l(x) \ge 0
 \end{align}
 positiv definit. Dann gilt nach (ToDo: Lemma 2.2)
 \begin{align}
-	c\left(1+\vert\tau\vert\right)^{\frac{1}{2}} \vert\spro{p^lv^}{v}\vert\le\spro{pv}{v}^{\frac{1}{2}}\spro{pv^l}{v^l}^{\frac{1}{2}}.
+	c\left(1+|\tau|\right)^{\frac{1}{2}} |\spro{p^lv^}{v}|\le\spro{pv}{v}^{\frac{1}{2}}\spro{pv^l}{v^l}^{\frac{1}{2}}.
 \end{align}
 Wenden wir darauf die Ungleichung $\sqrt{ab}\le \frac{n}{2}a+\frac{1}{2n}b$ an, so folgt
 \begin{align}
-	\vert\spro{p^lv^l}{v}\vert\le \frac{1}{2n}\spro{pv}{v}+\frac{n}{2c^2}\frac{1}{1+\vert\tau\vert}\spro{pv^l}{v^l},
+	|\spro{p^lv^l}{v}|\le \frac{1}{2n}\spro{pv}{v}+\frac{n}{2c^2}\frac{1}{1+|\tau|}\spro{pv^l}{v^l},
 \end{align}
 was 
 \begin{align}
-	Q=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} \ge \frac{1}{2}\spro{pv}{v} -\frac{n}{2c^2}\frac{1}{1+\vert \tau\vert}\sum\spro{pv^l}{v^l}
+	Q=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} \ge \frac{1}{2}\spro{pv}{v} -\frac{n}{2c^2}\frac{1}{1+| \tau|}\sum\spro{pv^l}{v^l}
 \end{align}
 impliziert. Lemma \ref{lem3.1:Lax}, angewandt auf $\Phi(\xi) = \xi_l-\tau_l$, liefert in Verbindung mit $(\ref{Abschaetzung 0-Norm})$
 \begin{align}
-\sum\spro{pv^l}{v^l}=\Re\sum \spro{pv}{\left(D_l-\tau_l\right)v}+\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right) 
+\sum\spro{pv^l}{v^l}=\Re\sum \spro{pv}{\left(D_l-\tau_l\right)v}+\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right) 
 \end{align}
 und damit
 \begin{align}
-	Q \ge \frac{1}{2}\spro{pv}{v}-\frac{n}{2c^2}\frac{1}{1+\vert \tau\vert}\Re\spro{pv}{\vert D-\tau\vert^2v)}+\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right)
+	Q \ge \frac{1}{2}\spro{pv}{v}-\frac{n}{2c^2}\frac{1}{1+| \tau|}\Re\spro{pv}{| D-\tau|^2v)}+\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right)
 \end{align}
 oder äquivalent
 \begin{align}
-	2Q \ge \Re\spro{pv}{\left(1-\frac{n}{2c^2}\frac{\vert D-\tau\vert^2}{1+\vert\tau\vert}\right)v}+\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right).
+	2Q \ge \Re\spro{pv}{\left(1-\frac{n}{2c^2}\frac{| D-\tau|^2}{1+|\tau|}\right)v}+\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right).
 \end{align}
 Auf $\supp\widehat{v}$ gilt
 \begin{align}
-	\frac{\vert\xi-\tau\vert^2}{1+\vert \tau\vert}\le \tilde{C}^2 
+	\frac{|\xi-\tau|^2}{1+| \tau|}\le \tilde{C}^2 
 \end{align}
 für eine Konstante $\tilde{C}>0$. Setzen wir nun $c:=\tilde{C}\sqrt{n}$ und 
 \begin{align}
 	\Phi(\xi):=\begin{cases}
-		\left(1-\frac{n}{2c^2}\frac{\vert \xi-\tau\vert^2}{1+\vert\tau\vert}\right)^{\frac{1}{2}}, &\vert \xi-\tau\vert \le C(1+\vert\tau\vert)^{\frac{1}{2}},\\
+		\left(1-\frac{n}{2c^2}\frac{| \xi-\tau|^2}{1+|\tau|}\right)^{\frac{1}{2}}, &| \xi-\tau| \le C(1+|\tau|)^{\frac{1}{2}},\\
 		\sqrt{\frac{1}{2}}, & \text{sonst},
 	\end{cases}
 \end{align}
-Dann ist $\Phi(\xi)$ Lipschitz-stetig mit Lipschitz-Konstante $K=\mathcal{O(1+\vert \tau\vert)^{-\frac{1}{2}}}$, erneute Anwendung von Lemma \ref{lem3.1:Lax} liefert
+Dann ist $\Phi(\xi)$ Lipschitz-stetig mit Lipschitz-Konstante $K=\mathcal O(1+| \tau|)^{-\frac{1}{2}}$, erneute Anwendung von Lemma \ref{lem3.1:Lax} liefert
 \begin{align}
-	2Q \ge \Re\spro{pv}{\Phi(D)^2v}++\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right) = \Re\spro{p\Phi(D)v}{\Phi(D)v}+\mathcal{O}\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right).
+	2Q \ge \Re\spro{pv}{\Phi(D)^2v}++\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right) = \Re\spro{p\Phi(D)v}{\Phi(D)v}+\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right).
 \end{align}
 Weil $a(x,\tau)$ positiv definit ist, folgt $\Re\spro{p\Phi(D)v}{\Phi(D)v}\ge 0$ und damit die gewünschte Ungleichung. 
 \end{proof}
