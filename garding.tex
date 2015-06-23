@@ -146,11 +146,11 @@ so daß
     \sum_{k\in\Z^n} \psi_k(\xi)^2 = 1\qquad\text{und}\qquad |\xi|^\alpha \sum_{k\in\Z^n} |\partial_\xi^\alpha \psi_k(\xi)|^2 \le C_\alpha
 \end{equation}
 gilt. Weiter impliziert $\xi,\eta\in\supp\psi_k$ stets $|\sqrt{|\xi|}-\sqrt{|\eta|}|\le C$ und damit 
-\begin{equation}
+\begin{equation}\label{eq:6:6.36}
  |\xi-\eta|\le C \langle\xi\rangle^{1/2} \qquad\text{für alle $\xi,\eta\in\supp\psi_k$}.
 \end{equation}
 Weiterhin nützlich ist
-\begin{equation}
+\begin{equation}\label{eq:6:6.37}
   \sum_{k\in\Z^n} |\psi_k(\xi)-\psi_k(\eta)|^2 \le C \frac{|\xi-\eta|^2}{ \langle\xi\rangle^{1/2} \langle\eta\rangle^{1/2}},
 \end{equation} 
 was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann aus \eqref{eq:6:6.35} für $|\alpha|=1$ per Integration über die Strecke von $\xi$ zu $\eta$ folgt.
@@ -162,7 +162,24 @@ Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betracht
    \forall_{v\in\C^d} \quad:\quad (Av,v)\le (Bv,v).
 \end{equation}
 
-{\bf LEMMA}
+\begin{lem}
+	Seien $A,B\in\C^{d\times d}$ selbstadjungiert und es gelte $A\pm B \succeq 0$. Dann gilt
+	\begin{align}
+		\forall_{v,w \in \mathbb{C}^d} \quad: \quad \vert (v,Bw) \vert \le \left(v,Av\right)^{\frac{1}{2}}\left(w,Aw\right)^{\frac{1}{2}}. 
+	\end{align}
+\end{lem}
+\begin{proof}
+	Nach Voraussetzung gilt
+	\begin{align}\begin{split}
+		&\spro{v+w}{(A+B)(v+w)} \ge 0,\\
+		&\spro{v-w}{(A-B)(v-w)} \ge 0.
+		\end{split}
+	\end{align}
+	Addieren der beiden Gleichungen liefert
+	\begin{align}
+		(v,Av)+2\Re (w,Bv) +(w,Bw) \ge 0.
+	\end{align}
+\end{proof}
 
 
 \begin{lem}\label{lem3.1:Lax}
@@ -175,11 +192,10 @@ Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betracht
 	Die Rechenregeln der Fouriertransformation liefern
 	\begin{align}\label{lem3.1:Lax;1}
 		\begin{split} J:&=  \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(D)u}{\Phi(d)u} \\
-		&=\Re \left( \spro{\Phi(\cdot)\left(\widehat{u}\ast \widehat{p}\right)}{\Phi(\cdot)\widehat{u}}-\spro{\widehat{p}\ast\widehat{\Phi(\cdot)u}}{\Phi(\cdot)\widehat{u}}\right)\\
 		&= \left(2\pi\right)^{-\frac{n}{2}}\Re\int\int\widehat{p}(\xi-\eta)\widehat{u}(\eta)\widehat{u}(\xi)\left(\Phi(\xi)-\Phi(\eta)\right)\Phi(\xi)\d \xi\d\eta.
 		\end{split}
 	\end{align}
-	Weil $p$ hermitesch ist, folgt $\widehat{p}(\xi) = \overline{\widehat{p}}(-\xi)$. Durch Vertauschen der Integrationsvariablen erhalten wir also
+	Weil $p$ selbstadjungiert ist, folgt $\widehat{p}(\xi) = \overline{\widehat{p}}(-\xi)$. Durch Vertauschen der Integrationsvariablen erhalten wir also
 	\begin{align}\label{lem3.1:Lax;2}
 	\begin{split}	J&= \left(2\pi\right)^{-\frac{n}{2}}\Re\int\int\overline{\widehat{p}}(\eta-\xi)\widehat{u}(\eta)\widehat{u}(\xi)\left(\Phi(\eta)-\Phi(\xi)\right)\Phi(\eta)\d \xi\d\eta\\
 		&= \left(2\pi\right)^{-\frac{n}{2}}\Re\int\int\widehat{p}(\xi-\eta)\widehat{u}(\eta)\widehat{u}(\xi)\left(\Phi(\eta)-\Phi(\xi)\right)\Phi(\eta)\d \xi\d\eta.
@@ -189,39 +205,34 @@ Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betracht
 	\begin{align}
 		J= \frac{1}{2}\left(2\pi\right)^{-\frac{n}{2}}\Re\int\int \widehat{p}(\xi-\eta)\widehat{u}(\eta)\widehat{u}(\xi)\left(\Phi(\xi)-\Phi(\eta)\right)^2\d\xi\d\eta.
 	\end{align}
-	Mit $| \widehat{p}(\xi-\eta,\cdot)|_0 = | \widehat{p}(\xi-\eta)|$ und der Ungleichung von Cauchy-Schwarz folgt die Behauptung. 
+	Mit $| \widehat{p}(\xi-\eta,\cdot)|_{0,2} = (2\pi)^{-\frac{n}{2}}\int\widehat{p}(\xi-\eta)\mathrm{d}\eta$ und der Ungleichung von Cauchy-Schwarz folgt die Behauptung. 
 \end{proof}
 
 \begin{thm}
-Sei $a(x,\xi)\in\mathcal{C}_{0,2}\cap\mathcal{C}_{2,0}$ hermitesch und positiv-semidefinit. Dann erfüllt der Operator $A$ die Ungleichung
+Sei $a(x,\xi)\in\mathcal{C}_{0,2}\cap\mathcal{C}_{2,0}$ selbstadjungiert und positiv-semidefinit. Dann erfüllt der Operator $A$ die Ungleichung
 \begin{align}
 	\Re \spro{Au}{u} \ge - K|| u||_{\left(-\frac{1}{2}\right)}^2.
 \end{align}
 
 \end{thm}
 \begin{proof}
-	Wir machen Gebrauch von der Zerlegung der Eins und lokalisieren wie im eindimensionalen Fall: Sei
-	\begin{align}
-		u_k:= \psi_k(\D)u, \text{ d.h. } \widehat{u_k}(\xi) = \psi_k(\xi) \widehat{u}(\xi).
-\end{align}
-Wegen 
+	Wir machen Gebrauch von der zu Beginn des Kapitels konstruierten Zerlegung der Eins: Sei $	u_k:= \psi_k(\D)u, \text{ d.h. } \widehat{u_k}(\xi) = \psi_k(\xi) \widehat{u}(\xi).$ Wegen 
 \begin{align}
 	\widehat{Au}(\xi) = \left(2\pi\right)^{-\frac{n}{2}}\int \widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\d \eta
 \end{align}	 
 folgt
 \begin{align}
 	\begin{split} I:&=\spro{Au}{u}-\sum\limits_k \spro{Au_k}{u_k} = \left(2\pi\right)^{-\frac{n}{2}}\int\int \widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)\big(1-\sum\limits_k \psi_k(\eta)\psi_k(\xi)\big)\d \xi\d\eta\\
-	&= \frac{1}{2}\left(2\pi\right)^{-\frac{n}{2}} \int\int \widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)\sum\limits_k\big(\psi_k(\eta)-\psi_k(\xi)\big)^2\d \xi\d\eta,
+	&= \frac{1}{2}\left(2\pi\right)^{-\frac{n}{2}} \int\int \widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)\sum\limits_k\vert\psi_k(\eta)-\psi_k(\xi)\vert^2\d \xi\d\eta.
 \end{split}
 \end{align}
-denn $\sum\limits_k\big(\psi_k(\eta)-\psi_k(\xi)\big)^2=\sum\limits_k\psi_k(\eta)^2-2\psi_k(\xi)\psi_k(\eta)+\psi_k(\xi)^2=2-2\sum\limits_k\psi_k(\xi)\psi_k(\eta).$
-Damit folgt
+Damit folgt mit \eqref{eq:6:6.37} und erneutem Anwenden von Cauchy-Schwarz
 \begin{align}
-\begin{split}	&| I| \overset{\text{Zerlegung}}{\le}\frac{1}{2}\int\int|\widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)| C |\xi-\eta|^2\left(1+| \xi|\right)^{-\frac{1}{2}} \left(1+| \eta|\right)^{-\frac{1}{2}}\d \xi \d \eta\\ 
+\begin{split}	&| I| {\le}\frac{1}{2}\int\int|\widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\widehat{u}(\xi)| C |\xi-\eta|^2\langle \xi\rangle^{-\frac{1}{2}} \langle\eta\rangle^{-\frac{1}{2}}\d \xi \d \eta\\ 
 & \le \frac{1}{2}| a|_{0,2}|| u||_{-\frac{1}{2}}^2
 \end{split}.
 \end{align}
-Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ zu zeigen. Wir halten ein beliebiges $k$ fest und setzen $v:= u_k.$ Sei $\tau\in \supp \widehat{v}.$ Für $\mu, \eta \in \supp \widehat{v}$ gilt (nach Konstruktion der Z.d.E.)
+Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ zu zeigen. Wir halten ein beliebiges $k$ fest und setzen $v:= u_k.$ Sei $\tau\in \supp \widehat{v}$ fixiert. Für $\mu, \eta \in \supp \widehat{v}$ gilt (nach Konstruktion der Z.d.E.)
 \begin{align}
 	1+|\mu| \le 1+| \eta|+| \eta-\mu| \le 1+|\eta|+c_1(1+|  \mu |)^{\frac{1}{2}},
 \end{align}
