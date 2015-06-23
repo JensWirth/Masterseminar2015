@@ -157,28 +157,30 @@ was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann a
 
 
 {\em Positiv semidefinite Matrizen etc.}
-Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betrachten wir zugeordneten quadratischen Formen $(Av,v)$ auf $\C^d$ und  schreiben $A \preceq B$ für zwei solche Matrizen, falls 
+Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betrachten wir zugeordneten quadratischen Formen $\spro{Av}{v}$ auf $\C^d$ und  schreiben $A \preceq B$ für zwei solche Matrizen, falls 
 \begin{equation}
-   \forall_{v\in\C^d} \quad:\quad (Av,v)\le (Bv,v).
+   \forall_{v\in\C^d} \quad:\quad \spro{Av}{v}\le \spro{Bv}{v}
 \end{equation}
+gilt. Eine erste Anwendung ist folgendes Lemma.
 
 \begin{lem}
 	Seien $A,B\in\C^{d\times d}$ selbstadjungiert und es gelte $A\pm B \succeq 0$. Dann gilt
 	\begin{align}
-		\forall_{v,w \in \mathbb{C}^d} \quad: \quad \vert (v,Bw) \vert \le \left(v,Av\right)^{\frac{1}{2}}\left(w,Aw\right)^{\frac{1}{2}}. 
+		\forall_{v,w \in \mathbb{C}^d} \quad: \quad \vert \spro{Bv}{w} \vert \le \spro{Av}{v}^{{1}/{2}}\spro{Aw}{w}^{{1}/{2}}. 
 	\end{align}
 \end{lem}
 \begin{proof}
 	Nach Voraussetzung gilt
 	\begin{align}\begin{split}
-		&\spro{v+w}{(A+B)(v+w)} \ge 0,\\
-		&\spro{v-w}{(A-B)(v-w)} \ge 0.
+		&\spro{(A+B)(v+w)}{v+w} \ge 0,\\
+		&\spro{(A-B)(v-w)}{v-w} \ge 0.
 		\end{split}
 	\end{align}
 	Addieren der beiden Gleichungen liefert
 	\begin{align}
-		(v,Av)+2\Re (w,Bv) +(w,Bw) \ge 0.
+		\spro{Av}{v}+2\Re \spro{Bw}{v} +\spro{Aw}w \ge 0
 	\end{align}
+	und damit nach Multiplikation von $w$ mit einer komplexen Zahl vom Betrag Eins (so dass $\Re \spro{\lambda Bw}{v} = - | \spro{Bw}{v}|$) die Behauptung. 
 \end{proof}
 
 
