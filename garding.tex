@@ -122,10 +122,11 @@ Sei $A\in {\rm OP}S^{2m}_{\rm loc}(\Omega\times\R^n)$ Pseudodifferentialoperator
 
 Es genügt, die Aussage für Operatoren der Ordnung Null zu beweisen. Wir folgen Lax und Nirenberg \cite{Lax:1966} und zeigen eine entsprechende Aussage für (matrixwertige) Operatoren. Zuerst benötigen wir einige Definitionen und Hilfsmittel:
 
-{\em Symbolklassen:} Sei $\mathcal C_{k,\ell}$ der Abschluß der Symbolklasse  $S^0_{\rm comp}(\R^n\times\R^n)$ bezüglich der Norm
-\begin{equation}
-   \| a\|_{k,\ell} = (2\pi)^{-n/2} \int \langle\eta\rangle^\ell \sup_\xi  |\langle\xi\rangle^{-|\beta|} \D_\xi^\beta \widehat a(\eta,\xi) | \d\eta,\qquad a\in S^0_{\rm comp}(\R^n\times\R^n).
-\end{equation}
+{\em Symbolklassen:} Für $ a\in S^0_{\rm comp}(\R^n\times\R^n)$ definieren wir die Normen
+\begin{align}
+&	\vert \widehat{a}(\eta,\cdot)\vert_k := \sum\limits_{\vert \beta\vert \le k} \sup\limits_{\xi} \langle \xi\rangle^{\vert \beta\vert}\vert\D_\xi^\beta  \widehat{a}(\eta,\xi)\vert,\\
+&   | a|_{k,\ell} := (2\pi)^{-n/2} \int \langle\eta\rangle^\ell   \vert \widehat{a}(\eta,\cdot)\vert_k \d \eta.
+\end{align}
 Hier bezeichnet $\widehat a(\eta,\xi)$ wiederum die Fouriertransformierte des Symbols bezüglich $x$. Im folgenden werden Symbole matrixwertige sein.
 
 
@@ -236,23 +237,23 @@ Damit folgt mit \eqref{eq:6:6.37} und erneutem Anwenden von Cauchy-Schwarz
 \end{align}
 Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ zu zeigen. Wir halten ein beliebiges $k$ fest und setzen $v:= u_k.$ Sei $\tau\in \supp \widehat{v}$ fixiert. Für $\mu, \eta \in \supp \widehat{v}$ gilt (nach Konstruktion der Z.d.E.)
 \begin{align}
-	1+|\mu| \le 1+| \eta|+| \eta-\mu| \le 1+|\eta|+c_1(1+|  \mu |)^{\frac{1}{2}},
+	1+|\mu|^2 \le 1+\left(| \eta|+| \eta-\mu|\right)^2 \le 1+|\eta|^2+ c_1 \langle \mu \rangle,
 \end{align}
 also
 \begin{align}
-	1+| \mu| \le c_2\left(1+|\eta|\right)
+	\langle \mu\rangle \le c_2\langle \eta\rangle
 \end{align}
 und somit
 \begin{align}\label{Abschaetzung 0-Norm}
-	\left(1+|\tau|\right)^{-1}|| v||_0^2 \le C_3|| v||_{\left(-\frac{1}{2}\right)}^2
+	\langle \tau\rangle^{-1}|| v||_0^2 \lesssim|| v||_{\left(-\frac{1}{2}\right)}^2
 \end{align}
 Wir setzen $\widehat{a}^l(\xi-\eta,\tau):=\frac{\partial}{\partial \tau_l}\widehat{a}(\xi-\eta,\tau)$ und wenden darauf den Mittelwertsatz an. Für $\eta\in \supp \psi_k$ ergibt sich dann
 \begin{align}
-\begin{split}	&| \widehat{a}(\xi-\eta,\eta)-\widehat{a}(\xi-\eta,\tau) -\sum\limits_{l=1}^n (\eta_l-\tau_l)\widehat{a}^l\left(\xi-\eta,\tau\right)| \le C_4| \eta-\tau|^2| \widehat{a}(\xi-\eta,\cdot)|_2\left(1+|\eta|\right)^{-2} \\&
-\le | \widehat{a}(\xi-\eta,\cdot)|_2 \left(1+|\eta|\right)^{-1} \le| \widehat{a}(\xi-\eta,\cdot)|_2\left(1+|\eta|\right)^{-\frac{1}{2}}\left(1+|\xi|\right)^{-\frac{1}{2}}.
+\begin{split}	&| \widehat{a}(\xi-\eta,\eta)-\widehat{a}(\xi-\eta,\tau) -\sum\limits_{l=1}^n (\eta_l-\tau_l)\widehat{a}^l\left(\xi-\eta,\tau\right)| \lesssim| \eta-\tau|^2| \widehat{a}(\xi-\eta,\cdot)|_2\langle\eta\rangle^{-2} \\&
+\lesssim | \widehat{a}(\xi-\eta,\cdot)|_2 \langle\eta\rangle^{-1} \lesssim| \widehat{a}(\xi-\eta,\cdot)|_2\langle\eta\rangle^{-\frac{1}{2}}\langle\xi\rangle^{-\frac{1}{2}}.
 \end{split}
 \end{align}
-Setzen wir $p(x):=a(x,\tau),\ p^l(x):= a^l(x,\tau) $ und $v^l:=(D_l-\tau_l)v$ (also $\widehat{v}^l=\left(\xi_l-\tau_l\right)\widehat{v}$, dann folgt weiter
+Setzen wir $p(x):=a(x,\tau),\ p^l(x):= a^l(x,\tau) $ und $v^l:=(D_l-\tau_l)v$ (also $\widehat{v}^l=\left(\xi_l-\tau_l\right)\widehat{v}$), dann folgt
 \begin{align}
 	|\spro{Av}{v}-\spro{p(x)v}{v}-\sum\spro{p^l(x)v^l}{v}| \le c | a|_{2,0}|| u||_{\left(-\frac{1}{2}\right)}^2
 \end{align}
@@ -264,32 +265,29 @@ für die quatratische Form
 	Q=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} 
 \end{align}
 zu zeigen.\\
-Für jedes $l\in\{1,\cdots n\}$ gilt für ein $c$ (das wir später wählen) und für $\xi = \pm c(1+| \tau|)^{\frac{1}{2}}e_l$
-
+Für jedes $l\in\{1,\cdots n\}$ gilt für $\xi = \pm c(1+| \tau|)^{\frac{1}{2}}e_l$ mit einem (später) geschickt gewählten $c$, dass
 \begin{align}
-	a(x,\xi+\tau) = a(x,\tau)\pm(1+|\tau|)^{\frac{1}{2}}a^l(x,\tau) + R(x,\xi,\tau)
+	a(x,\xi+\tau) = a(x,\tau)\pm\langle\tau\rangle^{\frac{1}{2}}a^l(x,\tau) + R(x,\xi,\tau). 
 \end{align}
-Weil $a(x,\xi+\tau)$ positiv definit ist, folgt dass für eine geeignete Konstante $C_1$ auch
+Weil $a(x,\xi+\tau)$ positiv definit ist, ist für eine geeignete Konstante $C_1$ auch
 \begin{align}
-	a(x,\tau) \pm c(1+|\tau|)^{\frac{1}{2}}a^l(x,\tau)+C_1(1+| \tau|)\frac{| a(x,\cdot|_{2}}{\left(1+| \tau|\right)^2}\ge 0
+	a(x,\tau) \pm c\langle\tau\rangle^{\frac{1}{2}}a^l(x,\tau)+C_1\langle\tau\rangle \frac{| a(x,\cdot|_{2}}{\langle\tau\rangle^2}\succeq 0
 \end{align}
-positiv definit ist.\\
-ToDO\\
-Ohne Einschränkung sei 
+positiv definit. Ohne Einschränkung können wir annehmen, dass  
 \begin{align}
-	p(x) \pm (1+| \tau|)^{\frac{1}{2}}p^l(x) \ge 0
+	p(x) \pm (1+| \tau|)^{\frac{1}{2}}p^l(x) \succeq 0
 \end{align}
-positiv definit. Dann gilt nach Lemma \ref{Matrizenlemma}
+positiv definit ist. Wir wenden darauf Lemma \ref{Matrizenlemma} an und erhalten
 \begin{align}
-	c\left(1+|\tau|\right)^{\frac{1}{2}} |\spro{p^lv^}{v}|\le\spro{pv}{v}^{\frac{1}{2}}\spro{pv^l}{v^l}^{\frac{1}{2}}.
+	c\langle\tau\rangle^{\frac{1}{2}} |\spro{p^lv}{v}|\le\spro{pv}{v}^{\frac{1}{2}}\spro{pv^l}{v^l}^{\frac{1}{2}}.
 \end{align}
-Wenden wir darauf die Ungleichung $\sqrt{ab}\le \frac{n}{2}a+\frac{1}{2n}b$ an, so folgt
+Unter Ausnutzen der Ungleichung $\sqrt{ab}\le \frac{n}{2}a+\frac{1}{2n}b$ folgt
 \begin{align}
-	|\spro{p^lv^l}{v}|\le \frac{1}{2n}\spro{pv}{v}+\frac{n}{2c^2}\frac{1}{1+|\tau|}\spro{pv^l}{v^l},
+	|\spro{p^lv^l}{v}|\le \frac{1}{2n}\spro{pv}{v}+\frac{n}{2c^2}\frac{1}{\langle\tau\rangle}\spro{pv^l}{v^l},
 \end{align}
 was 
 \begin{align}
-	Q=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} \ge \frac{1}{2}\spro{pv}{v} -\frac{n}{2c^2}\frac{1}{1+| \tau|}\sum\spro{pv^l}{v^l}
+	Q=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} \ge \frac{1}{2}\spro{pv}{v} -\frac{n}{2c^2}\frac{1}{\langle\tau\rangle}\sum\spro{pv^l}{v^l}
 \end{align}
 impliziert. Lemma \ref{lem3.1:Lax}, angewandt auf $\Phi(\xi) = \xi_l-\tau_l$, liefert in Verbindung mit $(\ref{Abschaetzung 0-Norm})$
 \begin{align}
@@ -297,24 +295,24 @@ impliziert. Lemma \ref{lem3.1:Lax}, angewandt auf $\Phi(\xi) = \xi_l-\tau_l$, li
 \end{align}
 und damit
 \begin{align}
-	Q \ge \frac{1}{2}\spro{pv}{v}-\frac{n}{2c^2}\frac{1}{1+| \tau|}\Re\spro{pv}{| D-\tau|^2v)}+\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right)
+	Q \ge \frac{1}{2}\spro{pv}{v}-\frac{n}{2c^2}\frac{1}{\langle\tau\rangle}\Re\spro{pv}{| D-\tau|^2v)}+\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right)
 \end{align}
 oder äquivalent
 \begin{align}
-	2Q \ge \Re\spro{pv}{\left(1-\frac{n}{2c^2}\frac{| D-\tau|^2}{1+|\tau|}\right)v}+\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right).
+	2Q \ge \Re\spro{pv}{\left(1-\frac{n}{2c^2}\frac{| D-\tau|^2}{\langle\tau\rangle}\right)v}+\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right).
 \end{align}
 Auf $\supp\widehat{v}$ gilt
 \begin{align}
-	\frac{|\xi-\tau|^2}{1+| \tau|}\le \tilde{C}^2 
+	\frac{|\xi-\tau|^2}{\langle\tau\rangle}\le \tilde{C}^2 
 \end{align}
 für eine Konstante $\tilde{C}>0$. Setzen wir nun $c:=\tilde{C}\sqrt{n}$ und 
 \begin{align}
 	\Phi(\xi):=\begin{cases}
-		\left(1-\frac{n}{2c^2}\frac{| \xi-\tau|^2}{1+|\tau|}\right)^{\frac{1}{2}}, &| \xi-\tau| \le C(1+|\tau|)^{\frac{1}{2}},\\
+		\left(1-\frac{n}{2c^2}\frac{| \xi-\tau|^2}{\langle\tau\rangle}\right)^{\frac{1}{2}}, &| \xi-\tau| \le C(\langle\tau\rangle)^{\frac{1}{2}},\\
 		\sqrt{\frac{1}{2}}, & \text{sonst},
 	\end{cases}
 \end{align}
-Dann ist $\Phi(\xi)$ Lipschitz-stetig mit Lipschitz-Konstante $K=\mathcal O(1+| \tau|)^{-\frac{1}{2}}$, erneute Anwendung von Lemma \ref{lem3.1:Lax} liefert
+Dann ist $\Phi(\xi)$ Lipschitz-stetig mit Lipschitz-Konstante $K=\mathcal O(\langle\tau\rangle)^{-\frac{1}{2}}$, erneute Anwendung von Lemma \ref{lem3.1:Lax} liefert
 \begin{align}
 	2Q \ge \Re\spro{pv}{\Phi(D)^2v}++\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right) = \Re\spro{p\Phi(D)v}{\Phi(D)v}+\mathcal{O}\left(|| v||_{\left(-\frac{1}{2}\right)}^2\right).
 \end{align}
