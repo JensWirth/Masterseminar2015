@@ -163,7 +163,7 @@ Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betracht
 \end{equation}
 gilt. Eine erste Anwendung ist folgendes Lemma.
 
-\begin{lem}
+\begin{lem}\label{Matrizenlemma}
 	Seien $A,B\in\C^{d\times d}$ selbstadjungiert und es gelte $A\pm B \succeq 0$. Dann gilt
 	\begin{align}
 		\forall_{v,w \in \mathbb{C}^d} \quad: \quad \vert \spro{Bv}{w} \vert \le \spro{Av}{v}^{{1}/{2}}\spro{Aw}{w}^{{1}/{2}}. 
@@ -279,7 +279,7 @@ Ohne Einschränkung sei
 \begin{align}
 	p(x) \pm (1+| \tau|)^{\frac{1}{2}}p^l(x) \ge 0
 \end{align}
-positiv definit. Dann gilt nach (ToDo: Lemma 2.2)
+positiv definit. Dann gilt nach Lemma \ref{Matrizenlemma}
 \begin{align}
 	c\left(1+|\tau|\right)^{\frac{1}{2}} |\spro{p^lv^}{v}|\le\spro{pv}{v}^{\frac{1}{2}}\spro{pv^l}{v^l}^{\frac{1}{2}}.
 \end{align}
