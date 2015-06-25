@@ -6,7 +6,7 @@ Im folgenden sollen Dirichletformen
 \begin{equation}
    P(x,\D,\overline\D)[u,v] = \sum_{|\alpha|,|\beta|\le m} \int_\Omega p_{\alpha,\beta}(x) \big(\D^\alpha u(x)\big) \overline{\big(\D^\beta v(x)\big)} \d x,\qquad u,v\in\rmC_0^\infty(\Omega)
 \end{equation}
-zu einem gegebenen Gebiet $\Omega\subset\R^n$ und für Koeffizienten $p_{\alpha,\beta}\in\rmC^\infty(\overline{\Omega})$ mit $p_{\beta,\alpha}(x)=\overline{p_{\alpha,\beta}(x)}$  betrachtet werden. Wir schreiben kurz $P(x,\D,\overline\D)[u]=P(x,\D,\overline\D)[u,u]$ und wenn klar ist, welche Form wir betrachten nur $P[u,v]$ beziehungsweise $P[u]$. Zugeordnet zu einer solchen Form betrachten wir das Symbol
+zu einem gegebenen Gebiet $\Omega\subset\R^n$ und für Koeffizienten $p_{\alpha,\beta}\in\rmC^\infty(\overline{\Omega})$ mit $p_{\beta,\alpha}(x)=\overline{p_{\alpha,\beta}(x)}$  betrachtet werden. Wir schreiben kurz $P(x,\D,\overline\D)[u]=P(x,\D,\overline\D)[u,u]$ und wenn klar ist, welche Form wir betrachten, nur $P[u,v]$ beziehungsweise $P[u]$. Zugeordnet zu einer solchen Form betrachten wir das Symbol
 \begin{equation}
    P(x,\zeta,\overline\zeta) = \sum_{\alpha,\beta} p_{\alpha,\beta}(x) \zeta^\alpha\overline\zeta^\beta,\qquad \zeta\in\C^n,
 \end{equation}
@@ -34,7 +34,7 @@ Unter dieser Voraussetzung zeigen wir, dass es Konstanten $a,b\in\R$ gibt, für 
 gilt. Dies ist dazu äquivalent, dass der Quotient $P [u]  / \spro{u}{u}_{(m)}$ nach unten beschränkt ist.
 
 \begin{thm}[{\cite[Theorem 2.1]{Garding:1953}}]
-Sei $P[u]$ eine gleichmäßig elliptische Dirichletform auf einem beschränkten Gebiet $\Omega\Subset\R^n$. Dann gilt
+Sei $P[u]$ eine gleichmäßig elliptische Dirichletform der Ordnung $m$ auf einem beschränkten Gebiet $\Omega\Subset\R^n$. Dann gilt
 \begin{equation}
   \inf_{u\in\rmH_0^m(\Omega)} \frac{P[u]}{\spro{u}{u}_{(m)}} > -\infty.
 \end{equation}
@@ -130,7 +130,7 @@ Es genügt, die Aussage für Operatoren der Ordnung Null zu beweisen. Wir folgen
 \end{split}
 \end{equation}
 Hier bezeichnet $\widehat a(\eta,\xi)$ wiederum die Fouriertransformierte des Symbols bezüglich $x$. Weiter sei $\mathcal{C}_{k,\ell}$ der Abschluß der Symbolklasse in der $ |\cdot |_{k,\ell}$-Norm.
-Im folgenden werden Symbole matrixwertige sein.
+Im folgenden werden Symbole matrixwertig sein.
 
 \medskip\noindent
 {\em Zerlegung der Eins:} Sei im folgenden $\Theta\in\rmC_0^\infty(\R^n)$ mit $\supp\Theta\subset [-3/4,3/4]^n$ sowie $\Theta>0$ auf $[-1/2,1/2]^n$. Dann sind die Funktionen
@@ -161,7 +161,7 @@ was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann a
 
 \medskip\noindent
 {\em Positiv semidefinite Matrizen etc.}
-Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betrachten wir zugeordneten quadratischen Formen\footnote{D.h. $\cspro{u}{A}{v} = u^* A v$} $\cspro{v}A{v}$ auf $\C^d$ und  schreiben $A \preceq B$ für zwei solche Matrizen, falls 
+Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betrachten wir die zugeordneten quadratischen Formen\footnote{D.h. $\cspro{u}{A}{v} = u^* A v$} $\cspro{v}A{v}$ auf $\C^d$ und  schreiben $A \preceq B$ für zwei solche Matrizen, falls 
 \begin{equation}
    \forall_{v\in\C^d} \quad:\quad \cspro{v}A{v}\le \cspro{v}B{v}
 \end{equation}
@@ -188,7 +188,7 @@ gilt. Eine erste Anwendung ist folgendes Lemma.
 \end{proof}
 
 \medskip\noindent
-{\em Hilfslemmata.} Wir beginnen mit einer Hilfsaussauge, welche auch für sich genommen von Interesse sind. 
+{\em Hilfslemma} Wir beginnen mit einer Hilfsaussauge, welche auch für sich genommen von Interesse sind. 
 
 \begin{lem}[{\cite[Lemma 3.1]{Lax:1966}}]\label{lem3.1:Lax}
 Sei $p\in \mathcal{C}_{0,2}$ eine von $\xi$ unabhängige selbstadjungierte Matrix und sei weiter $\Phi: \mathbb{R}^n\rightarrow\mathbb{R}$ Lipschitz-stetig mit Lipschitzkonstante $K$ auf $\supp \widehat{u}$. Dann gilt
@@ -217,7 +217,7 @@ Sei $p\in \mathcal{C}_{0,2}$ eine von $\xi$ unabhängige selbstadjungierte Matri
 	Mit  $\left(\Phi(\xi)-\Phi(\eta)\right)^2\le K^2 |\xi-\eta|^2$ und $| \widehat{p}(\xi-\eta,\cdot)|_{0,2} = (2\pi)^{-\frac{n}{2}}\int \langle\xi-\eta\rangle^2 |\widehat{p}(\xi-\eta)|\d\eta$ sowie der Ungleichung von Cauchy--Schwarz folgt die Behauptung. 
 \end{proof}
 
-Damit kommen wir zum Hauptresultat dieses Abschnitts, der schwarfen G\r{a}rdingungleichung für Systeme nach Lax und Nirenberg.
+Damit kommen wir zum Hauptresultat dieses Abschnitts, der scharfen G\r{a}rdingungleichung für Systeme nach Lax und Nirenberg.
 
 \begin{thm}[{\cite[Theorem 3.1]{Lax:1966}}]
 Sei $a\in\mathcal{C}_{0,2}\cap\mathcal{C}_{2,0}$ selbstadjungiert und positiv-semidefinit. Dann erfüllt der zugehörige Operator $A$ die Ungleichung
@@ -243,7 +243,7 @@ Damit folgt mit \eqref{eq:6:6.37} und erneutem Anwenden von Cauchy--Schwarz
 & \le \frac{C}{2}| a|_{0,2}|| u||_{(-{1}/{2})}^2.
 \end{split}
 \end{equation}
-Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ zu zeigen. Wir halten ein beliebiges $k$ fest und setzen $v:= u_k.$ Sei $\tau\in \supp \widehat{v}$ fixiert. Für $\mu, \eta \in \supp \widehat{v}$ gilt (nach Konstruktion der Zerlegung der Eins)
+Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ zu zeigen. Wir halten ein beliebiges $k$ fest und setzen $v:= u_k.$ Sei $\tau\in \supp \widehat{v}$ fixiert. Für $\mu, \eta \in \supp \widehat{v}$ gilt mit \eqref{eq:6:6.36}
 \begin{equation}
 	1+|\mu|^2 \le 1+\left(| \eta|+| \eta-\mu|\right)^2 \le 1+|\eta|^2+ c_1 \langle \mu \rangle,
 \end{equation}
