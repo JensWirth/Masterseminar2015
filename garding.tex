@@ -239,8 +239,8 @@ folgt
 Damit folgt mit \eqref{eq:6:6.37} und erneutem Anwenden von Cauchy--Schwarz
 \begin{equation}
 \begin{split}	
-| I| &\le \frac{C}{2}\iint| \cspro{\widehat{u}(\xi)}{\widehat{a}(\xi-\eta,\eta)}{\widehat{u}(\eta)}| \, |\xi-\eta|^2\langle \xi\rangle^{-\frac{1}{2}} \langle\eta\rangle^{-\frac{1}{2}}\d \xi \d \eta\\ 
-& \le \frac{1}{2}| a|_{0,2}|| u||_{(-{1}/{2})}^2.
+| I| &\le \frac{C}{2}\left(2\pi\right)^{-\frac{n}{2}}\iint| \cspro{\widehat{u}(\xi)}{\widehat{a}(\xi-\eta,\eta)}{\widehat{u}(\eta)}| \, |\xi-\eta|^2\langle \xi\rangle^{-\frac{1}{2}} \langle\eta\rangle^{-\frac{1}{2}}\d \xi \d \eta\\ 
+& \le \frac{C}{2}| a|_{0,2}|| u||_{(-{1}/{2})}^2.
 \end{split}
 \end{equation}
 Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ zu zeigen. Wir halten ein beliebiges $k$ fest und setzen $v:= u_k.$ Sei $\tau\in \supp \widehat{v}$ fixiert. Für $\mu, \eta \in \supp \widehat{v}$ gilt (nach Konstruktion der Zerlegung der Eins)
@@ -272,18 +272,17 @@ für die quatratische Form
 \begin{equation}
 	Q[v]=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} 
 \end{equation}
-zu zeigen.\\
-Für jedes $l\in\{1,\cdots n\}$ gilt für $\xi = \pm c\langle\tau\rangle^{\frac{1}{2}}\e_l$ mit einem später geschickt gewählten $c$, dass
+zu zeigen. Für jedes $l\in\{1,\cdots n\}$ gilt für $\xi = \pm c\langle\tau\rangle^{\frac{1}{2}}\e_l$ mit einem später geschickt gewählten $c$, dass
 \begin{equation}
 	a(x,\xi+\tau) = a(x,\tau)\pm\langle\tau\rangle^{\frac{1}{2}}a^l(x,\tau) + R(x,\xi,\tau). 
 \end{equation}
-Weil $a(x,\xi+\tau)$ positiv definit ist, ist für eine geeignete Konstante $C_1$ auch
+Weil $a(x,\xi+\tau)$ positiv definit ist, ist für eine geeignete Konstante $C$ auch
 \begin{equation}
-	a(x,\tau) \pm c\langle\tau\rangle^{\frac{1}{2}}a^l(x,\tau)+C_1\langle\tau\rangle \frac{| a(x,\cdot)|_{2}}{\langle\tau\rangle^2}\succeq 0
+	a(x,\tau) \pm c\langle\tau\rangle^{\frac{1}{2}}a^l(x,\tau)+C\langle\tau\rangle \frac{| a(x,\cdot)|_{2}}{\langle\tau\rangle^2}\succeq 0
 \end{equation}
-positiv definit. Weil Addieren eines Terms der Form $c \langle\tau\rangle^{-1}$ mit \eqref{Abschaetzung 0-Norm} einen Fehler der Ordnung $O\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right)$ verursacht, können wir ohne Einschränkung können wir annehmen, dass  
+positiv definit. Weil Addieren eines Terms der Form $c \langle\tau\rangle^{-1} I_n$ zu $p(x)$ gemäß \eqref{Abschaetzung 0-Norm} einen Fehler der Ordnung $O\left(\vert\vert v\vert\vert_{\left(-\frac{1}{2}\right)}^2\right)$ verursacht, können wir ohne Einschränkung annehmen, dass  
 \begin{equation}
-	p(x) \pm (1+| \tau|)^{\frac{1}{2}}p^l(x) \succeq 0
+	p(x) \pm \langle\tau\rangle^{\frac{1}{2}}p^l(x) \succeq 0
 \end{equation}
 positiv definit ist. Wir wenden darauf Lemma \ref{Matrizenlemma} an und erhalten
 \begin{equation}
@@ -293,7 +292,7 @@ Unter Ausnutzen der Ungleichung $\sqrt{ab}\le \frac{n}{2}a+\frac{1}{2n}b$ folgt
 \begin{equation}
 	|\spro{p^lv^l}{v}|\le \frac{1}{2n}\spro{pv}{v}+\frac{n}{2c^2}\frac{1}{\langle\tau\rangle}\spro{pv^l}{v^l},
 \end{equation}
-was 
+was
 \begin{equation}
 	Q[ v]=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} \ge \frac{1}{2}\spro{pv}{v} -\frac{n}{2c^2}\frac{1}{\langle\tau\rangle}\sum\spro{pv^l}{v^l}
 \end{equation}
