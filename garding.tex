@@ -19,7 +19,7 @@ $P(x,\D,\overline \D)[u]$ reell. Spezialfälle solcher Dirichletformen sind die 
 \begin{equation}
   \spro{u}{v}_{(m)} = \sum_{|\alpha|\le m} \spro{\D^\alpha u}{\D^\alpha v} = \sum_{|\alpha|\le m} \int_\Omega   \big(D^\alpha u(x)\big) \overline{\big(\D^\alpha v(x)\big)} \d x.
 \end{equation}
-Es stellt sich die Frage, unter welchen Voraussetzungen eine Dirichletform äquivalent zu einem solchen Innenprodukt ist. Gilt $a_{\alpha,\beta}\in \rmB^\infty(\Omega)$, so ergibt sich stets eine obere Schranke der Form
+Es stellt sich die Frage, unter welchen Voraussetzungen eine Dirichletform äquivalent zu einem solchen Innenprodukt ist. Gilt $a_{\alpha,\beta}\in \rmC^\infty(\overline\Omega)$, so ergibt sich stets eine obere Schranke der Form
 \begin{equation}
     P[u] \le C \spro{u}{u}_{(m)}.
 \end{equation}
@@ -34,7 +34,7 @@ Unter dieser Voraussetzung zeigen wir, dass es Konstanten $a,b\in\R$ gibt, für 
 gilt. Dies ist dazu äquivalent, dass der Quotient $P [u]  / \spro{u}{u}_{(m)}$ nach unten beschränkt ist.
 
 \begin{thm}[{\cite[Theorem 2.1]{Garding:1953}}]
-Sei $P[u]$ eine gleichmäßig elliptische Dirichletform der Ordnung $m$ auf einem beschränkten Gebiet $\Omega\Subset\R^n$. Dann gilt
+Sei $P[u]$ eine gleichmäßig elliptische Dirichletform der Ordnung $m$ mit positivem Hauptsymbol auf einem beschränkten Gebiet $\Omega\Subset\R^n$. Dann gilt
 \begin{equation}
   \inf_{u\in\rmH_0^m(\Omega)} \frac{P[u]}{\spro{u}{u}_{(m)}} > -\infty.
 \end{equation}
@@ -48,9 +48,9 @@ Sei $P[u]$ eine gleichmäßig elliptische Dirichletform der Ordnung $m$ auf eine
 mit $p_{\alpha,\beta}\in\C$ den Koeffizienten der Form und für beliebiges $u\in\rmC_0^\infty(\Omega)$. Da weiterhin die Elliptizitätsbedingung $p(\xi)\ge \tilde c |\xi|^{2m}$ 
 vorausgesetzt ist und $\Omega$ beschränkt ist, gilt
 \begin{equation}
-  P[u] \ge \tilde c \int |\xi|^{2m} |\widehat u(\xi)|^2 \d\xi  -  \tilde c' \int \langle \xi\rangle^{2m-1} |\widehat u(\xi)|^2 \d\xi  \ge  2c\; \spro{u}{u}_{(m)}
+  P[u] \ge \tilde c \int |\xi|^{2m} |\widehat u(\xi)|^2 \d\xi  -  \tilde c' \int \langle \xi\rangle^{2m-1} |\widehat u(\xi)|^2 \d\xi  \ge  \tilde c'\; \spro{u}{u}_{(m)}
 \end{equation}
-mit einer geeigneten Konstanten $c$. $\bullet$\qquad{\sl Schritt 2.}  Wir führen den allgemeinen Fall auf den gerade gezeigten Spezialfall zurück. Dazu bezeichne im Folgenden
+mit einer geeigneten Konstanten $\tilde c'$. $\bullet$\qquad{\sl Schritt 2.}  Wir führen den allgemeinen Fall auf den gerade gezeigten Spezialfall zurück. Dazu bezeichne im Folgenden
 \begin{equation}
 	w(\rho) = \sup\left\{| p_{\alpha,\beta}(x)-p_{\alpha,\beta}(y)| : |\alpha|, |\beta| \le m, | x-y| \le \rho\right\}.
 \end{equation} 
@@ -65,9 +65,9 @@ $\lim_{\rho\to0} w(\rho)=0$.  Sei nun $x_0\in \Omega$ beliebig, $u\in \rmH_0^m(\
 \end{equation}
 unter zweifacher Ausnutzung der Ungleichung von Cauchy--Schwarz. Also folgt unter Verwendung des oben betrachteten Spezialfalls
 \begin{equation}
-	P[u] \ge P_0[u] - \big| P[u] - P_0[u] \big| \ge \big( 2c - w(\rho) \big) \|u\|_{(m)}^2 \ge  c \| u\|_{(m)}^2
+	P[u] \ge P_0[u] - \big| P[u] - P_0[u] \big| \ge \big( \tilde c' - w(\rho) \big) \|u\|_{(m)}^2 \ge  c \| u\|_{(m)}^2
 \end{equation} 
-für obiges $c$ und alle $u\in \rmH_0^m(\Omega \cap \partial B_\rho(x_0))$,  $\rho$ hinreichend klein. Die Abschätzung ist gleichmäßig in $x_0\in\Omega$.
+für ein $c\in\R$ und alle $u\in \rmH_0^m(\Omega \cap \partial B_\rho(x_0))$,  $\rho$ hinreichend klein. Die Abschätzung ist gleichmäßig in $x_0\in\Omega$.
 $\bullet$\qquad {\sl Schritt 3.} Da $\Omega$ beschränkt ist, finden wir zu jedem $\epsilon>0$ eine endliche Überdeckung $\Omega\subset\bigcup_{k=1}^N B_{{\epsilon}/{2}}(x_k)$ und eine dieser Überdeckung untergeordnete Zerlegung der Eins $\psi_k\in\rmC_0^\infty(B_{\epsilon/2}(x_k))$ mit
 \begin{equation}
  \sum\limits_{k=1}^N |\psi_k(x)|^2 = 1,\qquad \ x\in \Omega.
@@ -100,7 +100,8 @@ Durch Interpolation folgt aus \eqref{eq:6.18}
 \begin{equation}
 P[u] \ge c \|u\|_{(m)}^2 - \tilde b \|u\|_{(m-1/2)}^2
 \end{equation}
-mit den in Definiton~\ref{df:sob-norm} definierten Sobolevnormen. Da $\|u\|_{(m-1/2)} \lesssim \|u\|_{(m)}$ gilt, folgt insbesondere für jedes $\epsilon>0$
+mit den in Definiton~\ref{df:sob-norm} definierten Sobolevnormen. 
+Da $p(x,\xi,\xi)\ge0$ gilt und im wesentlichen nur der Hauptteil durch den ersten Term abgeschätzt wird, folgt aus obigem Beweis insbesondere für jedes $\epsilon>0$
 die Existenz einer Konstanten $K(\epsilon)>0$ mit
 \begin{equation}
 P[u] \ge -\epsilon \|u\|_{(m)}^2 - K(\epsilon) \|u\|_{(m-1/2)}^2.
@@ -120,7 +121,9 @@ Sei $A\in {\rm OP}S^{2m}_{\rm loc}(\Omega\times\R^n)$ Pseudodifferentialoperator
  für alle $u\in\rmC_0^\infty(\omega)$.
 \end{thm}
 
-Es genügt, die Aussage für Operatoren der Ordnung Null zu beweisen. Wir folgen Lax und Nirenberg \cite{Lax:1966} und zeigen eine entsprechende Aussage für (matrixwertige) Operatoren. Zuerst benötigen wir einige Definitionen und Hilfsmittel:
+Es genügt, eine solche Aussage für Operatoren der Ordnung Null zu beweisen. Operatoren anderer Ordnungen können mit dem Pseudodifferentialkalkül auf diesen Fall zurückgeführt werden. Im folgenden beziehen wir uns auf  Lax und Nirenberg \cite{Lax:1966} und zeigen eine entsprechende Aussage für (matrixwertige) Operatoren. 
+
+Zuerst benötigen wir einige Definitionen und Hilfsmittel.
 
 \medskip\noindent
 {\em Symbolklassen:} Für $ a\in S^0_{\rm comp}(\R^n\times\R^n)$ definieren wir die Normen
@@ -160,12 +163,14 @@ Weiterhin nützlich ist
 was nur für $|\xi-\eta|\le \langle\xi\rangle^{1/2}$ nichttrivial ist und dann aus \eqref{eq:6:6.35} für $|\alpha|=1$ per Integration über die Strecke von $\xi$ zu $\eta$ folgt.
 
 \medskip\noindent
-{\em Positiv semidefinite Matrizen etc.}
+{\em Positiv semidefinite Matrizen.}
 Sei $A\in\C^{d\times d}$ selbstadjungiert und positiv semidefinit. Dann betrachten wir die zugeordneten quadratischen Formen\footnote{Zur Notation: Wir definieren $\cspro{u}{A}{v} = u^* A v=\overline u^\top A v$ für $A\in\C^{d\times d}$ und $u,v\in\C^{d}$.} $\cspro{v}A{v}$ auf $\C^d$ und  schreiben $A \preceq B$ für zwei solche Matrizen, falls 
 \begin{equation}
    \forall_{v\in\C^d} \quad:\quad \cspro{v}A{v}\le \cspro{v}B{v}
 \end{equation}
-gilt. Eine erste Anwendung ist folgendes Lemma.
+gilt. 
+
+Eine erste Anwendung ist folgendes Lemma.
 
 \begin{lem}[{\cite[Lemma 2.2]{Lax:1966}}]\label{Matrizenlemma}
 	Seien $A,B\in\C^{d\times d}$ selbstadjungiert und es gelte $A\pm B \succeq 0$. Dann gilt
@@ -184,11 +189,11 @@ gilt. Eine erste Anwendung ist folgendes Lemma.
 	\begin{equation}
 		\cspro{v}A{v}+2\Re \cspro{w}B{v} +\cspro{w}Aw \ge 0
 	\end{equation}
-	und damit nach Multiplikation von $w$ mit einer komplexen Zahl vom Betrag Eins (so dass $\Re \cspro{\lambda w}B{v} = - | \cspro{w}B{v}|$) die Behauptung. 
+	und damit nach Multiplikation von $w$ mit einer komplexen Zahl vom Betrag Eins (so dass $\Re \cspro{\lambda w}B{v} = - | \cspro{w}B{v}|$ gilt) die Behauptung. 
 \end{proof}
 
 \medskip\noindent
-{\em Hilfslemma} Wir beginnen mit einer Hilfsaussauge, welche auch für sich genommen von Interesse sind. 
+{\em Ein Hilfslemma.} Wir beginnen mit einer Hilfsaussage, welche auch für sich genommen von Interesse ist. 
 
 \begin{lem}[{\cite[Lemma 3.1]{Lax:1966}}]\label{lem3.1:Lax}
 Sei $p\in \mathcal{C}_{0,2}$ eine von $\xi$ unabhängige selbstadjungierte Matrix und sei weiter $\Phi: \mathbb{R}^n\rightarrow\mathbb{R}$ Lipschitz-stetig mit Lipschitzkonstante $K$ auf $\supp \widehat{u}$. Dann gilt
@@ -199,20 +204,20 @@ Sei $p\in \mathcal{C}_{0,2}$ eine von $\xi$ unabhängige selbstadjungierte Matri
 \begin{proof}
 	Die Rechenregeln der Fouriertransformation liefern
 	\begin{equation}\label{lem3.1:Lax;1}
-		\begin{split} J:&=  \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(\D)u}{\Phi(\D)u} \\
+		\begin{split} J[u]&=  \Re \spro {\Phi(\D)pu}{\Phi(\D)u}-\Re\spro{p\Phi(\D)u}{\Phi(\D)u} \\
 		&= \left(2\pi\right)^{-\frac{n}{2}}\Re\iint\cspro {\widehat{u}(\xi)}{\widehat{p}(\xi-\eta)}{\widehat{u}(\eta)}\left(\Phi(\xi)-\Phi(\eta)\right)\Phi(\xi)\d \xi\d\eta.
 		\end{split}
 	\end{equation}
 	Weil $p$ selbstadjungiert ist, folgt $\widehat{p}(\xi) = {\widehat{p}}(-\xi)^*$. Durch Vertauschen der Integrationsvariablen erhalten wir
 	\begin{equation}\label{lem3.1:Lax;2}
 	\begin{split}	
-	J&= \left(2\pi\right)^{-\frac{n}{2}}\Re\iint \cspro{ \widehat{u}(\eta)}{\widehat{p}(\eta-\xi)}{\widehat{u}(\xi)}\left(\Phi(\eta)-\Phi(\xi)\right)\Phi(\eta)\d \xi\d\eta\\
+	J[u]&= \left(2\pi\right)^{-\frac{n}{2}}\Re\iint \cspro{ \widehat{u}(\eta)}{\widehat{p}(\eta-\xi)}{\widehat{u}(\xi)}\left(\Phi(\eta)-\Phi(\xi)\right)\Phi(\eta)\d \xi\d\eta\\
 		&= \left(2\pi\right)^{-\frac{n}{2}}\Re\iint\cspro{\widehat{u}(\xi)}{\widehat{p}(\xi-\eta)}{\widehat{u}(\eta)}\left(\Phi(\eta)-\Phi(\xi)\right)\Phi(\eta)\d \xi\d\eta.
 	\end{split}	
 	\end{equation}
 	und Addition von $(\ref{lem3.1:Lax;1})$ und $(\ref{lem3.1:Lax;2})$ liefert
 	\begin{equation}
-		J= \frac{1}{2}\left(2\pi\right)^{-\frac{n}{2}}\Re\iint \cspro{\widehat{u}(\xi)}{\widehat{p}(\xi-\eta)}{\widehat{u}(\eta)}\left(\Phi(\xi)-\Phi(\eta)\right)^2\d\xi\d\eta.
+		J[u]= \frac{1}{2}\left(2\pi\right)^{-\frac{n}{2}}\Re\iint \cspro{\widehat{u}(\xi)}{\widehat{p}(\xi-\eta)}{\widehat{u}(\eta)}\left(\Phi(\xi)-\Phi(\eta)\right)^2\d\xi\d\eta.
 	\end{equation}
 	Mit  $\left(\Phi(\xi)-\Phi(\eta)\right)^2\le K^2 |\xi-\eta|^2$ und $| \widehat{p}(\xi-\eta,\cdot)|_{0,2} = (2\pi)^{-\frac{n}{2}}\int \langle\xi-\eta\rangle^2 |\widehat{p}(\xi-\eta)|\d\eta$ sowie der Ungleichung von Cauchy--Schwarz folgt die Behauptung. 
 \end{proof}
@@ -226,24 +231,26 @@ Sei $a\in\mathcal{C}_{0,2}\cap\mathcal{C}_{2,0}$ selbstadjungiert und positiv-se
 \end{equation}
 \end{thm}
 \begin{proof}
-	Wir machen Gebrauch von der zu Beginn des Kapitels konstruierten Zerlegung der Eins: Sei $	u_k:= \psi_k(\D)u, \text{ d.h. } \widehat{u_k}(\xi) = \psi_k(\xi) \widehat{u}(\xi).$ Wegen 
+Wir machen Gebrauch von der zu Beginn des Kapitels konstruierten Zerlegung der Eins. Sei dazu $	u_k:= \psi_k(\D)u$. Dann gilt $\widehat{u_k}(\xi) = \psi_k(\xi) \widehat{u}(\xi)$ und mit der Darstellung 
 \begin{equation}
 	\widehat{Au}(\xi) = \left(2\pi\right)^{-\frac{n}{2}}\int \widehat{a}(\xi-\eta,\eta)\widehat{u}(\eta)\d \eta
 \end{equation}	 
-folgt
-\begin{equation}
-\begin{split} I:&=\spro{Au}{u}-\sum\limits_k \spro{Au_k}{u_k} = \left(2\pi\right)^{-\frac{n}{2}}\iint \cspro{\widehat{u}(\xi)}{\widehat{a}(\xi-\eta,\eta)}{\widehat{u}(\eta)}\left(1-\sum\limits_k \psi_k(\eta)\psi_k(\xi)\right)\d \xi\d\eta\notag\\
+folgt für die Differenz $J[u]$ der quadratischen Formen $\spro{Au}{u}$ und $\sum_k \spro{Au_k}{u_k}$
+\begin{align}
+ J[u]&=\spro{Au}{u}-\sum\limits_k \spro{Au_k}{u_k} \notag\\
+& = \left(2\pi\right)^{-\frac{n}{2}}\iint \cspro{\widehat{u}(\xi)}{\widehat{a}(\xi-\eta,\eta)}{\widehat{u}(\eta)}\left(1-\sum\limits_k \psi_k(\eta)\psi_k(\xi)\right)\d \xi\d\eta\notag\\
 	&= \frac{1}{2}\left(2\pi\right)^{-\frac{n}{2}} \iint \cspro{\widehat{u}(\xi)}{\widehat{a}(\xi-\eta,\eta)}{\widehat{u}(\eta)}\sum\limits_k\vert\psi_k(\eta)-\psi_k(\xi)\vert^2\d \xi\d\eta.
-\end{split}
-\end{equation}
+\end{align}
 Damit folgt mit \eqref{eq:6:6.37} und erneutem Anwenden von Cauchy--Schwarz
 \begin{equation}
 \begin{split}	
-| I| &\le \frac{C}{2}\left(2\pi\right)^{-\frac{n}{2}}\iint| \cspro{\widehat{u}(\xi)}{\widehat{a}(\xi-\eta,\eta)}{\widehat{u}(\eta)}| \, |\xi-\eta|^2\langle \xi\rangle^{-\frac{1}{2}} \langle\eta\rangle^{-\frac{1}{2}}\d \xi \d \eta\\ 
+| J[u] | &\le \frac{C}{2}\left(2\pi\right)^{-\frac{n}{2}}\iint| \cspro{\widehat{u}(\xi)}{\widehat{a}(\xi-\eta,\eta)}{\widehat{u}(\eta)}| \, |\xi-\eta|^2\langle \xi\rangle^{-\frac{1}{2}} \langle\eta\rangle^{-\frac{1}{2}}\d \xi \d \eta\\ 
 & \le \frac{C}{2}| a|_{0,2}|| u||_{(-{1}/{2})}^2.
 \end{split}
 \end{equation}
-Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ zu zeigen. Wir halten ein beliebiges $k$ fest und setzen $v:= u_k.$ Sei $\tau\in \supp \widehat{v}$ fixiert. Für $\mu, \eta \in \supp \widehat{v}$ gilt mit \eqref{eq:6:6.36}
+Weiterhin gilt $\sum_k \|u_k\|^2_{(-1/2)} = \|u\|^2_{(-1/2)}$.
+Damit ist es ausreichend, die gewünschte Ungleichung für die Funktionen $u_k$ einzeln (und mit von $k$ unabhängiger Konstanten) zu zeigen. Wir halten ein beliebiges $k$ fest und setzen im Folgenden
+ $v= u_k$. Sei $\tau\in \supp \widehat{v}$ fixiert. Für $\mu, \eta \in \supp \widehat{v}$ gilt mit \eqref{eq:6:6.36}
 \begin{equation}
 	1+|\mu|^2 \le 1+\left(| \eta|+| \eta-\mu|\right)^2 \le 1+|\eta|^2+ c_1 \langle \mu \rangle,
 \end{equation}
@@ -253,38 +260,41 @@ also
 \end{equation}
 und somit
 \begin{equation}\label{Abschaetzung 0-Norm}
-	\langle \tau\rangle^{-1}|| v||^2 \lesssim|| v||_{\left(-{1}/{2}\right)}^2
+	\langle \tau\rangle^{-1}|| v||^2 \lesssim|| v||_{\left(-{1}/{2}\right)}^2.
 \end{equation}
-Wir setzen $\widehat{a}^l(\xi-\eta,\tau):=\frac{\partial}{\partial \tau_l}\widehat{a}(\xi-\eta,\tau)$ und wenden darauf den Mittelwertsatz an. Für $\eta\in \supp \psi_k$ ergibt sich dann
+Für $l=1,\ldots, n$ definieren wir $\widehat{a}^l(\xi-\eta,\tau)=\frac{\partial}{\partial \tau_l}\widehat{a}(\xi-\eta,\tau)$ und wenden den Mittelwertsatz an. Dies liefert für $\eta\in \supp \psi_k$ 
 \begin{equation}
 \begin{split}	&| \widehat{a}(\xi-\eta,\eta)-\widehat{a}(\xi-\eta,\tau) -\sum\limits_{l=1}^n (\eta_l-\tau_l)\widehat{a}^l\left(\xi-\eta,\tau\right)| \lesssim| \eta-\tau|^2| \widehat{a}(\xi-\eta,\cdot)|_2\langle\eta\rangle^{-2} \\&
 \lesssim | \widehat{a}(\xi-\eta,\cdot)|_2 \langle\eta\rangle^{-1} \lesssim| \widehat{a}(\xi-\eta,\cdot)|_2\langle\eta\rangle^{-\frac{1}{2}}\langle\xi\rangle^{-\frac{1}{2}}.
 \end{split}
 \end{equation}
-Setzen wir $p(x):=a(x,\tau),\ p^l(x):= a^l(x,\tau) $ und $v^l:=(\D_l-\tau_l)v$ (also $\widehat{v}^l=\left(\xi_l-\tau_l\right)\widehat{v}$), dann folgt
+Setzen wir nun $p(x)=a(x,\tau)$, $p^l(x)= a^l(x,\tau) $ und $v^l:=(\D_l-\tau_l)v$ (also $\widehat{v}^l(\xi)=\left(\xi_l-\tau_l\right)\widehat{v}(\xi)$), dann folgt
 \begin{equation}
-	|\spro{Av}{v}-\spro{pv}{v}-\sum\spro{p^lv^l}{v}| \le c | a|_{2,0}|| u||_{\left(-{1}/{2}\right)}^2
+	|\spro{Av}{v}-\spro{pv}{v}-\sum\spro{p^lv^l}{v}| \le c | a|_{2,0}|| u||_{\left(-{1}/{2}\right)}^2.
 \end{equation}
-Damit verbleibt es, die Ungleichung \begin{equation}
+Es verbleibt also, die Ungleichung 
+\begin{equation}
 	Q[v] \ge -C|| v||_{\left(-{1}/{2}\right)}^2
 \end{equation}
 für die quatratische Form
 \begin{equation}
 	Q[v]=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} 
 \end{equation}
-zu zeigen. Für jedes $l\in\{1,\cdots n\}$ gilt für $\xi = \pm c\langle\tau\rangle^{\frac{1}{2}}\e_l$ mit einem später geschickt gewählten $c$, dass
+zu zeigen. Diese entspricht der in $\xi$ linearen Approximation an das Symbol $a(x,\xi)$ in $\xi=\tau$.
+
+Für jedes $l\in\{1,\dots, n\}$ gilt für $\xi = \pm c\langle\tau\rangle^{\frac{1}{2}}\e_l$ mit einem später geschickt gewählten $c$, dass
 \begin{equation}
 	a(x,\xi+\tau) = a(x,\tau)\pm\langle\tau\rangle^{\frac{1}{2}}a^l(x,\tau) + R(x,\xi,\tau). 
 \end{equation}
-Weil $a(x,\xi+\tau)$ positiv definit ist, ist für eine geeignete Konstante $C$ auch
+Weil $a(x,\xi+\tau)$ positiv semi-definit ist, ist für eine geeignete Konstante $C$ auch
 \begin{equation}
 	a(x,\tau) \pm c\langle\tau\rangle^{\frac{1}{2}}a^l(x,\tau)+C\langle\tau\rangle \frac{| a(x,\cdot)|_{2}}{\langle\tau\rangle^2}\succeq 0
 \end{equation}
-positiv definit. Weil Addieren eines Terms der Form $c \langle\tau\rangle^{-1}$ zu $p(x)$ gemäß \eqref{Abschaetzung 0-Norm} einen Fehler der Ordnung $\mathcal O\left(\vert\vert v\vert\vert_{\left(-{1}/{2}\right)}^2\right)$ verursacht, können wir ohne Einschränkung annehmen, dass  
+positiv semi-definit. Da Addieren eines Terms der Form $c \langle\tau\rangle^{-1}$ zu $p(x)$ gemäß \eqref{Abschaetzung 0-Norm} einen Fehler der Ordnung $\mathcal O\left(\vert\vert v\vert\vert_{\left(-{1}/{2}\right)}^2\right)$ verursacht, können wir ohne Einschränkung annehmen, dass  
 \begin{equation}
 	p(x) \pm \langle\tau\rangle^{\frac{1}{2}}p^l(x) \succeq 0
 \end{equation}
-positiv definit ist. Wir wenden darauf Lemma \ref{Matrizenlemma} an und erhalten
+positiv semi-definit ist. Wir wenden darauf Lemma \ref{Matrizenlemma} an und erhalten
 \begin{equation}
 	c\langle\tau\rangle^{\frac{1}{2}} |\spro{p^lv}{v}|\le\spro{pv}{v}^{\frac{1}{2}}\spro{pv^l}{v^l}^{\frac{1}{2}}.
 \end{equation}
@@ -294,11 +304,11 @@ Unter Ausnutzen der Ungleichung $\sqrt{ab}\le \frac{n}{2}a+\frac{1}{2n}b$ folgt
 \end{equation}
 was
 \begin{equation}
-	Q[ v]=\spro{pv}{v}+\Re\sum\spro{p^lv^l}{v} \ge \frac{1}{2}\spro{pv}{v} -\frac{n}{2c^2}\frac{1}{\langle\tau\rangle}\sum\spro{pv^l}{v^l}
+	Q[ v]=\spro{pv}{v}+\Re\sum\nolimits_l \spro{p^lv^l}{v} \ge \frac{1}{2}\spro{pv}{v} -\frac{n}{2c^2}\frac{1}{\langle\tau\rangle}\sum\nolimits_l \spro{pv^l}{v^l}
 \end{equation}
 impliziert. Lemma \ref{lem3.1:Lax}, angewandt auf $\Phi(\xi) = \xi_l-\tau_l$, liefert in Verbindung mit $(\ref{Abschaetzung 0-Norm})$
 \begin{equation}
-\sum\spro{pv^l}{v^l}=\Re\sum \spro{pv}{\left(\D_l-\tau_l\right)v}+\mathcal{O}\left(|| v||_{\left(-{1}/{2}\right)}^2\right) 
+\sum\nolimits_l \spro{pv^l}{v^l}=\Re\sum\nolimits_l \spro{pv}{\left(\D_l-\tau_l\right)v}+\mathcal{O}\left(|| v||_{\left(-{1}/{2}\right)}^2\right) 
 \end{equation}
 und damit
 \begin{equation}
@@ -321,7 +331,7 @@ für eine Konstante $\tilde{C}>0$. Setzen wir nun $c:=\tilde{C}\sqrt{2n}$ und
 \end{equation}
 dann ist $\Phi(\xi)$ Lipschitz-stetig mit Lipschitz-Konstante $K=\mathcal O(\langle\tau\rangle)^{-\frac{1}{2}}$, erneute Anwendung von Lemma \ref{lem3.1:Lax} liefert
 \begin{equation}
-	2Q \ge \Re\spro{pv}{\Phi(\D)^2v}+\mathcal{O}\left(|| v||_{\left(-{1}/{2}\right)}^2\right) = \Re\spro{p\Phi(\D)v}{\Phi(\D)v}+\mathcal{O}\left(|| v||_{\left(-{1}/{2}\right)}^2\right).
+	2Q[v] \ge \Re\spro{pv}{\Phi(\D)^2v}+\mathcal{O}\left(|| v||_{\left(-{1}/{2}\right)}^2\right) = \Re\spro{p\Phi(\D)v}{\Phi(\D)v}+\mathcal{O}\left(|| v||_{\left(-{1}/{2}\right)}^2\right).
 \end{equation}
 Weil $a(x,\tau)$ positiv definit ist, folgt $\Re\spro{p\Phi(\D)v}{\Phi(\D)v}\ge 0$ und damit die gewünschte Ungleichung. 
 \end{proof}
