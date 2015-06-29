@@ -1,6 +1,55 @@
 % !TEX root = main.tex
 \chapter{Die Ungleichung von Melin}
-\cite{Melin:1971}
+%\cite{Melin:1971}
+
+\section{Eine spezialle Klasse quadratischer Dirichletformen}
+Wir betrachten zuerst Dirichletformen der speziellen Struktur
+\begin{equation}
+   P[u] = \Re\int \overline{u(x)} \sum_{|\alpha+\beta|\le 2} \frac{ a_{\alpha,\beta}}{\alpha!\beta!} x^\beta \D^\alpha u(x) \d x
+\end{equation}
+für komplexe\footnote{Sind die $a_{\alpha,\beta}$ komplex, so existieren eindeutig bestimmte reelle Koeffizienten, welche dieselbe Form erzeugen.} Zahlen $a_{\alpha,\beta}\in\C$ und Funktionen $u\in\rmC_0^\infty(\R^n)$. Diese werden später als Taylorapproximanten auftreten und sollen zuerst untersucht werden. Zugeordnet zu $P$ betrachten wir die (reelle) quadratische Form
+\begin{equation}
+  h(x,\xi) = \Re  \sum_{|\alpha+\beta|\le 2} \frac{a_{\alpha,\beta}}{\alpha!\beta!} x^\beta\xi^\alpha
+\end{equation}
+auf $\R^n\times\R^n$ und die symmetrische Matrix $H$ mit $\cspro{X}{H}{X}=h(X)$, $X=(x,\xi)\in\R^n\times\R^n$. Bezeichne weiter
+\begin{equation}
+   \widetilde{\mathrm{Tr}} H = ... 
+\end{equation}
+
+\begin{thm}[{\cite[Theorem 2.4.]{Melin:1971}}]
+Es gilt $P[u]\ge0$ genau dann für alle $u\in\rmC_0^\infty(\R^n)$, wenn die Bedingungen
+\begin{enumerate}
+\item  $h(x,\xi)\ge0$ auf $\R^n\times\R^n$;
+\item $f(x,\xi) = \sum_{|\alpha+\beta|=1} \Re a_{\alpha,\beta} x^\beta\xi^\alpha = 0$ für $(x,\xi)\in\R^{2n}$ mit $h(x,\xi)=0$;
+\item $\Re a_{0,0} - \frac12 \sum_{|\beta|=1} \Im a_{\beta,\beta} -\frac14  \cspro{f}{H^{-1}}{f} + \widetilde{\mathrm{Tr}} H \ge 0$
+\end{enumerate}
+erfüllt sind.
+\end{thm}
+
+
+\section{}
+\begin{thm}[{\cite[Theorem 3.1]{Melin:1971}}]
+Sei $A\in\mathrm{OP}S^m_{\rm loc}(\Omega\times\R^n)$ mit homogenem Hauptsymbol $a_m(x,\xi)\ge0$ und $\mu=(m-1)/2$. Dann sind \"aquivalent:
+\begin{enumerate}
+\item F\"ur jedes $\epsilon>0$, jedes $K\Subset\Omega$ und jedes $s\in\R$ existiert ein $C$, so dass
+\begin{equation}
+    \Re \spro{Au}{u} + \epsilon \|u\|^2_{(\mu)}  \ge \|u\|_{(s)}^2
+\end{equation}
+für alle $u\in\rmC_0^\infty(\Omega)$.
+\item
+Für alle $(x,\xi)\in\Omega\times\R^n$ mit $a_m(x,\xi)=0$ gilt
+\begin{equation}
+   \Re a_{m-1} + \widetilde{\mathrm{Tr}} H_{a_m} \ge 0,
+\end{equation}
+wobei $H_{a_m}$ die Hessematrix zu $a_m$ bezeichne.
+\end{enumerate}
+\end{thm}
+
+
+
+\section{Beweis der Ungleichung von Melin}
+
+
 Es sei $P$ ein Pseudo-Differentialoperator auf dem Gebiet $\Omega$ mit Symbol $\sigma$. Wir untersuchen, wie gut die zur Taylorentwicklung des Symbols zugehörigen Differentialoperatoren
 \begin{align}
  P_j^\delta v (x):=\sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\sigma(x,\xi^j/\delta)}{\alpha!}\left( \mathrm D - \xi^j/\delta\right)^\alpha v(x)
@@ -8,7 +57,8 @@ Es sei $P$ ein Pseudo-Differentialoperator auf dem Gebiet $\Omega$ mit Symbol $\
 für $v\in\mathrm {C}^\infty(\R^n)$ und $\delta\in(0,1]$ den Operator $P$ approximiert.
 
 \begin{lem}
-Ist der Pseudo-Differentialoperator $ P$ von erster Ordnung und verschwindet dessen Symbol außerhalb einer kompakten Menge $K$, also $\sigma(x,\xi)=0$ für $x\in\R^n\setminus K$, dann gilt die Ungleichung
+Sei $P$ Pseudodifferentialoperator mit Symbol $\sigma\in S^1_{\rm comp}(\R^n\times\R^n)$. Dann gilt
+%Ist der Pseudo-Differentialoperator $ P$ von erster Ordnung und verschwindet dessen Symbol außerhalb einer kompakten Menge $K$, also $\sigma(x,\xi)=0$ für $x\in\R^n\setminus K$, dann gilt die Ungleichung
 \begin{align}\label{hilfsungl1}
 \abs {
 \spro {P u}  u - \sum_{j\in\Z^n}\spro{ P_j^\delta\psi_j(\delta\mathrm D )u} { \psi(\delta\mathrm D )u }
