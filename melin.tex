@@ -132,7 +132,7 @@ Mit $|H_\delta(\xi,\eta)|\le C_N\delta\braket{\xi-\eta}^{-N} +\phi_{\delta,N}(\x
 
 \end{proof}
 
-Das Lemma Zeigt, dass der Fehler durch, der durch die Partitionierung von $u$ im Fourierraum und die Taylorentwicklung des Symbols entsteht, durch in $u$ und $\delta$ beschränkten Funktionen und den Konstanten und Normen in \eqref{hilfsungl1} beschrieben werden kann. Solche Funktionen werden in Zukunft mit dem Symbol $\mathcal O(1)$ bezeichnet. Wir schreiben also
+Das Lemma zeigt, dass der Fehler, der durch die Partitionierung von $u$ im Fourierraum und die Taylorentwicklung des Symbols entsteht, durch in $u$ und $\delta$ beschränkten Funktionen und den Konstanten und Normen in \eqref{hilfsungl1} beschrieben werden kann. Solche Funktionen werden in Zukunft mit dem Symbol $\mathcal O(1)$ bezeichnet. Wir schreiben also
 \begin{align*}
 \spro {Au}{u} = \sum_{j\in\Z^n} \spro {A_j^\delta \psi_j(\delta\D)u}{\psi_j(\delta\D)u} + C\delta \mathcal{O}(1) \Norm{u}_{(0)} + C_\delta \mathcal O(1)\Norm{u}_{(-1/4)}\,.
 \end{align*}
@@ -217,7 +217,7 @@ Darüber hinaus lassen sich die Funktionen $\varphi_k v^j_\delta$ durch Translat
 \begin{align*}
 \varphi_k(y) v^j_\delta (y) = v^{j,k}_\delta (y-x^{j,k}|\xi^j|^{1/2})\quad\text{für }y\in\R^n\,.
 \end{align*}
-Nun soll das über $k$ summierte Verbleibende Integral aus \eqref{restnachkoord} abgeschätzt werden. Dafür betrachten wir, den folgenden Ausdruck
+Nun soll das über $k$ summierte verbleibende Integral aus \eqref{termnachkoordtransf} abgeschätzt werden. Dafür betrachten wir, den folgenden Ausdruck
 \begin{align*}
 \sum_{k\in\Z^n} \int|y^\beta\D^\alpha v^{j,k}_\delta(y)|^2\d y &\le C^{\abs\beta} \sum_{k\in\Z^n} \int |\D^\alpha(\varphi_k v^j_\delta)(y)|^2\d y \\
 &\le C^{\abs\beta} \sum_{k\in\Z^n}\sum_{\gamma\le\alpha}\binom{\alpha}{\gamma}\int |(\D^\gamma v^j_\delta)(\D^{\alpha-\gamma})\varphi_k|^2\d y\\
@@ -229,7 +229,7 @@ Wird nun über alle $j$ summiert, so dass $\xi^j>\delta^{-12}$ ist, erhält man 
 \begin{align*}
 \sum_{j\colon \xi^j>\delta^{-12}} \delta^{-5} |\xi^j|^{-1/2}\int |\psi_j(\delta\D)u(y)|^2\d y = \mathcal O(1)\delta\norm u _{(0)}^2
 \end{align*}
-Die restlichen endlich vielen Summanden ergeben einen Ausdruch $\mathcal O(1)C_\delta \norm u _{(-1/4)}^2$. Somit folgt
+Die restlichen endlich vielen Summanden ergeben einen Ausdruck $\mathcal O(1)C_\delta \norm u _{(-1/4)}^2$. Somit folgt
 \begin{align*}
 \sum_{j\in\Z^n}\delta^{-5} |\xi^j|^{-1/2}\int |\psi_j(\delta\D)u(y)|^2\d y = \mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(-1/4)}^2
 \end{align*}
