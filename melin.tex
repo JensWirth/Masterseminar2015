@@ -1,3 +1,192 @@
 % !TEX root = main.tex
 \chapter{Die Ungleichung von Melin}
 \cite{Melin:1971}
+Es sei $P$ ein Pseudo-Differentialoperator auf dem Gebiet $\Omega$ mit Symbol $\sigma$. Wir untersuchen, wie gut die zur Taylorentwicklung des Symbols zugehörigen Differentialoperatoren
+\begin{align}
+ P_j^\delta v (x):=\sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\sigma(x,\xi^j/\delta)}{\alpha!}\left( \mathrm D - \xi^j/\delta\right)^\alpha v(x)
+\end{align}
+für $v\in\mathrm {C}^\infty(\R^n)$ und $\delta\in(0,1]$ den Operator $P$ approximiert.
+
+\begin{lem}
+Ist der Pseudo-Differentialoperator $ P$ von erster Ordnung und verschwindet dessen Symbol außerhalb einer kompakten Menge $K$, also $\sigma(x,\xi)=0$ für $x\in\R^n\setminus K$, dann gilt die Ungleichung
+\begin{align}\label{hilfsungl1}
+\abs {
+\spro {P u}  u - \sum_{j\in\Z^n}\spro{ P_j^\delta\psi_j(\delta\mathrm D )u} { \psi(\delta\mathrm D )u }
+}
+\le C\delta \Norm u ^2_{(0)} + C_\delta \Norm u ^2_{(-1/4)}\ ,\quad u\in\mathrm {C}^\infty_0(\R^n)\ .
+\end{align}
+\end{lem}
+
+\begin{proof}
+Es sei $u\in\mathrm C^\infty_0(\R^n)$. Da das Symbol $\sigma$ für $x\in\R^n\setminus$ verschwindet, existiert die Fouriertransformation bezüglich $x$, sie wird mit $\widehat\sigma (\eta,\xi)$ bezeichnet. Da außerdem $ P u\in\mathrm C^\infty_0(\R^n)$, gilt
+\begin{align*}
+\widehat{ P u}(\eta) &= (2\pi)^{-n}\int e^{-i\eta x} \int e^{i\xi x}\sigma(x,\xi) \widehat u (\xi) \d\xi\d x = (2\pi)^{-n}\int \widehat\sigma(\eta - \xi,\xi)\widehat u(\xi)\d\xi \\
+&= (2\pi)^ {-n}\int \sum_{j\in\Z^n} \frac 1 2\left[(\psi_j(\delta \xi) - \psi_j(\delta \eta))^2 + 2 \psi_j(\delta\xi)\psi(\delta \eta)\right] \widehat\sigma(\eta - \xi,\xi)\widehat u(\xi)\d\xi\,.
+\end{align*}
+Des weiteren gilt $\widehat{\partial^\alpha_\xi\sigma(\cdot,\xi)} = \partial_\xi^\alpha\widehat \sigma(\cdot,\xi)$ und somit
+\begin{align*}
+\mathcal{F}\left[\partial^\alpha\sigma(\cdot,\xi^j/\delta)\left( \mathrm D - \xi^j/\delta\right)^\alpha\psi_j(\delta\mathrm D)u\right](\eta) = \int \partial ^\alpha\widehat \sigma(\eta-\xi,\xi^j/\delta)\left( \xi - \xi^j/\delta\right)^\alpha\psi_j(\delta\xi)\widehat u(\xi)\d\xi\,.
+\end{align*}
+Unter Ausnutzung des Satzes von Plancherel folgt nun
+\begin{align}
+\spro {Pu} u  - \sum_{j\in\Z^n}\spro{ P_j^\delta\psi_j(\delta\mathrm D )u} { \psi(\delta\mathrm D )u } = (2\pi)^{-n} \int\int H_\delta (\xi,\eta) \widehat u(\xi)\widehat u(\eta)\d\xi\d\eta\,,
+\end{align}
+dabei ist die Funktion $H_\delta$ durch
+\begin{align}\label{eq:hdeltadef}
+H_\delta(\xi,\eta) := &\frac 1 2 \sum_{j\in \N}(\psi_j(\delta \xi) - \psi_j(\delta \eta))^2\widehat b(\eta-\xi,\xi)\\
+&+ \sum_{j\in\Z^n} \psi_j(\delta\xi)\psi_j(\delta \eta)\left[
+\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\widehat\sigma(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha
+\right]
+\end{align}
+definiert. Nun soll die Funktion $H_\delta$ nach oben abgeschätzt werden. Da $\sigma\in S^1_{\text{unif}}(\R^n\times\R^n)$ folgt
+\begin{align*}
+\abs{\braket{\eta}^{2N}\partial^\alpha\widehat\sigma(\eta,\xi)}\le (2\pi)^{-n/2}\int_K |\braket{\mathrm D}^{2N}\partial^\alpha\sigma(x,\xi)|\d x \le C_{\alpha,2N} \braket{\xi}^{1 - \abs \alpha}
+\end{align*}
+und somit existiert für jedes $N\in\N_0$ und jeden Multiindex $\alpha$ eine Konstante $C_{\alpha,N}> 0 $, so dass
+\begin{align}\label{eq:fourierordnungsabsch}
+\abs {\partial ^\alpha \widehat \sigma(\eta,\xi)} \le C_{\alpha,N}\braket{\eta}^{-N}\braket{\xi}^{1-\abs\alpha}
+\end{align}
+Mit Hilfe des Taylorrestglieds
+\begin{align*}
+R_N[\widehat \sigma(\eta,\cdot)](\xi,a):= N \int_0^1\sum_{\abs \alpha = N} \frac{(1-t)^N(\xi-a)^\alpha}{\alpha!}\partial^\alpha\widehat \sigma(\eta,\xi+t(a-\xi))\d t
+\end{align*}
+und einer Taylorentwicklung im zweiten Argument von $\widehat \sigma$ um den Entwicklungspunkt $\xi^j/\delta$ folgt mit der Abschätzung \eqref{eq:fourierordnungsabsch}
+\begin{align*}
+\Abs{\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\widehat\sigma(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha} = \Abs{R_3[\widehat \sigma(\eta-\xi,\cdot)](\xi,\xi^j/\delta)}\\ \le
+C_N\braket{\eta-\xi}^{-N}\sup_{\zeta\in[\xi,\xi^j/\delta]}\frac{|\xi-\xi^j/\delta|^3}{\braket{\zeta}^2}\,.
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Aus den Eigenschaften der Partition der Eins $(\psi_j)_{j\in\Z^n}$ folgt nun $|\xi\delta-\eta\delta|\le C\braket{\eta\delta}^{1/2}$ für $\psi_j(\delta\eta)\psi_j(\delta\xi)\neq 0$. Für alle $\delta\xi,\delta\eta\in\supp\psi_j$ mit $j\neq 0$ folgt nun
+\begin{align*}
+|\xi -\eta|\le \frac{1}{\delta}C\braket{\delta\eta}^{1/2}\le \widetilde C \delta^{-1/2}|\eta|^{1/2}
+\end{align*}
+sofern $\widetilde C$ groß genug gewählt wird. Weiter gilt $\widetilde C\delta^{-1/2}|\eta|^{-1/2}\le|\eta|/2$ für $|\eta|\ge 4\widetilde C^2\delta^{-1}$
+\begin{align*}
+\Abs{\sum_{j\in\Z^n} \psi_j(\delta\xi)\psi_j(\delta \eta)\left[
+\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\widehat\sigma(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha
+\right]}\le \\
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Es gilt
+\begin{align*}
+\int\int\braket{\xi-\eta}^{-(n+1)}|\widehat u(\xi)\widehat u(\eta)|\d\eta\d\xi &= \int\int \braket{\eta}^{-(n+1)}|\widehat{u}(\xi||\widehat u(\eta-\xi)|\d\eta\d\xi\\
+&\le \Norm{\abs{\widehat u} * \abs{\widehat u}}_\infty \norm{\braket{\cdot}^{-(n+1)}}_1\le C_{n+1} \Norm{\widehat u}_2^2
+\end{align*}
+Mit $|H_\delta(\xi,\eta)|\le C_N\delta\braket{\xi-\eta}^{-N} +\phi_{\delta,N}(\xi)\phi_{\delta,N}(\eta)$ und $N$ groß genug folgt nun
+\begin{align*}
+\int\int|H_\delta(\xi,\eta)\widehat u(\xi)\widehat u(\eta)|\d\xi\d\eta &\le \delta C_N \Norm{u}^2_{(0)} + \Norm{\phi_{\delta,N} \widehat u}_1^2 \le \delta C_N \Norm{u}^2_{(0)} + \|\phi_{\delta,N}\|_{(1/4)}^2 \Norm{\widehat u}_{(-1/4)}^2 \\
+&= \delta C_N \Norm{u}^2_{(0)} +  C_{\delta,N} \Norm{ u}_{(-1/4)}^2\,.
+\end{align*}
+
+\end{proof}
+
+Das Lemma Zeigt, dass der Fehler durch, der durch die Partitionierung von $u$ im Fourierraum und die Taylorentwicklung des Symbols entsteht, durch in $u$ und $\delta$ beschränkten Funktionen und den Konstanten und Normen in \eqref{hilfsungl1} beschrieben werden kann. Solche Funktionen werden in Zukunft mit dem Symbol $\mathcal O(1)$ bezeichnet. Wir schreiben also
+\begin{align*}
+\spro {Au}{u} = \sum_{j\in\Z^n} \spro {A_j^\delta \psi_j(\delta\D)u}{\psi_j(\delta\D)u} + C\delta \mathcal{O}(1) \Norm{u}_{(0)} + C_\delta \mathcal O(1)\Norm{u}_{(-1/4)}\,.
+\end{align*}
+
+Nun soll eine weitere Lokalisation der Funktion $u$ vorgenommen werden. Dafür sei $\varphi_{j,k}(x):=\varphi_k(x|\xi^j|^{1/2})$. Für alle $v\in\C^\infty(\R^n)$ folgt nach Ausmultiplizieren und der Regel von Leibniz
+\begin{align*}
+\sum_{k\in\Z^n}\spro {P^\delta_j\varphi_{j,k}v} {\varphi_{j,k}v} = \sum_{k\in\Z^n}\sum_{|\alpha|\le 2}\sum_{\gamma\le\beta\le\alpha} \left({\frac{\partial^\alpha\sigma(\cdot,\xi^j/\delta)(-\xi^j/\delta)^{(\alpha-\beta)}}{(\alpha-\beta)!(\beta-\gamma)!\gamma!}(\D^\gamma\varphi_{j,k})(\D^{\beta-\gamma}v)}\ , {\varphi_{j,k}v}\right)
+\end{align*}
+Da außerdem $0=\D^\gamma\sum_k\phi_{j,k}^2 = 2 \sum_k\phi_{j,k}\D^\gamma\phi_{j,k}$ für $|\gamma|=1$ fallen in der oberen Summe alle Terme mit $|\gamma|=1$ weg und es folgt
+\begin{align}\label{eq:vorueberlegung1}
+\sum_{k\in\Z^n}\spro {P^\delta_j\varphi_{j,k}v} {\varphi_{j,k}v} = &\sum_{k\in\Z^n}\spro {\varphi_{j,k}P^\delta_jv} {\varphi_{j,k}v} \\&+ \sum_{k\in\Z^n}\sum_{|\alpha|=2}\int \frac{\partial^\alpha\sigma(x,\xi^j/\delta)}{\alpha!} |\xi^j|(\varphi_k\D^\alpha\varphi_k)(x|\xi^j|^{1/2})|v(x)|^2\d x\nonumber
+\end{align}
+Da $\sigma\in S^1_\text{unif}(\R^n\times\R^n)$ und somit $|\partial^\alpha\sigma(x,\xi^j/\delta)|\le\braket{\xi^j/\delta}^{-1}\le \delta|\xi^j|$ für $|\alpha|=2$ und außerdem
+\begin{align*}
+\sum_{k\in\Z^n} |\varphi_k(x)\D^\alpha\varphi_k(x)|\le \left(\sum_{k\in\Z^n}|\phi_k(x)|^2\right)^{1/2}\left(\sum_{k\in\Z^n}|\D^\alpha\phi_k(x)|^2\right)^{1/2}\le C_\alpha^{1/2}
+\end{align*}
+kann die zweite Summe aus \eqref{eq:vorueberlegung1} durch $\|v\|^2$ abgeschätzt werden. Wird nun für $v$ $\psi_j(\delta\D)$ eingesetzt und über $j$ summiert, so wird ersichtlich, dass die zweite Summe wieder von der Form $C\delta \mathcal{O}(1) \Norm{u}_{(0)} + C_\delta \mathcal O(1)\Norm{u}_{(-1/4)}$ ist, da
+\begin{align*}
+\left|\sum_{j,k\in\Z^n}\sum_{|\alpha|=2}\int \frac{\partial^\alpha\sigma(x,\xi^j/\delta)}{\alpha!} |\xi^j|(\varphi_k\D^\alpha\varphi_k)(x|\xi^j|^{1/2})|v(x)|^2\d x\right|\\ \le \delta C \sum_{j\in\Z^n} \norm {\psi_j(\delta\D)u}^2 = \delta C \norm {\sum_{j\in\Z^n} \psi_j(\delta \cdot)\widehat u}^2 = C \delta \Norm u ^2\,.
+\end{align*}
+Mit der Bezeichnung $u_\delta^{j,k} = \varphi_{j,k} \psi_j(\delta\D)u$ bedeutet dies
+\begin{align*}
+\spro {Pu} u = \sum_{j,k\in\Z^n} \spro {P^\delta_j u_\delta^{j,k}}{u_\delta^{j,k}} + C\delta\mathcal O(1)\norm u _{(0)} + C_\delta \Norm u _{(-1/4)}
+\end{align*}
+Um den verbleibenden Term abzuschätzen wird nun eine Koordinatentransformation durchgeführt. Hierfür sei $x^k = \xi^k |\xi^k|^{-1/2}\in\supp \phi_k$, $x^{j,k}=x^k |\xi^j|^{-1/2}$ und weiterhin sei $v^{j,k}_\delta$ durch die Relation
+\begin{align*}
+u^{j,k}_\delta(x) = v^{j,k}_\delta ((x-x^{j,k})|\xi^j|^{1/2}) e^{ix\xi^j/\delta}
+\end{align*}
+definiert. Es folgt
+\begin{align*}
+|v^{j,k}_\delta(y)| = \abs{e^{-i(y+x^k)x^j}u^{j,k}_\delta((y+x^k)|\xi^j|^{(-1/2)})} = |\varphi_k(x^k+y)\psi_j(\delta\D)u((y+x^k)|\xi^j|^{(-1/2)})|
+\end{align*}
+Da aus den Eigenschaften der Zerlegung der Eins $\supp \phi_k \subset B(x^k,C)$ folgt, gilt auch
+\begin{align*}
+\supp v^{j,k}_\delta \subset B(0,C)
+\end{align*}
+Außerdem impliziert die Wahl der Transformation für $y=(x-x^{j,k})|\xi^j|^{1/2}$
+\begin{align*}
+(\D - \xi^j/\delta)^\alpha u^{j,k}_\delta(x)=  e^{i(y+x^k)x^j}|\xi^j|^{\abs\alpha/2}\D^\alpha v^{j,k}_\delta(y)
+\end{align*}
+Somit folgt mit der Koordinatentransformation und einer Taylorentwicklung der Ordnung $2-\abs\alpha$ von $\sigma^\alpha$ in $x$ um den Entwicklungspunkt $x^{j,k}$
+\begin{align}
+\spro {P^\delta_j u_\delta^{j,k}}{u_\delta^{j,k}}
+=& \sum_{\abs\alpha\le 2} |\xi^j|^{(\abs\alpha-n)/2}\int \frac{\sigma^\alpha(x^{j,k}+y|\xi^j|^{-1/2},\xi^j/\delta)}{\alpha!}\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)\d y\nonumber\\ \label{termnachkoordtransf}
+=& \sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{\sigma^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
+&+\sum_{\abs\alpha\le 2}|\xi^j|^{(\abs\alpha-n)/2}\int R_{d}[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)\d y\nonumber
+\end{align}
+Das Taylorrestglied $R_d$, wobei $d=2-\abs\alpha+1$, kann durch einen Term $\mathcal O(1)\delta^{-1}|\xi^j|^{-(\abs\alpha+1)/2}$ außerhalb des Integrals ersetzt werden, da
+\begin{align*}
+&\Abs{R_3[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})} \\
+&\le d\sum_{\abs\beta=3}\frac{|y^\beta||\xi^j|^{-3/2}}{\beta!}\Abs{\sigma^\alpha_\beta(R_3[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k}),\xi^j/\delta) }\\
+&\le d\ n^d\frac{\abs y ^d}{\abs{\xi^j}^{d/2}}\braket{\xi^j/\delta}^{1-\abs\alpha} \le d\ n^d\frac{\widetilde C\abs y ^d}{\abs{\xi^j}^{d/2}}|\xi^j/\delta|^{1-\abs\alpha} \le d\ n^d\widetilde C C ^d\delta^{-1}|\xi^j/|^{-(1+\abs\alpha)/2}
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+für alle $y\in\supp\varphi_k$. Dabei kannd $\widetilde C = (\min_j|\xi^j|)^{-1} + 1$ gewählt werden und ist somit genau wie die Konstante $C$ unabhängig von $\alpha$, $u$, $j$, $k$ oder $\delta$. Ferner ist der Träger aller $v_\delta^{j,k}$ in $B(0,C)$ enthalten, also ...
+%\begin{align*}
+%\int  \abs{\sum_{\abs\alpha\le 2}\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)}\d y \le \norm{v^{j,k}_\delta}\ \norm{\sum_{\abs\alpha\le 2}D^\alpha v^{j,k}_\delta}\le c \norm{\sum_{\abs\alpha\le 2}D^\alpha v^{j,k}_\delta}^2
+%\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Also hat die zweite Summe in \eqref{termnachkoordtransf} die Form
+\begin{align*}\label{restnachkoord}
+\mathcal O(1) \delta^{-1}|\xi^j|^{-1/2}\sum_{\abs\alpha\le 2}\int  |\D^\alpha v^{j,k}_\delta(y)|^2\d y
+\end{align*}
+Um das verbleibende Integral auszurechnen werden die neuen Funktionen $v^j_\delta$ durch die Relation
+\begin{align*}
+\psi^j(\delta\D)u(x) = e^{ix\xi^j/\delta}v^j_\delta(x|\xi^j|^{1/2})
+\end{align*}
+eingeführt. Aus der Relation folgt
+\begin{align*}
+\widehat v^j_\delta ((\xi-\xi^j/\delta)|\xi^j|^{-1/2}) = \psi_j(\delta\xi)\widehat u(\xi)
+\end{align*}
+und somit
+\begin{align*}
+\xi \in\supp\widehat v^j_\delta \quad\Leftrightarrow\quad \xi|\xi^j|^{1/2} + \xi^j/\delta\in\supp \psi_j(\delta(\cdot))\widehat u
+\end{align*}
+Außerdem gilt $|\delta\xi-\xi^j|\le C|\xi^j|^{1/2}$ für $\xi\in\supp \mathcal F[\psi_j(\delta\D)u]\subset\supp \psi_j(\delta (\cdot))$ und somit folgt
+\begin{align*}
+|\xi|\le C/\delta \quad \text{für } \xi \in\supp\widehat v^j_\delta\,.
+\end{align*}
+Darüber hinaus lassen sich die Funktionen $\varphi_k v^j_\delta$ durch Translation in die Funktionen $v^{j,k}_\delta$ überführen. In expliziter Form lautet diese Beziehung
+\begin{align*}
+\varphi_k(y) v^j_\delta (y) = v^{j,k}_\delta (y-x^{j,k}|\xi^j|^{1/2})\quad\text{für }y\in\R^n\,.
+\end{align*}
+Nun soll das über $k$ summierte Verbleibende Integral aus \eqref{restnachkoord} abgeschätzt werden. Dafür betrachten wir, den folgenden Ausdruck
+\begin{align*}
+\sum_{k\in\Z^n} \int|y^\beta\D^\alpha v^{j,k}_\delta(y)|^2\d y &\le C^{\abs\beta} \sum_{k\in\Z^n} \int |\D^\alpha(\varphi_k v^j_\delta)(y)|^2\d y \\
+&\le C^{\abs\beta} \sum_{k\in\Z^n}\sum_{\gamma\le\alpha}\binom{\alpha}{\gamma}\int |(\D^\gamma v^j_\delta)(\D^{\alpha-\gamma})\varphi_k|^2\d y\\
+&\le C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}\int |\D^\gamma v^j_\delta|^2\d y\\
+&\le C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}C^{\abs\gamma}\delta^{-\abs\gamma}\int |\widehat v^j_\delta|^2\d y\\
+&= C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}C^{\abs\gamma}\delta^{-\abs\gamma}|\xi^j|^{n/2}\int |\psi_j(\delta\D)u(y)|^2\d y
+\end{align*}
+Wird nun über alle $j$ summiert, so dass $\xi^j>\delta^{-12}$ ist, erhält man den Ausdruck
+\begin{align*}
+\sum_{j\colon \xi^j>\delta^{-12}} \delta^{-5} |\xi^j|^{-1/2}\int |\psi_j(\delta\D)u(y)|^2\d y = \mathcal O(1)\delta\norm u _{(0)}^2
+\end{align*}
+Die restlichen endlich vielen Summanden ergeben einen Ausdruch $\mathcal O(1)C_\delta \norm u _{(-1/4)}^2$. Somit folgt
+\begin{align*}
+\sum_{j\in\Z^n}\delta^{-5} |\xi^j|^{-1/2}\int |\psi_j(\delta\D)u(y)|^2\d y = \mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(-1/4)}^2
+\end{align*}
+Zusammengefasst ergibt dies
+\begin{align*}
+\spro {Pu} u
+=& \sum_{j,k\in\Z^n}\sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{\sigma^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
+&+\mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(-1/4)}^2\nonumber
+\end{align*}
+In Zukunft soll $\delta$ so gewählt sein, dass der $\mathcal O(1)\delta\norm u ^2_{(0)}$ Term größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist.
