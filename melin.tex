@@ -98,6 +98,40 @@ existiert, ist das Hauptsymbol von $A_\rho$ durch $\braket{\xi}^{-2\rho}a_m(x,\x
 
 \section{Beweis der Ungleichung von Melin}
 
+\subsection{Beweis der Hinrichtung}
+
+Es sei $(x_0,\xi_0)\in\Omega\times\R^n$ mit $a_1(x_0,\xi_0)=0$ und $K\Subset \Omega$ so gewählt, dass  $(x_0,\xi_0)\in \overset{\circ} {K}\times\R^n$. Wir können ohne Beschränkung der Allgemeinheit annehmen, dass $x_0=0$. 
+Nun sei 
+\begin{align*}
+ v\in\mathrm C^\infty_0(\R^n) \quad \text{und} \quad v_\lambda(x):=\lambda^{n/2}v(\lambda x)\, e^{i\lambda^2x\xi_0}\, ,\quad\lambda>0
+\end{align*}
+Es gilt $\|v\|=\|v_\lambda\|$ und $\supp v_\lambda \subset K$ für genügend große $\lambda$. Außerdem folgt mit entsprechenden Koordinatentransformationen
+\begin{align*}
+\spro {A v_\lambda} {v_\lambda} = {2\pi}^{-n/2}\int\int e^{ix\xi} \sigma(x/\lambda,\lambda^2\xi_0 + \lambda\xi)\widehat v(\xi)\cc{v(\xi)}\d\xi\d x\,.
+\end{align*}
+Für homogenen Entwicklungsterm $a_k\in\S^k_\mathrm{lok}(\Omega\times\R^n)$ gilt
+\begin{align*}
+&{a_k}^\alpha_\beta(\widetilde x, \lambda^2 \widetilde \xi)(x/\lambda)^\beta(\lambda\xi)^\alpha = \mathcal O(1)\braket{\widetilde\xi}^{k-\abs\alpha}\braket{\xi}^{\abs\alpha}\lambda^{2k-\abs{\beta+\alpha}} = \mathcal O(1)\braket{\xi}^{k}\lambda^{2k-\abs{\beta+\alpha}}
+\end{align*}
+mit $(\widetilde x,\widetilde\xi)\in[0,x/\lambda]\times[\xi_0,\xi_0 + \xi/\lambda]$ beliebig. Wobei $\mathcal O(1)$ eine in $\xi$ und $\lambda\in[1,\infty)$ beschränkte Funktion darstellt. Da der Ausdruck nach Annahme $a_1\ge 0$ müssen bei diesem Minimum die Ableitungen ersten Grades verschwinden müssen und die Terme niedriger Ordnung wie oben zusammengefasst werden können, kann die Taylor Entwicklung von $\sigma$ in $\xi$ und $x$ um den Entwicklungspunkt $(0,\lambda^2\xi_0)$ also durch
+\begin{align*}
+\sigma(x/\lambda, \lambda^2\xi_0+\lambda\xi) = a_0(0,\xi_0) + \sum_{\abs{\alpha+\beta}=2} {a_1}^\alpha_\beta(0,\xi_0)\frac{x^\beta\xi^\alpha}{\alpha!\beta!} + \mathcal O(1) \lambda^{-1}\braket{\xi}^4
+\end{align*}
+beschrieben werden. Wird dies nun in die Ungleichung von Melin mit $u=v_\lambda$ und $s=-1$ eingesetzt, so folgt
+\begin{align*}
+\Re\int \cc{v(x)}\sum_{\abs{\alpha+\beta}=2}\frac{{a_1}^\alpha_\beta(0,\xi_0)}{\alpha!\beta!}x^\beta\D^\alpha v(x)\d x + (\epsilon +\Re a_0(0,\xi_0))\|v\|_{(0)}^2 + \mathcal O(1)\lambda^{-1}\ge C\|v_\lambda\|_{(-1)}^2
+\end{align*}
+Wegen $\widehat{v}_\lambda(\xi)=\widehat{v}(\xi/\lambda-\xi_0\lambda)$ und \eqref{oentwrueck} folgt außerdem
+\begin{align*}
+\|v_\lambda\|_{(-1)} = \int \braket{\lambda^2\xi_0+\lambda \xi}^{-1}|\widehat{v}(\xi)|\d\xi = \mathcal{O}(1)\lambda^{-1} 
+\end{align*}
+Mit $\lambda\to\infty$ und anschließend $\epsilon \to 0$, bekommen wir somit
+\begin{align*}
+\Re\int \cc{v(x)}\sum_{\abs{\alpha+\beta}=2}\frac{{a_1}^\alpha_\beta(0,\xi_0)}{\alpha!\beta!}x^\beta\D^\alpha v(x)\d x + \Re a_0(0,\xi_0))\int|v(x)|^2\d x\ge 0
+\end{align*}
+Die symmetrische Matrix $H$, die die obige quadratische Form erzeugt, hat die Koeffizienten $1/2\,\Re {a_1}^\alpha_\beta(0,\xi_0)$. Mit $H=1/2\, H_{a_1}(0,\xi_0)$ und Satz \ref{satz:thm2.4} folgen nun die Eigenschaften \eqref{bedfuerungleichung}.
+
+\subsection{Beweis der Rückrichtung}
 
 Es sei $P$ ein Pseudo-Differentialoperator auf dem Gebiet $\Omega$ mit Symbol $\sigma$. Wir untersuchen, wie gut die zur Taylorentwicklung des Symbols zugehörigen Differentialoperatoren
 \begin{align}
