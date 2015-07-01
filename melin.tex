@@ -301,13 +301,13 @@ Darüber hinaus lassen sich die Funktionen $\varphi_k v^j_\delta$ durch Translat
 \varphi_k(y) v^j_\delta (y) = v^{j,k}_\delta (y-x^{j,k}|\xi^j|^{1/2})\quad\text{für }y\in\R^n\,.
 \end{align*}
 Nun soll das über $k$ summierte verbleibende Integral aus \eqref{termnachkoordtransf} abgeschätzt werden. Dafür betrachten wir, den folgenden Ausdruck
-\begin{align*}
-\sum_{k\in\Z^n} \int|y^\beta\D^\alpha v^{j,k}_\delta(y)|^2\d y &\le C^{\abs\beta} \sum_{k\in\Z^n} \int |\D^\alpha(\varphi_k v^j_\delta)(y)|^2\d y \\
-&\le C^{\abs\beta} \sum_{k\in\Z^n}\sum_{\gamma\le\alpha}\binom{\alpha}{\gamma}\int |(\D^\gamma v^j_\delta)(\D^{\alpha-\gamma})\varphi_k|^2\d y\\
-&\le C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}\int |\D^\gamma v^j_\delta|^2\d y\\
-&\le C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}C^{\abs\gamma}\delta^{-\abs\gamma}\int |\widehat v^j_\delta|^2\d y\\
-&= C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}C^{\abs\gamma}\delta^{-\abs\gamma}|\xi^j|^{n/2}\int |\psi_j(\delta\D)u(y)|^2\d y
-\end{align*}
+\begin{align}
+\sum_{k\in\Z^n} \int|y^\beta\D^\alpha v^{j,k}_\delta(y)|^2\d y &\le C^{\abs\beta} \sum_{k\in\Z^n} \int |\D^\alpha(\varphi_k v^j_\delta)(y)|^2\d y \nonumber\\
+&\le C^{\abs\beta} \sum_{k\in\Z^n}\sum_{\gamma\le\alpha}\binom{\alpha}{\gamma}\int |(\D^\gamma v^j_\delta)(\D^{\alpha-\gamma})\varphi_k|^2\d y\nonumber\\
+&\le C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}\int |\D^\gamma v^j_\delta|^2\d y\nonumber\\
+&\le C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}C^{\abs\gamma}\delta^{-\abs\gamma}\int |\widehat v^j_\delta|^2\d y\nonumber\\
+&= c_\alpha \delta^{-\abs\alpha}|\xi^j|^{n/2}\int |\psi_j(\delta\D)u(y)|^2\d y\label{polynomnachoben}
+\end{align}
 Wird nun über alle $j$ summiert, so dass $\xi^j>\delta^{-12}$ ist, erhält man den Ausdruck
 \begin{align*}
 \sum_{j\colon \xi^j>\delta^{-12}} \delta^{-5} |\xi^j|^{-1/2}\int |\psi_j(\delta\D)u(y)|^2\d y = \mathcal O(1)\delta\norm u _{(0)}^2
@@ -322,12 +322,21 @@ Zusammengefasst ergibt dies
 =& \sum_{j,k\in\Z^n}\sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{\sigma^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
 &+\mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(-1/4)}^2\nonumber
 \end{align*}
-In Zukunft soll $\delta$ so gewählt sein, dass der $\mathcal O(1)\delta\norm u ^2_{(0)}$ Term größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist.
+In Zukunft soll $\delta$ so gewählt sein, dass der $\mathcal O(1)\delta\norm u ^2_{(0)}$ Term größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist. Finden wir jetzt eine nullkonverente Folge $\rho_j$, so dass
+
+\begin{align*}
+\sum_{|\alpha+\beta|\le 2} \frac{a^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}|\xi^j|^{|\alpha-\beta|/2}\int \cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y + \frac{2}{\epsilon}\norm{v^{j,k}_\delta}^2 + \rho_j \norm{v^{j,k}_\delta}_{(4)}^2 \ge 0
+\end{align*}
+dann folgt nach unter Verwendung von \eqref{polynomnachoben} und Addition über $k$,  dass 
+\begin{align*}
+\spro {Pu} u
+\ge& -C_4\sum_{j\in\Z^n} \rho_j \delta^{-4}\norm{\psi_j(\delta\D)u}^2 - \epsilon \norm u _{(0)}^2 + C_\delta \norm u _{(-1/4)}^2\nonumber
+\end{align*}
+Die Summe, kann nun je nach Wahl einer Teilfolge von $\rho_j$ beliebig klein gemacht werden. Um zu zeigen, dass es so eine Folge $\rho_j$ tatsächlich gibt brauchen wir das folgende Lemma.
 
 \begin{lem}
 Es sei $C>0$, $K_0\subset\R^n\setminus\{0\}$ kompakt und $\gamma\in\mathrm C(\R^n\times K_0)$ reellwertig, so dass $\gamma(x,\xi)$ konstant ist auf $B(0,R)^\mathrm{C}\times K_0$ für ein $R>0$. Ist die Aussage
-\begin{align}
-\label{melinendlemma1}
+\begin{align}\label{melinendlemma1}
 (a,\xi)\in\R^n\times K_0\,,\quad a_1(x,\xi)=0 \quad \Rightarrow \quad 1/2 \mathrm{Tr}^+H_{a_1}(a,\xi) + \gamma(x,\xi)
 \end{align}
 wahr, dann existiert eine Funktion $\rho$, so dass $\rho(\lambda)\to 0$ für $\lambda\to\infty$ und
@@ -340,7 +349,7 @@ für alle $(x,\xi)\in\R^n\times K_0$ und $v\in\mathrm C^\infty_0(B(0,C))$
 \begin{proof}
 Wir nehmen an es gibt keine Funktion $\rho$ mit $\lim_{\lambda\to\infty}\rho(\lambda)=0$, so dass \eqref{melinendlemma2} erfüllt ist. Also existiert eine Zahl $\rho>0$, eine und Folgen $(\lambda_j)$ mit $\lambda_j\to\infty$, $(x_j,\xi_j)\in\R^n\times K_0$ und Funktionen $v_j\in\mathrm C^\infty_0(B(0,C))$ mit $\Norm {v_j} =1$, so dass
 \begin{align}\label{melinendlemma3}
-\Re \sum_{|\alpha+\beta|\le 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v(y)}y^\beta\D^\alpha v(y)\d y + \gamma(x_j,\xi_j)\Norm{v}_{(0)}^2 + \rho\Norm v _{(4)}^2 \le 0
+\Re \sum_{|\alpha+\beta|\le 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v_j(y)}y^\beta\D^\alpha v_j(y)\d y + \gamma(x_j,\xi_j)\Norm{v_j}_{(0)}^2 + \rho\Norm {v_j} _{(4)}^2 \le 0
 \end{align}
 Für nichtnegative Funktionen $f\in\mathrm C^\infty_0 (\R^n)$,  existiert stets eine Konstante $C_f$, so dass
 \begin{align*}
@@ -351,13 +360,55 @@ Da $a_1$ von $\R^n\times K_0$ zu einer kompakt getragenen $\mathrm C^\infty$-Fun
 |{a_1}^\alpha(x_j,\xi_j)\lambda_j\int \cc{v_j(y)}\D^\alpha v_j(y)\d y| &\le \lambda_j|{a_1}^\alpha(x_j,\xi_j)|\Norm{v_j}_{(0)}\Norm{v_j}_{(1)} \le \frac{\lambda_j^2}{3n}a_1(x_l,\xi_j) + \frac 1 2\Norm{v_j}_{(1)}^2\\
 |{a_1}_\beta(x_j,\xi_j)\lambda_j\int \cc{v_j(y)}y^\beta v_j(y)\d y| &\le C \lambda_j|{a_1}^\alpha(x_j,\xi_j)|\Norm{v_j}_{(0)} \le \frac{\lambda_j^2}{3n}a_1(x_l,\xi_j) + \frac 1 2
 \end{align*}
-für $j$ groß genug. Da $\gamma$ eine beschränkte Funktion ist, müssen die quadratischen Terme in \eqref{melinendlemma3} die Ungleichung
+%%%%%%%%%%%%%
+für $j$ groß genug. Die quadratischen Terme in \eqref{melinendlemma3} erfüllen die Ungleichung
 \begin{align*}
 \Abs{\sum_{|\alpha+\beta|= 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v(y)}y^\beta\D^\alpha v(y)\d y}\le C'\Norm{v_j}_{(2)}^2
 \end{align*}
-erfüllen. Es folt die Ungleichung
+erfüllen. Werden die eben aufgelisteten Ungleichungen zusammen mit der Tarsache, dass der Träger von $a_1|_{\R^n\times K_0}$ kompakt ist, in \eqref{melinendlemma3} verwendet, so folgt
 \begin{align*}
-\Norm{v_j}_{(4)}^2\le \frac{C''}{\rho}\Norm{v_j}_{(2)}^2
+\Norm{v_j}_{(4)}^2\le \frac{C''}{\rho}\Norm{v_j}_{(2)}^2\le \frac{C''}{\rho}\Norm{v_j}_{(0)}\Norm{v_j}_{(4)}^2
 \end{align*}
-Mit einer Anwendung der Hölderungleichung erhalten wir $\Norm{v_j}_{(2)}^2\le \Norm{v_j}_{(0)}\Norm{v_j}_{(4)}^2$. Somit ist die Folge $v_j$ $H^4(\R^n)$-beschränkt. Aus dem Satz von Rellich wissen wir, dass eine Teilfolge existiert, die in $v_j$ $H^3(\R^n)$ konvergiert. Der Grenzwert dieser Teilfolge sei durch $v_0$ gegeben.
+Somit ist die Folge $v_j$ $H^4(\R^n)$-beschränkt. Aus dem Satz von Rellich wissen wir, dass eine Teilfolge existiert, die in $H^3(\R^n)$ konvergiert. Der Grenzwert dieser Teilfolge sei durch $v_0$ gegeben. Da alle anderen Terme beschränkt sind, müssen außerdem auch die $\lambda_j^2a_1(x_j,\xi_j)$ beschränkt sein. Somit konvergiert $a_1(x_j,\xi_j)$ gegen Null. 
+Da $a_1$ außerhalb von einer kompakten Menge größer als eine positive Konstante ist, können wir ohne Einschränkung annehmen, dass die Folge $(x_j,\xi_j)$ gegen ein Element $(x_0,\xi_0)$ konvergiert.
+Wird $\rho$ verkleinert, so kann in \eqref{melinendlemma3} $v_j$ durch $v_0$ ersetzt werden, ohne die Ungleichung für große $j$ zu verletzen.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%<
+Wir können nun folgern, dass eine Funktion $v\in\mathrm C^\infty_0(\R^n)$ und $\sigma>0$ existiert, so dass $\Norm v =1$ und
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%>
+\begin{align*}
+&\Re \sum_{|\alpha+\beta|\le 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v(y)}y^\beta\D^\alpha v(y)\d y\\
+& + \frac \sigma 2 \int \cc{v(y)}(y^2 + \D^2)v(y) \d y+ (\gamma(x_0,\xi_0)+ \frac\rho 2)\Norm {v} _{(0)}^2 < 0
+\end{align*}
+Wir führen nun die Bezeichnungen
+\begin{align*}
+F_j := \operatorname{grad}_{(x,\xi)}a_1(x_j,\xi_j)\,,\quad H_j:=H_{a_1}(x_j,\xi_j)\,,\quad H_j^\sigma:=H_j  + \sigma I
+\end{align*}
+ein. Da die Matrix $H_0^\sigma$ positiv definit ist, ist auch $H_j^\sigma$ positiv definit, für $j$ groß genug. Das Anwenden von Satz \ref{satz:thm2.4} ergibt
+\begin{align}\label{melinendlemma4}
+\lambda_j^2\left[ a_1(x_j,\xi_j) - \frac{1}{2}\cspro{F_j}{{H_j^\delta}^{-1}}{F_j} \right] + \gamma(x_0,\xi_0) + \frac \rho 2 + \frac 1 2 \mathrm{Tr}^+ H_j^\sigma\le 0
+\end{align}
+Nun soll gezeigt werden, das die Ungleichung \eqref{melinendlemma4} im Widerspruch zu \eqref{melinendlemma2} steht. Eine Tayor-Entwicklung von $a_1$ liefert
+\begin{align*}
+a_1((x_j,\xi_j) + h ) = a_1(x_j,\xi_j) + F_j\cdot h + \frac 1 2 \cspro{h}{H_j}{h} + \mathcal O(1)|h|^3
+\end{align*}
+für $|h|\le C$ und $h\in\R^{2n}$. Da das Betragsquadrat des Gradienten $F_j$ durch $a_1(x_j,\xi_j)$ beschränkt ist, ist $F_j=\mathcal O(1)\lambda_j^{-1}$. Außerdem ist gilt $\cspro{w}{H_j^\sigma}{w}>\cspro{w}{H_j}{w}$ für alle $w\in\R^{2n}\setminus\{0\}$. Es folgt
+\begin{align*}
+0&\le a_1((x_j,\xi_j)- {H_j^\sigma}^{-1}F_j) \\&= a_1(x_j,\xi_j) - \cspro{F_j}{{H_j^\sigma}^{-1}}{F_j} + \frac 1 2\cspro{F_j}{{H_j^\sigma}^{-1}H_j{H_j^\sigma}^{-1}}{F_j} + \mathcal O(1)\lambda_j^{-3}\\
+&\le a_1(x_j,\xi_j) - \frac 1 2\cspro{F_j}{{H_j^\sigma}^{-1}}{F_j}  + \mathcal O(1)\lambda_j^{-3}
+\end{align*}
+Wird nun wieder $j$ groß genug gewählt, so gilt
+\begin{align*}
+0\le \lambda_j^2\left[ a_1(x_j,\xi_j) - \frac{1}{2}\cspro{F_j}{{H_j^\delta}^{-1}}{F_j} \right]  +\frac\rho 4
+\end{align*}
+Also muss wegen \eqref{melinendlemma4}
+\begin{align*}
+\gamma(x_0,\xi_0) + \frac \rho 4 + \frac 1 2 \mathrm{Tr}^+ H_j^\sigma\ge 0
+\end{align*}
+Da $\mathrm{Tr}^+$ stetig ist, folgt im Limes $j\to\infty$ und $\sigma\to 0$
+\begin{align*}
+\gamma(x_0,\xi_0) + \frac \rho 4 + \frac 1 2 \mathrm{Tr}^+ H_{a_1}(x_0,\xi_0)\le 0
+\end{align*}
+was im Widerspruch zu \eqref{melinendlemma2} steht.
 \end{proof}
+
+Nun soll das Lemma mt $K_0=\delta^{-1}\mathbb{S}^{n-1}$, $\lambda_j=|\xi^j|^{1/2}$, $\rho_j(\lambda_j)$, $(x,\xi)=(x^{j,k},\xi^j/\delta|\xi^j|^{-1})$, $\gamma = \epsilon/2 + a_0$ und $v=v^{j,k}_\delta$ angewendet werden.
