@@ -5,34 +5,40 @@
 \section{Eine spezialle Klasse quadratischer Dirichletformen}
 Wir betrachten zuerst Dirichletformen der speziellen Struktur
 \begin{equation}
-   P[u] = \Re\int \overline{u(x)} \sum_{|\alpha+\beta|\le 2} \frac{ a_{\alpha,\beta}}{\alpha!\beta!} x^\beta \D^\alpha u(x) \d x
+   P[v] = \Re  \int \overline{v(x)}p(x,\D)v(x)\d x 
 \end{equation}
-für komplexe\footnote{Sind die $a_{\alpha,\beta}$ komplex, so existieren eindeutig bestimmte reelle Koeffizienten, welche dieselbe Form erzeugen.} Zahlen $a_{\alpha,\beta}\in\C$ und Funktionen $u\in\rmC_0^\infty(\R^n)$. Diese werden später als Taylorapproximanten auftreten und sollen zuerst untersucht werden.
+für ein Polynom zweiten Grades
+\begin{equation}
+    p(x,\xi) = \sum_{|\alpha+\beta|\le 2} \frac{ a_{\alpha,\beta}}{\alpha!\beta!} x^\beta \xi^\alpha,\qquad a_{\alpha,\beta}\in\C
+\end{equation}
+und Funktionen $v\in\mathscr S(\R^n)$. Diese speziellen Formen werden später als Taylorapproximanten auftreten und sollen zuerst untersucht werden. Verschiedene Wahlen der Koeffizienten $a_{\alpha,\beta}$ können dabei dieselbe Form erzeugen, wir wählen die Koeffizienten im folgenden reell.
 
 Zugeordnet zu $P$ betrachten wir die (reelle) quadratische Form
 \begin{equation}
   h(x,\xi) = \Re  \sum_{|\alpha+\beta|= 2} \frac{a_{\alpha,\beta}}{\alpha!\beta!} x^\beta\xi^\alpha
 \end{equation}
-auf $\R^n\times\R^n$ und die symmetrische Grammatrix $H$ mit $\cspro{X}{H}{X}=h(X)$, $X=(x,\xi)\in\R^n\times\R^n$. Es ist naheliegend die Dirichletform $P$ mit Hilfe der kanonischen symplektischen Struktur auf $\R^n\times\R^n$ zu untersuchen, da wir das folgende Lemma haben.
+auf $\R^n\times\R^n$ und die symmetrische Grammatrix $H$ mit $\cspro{X}{H}{X}=h(X)$, $X=(x,\xi)\in\R^n\times\R^n$.  Das folgende Lemma legt nahe, die Dirichletform $P$ mit Hilfe der kanonischen symplektischen Struktur\footnote{Wir versehen den $\R^{2n}$ mit der symplektischen Form
+$\varsigma(X,Y) = x\cdot \eta - \xi\cdot y$, wobei $X=(x,\xi)$ und $Y=(y,\eta)$. Eine Matrix aus $\R^{2n\times 2n}$ heißt symplektisch, falls sie die symplektische Form erhält. Invertierbare symplektische Matrizen bilden die symplektische Gruppe $\mathrm{SP}_{2n}(\R)$.} auf $\R^n\times\R^n$ zu untersuchen.
 \begin{lem}
-Es sei $p$ ein Polynom zweiten Grades auf $\R^n\times\R^n$ und $\chi\in\mathrm{SP}_{2n}(\R)$ ein Element der symplektischen Gruppe. Dann ist die Ungleichung
-\begin{align*}
-\Re \int \overline{v(x)}p(x,\D)v(x)\d x\ge 0
-\end{align*}
-genau dann für alle $v\in S(\R^n)$ erfüllt, wenn sie für das Polynom $p\circ \chi$ erfüllt ist.
+Es sei $p$ ein Polynom zweiten Grades auf $\R^n\times\R^n$ und $\chi\in\mathrm{SP}_{2n}(\R)$ ein Element der symplektischen Gruppe. Dann gilt
+\begin{align}
+\forall_{v\in\mathscr S(\R^n)} \quad:\quad \Re \int \overline{v(x)}p(x,\D)v(x)\d x\ge 0
+\end{align}
+genau dann für das Polynom $p$, wenn es für das Polynom $p\circ \chi$ gilt.
 \end{lem}
-Die symplektische Struktur ist durch $\cspro{X}{I}{X}$ mit
-\begin{align*}
-I=\left(\begin{matrix}
-0 & E_n\\
--E_n& 0 
-\end{matrix}\right)
-\end{align*}
-gegeben. Dabei ist $E_n$ die $n\times n$ Einheitsmatrix. Für eine reelle symmetrische Matrix $M$ hat  die Matrix $IM$ ein symmetrisch um den Ursprung angeordnetes, rein imaginäres Spektrum. Die positive Spur von $H$ sei nun
+Im folgenden bezeichne
+\begin{align}
+J=\begin{pmatrix}
+0 & I\\
+-I& 0 
+\end{pmatrix},\qquad\text{ $ I \in\R^{n\times n}$  Einheitsmatrix }
+\end{align}
+die symplektische Matrix. Dann ist die symplektische Form gerade durch $\cspro{X}{J}{Y}$ gegeben. Für eine reelle symmetrische Matrix $M$ hat  die Matrix $JM$ ein symmetrisch um den Ursprung angeordnetes, rein imaginäres Spektrum. Die positive Spur von $H$ durch
 \begin{equation}
    {\mathrm{Tr}}^+ H = \sum_j\lambda_j 
 \end{equation}
-wobei die Folge $(\lambda_j)$ eine ihrer Vielfachheit entsprechenden Aufzählung der positiven Elemente von $i\sigma(IM)$ ist. Wir stellen fest, dass falls wir die quadratische Form $h$ symplektisch transformieren, die positive Spur der Grammatrix erhalten bleibt. Also für alle $\chi\in\mathrm{Sp}_{2n}(\R)$ gilt
+bezeichnet, wobei die Folge $(\lambda_j)$ eine ihrer Vielfachheit entsprechenden Aufzählung der positiven Elemente von $i\sigma(JM)$ ist. Wir stellen fest, dass die positive Spur
+der Matrix $H$ unter symplektischen Transformationen der quadratischen Form $h$ invariant ist. Also gilt für alle $\chi\in\mathrm{Sp}_{2n}(\R)$
 \begin{align*}
 \mathrm{Tr}^+(\chi^\mathrm{T}H\chi) = \mathrm{Tr}^+ H\,.
 \end{align*}
@@ -40,7 +46,7 @@ wobei die Folge $(\lambda_j)$ eine ihrer Vielfachheit entsprechenden Aufzählung
 Der nachfolgende Satz ist von entscheidender Bedeutung um notwendige und hinreichende Bedingungen für die Ungleichung von Melin zu formulieren.
 
 \begin{thm}[{\cite[Theorem 2.4.]{Melin:1971}}]
-Es gilt $P[u]\ge0$ genau dann für alle $u\in\rmC_0^\infty(\R^n)$, wenn die Bedingungen
+Es gilt $P[u]\ge0$ genau dann für alle $u\in\mathscr S(\R^n)$, wenn die Bedingungen
 \begin{enumerate}
 \item  $h(x,\xi)\ge0$ auf $\R^n\times\R^n$;
 \item $F \cdot X = \sum_{|\alpha+\beta|=1} \Re a_{\alpha,\beta} x^\beta\xi^\alpha = 0$ für $X=(x,\xi)\in\R^{2n}$ mit $h(x,\xi)=0$;
