@@ -323,3 +323,40 @@ Zusammengefasst ergibt dies
 &+\mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(-1/4)}^2\nonumber
 \end{align*}
 In Zukunft soll $\delta$ so gewählt sein, dass der $\mathcal O(1)\delta\norm u ^2_{(0)}$ Term größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist.
+
+\begin{lem}
+Es sei $C>0$, $K_0\subset\R^n\setminus\{0\}$ kompakt und $\gamma\in\mathrm C(\R^n\times K_0)$ reellwertig, so dass $\gamma(x,\xi)$ konstant ist auf $B(0,R)^\mathrm{C}\times K_0$ für ein $R>0$. Ist die Aussage
+\begin{align}\label{melinendlemma1}
+(a,\xi)\in\R^n\times K_0\,,\quad a_1(x,\xi)=0 \quad \Rightarrow \quad 1/2 \mathrm{Tr}^+H_{a_1}(a,\xi) + \gamma(x,\xi)
+\end{align}
+wahr, dann existiert eine Funktion $\rho$, so dass $\rho(\lambda)\to 0$ für $\lambda\to\infty$ und
+\begin{align}\label{melinendlemma2}
+\Re \sum_{|\alpha+\beta|\le 2} \frac{{a_1}^\alpha_\beta(x,\xi)\lambda^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v(y)}y^\beta\D^\alpha v(y)\d y + \gamma(x,\xi)\Norm{v}_{(0)}^2 + \rho(\lambda)\Norm v _{(4)}^2 \ge 0
+\end{align}
+für alle $(x,\xi)\in\R^n\times K_0$ und $v\in\mathrm C^\infty_0(B(0,C))$
+\end{lem}
+
+\begin{proof}
+Wir nehmen an es gibt keine Funktion $\rho$ mit $\lim_{\lambda\to\infty}\rho(\lambda)=0$, so dass \eqref{melinendlemma2} erfüllt ist. Also existiert eine Zahl $\rho>0$, eine und Folgen $(\lambda_j)$ mit $\lambda_j\to\infty$, $(x_j,\xi_j)\in\R^n\times K_0$ und Funktionen $v_j\in\mathrm C^\infty_0(B(0,C))$ mit $\Norm {v_j} =1$, so dass
+\begin{align}\label{melinendlemma3}
+\Re \sum_{|\alpha+\beta|\le 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v(y)}y^\beta\D^\alpha v(y)\d y + \gamma(x_j,\xi_j)\Norm{v}_{(0)}^2 + \rho\Norm v _{(4)}^2 \le 0
+\end{align}
+Für nichtnegative Funktionen $f\in\mathrm C^\infty_0 (\R^n)$,  existiert stets eine Konstante $C_f$, so dass
+\begin{align*}
+|\operatorname{grad}f(y)|^2\le C_f f(y)
+\end{align*}
+Da $a_1$ von $\R^n\times K_0$ zu einer kompakt getragenen $\mathrm C^\infty$-Funktion fortgesetzt werden kann, folgt mit obigem für $\abs\alpha=\abs\beta=1$
+\begin{align*}
+|{a_1}^\alpha(x_j,\xi_j)\lambda_j\int \cc{v_j(y)}\D^\alpha v_j(y)\d y| &\le \lambda_j|{a_1}^\alpha(x_j,\xi_j)|\Norm{v_j}_{(0)}\Norm{v_j}_{(1)} \le \frac{\lambda_j^2}{3n}a_1(x_l,\xi_j) + \frac 1 2\Norm{v_j}_{(1)}^2\\
+|{a_1}_\beta(x_j,\xi_j)\lambda_j\int \cc{v_j(y)}y^\beta v_j(y)\d y| &\le C \lambda_j|{a_1}^\alpha(x_j,\xi_j)|\Norm{v_j}_{(0)} \le \frac{\lambda_j^2}{3n}a_1(x_l,\xi_j) + \frac 1 2
+\end{align*}
+für $j$ groß genug. Da $\gamma$ eine beschränkte Funktion ist, müssen die quadratischen Terme in \eqref{melinendlemma3} die Ungleichung
+\begin{align*}
+\Abs{\sum_{|\alpha+\beta|= 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v(y)}y^\beta\D^\alpha v(y)\d y}\le C'\Norm{v_j}_{(2)}^2
+\end{align*}
+erfüllen. Es folt die Ungleichung
+\begin{align*}
+\Norm{v_j}_{(4)}^2\le \frac{C''}{\rho}\Norm{v_j}_{(2)}^2
+\end{align*}
+Mit einer Anwendung der Hölderungleichung erhalten wir $\Norm{v_j}_{(2)}^2\le \Norm{v_j}_{(0)}\Norm{v_j}_{(4)}^2$. Somit ist die Folge $v_j$ $H^4(\R^n)$-beschränkt. Aus dem Satz von Rellich wissen wir, dass eine Teilfolge existiert, die in $v_j$ $H^3(\R^n)$ konvergiert. Der Grenzwert dieser Teilfolge sei durch $v_0$ gegeben.
+\end{proof}
