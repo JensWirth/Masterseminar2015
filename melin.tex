@@ -411,4 +411,12 @@ Da $\mathrm{Tr}^+$ stetig ist, folgt im Limes $j\to\infty$ und $\sigma\to 0$
 was im Widerspruch zu \eqref{melinendlemma2} steht.
 \end{proof}
 
-Nun soll das Lemma mt $K_0=\delta^{-1}\mathbb{S}^{n-1}$, $\lambda_j=|\xi^j|^{1/2}$, $\rho_j(\lambda_j)$, $(x,\xi)=(x^{j,k},\xi^j/\delta|\xi^j|^{-1})$, $\gamma = \epsilon/2 + a_0$ und $v=v^{j,k}_\delta$ angewendet werden.
+Um das Lemma zur Vervollständigung des Beweises nutzen zu können, fehlen noch einige Vorüberlegungen. Da
+\begin{align*}
+{a_0}^\alpha_\beta(x^{j,k},\xi^j/\delta)|\xi^j|^{(|\alpha|-|\beta|)/2}\int \cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y) \le c \delta^{\abs\alpha}|\xi^j|^{-|\alpha+\beta|/2}\norm{v^{j,k}_\delta}_{(2)}^2
+\end{align*}
+für $|\alpha+\beta|\le 2$ und $|\xi^j|$ bestimmt divergiert, können die Symbole $a^\alpha_\beta$ durch ${a_1}^\alpha_\beta$ ersetzt werden, wenn wir einen zusätzlichen Term
+\begin{align*}
+{a_0}(x^{j,k},\xi^j/\delta)\norm{v^{j,k}_\delta}_{(0)}^2
+\end{align*}
+dazu addieren. Nun kann das Lemma mit $K_0=\delta^{-1}\mathbb{S}^{n-1}$, $\lambda_j=|\xi^j|^{1/2}$, $\rho_j(\lambda_j)$, $(x,\xi)=(x^{j,k},\xi^j/\delta|\xi^j|^{-1})$, $\gamma = \epsilon/2 + a_0$ und $v=v^{j,k}_\delta$ angewendet werden.
