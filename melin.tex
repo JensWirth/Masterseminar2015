@@ -269,25 +269,18 @@ Außerdem impliziert die Wahl der Transformation für $y=(x-x^{j,k})|\xi^j|^{1/2
 \end{align*}
 Somit folgt mit der Koordinatentransformation und einer Taylorentwicklung der Ordnung $2-\abs\alpha$ von $\sigma^\alpha$ in $x$ um den Entwicklungspunkt $x^{j,k}$
 \begin{align}
-\spro {P^\delta_j u_\delta^{j,k}}{u_\delta^{j,k}}
+\spro {A^\delta_j u_\delta^{j,k}}{u_\delta^{j,k}}
 =& \sum_{\abs\alpha\le 2} |\xi^j|^{(\abs\alpha-n)/2}\int \frac{\sigma^\alpha(x^{j,k}+y|\xi^j|^{-1/2},\xi^j/\delta)}{\alpha!}\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)\d y\nonumber\\ \label{termnachkoordtransf}
 =& \sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{\sigma^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
 &+\sum_{\abs\alpha\le 2}|\xi^j|^{(\abs\alpha-n)/2}\int R_{d}[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)\d y\nonumber
 \end{align}
-Das Taylorrestglied $R_d$, wobei $d=2-\abs\alpha+1$, kann durch einen Term $\mathcal O(1)\delta^{-1}|\xi^j|^{-(\abs\alpha+1)/2}$ außerhalb des Integrals ersetzt werden, da
+Das Taylorrestglied $R_d$, wobei $d=3-\abs\alpha$, kann durch einen Term $\mathcal O(1)\delta^{-1}|\xi^j|^{-(\abs\alpha+1)/2}$ außerhalb des Integrals ersetzt werden, da
 \begin{align*}
-&\Abs{R_3[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})} \\
-&\le d\sum_{\abs\beta=3}\frac{|y^\beta||\xi^j|^{-3/2}}{\beta!}\Abs{\sigma^\alpha_\beta(R_3[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k}),\xi^j/\delta) }\\
-&\le d\ n^d\frac{\abs y ^d}{\abs{\xi^j}^{d/2}}\braket{\xi^j/\delta}^{1-\abs\alpha} \le d\ n^d\frac{\widetilde C\abs y ^d}{\abs{\xi^j}^{d/2}}|\xi^j/\delta|^{1-\abs\alpha} \le d\ n^d\widetilde C C ^d\delta^{-1}|\xi^j/|^{-(1+\abs\alpha)/2}
+&\Abs{R_d[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})} \\
+&\le \sum_{\abs\beta=d}\frac{|y^\beta||\xi^j|^{-d/2}}{\beta!}\Abs{\sigma^\alpha_\beta(x^{j,k}+ ty|\xi^j|^{-1/2},\xi^j/\delta) }\\
+&\le c_d \frac{\abs y ^d}{\abs{\xi^j}^{d/2}}\braket{\xi^j/\delta}^{1-\abs\alpha} \le\frac{\widetilde c_d\abs y ^d}{\abs{\xi^j}^{d/2}}|\xi^j/\delta|^{1-\abs\alpha} \le \widetilde c C ^d\delta^{-1}|\xi^j|^{-(1+\abs\alpha)/2}
 \end{align*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-für alle $y\in\supp\varphi_k$. Dabei kannd $\widetilde C = (\min_j|\xi^j|)^{-1} + 1$ gewählt werden und ist somit genau wie die Konstante $C$ unabhängig von $\alpha$, $u$, $j$, $k$ oder $\delta$. Ferner ist der Träger aller $v_\delta^{j,k}$ in $B(0,C)$ enthalten, also ...
-%\begin{align*}
-%\int  \abs{\sum_{\abs\alpha\le 2}\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)}\d y \le \norm{v^{j,k}_\delta}\ \norm{\sum_{\abs\alpha\le 2}D^\alpha v^{j,k}_\delta}\le c \norm{\sum_{\abs\alpha\le 2}D^\alpha v^{j,k}_\delta}^2
-%\end{align*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Also hat die zweite Summe in \eqref{termnachkoordtransf} die Form
+für alle $y\in\supp\varphi_k$. Dabei kann $\widetilde c$ unabhängig von  $\alpha$, $u$, $j$, $k$ oder $\delta$ gewählt werden. Ferner ist der Träger aller $v_\delta^{j,k}$ in $B(0,C)$ enthalten, also hat die zweite Summe in \eqref{termnachkoordtransf} die Form
 \begin{align}\label{restnachkoord}
 \mathcal O(1) \delta^{-1}|\xi^j|^{-1/2}\sum_{\abs\alpha\le 2}\int  |\D^\alpha v^{j,k}_\delta(y)|^2\d y
 \end{align}
