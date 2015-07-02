@@ -50,13 +50,13 @@ die symplektische Matrix. Dann ist die symplektische Form gerade durch $\cspro{X
 \end{equation}
 bezeichnet, wobei die Folge $(\lambda_j)$ eine ihrer Vielfachheit entsprechenden Aufzählung der positiven Eigenwerte von $\i JM$ ist. Wir stellen fest, dass die positive Spur
 der Matrix $H$ unter symplektischen Transformationen der quadratischen Form $h$ invariant ist. Also gilt für alle $\chi\in\mathrm{Sp}_{2n}(\R)$
-\begin{align*}
+\begin{align}
 \mathrm{Tr}^+(\chi^\mathrm{T}H\chi) = \mathrm{Tr}^+ H\,.
-\end{align*}
+\end{align}
 
 Der nachfolgende Satz ist von entscheidender Bedeutung um notwendige und hinreichende Bedingungen für die Ungleichung von Melin zu formulieren.
 
-\begin{thm}[{\cite[Theorem 2.4.]{Melin:1971}}]
+\begin{thm}[{\cite[Theorem 2.4.]{Melin:1971}}]\label{satz:thm2.4}
 Es gilt $P[u]\ge0$ genau dann für alle $u\in\mathscr S(\R^n)$, wenn die Bedingungen
 \begin{enumerate}
 \item  $h(x,\xi)\ge0$ auf $\R^n\times\R^n$;
@@ -91,57 +91,50 @@ wobei $H_{a_m}$ die Hessematrix zu $a_m$ bezeichne.
 \end{thm}
 
 Wir können $A$ durch einen eigentlich getragenen Pseudodifferentialoperator mit gleichen homogenen Symbolkomponenten ersetzen.  Weiter genügt es, die Ungleichung für Operatoren der Ordnung $m=1$ zu zeigen. Sei dazu $\Lambda_s\in\mathrm{OP}S^\rho_{\rm loc}(\Omega\times\R^n)$ ein eigentlich getragener Pseudodifferentialoperator auf $\Omega$ mit Symbol $\braket\xi^\rho$.
-Der Operator $\Lambda_\rho$ besitzt auf $\rmC_0^\infty(\Omega)$ die Parametrix\footnote{Inverse modulo $\mathscr E'(\Omega)\to\rmC^\infty(\Omega)$}  $\Lambda_\rho$, ist $\rmL^2$-symmetrisch und erfüllt für jedes $s\in\R$ mit geeigneten Konstanten
+Der Operator $\Lambda_\rho$ besitzt auf $\rmC_0^\infty(\Omega)$ die Parametrix\footnote{Inverse modulo $\mathscr E'(\Omega)\to\rmC^\infty(\Omega)$}  $\Lambda_{-\rho}$, ist $\rmL^2$-symmetrisch und erfüllt für jedes $s\in\R$ mit geeigneten Konstanten
 \begin{align}
    C_1 \|u\|_{(m-\rho)} + C'_1 \|u\|_{(s)} \le    \|\Lambda_\rho u\|_{(m)} \le   C_2 \|u\|_{(m-\rho)} + C'_2 \|u\|_{(s)}.
 \end{align}
 Es sei nun $A_\rho:=\Lambda_{-\rho} \circ A\circ\Lambda_{-\rho}$. Wenn man in \eqref{ungleichungvonmelin} $u$ durch $\Lambda_{-\rho} u$ ersetzt, so wird ersichtlich, dass die Ungleichung für $A$ und $\mu=(m-1)/2$ genau dann erfüllt ist, wenn sie für $A_\rho$ mit $\mu=(m-\rho-1)/2$ und $s$ ersetzt durch $s-\rho$ erfüllt ist. Desweiteren gilt $A_\rho\in \mathrm{OP}S^{m-2\rho}(\Omega\times\R^n)$. 
-%Da für das Symbol von $A_\rho$ die lokale  Entwicklung
-%\begin{align*}
-%\sigma_{A_\rho}(x,\xi) \sim \sum_{\alpha}\frac 1 {\alpha!} (\partial_\xi^\alpha\braket{\xi}^{-\rho})(\D_x^\alpha \sigma_{A}(x,\xi)\braket{\xi}^{-\rho}) \sim \sum_{k=0}^\infty\sum_{\alpha} c_\alpha a_{m-k}(x,\xi)\braket{\xi}^{-2\rho-\abs\alpha}\partial^\alpha_\xi\braket{\xi}
-%\end{align*}
-%existiert, ist das Hauptsymbol von $A_\rho$ durch $\braket{\xi}^{-2\rho}a_m(x,\xi)$ gegeben. Der Entwicklungsterm der Ordnung $m-1-2\rho$ ist %$\braket{\xi}^{-2\rho}a_{m-1}(x,\xi)$
 Da auch \eqref{bedfuerungleichung} genau dann für $A$ gilt, wenn die Bedingung für $A_\rho$ gilt, können wir annehmen, dass $A\in\mathrm{OP}S^1_{\rm loc}(\Omega\times\R^n)$.
 
 
-\section{Beweis der Ungleichung von Melin}
-
-\subsection{Beweis der Hinrichtung}
+\section{Beweis der Hinrichtung}
 
 Es sei $(x_0,\xi_0)\in\Omega\times\R^n$ mit $a_1(x_0,\xi_0)=0$ und $K\Subset \Omega$ so gewählt, dass  $(x_0,\xi_0)\in \overset{\circ} {K}\times\R^n$. Wir können ohne Beschränkung der Allgemeinheit annehmen, dass $x_0=0$. 
 Nun sei 
-\begin{align*}
- v\in\mathrm C^\infty_0(\R^n) \quad \text{und} \quad v_\lambda(x):=\lambda^{n/2}v(\lambda x)\, e^{i\lambda^2x\xi_0}\, ,\quad\lambda>0
-\end{align*}
+\begin{align}
+ v\in\mathrm C^\infty_0(\R^n) \quad \text{und} \quad v_\lambda(x):=\lambda^{n/2}v(\lambda x)\, \e^{\i\lambda^2x\cdot \xi_0}\, ,\quad\lambda>0
+\end{align}
 Es gilt $\|v\|=\|v_\lambda\|$ und $\supp v_\lambda \subset K$ für genügend große $\lambda$. Außerdem folgt mit entsprechenden Koordinatentransformationen
-\begin{align*}
-\spro {A v_\lambda} {v_\lambda} = {2\pi}^{-n/2}\int\int e^{ix\xi} \sigma(x/\lambda,\lambda^2\xi_0 + \lambda\xi)\widehat v(\xi)\cc{v(\xi)}\d\xi\d x\,.
-\end{align*}
-Für homogenen Entwicklungsterm $a_k\in\S^k_\mathrm{lok}(\Omega\times\R^n)$ gilt
-\begin{align*}
+\begin{align}
+\spro {A v_\lambda} {v_\lambda} = {2\pi}^{-n/2}\iint \e^{\i x\cdot \xi} \sigma(x/\lambda,\lambda^2\xi_0 + \lambda\xi)\widehat v(\xi)\cc{v(\xi)}\d\xi\d x\,.
+\end{align}
+Für homogenen Entwicklungsterm $a_k\in S^k_\mathrm{loc}(\Omega\times\R^n)$ gilt
+\begin{align}
 &{a_k}^\alpha_\beta(\widetilde x, \lambda^2 \widetilde \xi)(x/\lambda)^\beta(\lambda\xi)^\alpha = \mathcal O(1)\braket{\widetilde\xi}^{k-\abs\alpha}\braket{\xi}^{\abs\alpha}\lambda^{2k-\abs{\beta+\alpha}} = \mathcal O(1)\braket{\xi}^{k}\lambda^{2k-\abs{\beta+\alpha}}
-\end{align*}
-mit $(\widetilde x,\widetilde\xi)\in[0,x/\lambda]\times[\xi_0,\xi_0 + \xi/\lambda]$ beliebig. Wobei $\mathcal O(1)$ eine in $\xi$ und $\lambda\in[1,\infty)$ beschränkte Funktion darstellt. Da der Ausdruck nach Annahme $a_1\ge 0$ müssen bei diesem Minimum die Ableitungen ersten Grades verschwinden müssen und die Terme niedriger Ordnung wie oben zusammengefasst werden können, kann die Taylor Entwicklung von $\sigma$ in $\xi$ und $x$ um den Entwicklungspunkt $(0,\lambda^2\xi_0)$ also durch
-\begin{align*}
+\end{align}
+mit $(\widetilde x,\widetilde\xi)\in[0,x/\lambda]\times[\xi_0,\xi_0 + \xi/\lambda]$ beliebig. Wobei $\mathcal O(1)$ eine in $\xi$ und $\lambda\in[1,\infty)$ beschränkte Funktion darstellt. Da der Ausdruck nach Annahme $a_1\ge 0$ müssen bei diesem Minimum die Ableitungen ersten Grades verschwinden müssen und die Terme niedriger Ordnung wie oben zusammengefasst werden können, kann die Taylorentwicklung von $\sigma$ in $\xi$ und $x$ um den Entwicklungspunkt $(0,\lambda^2\xi_0)$ also durch
+\begin{align}
 \sigma(x/\lambda, \lambda^2\xi_0+\lambda\xi) = a_0(0,\xi_0) + \sum_{\abs{\alpha+\beta}=2} {a_1}^\alpha_\beta(0,\xi_0)\frac{x^\beta\xi^\alpha}{\alpha!\beta!} + \mathcal O(1) \lambda^{-1}\braket{\xi}^4
-\end{align*}
+\end{align}
 beschrieben werden. Wird dies nun in die Ungleichung von Melin mit $u=v_\lambda$ und $s=-1$ eingesetzt, so folgt
-\begin{align*}
+\begin{align}
 \Re\int \cc{v(x)}\sum_{\abs{\alpha+\beta}=2}\frac{{a_1}^\alpha_\beta(0,\xi_0)}{\alpha!\beta!}x^\beta\D^\alpha v(x)\d x + (\epsilon +\Re a_0(0,\xi_0))\|v\|_{(0)}^2 + \mathcal O(1)\lambda^{-1}\ge C\|v_\lambda\|_{(-1)}^2
-\end{align*}
+\end{align}
 Wegen $\widehat{v}_\lambda(\xi)=\widehat{v}(\xi/\lambda-\xi_0\lambda)$ und \eqref{oentwrueck} folgt außerdem
-\begin{align*}
+\begin{align}
 \|v_\lambda\|_{(-1)} = \int \braket{\lambda^2\xi_0+\lambda \xi}^{-1}|\widehat{v}(\xi)|\d\xi = \mathcal{O}(1)\lambda^{-1} 
-\end{align*}
+\end{align}
 Mit $\lambda\to\infty$ und anschließend $\epsilon \to 0$, bekommen wir somit
-\begin{align*}
+\begin{align}
 \Re\int \cc{v(x)}\sum_{\abs{\alpha+\beta}=2}\frac{{a_1}^\alpha_\beta(0,\xi_0)}{\alpha!\beta!}x^\beta\D^\alpha v(x)\d x + \Re a_0(0,\xi_0))\int|v(x)|^2\d x\ge 0
-\end{align*}
+\end{align}
 Die symmetrische Matrix $H$, die die obige quadratische Form erzeugt, hat die Koeffizienten $1/2\,\Re {a_1}^\alpha_\beta(0,\xi_0)$. Mit $H=1/2\, H_{a_1}(0,\xi_0)$ und Satz \ref{satz:thm2.4} folgen nun die Eigenschaften \eqref{bedfuerungleichung}.
 
-\subsection{Beweis der Rückrichtung}
+\section{Beweis der Rückrichtung}
 
-Um den Beweis durchzuführen werden wir die im letzten Abschnitt eingeführte Zerlegung der Eins $(\phi_k)$ und $(psi_k)$ benutzen. Zusätzlich wird die Folge $(\xi^j)\subset \R^n$ so gewählt, dass $0\neq \xi^j\in\supp \psi_j$.
+Um den Beweis durchzuführen werden wir die im letzten Abschnitt eingeführte Zerlegung der Eins $(\phi_k)$ und $(\psi_k)$ benutzen. Zusätzlich wird die Folge $(\xi^j)\subset \R^n$ so gewählt, dass $0\neq \xi^j\in\supp \psi_j$.
 
 Wir untersuchen, wie gut die zur Taylorentwicklung des Symbols zugehörigen Differentialoperatoren
 \begin{align}
@@ -162,17 +155,17 @@ Sei $P$ Pseudodifferentialoperator mit Symbol $\sigma\in S^1_{\rm comp}(\R^n\tim
 
 \begin{proof}
 Es sei $u\in\mathrm C^\infty_0(\R^n)$. Da das Symbol $\sigma$ für $x\in\R^n\setminus$ verschwindet, existiert die Fouriertransformation bezüglich $x$, sie wird mit $\widehat\sigma (\eta,\xi)$ bezeichnet. Da außerdem $ P u\in\mathrm C^\infty_0(\R^n)$, gilt
-\begin{align*}
-\widehat{ P u}(\eta) &= (2\pi)^{-n}\int e^{-i\eta x} \int e^{i\xi x}\sigma(x,\xi) \widehat u (\xi) \d\xi\d x = (2\pi)^{-n}\int \widehat\sigma(\eta - \xi,\xi)\widehat u(\xi)\d\xi \\
+\begin{align}
+\widehat{ P u}(\eta) &= (2\pi)^{-n}\int \e^{-\i\eta\cdot x} \int e^{\i\xi\cdot x}\sigma(x,\xi) \widehat u (\xi) \d\xi\d x = (2\pi)^{-n}\int \widehat\sigma(\eta - \xi,\xi)\widehat u(\xi)\d\xi \\
 &= (2\pi)^ {-n}\int \sum_{j\in\Z^n} \frac 1 2\left[(\psi_j(\delta \xi) - \psi_j(\delta \eta))^2 + 2 \psi_j(\delta\xi)\psi(\delta \eta)\right] \widehat\sigma(\eta - \xi,\xi)\widehat u(\xi)\d\xi\,.
-\end{align*}
+\end{align}
 Des weiteren gilt $\widehat{\partial^\alpha_\xi\sigma(\cdot,\xi)} = \partial_\xi^\alpha\widehat \sigma(\cdot,\xi)$ und somit
-\begin{align*}
+\begin{align}
 \mathcal{F}\left[\partial^\alpha\sigma(\cdot,\xi^j/\delta)\left( \mathrm D - \xi^j/\delta\right)^\alpha\psi_j(\delta\mathrm D)u\right](\eta) = \int \partial ^\alpha\widehat \sigma(\eta-\xi,\xi^j/\delta)\left( \xi - \xi^j/\delta\right)^\alpha\psi_j(\delta\xi)\widehat u(\xi)\d\xi\,.
-\end{align*}
+\end{align}
 Unter Ausnutzung des Satzes von Plancherel folgt nun
 \begin{align}
-\spro {Pu} u  - \sum_{j\in\Z^n}\spro{ P_j^\delta\psi_j(\delta\mathrm D )u} { \psi(\delta\mathrm D )u } = (2\pi)^{-n} \int\int H_\delta (\xi,\eta) \widehat u(\xi)\widehat u(\eta)\d\xi\d\eta\,,
+\spro {Pu} u  - \sum_{j\in\Z^n}\spro{ P_j^\delta\psi_j(\delta\mathrm D )u} { \psi(\delta\mathrm D )u } = (2\pi)^{-n} \iint H_\delta (\xi,\eta) \widehat u(\xi)\widehat u(\eta)\d\xi\d\eta\,,
 \end{align}
 dabei ist die Funktion $H_\delta$ durch
 \begin{align}\label{eq:hdeltadef}
@@ -182,91 +175,91 @@ H_\delta(\xi,\eta) := &\frac 1 2 \sum_{j\in \N}(\psi_j(\delta \xi) - \psi_j(\del
 \right]
 \end{align}
 definiert. Nun soll die Funktion $H_\delta$ nach oben abgeschätzt werden. Da $\sigma\in S^1_{\text{unif}}(\R^n\times\R^n)$ folgt
-\begin{align*}
+\begin{align}
 \abs{\braket{\eta}^{2N}\partial^\alpha\widehat\sigma(\eta,\xi)}\le (2\pi)^{-n/2}\int_K |\braket{\mathrm D}^{2N}\partial^\alpha\sigma(x,\xi)|\d x \le C_{\alpha,2N} \braket{\xi}^{1 - \abs \alpha}
-\end{align*}
+\end{align}
 und somit existiert für jedes $N\in\N_0$ und jeden Multiindex $\alpha$ eine Konstante $C_{\alpha,N}> 0 $, so dass
 \begin{align}\label{eq:fourierordnungsabsch}
 \abs {\partial ^\alpha \widehat \sigma(\eta,\xi)} \le C_{\alpha,N}\braket{\eta}^{-N}\braket{\xi}^{1-\abs\alpha}
 \end{align}
 Mit Hilfe des Taylorrestglieds
-\begin{align*}
+\begin{align}
 R_N[\widehat \sigma(\eta,\cdot)](\xi,a):= \sum_{\abs\alpha=N}\frac{(\xi-a)^\alpha}{\alpha!}\widehat \sigma^\alpha(\eta,\xi+t(a-\xi))\d t
-\end{align*}
+\end{align}
 mit $t\in[0,1]$ und einer Taylorentwicklung im zweiten Argument von $\widehat \sigma$ um den Entwicklungspunkt $\xi^j/\delta$ folgt mit der Abschätzung \eqref{eq:fourierordnungsabsch}
 \begin{align}
 \Abs{\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\widehat\sigma^\alpha(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha} = \Abs{R_3[\widehat \sigma(\eta-\xi,\cdot)](\xi,\xi^j/\delta)}\nonumber\\ \le
 C_N\braket{\eta-\xi}^{-N}|\xi-\xi^j/\delta|^3\sup_{t\in[0,1]}(1+|\xi+t(\xi^j/\delta -\xi)|)^{-2}\,.\label{innerHdelta}
 \end{align}
 Aus den Eigenschaften der Partition der Eins $(\psi_j)_{j\in\Z^n}$ folgt nun $|\xi\delta-\eta\delta|\le C\abs{\eta\delta}^{1/2}$ für $j\psi_j(\delta\eta)\psi_j(\delta\xi)\neq 0$. Für alle $\delta\xi,\delta\eta\in\supp\psi_j$ mit $j\neq 0$ folgt nun
-\begin{align*}
+\begin{align}
 |\xi -\eta| \le C \delta^{-1/2}|\eta|^{1/2}\le \frac{\abs\eta}{2}
-\end{align*}
+\end{align}
 für $|\eta|\ge 4 C^2\delta^{-1}$. Für $j\psi_j(\delta\eta)\psi_j(\delta\xi)\neq 0$ und $\abs\xi + \abs\eta>12C^2\delta^{-1}$ ist somit $\abs\xi$ und $\abs\eta$ größer als $4C^2\delta^{-1}$. Natürlich gilt das gleiche auch, nachdem $\xi$ durch $\xi^j/\delta$ und $\eta$ durch $\xi$ ersetzt wurde. Wird dies in \eqref{innerHdelta} eingesetzt, so folgt für $\delta(\abs\eta + \abs\xi)$ groß genug und einer Anwendung der Hölderungleichung für die Summe über $j$, dass
-\begin{align*}
+\begin{align}
 &\Abs{\sum_{j\in\Z^n\setminus\{0\}} \psi_j(\delta\xi)\psi_j(\delta \eta)\left[
 \widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\widehat\sigma(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha
 \right]}\\&\le C_N\delta^{-3/2}\braket{\xi-\eta}^{-N}\abs\xi^{-1/2}\\
-\end{align*}
+\end{align}
 Der erste Term von $H\delta$ kann wegen $\sum|\psi(\delta\xi)-\psi(\delta\eta)|\le C \braket{\xi-\eta}^2/\abs\xi$ für  $\delta(\abs\eta + \abs\xi)$ groß genug durch
-\begin{align*}
+\begin{align}
 C_N\delta\braket{\eta-\xi}^{-N}
-\end{align*}
+\end{align}
 abgeschätzt werden. Alle verbliebenen Terme von $H_\delta$ können nun durch $\phi_{\delta,N}(\eta)\phi_{\delta,N}(\xi)$ mit $\phi_{\delta,N}\in\mathrm C^\infty_\delta(\R^n)$ abgeschätzt werden. Es gilt außerdem
-\begin{align*}
-\int\int\braket{\xi-\eta}^{-(n+1)}|\widehat u(\xi)\widehat u(\eta)|\d\eta\d\xi &= \int\int \braket{\eta}^{-(n+1)}|\widehat{u}(\xi||\widehat u(\eta-\xi)|\d\eta\d\xi\\
+\begin{align}
+\iint\braket{\xi-\eta}^{-(n+1)}|\widehat u(\xi)\widehat u(\eta)|\d\eta\d\xi &= \iint \braket{\eta}^{-(n+1)}|\widehat{u}(\xi||\widehat u(\eta-\xi)|\d\eta\d\xi\\
 &\le \Norm{\abs{\widehat u} * \abs{\widehat u}}_\infty \norm{\braket{\cdot}^{-(n+1)}}_1\le C_{n+1} \Norm{\widehat u}_2^2
-\end{align*}
+\end{align}
 Mit $|H_\delta(\xi,\eta)|\le C_N\delta\braket{\xi-\eta}^{-N} +\phi_{\delta,N}(\xi)\phi_{\delta,N}(\eta)$ und $N$ groß genug folgt nun
-\begin{align*}
-\int\int|H_\delta(\xi,\eta)\widehat u(\xi)\widehat u(\eta)|\d\xi\d\eta &\le \delta C_N \Norm{u}^2_{(0)} + \Norm{\phi_{\delta,N} \widehat u}_1^2 \le \delta C_N \Norm{u}^2_{(0)} + \|\phi_{\delta,N}\|_{(1/4)}^2 \Norm{u}_{(-1/4)}^2 \\
+\begin{align}
+\iint|H_\delta(\xi,\eta)\widehat u(\xi)\widehat u(\eta)|\d\xi\d\eta &\le \delta C_N \Norm{u}^2_{(0)} + \Norm{\phi_{\delta,N} \widehat u}_1^2 \le \delta C_N \Norm{u}^2_{(0)} + \|\phi_{\delta,N}\|_{(1/4)}^2 \Norm{u}_{(-1/4)}^2 \\
 &= \delta C_N \Norm{u}^2_{(0)} +  C_{\delta,N} \Norm{ u}_{(-1/4)}^2\,.
-\end{align*}
+\end{align}
 
 \end{proof}
 
 Natürlich gilt die Ungleichung \eqref{hilfsungl1} auch, wenn wir das nicht kompakt getragene Symbol $\braket{\xi}$ betrachten. Dies lässt sich ebenfalls durch einer Taylorentwicklung und nach einer Anwenung des Satzes von Plancherel zeigen.
 Die obige Aussage zusammen mit dem Lemma zeigt, dass der Fehler, der durch die Partitionierung von $u$ im Fourierraum und die Taylorentwicklung des Symbols entsteht, durch in $u$ und $\delta$ beschränkten Funktionen und den Konstanten und Normen in \eqref{hilfsungl1} beschrieben werden kann. Solche Funktionen werden in Zukunft mit dem Symbol $\mathcal O(1)$ bezeichnet. Wir schreiben also
-\begin{align*}
+\begin{align}
 \spro {Au}{u} = \sum_{j\in\Z^n} \spro {A_j^\delta \psi_j(\delta\D)u}{\psi_j(\delta\D)u} + C\delta \mathcal{O}(1) \Norm{u}_{(0)} + C_\delta \mathcal O(1)\Norm{u}_{(-1/4)}\,.
-\end{align*}
+\end{align}
 
 Nun soll eine weitere Lokalisation der Funktion $u$ vorgenommen werden. Dafür sei $\varphi_{j,k}(x):=\varphi_k(x|\xi^j|^{1/2})$. Für alle $v\in\C^\infty(\R^n)$ folgt nach Ausmultiplizieren und der Regel von Leibniz
-\begin{align*}
+\begin{align}
 \sum_{k\in\Z^n}\spro {P^\delta_j\varphi_{j,k}v} {\varphi_{j,k}v} = \sum_{k\in\Z^n}\sum_{|\alpha|\le 2}\sum_{\gamma\le\beta\le\alpha} \left({\frac{\partial^\alpha\sigma(\cdot,\xi^j/\delta)(-\xi^j/\delta)^{(\alpha-\beta)}}{(\alpha-\beta)!(\beta-\gamma)!\gamma!}(\D^\gamma\varphi_{j,k})(\D^{\beta-\gamma}v)}\ , {\varphi_{j,k}v}\right)
-\end{align*}
+\end{align}
 Da außerdem $0=\D^\gamma\sum_k\phi_{j,k}^2 = 2 \sum_k\phi_{j,k}\D^\gamma\phi_{j,k}$ für $|\gamma|=1$ fallen in der oberen Summe alle Terme mit $|\gamma|=1$ weg und es folgt
 \begin{align}\label{eq:vorueberlegung1}
 \sum_{k\in\Z^n}\spro {P^\delta_j\varphi_{j,k}v} {\varphi_{j,k}v} = &\sum_{k\in\Z^n}\spro {\varphi_{j,k}P^\delta_jv} {\varphi_{j,k}v} \\&+ \sum_{k\in\Z^n}\sum_{|\alpha|=2}\int \frac{\partial^\alpha\sigma(x,\xi^j/\delta)}{\alpha!} |\xi^j|(\varphi_k\D^\alpha\varphi_k)(x|\xi^j|^{1/2})|v(x)|^2\d x\nonumber
 \end{align}
 Da $\sigma\in S^1_\text{unif}(\R^n\times\R^n)$ und somit $|\partial^\alpha\sigma(x,\xi^j/\delta)|\le\braket{\xi^j/\delta}^{-1}\le \delta|\xi^j|$ für $|\alpha|=2$ und außerdem
-\begin{align*}
+\begin{align}
 \sum_{k\in\Z^n} |\varphi_k(x)\D^\alpha\varphi_k(x)|\le \left(\sum_{k\in\Z^n}|\phi_k(x)|^2\right)^{1/2}\left(\sum_{k\in\Z^n}|\D^\alpha\phi_k(x)|^2\right)^{1/2}\le C_\alpha^{1/2}
-\end{align*}
+\end{align}
 kann die zweite Summe aus \eqref{eq:vorueberlegung1} durch $\|v\|^2$ abgeschätzt werden. Wird nun für $v$ $\psi_j(\delta\D)$ eingesetzt und über $j$ summiert, so wird ersichtlich, dass die zweite Summe wieder von der Form $C\delta \mathcal{O}(1) \Norm{u}_{(0)} + C_\delta \mathcal O(1)\Norm{u}_{(-1/4)}$ ist, da
-\begin{align*}
+\begin{align}
 \left|\sum_{j,k\in\Z^n}\sum_{|\alpha|=2}\int \frac{\partial^\alpha\sigma(x,\xi^j/\delta)}{\alpha!} |\xi^j|(\varphi_k\D^\alpha\varphi_k)(x|\xi^j|^{1/2})|v(x)|^2\d x\right|\\ \le \delta C \sum_{j\in\Z^n} \norm {\psi_j(\delta\D)u}^2 = \delta C \norm {\sum_{j\in\Z^n} \psi_j(\delta \cdot)\widehat u}^2 = C \delta \Norm u ^2\,.
-\end{align*}
+\end{align}
 Mit der Bezeichnung $u_\delta^{j,k} = \varphi_{j,k} \psi_j(\delta\D)u$ bedeutet dies
-\begin{align*}
+\begin{align}
 \spro {Pu} u = \sum_{j,k\in\Z^n} \spro {P^\delta_j u_\delta^{j,k}}{u_\delta^{j,k}} + C\delta\mathcal O(1)\norm u _{(0)} + C_\delta \Norm u _{(-1/4)}
-\end{align*}
+\end{align}
 Um den verbleibenden Term abzuschätzen wird nun eine Koordinatentransformation durchgeführt. Hierfür sei $x^k = \xi^k |\xi^k|^{-1/2}\in\supp \phi_k$, $x^{j,k}=x^k |\xi^j|^{-1/2}$ und weiterhin sei $v^{j,k}_\delta$ durch die Relation
-\begin{align*}
+\begin{align}
 u^{j,k}_\delta(x) = v^{j,k}_\delta ((x-x^{j,k})|\xi^j|^{1/2}) e^{ix\xi^j/\delta}
-\end{align*}
+\end{align}
 definiert. Es folgt
-\begin{align*}
+\begin{align}
 |v^{j,k}_\delta(y)| = \abs{e^{-i(y+x^k)x^j}u^{j,k}_\delta((y+x^k)|\xi^j|^{(-1/2)})} = |\varphi_k(x^k+y)\psi_j(\delta\D)u((y+x^k)|\xi^j|^{(-1/2)})|
-\end{align*}
+\end{align}
 Da aus den Eigenschaften der Zerlegung der Eins $\supp \phi_k \subset B(x^k,C)$ folgt, gilt auch
-\begin{align*}
+\begin{align}
 \supp v^{j,k}_\delta \subset B(0,C)
-\end{align*}
+\end{align}
 Außerdem impliziert die Wahl der Transformation für $y=(x-x^{j,k})|\xi^j|^{1/2}$
-\begin{align*}
+\begin{align}
 (\D - \xi^j/\delta)^\alpha u^{j,k}_\delta(x)=  e^{i(y+x^k)x^j}|\xi^j|^{\abs\alpha/2}\D^\alpha v^{j,k}_\delta(y)
-\end{align*}
+\end{align}
 Somit folgt mit der Koordinatentransformation und einer Taylorentwicklung der Ordnung $2-\abs\alpha$ von $\sigma^\alpha$ in $x$ um den Entwicklungspunkt $x^{j,k}$
 \begin{align}
 \spro {A^\delta_j u_\delta^{j,k}}{u_\delta^{j,k}}
@@ -275,35 +268,35 @@ Somit folgt mit der Koordinatentransformation und einer Taylorentwicklung der Or
 &+\sum_{\abs\alpha\le 2}|\xi^j|^{(\abs\alpha-n)/2}\int R_{d}[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)\d y\nonumber
 \end{align}
 Das Taylorrestglied $R_d$, wobei $d=3-\abs\alpha$, kann durch einen Term $\mathcal O(1)\delta^{-1}|\xi^j|^{-(\abs\alpha+1)/2}$ außerhalb des Integrals ersetzt werden, da
-\begin{align*}
+\begin{align}
 &\Abs{R_d[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})} \\
 &\le \sum_{\abs\beta=d}\frac{|y^\beta||\xi^j|^{-d/2}}{\beta!}\Abs{\sigma^\alpha_\beta(x^{j,k}+ ty|\xi^j|^{-1/2},\xi^j/\delta) }\\
 &\le c_d \frac{\abs y ^d}{\abs{\xi^j}^{d/2}}\braket{\xi^j/\delta}^{1-\abs\alpha} \le\frac{\widetilde c_d\abs y ^d}{\abs{\xi^j}^{d/2}}|\xi^j/\delta|^{1-\abs\alpha} \le \widetilde c C ^d\delta^{-1}|\xi^j|^{-(1+\abs\alpha)/2}
-\end{align*}
+\end{align}
 für alle $y\in\supp\varphi_k$. Dabei kann $\widetilde c$ unabhängig von  $\alpha$, $u$, $j$, $k$ oder $\delta$ gewählt werden. Ferner ist der Träger aller $v_\delta^{j,k}$ in $B(0,C)$ enthalten, also hat die zweite Summe in \eqref{termnachkoordtransf} die Form
 \begin{align}\label{restnachkoord}
 \mathcal O(1) \delta^{-1}|\xi^j|^{-1/2}\sum_{\abs\alpha\le 2}\int  |\D^\alpha v^{j,k}_\delta(y)|^2\d y
 \end{align}
 Um das verbleibende Integral auszurechnen werden die neuen Funktionen $v^j_\delta$ durch die Relation
-\begin{align*}
+\begin{align}
 \psi^j(\delta\D)u(x) = e^{ix\xi^j/\delta}v^j_\delta(x|\xi^j|^{1/2})
-\end{align*}
+\end{align}
 eingeführt. Aus der Relation folgt
-\begin{align*}
+\begin{align}
 \widehat v^j_\delta ((\xi-\xi^j/\delta)|\xi^j|^{-1/2}) = \psi_j(\delta\xi)\widehat u(\xi)
-\end{align*}
+\end{align}
 und somit
-\begin{align*}
+\begin{align}
 \xi \in\supp\widehat v^j_\delta \quad\Leftrightarrow\quad \xi|\xi^j|^{1/2} + \xi^j/\delta\in\supp \psi_j(\delta(\cdot))\widehat u
-\end{align*}
+\end{align}
 Außerdem gilt $|\delta\xi-\xi^j|\le C|\xi^j|^{1/2}$ für $\xi\in\supp \mathcal F[\psi_j(\delta\D)u]\subset\supp \psi_j(\delta (\cdot))$ und somit folgt
-\begin{align*}
+\begin{align}
 |\xi|\le C/\delta \quad \text{für } \xi \in\supp\widehat v^j_\delta\,.
-\end{align*}
+\end{align}
 Darüber hinaus lassen sich die Funktionen $\varphi_k v^j_\delta$ durch Translation in die Funktionen $v^{j,k}_\delta$ überführen. In expliziter Form lautet diese Beziehung
-\begin{align*}
+\begin{align}
 \varphi_k(y) v^j_\delta (y) = v^{j,k}_\delta (y-x^{j,k}|\xi^j|^{1/2})\quad\text{für }y\in\R^n\,.
-\end{align*}
+\end{align}
 Nun soll das über $k$ summierte verbleibende Integral aus \eqref{termnachkoordtransf} abgeschätzt werden. Dafür betrachten wir, den folgenden Ausdruck
 \begin{align}
 \sum_{k\in\Z^n} \int|y^\beta\D^\alpha v^{j,k}_\delta(y)|^2\d y &\le C^{\abs\beta} \sum_{k\in\Z^n} \int |\D^\alpha(\varphi_k v^j_\delta)(y)|^2\d y \nonumber\\
@@ -313,29 +306,29 @@ Nun soll das über $k$ summierte verbleibende Integral aus \eqref{termnachkoordt
 &= c_\alpha \delta^{-\abs\alpha}|\xi^j|^{n/2}\int |\psi_j(\delta\D)u(y)|^2\d y\label{polynomnachoben}
 \end{align}
 Wird nun über alle $j$ summiert, so dass $\xi^j>\delta^{-12}$ ist, erhält man den Ausdruck
-\begin{align*}
+\begin{align}
 \sum_{j\colon \xi^j>\delta^{-12}} \delta^{-5} |\xi^j|^{-1/2}\int |\psi_j(\delta\D)u(y)|^2\d y = \mathcal O(1)\delta\norm u _{(0)}^2
-\end{align*}
+\end{align}
 Die restlichen endlich vielen Summanden ergeben einen Ausdruck $\mathcal O(1)C_\delta \norm u _{(-1/4)}^2$. Somit folgt
-\begin{align*}
+\begin{align}
 \sum_{j\in\Z^n}\delta^{-5} |\xi^j|^{-1/2}\int |\psi_j(\delta\D)u(y)|^2\d y = \mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(-1/4)}^2
-\end{align*}
+\end{align}
 Zusammengefasst ergibt dies
-\begin{align*}
+\begin{align}
 \spro {Pu} u
 =& \sum_{j,k\in\Z^n}\sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{\sigma^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
 &+\mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(-1/4)}^2\nonumber
-\end{align*}
+\end{align}
 In Zukunft soll $\delta$ so gewählt sein, dass der $\mathcal O(1)\delta\norm u ^2_{(0)}$ Term größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist. Finden wir jetzt eine nullkonverente Folge $\rho_j$, so dass
 
-\begin{align*}
+\begin{align}
 \sum_{|\alpha+\beta|\le 2} \frac{a^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}|\xi^j|^{|\alpha-\beta|/2}\int \cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y + \frac{2}{\epsilon}\norm{v^{j,k}_\delta}^2 + \rho_j \norm{v^{j,k}_\delta}_{(4)}^2 \ge 0
-\end{align*}
+\end{align}
 dann folgt nach unter Verwendung von \eqref{polynomnachoben} und Addition über $k$,  dass 
-\begin{align*}
+\begin{align}
 \spro {Pu} u
 \ge& -C_4\sum_{j\in\Z^n} \rho_j \delta^{-4}\norm{\psi_j(\delta\D)u}^2 - \epsilon \norm u _{(0)}^2 + C_\delta \norm u _{(-1/4)}^2\nonumber
-\end{align*}
+\end{align}
 Die Summe, kann nun je nach Wahl einer Teilfolge von $\rho_j$ beliebig klein gemacht werden. Um zu zeigen, dass es so eine Folge $\rho_j$ tatsächlich gibt brauchen wir das folgende Lemma.
 
 \begin{lem}
@@ -356,71 +349,71 @@ Wir nehmen an es gibt keine Funktion $\rho$ mit $\lim_{\lambda\to\infty}\rho(\la
 \Re \sum_{|\alpha+\beta|\le 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v_j(y)}y^\beta\D^\alpha v_j(y)\d y + \gamma(x_j,\xi_j)\Norm{v_j}_{(0)}^2 + \rho\Norm {v_j} _{(4)}^2 \le 0
 \end{align}
 Für nichtnegative Funktionen $f\in\mathrm C^\infty_0 (\R^n)$,  existiert stets eine Konstante $C_f$, so dass
-\begin{align*}
+\begin{align}
 |\operatorname{grad}f(y)|^2\le C_f f(y)
-\end{align*}
+\end{align}
 Da $a_1$ von $\R^n\times K_0$ zu einer kompakt getragenen $\mathrm C^\infty$-Funktion fortgesetzt werden kann, folgt mit obigem für $\abs\alpha=\abs\beta=1$
-\begin{align*}
+\begin{align}
 |{a_1}^\alpha(x_j,\xi_j)\lambda_j\int \cc{v_j(y)}\D^\alpha v_j(y)\d y| &\le \lambda_j|{a_1}^\alpha(x_j,\xi_j)|\Norm{v_j}_{(0)}\Norm{v_j}_{(1)} \le \frac{\lambda_j^2}{3n}a_1(x_l,\xi_j) + \frac 1 2\Norm{v_j}_{(1)}^2\\
 |{a_1}_\beta(x_j,\xi_j)\lambda_j\int \cc{v_j(y)}y^\beta v_j(y)\d y| &\le C \lambda_j|{a_1}^\alpha(x_j,\xi_j)|\Norm{v_j}_{(0)} \le \frac{\lambda_j^2}{3n}a_1(x_l,\xi_j) + \frac 1 2
-\end{align*}
+\end{align}
 %%%%%%%%%%%%%
 für $j$ groß genug. Die quadratischen Terme in \eqref{melinendlemma3} erfüllen die Ungleichung
-\begin{align*}
+\begin{align}
 \Abs{\sum_{|\alpha+\beta|= 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v(y)}y^\beta\D^\alpha v(y)\d y}\le C'\Norm{v_j}_{(2)}^2
-\end{align*}
+\end{align}
 erfüllen. Werden die eben aufgelisteten Ungleichungen zusammen mit der Tarsache, dass der Träger von $a_1|_{\R^n\times K_0}$ kompakt ist, in \eqref{melinendlemma3} verwendet, so folgt
-\begin{align*}
+\begin{align}
 \Norm{v_j}_{(4)}^2\le \frac{C''}{\rho}\Norm{v_j}_{(2)}^2\le \frac{C''}{\rho}\Norm{v_j}_{(0)}\Norm{v_j}_{(4)}^2
-\end{align*}
+\end{align}
 Somit ist die Folge $v_j$ $H^4(\R^n)$-beschränkt. Aus dem Satz von Rellich wissen wir, dass eine Teilfolge existiert, die in $H^3(\R^n)$ konvergiert. Der Grenzwert dieser Teilfolge sei durch $v_0$ gegeben. Da alle anderen Terme beschränkt sind, müssen außerdem auch die $\lambda_j^2a_1(x_j,\xi_j)$ beschränkt sein. Somit konvergiert $a_1(x_j,\xi_j)$ gegen Null. 
 Da $a_1$ außerhalb von einer kompakten Menge größer als eine positive Konstante ist, können wir ohne Einschränkung annehmen, dass die Folge $(x_j,\xi_j)$ gegen ein Element $(x_0,\xi_0)$ konvergiert.
 Wird $\rho$ verkleinert, so kann in \eqref{melinendlemma3} $v_j$ durch $v_0$ ersetzt werden, ohne die Ungleichung für große $j$ zu verletzen.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%<
 Wir können nun folgern, dass eine Funktion $v\in\mathrm C^\infty_0(\R^n)$ und $\sigma>0$ existiert, so dass $\Norm v =1$ und
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%>
-\begin{align*}
+\begin{align}
 &\Re \sum_{|\alpha+\beta|\le 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v(y)}y^\beta\D^\alpha v(y)\d y\\
 & + \frac \sigma 2 \int \cc{v(y)}(y^2 + \D^2)v(y) \d y+ (\gamma(x_0,\xi_0)+ \frac\rho 2)\Norm {v} _{(0)}^2 < 0
-\end{align*}
+\end{align}
 Wir führen nun die Bezeichnungen
-\begin{align*}
+\begin{align}
 F_j := \operatorname{grad}_{(x,\xi)}a_1(x_j,\xi_j)\,,\quad H_j:=H_{a_1}(x_j,\xi_j)\,,\quad H_j^\sigma:=H_j  + \sigma I
-\end{align*}
+\end{align}
 ein. Da die Matrix $H_0^\sigma$ positiv definit ist, ist auch $H_j^\sigma$ positiv definit, für $j$ groß genug. Das Anwenden von Satz \ref{satz:thm2.4} ergibt
 \begin{align}\label{melinendlemma4}
 \lambda_j^2\left[ a_1(x_j,\xi_j) - \frac{1}{2}\cspro{F_j}{{H_j^\delta}^{-1}}{F_j} \right] + \gamma(x_0,\xi_0) + \frac \rho 2 + \frac 1 2 \mathrm{Tr}^+ H_j^\sigma\le 0
 \end{align}
 Nun soll gezeigt werden, das die Ungleichung \eqref{melinendlemma4} im Widerspruch zu \eqref{melinendlemma2} steht. Eine Tayor-Entwicklung von $a_1$ liefert
-\begin{align*}
+\begin{align}
 a_1((x_j,\xi_j) + h ) = a_1(x_j,\xi_j) + F_j\cdot h + \frac 1 2 \cspro{h}{H_j}{h} + \mathcal O(1)|h|^3
-\end{align*}
+\end{align}
 für $|h|\le C$ und $h\in\R^{2n}$. Da das Betragsquadrat des Gradienten $F_j$ durch $a_1(x_j,\xi_j)$ beschränkt ist, ist $F_j=\mathcal O(1)\lambda_j^{-1}$. Außerdem ist gilt $\cspro{w}{H_j^\sigma}{w}>\cspro{w}{H_j}{w}$ für alle $w\in\R^{2n}\setminus\{0\}$. Es folgt
-\begin{align*}
+\begin{align}
 0&\le a_1((x_j,\xi_j)- {H_j^\sigma}^{-1}F_j) \\&= a_1(x_j,\xi_j) - \cspro{F_j}{{H_j^\sigma}^{-1}}{F_j} + \frac 1 2\cspro{F_j}{{H_j^\sigma}^{-1}H_j{H_j^\sigma}^{-1}}{F_j} + \mathcal O(1)\lambda_j^{-3}\\
 &\le a_1(x_j,\xi_j) - \frac 1 2\cspro{F_j}{{H_j^\sigma}^{-1}}{F_j}  + \mathcal O(1)\lambda_j^{-3}
-\end{align*}
+\end{align}
 Wird nun wieder $j$ groß genug gewählt, so gilt
-\begin{align*}
+\begin{align}
 0\le \lambda_j^2\left[ a_1(x_j,\xi_j) - \frac{1}{2}\cspro{F_j}{{H_j^\delta}^{-1}}{F_j} \right]  +\frac\rho 4
-\end{align*}
+\end{align}
 Also muss wegen \eqref{melinendlemma4}
-\begin{align*}
+\begin{align}
 \gamma(x_0,\xi_0) + \frac \rho 4 + \frac 1 2 \mathrm{Tr}^+ H_j^\sigma\ge 0
-\end{align*}
+\end{align}
 Da $\mathrm{Tr}^+$ stetig ist, folgt im Limes $j\to\infty$ und $\sigma\to 0$
-\begin{align*}
+\begin{align}
 \gamma(x_0,\xi_0) + \frac \rho 4 + \frac 1 2 \mathrm{Tr}^+ H_{a_1}(x_0,\xi_0)\le 0
-\end{align*}
+\end{align}
 was im Widerspruch zu \eqref{melinendlemma2} steht.
 \end{proof}
 
 Um das Lemma zur Vervollständigung des Beweises nutzen zu können, fehlen noch einige Vorüberlegungen. Da
-\begin{align*}
+\begin{align}
 {a_0}^\alpha_\beta(x^{j,k},\xi^j/\delta)|\xi^j|^{(|\alpha|-|\beta|)/2}\int \cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y) \le c \delta^{\abs\alpha}|\xi^j|^{-|\alpha+\beta|/2}\norm{v^{j,k}_\delta}_{(2)}^2
-\end{align*}
+\end{align}
 für $|\alpha+\beta|\le 2$ und $|\xi^j|$ bestimmt divergiert, können die Symbole $a^\alpha_\beta$ durch ${a_1}^\alpha_\beta$ ersetzt werden, wenn wir einen zusätzlichen Term
-\begin{align*}
+\begin{align}
 {a_0}(x^{j,k},\xi^j/\delta)\norm{v^{j,k}_\delta}_{(0)}^2
-\end{align*}
+\end{align}
 dazu addieren. Nun kann das Lemma mit $K_0=\delta^{-1}\mathbb{S}^{n-1}$, $\lambda_j=|\xi^j|^{1/2}$, $\rho_j(\lambda_j)$, $(x,\xi)=(x^{j,k},\xi^j/\delta|\xi^j|^{-1})$, $\gamma = \epsilon/2 + a_0$ und $v=v^{j,k}_\delta$ angewendet werden.
