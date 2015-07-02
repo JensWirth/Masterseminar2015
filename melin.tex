@@ -206,14 +206,18 @@ für $|\eta|\ge 4 C^2\delta^{-1}$. Für $j\psi_j(\delta\eta)\psi_j(\delta\xi)\ne
 \right]}\\&\le C_N\delta^{-3/2}\braket{\xi-\eta}^{-N}\abs\xi^{-1/2}
 \end{split}
 \end{align}
-Der erste Term von $H_\delta$ kann wegen $\sum|\psi(\delta\xi)-\psi(\delta\eta)|\le C \braket{\xi-\eta}^2/\abs\xi$ für  $\delta(\abs\eta + \abs\xi)$ groß genug durch
+Der erste Term von $H_\delta$ kann wegen
+\begin{align}
+\sum|\psi(\delta\xi)-\psi(\delta\eta)|\le C \frac{\braket{\xi-\eta}^2}{(\braket\xi\braket\eta)^{{1}/{2}}}
+\end{align}
+für  $\delta(\abs\eta + \abs\xi)$ groß genug durch
 \begin{align}
 C_N\delta\braket{\eta-\xi}^{-N}
 \end{align}
 abgeschätzt werden. Alle verbliebenen Terme von $H_\delta$ können nun durch $\phi_{\delta,N}(\eta)\phi_{\delta,N}(\xi)$ mit $\phi_{\delta,N}\in\mathrm C^\infty_\delta(\R^n)$ abgeschätzt werden. Es gilt außerdem
 \begin{align}
 \begin{split}
-\iint\braket{\xi-\eta}^{-(n+1)}|\widehat u(\xi)\widehat u(\eta)|\d\eta\d\xi &= \iint \braket{\eta}^{-(n+1)}|\widehat{u}(\xi||\widehat u(\eta-\xi)|\d\eta\d\xi\\
+\iint\braket{\xi-\eta}^{-(n+1)}|\widehat u(\xi)\widehat u(\eta)|\d\eta\d\xi &= \iint \braket{\eta}^{-(n+1)}|\widehat{u}(\xi)||\widehat u(\eta-\xi)|\d\eta\d\xi\\
 &\le \Norm{\abs{\widehat u} * \abs{\widehat u}}_\infty \norm{\braket{\cdot}^{-(n+1)}}_1\le C_{n+1} \Norm{\widehat u}_2^2
 \end{split}
 \end{align}
@@ -234,20 +238,20 @@ Die obige Aussage zusammen mit dem Lemma zeigt, dass der Fehler, der durch die P
 
 Nun soll eine weitere Lokalisation der Funktion $u$ vorgenommen werden. Dafür sei $\varphi_{j,k}(x):=\varphi_k(x|\xi^j|^{1/2})$. Für alle $v\in\C^\infty(\R^n)$ folgt nach Ausmultiplizieren und der Regel von Leibniz
 \begin{align}
-\sum_{k\in\Z^n}\spro {P^\delta_j\varphi_{j,k}v} {\varphi_{j,k}v} = \sum_{k\in\Z^n}\sum_{|\alpha|\le 2}\sum_{\gamma\le\beta\le\alpha} \left({\frac{\partial^\alpha\sigma(\cdot,\xi^j/\delta)(-\xi^j/\delta)^{(\alpha-\beta)}}{(\alpha-\beta)!(\beta-\gamma)!\gamma!}(\D^\gamma\varphi_{j,k})(\D^{\beta-\gamma}v)}\ , {\varphi_{j,k}v}\right)
+\sum_{k\in\Z^n}\spro {P^\delta_j\varphi_{j,k}v} {\varphi_{j,k}v} = \sum_{k\in\Z^n}\sum_{|\alpha|\le 2}\sum_{\gamma\le\beta\le\alpha} \left({\frac{a^\alpha(\cdot,\xi^j/\delta)(-\xi^j/\delta)^{(\alpha-\beta)}}{(\alpha-\beta)!(\beta-\gamma)!\gamma!}(\D^\gamma\varphi_{j,k})(\D^{\beta-\gamma}v)}\ , {\varphi_{j,k}v}\right)
 \end{align}
 Da außerdem $0=\D^\gamma\sum_k\phi_{j,k}^2 = 2 \sum_k\phi_{j,k}\D^\gamma\phi_{j,k}$ für $|\gamma|=1$ fallen in der oberen Summe alle Terme mit $|\gamma|=1$ weg und es folgt
 \begin{align}\label{eq:vorueberlegung1}
 \sum_{k\in\Z^n}\spro {P^\delta_j\varphi_{j,k}v} {\varphi_{j,k}v} = &\sum_{k\in\Z^n}\spro {\varphi_{j,k}P^\delta_jv} {\varphi_{j,k}v} \\&+ \sum_{k\in\Z^n}\sum_{|\alpha|=2}\int \frac{\partial^\alpha\sigma(x,\xi^j/\delta)}{\alpha!} |\xi^j|(\varphi_k\D^\alpha\varphi_k)(x|\xi^j|^{1/2})|v(x)|^2\d x\nonumber
 \end{align}
-Da $\sigma\in S^1_\text{unif}(\R^n\times\R^n)$ und somit $|\partial^\alpha\sigma(x,\xi^j/\delta)|\le\braket{\xi^j/\delta}^{-1}\le \delta|\xi^j|$ für $|\alpha|=2$ und außerdem
+Da $a\in S^1_\text{unif}(\R^n\times\R^n)$ und somit $|a^\delta(x,\xi^j/\delta)|\le\braket{\xi^j/\delta}^{-1}\le \delta|\xi^j|$ für $|\alpha|=2$ und außerdem
 \begin{align}
 \sum_{k\in\Z^n} |\varphi_k(x)\D^\alpha\varphi_k(x)|\le \left(\sum_{k\in\Z^n}|\phi_k(x)|^2\right)^{1/2}\left(\sum_{k\in\Z^n}|\D^\alpha\phi_k(x)|^2\right)^{1/2}\le C_\alpha^{1/2}
 \end{align}
-kann die zweite Summe aus \eqref{eq:vorueberlegung1} durch $\|v\|^2$ abgeschätzt werden. Wird nun für $v$ $\psi_j(\delta\D)$ eingesetzt und über $j$ summiert, so wird ersichtlich, dass die zweite Summe wieder von der Form $C\delta \mathcal{O}(1) \Norm{u}_{(0)} + C_\delta \mathcal O(1)\Norm{u}_{(-1/4)}$ ist, da
+kann die zweite Summe aus \eqref{eq:vorueberlegung1} durch $\|v\|^2$ abgeschätzt werden. Wird nun $\psi_j(\delta\D)u$ für $v$ eingesetzt und über $j$ summiert, so wird ersichtlich, dass die zweite Summe wieder von der Form $C\delta \mathcal{O}(1) \Norm{u}_{(0)} + C_\delta \mathcal O(1)\Norm{u}_{(-1/4)}$ ist, da
 \begin{align}
 \begin{split}
-\left|\sum_{j,k\in\Z^n}\sum_{|\alpha|=2}\int \frac{\partial^\alpha\sigma(x,\xi^j/\delta)}{\alpha!} |\xi^j|(\varphi_k\D^\alpha\varphi_k)(x|\xi^j|^{1/2})|v(x)|^2\d x\right|\\ \le \delta C \sum_{j\in\Z^n} \norm {\psi_j(\delta\D)u}^2 = \delta C \norm {\sum_{j\in\Z^n} \psi_j(\delta \cdot)\widehat u}^2 = C \delta \Norm u ^2\,.
+\left|\sum_{j,k\in\Z^n}\sum_{|\alpha|=2}\int \frac{a^\alpha(x,\xi^j/\delta)}{\alpha!} |\xi^j|(\varphi_k\D^\alpha\varphi_k)(x|\xi^j|^{1/2})|v(x)|^2\d x\right|\\ \le \delta C \sum_{j\in\Z^n} \norm {\psi_j(\delta\D)u}^2 = \delta C \norm {\sum_{j\in\Z^n} \psi_j(\delta \cdot)\widehat u}^2 = C \delta \Norm u ^2\,.
 \end{split}
 \end{align}
 Mit der Bezeichnung $u_\delta^{j,k} = \varphi_{j,k} \psi_j(\delta\D)u$ bedeutet dies
@@ -262,7 +266,7 @@ definiert. Es folgt
 \begin{align}
 |v^{j,k}_\delta(y)| = \abs{e^{-i(y+x^k)x^j}u^{j,k}_\delta((y+x^k)|\xi^j|^{(-1/2)})} = |\varphi_k(x^k+y)\psi_j(\delta\D)u((y+x^k)|\xi^j|^{(-1/2)})|
 \end{align}
-Da aus den Eigenschaften der Zerlegung der Eins $\supp \phi_k \subset B(x^k,C)$ folgt, gilt auch
+Da aus den Eigenschaften der Zerlegung der Eins $\supp \varphi_k \subset B(x^k,C)$ folgt, gilt auch
 \begin{align}
 \supp v^{j,k}_\delta \subset B(0,C)
 \end{align}
@@ -273,9 +277,9 @@ Außerdem impliziert die Wahl der Transformation für $y=(x-x^{j,k})|\xi^j|^{1/2
 Somit folgt mit der Koordinatentransformation und einer Taylorentwicklung der Ordnung $2-\abs\alpha$ von $\sigma^\alpha$ in $x$ um den Entwicklungspunkt $x^{j,k}$
 \begin{align}
 \spro {A^\delta_j u_\delta^{j,k}}{u_\delta^{j,k}}
-=& \sum_{\abs\alpha\le 2} |\xi^j|^{(\abs\alpha-n)/2}\int \frac{\sigma^\alpha(x^{j,k}+y|\xi^j|^{-1/2},\xi^j/\delta)}{\alpha!}\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)\d y\nonumber\\ \label{termnachkoordtransf}
-=& \sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{\sigma^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
-&+\sum_{\abs\alpha\le 2}|\xi^j|^{(\abs\alpha-n)/2}\int R_{d}[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)\d y\nonumber
+=& \sum_{\abs\alpha\le 2} |\xi^j|^{(\abs\alpha-n)/2}\int \frac{a^\alpha(x^{j,k}+y|\xi^j|^{-1/2},\xi^j/\delta)}{\alpha!}\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)\d y\nonumber\\ \label{termnachkoordtransf}
+=& \sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{a^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
+&+\sum_{\abs\alpha\le 2}|\xi^j|^{(\abs\alpha-n)/2}\int R_{d}[a^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})\cc{v^{j,k}_\delta(y)}\D^\alpha v^{j,k}_\delta(y)\d y\nonumber
 \end{align}
 Das Taylorrestglied $R_d$, wobei $d=3-\abs\alpha$, kann durch einen Term $\mathcal O(1)\delta^{-1}|\xi^j|^{-(\abs\alpha+1)/2}$ außerhalb des Integrals ersetzt werden, da
 \begin{align}
@@ -311,11 +315,12 @@ Darüber hinaus lassen sich die Funktionen $\varphi_k v^j_\delta$ durch Translat
 \end{align}
 Nun soll das über $k$ summierte verbleibende Integral aus \eqref{termnachkoordtransf} abgeschätzt werden. Dafür betrachten wir, den folgenden Ausdruck
 \begin{align}
-\sum_{k\in\Z^n} \int|y^\beta\D^\alpha v^{j,k}_\delta(y)|^2\d y &\le C^{\abs\beta} \sum_{k\in\Z^n} \int |\D^\alpha(\varphi_k v^j_\delta)(y)|^2\d y \nonumber\\
-&\le C^{\abs\beta} \sum_{k\in\Z^n}\sum_{\gamma\le\alpha}\binom{\alpha}{\gamma}\int |(\D^\gamma v^j_\delta)(\D^{\alpha-\gamma})\varphi_k|^2\d y\nonumber\\
-&\le C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}\int |\D^\gamma v^j_\delta|^2\d y\nonumber\\
-&\le C^{\abs\beta}\sum_{\gamma\le\alpha}C_{\alpha-\gamma}C^{\abs\gamma}\delta^{-\abs\gamma}\int |\widehat v^j_\delta|^2\d y\nonumber\\
-&= c_\alpha \delta^{-\abs\alpha}|\xi^j|^{n/2}\int |\psi_j(\delta\D)u(y)|^2\d y\label{polynomnachoben}
+\begin{split}
+&\sum_{k\in\Z^n}\sum_{|\alpha+\beta|\le N} \int|y^\beta\D^\alpha v^{j,k}_\delta(y)|^2\d y \le C^{N} \sum_{k\in\Z^n} \sum_{|\alpha+\beta|\le N}\int |\D^\alpha(\varphi_k v^j_\delta)(y)|^2\d y \\
+&\le C_N\sum_{k\in\Z^n}\| v^j_\delta \varphi_k\|_{(N)}^2 
+= C_N\| v^j_\delta \|_{(N)}^2 \nonumber
+\le \widetilde C_N \delta^{-2N}\| v^j_\delta \|^2 = \widetilde C_N \delta^{-2N}|\xi^j|^{n/2}\| v^j_\delta \|^2 \label{polynomnachoben}
+\end{split}
 \end{align}
 Wird nun über alle $j$ summiert, so dass $\xi^j>\delta^{-12}$ ist, erhält man den Ausdruck
 \begin{align}
@@ -331,7 +336,7 @@ Zusammengefasst ergibt dies
 =& \sum_{j,k\in\Z^n}\sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{\sigma^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
 &+\mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(-1/4)}^2\nonumber
 \end{align}
-In Zukunft soll $\delta$ so gewählt sein, dass der $\mathcal O(1)\delta\norm u ^2_{(0)}$ Term größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist. Finden wir jetzt eine nullkonverente Folge $\rho_j$, so dass
+In Zukunft soll $\delta$ so gewählt sein, dass der $\mathcal O(1)\delta\norm u ^2_{(0)}$ Term größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist. Wir wählen nun eine Abzählung für die Indizierung der $\psi_j$, $\varphi_j$ und $\xi^j$ so, dass $|\xi^j|$ eine monoton steigende Folge ist. Finden wir jetzt eine nullkonverente Folge $\rho_j$, so dass
 
 \begin{align}
 \sum_{|\alpha+\beta|\le 2} \frac{a^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}|\xi^j|^{|\alpha-\beta|/2}\int \cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y + \frac{2}{\epsilon}\norm{v^{j,k}_\delta}^2 + \rho_j \norm{v^{j,k}_\delta}_{(4)}^2 \ge 0
@@ -339,9 +344,9 @@ In Zukunft soll $\delta$ so gewählt sein, dass der $\mathcal O(1)\delta\norm u 
 dann folgt nach unter Verwendung von \eqref{polynomnachoben} und Addition über $k$,  dass 
 \begin{align}
 \spro {Pu} u
-\ge& -C_4\sum_{j\in\Z^n} \rho_j \delta^{-4}\norm{\psi_j(\delta\D)u}^2 - \epsilon \norm u _{(0)}^2 + C_\delta \norm u _{(-1/4)}^2\nonumber
+\ge& -C_4\sum_{j=1}^\infty \rho_j \delta^{-4}\norm{\psi_j(\delta\D)u}^2 - \epsilon \norm u _{(0)}^2 + C_\delta \norm u _{(-1/4)}^2\nonumber
 \end{align}
-Die Summe, kann nun je nach Wahl einer Teilfolge von $\rho_j$ beliebig klein gemacht werden. Um zu zeigen, dass es so eine Folge $\rho_j$ tatsächlich gibt brauchen wir das folgende Lemma.
+Die Summe über $j$, kann nun je nach Wahl einer Teilfolge von $\rho_j$ beliebig klein gemacht werden. Um zu zeigen, dass es so eine Folge $\rho_j$ tatsächlich gibt, brauchen wir das folgende Lemma.
 
 \begin{lem}
 Es sei $C>0$, $K_0\subset\R^n\setminus\{0\}$ kompakt und $\gamma\in\mathrm C(\R^n\times K_0)$ reellwertig, so dass $\gamma(x,\xi)$ konstant ist auf $B(0,R)^\mathrm{C}\times K_0$ für ein $R>0$. Ist die Aussage
@@ -372,9 +377,9 @@ Da $a_1$ von $\R^n\times K_0$ zu einer kompakt getragenen $\mathrm C^\infty$-Fun
 %%%%%%%%%%%%%
 für $j$ groß genug. Die quadratischen Terme in \eqref{melinendlemma3} erfüllen die Ungleichung
 \begin{align}
-\Abs{\sum_{|\alpha+\beta|= 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v(y)}y^\beta\D^\alpha v(y)\d y}\le C'\Norm{v_j}_{(2)}^2
+\Abs{\sum_{|\alpha+\beta|= 2} \frac{{a_1}^\alpha_\beta(x_j,\xi_j)\lambda_j^{2-|\alpha+\beta|}}{\alpha!\beta!}\int\cc{v_j(y)}y^\beta\D^\alpha v_j(y)\d y}\le C'\Norm{v_j}_{(2)}^2\,.
 \end{align}
-erfüllen. Werden die eben aufgelisteten Ungleichungen zusammen mit der Tarsache, dass der Träger von $a_1|_{\R^n\times K_0}$ kompakt ist, in \eqref{melinendlemma3} verwendet, so folgt
+Werden die eben aufgelisteten Ungleichungen in \eqref{melinendlemma3} verwendet, so folgt da $\gamma$ beschränkt ist
 \begin{align}
 \Norm{v_j}_{(4)}^2\le \frac{C''}{\rho}\Norm{v_j}_{(2)}^2\le \frac{C''}{\rho}\Norm{v_j}_{(0)}\Norm{v_j}_{(4)}^2
 \end{align}
