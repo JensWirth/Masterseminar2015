@@ -162,7 +162,7 @@ Es sei $u\in\mathrm C^\infty_0(\R^n)$. Da das Symbol $\sigma$ in $x$ kompakt get
 \end{align}
 Desweiteren gilt $\widehat{\partial^\alpha_\xi\sigma(\cdot,\xi)} = \partial_\xi^\alpha\widehat \sigma(\cdot,\xi)$ und somit
 \begin{align}
-\mathcal{F}\left[\partial^\alpha\sigma(\cdot,\xi^j/\delta)\left( \mathrm D - \xi^j/\delta\right)^\alpha\psi_j(\delta\mathrm D)u\right](\eta) = \int \partial ^\alpha\widehat \sigma(\eta-\xi,\xi^j/\delta)\left( \xi - \xi^j/\delta\right)^\alpha\psi_j(\delta\xi)\widehat u(\xi)\d\xi\,.
+\mathcal{F}\left[\sigma^\alpha(\cdot,\xi^j/\delta)\left( \mathrm D - \xi^j/\delta\right)^\alpha\psi_j(\delta\mathrm D)u\right](\eta) = \int \widehat \sigma^\alpha(\eta-\xi,\xi^j/\delta)\left( \xi - \xi^j/\delta\right)^\alpha\psi_j(\delta\xi)\widehat u(\xi)\d\xi\,.
 \end{align}
 Unter Ausnutzung des Satzes von Plancherel folgt nun
 \begin{align}
@@ -173,23 +173,23 @@ dabei ist die Funktion $H_\delta$ durch
 \begin{split}
 H_\delta(\xi,\eta) := &\frac 1 2 \sum_{j\in \N}(\psi_j(\delta \xi) - \psi_j(\delta \eta))^2\widehat b(\eta-\xi,\xi)\\
 &+ \sum_{j\in\Z^n} \psi_j(\delta\xi)\psi_j(\delta \eta)\left[
-\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\widehat\sigma(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha
+\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\widehat\sigma^\alpha(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha
 \right]
 \end{split}
 \end{align}
 definiert. Nun soll die Funktion $H_\delta$ nach oben abgeschätzt werden. Da $\sigma\in S^1_{\rm comp}(\R^n\times\R^n)$ folgt
 \begin{align}
-\abs{\braket{\eta}^{2N}\partial^\alpha\widehat\sigma(\eta,\xi)}\le (2\pi)^{-n/2}\int_K |\braket{\mathrm D}^{2N}\partial^\alpha\sigma(x,\xi)|\d x \le C_{\alpha,2N} \braket{\xi}^{1 - \abs \alpha}
+\abs{\braket{\eta}^{2N}\widehat\sigma^\alpha(\eta,\xi)}\le (2\pi)^{-n/2}\int_K |\braket{\mathrm D}^{2N}\sigma^\alpha(x,\xi)|\d x \le C_{\alpha,2N} \braket{\xi}^{1 - \abs \alpha}
 \end{align}
 und somit existiert für jedes $N\in\N_0$ und jeden Multiindex $\alpha$ eine Konstante $C_{\alpha,N}> 0 $, so dass
 \begin{align}\label{eq:fourierordnungsabsch}
-\abs {\partial ^\alpha \widehat \sigma(\eta,\xi)} \le C_{\alpha,N}\braket{\eta}^{-N}\braket{\xi}^{1-\abs\alpha}
+\abs {\widehat \sigma^\alpha(\eta,\xi)} \le C_{\alpha,N}\braket{\eta}^{-N}\braket{\xi}^{1-\abs\alpha}
 \end{align}
-Mit Hilfe des Taylorrestglieds {\bf ODER ALS INTEGRAL?}
+Mit Hilfe des Taylorrestglieds
 \begin{align}
-R_N[\widehat \sigma(\eta,\cdot)](\xi,a):= \sum_{\abs\alpha=N}\frac{(\xi-a)^\alpha}{\alpha!}\widehat \sigma^\alpha(\eta,\xi+t(a-\xi)) %\d t
+R_N[\widehat \sigma(\eta,\cdot)](\xi,a):=N \int \sum_{\abs\alpha=N}\frac{(1-t)^{N-1}(\xi-a)^\alpha}{\alpha!}\widehat \sigma^\alpha(\eta,\xi+t(a-\xi)) \d t
 \end{align}
-mit $t\in[0,1]$ und einer Taylorentwicklung im zweiten Argument von $\widehat \sigma$ um den Entwicklungspunkt $\xi^j/\delta$ folgt mit der Abschätzung \eqref{eq:fourierordnungsabsch}
+und einer Taylorentwicklung im zweiten Argument von $\widehat \sigma$ um den Entwicklungspunkt $\xi^j/\delta$ folgt mit der Abschätzung \eqref{eq:fourierordnungsabsch}
 \begin{align}
 \Abs{\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\widehat\sigma^\alpha(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha} = \Abs{R_3[\widehat \sigma(\eta-\xi,\cdot)](\xi,\xi^j/\delta)}\nonumber\\ \le
 C_N\braket{\eta-\xi}^{-N}|\xi-\xi^j/\delta|^3\sup_{t\in[0,1]}(1+|\xi+t(\xi^j/\delta -\xi)|)^{-2}\,.\label{innerHdelta}
