@@ -90,26 +90,19 @@ wobei $H_{a_m}$ die Hessematrix zu $a_m$ bezeichne.
 \end{enumerate}
 \end{thm}
 
-%Die Hessematrix $H_{a_m}$ kann in Blöcke aufgeteilt werden, die homogen vom Grad $m$, $m-1$ oder $m-2$ sind. Für $\lambda>0$ gilt
-%\begin{align*}
-%H_{a_m}(x,\lambda\xi) = \lambda^{m-1}\chi_\lambda^\mathrm{T}H_{a_m}(x,\xi)\chi_\lambda \quad \text{mit } \chi_\lambda=\left(\begin{matrix}
-%\lambda^{1/2}E_n& 0\\
-%0& \lambda^{-1/2}E_n
-%\end{matrix}\right)\,.
-%\end{align*}
-%Da $\chi_\lambda\in\mathrm{Sp}_{2n}(\R)$ bleibt die positive Spur von $H_{a_m}$ bei dieser Transformation erhalten und somit ist $\mathrm{Tr}^+H_{a_m}(x,\xi)$ homogen vom Grad $m-1$ in $\xi$.
-
-Zuerst soll die allgemeine Situation im Satz auf einen einfacheren Fall zurückgeführt werden. Der Operator $\braket{\D}^{-\rho}$ besitzt auf $\mathrm C^\infty_0(\R^n)$ die Inverse $\braket{\D}^{\rho}$, ist eigentlich getragen und $L^2$-symmetrisch, außerdem gilt
-\begin{align*}
-\braket{\D}^\rho\in\mathrm{OP} S_\mathrm{unif}^\rho(\R^n\times\R^n)\text{ und }\Norm{\braket{\D}^\rho u}_{(s)}=\Norm{u}_{(s+\rho)}\,.
-\end{align*}
-Es sei nun $A_\rho:=\braket{\D}^{-\rho}A\braket{\D}^{-\rho}$. Wenn man in \eqref{ungleichungvonmelin} $u$ durch $\braket{D}^{-\rho}u$ ersetzt, so wird ersichtlich, dass die Ungleichung für $A$ und $\mu=(m-1)/2$ genau dann erfüllt ist, wenn sie für $A_\rho$ mit $\mu=(m-\rho-1)/2$ und $s$ ersetzt durch $s-\rho$ erfüllt ist. Desweiteren gilt $A_\rho\in \mathrm{OP}S^{m-2\rho}(\Omega\times\R^n)$. 
+Wir können $A$ durch einen eigentlich getragenen Pseudodifferentialoperator mit gleichen homogenen Symbolkomponenten ersetzen.  Weiter genügt es, die Ungleichung für Operatoren der Ordnung $m=1$ zu zeigen. Sei dazu $\Lambda_s\in\mathrm{OP}S^\rho_{\rm loc}(\Omega\times\R^n)$ ein eigentlich getragener Pseudodifferentialoperator auf $\Omega$ mit Symbol $\braket\xi^\rho$.
+Der Operator $\Lambda_\rho$ besitzt auf $\rmC_0^\infty(\Omega)$ die Parametrix\footnote{Inverse modulo $\mathscr E'(\Omega)\to\rmC^\infty(\Omega)$}  $\Lambda_\rho$, ist $\rmL^2$-symmetrisch und erfüllt für jedes $s\in\R$ mit geeigneten Konstanten
+\begin{align}
+   C_1 \|u\|_{(m-\rho)} + C'_1 \|u\|_{(s)} \le    \|\Lambda_\rho u\|_{(m)} \le   C_2 \|u\|_{(m-\rho)} + C'_2 \|u\|_{(s)}.
+\end{align}
+Es sei nun $A_\rho:=\Lambda_{-\rho} \circ A\circ\Lambda_{-\rho}$. Wenn man in \eqref{ungleichungvonmelin} $u$ durch $\Lambda_{-\rho} u$ ersetzt, so wird ersichtlich, dass die Ungleichung für $A$ und $\mu=(m-1)/2$ genau dann erfüllt ist, wenn sie für $A_\rho$ mit $\mu=(m-\rho-1)/2$ und $s$ ersetzt durch $s-\rho$ erfüllt ist. Desweiteren gilt $A_\rho\in \mathrm{OP}S^{m-2\rho}(\Omega\times\R^n)$. 
 %Da für das Symbol von $A_\rho$ die lokale  Entwicklung
 %\begin{align*}
 %\sigma_{A_\rho}(x,\xi) \sim \sum_{\alpha}\frac 1 {\alpha!} (\partial_\xi^\alpha\braket{\xi}^{-\rho})(\D_x^\alpha \sigma_{A}(x,\xi)\braket{\xi}^{-\rho}) \sim \sum_{k=0}^\infty\sum_{\alpha} c_\alpha a_{m-k}(x,\xi)\braket{\xi}^{-2\rho-\abs\alpha}\partial^\alpha_\xi\braket{\xi}
 %\end{align*}
 %existiert, ist das Hauptsymbol von $A_\rho$ durch $\braket{\xi}^{-2\rho}a_m(x,\xi)$ gegeben. Der Entwicklungsterm der Ordnung $m-1-2\rho$ ist %$\braket{\xi}^{-2\rho}a_{m-1}(x,\xi)$
-Da auch \eqref{bedfuerungleichung} genau dann für $A$ gilt, wenn die Bedingung für $A_\rho$ gilt, können wir Annehmen, dass $A\in\mathrm{OP}S^1_{\rm loc}(\Omega\times\R^n)$.
+Da auch \eqref{bedfuerungleichung} genau dann für $A$ gilt, wenn die Bedingung für $A_\rho$ gilt, können wir annehmen, dass $A\in\mathrm{OP}S^1_{\rm loc}(\Omega\times\R^n)$.
+
 
 \section{Beweis der Ungleichung von Melin}
 
