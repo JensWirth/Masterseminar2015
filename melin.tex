@@ -71,7 +71,7 @@ Symplektische Transformation auf eine geeignete Normalform.
 
 
 \section{Die Ungleichung von Melin}
-Wir formulieren das Hauptresultat dieses Abschnittes.
+Im Folgenden bezeichnen $a_k\in S^{k}_\mathrm{loc}(\Omega\times\R^n)$ die Entwicklungsterme der Entwicklung $a\sim\sum_{j=0}^\infty a_{m-j}$ des Symbols $a$ von $A\in\mathrm{OP}S^{m}_{\rm loc}(\Omega\times\R^n)$. Wir formulieren das Hauptresultat dieses Abschnittes. 
 
 \begin{thm}[{\cite[Theorem 3.1]{Melin:1971}}]
 Sei $A\in\mathrm{OP}S^{m}_{\rm loc}(\Omega\times\R^n)$ mit homogenem Hauptsymbol $a_m(x,\xi)\ge0$ und $\mu=(m-1)/2$. Dann sind \"aquivalent:
@@ -108,17 +108,17 @@ Nun sei
 \end{align}
 Es gilt $\|v\|=\|v_\lambda\|$ und $\supp v_\lambda \subset K$ für genügend große $\lambda$. Außerdem folgt mit entsprechenden Koordinatentransformationen
 \begin{align}
-\spro {A v_\lambda} {v_\lambda} = {2\pi}^{-n/2}\iint \e^{\i x\cdot \xi} \sigma(x/\lambda,\lambda^2\xi_0 + \lambda\xi)\widehat v(\xi)\cc{v(x)}\d\xi\d x\,.
+\spro {A v_\lambda} {v_\lambda} = {2\pi}^{-n/2}\iint \e^{\i x\cdot \xi} a(x/\lambda,\lambda^2\xi_0 + \lambda\xi)\widehat v(\xi)\cc{v(x)}\d\xi\d x\,.
 \end{align}
-Für homogenen Entwicklungsterm $a_k\in S^k_\mathrm{loc}(\Omega\times\R^n)$ gilt (mit $a^\alpha_\beta(x,\xi) = \partial_\xi^\alpha \partial_x^\beta a(x,\xi)$)
+Da $a_1(0,\xi)=0$ ein Minimum  ist, verschwindet auch der Gradient von $a_1$ an dieser Stelle. Es gilt
+\begin{align}\label{oentwrueck}
+\braket{\lambda^2\xi_0 + \lambda\xi}^{-1} = \mathcal O(1)\frac{\braket{\xi}}{\lambda}\,.
+\end{align}
+Dabei stellt $\mathcal O(1)$ eine in $\xi$ und $\lambda\in[1,\infty)$ beschränkte Funktion dar. Nun soll eine Taylorentwicklung von $a$ um den Entwicklungspunkt $(0,\xi_0)$ vorgenommen werden. Diese ist (mit $a^\alpha_\beta(x,\xi) = \partial_\xi^\alpha \partial_x^\beta a(x,\xi)$)
 \begin{align}
-&{a_k}^\alpha_\beta(\widetilde x, \lambda^2 \widetilde \xi)(x/\lambda)^\beta(\lambda\xi)^\alpha = \mathcal O(1)\braket{\widetilde\xi}^{k-\abs\alpha}\braket{\xi}^{\abs\alpha}\lambda^{2k-\abs{\beta+\alpha}} = \mathcal O(1)\braket{\xi}^{k}\lambda^{2k-\abs{\beta+\alpha}}
+a(x/\lambda, \lambda^2\xi_0+\lambda\xi) = a_0(0,\xi_0) + \sum_{\abs{\alpha+\beta}=2} {a_1}^\alpha_\beta(0,\xi_0)\frac{x^\beta\xi^\alpha}{\alpha!\beta!} + \mathcal O(1) \lambda^{-1}\braket{\xi}^4\,.
 \end{align}
-mit $(\widetilde x,\widetilde\xi)\in[0,x/\lambda]\times[\xi_0,\xi_0 + \xi/\lambda]$ beliebig. Wobei $\mathcal O(1)$ eine in $\xi$ und $\lambda\in[1,\infty)$ beschränkte Funktion darstellt. Da der Ausdruck nach Annahme $a_1\ge 0$ müssen bei diesem Minimum die Ableitungen ersten Grades verschwinden müssen und die Terme niedriger Ordnung wie oben zusammengefasst werden können, kann die Taylorentwicklung von $\sigma$ in $\xi$ und $x$ um den Entwicklungspunkt $(0,\lambda^2\xi_0)$ also durch
-\begin{align}
-\sigma(x/\lambda, \lambda^2\xi_0+\lambda\xi) = a_0(0,\xi_0) + \sum_{\abs{\alpha+\beta}=2} {a_1}^\alpha_\beta(0,\xi_0)\frac{x^\beta\xi^\alpha}{\alpha!\beta!} + \mathcal O(1) \lambda^{-1}\braket{\xi}^4
-\end{align}
-beschrieben werden. Wird dies nun in die Ungleichung von Melin mit $u=v_\lambda$ und $s=-1$ eingesetzt, so folgt
+Wird dies nun in die Ungleichung von Melin mit $u=v_\lambda$ und $s=-1$ eingesetzt, so folgt
 \begin{align}
 \Re\int \cc{v(x)}\sum_{\abs{\alpha+\beta}=2}\frac{{a_1}^\alpha_\beta(0,\xi_0)}{\alpha!\beta!}x^\beta\D^\alpha v(x)\d x + (\epsilon +\Re a_0(0,\xi_0))\|v\|_{(0)}^2 + \mathcal O(1)\lambda^{-1}\ge C\|v_\lambda\|_{(-1)}^2
 \end{align}
