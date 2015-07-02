@@ -2,6 +2,17 @@
 \chapter{Die Ungleichung von Melin}
 %\cite{Melin:1971}
 
+Die Ungleichung von Melin verallgemeinert die G\r{a}rdingungleichung. Während letztere für Operatoren $A\in\mathrm{OP}S^{2m}_{\rm comp}(\R^n\times\R^n)$ mit nichtnegativem Hauptsymbol untere Schranken der Form 
+\begin{equation}
+  \Re\spro{Av}{v} + \epsilon \|v\|^2_{(m)} \ge C(\epsilon) \|u\|_{(m-1/2)}^2
+\end{equation}
+für jedes $\epsilon>0$ und zugehörige $C(\epsilon)\in\R$ liefert, fragen wir nun nach Bedingungen an $A$, so dass diese Abschätzungen eine halbe Ordnung besser, also als
+\begin{equation}
+  \Re\spro{Av}{v} + \epsilon \|v\|^2_{(m-1/2)} \ge C(\epsilon) \|u\|_{(m-1)}^2
+\end{equation}
+gelten. Die zu nutzende Grundidee ist ähnlich zum Beweis der scharfen G\r{a}rdingungleichung durch Hörmander \cite{Hormander:1966} beziehungsweise durch Lax und Nirenberg
+\cite{Lax:1966}.
+
 \section{Eine spezielle Klasse quadratischer Dirichletformen}
 Wir betrachten zuerst Dirichletformen der speziellen Struktur
 \begin{equation}
@@ -37,7 +48,7 @@ die symplektische Matrix. Dann ist die symplektische Form gerade durch $\cspro{X
 \begin{equation}
    {\mathrm{Tr}}^+ H = \sum_j\lambda_j 
 \end{equation}
-bezeichnet, wobei die Folge $(\lambda_j)$ eine ihrer Vielfachheit entsprechenden Aufzählung der positiven Elemente von $i\sigma(JM)$ ist. Wir stellen fest, dass die positive Spur
+bezeichnet, wobei die Folge $(\lambda_j)$ eine ihrer Vielfachheit entsprechenden Aufzählung der positiven Eigenwerte von $\i JM$ ist. Wir stellen fest, dass die positive Spur
 der Matrix $H$ unter symplektischen Transformationen der quadratischen Form $h$ invariant ist. Also gilt für alle $\chi\in\mathrm{Sp}_{2n}(\R)$
 \begin{align*}
 \mathrm{Tr}^+(\chi^\mathrm{T}H\chi) = \mathrm{Tr}^+ H\,.
@@ -54,14 +65,16 @@ Es gilt $P[u]\ge0$ genau dann für alle $u\in\mathscr S(\R^n)$, wenn die Bedingu
 \end{enumerate}
 erfüllt sind.
 \end{thm}
+\begin{proof}[Beweisidee]
+Symplektische Transformation auf Normalform.
+\end{proof}
 
 
 \section{Die Ungleichung von Melin}
-
-Die Ungleichung von Melin verallgemeinert die Ungleichung von G\r ardingen. Der nachfolgende Satz gibt scharfe Bedingungen für die Gültigkeit dieser Ungleichung.
+Wir formulieren das Hauptresultat dieses Abschnittes.
 
 \begin{thm}[{\cite[Theorem 3.1]{Melin:1971}}]
-Sei $A\in\mathrm{OP}S^m_{\rm loc}(\Omega\times\R^n)$ mit homogenem Hauptsymbol $a_m(x,\xi)\ge0$ und $\mu=(m-1)/2$. Dann sind \"aquivalent:
+Sei $A\in\mathrm{OP}S^{m}_{\rm loc}(\Omega\times\R^n)$ mit homogenem Hauptsymbol $a_m(x,\xi)\ge0$ und $\mu=(m-1)/2$. Dann sind \"aquivalent:
 \begin{enumerate}
 \item F\"ur jedes $\epsilon>0$, jedes $K\Subset\Omega$ und jedes $s\in\R$ existiert ein $C$, so dass
 \begin{equation}
@@ -70,7 +83,7 @@ Sei $A\in\mathrm{OP}S^m_{\rm loc}(\Omega\times\R^n)$ mit homogenem Hauptsymbol $
 für alle $u\in\rmC_0^\infty(K)$.
 \item
 Für alle $(x,\xi)\in\Omega\times\R^n$ mit $a_m(x,\xi)=0$ gilt
-\begin{equation}
+\begin{equation}\label{bedfuerungleichung}
    \Re a_{m-1} +  \frac 1 2 {\mathrm{Tr}}^+ H_{a_m} \ge 0,
 \end{equation}
 wobei $H_{a_m}$ die Hessematrix zu $a_m$ bezeichne.
@@ -96,7 +109,7 @@ Es sei nun $A_\rho:=\braket{\D}^{-\rho}A\braket{\D}^{-\rho}$. Wenn man in \eqref
 %\sigma_{A_\rho}(x,\xi) \sim \sum_{\alpha}\frac 1 {\alpha!} (\partial_\xi^\alpha\braket{\xi}^{-\rho})(\D_x^\alpha \sigma_{A}(x,\xi)\braket{\xi}^{-\rho}) \sim \sum_{k=0}^\infty\sum_{\alpha} c_\alpha a_{m-k}(x,\xi)\braket{\xi}^{-2\rho-\abs\alpha}\partial^\alpha_\xi\braket{\xi}
 %\end{align*}
 %existiert, ist das Hauptsymbol von $A_\rho$ durch $\braket{\xi}^{-2\rho}a_m(x,\xi)$ gegeben. Der Entwicklungsterm der Ordnung $m-1-2\rho$ ist %$\braket{\xi}^{-2\rho}a_{m-1}(x,\xi)$
-Da auch $\eqref{bedfuerungleichung}$ genau dann für $A$ gilt, wenn die Bedingung für $A_\rho$ gilt, können wir Annehmen, dass $A\in\mathrm{OP}S^1_{\rm loc}(\Omega\times\R^n)$.
+Da auch \eqref{bedfuerungleichung} genau dann für $A$ gilt, wenn die Bedingung für $A_\rho$ gilt, können wir Annehmen, dass $A\in\mathrm{OP}S^1_{\rm loc}(\Omega\times\R^n)$.
 
 \section{Beweis der Ungleichung von Melin}
 
