@@ -198,9 +198,9 @@ und somit existiert für jedes $N\in\N_0$ und jeden Multiindex $\alpha$ eine Kon
 \end{align}
 Mit Hilfe des Taylorrestglieds
 \begin{align*}
-R_N[\widehat \sigma(\eta,\cdot)](\xi,a):= N \int_0^1\sum_{\abs \alpha = N} \frac{(1-t)^N(\xi-a)^\alpha}{\alpha!}\partial^\alpha\widehat \sigma(\eta,\xi+t(a-\xi))\d t
+R_N[\widehat \sigma(\eta,\cdot)](\xi,a):= \sum_{\abs\alpha=N}\frac{(\xi-a)^\alpha}{\alpha!}\widehat \sigma^\alpha(\eta,\xi+t(a-\xi))\d t
 \end{align*}
-und einer Taylorentwicklung im zweiten Argument von $\widehat \sigma$ um den Entwicklungspunkt $\xi^j/\delta$ folgt mit der Abschätzung \eqref{eq:fourierordnungsabsch}
+mit $t\in[0,1]$ und einer Taylorentwicklung im zweiten Argument von $\widehat \sigma$ um den Entwicklungspunkt $\xi^j/\delta$ folgt mit der Abschätzung \eqref{eq:fourierordnungsabsch}
 \begin{align*}
 \Abs{\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\widehat\sigma(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha} = \Abs{R_3[\widehat \sigma(\eta-\xi,\cdot)](\xi,\xi^j/\delta)}\\ \le
 C_N\braket{\eta-\xi}^{-N}\sup_{\zeta\in[\xi,\xi^j/\delta]}\frac{|\xi-\xi^j/\delta|^3}{\braket{\zeta}^2}\,.
