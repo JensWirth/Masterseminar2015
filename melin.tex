@@ -56,7 +56,7 @@ der Matrix $H$ unter symplektischen Transformationen der quadratischen Form $h$ 
 
 Der nachfolgende Satz ist von entscheidender Bedeutung um notwendige und hinreichende Bedingungen für die Ungleichung von Melin zu formulieren.
 
-\begin{thm}[{\cite[Theorem 2.4.]{Melin:1971}}]\label{satz:thm2.4}
+\begin{thm}[{\cite[Theorem 2.4.]{Melin:1971}}]
 Es gilt $P[u]\ge0$ genau dann für alle $u\in\mathscr S(\R^n)$, wenn die Bedingungen
 \begin{enumerate}
 \item  $h(x,\xi)\ge0$ auf $\R^n\times\R^n$;
@@ -99,18 +99,17 @@ wobei $H_{a_m}$ die Hessematrix zu $a_m$ bezeichne.
 %\end{align*}
 %Da $\chi_\lambda\in\mathrm{Sp}_{2n}(\R)$ bleibt die positive Spur von $H_{a_m}$ bei dieser Transformation erhalten und somit ist $\mathrm{Tr}^+H_{a_m}(x,\xi)$ homogen vom Grad $m-1$ in $\xi$.
 
-Wir können $A$ durch einen eigentlich getragenen Pseudodifferentialoperator mit gleichen homogenen Symbolkomponenten ersetzen.  Weiter genügt es, die Ungleichung für Operatoren der Ordnung $m=1$ zu zeigen. Sei dazu $\Lambda_s\in\mathrm{OP}S^\rho_{\rm loc}(\Omega\times\R^n)$ ein eigentlich getragener Pseudodifferentialoperator auf $\Omega$ mit Symbol $\braket\xi^\rho$.
-Der Operator $\Lambda_\rho$ besitzt auf $\rmC_0^\infty(\Omega)$ die Parametrix\footnote{Inverse modulo $\mathscr E'(\Omega)\to\rmC^\infty(\Omega)$}  $\Lambda_\rho$, ist $\rmL^2$-symmetrisch und erfüllt für jedes $s\in\R$ mit geeigneten Konstanten
-\begin{align}
-   C_1 \|u\|_{(m-\rho)} + C'_1 \|u\|_{(s)} \le    \|\Lambda_\rho u\|_{(m)} \le   C_2 \|u\|_{(m-\rho)} + C'_2 \|u\|_{(s)}.
-\end{align}
-Es sei nun $A_\rho:=\Lambda_{-\rho} \circ A\circ\Lambda_{-\rho}$. Wenn man in \eqref{ungleichungvonmelin} $u$ durch $\Lambda_{-\rho} u$ ersetzt, so wird ersichtlich, dass die Ungleichung für $A$ und $\mu=(m-1)/2$ genau dann erfüllt ist, wenn sie für $A_\rho$ mit $\mu=(m-\rho-1)/2$ und $s$ ersetzt durch $s-\rho$ erfüllt ist. Desweiteren gilt $A_\rho\in \mathrm{OP}S^{m-2\rho}(\Omega\times\R^n)$. 
+Zuerst soll die allgemeine Situation im Satz auf einen einfacheren Fall zurückgeführt werden. Der Operator $\braket{\D}^{-\rho}$ besitzt auf $\mathrm C^\infty_0(\R^n)$ die Inverse $\braket{\D}^{\rho}$, ist eigentlich getragen und $L^2$-symmetrisch, außerdem gilt
+\begin{align*}
+\braket{\D}^\rho\in\mathrm{OP} S_\mathrm{unif}^\rho(\R^n\times\R^n)\text{ und }\Norm{\braket{\D}^\rho u}_{(s)}=\Norm{u}_{(s+\rho)}\,.
+\end{align*}
+Es sei nun $A_\rho:=\braket{\D}^{-\rho}A\braket{\D}^{-\rho}$. Wenn man in \eqref{ungleichungvonmelin} $u$ durch $\braket{D}^{-\rho}u$ ersetzt, so wird ersichtlich, dass die Ungleichung für $A$ und $\mu=(m-1)/2$ genau dann erfüllt ist, wenn sie für $A_\rho$ mit $\mu=(m-\rho-1)/2$ und $s$ ersetzt durch $s-\rho$ erfüllt ist. Desweiteren gilt $A_\rho\in \mathrm{OP}S^{m-2\rho}(\Omega\times\R^n)$. 
 %Da für das Symbol von $A_\rho$ die lokale  Entwicklung
 %\begin{align*}
 %\sigma_{A_\rho}(x,\xi) \sim \sum_{\alpha}\frac 1 {\alpha!} (\partial_\xi^\alpha\braket{\xi}^{-\rho})(\D_x^\alpha \sigma_{A}(x,\xi)\braket{\xi}^{-\rho}) \sim \sum_{k=0}^\infty\sum_{\alpha} c_\alpha a_{m-k}(x,\xi)\braket{\xi}^{-2\rho-\abs\alpha}\partial^\alpha_\xi\braket{\xi}
 %\end{align*}
 %existiert, ist das Hauptsymbol von $A_\rho$ durch $\braket{\xi}^{-2\rho}a_m(x,\xi)$ gegeben. Der Entwicklungsterm der Ordnung $m-1-2\rho$ ist %$\braket{\xi}^{-2\rho}a_{m-1}(x,\xi)$
-Da auch \eqref{bedfuerungleichung} genau dann für $A$ gilt, wenn die Bedingung für $A_\rho$ gilt, können wir annehmen, dass $A\in\mathrm{OP}S^1_{\rm loc}(\Omega\times\R^n)$.
+Da auch \eqref{bedfuerungleichung} genau dann für $A$ gilt, wenn die Bedingung für $A_\rho$ gilt, können wir Annehmen, dass $A\in\mathrm{OP}S^1_{\rm loc}(\Omega\times\R^n)$.
 
 \section{Beweis der Ungleichung von Melin}
 
@@ -119,17 +118,17 @@ Da auch \eqref{bedfuerungleichung} genau dann für $A$ gilt, wenn die Bedingung 
 Es sei $(x_0,\xi_0)\in\Omega\times\R^n$ mit $a_1(x_0,\xi_0)=0$ und $K\Subset \Omega$ so gewählt, dass  $(x_0,\xi_0)\in \overset{\circ} {K}\times\R^n$. Wir können ohne Beschränkung der Allgemeinheit annehmen, dass $x_0=0$. 
 Nun sei 
 \begin{align*}
- v\in\rmC^\infty_0(\R^n) \quad \text{und} \quad v_\lambda(x):=\lambda^{n/2}v(\lambda x)\, \e^{\i\lambda^2x\cdot \xi_0}\, ,\quad\lambda>0.
+ v\in\mathrm C^\infty_0(\R^n) \quad \text{und} \quad v_\lambda(x):=\lambda^{n/2}v(\lambda x)\, e^{i\lambda^2x\xi_0}\, ,\quad\lambda>0
 \end{align*}
 Es gilt $\|v\|=\|v_\lambda\|$ und $\supp v_\lambda \subset K$ für genügend große $\lambda$. Außerdem folgt mit entsprechenden Koordinatentransformationen
 \begin{align*}
-\spro {A v_\lambda} {v_\lambda} = {2\pi}^{-n/2}\iint \e^{\i x\cdot \xi} \sigma(x/\lambda,\lambda^2\xi_0 + \lambda\xi)\widehat v(\xi)\cc{v(\xi)}\d\xi\d x\,.
+\spro {A v_\lambda} {v_\lambda} = {2\pi}^{-n/2}\int\int e^{ix\xi} \sigma(x/\lambda,\lambda^2\xi_0 + \lambda\xi)\widehat v(\xi)\cc{v(\xi)}\d\xi\d x\,.
 \end{align*}
-Für homogenen Entwicklungsterm $a_k\in S^k_\mathrm{loc}(\Omega\times\R^n)$ gilt
+Für homogenen Entwicklungsterm $a_k\in\S^k_\mathrm{lok}(\Omega\times\R^n)$ gilt
 \begin{align*}
-&(\partial_\xi^\alpha\partial_x^\beta{a_k})(\widetilde x, \lambda^2 \widetilde \xi)(x/\lambda)^\beta(\lambda\xi)^\alpha = \mathcal O(1)\braket{\widetilde\xi}^{k-\abs\alpha}\braket{\xi}^{\abs\alpha}\lambda^{2k-\abs{\beta+\alpha}} = \mathcal O(1)\braket{\xi}^{k}\lambda^{2k-\abs{\beta+\alpha}}
+&{a_k}^\alpha_\beta(\widetilde x, \lambda^2 \widetilde \xi)(x/\lambda)^\beta(\lambda\xi)^\alpha = \mathcal O(1)\braket{\widetilde\xi}^{k-\abs\alpha}\braket{\xi}^{\abs\alpha}\lambda^{2k-\abs{\beta+\alpha}} = \mathcal O(1)\braket{\xi}^{k}\lambda^{2k-\abs{\beta+\alpha}}
 \end{align*}
-mit $(\widetilde x,\widetilde\xi)\in[0,x/\lambda]\times[\xi_0,\xi_0 + \xi/\lambda]$ beliebig. Wobei $\mathcal O(1)$ eine in $\xi$ und $\lambda\in[1,\infty)$ beschränkte Funktion darstellt. Da der Ausdruck nach Annahme $a_1\ge 0$ müssen bei diesem Minimum die Ableitungen ersten Grades verschwinden müssen und die Terme niedriger Ordnung wie oben zusammengefasst werden können, kann die Taylor-Entwicklung von $\sigma$ in $\xi$ und $x$ um den Entwicklungspunkt $(0,\lambda^2\xi_0)$ also durch
+mit $(\widetilde x,\widetilde\xi)\in[0,x/\lambda]\times[\xi_0,\xi_0 + \xi/\lambda]$ beliebig. Wobei $\mathcal O(1)$ eine in $\xi$ und $\lambda\in[1,\infty)$ beschränkte Funktion darstellt. Da der Ausdruck nach Annahme $a_1\ge 0$ müssen bei diesem Minimum die Ableitungen ersten Grades verschwinden müssen und die Terme niedriger Ordnung wie oben zusammengefasst werden können, kann die Taylor Entwicklung von $\sigma$ in $\xi$ und $x$ um den Entwicklungspunkt $(0,\lambda^2\xi_0)$ also durch
 \begin{align*}
 \sigma(x/\lambda, \lambda^2\xi_0+\lambda\xi) = a_0(0,\xi_0) + \sum_{\abs{\alpha+\beta}=2} {a_1}^\alpha_\beta(0,\xi_0)\frac{x^\beta\xi^\alpha}{\alpha!\beta!} + \mathcal O(1) \lambda^{-1}\braket{\xi}^4
 \end{align*}
@@ -149,11 +148,11 @@ Die symmetrische Matrix $H$, die die obige quadratische Form erzeugt, hat die Ko
 
 \subsection{Beweis der Rückrichtung}
 
-Um den Beweis durchzuführen werden wir die im letzten Abschnitt eingeführte Zerlegung der Eins $(\phi_k)$ und $(\psi_k)$ benutzen. Zusätzlich wird die Folge $(\xi^j)\subset \R^n$ so gewählt, dass $0\neq \xi^j\in\supp \psi_j$.
+Um den Beweis durchzuführen werden wir die im letzten Abschnitt eingeführte Zerlegung der Eins $(\phi_k)$ und $(psi_k)$ benutzen. Zusätzlich wird die Folge $(\xi^j)\subset \R^n$ so gewählt, dass $0\neq \xi^j\in\supp \psi_j$.
 
-Es sei $P$ ein Pseudodifferentialoperator auf dem Gebiet $\Omega$ mit Symbol $\sigma$. Wir untersuchen, wie gut die zur Taylorentwicklung des Symbols zugehörigen Differentialoperatoren
+Wir untersuchen, wie gut die zur Taylorentwicklung des Symbols zugehörigen Differentialoperatoren
 \begin{align}
- P_j^\delta v (x):=\sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\sigma(x,\xi^j/\delta)}{\alpha!}\left( \mathrm D - \xi^j/\delta\right)^\alpha v(x)
+ A_j^\delta v (x):=\sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\sigma(x,\xi^j/\delta)}{\alpha!}\left( \mathrm D - \xi^j/\delta\right)^\alpha v(x)
 \end{align}
 für $v\in\mathrm {C}^\infty(\R^n)$ und $\delta\in(0,1]$ den Ausdruck $A$ approximiert. Hierfür zunächst eine Vorüberlegung. \eqref{ungleichungvonmelin} verändert sich nicht, wenn das Symbol außerhalb einer kompakten Menge $K$ verändert wird. Sei nun $\psi\in\mathrm{C}^\infty_0(\R^n)$ mit $\psi(x)\in[0,1]$ für alle $x\in\R^n$ und $\psi(x)=1$ für alle $x\in k$. Wir können jetzt $a(x,\xi)$ durch $(1-\psi(x))\braket{\xi} + \psi(x)a(x,\xi)$ ersetzen ohne \eqref{ungleichungvonmelin} zu ändern. Deshalb sei nun $a$ außerhalb einer Kompakten Menge durch $\braket{\xi}$ gegeben.
 
@@ -199,9 +198,9 @@ und somit existiert für jedes $N\in\N_0$ und jeden Multiindex $\alpha$ eine Kon
 \end{align}
 Mit Hilfe des Taylorrestglieds
 \begin{align*}
-R_N[\widehat \sigma(\eta,\cdot)](\xi,a):= N \int_0^1\sum_{\abs \alpha = N} \frac{(1-t)^N(\xi-a)^\alpha}{\alpha!}\partial^\alpha\widehat \sigma(\eta,\xi+t(a-\xi))\d t
+R_N[\widehat \sigma(\eta,\cdot)](\xi,a):= \sum_{\abs\alpha=N}\frac{(\xi-a)^\alpha}{\alpha!}\widehat \sigma^\alpha(\eta,\xi+t(a-\xi))\d t
 \end{align*}
-und einer Taylorentwicklung im zweiten Argument von $\widehat \sigma$ um den Entwicklungspunkt $\xi^j/\delta$ folgt mit der Abschätzung \eqref{eq:fourierordnungsabsch}
+mit $t\in[0,1]$ und einer Taylorentwicklung im zweiten Argument von $\widehat \sigma$ um den Entwicklungspunkt $\xi^j/\delta$ folgt mit der Abschätzung \eqref{eq:fourierordnungsabsch}
 \begin{align*}
 \Abs{\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\widehat\sigma(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha} = \Abs{R_3[\widehat \sigma(\eta-\xi,\cdot)](\xi,\xi^j/\delta)}\\ \le
 C_N\braket{\eta-\xi}^{-N}\sup_{\zeta\in[\xi,\xi^j/\delta]}\frac{|\xi-\xi^j/\delta|^3}{\braket{\zeta}^2}\,.
