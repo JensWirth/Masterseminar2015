@@ -2,13 +2,13 @@
 \chapter{Die Ungleichung von Melin}
 %\cite{Melin:1971}
 
-Die Ungleichung von Melin verallgemeinert die G\r{a}rdingungleichung. Während letztere für Operatoren $A\in\mathrm{OP}S^{2m}_{\rm comp}(\R^n\times\R^n)$ mit nichtnegativem Hauptsymbol untere Schranken der Form 
+Die Ungleichung von Melin verallgemeinert die G\r{a}rdingungleichung. Während letztere für Operatoren $A\in\mathrm{OP}S^{2m}_{\rm unif}(\R^n\times\R^n)$ mit nichtnegativem Hauptsymbol untere Schranken der Form 
 \begin{equation}
-  \Re\spro{Av}{v} + \epsilon \|v\|^2_{(m)} \ge C(\epsilon) \|u\|_{(m-1/2)}^2
+\forall_{v\in\mathscr S(\R^n)}\quad:\quad  \Re\spro{Av}{v} + \epsilon \|v\|^2_{(m)} \ge C(\epsilon) \|u\|_{(m-1/2)}^2
 \end{equation}
 für jedes $\epsilon>0$ und zugehörige $C(\epsilon)\in\R$ liefert, fragen wir nun nach Bedingungen an $A$, so dass diese Abschätzungen eine halbe Ordnung besser, also als
 \begin{equation}
-  \Re\spro{Av}{v} + \epsilon \|v\|^2_{(m-1/2)} \ge C(\epsilon) \|u\|_{(m-1)}^2
+  \forall_{v\in\mathscr S(\R^n)}\quad:\quad   \Re\spro{Av}{v} + \epsilon \|v\|^2_{(m-1/2)} \ge C(\epsilon) \|u\|_{(m-1)}^2
 \end{equation}
 gelten. Die zu nutzende Grundidee ist ähnlich zum Beweis der scharfen G\r{a}rdingungleichung durch Hörmander \cite{Hormander:1966} beziehungsweise durch Lax und Nirenberg
 \cite{Lax:1966}.
@@ -108,9 +108,9 @@ Nun sei
 \end{align}
 Es gilt $\|v\|=\|v_\lambda\|$ und $\supp v_\lambda \subset K$ für genügend große $\lambda$. Außerdem folgt mit entsprechenden Koordinatentransformationen
 \begin{align}
-\spro {A v_\lambda} {v_\lambda} = {2\pi}^{-n/2}\iint \e^{\i x\cdot \xi} \sigma(x/\lambda,\lambda^2\xi_0 + \lambda\xi)\widehat v(\xi)\cc{v(\xi)}\d\xi\d x\,.
+\spro {A v_\lambda} {v_\lambda} = {2\pi}^{-n/2}\iint \e^{\i x\cdot \xi} \sigma(x/\lambda,\lambda^2\xi_0 + \lambda\xi)\widehat v(\xi)\cc{v(x)}\d\xi\d x\,.
 \end{align}
-Für homogenen Entwicklungsterm $a_k\in S^k_\mathrm{loc}(\Omega\times\R^n)$ gilt
+Für homogenen Entwicklungsterm $a_k\in S^k_\mathrm{loc}(\Omega\times\R^n)$ gilt (mit $a^\alpha_\beta(x,\xi) = \partial_\xi^\alpha \partial_x^\beta a(x,\xi)$)
 \begin{align}
 &{a_k}^\alpha_\beta(\widetilde x, \lambda^2 \widetilde \xi)(x/\lambda)^\beta(\lambda\xi)^\alpha = \mathcal O(1)\braket{\widetilde\xi}^{k-\abs\alpha}\braket{\xi}^{\abs\alpha}\lambda^{2k-\abs{\beta+\alpha}} = \mathcal O(1)\braket{\xi}^{k}\lambda^{2k-\abs{\beta+\alpha}}
 \end{align}
