@@ -194,32 +194,32 @@ Mit Hilfe des Taylorrestglieds
 R_N[\widehat \sigma(\eta,\cdot)](\xi,a):= \sum_{\abs\alpha=N}\frac{(\xi-a)^\alpha}{\alpha!}\widehat \sigma^\alpha(\eta,\xi+t(a-\xi))\d t
 \end{align*}
 mit $t\in[0,1]$ und einer Taylorentwicklung im zweiten Argument von $\widehat \sigma$ um den Entwicklungspunkt $\xi^j/\delta$ folgt mit der Abschätzung \eqref{eq:fourierordnungsabsch}
+\begin{align}
+\Abs{\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\widehat\sigma^\alpha(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha} = \Abs{R_3[\widehat \sigma(\eta-\xi,\cdot)](\xi,\xi^j/\delta)}\nonumber\\ \le
+C_N\braket{\eta-\xi}^{-N}|\xi-\xi^j/\delta|^3\sup_{t\in[0,1]}(1+|\xi+t(\xi^j/\delta -\xi)|)^{-2}\,.\label{innerHdelta}
+\end{align}
+Aus den Eigenschaften der Partition der Eins $(\psi_j)_{j\in\Z^n}$ folgt nun $|\xi\delta-\eta\delta|\le C\abs{\eta\delta}^{1/2}$ für $j\psi_j(\delta\eta)\psi_j(\delta\xi)\neq 0$. Für alle $\delta\xi,\delta\eta\in\supp\psi_j$ mit $j\neq 0$ folgt nun
 \begin{align*}
-\Abs{\widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\widehat\sigma(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha} = \Abs{R_3[\widehat \sigma(\eta-\xi,\cdot)](\xi,\xi^j/\delta)}\\ \le
-C_N\braket{\eta-\xi}^{-N}\sup_{\zeta\in[\xi,\xi^j/\delta]}\frac{|\xi-\xi^j/\delta|^3}{\braket{\zeta}^2}\,.
+|\xi -\eta| \le C \delta^{-1/2}|\eta|^{1/2}\le \frac{\abs\eta}{2}
 \end{align*}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Aus den Eigenschaften der Partition der Eins $(\psi_j)_{j\in\Z^n}$ folgt nun $|\xi\delta-\eta\delta|\le C\braket{\eta\delta}^{1/2}$ für $\psi_j(\delta\eta)\psi_j(\delta\xi)\neq 0$. Für alle $\delta\xi,\delta\eta\in\supp\psi_j$ mit $j\neq 0$ folgt nun
+für $|\eta|\ge 4 C^2\delta^{-1}$. Für $j\psi_j(\delta\eta)\psi_j(\delta\xi)\neq 0$ und $\abs\xi + \abs\eta>12C^2\delta^{-1}$ ist somit $\abs\xi$ und $\abs\eta$ größer als $4C^2\delta^{-1}$. Natürlich gilt das gleiche auch, nachdem $\xi$ durch $\xi^j/\delta$ und $\eta$ durch $\xi$ ersetzt wurde. Wird dies in \eqref{innerHdelta} eingesetzt, so folgt für $\delta(\abs\eta + \abs\xi)$ groß genug und einer Anwendung der Hölderungleichung für die Summe über $j$, dass
 \begin{align*}
-|\xi -\eta|\le \frac{1}{\delta}C\braket{\delta\eta}^{1/2}\le \widetilde C \delta^{-1/2}|\eta|^{1/2}
-\end{align*}
-sofern $\widetilde C$ groß genug gewählt wird. Weiter gilt $\widetilde C\delta^{-1/2}|\eta|^{-1/2}\le|\eta|/2$ für $|\eta|\ge 4\widetilde C^2\delta^{-1}$
-\begin{align*}
-\Abs{\sum_{j\in\Z^n} \psi_j(\delta\xi)\psi_j(\delta \eta)\left[
+&\Abs{\sum_{j\in\Z^n\setminus\{0\}} \psi_j(\delta\xi)\psi_j(\delta \eta)\left[
 \widehat \sigma(\eta-\xi,\xi) - \sum_{\abs \alpha \le 2} \frac{\partial ^\alpha\widehat\sigma(\eta-\xi,\xi^j/\delta)}{\alpha!}\left( \xi - \xi^j/\delta\right)^\alpha
-\right]}\le \\
+\right]}\\&\le C_N\delta^{-3/2}\braket{\xi-\eta}^{-N}\abs\xi^{-1/2}\\
 \end{align*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Es gilt
+Der erste Term von $H\delta$ kann wegen $\sum|\psi(\delta\xi)-\psi(\delta\eta)|\le C \braket{\xi-\eta}^2/\abs\xi$ für  $\delta(\abs\eta + \abs\xi)$ groß genug durch
+\begin{align*}
+C_N\delta\braket{\eta-\xi}^{-N}
+\end{align*}
+abgeschätzt werden. Alle verbliebenen Terme von $H_\delta$ können nun durch $\phi_{\delta,N}(\eta)\phi_{\delta,N}(\xi)$ mit $\phi_{\delta,N}\in\mathrm C^\infty_\delta(\R^n)$ abgeschätzt werden. Es gilt außerdem
 \begin{align*}
 \int\int\braket{\xi-\eta}^{-(n+1)}|\widehat u(\xi)\widehat u(\eta)|\d\eta\d\xi &= \int\int \braket{\eta}^{-(n+1)}|\widehat{u}(\xi||\widehat u(\eta-\xi)|\d\eta\d\xi\\
 &\le \Norm{\abs{\widehat u} * \abs{\widehat u}}_\infty \norm{\braket{\cdot}^{-(n+1)}}_1\le C_{n+1} \Norm{\widehat u}_2^2
 \end{align*}
 Mit $|H_\delta(\xi,\eta)|\le C_N\delta\braket{\xi-\eta}^{-N} +\phi_{\delta,N}(\xi)\phi_{\delta,N}(\eta)$ und $N$ groß genug folgt nun
 \begin{align*}
-\int\int|H_\delta(\xi,\eta)\widehat u(\xi)\widehat u(\eta)|\d\xi\d\eta &\le \delta C_N \Norm{u}^2_{(0)} + \Norm{\phi_{\delta,N} \widehat u}_1^2 \le \delta C_N \Norm{u}^2_{(0)} + \|\phi_{\delta,N}\|_{(1/4)}^2 \Norm{\widehat u}_{(-1/4)}^2 \\
+\int\int|H_\delta(\xi,\eta)\widehat u(\xi)\widehat u(\eta)|\d\xi\d\eta &\le \delta C_N \Norm{u}^2_{(0)} + \Norm{\phi_{\delta,N} \widehat u}_1^2 \le \delta C_N \Norm{u}^2_{(0)} + \|\phi_{\delta,N}\|_{(1/4)}^2 \Norm{u}_{(-1/4)}^2 \\
 &= \delta C_N \Norm{u}^2_{(0)} +  C_{\delta,N} \Norm{ u}_{(-1/4)}^2\,.
 \end{align*}
 
