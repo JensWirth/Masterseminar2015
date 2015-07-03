@@ -49,7 +49,7 @@ J=\begin{pmatrix}
 \end{align}
 die symplektische Matrix. Dann ist die symplektische Form gerade durch $\cspro{X}{J}{Y}$ gegeben. Für eine reelle symmetrische Matrix $M$ hat  die Matrix $JM$ ein symmetrisch um den Ursprung angeordnetes, rein imaginäres Spektrum. Die positive Spur von $H$ werde durch
 \begin{equation}
-   {\mathrm{Tr}}^+ H = \sum_j\lambda_j 
+   {\mathrm{Tr}}^+ H = \sum_j\mu_j 
 \end{equation}
 bezeichnet, wobei die Folge $(\lambda_j)$ eine ihrer Vielfachheit entsprechenden Aufzählung der positiven Eigenwerte von $\i JM$ ist. Wir stellen fest, dass die positive Spur
 der Matrix $H$ unter symplektischen Transformationen der quadratischen Form $h$ invariant ist. Also gilt für alle $\chi\in\mathrm{Sp}_{2n}(\R)$
@@ -69,7 +69,7 @@ Es gilt $P[u]\ge0$ genau dann für alle $u\in\mathscr S(\R^n)$, wenn die Bedingu
 erfüllt sind.
 \end{thm}
 \begin{proof}[Beweisidee]
-Die Grundidee des Beweises besteht in einer geeigneten symplektische Transformation auf Normalform. Wir nehmen vorerst an, dass $JH$ invertierbar ist. Dann existiert eine symplektische Basis des $\R^n\times\R^n$ bestehend aus Eigenvektoren von $JH$ und damit ein $\chi\in\mathrm{Sp}_{2n}(\R)$ mit
+Die Grundidee des Beweises besteht in einer geeigneten symplektische Transformation auf Normalform. Wir nehmen vorerst an, dass $JH$ invertierbar ist. Dann existiert eine symplektische Basis des $\R^n\times\R^n$, so dass $(JH)^{-1}\e_j = - \lambda_j f_j$ und $(JH)^{-1} f_j = \lambda_j e_j$ und damit ein $\chi\in\mathrm{Sp}_{2n}(\R)$ mit
 \begin{equation}
     a_0^0 + F\cdot \chi X + h(\chi X) = a_0^0 + \sum_{j=1}^n \lambda_j^{-1} (t_j x_j  + \tau_j\xi_j + x_j^2 + \xi_j^2 ),\qquad X=(x,\xi)\in\R^n\times\R^n
 \end{equation}
@@ -94,7 +94,7 @@ also nach Addition von $n$ dieser Ungleichungen
  \sum_{j=1}^n  \int \overline{v(x)} \lambda_j^{-1} (x_j^2 + \D_j^2) v(x) \d x
  \ge (\sum \lambda_j^{-1}) \int |v(x)|^2 \d x
  \end{equation}
- und damit die Behauptung. Für die Rückrichtung nutzt man $v(x) = \e^{-|x|^2/2}$.
+ und damit die Behauptung. Für die Rückrichtung nutzt man $v(x) = \e^{-|x|^2/2}$. Für den allgemeinen Fall ersetzt man $H$ durch $H+\epsilon I$ und lässt $\epsilon\to0$ streben.
 \end{proof}
 
 
