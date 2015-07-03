@@ -71,7 +71,7 @@ Symplektische Transformation auf eine geeignete Normalform.
 
 
 \section{Die Ungleichung von Melin}
-Im Folgenden bezeichnen $a_k\in S^{k}_\mathrm{loc}(\Omega\times\R^n)$ die Entwicklungsterme der Entwicklung $a\sim\sum_{j=0}^\infty a_{m-j}$ des Symbols $a$ von $A\in\mathrm{OP}S^{m}_{\rm loc}(\Omega\times\R^n)$. Wir formulieren das Hauptresultat dieses Abschnittes. 
+Im Folgenden bezeichnen $a_k\in S^{k}_\mathrm{loc}(\Omega\times\R^n\setminus\{0\})$ die homogenen Entwicklungsterme der Entwicklung $a\sim\sum_{j=0}^\infty a_{m-j}$ des Symbols $a$ von $A\in\mathrm{OP}S^{m}_{\rm loc}(\Omega\times\R^n)$. Wir formulieren das Hauptresultat dieses Abschnittes. 
 
 \begin{thm}[{\cite[Theorem 3.1]{Melin:1971}}]
 Sei $A\in\mathrm{OP}S^{m}_{\rm loc}(\Omega\times\R^n)$ mit homogenem Hauptsymbol $a_m(x,\xi)\ge0$ und $\mu=(m-1)/2$. Dann sind \"aquivalent:
@@ -90,10 +90,10 @@ wobei $H_{a_m}$ die Hessematrix zu $a_m$ bezeichne.
 \end{enumerate}
 \end{thm}
 
-Wir können $A$ durch einen eigentlich getragenen Pseudodifferentialoperator mit gleichen homogenen Symbolkomponenten ersetzen.  Weiter genügt es, die Ungleichung für Operatoren der Ordnung $m=1$ zu zeigen. Sei dazu $\Lambda_s\in\mathrm{OP}S^\rho_{\rm loc}(\Omega\times\R^n)$ ein eigentlich getragener Pseudodifferentialoperator auf $\Omega$ mit Symbol $\braket\xi^\rho$.
+Wir können $A$ durch einen eigentlich getragenen Pseudodifferentialoperator mit gleichen homogenen Symbolkomponenten ersetzen.  Weiter genügt es, die Ungleichung für Operatoren der Ordnung $m=1$ zu zeigen. Sei dazu $\Lambda_\rho\in\mathrm{OP}S^\rho_{\rm loc}(\Omega\times\R^n)$ ein eigentlich getragener Pseudodifferentialoperator auf $\Omega$ mit Symbol $\braket\xi^\rho$.
 Der Operator $\Lambda_\rho$ besitzt auf $\rmC_0^\infty(\Omega)$ die Parametrix\footnote{Inverse modulo $\mathscr E'(\Omega)\to\rmC^\infty(\Omega)$}  $\Lambda_{-\rho}$, ist $\rmL^2$-symmetrisch und erfüllt für jedes $s\in\R$ mit geeigneten Konstanten
 \begin{align}
-   C_1 \|u\|_{(m-\rho)} + C'_1 \|u\|_{(s)} \le    \|\Lambda_\rho u\|_{(m)} \le   C_2 \|u\|_{(m-\rho)} + C'_2 \|u\|_{(s)}.
+   C_1 \|u\|_{(m-\rho)} - C'_1 \|u\|_{(s)} \le    \|\Lambda_\rho u\|_{(m)} \le   C_2 \|u\|_{(m-\rho)}.
 \end{align}
 Es sei nun $A_\rho:=\Lambda_{-\rho} \circ A\circ\Lambda_{-\rho}$. Wenn man in \eqref{ungleichungvonmelin} $u$ durch $\Lambda_{-\rho} u$ ersetzt, so wird ersichtlich, dass die Ungleichung für $A$ und $\mu=(m-1)/2$ genau dann erfüllt ist, wenn sie für $A_\rho$ mit $\mu=(m-\rho-1)/2$ und $s$ ersetzt durch $s-\rho$ erfüllt ist. Desweiteren gilt $A_\rho\in \mathrm{OP}S^{m-2\rho}(\Omega\times\R^n)$. 
 Da auch \eqref{bedfuerungleichung} genau dann für $A$ gilt, wenn die Bedingung für $A_\rho$ gilt, können wir annehmen, dass $A\in\mathrm{OP}S^1_{\rm loc}(\Omega\times\R^n)$.
@@ -223,10 +223,8 @@ abgeschätzt werden. Alle verbliebenen Terme von $H_\delta$ können nun durch $\
 \end{align}
 Mit $|H_\delta(\xi,\eta)|\le C_N\delta\braket{\xi-\eta}^{-N} +\phi_{\delta,N}(\xi)\phi_{\delta,N}(\eta)$ und $N$ groß genug folgt nun
 \begin{align}
-\begin{split}
-\iint|H_\delta(\xi,\eta)\widehat u(\xi)\widehat u(\eta)|\d\xi\d\eta &\le \delta C_N \Norm{u}^2_{(0)} + \Norm{\phi_{\delta,N} \widehat u}_1^2 \le \delta C_N \Norm{u}^2_{(0)} + \|\phi_{\delta,N}\|_{(1/4)}^2 \Norm{u}_{(-1/4)}^2 \\
+\iint|H_\delta(\xi,\eta)\widehat u(\xi)\widehat u(\eta)|\d\xi\d\eta &\le \delta C_N \Norm{u}^2_{(0)} + \Norm{\phi_{\delta,N} \widehat u}_1^2 \le \delta C_N \Norm{u}^2_{(0)} + \|\phi_{\delta,N}\|_{(1/4)}^2 \Norm{u}_{(-1/4)}^2 \notag \\
 &= \delta C_N \Norm{u}^2_{(0)} +  C_{\delta,N} \Norm{ u}_{(-1/4)}^2\,.
-\end{split}
 \end{align}
 \end{proof}
 
@@ -242,7 +240,9 @@ Nun soll eine weitere Lokalisation der Funktion $u$ vorgenommen werden. Dafür s
 \end{align}
 Da außerdem $0=\D^\gamma\sum_k\phi_{j,k}^2 = 2 \sum_k\phi_{j,k}\D^\gamma\phi_{j,k}$ für $|\gamma|=1$ fallen in der oberen Summe alle Terme mit $|\gamma|=1$ weg und es folgt
 \begin{align}\label{eq:vorueberlegung1}
-\sum_{k\in\Z^n}\spro {P^\delta_j\varphi_{j,k}v} {\varphi_{j,k}v} = &\sum_{k\in\Z^n}\spro {\varphi_{j,k}P^\delta_jv} {\varphi_{j,k}v} \\&+ \sum_{k\in\Z^n}\sum_{|\alpha|=2}\int \frac{\partial^\alpha\sigma(x,\xi^j/\delta)}{\alpha!} |\xi^j|(\varphi_k\D^\alpha\varphi_k)(x|\xi^j|^{1/2})|v(x)|^2\d x\nonumber
+\begin{split}
+\sum_{k\in\Z^n}\spro {P^\delta_j\varphi_{j,k}v} {\varphi_{j,k}v} = &\sum_{k\in\Z^n}\spro {\varphi_{j,k}P^\delta_jv} {\varphi_{j,k}v} \\&+ \sum_{k\in\Z^n}\sum_{|\alpha|=2}\int \frac{\partial^\alpha\sigma(x,\xi^j/\delta)}{\alpha!} |\xi^j|(\varphi_k\D^\alpha\varphi_k)(x|\xi^j|^{1/2})|v(x)|^2\d x
+\end{split}
 \end{align}
 Da $a\in S^1_\text{unif}(\R^n\times\R^n)$ und somit $|a^\delta(x,\xi^j/\delta)|\le\braket{\xi^j/\delta}^{-1}\le \delta|\xi^j|$ für $|\alpha|=2$ und außerdem
 \begin{align}
@@ -437,4 +437,4 @@ für $|\alpha+\beta|\le 2$ und $|\xi^j|$ bestimmt divergiert, können die Symbol
 \begin{align}
 {a_0}(x^{j,k},\xi^j/\delta)\norm{v^{j,k}_\delta}_{(0)}^2
 \end{align}
-dazu addieren. Nun kann das Lemma mit $K_0=\delta^{-1}\mathbb{S}^{n-1}$, $\lambda_j=|\xi^j|^{1/2}$, $\rho_j(\lambda_j)$, $(x,\xi)=(x^{j,k},\xi^j/\delta|\xi^j|^{-1})$, $\gamma = \epsilon/2 + a_0$ und $v=v^{j,k}_\delta$ angewendet werden.
+dazu addieren. Nun wenden wir das Lemma mit $K_0=\delta^{-1}\mathbb{S}^{n-1}$, $\lambda_j=|\xi^j|^{1/2}$, $\rho_j(\lambda_j)$, $(x,\xi)=(x^{j,k},\xi^j/\delta|\xi^j|^{-1})$, $\gamma = \epsilon/2 + a_0$ und $v=v^{j,k}_\delta$  an.
