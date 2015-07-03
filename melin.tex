@@ -140,7 +140,7 @@ Wir approximieren $A$ durch eine Taylorentwicklung des Symbols und die zugehöri
 \begin{align}
  A_j^\delta v (x):=\sum_{\abs \alpha \le 2} \frac{a^\alpha(x,\xi^j/\delta)}{\alpha!}\left( \mathrm D - \xi^j/\delta\right)^\alpha v(x)
 \end{align}
-für $v\in\mathrm {C}^\infty(\R^n)$ und $\delta\in(0,1]$. Hierfür zunächst einige Vorüberlegungen. Die Ungleichung \eqref{ungleichungvonmelin} verändert sich nicht, wenn das Symbol außerhalb einer kompakten Menge $K$ verändert wird. Sei nun $\psi\in\mathrm{C}^\infty_0(\R^n)$ mit $\psi(x)\in[0,1]$ für alle $x\in\R^n$ und $\psi(x)=1$ für alle $x\in k$. Wir können jetzt $a(x,\xi)$ durch $(1-\psi(x))\braket{\xi} + \psi(x)a(x,\xi)$ ersetzen ohne \eqref{ungleichungvonmelin} zu ändern. Deshalb sei nun $a$ außerhalb einer Kompakten Menge durch $\braket{\xi}$ gegeben. Somit ist $a\in S_\mathrm{unif}^1(\R^n\times\R^n)$ und $\spro{Au}{u}$ stetig bezüglich $\norm\cdot _{(s)}$ für $s\ge 1/2$. Die quadratische Form der Terme negativer Ordnung von $A$ sind aus dem gleichen Grund bezüglich $\norm \cdot _{(-1/2)}$ beschränkt. Es reicht also, wenn wir uns auf den Fall $s=-1/4$ und $a=a_1+a_0$ beschränken.
+für $v\in\mathrm {C}^\infty(\R^n)$ und $\delta\in(0,1]$. Hierfür zunächst einige Vorüberlegungen. Die Ungleichung \eqref{ungleichungvonmelin} verändert sich nicht, wenn das Symbol außerhalb einer kompakten Menge $K$ verändert wird. Sei nun $\psi\in\mathrm{C}^\infty_0(\R^n)$ mit $\psi(x)\in[0,1]$ für alle $x\in\R^n$ und $\psi(x)=1$ für alle $x\in k$. Wir können jetzt $a(x,\xi)$ durch $(1-\psi(x))\braket{\xi} + \psi(x)a(x,\xi)$ ersetzen ohne \eqref{ungleichungvonmelin} zu ändern. Deshalb sei nun $a$ außerhalb einer Kompakten Menge durch $\braket{\xi}$ gegeben. Somit ist $a\in S_\mathrm{unif}^1(\R^n\times\R^n)$ und $\spro{Au}{u}$ stetig bezüglich $\norm\cdot _{(s)}$ für $s\ge 1/2$. Die quadratische Form der Terme negativer Ordnung von $A$ sind aus dem gleichen Grund bezüglich $\norm \cdot _{(-1/2)}$ beschränkt. Es reicht also, wenn wir $a=a_1+a_0$ annehmen. In der Beweisführung werden wir uns auf den Fall $s=-1/4$ beschränken.
 
 \begin{lem}
 Sei $P$ Pseudodifferentialoperator mit Symbol $\sigma\in S^1_{\rm comp}(\R^n\times\R^n)$. Dann gilt
@@ -285,7 +285,7 @@ Das Taylorrestglied $R_d$, wobei $d=3-\abs\alpha$, kann durch einen Term $\mathc
 \begin{align}
 \begin{split}
 &\Abs{R_d[\sigma^\alpha(\cdot,\xi^j/\delta)](x^{j,k}+y|\xi^j|^{-1/2},x^{j,k})} \\
-&\le \sum_{\abs\beta=d}\frac{|y^\beta||\xi^j|^{-d/2}}{\beta!}\Abs{\sigma^\alpha_\beta(x^{j,k}+ ty|\xi^j|^{-1/2},\xi^j/\delta) }\\
+&\le c\int \sum_{\abs\beta=d}\frac{|y^\beta||\xi^j|^{-d/2}}{\beta!}\Abs{\sigma^\alpha_\beta(x^{j,k}+ ty|\xi^j|^{-1/2},\xi^j/\delta) }\d t\\
 &\le c_d \frac{\abs y ^d}{\abs{\xi^j}^{d/2}}\braket{\xi^j/\delta}^{1-\abs\alpha} \le\frac{\widetilde c_d\abs y ^d}{\abs{\xi^j}^{d/2}}|\xi^j/\delta|^{1-\abs\alpha} \le \widetilde c C ^d\delta^{-1}|\xi^j|^{-(1+\abs\alpha)/2}
 \end{split}
 \end{align}
