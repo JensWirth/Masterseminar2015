@@ -37,6 +37,9 @@ Es sei $p$ ein Polynom zweiten Grades auf $\R^n\times\R^n$ und $\chi\in\mathrm{S
 \end{align}
 genau dann für das Polynom $p$, wenn es für das Polynom $p\circ \chi$ gilt.
 \end{lem}
+%\begin{proof}[Beweisidee]
+%Es genügt, dies für spezielle Familien von Matrizen, welche die symplektische Gruppe erzeugen, nachzurechnen.
+%\end{proof}
 Im folgenden bezeichne
 \begin{align}
 J=\begin{pmatrix}
@@ -66,7 +69,32 @@ Es gilt $P[u]\ge0$ genau dann für alle $u\in\mathscr S(\R^n)$, wenn die Bedingu
 erfüllt sind.
 \end{thm}
 \begin{proof}[Beweisidee]
-Symplektische Transformation auf eine geeignete Normalform. 
+Die Grundidee des Beweises besteht in einer geeigneten symplektische Transformation auf Normalform. Wir nehmen vorerst an, dass $JH$ invertierbar ist. Dann existiert eine symplektische Basis des $\R^n\times\R^n$ bestehend aus Eigenvektoren von $JH$ und damit ein $\chi\in\mathrm{Sp}_{2n}(\R)$ mit
+\begin{equation}
+    a_0^0 + F\cdot \chi X + h(\chi X) = a_0^0 + \sum_{j=1}^n \lambda_j^{-1} (t_j x_j  + \tau_j\xi_j + x_j^2 + \xi_j^2 ),\qquad X=(x,\xi)\in\R^n\times\R^n
+\end{equation}
+und für $H^{-1} F = (t,\tau)\in\R^n\times\R^n$. Es bleibt also die Ungleichung
+\begin{equation}
+  \Re \int \overline{v(x)} \bigg( a_0^0 + \sum_{j=1}^n \lambda_j^{-1} \big(  t_j x_j +\tau_j \D_j +x_j^2 + \D_j^2\big)\bigg) v(x) \d x \ge 0
+\end{equation}
+zu zeigen. Ersetzt man $v$ durch $\e^{-\i t \cdot x /2 } v(x)$ und analog im Fourierbild, so entspricht dies sich unter Ausnutzung von $\sum_j \lambda_j^{-1} (t_j^1 + \tau_j^2)= \cspro{F}{H^{-1}}{F}$ gerade
+\begin{equation}
+   (a_0^0 - \frac14 \cspro{F}{H^{-1}}{F}) \int |v(x)|^2 \d x + \sum_{j=1}^n  \int \overline{v(x)} \lambda_j^{-1} (x_j^2 + \D_j^2) v(x) \d x \ge 0.
+\end{equation} 
+Um dies zu zeigen, multiplizieren wir die offensichtliche Ungleichung
+\begin{equation}
+  0 \le \int |(\D - \i  y)u(y)|^2 \d y
+\end{equation}
+für $u\in\rmC_0^\infty(\R)$ aus und erhalten
+\begin{equation}
+    \int \overline{u(y)} (\D^2 + y^2) u(y) \d y \ge  \int |u(y)|^2 \d y,
+\end{equation}
+also nach Addition von $n$ dieser Ungleichungen
+\begin{equation}
+ \sum_{j=1}^n  \int \overline{v(x)} \lambda_j^{-1} (x_j^2 + \D_j^2) v(x) \d x
+ \ge (\sum \lambda_j^{-1}) \int |v(x)|^2 \d x
+ \end{equation}
+ und damit die Behauptung. Für die Rückrichtung nutzt man $v(x) = \e^{-|x|^2/2}$.
 \end{proof}
 
 
