@@ -364,15 +364,15 @@ Zusammengefasst ergibt dies
 =& \sum_{j,k\in\Z^n}\sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{\sigma^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
 &+\mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(s)}^2\nonumber
 \end{align}
-In Zukunft soll $\delta$ so gewählt sein, dass der $\mathcal O(1)\delta\norm u ^2_{(0)}$ Term größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist. Wir wählen nun eine Abzählung für die Indizierung der $\psi_j$, $\varphi_j$ und $\xi^j$ so, dass $|\xi^j|$ eine monoton steigende Folge ist. Finden wir jetzt eine nullkonverente Folge $\rho_j$, so dass
+In Zukunft soll $\delta$ so gewählt sein, dass der Realteil des $\mathcal O(1)\delta\norm u ^2_{(0)}$ Terms größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist. Wir wählen nun eine Abzählung für die Indizierung der $\psi_j$, $\varphi_j$ und $\xi^j$ so, dass $|\xi^j|$ eine monoton steigende Folge ist. Finden wir jetzt eine nullkonverente Folge $\rho_j$, so dass
 
 \begin{align}
-\sum_{|\alpha+\beta|\le 2} \frac{a^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}|\xi^j|^{|\alpha-\beta|/2}\int \cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y + \frac{2}{\epsilon}\norm{v^{j,k}_\delta}^2 + \rho_j \norm{v^{j,k}_\delta}_{(4)}^2 \ge 0
+\sum_{|\alpha+\beta|\le 2} \frac{a^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}|\xi^j|^{|\alpha-\beta|/2}\int \cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y + \frac{\epsilon}{2}\norm{v^{j,k}_\delta}^2 + \rho_j \norm{v^{j,k}_\delta}_{(4)}^2 \ge 0
 \end{align}
 dann folgt nach unter Verwendung von \eqref{polynomnachoben} und Addition über $k$,  dass 
 \begin{align}
-\spro {Au} u
-\ge& -C_4\sum_{j=1}^\infty \rho_j \delta^{-4}\norm{\psi_j(\delta\D)u}^2 - \epsilon \norm u _{(0)}^2 + C_\delta \norm u _{(-1/4)}^2\nonumber
+\Re \spro {Au} u
+\ge& -C_4\sum_{j=1}^\infty \rho_j \delta^{-4}\norm{\psi_j(\delta\D)u}^2 - \epsilon \norm u _{(0)}^2 + C_\delta \norm u _{(s)}^2\nonumber
 \end{align}
 Die Summe über $j$, kann nun je nach Wahl einer Teilfolge von $\rho_j$ beliebig klein gemacht werden. Um zu zeigen, dass es so eine Folge $\rho_j$ tatsächlich gibt, brauchen wir das folgende Lemma.
 
