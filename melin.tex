@@ -343,12 +343,11 @@ Darüber hinaus lassen sich die Funktionen $\varphi_k v^j_\delta$ durch Translat
 \end{align}
 Nun soll das über $k$ summierte verbleibende Integral aus \eqref{termnachkoordtransf} abgeschätzt werden. Dafür betrachten wir, den folgenden Ausdruck
 \begin{align}
-\begin{split}
+\label{polynomnachoben}
 &\sum_{k\in\Z^n}\sum_{|\alpha+\beta|\le N} \int|y^\beta\D^\alpha v^{j,k}_\delta(y)|^2\d y \le C^{N} \sum_{k\in\Z^n} \sum_{|\alpha+\beta|\le N}\int |\D^\alpha(\varphi_k v^j_\delta)(y)|^2\d y \\
 &\le C_N\sum_{k\in\Z^n}\| v^j_\delta \varphi_k\|_{(N)}^2 
 = C_N\| v^j_\delta \|_{(N)}^2 \nonumber
-\le \widetilde C_N \delta^{-2N}\| v^j_\delta \|^2 = \widetilde C_N \delta^{-2N}|\xi^j|^{n/2}\| v^j_\delta \|^2 \label{polynomnachoben}
-\end{split}
+\le \widetilde C_N \delta^{-2N}\| v^j_\delta \|^2 = \widetilde C_N \delta^{-2N}|\xi^j|^{n/2}\| \psi_j(\delta\D)u \|^2 
 \end{align}
 Wird nun über alle $j$ summiert, so dass $\xi^j>\delta^{-12}$ ist, erhält man den Ausdruck
 \begin{align}
@@ -361,7 +360,7 @@ Die restlichen endlich vielen Summanden ergeben einen Ausdruck $\mathcal O(1)C_\
 Zusammengefasst ergibt dies
 \begin{align}
 \spro {Au} u
-=& \sum_{j,k\in\Z^n}\sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{\sigma^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
+=& \sum_{j,k\in\Z^n}\sum_{\abs{\alpha+\beta}\le 2}|\xi^j|^{(\abs\alpha-\abs\beta-n)/2} \frac{a^\alpha_\beta(x^{j,k},\xi^j/\delta)}{\alpha!\beta!}\int\cc{v^{j,k}_\delta(y)}y^\beta\D^\alpha v^{j,k}_\delta(y)\d y\\
 &+\mathcal O(1)\delta\norm u _{(0)}^2 + \mathcal O(1)C_\delta \norm u _{(s)}^2\nonumber
 \end{align}
 In Zukunft soll $\delta$ so gewählt sein, dass der Realteil des $\mathcal O(1)\delta\norm u ^2_{(0)}$ Terms größer als $-(\epsilon/3)\norm u ^2_{(0)}$ ist. Wir wählen nun eine Abzählung für die Indizierung der $\psi_j$, $\varphi_j$ und $\xi^j$ so, dass $|\xi^j|$ eine monoton steigende Folge ist. Finden wir jetzt eine nullkonverente Folge $\rho_j$, so dass
@@ -372,7 +371,7 @@ In Zukunft soll $\delta$ so gewählt sein, dass der Realteil des $\mathcal O(1)\
 dann folgt nach unter Verwendung von \eqref{polynomnachoben} und Addition über $k$,  dass 
 \begin{align}
 \Re \spro {Au} u
-\ge& -C_4\sum_{j=1}^\infty \rho_j \delta^{-4}\norm{\psi_j(\delta\D)u}^2 - \epsilon \norm u _{(0)}^2 + C_\delta \norm u _{(s)}^2\nonumber
+\ge& -C_2\sum_{j=1}^\infty \rho_j \delta^{-4}\norm{\psi_j(\delta\D)u}^2 - \epsilon \norm u _{(0)}^2 + C_\delta \norm u _{(s)}^2\nonumber
 \end{align}
 Die Summe über $j$, kann nun je nach Wahl einer Teilfolge von $\rho_j$ beliebig klein gemacht werden. Um zu zeigen, dass es so eine Folge $\rho_j$ tatsächlich gibt, brauchen wir das folgende Lemma.
 
