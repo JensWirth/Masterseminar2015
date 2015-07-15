@@ -321,12 +321,21 @@ für die Konstante in \eqref{eq:2:wantedineq} wählen.
 Wir betrachten als instruktive Beispiele
 einige klassische Differentialausdrücke zweiter Ordnung.
 Zur Vereinfachung der Notation schreiben wir
+\begin{subequations}
 \begin{align}
 f(\xi)\asymp g(\xi)\quad&\gdw&
 \exists_{C_-,C_+>0}\forall_{\xi\in\R^n}\quad&:\quad C_-g(\xi)\leq f(\xi)\leq C_+g(\xi),\\
 f(\xi)\apprle g(\xi)\quad&\gdw&
 \exists_{C>0}\forall_{\xi\in\R^n}~\quad&:\quad f(\xi)\leq Cg(\xi).
 \end{align}
+\end{subequations}
+
+Die Vergleichseigenschaften der Differentialoperatoren
+beziehen sich stets auf das Verhalten der Lösungen $u$ der Gleichung
+\begin{equation}
+P(D)u=f
+\end{equation}
+wobei $f\in C_0(\R^n)$.
 
 \begin{exa}\label{exa:2:lap}
 Wir betrachten das zum \eIndex[Differentialoperator]{Laplaceoperator} $\Delta$
@@ -369,11 +378,16 @@ und erhält insgesamt
 \end{equation}
 Im anderen Fall betrachtet man \eqref{eq:2:rpQLap1}
 für alle $\xi\in\R^n$ mit $\xi^\top A\xi=0$,
-und stellt fest, dass $\widetilde{Q}(\xi)$ für diese $\xi$ nur linear wächst,
-$Q(\D)$ also echt schwächer als $P(\D)$ ist.
+und stellt fest, dass $\widetilde{Q}(\xi)$ für diese $\xi$
+maximal linear mit dem Betrag von $\abs{\xi}$ wächst.
+In diesem Fall ist $Q(\D)$ also echt schwächer als $P(\D)$ ist.
 
 Im Fall einer reellen Matrix gilt $\xi^\top A\xi\neq0$ genau dann für alle $\xi\neq0$,
 wenn entweder alle Eigenwerte positiv oder alle negativ sind.
+Im allgemeinen Fall ist die Bedingung $\xi^\top A\xi\neq0$
+äquivalent dazu, daß die Menge $\{\xi^\top A\xi:\xi\in\R^n,~\xi\neq0\}$
+in einem offenen Halbraum $H_w\subset\C$
+von der Form $H_w:=\{z\in\C:\Re(zw)>0\}$, $w\in\C$, $w\neq0$ enthalten ist.
 %Im Fall einer komplexen Matrix ist
 %\begin{equation}
 %\abs{\xi^\top A\xi}^2=\abs{\xi^\top A_\Re\xi}^2+\abs{\xi^\top A_\Im\xi}^2,
@@ -398,7 +412,7 @@ Q(\xi)^2\apprle(\xi^2_1+\dots+\xi^2_{n-1}-\xi_n)^2+\xi^2_1+\dots+\xi^2_{n-1}+1.
 Also hat $Q(\xi)$ maximalen Grad 2 in $\xi_1,\dots,\xi_{n-1}$,
 Grad 1 in $\xi_n$ und ist somit von der Form
 \begin{equation}
-Q(\xi)=a_0+\sum^n_{k=1}a_k\xi_k+\sum^n_{k,l=1}a_{kl}\xi_k\xi_l,
+Q(\xi)=\sum^n_{k,l=1}a_{kl}\xi_k\xi_l+\sum^n_{k=1}b_k\xi_k+c,
 \end{equation}
 mit $a_{nn}=0$.
 Wir betrachten die Gleichung \eqref{eq:2:subschroe}
@@ -409,11 +423,12 @@ Q(\xi)^2\apprle(\xi^2_1+\dots+\xi^2_{n-1}+1),
 \end{equation}
 Da wir $\xi_1,\dots,\xi_{n-1}$ in \eqref{eq:2:subschroespec} frei wählen können folgt, dass
 \begin{equation}
-Q(\xi)=a_0+\sum_{k=1}^{n-1}a_k\xi_k+a_n(\xi_n-\xi^2_1-\dots-\xi^2_{n-1}),
+Q(\xi)=a(\xi^2_1+\dots+\xi^2_{n-1}-\xi_n)+\sum_{k=1}^{n-1}b_k\xi_k+c
+=aP(\xi)+\sum_{k=1}^{n-1}b_k\xi_k+c,
 \end{equation}
-mit beliebigen $a_0,a_1,\dots,a_n\in\C$.
+mit beliebigen $a,b_1,\dots,b_{n-1},c\in\C$.
 Es ist $Q(\xi)$ genau dann gleich Stark wie $P(\xi)$,
-wenn $a_n\neq0$.
+wenn $a\neq0$.
 \end{exa}
 
 \begin{exa}\label{exa:2:heat}
@@ -429,12 +444,37 @@ Q(\xi)^2\apprle(\xi^2_1+\dots+\xi^2_{n-1})^2+\xi^2_1+\dots+\xi^2_{n-1}+\xi^2_n+1
 \end{equation}
 Diese Ungleichung ist genau dann erfüllt, wenn
 \begin{equation}
-Q(\xi)=a_0+\sum_{k=1}^na_k\xi_k+\sum_{k,l=1}^{n-1}a_{kl}\xi_k\xi_l,
+Q(\xi)=\sum_{k,l=1}^{n-1}a_{kl}\xi_k\xi_l+\sum_{k=1}^nb_k\xi_k+c,
 \end{equation}
-mit beliebigen $a_0,a_k,a_{kl}\in\C$.
-Das Symbol $Q(\xi)$ ist genau dann gleich stark wie $P(\xi)$,
-wenn $a_n\neq0$ und $\sum_{k,l=1}^{n-1}a_{kl}\xi_k\xi_l\neq0$ falls $\xi\notin e_n\R$
-mit dem $n$-ten Standartbasisvektor $e_n$.
+mit beliebigen $a_{kl},b_k,c\in\C$.
+
+Betrachtet man die Unterräume $U:=\{\xi\in\R^n:\xi_n=0\}$
+und $U^\perp:=\{(0,\dots,0,\xi_n):\xi_n\in\R\}$ separat,
+so erhält man notwendige Bedingungen dafür,
+daß $Q(\xi)$ gleich stark wie $P(\xi)$.
+Zum einen folgt $\sum^{n-1}_{k,l=1}a_{kl}\xi_k\xi_l\neq0$ für $\xi\in U\setminus\{0\}$,
+d.h.~das auf $U$ eingeschränkte Symbol muss gleich stark
+wie das Symbol des Laplaceoperators auf dem $\R^{n-1}$ sein.
+Zum anderen folgt $b_n\neq0$.
+
+Unter Annahme dieser notwendigen Bedingungen lässt sich
+die Betrachtung, wie in Beispiel \ref{exa:2:lap},
+auf die für große $|\xi|$ dominierenden Terme reduzieren.
+So sieht man, daß das Symbol $Q(\xi)$ genau dann gleich stark wie $P(\xi)$ ist,
+wenn zusätzlich
+\begin{equation}
+\left|\textstyle\sum^{n-1}_{k,l=1}a_{kl}\xi_k\xi_l+b_n\zeta_n\right|^2
+\asymp(\xi_1^2+\dots+\xi_{n-1}^2)^2+\xi_n^2
+\end{equation}
+für $|\xi|\geq R>0$ mit $R$ groß genug.
+Dies ist genau dann der Fall, wenn
+\begin{equation}
+\left\{\textstyle\sum^{n-1}_{k,l=1}a_{kl}\xi_k\xi_l:\xi\in\R^{n-1}\setminus\{0\}\right\}
+\cap b_n\R=\emptyset
+\end{equation}
+erfüllt ist, was eine Bedingung an Teilmengen von $\C$ ist.
+Im Fall reeller $a_{kl}$ ist dies genau dann der Fall,
+wenn $b_n\notin\R$.
 \end{exa}
 
 \begin{exa}\label{exa:2:hyper}
@@ -465,20 +505,68 @@ und $Q(\xi)$ ist genau dann gleich stark wie $P(\xi)$,
 wenn $b\neq0$.
 \end{exa}
 
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+{\em Laplaceoperator (\ref{exa:2:lap})}
+&{\em Wärmeleitungsoperator (\ref{exa:2:heat})}\\
+\hline
+\hline
+$\begin{array}{c}
+P(\zeta)=\zeta^2\vphantom{\displaystyle\frac12}\\[3pt]
+Q(\zeta)=\zeta^{\mathrm{t}}A\zeta+\langle b,\zeta\rangle+c\\[3pt]
+\forall_{\zeta\neq0}:\zeta A\zeta\neq0\vphantom{\displaystyle\frac12}
+\end{array}$
+&
+$\begin{array}{c}
+P(\zeta)=\zeta^2_1+\dots+\zeta^2_{n-1}+\i\zeta_n\vphantom{\displaystyle\frac12}\\[3pt]
+Q(\zeta)=\sum_{k,l=1}^{n-1}a_{kl}\zeta_k\zeta_l+\sum^n_{k=1}b_k\zeta_k+c\\[3pt]
+\left\{\textstyle\sum^{n-1}_{k,l=1}a_{kl}\xi_k\xi_l:\xi\in\R^{n-1}\setminus\{0\}\right\}
+\cap b_n\R=\emptyset,~b_n\neq0\vphantom{\displaystyle\frac12}
+\end{array}$\\
+\hline\hline
+{\em Schrödingeroperator (\ref{exa:2:schroe})}
+&{\em Ultrahyperbolischer Operator (\ref{exa:2:hyper})}\\
+\hline\hline
+$\begin{array}{c}
+P(\zeta)=\zeta^2_1+\dots+\zeta^2_{n-1}-\zeta_n\vphantom{\displaystyle\frac12}\\[3pt]
+Q(\zeta)=aP(\zeta)+\sum^{n-1}_{k=1}b_k\zeta_k+c\\[3pt]
+a\neq0\vphantom{\displaystyle\frac12}
+\end{array}$
+&
+$\begin{array}{c}
+P(\zeta)=\zeta^2_1+\dots+\zeta^2_m-(\zeta^2_{m+1}+\dots+\zeta^2_n)
+\vphantom{\displaystyle\frac12}\\[3pt]
+Q(\zeta)=aP(\zeta)+\sum_{k=1}^nb_k\zeta_k+c\\[3pt]
+a\neq0\vphantom{\displaystyle\frac12}
+\end{array}$\\
+\hline
+\end{tabular}
+\end{center}
+\caption{Zusammenfassung der Ergebnisse aus der Beispieldiskussion.
+Erste Zeile: Symbol $P(\zeta)$ des untersuchten Operators $P(\D)$.
+Zweite Zeile: Symbole $Q(\zeta)$ der Operatoren aus $W(P(\D))$.
+Dabei sind die Koeffizienten stets beliebig aus $\C$.
+Dritte Zeile: Notwendige und Hinreichende Zusatzbedingungen an $Q(\zeta)$,
+daß der Operator mit dem Symbol $Q(\zeta)$
+gleich Stark wie $P(\zeta)$ ist.}
+\end{table}
+
 Wir wollen einige Unterschiede der betrachteten Beispiele festhalten.
 Vergleichen wir die Beispiele \ref{exa:2:lap}, \ref{exa:2:hyper}
 mit den Beispielen \ref{exa:2:schroe}, \ref{exa:2:heat}.
 In den ersten beiden Fällen hängt der Vergleich der Stärke nur von den Hauptteilen,
 d.h.~den Potenzen größter Ordnung ab.
-In den zweiten zwei Fällen hängt die Vergleich auch von niederen Termen ab.
-Dies hängt damit zusammen, dass sich die Symbole $P(\xi)$ in
-\ref{exa:2:schroe} und \ref{exa:2:heat} nicht auf allen (nicht-trivialen)
-Unterräumen des $\R^n$ wie die höchste im Symbol vorkommende Potenz verhalten.
+In den zweiten zwei Fällen hängt der Vergleich auch von niedrigeren Termen ab.
+Dies hängt damit zusammen, dass die Symbole $P(\xi)$ aus
+\ref{exa:2:schroe} und \ref{exa:2:heat}
+auf gewissen eindimensionalen Unterräumen des $\R^n$ verschwinden.
 
 Auch die Paare \ref{exa:2:lap}, \ref{exa:2:heat}
 und \ref{exa:2:schroe}, \ref{exa:2:hyper}
 weisen einen große Unterschied auf.
-Bei den ersten beiden Operatoren hat man viel Wahlfreiheit
+Bei den ersten beiden Operatoren hat man relativ viel Wahlfreiheit
 für gleich starke Operatoren.
 Bei den zweiten zwei Operatoren hat man im Hauptteil stets
 nur einen frei wählbaren Parameter.
@@ -498,7 +586,8 @@ falls er stärker ist als jeder Differentialausdruck von kleiner oder gleichem G
 
 Wie eben diskutiert sind also der Laplaceoperator
 und der Operator aus Beispiel \ref{exa:2:hyper} vom Haupttyp,
-die anderen beiden nicht. Der Laplaceoperator ist als einziger der angegebenen Operatoren elliptisch.
+die anderen beiden nicht. Der Laplaceoperator
+ist als einziger der angegebenen Operatoren elliptisch.
 Wir geben nun Klassifikationen für diese Operatortypen.
 
 \begin{thm}[{\cite[Theorem~2.3]{Hormander:1955}}]\label{thm:2:2.9}
